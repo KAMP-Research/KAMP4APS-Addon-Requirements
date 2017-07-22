@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+	name="modificationmarks" nsURI="http://sdq.ipd.kit.edu/KAMP4APS4ReqModificationmarks/1.0"
+	nsPrefix="modificationmarks">
+	<eClassifiers xsi:type="ecore:EClass" name="APSReqModificationRepository">
+		<eGenericSuperTypes
+			eClassifier="ecore:EClass ../../edu.kit.ipd.sdq.kamp4aps.model.modificationmarks/model/KAPSModificationsmarks.ecore#//AbstractKAPSModificationRepository">
+			<eTypeArguments eClassifier="#//APSReqSeedModifications" />
+		</eGenericSuperTypes>
+	</eClassifiers>
+	<eClassifiers xsi:type="ecore:EClass" name="APSReqSeedModifications"
+		eSuperTypes="../../edu.kit.ipd.sdq.kamp4aps.model.modificationmarks/model/KAPSModificationsmarks.ecore#//KAPSSeedModifications">
+		<eStructuralFeatures xsi:type="ecore:EReference"
+			name="requirementModifications" upperBound="-1"
+			eType="#//APSReqModifyRequirement" containment="true" />
+		<eStructuralFeatures xsi:type="ecore:EReference"
+			name="decisionModifications" upperBound="-1" eType="#//APSReqModifyDecision"
+			containment="true" />
+		<eStructuralFeatures xsi:type="ecore:EReference"
+			name="optionModifications" upperBound="-1" eType="#//APSReqModifyOption"
+			containment="true" />
+	</eClassifiers>
+	<eClassifiers xsi:type="ecore:EClass"
+		name="APSReqChangePropagationDueToSpecificationDependencies"
+		eSuperTypes="../../edu.kit.ipd.sdq.kamp.model.modificationmarks/model/Modificationmarks.ecore#//ChangePropagationStep">
+		<eStructuralFeatures xsi:type="ecore:EReference"
+			name="decisionModifications" upperBound="-1" eType="#//APSReqModifyDecision"
+			containment="true" />
+		<eStructuralFeatures xsi:type="ecore:EReference"
+			name="optionModifications" upperBound="-1" eType="#//APSReqModifyOption"
+			containment="true" />
+		<eStructuralFeatures xsi:type="ecore:EReference"
+			name="requirementModifications" upperBound="-1"
+			eType="#//APSReqModifyRequirement" containment="true" />
+		<eStructuralFeatures xsi:type="ecore:EReference"
+			name="componentModifications" upperBound="-1" eType="#//APSReqModifyComponent"
+			containment="true" />
+		<eStructuralFeatures xsi:type="ecore:EReference"
+			name="moduleModifications" upperBound="-1" eType="#//APSReqModifyModule"
+			containment="true" />
+		<eStructuralFeatures xsi:type="ecore:EReference"
+			name="structureModifications" upperBound="-1" eType="#//APSReqModifyStructure"
+			containment="true" />
+		<eStructuralFeatures xsi:type="ecore:EReference"
+			name="interfaceModifications" upperBound="-1" eType="#//APSReqModifyInterface"
+			containment="true" />
+	</eClassifiers>
+	<eClassifiers xsi:type="ecore:EClass" name="APSReqModifyTraceableObject"
+		abstract="true">
+		<eTypeParameters name="T">
+			<eBounds
+				eClassifier="ecore:EClass ../../toometa.relations/model/relations.ecore#//TraceableObject" />
+		</eTypeParameters>
+		<eGenericSuperTypes
+			eClassifier="ecore:EClass ../../edu.kit.ipd.sdq.kamp.model.modificationmarks/model/Modificationmarks.ecore#//AbstractModification">
+			<eTypeArguments eTypeParameter="#//APSReqModifyTraceableObject/T" />
+			<eTypeArguments
+				eClassifier="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject" />
+		</eGenericSuperTypes>
+	</eClassifiers>
+	<eClassifiers xsi:type="ecore:EClass" name="APSReqModifyComponent">
+		<eGenericSuperTypes
+			eClassifier="ecore:EClass ../../edu.kit.ipd.sdq.kamp4aps.model.modificationmarks/model/KAPSModificationsmarks.ecore#//ModifyComponent">
+			<eTypeArguments
+				eClassifier="ecore:EClass ../../xPPU/model/xPPU.ecore#//ComponentRepository/Component" />
+		</eGenericSuperTypes>
+	</eClassifiers>
+	<eClassifiers xsi:type="ecore:EClass" name="APSReqModifyModule">
+		<eGenericSuperTypes
+			eClassifier="ecore:EClass ../../edu.kit.ipd.sdq.kamp4aps.model.modificationmarks/model/KAPSModificationsmarks.ecore#//ModifyModule">
+			<eTypeArguments
+				eClassifier="ecore:EClass ../../xPPU/model/xPPU.ecore#//ModuleRepository/Module" />
+		</eGenericSuperTypes>
+	</eClassifiers>
+	<eClassifiers xsi:type="ecore:EClass" name="APSReqModifyStructure">
+		<eGenericSuperTypes
+			eClassifier="ecore:EClass ../../edu.kit.ipd.sdq.kamp4aps.model.modificationmarks/model/KAPSModificationsmarks.ecore#//ModifyStructure">
+			<eTypeArguments
+				eClassifier="ecore:EClass ../../xPPU/model/xPPU.ecore#//StructureRepository/Structure" />
+		</eGenericSuperTypes>
+	</eClassifiers>
+	<eClassifiers xsi:type="ecore:EClass" name="APSReqModifyInterface">
+		<eGenericSuperTypes
+			eClassifier="ecore:EClass ../../edu.kit.ipd.sdq.kamp4aps.model.modificationmarks/model/KAPSModificationsmarks.ecore#//ModifyInterface">
+			<eTypeArguments
+				eClassifier="ecore:EClass ../../xPPU/model/xPPU.ecore#//InterfaceRepository/Interface" />
+		</eGenericSuperTypes>
+	</eClassifiers>
+	<eClassifiers xsi:type="ecore:EClass" name="APSReqModifyRequirement">
+		<eGenericSuperTypes eClassifier="#//APSReqModifyTraceableObject">
+			<eTypeArguments
+				eClassifier="ecore:EClass ../../toometa.requirements/model/requirements.ecore#//Requirement" />
+		</eGenericSuperTypes>
+	</eClassifiers>
+	<eClassifiers xsi:type="ecore:EClass" name="APSReqModifyDecision">
+		<eGenericSuperTypes eClassifier="#//APSReqModifyTraceableObject">
+			<eTypeArguments
+				eClassifier="ecore:EClass ../../toometa.decisions/model/decisions.ecore#//Decision" />
+		</eGenericSuperTypes>
+	</eClassifiers>
+	<eClassifiers xsi:type="ecore:EClass" name="APSReqModifyOption">
+		<eGenericSuperTypes eClassifier="#//APSReqModifyTraceableObject">
+			<eTypeArguments
+				eClassifier="ecore:EClass ../../toometa.options/model/options.ecore#//Option" />
+		</eGenericSuperTypes>
+	</eClassifiers>
+</ecore:EPackage>

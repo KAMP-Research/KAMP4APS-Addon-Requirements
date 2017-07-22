@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description">
+  <viewpoint:DAnalysis xmi:id="_IgcH8GI-EeeA_85L4D0d1w" selectedViews="_IsBs4GI-EeeA_85L4D0d1w" version="11.1.0.201608251200">
+    <semanticResources>pcmapsoptions.genmodel</semanticResources>
+    <semanticResources>platform:/resource/toometa.archoptions/model/archoptions.ecore</semanticResources>
+    <semanticResources>platform:/resource/toometa.options/model/options.ecore</semanticResources>
+    <semanticResources>platform:/resource/de.uka.ipd.sdq.identifier/model/identifier.ecore</semanticResources>
+    <semanticResources>platform:/resource/toometa.relations/model/relations.ecore</semanticResources>
+    <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
+    <semanticResources>platform:/resource/toometa.effects/model/effects.ecore</semanticResources>
+    <semanticResources>platform:/resource/toometa.glossary/model/glossary.ecore</semanticResources>
+    <semanticResources>http://www.eclipse.org/emf/2003/XMLType</semanticResources>
+    <semanticResources>platform:/resource/toometa.qualities/model/qualities.ecore</semanticResources>
+    <semanticResources>platform:/resource/de.uka.ipd.sdq.dsexplore.qml.dimensions/model/dimensions.ecore</semanticResources>
+    <semanticResources>platform:/resource/de.uka.ipd.sdq.namedelement/model/namedelement.ecore</semanticResources>
+    <semanticResources>platform:/resource/de.uka.ipd.sdq.dsexplore.qml.dimensiontypes/model/dimensiontypes.ecore</semanticResources>
+    <semanticResources>platform:/resource/de.uka.ipd.sdq.dsexplore.qml.units/model/units.ecore</semanticResources>
+    <semanticResources>platform:/resource/xPPU/model/xPPU.ecore</semanticResources>
+    <semanticResources>platform:/resource/toometa.archoptions/model/archoptions.genmodel</semanticResources>
+    <semanticResources>platform:/resource/toometa.options/model/options.genmodel</semanticResources>
+    <semanticResources>platform:/resource/toometa.effects/model/effects.genmodel</semanticResources>
+    <semanticResources>platform:/resource/toometa.glossary/model/glossary.genmodel</semanticResources>
+    <semanticResources>platform:/resource/de.uka.ipd.sdq.identifier/model/identifier.genmodel</semanticResources>
+    <semanticResources>platform:/resource/de.uka.ipd.sdq.namedelement/model/namedelement.genmodel</semanticResources>
+    <semanticResources>platform:/resource/toometa.qualities/model/qualities.genmodel</semanticResources>
+    <semanticResources>platform:/resource/toometa.relations/model/relations.genmodel</semanticResources>
+    <semanticResources>platform:/resource/de.uka.ipd.sdq.dsexplore.qml.dimensions/model/dimensions.genmodel</semanticResources>
+    <semanticResources>platform:/resource/de.uka.ipd.sdq.dsexplore.qml.dimensiontypes/model/dimensiontypes.genmodel</semanticResources>
+    <semanticResources>platform:/resource/de.uka.ipd.sdq.dsexplore.qml.units/model/units.genmodel</semanticResources>
+    <semanticResources>platform:/resource/xPPU/model/xPPU.old.genmodel</semanticResources>
+    <semanticResources>apsoptions.ecore</semanticResources>
+    <ownedViews xmi:type="viewpoint:DView" xmi:id="_IsBs4GI-EeeA_85L4D0d1w">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_It1qwGI-EeeA_85L4D0d1w" name="pcmapsoptions" representation="_It1qwWI-EeeA_85L4D0d1w">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
+        <target xmi:type="ecore:EPackage" href="pcmapsoptions.ecore#/"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+  </viewpoint:DAnalysis>
+  <diagram:DSemanticDiagram xmi:id="_It1qwWI-EeeA_85L4D0d1w" name="pcmapsoptions">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_It2R0GI-EeeA_85L4D0d1w" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_It2R0WI-EeeA_85L4D0d1w"/>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_It244GI-EeeA_85L4D0d1w" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_It244WI-EeeA_85L4D0d1w" type="Sirius" element="_It1qwWI-EeeA_85L4D0d1w" measurementUnit="Pixel">
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_It244mI-EeeA_85L4D0d1w"/>
+      </data>
+    </ownedAnnotationEntries>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_It2R0mI-EeeA_85L4D0d1w"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer"/>
+    <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@additionalLayers[name='Package']"/>
+    <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@additionalLayers[name='Validation']"/>
+    <target xmi:type="ecore:EPackage" href="pcmapsoptions.ecore#/"/>
+  </diagram:DSemanticDiagram>
+</xmi:XMI>

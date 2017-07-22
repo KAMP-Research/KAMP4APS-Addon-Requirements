@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="apsoptions" nsURI="http://toometa.de/apsoptions/0.1" nsPrefix="apsoptions">
+  <eClassifiers xsi:type="ecore:EClass" name="xPPU_Option" abstract="true" eSuperTypes="../../toometa.archoptions/model/archoptions.ecore#//ArchOption"/>
+  <eClassifiers xsi:type="ecore:EClass" name="xPPU_IntroduceNewComponent" eSuperTypes="#//xPPU_Option">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="components" upperBound="-1"
+        eType="ecore:EClass ../../xPPU/model/xPPU.ecore#//ComponentRepository/Component"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="xPPU_ChangeComponent" eSuperTypes="#//xPPU_Option">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="oldComponents" lowerBound="1"
+        upperBound="-1" eType="ecore:EClass ../../xPPU/model/xPPU.ecore#//ComponentRepository/Component"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="newComponents" upperBound="-1"
+        eType="ecore:EClass ../../xPPU/model/xPPU.ecore#//ComponentRepository/Component"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="xPPU_RemoveComponent" eSuperTypes="#//xPPU_Option">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="components" lowerBound="1"
+        upperBound="-1" eType="ecore:EClass ../../xPPU/model/xPPU.ecore#//ComponentRepository/Component"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="xPPU_IntroduceNewModule" eSuperTypes="#//xPPU_Option">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="modules" upperBound="-1"
+        eType="ecore:EClass ../../xPPU/model/xPPU.ecore#//ModuleRepository/Module"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="xPPU_ChangeModule" eSuperTypes="#//xPPU_Option">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="oldModules" lowerBound="1"
+        upperBound="-1" eType="ecore:EClass ../../xPPU/model/xPPU.ecore#//ModuleRepository/Module"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="newModules" upperBound="-1"
+        eType="ecore:EClass ../../xPPU/model/xPPU.ecore#//ModuleRepository/Module"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="xPPU_RemoveModule" eSuperTypes="#//xPPU_Option">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="modules" lowerBound="1"
+        upperBound="-1" eType="ecore:EClass ../../xPPU/model/xPPU.ecore#//ModuleRepository/Module"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="xPPU_IntroduceNewStructure" eSuperTypes="#//xPPU_Option">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="structures" upperBound="-1"
+        eType="ecore:EClass ../../xPPU/model/xPPU.ecore#//StructureRepository/Structure"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="xPPU_ChangeStructure" eSuperTypes="#//xPPU_Option">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="oldStructures" lowerBound="1"
+        upperBound="-1" eType="ecore:EClass ../../xPPU/model/xPPU.ecore#//StructureRepository/Structure"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="newStructures" upperBound="-1"
+        eType="ecore:EClass ../../xPPU/model/xPPU.ecore#//StructureRepository/Structure"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="xPPU_RemoveStructure" eSuperTypes="#//xPPU_Option">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="structures" lowerBound="1"
+        upperBound="-1" eType="ecore:EClass ../../xPPU/model/xPPU.ecore#//StructureRepository/Structure"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="xPPU_IntroduceNewInterface" eSuperTypes="#//xPPU_Option">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interfaces" upperBound="-1"
+        eType="ecore:EClass ../../xPPU/model/xPPU.ecore#//InterfaceRepository/Interface"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="xPPU_ChangeInterface" eSuperTypes="#//xPPU_Option">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="oldInterfaces" lowerBound="1"
+        upperBound="-1" eType="ecore:EClass ../../xPPU/model/xPPU.ecore#//InterfaceRepository/Interface"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="newInterfaces" upperBound="-1"
+        eType="ecore:EClass ../../xPPU/model/xPPU.ecore#//InterfaceRepository/Interface"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="xPPU_RemoveInterface" eSuperTypes="#//xPPU_Option">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interfaces" lowerBound="1"
+        upperBound="-1" eType="ecore:EClass ../../xPPU/model/xPPU.ecore#//InterfaceRepository/Interface"/>
+  </eClassifiers>
+</ecore:EPackage>
