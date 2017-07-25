@@ -32,13 +32,14 @@ import xPPU.ModuleRepository.Module;
 import xPPU.StructureRepository.Structure;
 
 /**
- * The change propagation analysis of KAMP+IntBIIS+Requirements:
+ * The change propagation analysis of KAMP4APS4Req:
  * <ol>
- * <li>determines a seed population of affected elements (architecture, business
- * processes, requirements)</li>
+ * <li>determines a seed population of affected components</li>
  * <li>calculates propagation</li>
  * <li>generates internal modification marks for affected elements</li>
  * </ol>
+ *
+ * @author Max Peters
  */
 public class APSReqChangePropagationAnalysis implements AbstractChangePropagationAnalysis<APSReqArchitectureVersion> {
 
@@ -50,6 +51,7 @@ public class APSReqChangePropagationAnalysis implements AbstractChangePropagatio
 	private Collection<Option> markedOptions;
 	private Collection<Requirement> markedRequirements;
 
+	// Inherited from KAMP4Req
 	@Override
 	public void runChangePropagationAnalysis(APSReqArchitectureVersion version) {
 
@@ -63,6 +65,7 @@ public class APSReqChangePropagationAnalysis implements AbstractChangePropagatio
 		getChangePropagationAnalysis().runChangePropagationAnalysis(version);
 	}
 
+	// Inherited from KAMP4Req
 	private void prepareAnalysis(APSReqArchitectureVersion version) {
 		setChangePropagationAnalysis(new ChangePropagationAnalysis());
 		setAPSReqChangePropagationDueToSpecificationDependencies(
@@ -74,6 +77,7 @@ public class APSReqChangePropagationAnalysis implements AbstractChangePropagatio
 		setMarkedOptions(ArchitectureModelLookup.lookUpMarkedObjectsOfAType(version, Option.class));
 	}
 
+	// Inherited from KAMP4Req, modified step 5 and 6
 	public void calculateRequirementsToArchitecturePropagation(APSReqArchitectureVersion version,
 			Map<EObject, AbstractModification<?, EObject>> elementsMarkedInThisStep) {
 		// 1 Requirement -> Requirement (depend)
@@ -82,22 +86,18 @@ public class APSReqChangePropagationAnalysis implements AbstractChangePropagatio
 		this.createAndAddRequirementModifications(requirementsToBeMarked, elementsMarkedInThisStep);
 		// 2 Requirement -> Decision/Option (trigger, resolve, couldResolve)
 		calculateAndMarkRequirementToDecisionAndOptionPropagation(elementsMarkedInThisStep);
-
 		// 3 Decision -> Decision (depend)
 		Map<Decision, Set<DependencyObject>> decisionsToBeMarked = APSReqArchitectureModelLookup
 				.lookUpObjectsDependOnObjects(getMarkedDecisions(), Decision.class);
 		this.createAndAddDecisionModifications(decisionsToBeMarked, elementsMarkedInThisStep);
-
 		// 4 Option -> Option (depend)
 		Map<Option, Set<DependencyObject>> optionsToBeMarked = APSReqArchitectureModelLookup
 				.lookUpObjectsDependOnObjects(getMarkedOptions(), Option.class);
 		this.createAndAddOptionModifications(optionsToBeMarked, elementsMarkedInThisStep);
-
 		// 5 Decision -> AutomatedProductionSystems
 		calculateAndMarkDecisionToAutomatedProductionSystemsPropagation(version, elementsMarkedInThisStep);
 		// 6 Option -> AutomatedProductionSystems
 		calculateAndMarkOptionToAutomatedProductionSystemsPropagation(version, elementsMarkedInThisStep);
-
 		// Remove step if it contains no element
 		if (getAPSReqChangePropagationDueToSpecificationDependencies().eContents().isEmpty()) {
 			version.getModificationMarkRepository().getChangePropagationSteps()
@@ -145,6 +145,7 @@ public class APSReqChangePropagationAnalysis implements AbstractChangePropagatio
 		createAndAddXPPUModuleModifications(modulesToBeMarked, elementsMarkedInThisStep);
 	}
 
+	// Inherited from KAMP4Req
 	protected void calculateAndMarkRequirementToDecisionAndOptionPropagation(
 			Map<EObject, AbstractModification<?, EObject>> elementsMarkedInThisStep) {
 		// I Requirement -> Decision (trigger, resolve, couldResolve)
@@ -167,6 +168,7 @@ public class APSReqChangePropagationAnalysis implements AbstractChangePropagatio
 		this.createAndAddOptionModifications(optionsToBeMarked, elementsMarkedInThisStep);
 	}
 
+	// Inherited from KAMP4Req
 	private <S extends EObject> void createAndAddDecisionModifications(Map<Decision, Set<S>> decisionsToBeMarked,
 			Map<EObject, AbstractModification<?, EObject>> elementsMarkedInThisStep) {
 		filterCircularCauses(decisionsToBeMarked, elementsMarkedInThisStep);
@@ -190,6 +192,7 @@ public class APSReqChangePropagationAnalysis implements AbstractChangePropagatio
 		}
 	}
 
+	// Inherited from KAMP4Req
 	private <S extends EObject> void createAndAddOptionModifications(Map<Option, Set<S>> optionsToBeMarked,
 			Map<EObject, AbstractModification<?, EObject>> elementsMarkedInThisStep) {
 		filterCircularCauses(optionsToBeMarked, elementsMarkedInThisStep);
@@ -211,6 +214,7 @@ public class APSReqChangePropagationAnalysis implements AbstractChangePropagatio
 		}
 	}
 
+	// Inherited from KAMP4Req
 	private <S extends EObject> void createAndAddRequirementModifications(
 			Map<Requirement, Set<S>> requirementsToBeMarked,
 			Map<EObject, AbstractModification<?, EObject>> elementsMarkedInThisStep) {
@@ -373,6 +377,7 @@ public class APSReqChangePropagationAnalysis implements AbstractChangePropagatio
 	 * element. If so, the cause is removed (and if there are no causes left,
 	 * then the whole entry).
 	 */
+	// Inherited from KAMP4Req
 	private static <S extends EObject, T extends TraceableObject> void filterCircularCauses(
 			Map<T, Set<S>> objectsToBeMarked, Map<EObject, AbstractModification<?, EObject>> elementsMarkedInThisStep) {
 		Map<T, Set<S>> circularMarks = new HashMap<T, Set<S>>();

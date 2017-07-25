@@ -34,7 +34,7 @@ import xPPU.ModuleRepository.Module;
 import xPPU.StructureRepository.Structure;
 
 public class APSReqArchitectureModelLookup {
-
+	// Inherited from KAMP4Req
 	public static Map<Decision, Set<CouldResolveObject>> lookUpDecisionsCouldBeResolvingResolveObjects(
 			Collection<? extends CouldResolveObject> objectsToBeResolved) {
 		Map<Decision, Set<CouldResolveObject>> results = new HashMap<Decision, Set<CouldResolveObject>>();
@@ -50,6 +50,7 @@ public class APSReqArchitectureModelLookup {
 		return results;
 	}
 
+	// Inherited from KAMP4Req
 	public static Map<Decision, Set<ResolveObject>> lookUpDecisionsResolvingResolveObjects(
 			Collection<? extends ResolveObject> objectsToBeResolved) {
 		Map<Decision, Set<ResolveObject>> results = new HashMap<Decision, Set<ResolveObject>>();
@@ -65,6 +66,7 @@ public class APSReqArchitectureModelLookup {
 		return results;
 	}
 
+	// Inherited from KAMP4Req
 	public static Map<Decision, Set<TriggerObject>> lookUpDecisionsTriggeredByTriggerObjects(
 			Collection<? extends TriggerObject> triggers) {
 		Map<Decision, Set<TriggerObject>> results = new HashMap<Decision, Set<TriggerObject>>();
@@ -88,6 +90,7 @@ public class APSReqArchitectureModelLookup {
 	 * objects are the keys.
 	 */
 	@SuppressWarnings("unchecked")
+	// Inherited from KAMP4Req
 	public static <T extends DependencyObject> Map<T, Set<DependencyObject>> lookUpObjectsAnotherObjectDependsOn(
 			Collection<? extends DependencyObject> targetDependencyObjects, Class<T> dependencyObjectClass) {
 		Map<T, Set<DependencyObject>> results = new HashMap<T, Set<DependencyObject>>();
@@ -118,6 +121,7 @@ public class APSReqArchitectureModelLookup {
 	 * keys.
 	 */
 	@SuppressWarnings("unchecked")
+	// Inherited from KAMP4Req
 	public static <T extends DependencyObject> Map<T, Set<DependencyObject>> lookUpObjectsDependOnObjects(
 			Collection<? extends DependencyObject> sourceDependencyObjects, Class<T> dependencyObjectsClass) {
 		Map<T, Set<DependencyObject>> results = new HashMap<T, Set<DependencyObject>>();
@@ -140,6 +144,7 @@ public class APSReqArchitectureModelLookup {
 		return results;
 	}
 
+	// Inherited from KAMP4Req
 	public static Map<Option, Set<CouldResolveObject>> lookUpOptionsCouldBeResolvingResolveObjects(
 			Collection<? extends CouldResolveObject> objectsToBeResolved) {
 		Map<Option, Set<CouldResolveObject>> results = new HashMap<Option, Set<CouldResolveObject>>();
@@ -155,6 +160,7 @@ public class APSReqArchitectureModelLookup {
 		return results;
 	}
 
+	// Inherited from KAMP4Req
 	public static Map<Option, Set<ResolveObject>> lookUpOptionsResolvingResolveObjects(
 			Collection<? extends ResolveObject> objectsToBeResolved) {
 		Map<Option, Set<ResolveObject>> results = new HashMap<Option, Set<ResolveObject>>();
@@ -170,6 +176,7 @@ public class APSReqArchitectureModelLookup {
 		return results;
 	}
 
+	// Inherited from KAMP4Req
 	public static Map<Option, Set<TriggerObject>> lookUpOptionsTriggeredByTriggerObjects(
 			Collection<? extends TriggerObject> triggers) {
 		Map<Option, Set<TriggerObject>> results = new HashMap<Option, Set<TriggerObject>>();
@@ -185,6 +192,7 @@ public class APSReqArchitectureModelLookup {
 		return results;
 	}
 
+	// Inherited from KAMP4Req
 	public static Map<Requirement, Set<TriggerObject>> lookUpRequirementsTriggeringTriggerObjects(
 			Collection<? extends TriggerObject> triggeredObjects) {
 		Map<Requirement, Set<TriggerObject>> results = new HashMap<Requirement, Set<TriggerObject>>();
@@ -244,7 +252,7 @@ public class APSReqArchitectureModelLookup {
 					for (Interface interfac : version.getXPPUPlant().getInterfaceRepository()
 							.getAllInterfacesInPlant()) {
 						if (interfac instanceof Interface
-								&& isInterfaceReferencedByOption(interfac, (Option) selection)) {
+								&& isXPPUInterfaceReferencedByOption(interfac, (Option) selection)) {
 							MapUtil.putOrAddToMap(results, interfac, decision);
 						}
 					}
@@ -261,7 +269,7 @@ public class APSReqArchitectureModelLookup {
 
 		for (Option option : options) {
 			for (Interface interfac : version.getXPPUPlant().getInterfaceRepository().getAllInterfacesInPlant()) {
-				if (interfac instanceof Interface && isInterfaceReferencedByOption(interfac, option)) {
+				if (interfac instanceof Interface && isXPPUInterfaceReferencedByOption(interfac, option)) {
 					MapUtil.putOrAddToMap(results, interfac, option);
 				}
 			}
@@ -338,7 +346,7 @@ public class APSReqArchitectureModelLookup {
 		return results;
 	}
 
-	private static boolean isInterfaceReferencedByChangeOption(Interface interfac, Option option) {
+	private static boolean isXPPUInterfaceReferencedByChangeOption(Interface interfac, Option option) {
 		if (option instanceof xPPU_ChangeInterface) {
 			xPPU_ChangeInterface xppuOption = (xPPU_ChangeInterface) option;
 			// consider only the old ones, not the new ones (forward
@@ -350,7 +358,7 @@ public class APSReqArchitectureModelLookup {
 		}
 	}
 
-	private static boolean isInterfaceReferencedByIntroduceOption(Interface interfac, Option option) {
+	private static boolean isXPPUInterfaceReferencedByIntroduceOption(Interface interfac, Option option) {
 		if (option instanceof xPPU_IntroduceNewInterface) {
 			xPPU_IntroduceNewInterface xppuOption = (xPPU_IntroduceNewInterface) option;
 			return xppuOption.getInterfaces().contains(interfac);
@@ -360,13 +368,13 @@ public class APSReqArchitectureModelLookup {
 		}
 	}
 
-	private static boolean isInterfaceReferencedByOption(Interface interfac, Option option) {
-		return isInterfaceReferencedByIntroduceOption(interfac, option)
-				|| isInterfaceReferencedByChangeOption(interfac, option)
-				|| isInterfaceReferencedByRemoveOption(interfac, option);
+	private static boolean isXPPUInterfaceReferencedByOption(Interface interfac, Option option) {
+		return isXPPUInterfaceReferencedByIntroduceOption(interfac, option)
+				|| isXPPUInterfaceReferencedByChangeOption(interfac, option)
+				|| isXPPUInterfaceReferencedByRemoveOption(interfac, option);
 	}
 
-	private static boolean isInterfaceReferencedByRemoveOption(Interface interfac, Option option) {
+	private static boolean isXPPUInterfaceReferencedByRemoveOption(Interface interfac, Option option) {
 		if (option instanceof xPPU_RemoveInterface) {
 			xPPU_RemoveInterface xppuOption = (xPPU_RemoveInterface) option;
 			return xppuOption.getInterfaces().contains(interfac);

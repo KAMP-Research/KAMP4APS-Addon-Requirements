@@ -24,4 +24,5 @@ Require-Bundle: toometa.decisions,
  org.eclipse.emf.compare,
  org.eclipse.jface;bundle-version="3.12.2",
  org.eclipse.ui;bundle-version="3.108.1",
- toometa.apsoptions
+ toometa.apsoptions,
+ edu.kit.ipd.sdq.kamp4aps4req
