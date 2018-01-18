@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="apsoptions" nsPrefix="">
+  <eClassifiers xsi:type="ecore:EClass" name="apsOption" abstract="true" eSuperTypes="../../toometa.archoptions/model/archoptions.ecore#//ArchOption"/>
+  <eClassifiers xsi:type="ecore:EClass" name="HardwareOption" abstract="true" eSuperTypes="#//apsOption"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StructureOption" abstract="true" eSuperTypes="#//HardwareOption"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InterfaceOption" abstract="true" eSuperTypes="#//HardwareOption"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ModuleOption" abstract="true" eSuperTypes="#//HardwareOption"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentOption" abstract="true" eSuperTypes="#//HardwareOption"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IntroduceNewStructure" eSuperTypes="#//StructureOption"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ChangeStructure" eSuperTypes="#//StructureOption"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RemoveStructure" eSuperTypes="#//StructureOption"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ReplaceStructure" eSuperTypes="#//StructureOption"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IntroduceNewInterface" eSuperTypes="#//InterfaceOption"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ChangeInterface" eSuperTypes="#//InterfaceOption"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RemoveInterface" eSuperTypes="#//InterfaceOption"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ReplaceInterface" eSuperTypes="#//InterfaceOption"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IntroduceNewModule" eSuperTypes="#//ModuleOption"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ChangeModule" eSuperTypes="#//ModuleOption"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RemoveModule" eSuperTypes="#//ModuleOption"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ReplaceModule" eSuperTypes="#//ModuleOption"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IntroduceNewComponent" eSuperTypes="#//ComponentOption"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RemoveComponent" eSuperTypes="#//ComponentOption"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ReplaceComponent" eSuperTypes="#//ComponentOption"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SoftwareOption" abstract="true" eSuperTypes="#//apsOption"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FunctionBlockOption" abstract="true"
+      eSuperTypes="#//SoftwareOption"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ProgramOption" abstract="true" eSuperTypes="#//SoftwareOption"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FunctionOption" abstract="true" eSuperTypes="#//SoftwareOption"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ChangeProgram" eSuperTypes="#//ProgramOption"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ReplaceProgram" eSuperTypes="#//ProgramOption"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IntroduceNewFunctionBlock" eSuperTypes="#//FunctionBlockOption"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RemoveFunctionBlock" eSuperTypes="#//FunctionBlockOption"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ChangeFunctionBlock" eSuperTypes="#//FunctionBlockOption"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IntroduceNewFunction" eSuperTypes="#//FunctionOption"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RemoveFunction" eSuperTypes="#//FunctionOption"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ChangeFunction" eSuperTypes="#//FunctionOption"/>
+</ecore:EPackage>

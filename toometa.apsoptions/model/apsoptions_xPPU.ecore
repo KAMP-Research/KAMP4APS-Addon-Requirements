@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="apsoptions_xPPU">
+  <eClassifiers xsi:type="ecore:EClass" name="AddSensor" eSuperTypes="apsoptions_new.ecore#//IntroduceNewComponent apsoptions_new.ecore#//ChangeFunction"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ReplaceRamp" eSuperTypes="apsoptions_new.ecore#//ReplaceStructure"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AddStampStructure" eSuperTypes="apsoptions_new.ecore#//IntroduceNewStructure"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ChangeMicroSwitchWithInductiveSensor"
+      eSuperTypes="apsoptions_new.ecore#//ReplaceComponent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AddRedundantSensor" eSuperTypes="apsoptions_new.ecore#//IntroduceNewComponent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IntroduceParallelProcessing" eSuperTypes="apsoptions_new.ecore#//ChangeFunctionBlock"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AddMechanicalBufferAndAdaptSoftware"
+      eSuperTypes="apsoptions_new.ecore#//IntroduceNewModule apsoptions_new.ecore#//ChangeFunction"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AddOpticalSensor" eSuperTypes="#//AddSensor"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AddValveAndPressureSensor" eSuperTypes="apsoptions_new.ecore#//IntroduceNewModule apsoptions_new.ecore#//ChangeFunctionBlock"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AddConveyor" eSuperTypes="apsoptions_new.ecore#//ReplaceStructure apsoptions_new.ecore#//ChangeFunctionBlock"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AddAdditionalRamps" eSuperTypes="apsoptions_new.ecore#//IntroduceNewComponent apsoptions_new.ecore#//ChangeFunctionBlock"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AddInductiveSensor" eSuperTypes="#//AddSensor"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ChangeConveyorWPSorting" eSuperTypes="apsoptions_new.ecore#//ChangeFunctionBlock"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ReplaceMicroSwitchesWithPotentiometer"
+      eSuperTypes="apsoptions_new.ecore#//ReplaceComponent"/>
+</ecore:EPackage>
