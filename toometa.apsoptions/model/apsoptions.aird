@@ -28,8 +28,8 @@
     <semanticResources>platform:/resource/de.uka.ipd.sdq.dsexplore.qml.dimensiontypes/model/dimensiontypes.genmodel</semanticResources>
     <semanticResources>platform:/resource/de.uka.ipd.sdq.dsexplore.qml.units/model/units.genmodel</semanticResources>
     <semanticResources>platform:/resource/xPPU/model/xPPU.old.genmodel</semanticResources>
-    <semanticResources>apsoptions_new.ecore</semanticResources>
     <semanticResources>apsoptions_xPPU.ecore</semanticResources>
+    <semanticResources>apsoptions.ecore</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" xmi:id="_IsBs4GI-EeeA_85L4D0d1w">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_It1qwGI-EeeA_85L4D0d1w" name="pcmapsoptions" repPath="#_It1qwWI-EeeA_85L4D0d1w">
