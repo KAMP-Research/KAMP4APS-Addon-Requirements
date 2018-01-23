@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description">
+  <viewpoint:DAnalysis xmi:id="_a3EQIAAiEeiFcqG65Mq3Ag" selectedViews="_a42_4AAiEeiFcqG65Mq3Ag" version="12.0.0.201704271200">
+    <semanticResources>apssoftwareoptions.ecore</semanticResources>
+    <semanticResources>apssoftwareoptions.genmodel</semanticResources>
+    <semanticResources>platform:/resource/toometa.apsoption/model/apsoption.ecore</semanticResources>
+    <semanticResources>platform:/resource/toometa.archoptions/model/archoptions.ecore</semanticResources>
+    <semanticResources>platform:/resource/edu.kit.ipd.sdq.kamp4aps4req.model.modifyoptions/model/modifyoptions.ecore</semanticResources>
+    <semanticResources>platform:/resource/toometa.options/model/options.ecore</semanticResources>
+    <semanticResources>platform:/resource/de.uka.ipd.sdq.identifier/model/identifier.ecore</semanticResources>
+    <semanticResources>platform:/resource/toometa.relations/model/relations.ecore</semanticResources>
+    <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
+    <semanticResources>platform:/resource/toometa.effects/model/effects.ecore</semanticResources>
+    <semanticResources>platform:/resource/toometa.glossary/model/glossary.ecore</semanticResources>
+    <semanticResources>http://www.eclipse.org/emf/2003/XMLType</semanticResources>
+    <semanticResources>platform:/resource/toometa.qualities/model/qualities.ecore</semanticResources>
+    <semanticResources>platform:/resource/de.uka.ipd.sdq.dsexplore.qml.dimensions/model/dimensions.ecore</semanticResources>
+    <semanticResources>platform:/resource/de.uka.ipd.sdq.namedelement/model/namedelement.ecore</semanticResources>
+    <semanticResources>platform:/resource/de.uka.ipd.sdq.dsexplore.qml.dimensiontypes/model/dimensiontypes.ecore</semanticResources>
+    <semanticResources>platform:/resource/de.uka.ipd.sdq.dsexplore.qml.units/model/units.ecore</semanticResources>
+    <ownedViews xmi:type="viewpoint:DView" xmi:id="_a42_4AAiEeiFcqG65Mq3Ag">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_a5SdtQAiEeiFcqG65Mq3Ag" name="apssoftwareoptions" repPath="#_a5SdsAAiEeiFcqG65Mq3Ag">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
+        <target xmi:type="ecore:EPackage" href="apssoftwareoptions.ecore#/"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+  </viewpoint:DAnalysis>
+  <diagram:DSemanticDiagram xmi:id="_a5SdsAAiEeiFcqG65Mq3Ag" name="apssoftwareoptions">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_a5SdsQAiEeiFcqG65Mq3Ag" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_a5SdsgAiEeiFcqG65Mq3Ag"/>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_a5TEwAAiEeiFcqG65Mq3Ag" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_a5TEwQAiEeiFcqG65Mq3Ag" type="Sirius" element="_a5SdsAAiEeiFcqG65Mq3Ag" measurementUnit="Pixel">
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_a5TEwgAiEeiFcqG65Mq3Ag"/>
+      </data>
+    </ownedAnnotationEntries>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_a5SdtAAiEeiFcqG65Mq3Ag"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer"/>
+    <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@additionalLayers[name='Package']"/>
+    <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@additionalLayers[name='Validation']"/>
+    <target xmi:type="ecore:EPackage" href="apssoftwareoptions.ecore#/"/>
+  </diagram:DSemanticDiagram>
+</xmi:XMI>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="apssoftwareoptions" nsURI="http://www.example.org/apssoftwareoptions"
+    nsPrefix="apssoftwareoptions">
+  <eClassifiers xsi:type="ecore:EClass" name="APSReqProgramOption" eSuperTypes="../../toometa.apsoption/model/apsoption.ecore#//APSReqSoftwareOption"/>
+  <eClassifiers xsi:type="ecore:EClass" name="APSReqFunctionOption" eSuperTypes="../../toometa.apsoption/model/apsoption.ecore#//APSReqSoftwareOption"/>
+  <eClassifiers xsi:type="ecore:EClass" name="APSReqFunctionBlockOption" eSuperTypes="../../toometa.apsoption/model/apsoption.ecore#//APSReqSoftwareOption"/>
+  <eClassifiers xsi:type="ecore:EClass" name="APSReqConfigurationOption" eSuperTypes="../../toometa.apsoption/model/apsoption.ecore#//APSReqSoftwareOption"/>
+  <eClassifiers xsi:type="ecore:EClass" name="APSReqGlobalVariableOption" eSuperTypes="../../toometa.apsoption/model/apsoption.ecore#//APSReqSoftwareOption"/>
+</ecore:EPackage>

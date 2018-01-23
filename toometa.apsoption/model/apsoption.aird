@@ -16,6 +16,11 @@
     <semanticResources>platform:/resource/de.uka.ipd.sdq.namedelement/model/namedelement.ecore</semanticResources>
     <semanticResources>platform:/resource/de.uka.ipd.sdq.dsexplore.qml.dimensiontypes/model/dimensiontypes.ecore</semanticResources>
     <semanticResources>platform:/resource/de.uka.ipd.sdq.dsexplore.qml.units/model/units.ecore</semanticResources>
+    <semanticResources>platform:/resource/edu.kit.ipd.sdq.kamp4aps4req.model.modifications/model/modifications.ecore</semanticResources>
+    <semanticResources>platform:/resource/edu.kit.ipd.sdq.kamp.model.modificationmarks/model/Modificationmarks.ecore</semanticResources>
+    <semanticResources>platform:/resource/toometa.requirements/model/requirements.ecore</semanticResources>
+    <semanticResources>platform:/resource/toometa.decisions/model/decisions.ecore</semanticResources>
+    <semanticResources>platform:/resource/edu.kit.ipd.sdq.kamp4aps4req.model.modifyoptions/model/modifyoptions.ecore</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" xmi:id="_1ArP0P9-EeeFcqG65Mq3Ag">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_1BGtpf9-EeeFcqG65Mq3Ag" name="apsoption" repPath="#_1BGtoP9-EeeFcqG65Mq3Ag">
@@ -143,6 +148,10 @@
             <children xmi:type="notation:Node" xmi:id="_oOFU0P-DEeeFcqG65Mq3Ag" type="3010" element="_oL-cAP-DEeeFcqG65Mq3Ag">
               <styles xmi:type="notation:FontStyle" xmi:id="_oOFU0f-DEeeFcqG65Mq3Ag" fontColor="8224125" fontName=".SF NS Text" fontHeight="8" italic="true"/>
               <layoutConstraint xmi:type="notation:Location" xmi:id="_oOFU0v-DEeeFcqG65Mq3Ag"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_HN5msP-qEeeFcqG65Mq3Ag" type="3010" element="_HNYpUP-qEeeFcqG65Mq3Ag">
+              <styles xmi:type="notation:FontStyle" xmi:id="_HN5msf-qEeeFcqG65Mq3Ag" fontName=".SF NS Text" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_HN5msv-qEeeFcqG65Mq3Ag"/>
             </children>
             <styles xmi:type="notation:SortingStyle" xmi:id="_oN5Hkv-DEeeFcqG65Mq3Ag"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_oN5Hk_-DEeeFcqG65Mq3Ag"/>
@@ -1681,6 +1690,14 @@
         <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_oL-cAf-DEeeFcqG65Mq3Ag" labelColor="125,125,125" labelAlignment="LEFT">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@conditionnalStyles.0/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_HNYpUP-qEeeFcqG65Mq3Ag" name=" modification : APSReqAbstractModification" tooltipText="">
+        <target xmi:type="ecore:EReference" href="apsoption.ecore#//APSReqOption/modification"/>
+        <semanticElements xmi:type="ecore:EReference" href="apsoption.ecore#//APSReqOption/modification"/>
+        <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_YPP1kP-vEeeFcqG65Mq3Ag" labelAlignment="LEFT" color="114,159,207">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EReferenceNode']"/>
       </ownedElements>

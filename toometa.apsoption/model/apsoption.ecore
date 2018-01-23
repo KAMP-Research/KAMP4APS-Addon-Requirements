@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="apsoption" nsURI="http://www.example.org/apsoption" nsPrefix="apsoption">
-  <eClassifiers xsi:type="ecore:EClass" name="APSReqOption" abstract="true" eSuperTypes="../../toometa.archoptions/model/archoptions.ecore#//ArchOption"/>
+  <eClassifiers xsi:type="ecore:EClass" name="APSReqOption" abstract="true" eSuperTypes="../../toometa.archoptions/model/archoptions.ecore#//ArchOption">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="modification" eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4aps4req.model.modifyoptions/model/modifyoptions.ecore#//APSReqAbstractModification"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="APSReqHardwareOption" abstract="true"
       eSuperTypes="#//APSReqOption"/>
   <eClassifiers xsi:type="ecore:EClass" name="APSReqSoftwareOption" abstract="true"
       eSuperTypes="#//APSReqOption"/>
-  <eClassifiers xsi:type="ecore:EClass" name="APSReqStructureOption" eSuperTypes="#//APSReqHardwareOption"/>
-  <eClassifiers xsi:type="ecore:EClass" name="APSReqModuleOption" eSuperTypes="#//APSReqHardwareOption"/>
-  <eClassifiers xsi:type="ecore:EClass" name="APSReqInterfaceOption" eSuperTypes="#//APSReqHardwareOption"/>
-  <eClassifiers xsi:type="ecore:EClass" name="APSReqComponentOption" eSuperTypes="#//APSReqHardwareOption"/>
-  <eClassifiers xsi:type="ecore:EClass" name="APSReqFunctionBlockOption" eSuperTypes="#//APSReqSoftwareOption"/>
-  <eClassifiers xsi:type="ecore:EClass" name="APSReqFunctionOption" eSuperTypes="#//APSReqSoftwareOption"/>
-  <eClassifiers xsi:type="ecore:EClass" name="APSReqProgramOption" eSuperTypes="#//APSReqSoftwareOption"/>
-  <eClassifiers xsi:type="ecore:EClass" name="APSReqGlobalVariableOption" eSuperTypes="#//APSReqSoftwareOption"/>
 </ecore:EPackage>
