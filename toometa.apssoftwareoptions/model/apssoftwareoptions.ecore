@@ -2,9 +2,27 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="apssoftwareoptions" nsURI="http://www.example.org/apssoftwareoptions"
     nsPrefix="apssoftwareoptions">
-  <eClassifiers xsi:type="ecore:EClass" name="APSReqProgramOption" eSuperTypes="../../toometa.apsoption/model/apsoption.ecore#//APSReqSoftwareOption"/>
-  <eClassifiers xsi:type="ecore:EClass" name="APSReqFunctionOption" eSuperTypes="../../toometa.apsoption/model/apsoption.ecore#//APSReqSoftwareOption"/>
-  <eClassifiers xsi:type="ecore:EClass" name="APSReqFunctionBlockOption" eSuperTypes="../../toometa.apsoption/model/apsoption.ecore#//APSReqSoftwareOption"/>
-  <eClassifiers xsi:type="ecore:EClass" name="APSReqConfigurationOption" eSuperTypes="../../toometa.apsoption/model/apsoption.ecore#//APSReqSoftwareOption"/>
-  <eClassifiers xsi:type="ecore:EClass" name="APSReqGlobalVariableOption" eSuperTypes="../../toometa.apsoption/model/apsoption.ecore#//APSReqSoftwareOption"/>
+  <eClassifiers xsi:type="ecore:EClass" name="APSReqProgramOption" eSuperTypes="../../toometa.apsoption/model/apsoption.ecore#//APSReqSoftwareOption">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Program" eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4iec.model/model/IECModel.ecore#//Program"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="replaceProgram" eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4iec.model/model/IECModel.ecore#//Program"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="APSReqFunctionOption" eSuperTypes="../../toometa.apsoption/model/apsoption.ecore#//APSReqSoftwareOption">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="function" upperBound="-1"
+        eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4iec.model.repo/model/IECRepository.ecore#//Function"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="replaceFunction" eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4iec.model.repo/model/IECRepository.ecore#//Function"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="APSReqFunctionBlockOption" eSuperTypes="../../toometa.apsoption/model/apsoption.ecore#//APSReqSoftwareOption">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="functionBlock" upperBound="-1"
+        eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4iec.model.repo/model/IECRepository.ecore#//FunctionBlock"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="replaceFB" eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4iec.model.repo/model/IECRepository.ecore#//FunctionBlock"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="APSReqConfigurationOption" eSuperTypes="../../toometa.apsoption/model/apsoption.ecore#//APSReqSoftwareOption">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="config" eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4iec.model/model/IECModel.ecore#//Configuration"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="replaceConfig" eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4iec.model/model/IECModel.ecore#//Configuration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="APSReqGlobalVariableOption" eSuperTypes="../../toometa.apsoption/model/apsoption.ecore#//APSReqSoftwareOption">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="globalVar" upperBound="-1"
+        eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4iec.model.repo/model/IECRepository.ecore#//GlobalVariable"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="replaceGlobalVar" eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4iec.model.repo/model/IECRepository.ecore#//GlobalVariable"/>
+  </eClassifiers>
 </ecore:EPackage>

@@ -18,6 +18,8 @@
     <semanticResources>platform:/resource/de.uka.ipd.sdq.namedelement/model/namedelement.ecore</semanticResources>
     <semanticResources>platform:/resource/de.uka.ipd.sdq.dsexplore.qml.dimensiontypes/model/dimensiontypes.ecore</semanticResources>
     <semanticResources>platform:/resource/de.uka.ipd.sdq.dsexplore.qml.units/model/units.ecore</semanticResources>
+    <semanticResources>platform:/resource/edu.kit.ipd.sdq.kamp4iec.model/model/IECModel.ecore</semanticResources>
+    <semanticResources>platform:/resource/edu.kit.ipd.sdq.kamp4iec.model.repo/model/IECRepository.ecore</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" xmi:id="_a42_4AAiEeiFcqG65Mq3Ag">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_a5SdtQAiEeiFcqG65Mq3Ag" name="apssoftwareoptions" repPath="#_a5SdsAAiEeiFcqG65Mq3Ag">
