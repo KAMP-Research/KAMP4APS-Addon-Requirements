@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: KAMP4APS4Req Core
-Bundle-SymbolicName: edu.kit.ipd.sdq.kamp4aps4req;singleton:=true
+Bundle-SymbolicName: edu.kit.ipd.sdq.kamp4aps4req_old;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: edu.kit.ipd.sdq.kamp4aps.activator.Activator
 Bundle-ActivationPolicy: lazy
@@ -20,7 +20,7 @@ Require-Bundle: toometa.decisions,
  edu.kit.ipd.sdq.kamp4aps.model.modificationmarks,
  edu.kit.ipd.sdq.kamp4aps.model.fieldofactivityannotations,
  org.eclipse.core.resources,
- edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks,
+ edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_old,
  org.eclipse.emf.compare,
  org.eclipse.jface;bundle-version="3.12.2",
  org.eclipse.ui;bundle-version="3.108.1",
