@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software
+Bundle-SymbolicName: edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software; singleton:=true
+Bundle-Version: 0.1.0.qualifier
+Require-Bundle: org.eclipse.emf.ecore
