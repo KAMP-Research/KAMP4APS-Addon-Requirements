@@ -1,17 +1,15 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks;singleton:=true
-Bundle-Version: 0.1.0.qualifier
+Bundle-SymbolicName: edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.tests;singleton:=true
+Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: modificationmarks,
- modificationmarks.impl,
- modificationmarks.util
+Export-Package: modificationmarks.tests
 Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.emf.ecore;visibility:=reexport,
+ edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks;visibility:=reexport,
  toometa.decisions;visibility:=reexport,
  de.uka.ipd.sdq.dsexplore.qml.dimensions;visibility:=reexport,
  de.uka.ipd.sdq.dsexplore.qml.dimensiontypes;visibility:=reexport,
@@ -24,5 +22,7 @@ Require-Bundle: org.eclipse.core.runtime,
  toometa.qualities;visibility:=reexport,
  toometa.relations;visibility:=reexport,
  toometa.requirements;visibility:=reexport,
- de.uka.ipd.sdq.dsexplore.qml.units;visibility:=reexport
+ de.uka.ipd.sdq.dsexplore.qml.units;visibility:=reexport,
+ org.eclipse.emf.ecore.xmi;visibility:=reexport,
+ org.junit;visibility:=reexport
 Bundle-ActivationPolicy: lazy
