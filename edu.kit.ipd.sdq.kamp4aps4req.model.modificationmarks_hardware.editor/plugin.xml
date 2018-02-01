@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated modificationmarks_hardware -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="modificationmarks_hardware.presentation.Modificationmarks_hardwareModelWizardID"
+            name="%_UI_Modificationmarks_hardwareModelWizard_label"
+            class="modificationmarks_hardware.presentation.Modificationmarks_hardwareModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/Modificationmarks_hardwareModelFile.gif">
+         <description>%_UI_Modificationmarks_hardwareModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated modificationmarks_hardware -->
+      <editor
+            id="modificationmarks_hardware.presentation.Modificationmarks_hardwareEditorID"
+            name="%_UI_Modificationmarks_hardwareEditor_label"
+            icon="icons/full/obj16/Modificationmarks_hardwareModelFile.gif"
+            extensions="modificationmarks_hardware"
+            class="modificationmarks_hardware.presentation.Modificationmarks_hardwareEditor"
+            contributorClass="modificationmarks_hardware.presentation.Modificationmarks_hardwareActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

@@ -29,20 +29,28 @@
   <eClassifiers xsi:type="ecore:EClass" name="AbstractKAMP4aPS4ReqModificationRepository"
       abstract="true">
     <eTypeParameters name="T">
-      <eBounds eClassifier="#//APSReqSeedModifications"/>
+      <eBounds eClassifier="ecore:EClass ../../edu.kit.ipd.sdq.kamp.model.modificationmarks/model/Modificationmarks.ecore#//AbstractSeedModifications"/>
     </eTypeParameters>
     <eGenericSuperTypes eClassifier="ecore:EClass ../../edu.kit.ipd.sdq.kamp.model.modificationmarks/model/Modificationmarks.ecore#//AbstractModificationRepository">
       <eTypeArguments eTypeParameter="#//AbstractKAMP4aPS4ReqModificationRepository/T"/>
       <eTypeArguments eClassifier="ecore:EClass ../../edu.kit.ipd.sdq.kamp.model.modificationmarks/model/Modificationmarks.ecore#//ChangePropagationStep"/>
     </eGenericSuperTypes>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="APSReqSeedModifications" eSuperTypes="../../edu.kit.ipd.sdq.kamp.model.modificationmarks/model/Modificationmarks.ecore#//AbstractSeedModifications">
+  <eClassifiers xsi:type="ecore:EClass" name="APSReqSeedModifications" abstract="true"
+      eSuperTypes="../../edu.kit.ipd.sdq.kamp.model.modificationmarks/model/Modificationmarks.ecore#//AbstractSeedModifications">
+    <eTypeParameters name="T">
+      <eBounds eClassifier="ecore:EClass ../../edu.kit.ipd.sdq.kamp.model.modificationmarks/model/Modificationmarks.ecore#//AbstractSeedModifications"/>
+    </eTypeParameters>
     <eStructuralFeatures xsi:type="ecore:EReference" name="requirementModifications"
         upperBound="-1" eType="#//APSReqModifyRequirement" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="decisionModifications"
         upperBound="-1" eType="#//APSReqModifyDecision" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="optionModifications" upperBound="-1"
         eType="#//APSReqModifyOption" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="apsiecSeedModifications"
+        upperBound="-1" containment="true">
+      <eGenericType eTypeParameter="#//APSReqSeedModifications/T"/>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="APSReqChangePropagationDueToSpecificationDependencies"
       eSuperTypes="../../edu.kit.ipd.sdq.kamp.model.modificationmarks/model/Modificationmarks.ecore#//ChangePropagationStep">

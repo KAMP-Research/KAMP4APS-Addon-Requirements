@@ -59,7 +59,6 @@ public class ModificationmarksFactoryImpl extends EFactoryImpl implements Modifi
 			case ModificationmarksPackage.APS_REQ_MODIFY_REQUIREMENT: return createAPSReqModifyRequirement();
 			case ModificationmarksPackage.APS_REQ_MODIFY_DECISION: return createAPSReqModifyDecision();
 			case ModificationmarksPackage.APS_REQ_MODIFY_OPTION: return createAPSReqModifyOption();
-			case ModificationmarksPackage.APS_REQ_SEED_MODIFICATIONS: return createAPSReqSeedModifications();
 			case ModificationmarksPackage.APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES: return createAPSReqChangePropagationDueToSpecificationDependencies();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -94,16 +93,6 @@ public class ModificationmarksFactoryImpl extends EFactoryImpl implements Modifi
 	public APSReqModifyOption createAPSReqModifyOption() {
 		APSReqModifyOptionImpl apsReqModifyOption = new APSReqModifyOptionImpl();
 		return apsReqModifyOption;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public APSReqSeedModifications createAPSReqSeedModifications() {
-		APSReqSeedModificationsImpl apsReqSeedModifications = new APSReqSeedModificationsImpl();
-		return apsReqSeedModifications;
 	}
 
 	/**

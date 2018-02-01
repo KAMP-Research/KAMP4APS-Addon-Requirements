@@ -141,29 +141,6 @@ public class ModificationmarksItemProviderAdapterFactory extends Modificationmar
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link modificationmarks.APSReqSeedModifications} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected APSReqSeedModificationsItemProvider apsReqSeedModificationsItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link modificationmarks.APSReqSeedModifications}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createAPSReqSeedModificationsAdapter() {
-		if (apsReqSeedModificationsItemProvider == null) {
-			apsReqSeedModificationsItemProvider = new APSReqSeedModificationsItemProvider(this);
-		}
-
-		return apsReqSeedModificationsItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link modificationmarks.APSReqChangePropagationDueToSpecificationDependencies} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -288,7 +265,6 @@ public class ModificationmarksItemProviderAdapterFactory extends Modificationmar
 		if (apsReqModifyRequirementItemProvider != null) apsReqModifyRequirementItemProvider.dispose();
 		if (apsReqModifyDecisionItemProvider != null) apsReqModifyDecisionItemProvider.dispose();
 		if (apsReqModifyOptionItemProvider != null) apsReqModifyOptionItemProvider.dispose();
-		if (apsReqSeedModificationsItemProvider != null) apsReqSeedModificationsItemProvider.dispose();
 		if (apsReqChangePropagationDueToSpecificationDependenciesItemProvider != null) apsReqChangePropagationDueToSpecificationDependenciesItemProvider.dispose();
 	}
 

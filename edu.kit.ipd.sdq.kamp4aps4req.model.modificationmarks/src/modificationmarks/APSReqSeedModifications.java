@@ -18,13 +18,14 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link modificationmarks.APSReqSeedModifications#getRequirementModifications <em>Requirement Modifications</em>}</li>
  *   <li>{@link modificationmarks.APSReqSeedModifications#getDecisionModifications <em>Decision Modifications</em>}</li>
  *   <li>{@link modificationmarks.APSReqSeedModifications#getOptionModifications <em>Option Modifications</em>}</li>
+ *   <li>{@link modificationmarks.APSReqSeedModifications#getApsiecSeedModifications <em>Apsiec Seed Modifications</em>}</li>
  * </ul>
  *
  * @see modificationmarks.ModificationmarksPackage#getAPSReqSeedModifications()
- * @model
+ * @model abstract="true"
  * @generated
  */
-public interface APSReqSeedModifications extends AbstractSeedModifications {
+public interface APSReqSeedModifications<T extends AbstractSeedModifications> extends AbstractSeedModifications {
 	/**
 	 * Returns the value of the '<em><b>Requirement Modifications</b></em>' containment reference list.
 	 * The list contents are of type {@link modificationmarks.APSReqModifyRequirement}.
@@ -72,5 +73,20 @@ public interface APSReqSeedModifications extends AbstractSeedModifications {
 	 * @generated
 	 */
 	EList<APSReqModifyOption> getOptionModifications();
+
+	/**
+	 * Returns the value of the '<em><b>Apsiec Seed Modifications</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Apsiec Seed Modifications</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Apsiec Seed Modifications</em>' containment reference list.
+	 * @see modificationmarks.ModificationmarksPackage#getAPSReqSeedModifications_ApsiecSeedModifications()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<T> getApsiecSeedModifications();
 
 } // APSReqSeedModifications

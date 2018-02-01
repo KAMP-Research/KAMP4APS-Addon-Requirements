@@ -237,6 +237,15 @@ public class ModificationmarksPackageImpl extends EPackageImpl implements Modifi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getAPSReqSeedModifications_ApsiecSeedModifications() {
+		return (EReference)apsReqSeedModificationsEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getAPSReqChangePropagationDueToSpecificationDependencies() {
 		return apsReqChangePropagationDueToSpecificationDependenciesEClass;
 	}
@@ -310,6 +319,7 @@ public class ModificationmarksPackageImpl extends EPackageImpl implements Modifi
 		createEReference(apsReqSeedModificationsEClass, APS_REQ_SEED_MODIFICATIONS__REQUIREMENT_MODIFICATIONS);
 		createEReference(apsReqSeedModificationsEClass, APS_REQ_SEED_MODIFICATIONS__DECISION_MODIFICATIONS);
 		createEReference(apsReqSeedModificationsEClass, APS_REQ_SEED_MODIFICATIONS__OPTION_MODIFICATIONS);
+		createEReference(apsReqSeedModificationsEClass, APS_REQ_SEED_MODIFICATIONS__APSIEC_SEED_MODIFICATIONS);
 
 		apsReqChangePropagationDueToSpecificationDependenciesEClass = createEClass(APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES);
 		createEReference(apsReqChangePropagationDueToSpecificationDependenciesEClass, APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__DECISION_MODIFICATIONS);
@@ -350,12 +360,15 @@ public class ModificationmarksPackageImpl extends EPackageImpl implements Modifi
 		// Create type parameters
 		ETypeParameter apsReqModifyTraceableObjectEClass_T = addETypeParameter(apsReqModifyTraceableObjectEClass, "T");
 		ETypeParameter abstractKAMP4aPS4ReqModificationRepositoryEClass_T = addETypeParameter(abstractKAMP4aPS4ReqModificationRepositoryEClass, "T");
+		ETypeParameter apsReqSeedModificationsEClass_T = addETypeParameter(apsReqSeedModificationsEClass, "T");
 
 		// Set bounds for type parameters
 		EGenericType g1 = createEGenericType(theRelationsPackage.getTraceableObject());
 		apsReqModifyTraceableObjectEClass_T.getEBounds().add(g1);
-		g1 = createEGenericType(this.getAPSReqSeedModifications());
+		g1 = createEGenericType(theModificationmarksPackage_1.getAbstractSeedModifications());
 		abstractKAMP4aPS4ReqModificationRepositoryEClass_T.getEBounds().add(g1);
+		g1 = createEGenericType(theModificationmarksPackage_1.getAbstractSeedModifications());
+		apsReqSeedModificationsEClass_T.getEBounds().add(g1);
 
 		// Add supertypes to classes
 		g1 = createEGenericType(theModificationmarksPackage_1.getAbstractModification());
@@ -396,10 +409,12 @@ public class ModificationmarksPackageImpl extends EPackageImpl implements Modifi
 
 		initEClass(abstractKAMP4aPS4ReqModificationRepositoryEClass, AbstractKAMP4aPS4ReqModificationRepository.class, "AbstractKAMP4aPS4ReqModificationRepository", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(apsReqSeedModificationsEClass, APSReqSeedModifications.class, "APSReqSeedModifications", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(apsReqSeedModificationsEClass, APSReqSeedModifications.class, "APSReqSeedModifications", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAPSReqSeedModifications_RequirementModifications(), this.getAPSReqModifyRequirement(), null, "requirementModifications", null, 0, -1, APSReqSeedModifications.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAPSReqSeedModifications_DecisionModifications(), this.getAPSReqModifyDecision(), null, "decisionModifications", null, 0, -1, APSReqSeedModifications.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAPSReqSeedModifications_OptionModifications(), this.getAPSReqModifyOption(), null, "optionModifications", null, 0, -1, APSReqSeedModifications.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		g1 = createEGenericType(apsReqSeedModificationsEClass_T);
+		initEReference(getAPSReqSeedModifications_ApsiecSeedModifications(), g1, null, "apsiecSeedModifications", null, 0, -1, APSReqSeedModifications.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(apsReqChangePropagationDueToSpecificationDependenciesEClass, APSReqChangePropagationDueToSpecificationDependencies.class, "APSReqChangePropagationDueToSpecificationDependencies", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAPSReqChangePropagationDueToSpecificationDependencies_DecisionModifications(), this.getAPSReqModifyDecision(), null, "decisionModifications", null, 0, -1, APSReqChangePropagationDueToSpecificationDependencies.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

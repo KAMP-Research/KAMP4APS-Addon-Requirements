@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated modificationmarks_software -->
+      <package
+            uri="http://www.example.org/modificationmarks_software"
+            class="modificationmarks_software.Modificationmarks_softwarePackage"
+            genModel="model/modificationmarks_software.genmodel"/>
+   </extension>
+
+</plugin>

@@ -3,6 +3,7 @@
 package modificationmarks;
 
 import edu.kit.ipd.sdq.kamp.model.modificationmarks.AbstractModificationRepository;
+import edu.kit.ipd.sdq.kamp.model.modificationmarks.AbstractSeedModifications;
 import edu.kit.ipd.sdq.kamp.model.modificationmarks.ChangePropagationStep;
 
 /**
@@ -15,5 +16,5 @@ import edu.kit.ipd.sdq.kamp.model.modificationmarks.ChangePropagationStep;
  * @model abstract="true"
  * @generated
  */
-public interface AbstractKAMP4aPS4ReqModificationRepository<T extends APSReqSeedModifications> extends AbstractModificationRepository<T, ChangePropagationStep> {
+public interface AbstractKAMP4aPS4ReqModificationRepository<T extends AbstractSeedModifications> extends AbstractModificationRepository<T, ChangePropagationStep> {
 } // AbstractKAMP4aPS4ReqModificationRepository

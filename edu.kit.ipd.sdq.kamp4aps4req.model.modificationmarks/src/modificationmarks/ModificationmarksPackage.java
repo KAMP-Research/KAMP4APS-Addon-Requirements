@@ -431,13 +431,22 @@ public interface ModificationmarksPackage extends EPackage {
 	int APS_REQ_SEED_MODIFICATIONS__OPTION_MODIFICATIONS = edu.kit.ipd.sdq.kamp.model.modificationmarks.ModificationmarksPackage.ABSTRACT_SEED_MODIFICATIONS_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Apsiec Seed Modifications</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APS_REQ_SEED_MODIFICATIONS__APSIEC_SEED_MODIFICATIONS = edu.kit.ipd.sdq.kamp.model.modificationmarks.ModificationmarksPackage.ABSTRACT_SEED_MODIFICATIONS_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>APS Req Seed Modifications</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int APS_REQ_SEED_MODIFICATIONS_FEATURE_COUNT = edu.kit.ipd.sdq.kamp.model.modificationmarks.ModificationmarksPackage.ABSTRACT_SEED_MODIFICATIONS_FEATURE_COUNT + 3;
+	int APS_REQ_SEED_MODIFICATIONS_FEATURE_COUNT = edu.kit.ipd.sdq.kamp.model.modificationmarks.ModificationmarksPackage.ABSTRACT_SEED_MODIFICATIONS_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>APS Req Seed Modifications</em>' class.
@@ -598,6 +607,17 @@ public interface ModificationmarksPackage extends EPackage {
 	EReference getAPSReqSeedModifications_OptionModifications();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link modificationmarks.APSReqSeedModifications#getApsiecSeedModifications <em>Apsiec Seed Modifications</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Apsiec Seed Modifications</em>'.
+	 * @see modificationmarks.APSReqSeedModifications#getApsiecSeedModifications()
+	 * @see #getAPSReqSeedModifications()
+	 * @generated
+	 */
+	EReference getAPSReqSeedModifications_ApsiecSeedModifications();
+
+	/**
 	 * Returns the meta object for class '{@link modificationmarks.APSReqChangePropagationDueToSpecificationDependencies <em>APS Req Change Propagation Due To Specification Dependencies</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -746,6 +766,14 @@ public interface ModificationmarksPackage extends EPackage {
 		 * @generated
 		 */
 		EReference APS_REQ_SEED_MODIFICATIONS__OPTION_MODIFICATIONS = eINSTANCE.getAPSReqSeedModifications_OptionModifications();
+
+		/**
+		 * The meta object literal for the '<em><b>Apsiec Seed Modifications</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference APS_REQ_SEED_MODIFICATIONS__APSIEC_SEED_MODIFICATIONS = eINSTANCE.getAPSReqSeedModifications_ApsiecSeedModifications();
 
 		/**
 		 * The meta object literal for the '{@link modificationmarks.impl.APSReqChangePropagationDueToSpecificationDependenciesImpl <em>APS Req Change Propagation Due To Specification Dependencies</em>}' class.

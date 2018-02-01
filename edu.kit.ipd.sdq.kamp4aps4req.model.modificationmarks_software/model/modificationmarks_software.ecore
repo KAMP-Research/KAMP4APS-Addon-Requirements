@@ -2,10 +2,16 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="modificationmarks_software" nsURI="http://www.example.org/modificationmarks_software"
     nsPrefix="modificationmarks_software">
-  <eClassifiers xsi:type="ecore:EClass" name="APSReqSoftwareSeedModifications" eSuperTypes="../../edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks/model/modificationmarks.ecore#//APSReqSeedModifications ../../edu.kit.ipd.sdq.kamp4iec.model.modificationmarks/model/IECModificationmarks.ecore#//IECSeedModifications"/>
+  <eClassifiers xsi:type="ecore:EClass" name="APSReqSoftwareSeedModifications">
+    <eGenericSuperTypes eClassifier="ecore:EClass ../../edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks/model/modificationmarks.ecore#//APSReqSeedModifications">
+      <eTypeArguments eClassifier="ecore:EClass ../../edu.kit.ipd.sdq.kamp4iec.model.modificationmarks/model/IECModificationmarks.ecore#//IECSeedModifications"/>
+    </eGenericSuperTypes>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="APSReqSoftwareModificationRepository">
     <eGenericSuperTypes eClassifier="ecore:EClass ../../edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks/model/modificationmarks.ecore#//AbstractKAMP4aPS4ReqModificationRepository">
-      <eTypeArguments eClassifier="#//APSReqSoftwareSeedModifications"/>
+      <eTypeArguments eClassifier="ecore:EClass ../../edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks/model/modificationmarks.ecore#//APSReqSeedModifications">
+        <eTypeArguments eClassifier="ecore:EClass ../../edu.kit.ipd.sdq.kamp4iec.model.modificationmarks/model/IECModificationmarks.ecore#//IECSeedModifications"/>
+      </eTypeArguments>
     </eGenericSuperTypes>
   </eClassifiers>
 </ecore:EPackage>

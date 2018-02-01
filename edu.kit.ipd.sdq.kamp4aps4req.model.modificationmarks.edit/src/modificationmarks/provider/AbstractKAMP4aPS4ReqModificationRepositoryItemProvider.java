@@ -89,11 +89,6 @@ public class AbstractKAMP4aPS4ReqModificationRepositoryItemProvider extends Abst
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ModificationmarksPackage.Literals.ABSTRACT_MODIFICATION_REPOSITORY__SEED_MODIFICATIONS,
-				 ModificationmarksFactory.eINSTANCE.createAPSReqSeedModifications()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(ModificationmarksPackage.Literals.ABSTRACT_MODIFICATION_REPOSITORY__CHANGE_PROPAGATION_STEPS,
 				 ModificationmarksFactory.eINSTANCE.createAPSReqChangePropagationDueToSpecificationDependencies()));
 	}
