@@ -1,17 +1,16 @@
 package edu.kit.ipd.sdq.kamp4aps4req.core;
 
 import edu.kit.ipd.sdq.kamp.architecture.AbstractArchitectureVersion;
-import modificationmarks.AbstractKAMP4aPS4ReqModificationRepository;
+import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.AbstractKAMP4aPS4ReqModificationRepository;
 import decisions.DecisionRepository;
 import decisions.DecisionsFactory;
 import requirements.ReqRepository;
 import requirements.RequirementsFactory;
 import options.OptionRepository;
 import options.OptionsFactory;
-import edu.kit.ipd.sdq.kamp.model.modificationmarks.AbstractSeedModifications;
 
 /**
- * Class representing an @code{APSReqArchitectureVersion}
+ * Class representing an @code{APSReqArchitectureVersion}. Super class of the software and hardware parts
  * @author Timo Maier
  *
  */
@@ -29,14 +28,44 @@ public class APSReqArchitectureVersion extends AbstractArchitectureVersion<Abstr
 			if (requirementsRepository == null) {
 				requirementsRepository = RequirementsFactory.eINSTANCE.createReqRepository();
 			}
-			this.requirementsRepository = requirementsRepository;
+			this.setRequirementsRepository(requirementsRepository);
 			if (decisionRepository == null) {
 				decisionRepository = DecisionsFactory.eINSTANCE.createDecisionRepository();
 			}
-			this.decisionRepository = decisionRepository;
+			this.setDecisionRepository(decisionRepository);
 			if (optionRepository == null) {
 				optionRepository = OptionsFactory.eINSTANCE.createOptionRepository();
 			}
+			this.setOptionRepository(optionRepository);
+		}
+
+
+		public ReqRepository getRequirementsRepository() {
+			return requirementsRepository;
+		}
+
+
+		public void setRequirementsRepository(ReqRepository requirementsRepository) {
+			this.requirementsRepository = requirementsRepository;
+		}
+
+
+		public DecisionRepository getDecisionRepository() {
+			return decisionRepository;
+		}
+
+
+		public void setDecisionRepository(DecisionRepository decisionRepository) {
+			this.decisionRepository = decisionRepository;
+		}
+
+
+		public OptionRepository getOptionRepository() {
+			return optionRepository;
+		}
+
+
+		public void setOptionRepository(OptionRepository optionRepository) {
 			this.optionRepository = optionRepository;
 		}
 }

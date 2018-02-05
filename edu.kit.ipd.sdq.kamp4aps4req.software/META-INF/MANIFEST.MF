@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: KAMP4aPS4ReqSoftware Core
+Bundle-SymbolicName: edu.kit.ipd.sdq.kamp4aps4req.software;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: edu.kit.ipd.sdq.kamp4aps4req.activator.APSReqActivator
+Require-Bundle: edu.kit.ipd.sdq.kamp,
+ toometa.options,
+ org.eclipse.ui;bundle-version="3.108.1",
+ edu.kit.ipd.sdq.kamp4aps4req;bundle-version="1.0.0",
+ toometa.requirements;bundle-version="0.0.1",
+ toometa.decisions;bundle-version="1.0.0",
+ edu.kit.ipd.sdq.kamp4iec;bundle-version="0.1.0",
+ edu.kit.ipd.sdq.kamp.model.modificationmarks;bundle-version="1.0.0"
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-Vendor: SDQ
+Import-Package: edu.kit.ipd.sdq.kamp4aps4req.core,
+ edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks,
+ edu.kit.ipd.sdq.kamp4iec.model.modificationmarks
