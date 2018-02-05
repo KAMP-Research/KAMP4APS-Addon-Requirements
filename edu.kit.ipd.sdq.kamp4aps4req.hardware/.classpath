@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="src" path="/toometa.decisions"/>
+	<classpathentry kind="src" path="/toometa.options"/>
+	<classpathentry kind="src" path="/toometa.requirements"/>
+	<classpathentry kind="src" path="/edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks"/>
+	<classpathentry kind="src" path="/edu.kit.ipd.sdq.kamp4aps4req"/>
+	<classpathentry kind="src" path="/edu.kit.ipd.sdq.kamp4aps"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/edu.kit.ipd.sdq.kamp"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/edu.kit.ipd.sdq.kamp.model.modificationmarks"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
