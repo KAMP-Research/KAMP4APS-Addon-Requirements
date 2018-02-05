@@ -10,7 +10,7 @@
       <!-- @generated modificationmarks_hardware -->
       <factory
             uri="http://www.example.org/modificationmarks_hardware"
-            class="modificationmarks_hardware.provider.Modificationmarks_hardwareItemProviderAdapterFactory"
+            class="edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.provider.Modificationmarks_hardwareItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider

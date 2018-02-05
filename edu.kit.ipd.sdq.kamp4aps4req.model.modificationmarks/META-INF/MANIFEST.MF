@@ -7,9 +7,9 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: modificationmarks,
- modificationmarks.impl,
- modificationmarks.util
+Export-Package: edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks,
+ edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.impl,
+ edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  toometa.decisions;visibility:=reexport,

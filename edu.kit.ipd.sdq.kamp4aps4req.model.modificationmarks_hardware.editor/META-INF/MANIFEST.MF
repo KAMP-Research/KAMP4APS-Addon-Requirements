@@ -4,11 +4,11 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.editor;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: modificationmarks_hardware.presentation.Modificationmarks_hardwareEditorPlugin$Implementation
+Bundle-Activator: edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.presentation.Modificationmarks_hardwareEditorPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: modificationmarks_hardware.presentation
+Export-Package: edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
  edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.edit;visibility:=reexport,

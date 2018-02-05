@@ -7,9 +7,9 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: modificationmarks_hardware,
- modificationmarks_hardware.impl,
- modificationmarks_hardware.util
+Export-Package: edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware,
+ edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.impl,
+ edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  edu.kit.ipd.sdq.kamp4aps.aps;visibility:=reexport,

@@ -10,7 +10,7 @@
       <!-- @generated modificationmarks_hardware -->
       <package
             uri="http://www.example.org/modificationmarks_hardware"
-            class="modificationmarks_hardware.Modificationmarks_hardwarePackage"
+            class="edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.Modificationmarks_hardwarePackage"
             genModel="model/modificationmarks_hardware.genmodel"/>
    </extension>
 

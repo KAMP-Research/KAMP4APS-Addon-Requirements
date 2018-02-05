@@ -12,9 +12,9 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="modificationmarks_software.presentation.Modificationmarks_softwareModelWizardID"
+            id="edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.presentation.Modificationmarks_softwareModelWizardID"
             name="%_UI_Modificationmarks_softwareModelWizard_label"
-            class="modificationmarks_software.presentation.Modificationmarks_softwareModelWizard"
+            class="edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.presentation.Modificationmarks_softwareModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
             icon="icons/full/obj16/Modificationmarks_softwareModelFile.gif">
          <description>%_UI_Modificationmarks_softwareModelWizard_description</description>
@@ -25,13 +25,12 @@
    <extension point="org.eclipse.ui.editors">
       <!-- @generated modificationmarks_software -->
       <editor
-            id="modificationmarks_software.presentation.Modificationmarks_softwareEditorID"
+            id="edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.presentation.Modificationmarks_softwareEditorID"
             name="%_UI_Modificationmarks_softwareEditor_label"
             icon="icons/full/obj16/Modificationmarks_softwareModelFile.gif"
             extensions="modificationmarks_software"
-            class="modificationmarks_software.presentation.Modificationmarks_softwareEditor"
-            contributorClass="modificationmarks_software.presentation.Modificationmarks_softwareActionBarContributor">
+            class="edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.presentation.Modificationmarks_softwareEditor"
+            contributorClass="edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.presentation.Modificationmarks_softwareActionBarContributor">
       </editor>
    </extension>
-
 </plugin>
