@@ -21,5 +21,6 @@
 		</accessrules>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry kind="src" path="/edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

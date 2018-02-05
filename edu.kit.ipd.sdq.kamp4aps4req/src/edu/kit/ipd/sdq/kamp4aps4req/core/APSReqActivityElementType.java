@@ -1,7 +1,6 @@
 package edu.kit.ipd.sdq.kamp4aps4req.core;
 
 import org.eclipse.emf.ecore.EObject;
-
 import decisions.Decision;
 import edu.kit.ipd.sdq.kamp.workplan.AbstractActivityElementType;
 import options.Option;
@@ -36,5 +35,12 @@ public enum APSReqActivityElementType implements AbstractActivityElementType {
 			return clazz;
 		}
 		
-		
+		public static APSReqActivityElementType getActivityTypeForObject(EObject object) {
+			for (APSReqActivityElementType type: APSReqActivityElementType.values()) {
+				if (type.getElementClass().isAssignableFrom(object.getClass())) {
+					return type;
+				}
+			}
+			return null;
+		}
 }
