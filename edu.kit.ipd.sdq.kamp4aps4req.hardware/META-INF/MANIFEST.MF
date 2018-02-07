@@ -11,7 +11,9 @@ Require-Bundle: edu.kit.ipd.sdq.kamp,
  toometa.requirements;bundle-version="0.0.1",
  toometa.decisions;bundle-version="1.0.0",
  edu.kit.ipd.sdq.kamp.model.modificationmarks;bundle-version="1.0.0",
- edu.kit.ipd.sdq.kamp4aps;bundle-version="1.0.0"
+ edu.kit.ipd.sdq.kamp4aps;bundle-version="1.0.0",
+ edu.kit.ipd.sdq.kamp4aps.model.modificationmarks;bundle-version="1.0.0",
+ edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware;bundle-version="0.1.0"
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8

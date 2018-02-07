@@ -6,8 +6,6 @@ import edu.kit.ipd.sdq.kamp.workplan.AbstractActivityElementType;
 import options.Option;
 import requirements.Requirement;
 
-
-
 public enum APSReqActivityElementType implements AbstractActivityElementType {
 
 		DECISION(Decision.class),

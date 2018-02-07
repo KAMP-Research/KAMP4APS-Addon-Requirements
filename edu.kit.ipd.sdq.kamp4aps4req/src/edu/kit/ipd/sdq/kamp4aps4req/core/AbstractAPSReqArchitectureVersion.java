@@ -10,18 +10,19 @@ import options.OptionRepository;
 import options.OptionsFactory;
 
 /**
- * Class representing an @code{APSReqArchitectureVersion}. Super class of the software and hardware parts
+ * Class representing an @code{APSReqArchitectureVersion}. Super class of the software and hardware parts.
+ * This class is abstract since either a model of the software or the hardware can be created.
  * @author Timo Maier
  *
  */
-public class APSReqArchitectureVersion extends AbstractArchitectureVersion<AbstractKAMP4aPS4ReqModificationRepository<?>> {
+public abstract class AbstractAPSReqArchitectureVersion extends AbstractArchitectureVersion<AbstractKAMP4aPS4ReqModificationRepository<?>> {
 
 		protected ReqRepository requirementsRepository;
 		protected DecisionRepository decisionRepository;
 		protected OptionRepository optionRepository;
 
 		
-		public APSReqArchitectureVersion(String name, ReqRepository requirementsRepository, DecisionRepository decisionRepository,
+		public AbstractAPSReqArchitectureVersion(String name, ReqRepository requirementsRepository, DecisionRepository decisionRepository,
 				OptionRepository optionRepository, AbstractKAMP4aPS4ReqModificationRepository<?> modificationMarksRepository) {
 			
 			super(name, modificationMarksRepository);

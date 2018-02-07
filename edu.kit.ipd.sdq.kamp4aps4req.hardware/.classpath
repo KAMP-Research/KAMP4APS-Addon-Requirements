@@ -10,5 +10,7 @@
 	<classpathentry kind="src" path="/edu.kit.ipd.sdq.kamp4aps"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/edu.kit.ipd.sdq.kamp"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/edu.kit.ipd.sdq.kamp.model.modificationmarks"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/edu.kit.ipd.sdq.kamp4aps.model.modificationmarks"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

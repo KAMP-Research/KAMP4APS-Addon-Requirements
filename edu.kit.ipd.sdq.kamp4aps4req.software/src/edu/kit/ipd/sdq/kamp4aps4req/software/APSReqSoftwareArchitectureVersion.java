@@ -2,7 +2,7 @@ package edu.kit.ipd.sdq.kamp4aps4req.software;
 
 
 import decisions.DecisionRepository;
-import edu.kit.ipd.sdq.kamp4aps4req.core.APSReqArchitectureVersion;
+import edu.kit.ipd.sdq.kamp4aps4req.core.AbstractAPSReqArchitectureVersion;
 import edu.kit.ipd.sdq.kamp4iec.core.IECArchitectureVersion;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.AbstractKAMP4aPS4ReqModificationRepository;
 import options.OptionRepository;
@@ -13,7 +13,7 @@ import requirements.ReqRepository;
  * @author Timo Maier
  *
  */
-public class APSReqSoftwareArchitectureVersion extends APSReqArchitectureVersion {
+public class APSReqSoftwareArchitectureVersion extends AbstractAPSReqArchitectureVersion {
 
 	/**
 	 * Represents architecture version of the software
