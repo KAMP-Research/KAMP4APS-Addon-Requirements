@@ -12,5 +12,23 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/edu.kit.ipd.sdq.kamp.model.modificationmarks"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/edu.kit.ipd.sdq.kamp4aps.model.modificationmarks"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware"/>
+	<classpathentry kind="lib" path="/Applications/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.emf.ecore_2.12.0.v20160420-0247.jar" sourcepath="/Applications/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.emf.ecore.source_2.12.0.v20160420-0247.jar">
+		<accessrules>
+			<accessrule kind="accessible" pattern="org/eclipse/emf/ecore/*"/>
+			<accessrule kind="accessible" pattern="org/eclipse/emf/ecore/impl/*"/>
+			<accessrule kind="accessible" pattern="org/eclipse/emf/ecore/plugin/*"/>
+			<accessrule kind="accessible" pattern="org/eclipse/emf/ecore/resource/*"/>
+			<accessrule kind="accessible" pattern="org/eclipse/emf/ecore/resource/impl/*"/>
+			<accessrule kind="accessible" pattern="org/eclipse/emf/ecore/util/*"/>
+			<accessrule kind="accessible" pattern="org/eclipse/emf/ecore/xml/namespace/*"/>
+			<accessrule kind="accessible" pattern="org/eclipse/emf/ecore/xml/namespace/impl/*"/>
+			<accessrule kind="accessible" pattern="org/eclipse/emf/ecore/xml/namespace/util/*"/>
+			<accessrule kind="accessible" pattern="org/eclipse/emf/ecore/xml/type/*"/>
+			<accessrule kind="accessible" pattern="org/eclipse/emf/ecore/xml/type/impl/*"/>
+			<accessrule kind="accessible" pattern="org/eclipse/emf/ecore/xml/type/internal/*"/>
+			<accessrule kind="accessible" pattern="org/eclipse/emf/ecore/xml/type/util/*"/>
+			<accessrule ignoreifbetter="true" kind="nonaccessible" pattern="**/*"/>
+		</accessrules>
+	</classpathentry>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
