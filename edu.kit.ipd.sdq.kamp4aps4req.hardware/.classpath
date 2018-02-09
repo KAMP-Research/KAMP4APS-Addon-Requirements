@@ -30,5 +30,10 @@
 			<accessrule ignoreifbetter="true" kind="nonaccessible" pattern="**/*"/>
 		</accessrules>
 	</classpathentry>
+	<classpathentry kind="src" path="/edu.kit.ipd.sdq.kamp4aps.basic"/>
+	<classpathentry kind="src" path="/toometa.apsoptions"/>
+	<classpathentry kind="src" path="/toometa.apshardwareoptions"/>
+	<classpathentry kind="src" path="/edu.kit.ipd.sdq.kamp4aps.aps"/>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

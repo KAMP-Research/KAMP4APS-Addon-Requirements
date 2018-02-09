@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: KAMP4aPS4ReqHardware Core
 Bundle-SymbolicName: edu.kit.ipd.sdq.kamp4aps4req.hardware;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: edu.kit.ipd.sdq.kamp4aps4req.activator.APSReqActivator
+Bundle-Activator: edu.kit.ipd.sdq.kamp4aps4req.hardware.activator.APSReqHardwareActivator
 Require-Bundle: edu.kit.ipd.sdq.kamp,
  toometa.options,
  org.eclipse.ui;bundle-version="3.108.1",
@@ -18,3 +18,4 @@ Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-Vendor: SDQ
+Import-Package: apsoptions
