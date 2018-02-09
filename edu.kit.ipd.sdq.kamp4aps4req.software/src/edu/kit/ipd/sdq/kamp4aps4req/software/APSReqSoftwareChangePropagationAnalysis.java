@@ -1,7 +1,7 @@
 package edu.kit.ipd.sdq.kamp4aps4req.software;
 
 
-import edu.kit.ipd.sdq.kamp4aps4req.core.APSReqChangePropagationAnalysis;
+import edu.kit.ipd.sdq.kamp4aps4req.core.AbstractAPSReqChangePropagationAnalysis;
 import edu.kit.ipd.sdq.kamp4iec.core.IECChangePropagationAnalysis;
 
 /**
@@ -11,7 +11,7 @@ import edu.kit.ipd.sdq.kamp4iec.core.IECChangePropagationAnalysis;
  * @author Timo Maier
  * 
  */
-public class APSReqSoftwareChangePropagationAnalysis extends APSReqChangePropagationAnalysis {
+public class APSReqSoftwareChangePropagationAnalysis extends AbstractAPSReqChangePropagationAnalysis<APSReqSoftwareArchitectureVersion> {
 	
 	private IECChangePropagationAnalysis iecChangePropagationAnalysis;
 	

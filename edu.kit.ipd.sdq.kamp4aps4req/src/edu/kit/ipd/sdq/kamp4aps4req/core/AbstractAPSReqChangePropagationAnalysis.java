@@ -29,7 +29,7 @@ import decisions.Decision;
  * @author Timo Maier
  *
  */
-public class APSReqChangePropagationAnalysis implements AbstractChangePropagationAnalysis<AbstractAPSReqArchitectureVersion> {
+public class AbstractAPSReqChangePropagationAnalysis<T extends AbstractAPSReqArchitectureVersion> implements AbstractChangePropagationAnalysis<T> {
 
 	protected APSReqChangePropagationDueToSpecificationDependencies changePropagationDueToSpecificationDependencies;
 	
@@ -38,7 +38,7 @@ public class APSReqChangePropagationAnalysis implements AbstractChangePropagatio
 	protected Collection<Option> markedOptions;
 	
 	@Override
-	public void runChangePropagationAnalysis(AbstractAPSReqArchitectureVersion version) {
+	public void runChangePropagationAnalysis(T version) {
 		// Create only one modification mark per element in this step
 		Map<EObject, AbstractModification<?, EObject>> elementsMarkedInThisStep = 
 				new HashMap<EObject, AbstractModification<?, EObject>>();

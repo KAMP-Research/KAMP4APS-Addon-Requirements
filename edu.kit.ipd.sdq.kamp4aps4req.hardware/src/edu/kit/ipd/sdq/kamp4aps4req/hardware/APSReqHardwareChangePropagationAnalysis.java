@@ -2,7 +2,7 @@ package edu.kit.ipd.sdq.kamp4aps4req.hardware;
 
 
 import edu.kit.ipd.sdq.kamp4aps.core.APSChangePropagationAnalysis;
-import edu.kit.ipd.sdq.kamp4aps4req.core.APSReqChangePropagationAnalysis;
+import edu.kit.ipd.sdq.kamp4aps4req.core.AbstractAPSReqChangePropagationAnalysis;
 
 /**
  * Change Propagation Analysis of KAMP4aPS4Req for the hardware part.
@@ -11,7 +11,7 @@ import edu.kit.ipd.sdq.kamp4aps4req.core.APSReqChangePropagationAnalysis;
  * @author Timo Maier
  *
  */
-public class APSReqHardwareChangePropagationAnalysis extends APSReqChangePropagationAnalysis {
+public class APSReqHardwareChangePropagationAnalysis extends AbstractAPSReqChangePropagationAnalysis<APSReqHardwareArchitectureVersion> {
 
 	private APSChangePropagationAnalysis apsChangePropagationAnalysis;
 	
