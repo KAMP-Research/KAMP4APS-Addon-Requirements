@@ -3,27 +3,34 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="apssoftwareoptions" nsURI="http://www.example.org/apssoftwareoptions"
     nsPrefix="apssoftwareoptions">
   <eClassifiers xsi:type="ecore:EClass" name="APSReqSoftwareOption">
+    <eTypeParameters name="T"/>
     <eGenericSuperTypes eClassifier="ecore:EClass ../../toometa.apsoptions/model/apsoptions.ecore#//APSReqOption">
       <eTypeArguments eClassifier="ecore:EClass ../../edu.kit.ipd.sdq.kamp4iec.model.repo/model/IECRepository.ecore#//IECComponent"/>
     </eGenericSuperTypes>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="APSReqChangeSoftwareOption" eSuperTypes="#//APSReqSoftwareOption">
+  <eClassifiers xsi:type="ecore:EClass" name="APSReqChangeSoftwareOption">
     <eTypeParameters name="T">
       <eBounds eClassifier="ecore:EClass ../../edu.kit.ipd.sdq.kamp4iec.model.repo/model/IECRepository.ecore#//IECComponent"/>
     </eTypeParameters>
     <eStructuralFeatures xsi:type="ecore:EReference" name="components" upperBound="-1">
       <eGenericType eTypeParameter="#//APSReqChangeSoftwareOption/T"/>
     </eStructuralFeatures>
+    <eGenericSuperTypes eClassifier="#//APSReqSoftwareOption">
+      <eTypeArguments eTypeParameter="#//APSReqChangeSoftwareOption/T"/>
+    </eGenericSuperTypes>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="APSReqRemoveSoftwareOption" eSuperTypes="#//APSReqSoftwareOption">
+  <eClassifiers xsi:type="ecore:EClass" name="APSReqRemoveSoftwareOption">
     <eTypeParameters name="T">
       <eBounds eClassifier="ecore:EClass ../../edu.kit.ipd.sdq.kamp4iec.model.repo/model/IECRepository.ecore#//IECComponent"/>
     </eTypeParameters>
     <eStructuralFeatures xsi:type="ecore:EReference" name="components" upperBound="-1">
       <eGenericType eTypeParameter="#//APSReqRemoveSoftwareOption/T"/>
     </eStructuralFeatures>
+    <eGenericSuperTypes eClassifier="#//APSReqSoftwareOption">
+      <eTypeArguments eTypeParameter="#//APSReqRemoveSoftwareOption/T"/>
+    </eGenericSuperTypes>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="APSReqReplaceSoftwareOption" eSuperTypes="#//APSReqSoftwareOption">
+  <eClassifiers xsi:type="ecore:EClass" name="APSReqReplaceSoftwareOption">
     <eTypeParameters name="T">
       <eBounds eClassifier="ecore:EClass ../../edu.kit.ipd.sdq.kamp4iec.model.repo/model/IECRepository.ecore#//IECComponent"/>
     </eTypeParameters>
@@ -33,13 +40,19 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="newComponent">
       <eGenericType eTypeParameter="#//APSReqReplaceSoftwareOption/T"/>
     </eStructuralFeatures>
+    <eGenericSuperTypes eClassifier="#//APSReqSoftwareOption">
+      <eTypeArguments eTypeParameter="#//APSReqReplaceSoftwareOption/T"/>
+    </eGenericSuperTypes>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="APSReqIntroduceNewSoftwareOption" eSuperTypes="#//APSReqSoftwareOption">
+  <eClassifiers xsi:type="ecore:EClass" name="APSReqIntroduceNewSoftwareOption">
     <eTypeParameters name="T">
       <eBounds eClassifier="ecore:EClass ../../edu.kit.ipd.sdq.kamp4iec.model.repo/model/IECRepository.ecore#//IECComponent"/>
     </eTypeParameters>
     <eStructuralFeatures xsi:type="ecore:EReference" name="components" upperBound="-1">
       <eGenericType eTypeParameter="#//APSReqIntroduceNewSoftwareOption/T"/>
     </eStructuralFeatures>
+    <eGenericSuperTypes eClassifier="#//APSReqSoftwareOption">
+      <eTypeArguments eTypeParameter="#//APSReqIntroduceNewSoftwareOption/T"/>
+    </eGenericSuperTypes>
   </eClassifiers>
 </ecore:EPackage>

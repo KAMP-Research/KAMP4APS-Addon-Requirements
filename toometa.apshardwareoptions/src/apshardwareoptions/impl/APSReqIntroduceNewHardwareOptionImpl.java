@@ -28,7 +28,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *
  * @generated
  */
-public class APSReqIntroduceNewHardwareOptionImpl<T extends Entity> extends APSReqHardwareOptionImpl implements APSReqIntroduceNewHardwareOption<T> {
+public class APSReqIntroduceNewHardwareOptionImpl<T extends Entity> extends APSReqHardwareOptionImpl<T> implements APSReqIntroduceNewHardwareOption<T> {
 	/**
 	 * The cached value of the '{@link #getEntities() <em>Entities</em>}' reference list.
 	 * <!-- begin-user-doc -->

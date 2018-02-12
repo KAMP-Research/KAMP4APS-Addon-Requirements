@@ -28,7 +28,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *
  * @generated
  */
-public class APSReqRemoveHardwareOptionImpl<T extends Entity> extends APSReqHardwareOptionImpl implements APSReqRemoveHardwareOption<T> {
+public class APSReqRemoveHardwareOptionImpl<T extends Entity> extends APSReqHardwareOptionImpl<T> implements APSReqRemoveHardwareOption<T> {
 	/**
 	 * The cached value of the '{@link #getEntities() <em>Entities</em>}' reference list.
 	 * <!-- begin-user-doc -->

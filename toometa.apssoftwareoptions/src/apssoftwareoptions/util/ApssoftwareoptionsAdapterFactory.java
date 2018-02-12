@@ -91,7 +91,7 @@ public class ApssoftwareoptionsAdapterFactory extends AdapterFactoryImpl {
 	protected ApssoftwareoptionsSwitch<Adapter> modelSwitch =
 		new ApssoftwareoptionsSwitch<Adapter>() {
 			@Override
-			public Adapter caseAPSReqSoftwareOption(APSReqSoftwareOption object) {
+			public <T> Adapter caseAPSReqSoftwareOption(APSReqSoftwareOption<T> object) {
 				return createAPSReqSoftwareOptionAdapter();
 			}
 			@Override

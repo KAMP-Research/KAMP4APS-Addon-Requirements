@@ -28,7 +28,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class APSReqReplaceHardwareOptionImpl<T extends Entity> extends APSReqHardwareOptionImpl implements APSReqReplaceHardwareOption<T> {
+public class APSReqReplaceHardwareOptionImpl<T extends Entity> extends APSReqHardwareOptionImpl<T> implements APSReqReplaceHardwareOption<T> {
 	/**
 	 * The cached value of the '{@link #getOldEntity() <em>Old Entity</em>}' reference.
 	 * <!-- begin-user-doc -->

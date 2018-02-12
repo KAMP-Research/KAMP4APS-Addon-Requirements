@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class APSReqSoftwareOptionImpl extends APSReqOptionImpl<IECComponent> implements APSReqSoftwareOption {
+public class APSReqSoftwareOptionImpl<T> extends APSReqOptionImpl<IECComponent> implements APSReqSoftwareOption<T> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

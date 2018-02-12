@@ -30,7 +30,7 @@ public interface ApssoftwareoptionsFactory extends EFactory {
 	 * @return a new object of class '<em>APS Req Software Option</em>'.
 	 * @generated
 	 */
-	APSReqSoftwareOption createAPSReqSoftwareOption();
+	<T> APSReqSoftwareOption<T> createAPSReqSoftwareOption();
 
 	/**
 	 * Returns a new object of class '<em>APS Req Change Software Option</em>'.

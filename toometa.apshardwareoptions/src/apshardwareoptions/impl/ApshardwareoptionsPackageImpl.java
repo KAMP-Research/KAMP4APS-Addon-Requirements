@@ -287,10 +287,11 @@ public class ApshardwareoptionsPackageImpl extends EPackageImpl implements Apsha
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		ApsoptionsPackage theApsoptionsPackage = (ApsoptionsPackage)EPackage.Registry.INSTANCE.getEPackage(ApsoptionsPackage.eNS_URI);
 		BasicPackage theBasicPackage = (BasicPackage)EPackage.Registry.INSTANCE.getEPackage(BasicPackage.eNS_URI);
+		ApsoptionsPackage theApsoptionsPackage = (ApsoptionsPackage)EPackage.Registry.INSTANCE.getEPackage(ApsoptionsPackage.eNS_URI);
 
 		// Create type parameters
+		ETypeParameter apsReqHardwareOptionEClass_T = addETypeParameter(apsReqHardwareOptionEClass, "T");
 		ETypeParameter apsReqIntroduceNewHardwareOptionEClass_T = addETypeParameter(apsReqIntroduceNewHardwareOptionEClass, "T");
 		ETypeParameter apsReqRemoveHardwareOptionEClass_T = addETypeParameter(apsReqRemoveHardwareOptionEClass, "T");
 		ETypeParameter apsReqChangeHardwareOptionEClass_T = addETypeParameter(apsReqChangeHardwareOptionEClass, "T");
@@ -298,6 +299,8 @@ public class ApshardwareoptionsPackageImpl extends EPackageImpl implements Apsha
 
 		// Set bounds for type parameters
 		EGenericType g1 = createEGenericType(theBasicPackage.getEntity());
+		apsReqHardwareOptionEClass_T.getEBounds().add(g1);
+		g1 = createEGenericType(theBasicPackage.getEntity());
 		apsReqIntroduceNewHardwareOptionEClass_T.getEBounds().add(g1);
 		g1 = createEGenericType(theBasicPackage.getEntity());
 		apsReqRemoveHardwareOptionEClass_T.getEBounds().add(g1);
@@ -311,10 +314,22 @@ public class ApshardwareoptionsPackageImpl extends EPackageImpl implements Apsha
 		EGenericType g2 = createEGenericType(theBasicPackage.getEntity());
 		g1.getETypeArguments().add(g2);
 		apsReqHardwareOptionEClass.getEGenericSuperTypes().add(g1);
-		apsReqIntroduceNewHardwareOptionEClass.getESuperTypes().add(this.getAPSReqHardwareOption());
-		apsReqRemoveHardwareOptionEClass.getESuperTypes().add(this.getAPSReqHardwareOption());
-		apsReqChangeHardwareOptionEClass.getESuperTypes().add(this.getAPSReqHardwareOption());
-		apsReqReplaceHardwareOptionEClass.getESuperTypes().add(this.getAPSReqHardwareOption());
+		g1 = createEGenericType(this.getAPSReqHardwareOption());
+		g2 = createEGenericType(apsReqIntroduceNewHardwareOptionEClass_T);
+		g1.getETypeArguments().add(g2);
+		apsReqIntroduceNewHardwareOptionEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(this.getAPSReqHardwareOption());
+		g2 = createEGenericType(apsReqRemoveHardwareOptionEClass_T);
+		g1.getETypeArguments().add(g2);
+		apsReqRemoveHardwareOptionEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(this.getAPSReqHardwareOption());
+		g2 = createEGenericType(apsReqChangeHardwareOptionEClass_T);
+		g1.getETypeArguments().add(g2);
+		apsReqChangeHardwareOptionEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(this.getAPSReqHardwareOption());
+		g2 = createEGenericType(apsReqReplaceHardwareOptionEClass_T);
+		g1.getETypeArguments().add(g2);
+		apsReqReplaceHardwareOptionEClass.getEGenericSuperTypes().add(g1);
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(apsReqHardwareOptionEClass, APSReqHardwareOption.class, "APSReqHardwareOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

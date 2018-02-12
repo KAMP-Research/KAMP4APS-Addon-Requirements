@@ -91,7 +91,7 @@ public class ApshardwareoptionsAdapterFactory extends AdapterFactoryImpl {
 	protected ApshardwareoptionsSwitch<Adapter> modelSwitch =
 		new ApshardwareoptionsSwitch<Adapter>() {
 			@Override
-			public Adapter caseAPSReqHardwareOption(APSReqHardwareOption object) {
+			public <T extends Entity> Adapter caseAPSReqHardwareOption(APSReqHardwareOption<T> object) {
 				return createAPSReqHardwareOptionAdapter();
 			}
 			@Override

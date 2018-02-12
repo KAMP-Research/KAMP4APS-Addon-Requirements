@@ -21,7 +21,7 @@ import edu.kit.ipd.sdq.kamp4aps.model.basic.Entity;
  * @model
  * @generated
  */
-public interface APSReqReplaceHardwareOption<T extends Entity> extends APSReqHardwareOption {
+public interface APSReqReplaceHardwareOption<T extends Entity> extends APSReqHardwareOption<T> {
 	/**
 	 * Returns the value of the '<em><b>Old Entity</b></em>' reference.
 	 * <!-- begin-user-doc -->

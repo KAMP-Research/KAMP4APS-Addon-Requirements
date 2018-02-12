@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class APSReqHardwareOptionImpl extends APSReqOptionImpl<Entity> implements APSReqHardwareOption {
+public class APSReqHardwareOptionImpl<T extends Entity> extends APSReqOptionImpl<Entity> implements APSReqHardwareOption<T> {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

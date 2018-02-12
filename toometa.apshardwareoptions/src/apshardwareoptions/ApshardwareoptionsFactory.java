@@ -30,7 +30,7 @@ public interface ApshardwareoptionsFactory extends EFactory {
 	 * @return a new object of class '<em>APS Req Hardware Option</em>'.
 	 * @generated
 	 */
-	APSReqHardwareOption createAPSReqHardwareOption();
+	<T extends Entity> APSReqHardwareOption<T> createAPSReqHardwareOption();
 
 	/**
 	 * Returns a new object of class '<em>APS Req Introduce New Hardware Option</em>'.

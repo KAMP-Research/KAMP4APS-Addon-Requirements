@@ -16,5 +16,5 @@ import edu.kit.ipd.sdq.kamp4aps.model.basic.Entity;
  * @model
  * @generated
  */
-public interface APSReqHardwareOption extends APSReqOption<Entity> {
+public interface APSReqHardwareOption<T extends Entity> extends APSReqOption<Entity> {
 } // APSReqHardwareOption

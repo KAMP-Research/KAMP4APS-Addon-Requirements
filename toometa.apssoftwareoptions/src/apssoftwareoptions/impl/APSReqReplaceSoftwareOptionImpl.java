@@ -28,7 +28,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class APSReqReplaceSoftwareOptionImpl<T extends IECComponent> extends APSReqSoftwareOptionImpl implements APSReqReplaceSoftwareOption<T> {
+public class APSReqReplaceSoftwareOptionImpl<T extends IECComponent> extends APSReqSoftwareOptionImpl<T> implements APSReqReplaceSoftwareOption<T> {
 	/**
 	 * The cached value of the '{@link #getOldComponent() <em>Old Component</em>}' reference.
 	 * <!-- begin-user-doc -->

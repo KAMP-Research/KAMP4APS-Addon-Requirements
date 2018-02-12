@@ -16,5 +16,5 @@ import edu.kit.ipd.sdq.kamp4iec.model.IECRepository.IECComponent;
  * @model
  * @generated
  */
-public interface APSReqSoftwareOption extends APSReqOption<IECComponent> {
+public interface APSReqSoftwareOption<T> extends APSReqOption<IECComponent> {
 } // APSReqSoftwareOption

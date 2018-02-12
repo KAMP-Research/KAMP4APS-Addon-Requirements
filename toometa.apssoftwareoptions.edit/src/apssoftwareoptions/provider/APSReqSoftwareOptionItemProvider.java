@@ -68,7 +68,7 @@ public class APSReqSoftwareOptionItemProvider extends APSReqOptionItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((APSReqSoftwareOption)object).getId();
+		String label = ((APSReqSoftwareOption<?>)object).getId();
 		return label == null || label.length() == 0 ?
 			getString("_UI_APSReqSoftwareOption_type") :
 			getString("_UI_APSReqSoftwareOption_type") + " " + label;

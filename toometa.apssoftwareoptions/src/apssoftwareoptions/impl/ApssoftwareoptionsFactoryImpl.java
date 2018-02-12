@@ -73,8 +73,8 @@ public class ApssoftwareoptionsFactoryImpl extends EFactoryImpl implements Apsso
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public APSReqSoftwareOption createAPSReqSoftwareOption() {
-		APSReqSoftwareOptionImpl apsReqSoftwareOption = new APSReqSoftwareOptionImpl();
+	public <T> APSReqSoftwareOption<T> createAPSReqSoftwareOption() {
+		APSReqSoftwareOptionImpl<T> apsReqSoftwareOption = new APSReqSoftwareOptionImpl<T>();
 		return apsReqSoftwareOption;
 	}
 

@@ -57,16 +57,16 @@ public class APSReqHardwareArchitectureModelLookup extends APSReqArchitectureMod
 	 * @return True if referenced, false otherwise
 	 */
 	private static boolean isStructureReferencedByOption(Structure structure, 
-			APSReqHardwareOption option) {
+			APSReqHardwareOption<Structure> option) {
 		boolean result = false;
 		if (option instanceof APSReqIntroduceNewHardwareOption) {
-			result = isStructureReferencedByIntroduceNewOption(structure, (APSReqIntroduceNewHardwareOption) option);
+			result = isStructureReferencedByIntroduceNewOption(structure, (APSReqIntroduceNewHardwareOption<Structure>) option);
 		} else if (option instanceof APSReqChangeHardwareOption) {
-			result = isStructureReferencedByChangeOption(structure, (APSReqChangeHardwareOption) option);
+			result = isStructureReferencedByChangeOption(structure, (APSReqChangeHardwareOption<Structure>) option);
 		} else if (option instanceof APSReqReplaceHardwareOption) {
-			result = isStructureReferencedByReplaceOption(structure, (APSReqReplaceHardwareOption) option);
+			result = isStructureReferencedByReplaceOption(structure, (APSReqReplaceHardwareOption<Structure>) option);
 		} else if (option instanceof APSReqRemoveHardwareOption) {
-			result = isStructureReferencedByRemoveOption(structure, (APSReqRemoveHardwareOption) option);
+			result = isStructureReferencedByRemoveOption(structure, (APSReqRemoveHardwareOption<Structure>) option);
 		}
 		return result;
 	}
@@ -156,16 +156,16 @@ public class APSReqHardwareArchitectureModelLookup extends APSReqArchitectureMod
 	}
 	
 	private static boolean isModuleReferencedByOption(Module module, 
-			APSReqHardwareOption option) {
+			APSReqHardwareOption<Module> option) {
 		boolean result = false;
 		if (option instanceof APSReqIntroduceNewHardwareOption) {
-			result = isModuleReferencedByIntroduceNewOption(module, (APSReqIntroduceNewHardwareOption) option);
+			result = isModuleReferencedByIntroduceNewOption(module, (APSReqIntroduceNewHardwareOption<Module>) option);
 		} else if (option instanceof APSReqChangeHardwareOption) {
-			result = isModuleReferencedByChangeOption(module, (APSReqChangeHardwareOption) option);
+			result = isModuleReferencedByChangeOption(module, (APSReqChangeHardwareOption<Module>) option);
 		} else if (option instanceof APSReqReplaceHardwareOption) {
-			result = isModuleReferencedByReplaceOption(module, (APSReqReplaceHardwareOption) option);
+			result = isModuleReferencedByReplaceOption(module, (APSReqReplaceHardwareOption<Module>) option);
 		} else if (option instanceof APSReqRemoveHardwareOption) {
-			result = isModuleReferencedByRemoveOption(module, (APSReqRemoveHardwareOption) option);
+			result = isModuleReferencedByRemoveOption(module, (APSReqRemoveHardwareOption<Module>) option);
 		}
 		return result;
 	}

@@ -90,7 +90,7 @@ public class ApshardwareoptionsSwitch<T1> extends Switch<T1> {
 	protected T1 doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
 			case ApshardwareoptionsPackage.APS_REQ_HARDWARE_OPTION: {
-				APSReqHardwareOption apsReqHardwareOption = (APSReqHardwareOption)theEObject;
+				APSReqHardwareOption<?> apsReqHardwareOption = (APSReqHardwareOption<?>)theEObject;
 				T1 result = caseAPSReqHardwareOption(apsReqHardwareOption);
 				if (result == null) result = caseAPSReqOption(apsReqHardwareOption);
 				if (result == null) result = caseArchOption(apsReqHardwareOption);
@@ -218,7 +218,7 @@ public class ApshardwareoptionsSwitch<T1> extends Switch<T1> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseAPSReqHardwareOption(APSReqHardwareOption object) {
+	public <T extends Entity> T1 caseAPSReqHardwareOption(APSReqHardwareOption<T> object) {
 		return null;
 	}
 

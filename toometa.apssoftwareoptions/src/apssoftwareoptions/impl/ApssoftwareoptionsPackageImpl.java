@@ -291,6 +291,7 @@ public class ApssoftwareoptionsPackageImpl extends EPackageImpl implements Apsso
 		IECRepositoryPackage theIECRepositoryPackage = (IECRepositoryPackage)EPackage.Registry.INSTANCE.getEPackage(IECRepositoryPackage.eNS_URI);
 
 		// Create type parameters
+		addETypeParameter(apsReqSoftwareOptionEClass, "T");
 		ETypeParameter apsReqChangeSoftwareOptionEClass_T = addETypeParameter(apsReqChangeSoftwareOptionEClass, "T");
 		ETypeParameter apsReqRemoveSoftwareOptionEClass_T = addETypeParameter(apsReqRemoveSoftwareOptionEClass, "T");
 		ETypeParameter apsReqReplaceSoftwareOptionEClass_T = addETypeParameter(apsReqReplaceSoftwareOptionEClass, "T");
@@ -311,10 +312,22 @@ public class ApssoftwareoptionsPackageImpl extends EPackageImpl implements Apsso
 		EGenericType g2 = createEGenericType(theIECRepositoryPackage.getIECComponent());
 		g1.getETypeArguments().add(g2);
 		apsReqSoftwareOptionEClass.getEGenericSuperTypes().add(g1);
-		apsReqChangeSoftwareOptionEClass.getESuperTypes().add(this.getAPSReqSoftwareOption());
-		apsReqRemoveSoftwareOptionEClass.getESuperTypes().add(this.getAPSReqSoftwareOption());
-		apsReqReplaceSoftwareOptionEClass.getESuperTypes().add(this.getAPSReqSoftwareOption());
-		apsReqIntroduceNewSoftwareOptionEClass.getESuperTypes().add(this.getAPSReqSoftwareOption());
+		g1 = createEGenericType(this.getAPSReqSoftwareOption());
+		g2 = createEGenericType(apsReqChangeSoftwareOptionEClass_T);
+		g1.getETypeArguments().add(g2);
+		apsReqChangeSoftwareOptionEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(this.getAPSReqSoftwareOption());
+		g2 = createEGenericType(apsReqRemoveSoftwareOptionEClass_T);
+		g1.getETypeArguments().add(g2);
+		apsReqRemoveSoftwareOptionEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(this.getAPSReqSoftwareOption());
+		g2 = createEGenericType(apsReqReplaceSoftwareOptionEClass_T);
+		g1.getETypeArguments().add(g2);
+		apsReqReplaceSoftwareOptionEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(this.getAPSReqSoftwareOption());
+		g2 = createEGenericType(apsReqIntroduceNewSoftwareOptionEClass_T);
+		g1.getETypeArguments().add(g2);
+		apsReqIntroduceNewSoftwareOptionEClass.getEGenericSuperTypes().add(g1);
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(apsReqSoftwareOptionEClass, APSReqSoftwareOption.class, "APSReqSoftwareOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

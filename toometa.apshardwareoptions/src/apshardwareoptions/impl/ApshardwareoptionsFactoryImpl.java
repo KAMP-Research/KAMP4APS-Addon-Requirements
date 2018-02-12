@@ -73,8 +73,8 @@ public class ApshardwareoptionsFactoryImpl extends EFactoryImpl implements Apsha
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public APSReqHardwareOption createAPSReqHardwareOption() {
-		APSReqHardwareOptionImpl apsReqHardwareOption = new APSReqHardwareOptionImpl();
+	public <T extends Entity> APSReqHardwareOption<T> createAPSReqHardwareOption() {
+		APSReqHardwareOptionImpl<T> apsReqHardwareOption = new APSReqHardwareOptionImpl<T>();
 		return apsReqHardwareOption;
 	}
 

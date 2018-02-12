@@ -22,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface APSReqIntroduceNewHardwareOption<T extends Entity> extends APSReqHardwareOption {
+public interface APSReqIntroduceNewHardwareOption<T extends Entity> extends APSReqHardwareOption<T> {
 	/**
 	 * Returns the value of the '<em><b>Entities</b></em>' reference list.
 	 * <!-- begin-user-doc -->

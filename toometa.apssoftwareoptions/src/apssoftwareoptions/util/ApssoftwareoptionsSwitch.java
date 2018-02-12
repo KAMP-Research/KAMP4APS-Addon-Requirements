@@ -90,7 +90,7 @@ public class ApssoftwareoptionsSwitch<T1> extends Switch<T1> {
 	protected T1 doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
 			case ApssoftwareoptionsPackage.APS_REQ_SOFTWARE_OPTION: {
-				APSReqSoftwareOption apsReqSoftwareOption = (APSReqSoftwareOption)theEObject;
+				APSReqSoftwareOption<?> apsReqSoftwareOption = (APSReqSoftwareOption<?>)theEObject;
 				T1 result = caseAPSReqSoftwareOption(apsReqSoftwareOption);
 				if (result == null) result = caseAPSReqOption(apsReqSoftwareOption);
 				if (result == null) result = caseArchOption(apsReqSoftwareOption);
@@ -218,7 +218,7 @@ public class ApssoftwareoptionsSwitch<T1> extends Switch<T1> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseAPSReqSoftwareOption(APSReqSoftwareOption object) {
+	public <T> T1 caseAPSReqSoftwareOption(APSReqSoftwareOption<T> object) {
 		return null;
 	}
 

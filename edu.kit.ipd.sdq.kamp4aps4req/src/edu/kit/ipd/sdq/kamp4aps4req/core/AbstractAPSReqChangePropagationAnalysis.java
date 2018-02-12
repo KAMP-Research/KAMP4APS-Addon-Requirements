@@ -55,7 +55,7 @@ public class AbstractAPSReqChangePropagationAnalysis<T extends AbstractAPSReqArc
 				edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.ModificationmarksFactory.
 				eINSTANCE.createAPSReqChangePropagationDueToSpecificationDependencies());
 		
-		this.
+
 	}
 
 	public void calculateRequirementsToArchitecturePropagation(T version, 

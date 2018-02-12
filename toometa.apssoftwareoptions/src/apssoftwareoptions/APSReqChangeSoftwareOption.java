@@ -22,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface APSReqChangeSoftwareOption<T extends IECComponent> extends APSReqSoftwareOption {
+public interface APSReqChangeSoftwareOption<T extends IECComponent> extends APSReqSoftwareOption<T> {
 	/**
 	 * Returns the value of the '<em><b>Components</b></em>' reference list.
 	 * <!-- begin-user-doc -->

@@ -21,7 +21,7 @@ import edu.kit.ipd.sdq.kamp4iec.model.IECRepository.IECComponent;
  * @model
  * @generated
  */
-public interface APSReqReplaceSoftwareOption<T extends IECComponent> extends APSReqSoftwareOption {
+public interface APSReqReplaceSoftwareOption<T extends IECComponent> extends APSReqSoftwareOption<T> {
 	/**
 	 * Returns the value of the '<em><b>Old Component</b></em>' reference.
 	 * <!-- begin-user-doc -->

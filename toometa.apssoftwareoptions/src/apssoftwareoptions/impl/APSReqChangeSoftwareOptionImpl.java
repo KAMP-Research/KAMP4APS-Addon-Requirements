@@ -28,7 +28,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *
  * @generated
  */
-public class APSReqChangeSoftwareOptionImpl<T extends IECComponent> extends APSReqSoftwareOptionImpl implements APSReqChangeSoftwareOption<T> {
+public class APSReqChangeSoftwareOptionImpl<T extends IECComponent> extends APSReqSoftwareOptionImpl<T> implements APSReqChangeSoftwareOption<T> {
 	/**
 	 * The cached value of the '{@link #getComponents() <em>Components</em>}' reference list.
 	 * <!-- begin-user-doc -->
