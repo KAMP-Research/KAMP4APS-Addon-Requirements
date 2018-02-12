@@ -4,12 +4,11 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.edit;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: modificationmarks.provider.APSReqmodificationmarksEditPlugin$Implementation
+Bundle-Activator: edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.provider.ModificationmarksEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.provider,
- modificationmarks.provider
+Export-Package: edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.provider
 Require-Bundle: org.eclipse.core.runtime,
  edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks;visibility:=reexport,
  org.eclipse.emf.edit;visibility:=reexport,

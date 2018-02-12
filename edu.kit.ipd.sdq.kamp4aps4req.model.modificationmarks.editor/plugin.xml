@@ -33,31 +33,4 @@
             contributorClass="edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.presentation.ModificationmarksActionBarContributor">
       </editor>
    </extension>
-   <extension point="org.eclipse.ui.newWizards">
-      <!-- @generated APSReqmodificationmarks -->
-      <category
-            id="org.eclipse.emf.ecore.Wizard.category.ID"
-            name="%_UI_Wizard_category"/>
-      <wizard
-            id="modificationmarks.presentation.ModificationmarksModelWizardID"
-            name="%_UI_ModificationmarksModelWizard_label"
-            class="modificationmarks.presentation.ModificationmarksModelWizard"
-            category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/ModificationmarksModelFile.gif">
-         <description>%_UI_ModificationmarksModelWizard_description</description>
-         <selection class="org.eclipse.core.resources.IResource"/>
-      </wizard>
-   </extension>
-
-   <extension point="org.eclipse.ui.editors">
-      <!-- @generated APSReqmodificationmarks -->
-      <editor
-            id="modificationmarks.presentation.ModificationmarksEditorID"
-            name="%_UI_ModificationmarksEditor_label"
-            icon="icons/full/obj16/ModificationmarksModelFile.gif"
-            extensions="modificationmarks"
-            class="modificationmarks.presentation.ModificationmarksEditor"
-            contributorClass="modificationmarks.presentation.ModificationmarksActionBarContributor">
-      </editor>
-   </extension>
 </plugin>
