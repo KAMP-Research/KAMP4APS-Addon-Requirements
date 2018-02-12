@@ -2,6 +2,8 @@ package edu.kit.ipd.sdq.kamp4aps4req.core;
 
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -10,6 +12,7 @@ import edu.kit.ipd.sdq.kamp.architecture.ArchitectureModelLookup;
 import edu.kit.ipd.sdq.kamp.util.MapUtil;
 import options.Option;
 import relations.CouldResolveObject;
+import relations.DependencyObject;
 import relations.ResolveObject;
 import relations.TriggerObject;
 import requirements.Requirement;
@@ -154,6 +157,66 @@ public class APSReqArchitectureModelLookup extends ArchitectureModelLookup {
 			for (CouldResolveObject resolvingObject : objectToBeResolved.getCouldBeResolvedBy()) {
 				if (resolvingObject instanceof Option) {
 					MapUtil.putOrAddToMap(results, (Option) resolvingObject, objectToBeResolved);
+				}
+			}
+		}
+		
+		return results;
+	}
+	
+	/**
+	 * Finds all DependencyObjects that are directly or indirectly (transitive closure) 
+	 * dependent on at least on of the DependencyObject passed as a parameter and that 
+	 * have a certain type (or one of its sub-types). The causing objects are the values
+	 * of the map, the affected objects are the keys.
+	 */
+	@SuppressWarnings("unchecked")
+	public static <T extends DependencyObject> Map<T, Set<DependencyObject>> lookUpObjectsDependOnObjects(
+			Collection<? extends DependencyObject> sourceDependencyObjects, Class<T> dependencyObjectsClass) {
+		Map<T, Set<DependencyObject>> results = new HashMap<T, Set<DependencyObject>>();
+		List<DependencyObject> dependenciesToVisit = new LinkedList<DependencyObject>(
+				sourceDependencyObjects);
+		
+		while(!dependenciesToVisit.isEmpty()) {
+			DependencyObject sourceDependencyObject = dependenciesToVisit.remove(0);
+			for (DependencyObject targetDependencyObject: sourceDependencyObject.getHasDependents()) {
+				if (dependencyObjectsClass.isAssignableFrom(targetDependencyObject.getClass())) {
+					// Analyze each object only once, but always update causes
+					if (!dependenciesToVisit.contains(targetDependencyObject) && 
+							!results.containsKey(targetDependencyObject)) {
+						dependenciesToVisit.add(targetDependencyObject);
+					}
+					MapUtil.putOrAddToMap(results, (T) targetDependencyObject, sourceDependencyObject);
+				}
+			}
+		}
+		
+		return results;
+	}
+	
+	/**
+	 * Finds all DependencyObjects which at least one of the DependencyObjects passed 
+	 * as a parameter directly or indirectly (transitive closure) depends on and that 
+	 * have a certain type (or one of its sub-types). The causes (dependent objects) are
+	 * stored as the value of the map, the affected objects are the keys.
+	 */
+	@SuppressWarnings("unchecked")
+	public static <T extends DependencyObject> Map<T, Set<DependencyObject>> lookUpObjectsAnotherObjectDependsOn(
+			Collection<? extends DependencyObject> targetDependencyObjects, Class<T> dependencyObjectClass) {
+		Map<T, Set<DependencyObject>> results = new HashMap<T, Set<DependencyObject>>();
+		List<DependencyObject> dependenciesToVisit = new LinkedList<DependencyObject>(
+				targetDependencyObjects);
+		
+		while(!dependenciesToVisit.isEmpty()) {
+			DependencyObject targetDependencyObject = dependenciesToVisit.remove(0);
+			for (DependencyObject sourceDependencyObject: targetDependencyObject.getDependsOn()) {
+				if (dependencyObjectClass.isAssignableFrom(sourceDependencyObject.getClass())) {
+					// Analyze each object only once, but always update causes
+					if (!dependenciesToVisit.contains(sourceDependencyObject) && 
+							!results.containsKey(sourceDependencyObject)) {
+						dependenciesToVisit.add(sourceDependencyObject);
+					}
+					MapUtil.putOrAddToMap(results, (T) sourceDependencyObject, targetDependencyObject);
 				}
 			}
 		}
