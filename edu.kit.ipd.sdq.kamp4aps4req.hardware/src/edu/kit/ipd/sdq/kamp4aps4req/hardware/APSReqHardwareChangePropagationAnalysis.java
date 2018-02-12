@@ -21,15 +21,25 @@ public class APSReqHardwareChangePropagationAnalysis extends AbstractAPSReqChang
 	 * @param version The hardware architecture version
 	 */
 	public void runChangePropagationAnalysis(APSReqHardwareArchitectureVersion version) {
-		// Preparation
+		super.runChangePropagationAnalysis(version);
 		
 		// Calculation
+		// IEC specific analysis
+		this.getApsChangePropagationAnalysis().runChangePropagationAnalysis(version.getApsArchitectureVersion());
 		
 		// Update
 	}
 	
 	private void prepareAnalysis(APSReqHardwareArchitectureVersion version) {
 		
+	}
+
+	public APSChangePropagationAnalysis getApsChangePropagationAnalysis() {
+		return apsChangePropagationAnalysis;
+	}
+
+	public void setApsChangePropagationAnalysis(APSChangePropagationAnalysis apsChangePropagationAnalysis) {
+		this.apsChangePropagationAnalysis = apsChangePropagationAnalysis;
 	}
 	
 }

@@ -24,12 +24,21 @@ public class APSReqSoftwareChangePropagationAnalysis extends AbstractAPSReqChang
 		// Preparation
 		
 		// Calculation
-		
+		this.runChangePropagationAnalysis(version);
+		this.getIecChangePropagationAnalysis().runChangePropagationAnalysis(version.getIecArchitectureVersion());
 		// Update
 	}
 	
 	private void prepareAnalysis(APSReqSoftwareArchitectureVersion version) {
 		
+	}
+
+	public IECChangePropagationAnalysis getIecChangePropagationAnalysis() {
+		return iecChangePropagationAnalysis;
+	}
+
+	public void setIecChangePropagationAnalysis(IECChangePropagationAnalysis iecChangePropagationAnalysis) {
+		this.iecChangePropagationAnalysis = iecChangePropagationAnalysis;
 	}
 	
 }

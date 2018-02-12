@@ -3,6 +3,8 @@ package edu.kit.ipd.sdq.kamp4aps4req.core;
 import edu.kit.ipd.sdq.kamp.model.modificationmarks.AbstractModification;
 import edu.kit.ipd.sdq.kamp.propagation.AbstractChangePropagationAnalysis;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqChangePropagationDueToSpecificationDependencies;
+import edu.kit.ipd.sdq.kamp4aps4req.core.AbstractAPSReqArchitectureVersion;
+import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.ModificationmarksFactory;
 import requirements.Requirement;
 import options.Option;
 
@@ -42,6 +44,55 @@ public class AbstractAPSReqChangePropagationAnalysis<T extends AbstractAPSReqArc
 		// Create only one modification mark per element in this step
 		Map<EObject, AbstractModification<?, EObject>> elementsMarkedInThisStep = 
 				new HashMap<EObject, AbstractModification<?, EObject>>();
+		
+		this.prepareAnalysis(version);	
+		this.calculateRequirementsToArchitecturePropagation(version, elementsMarkedInThisStep);
+		
 	}
 	
+	private void prepareAnalysis(T version) {
+		this.setChangePropagationDueToSpecificationDependencies(
+				edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.ModificationmarksFactory.
+				eINSTANCE.createAPSReqChangePropagationDueToSpecificationDependencies());
+		
+		this.
+	}
+
+	public void calculateRequirementsToArchitecturePropagation(T version, 
+			Map<EObject, AbstractModification<?, EObject>> elementsMarkedInThisStep) {
+		
+	}
+
+	public APSReqChangePropagationDueToSpecificationDependencies getChangePropagationDueToSpecificationDependencies() {
+		return changePropagationDueToSpecificationDependencies;
+	}
+
+	public void setChangePropagationDueToSpecificationDependencies(
+			APSReqChangePropagationDueToSpecificationDependencies changePropagationDueToSpecificationDependencies) {
+		this.changePropagationDueToSpecificationDependencies = changePropagationDueToSpecificationDependencies;
+	}
+
+	public Collection<Requirement> getMarkedRequirements() {
+		return markedRequirements;
+	}
+
+	public void setMarkedRequirements(Collection<Requirement> markedRequirements) {
+		this.markedRequirements = markedRequirements;
+	}
+
+	public Collection<Decision> getMarkedDecisions() {
+		return markedDecisions;
+	}
+
+	public void setMarkedDecisions(Collection<Decision> markedDecisions) {
+		this.markedDecisions = markedDecisions;
+	}
+
+	public Collection<Option> getMarkedOptions() {
+		return markedOptions;
+	}
+
+	public void setMarkedOptions(Collection<Option> markedOptions) {
+		this.markedOptions = markedOptions;
+	}
 }
