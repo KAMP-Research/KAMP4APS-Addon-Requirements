@@ -158,7 +158,6 @@ public class ApsoptionsPackageImpl extends EPackageImpl implements ApsoptionsPac
 		ArchoptionsPackage theArchoptionsPackage = (ArchoptionsPackage)EPackage.Registry.INSTANCE.getEPackage(ArchoptionsPackage.eNS_URI);
 
 		// Create type parameters
-		addETypeParameter(apsReqOptionEClass, "T");
 
 		// Set bounds for type parameters
 

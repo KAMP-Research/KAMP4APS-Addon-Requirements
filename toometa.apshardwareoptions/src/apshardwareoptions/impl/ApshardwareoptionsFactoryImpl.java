@@ -4,8 +4,6 @@ package apshardwareoptions.impl;
 
 import apshardwareoptions.*;
 
-import edu.kit.ipd.sdq.kamp4aps.model.basic.Entity;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -59,10 +57,25 @@ public class ApshardwareoptionsFactoryImpl extends EFactoryImpl implements Apsha
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case ApshardwareoptionsPackage.APS_REQ_HARDWARE_OPTION: return createAPSReqHardwareOption();
-			case ApshardwareoptionsPackage.APS_REQ_INTRODUCE_NEW_HARDWARE_OPTION: return createAPSReqIntroduceNewHardwareOption();
-			case ApshardwareoptionsPackage.APS_REQ_REMOVE_HARDWARE_OPTION: return createAPSReqRemoveHardwareOption();
-			case ApshardwareoptionsPackage.APS_REQ_CHANGE_HARDWARE_OPTION: return createAPSReqChangeHardwareOption();
-			case ApshardwareoptionsPackage.APS_REQ_REPLACE_HARDWARE_OPTION: return createAPSReqReplaceHardwareOption();
+			case ApshardwareoptionsPackage.APS_REQ_STRUCTURE_HARDWARE_OPTION: return createAPSReqStructureHardwareOption();
+			case ApshardwareoptionsPackage.APS_REQ_INTRODUCE_NEW_STRUCTURE_OPTION: return createAPSReqIntroduceNewStructureOption();
+			case ApshardwareoptionsPackage.APS_REQ_CHANGE_STRUCTURE_OPTION: return createAPSReqChangeStructureOption();
+			case ApshardwareoptionsPackage.APS_REQ_REMOVE_STRUCTURE_OPTION: return createAPSReqRemoveStructureOption();
+			case ApshardwareoptionsPackage.APS_REQ_REPLACE_STRUCTURE_OPTION: return createAPSReqReplaceStructureOption();
+			case ApshardwareoptionsPackage.APS_REQ_MODULE_HARDWARE_OPTION: return createAPSReqModuleHardwareOption();
+			case ApshardwareoptionsPackage.APS_REQ_INTRODUCE_NEW_MODULE_OPTION: return createAPSReqIntroduceNewModuleOption();
+			case ApshardwareoptionsPackage.APS_REQ_REMOVE_MODULE_OPTION: return createAPSReqRemoveModuleOption();
+			case ApshardwareoptionsPackage.APS_REQ_CHANGE_MODULE_OPTION: return createAPSReqChangeModuleOption();
+			case ApshardwareoptionsPackage.APS_REQ_REPLACE_MODULE_OPTION: return createAPSReqReplaceModuleOption();
+			case ApshardwareoptionsPackage.APS_REQ_COMPONENT_HARDWARE_OPTION: return createAPSReqComponentHardwareOption();
+			case ApshardwareoptionsPackage.APS_REQ_INTRODUCE_NEW_COMPONENT_OPTION: return createAPSReqIntroduceNewComponentOption();
+			case ApshardwareoptionsPackage.APS_REQ_REMOVE_COMPONENT_OPTION: return createAPSReqRemoveComponentOption();
+			case ApshardwareoptionsPackage.APS_REQ_REPLACE_COMPONENT_OPTION: return createAPSReqReplaceComponentOption();
+			case ApshardwareoptionsPackage.APS_REQ_INTERFACE_HARDWARE_OPTION: return createAPSReqInterfaceHardwareOption();
+			case ApshardwareoptionsPackage.APS_REQ_INTRODUCE_NEW_INTERFACE_OPTION: return createAPSReqIntroduceNewInterfaceOption();
+			case ApshardwareoptionsPackage.APS_REQ_CHANGE_INTERFACE_OPTION: return createAPSReqChangeInterfaceOption();
+			case ApshardwareoptionsPackage.APS_REQ_REPLACE_INTERFACE_OPTION: return createAPSReqReplaceInterfaceOption();
+			case ApshardwareoptionsPackage.APS_REQ_REMOVE_INTERFACE_OPTION: return createAPSReqRemoveInterfaceOption();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -73,8 +86,8 @@ public class ApshardwareoptionsFactoryImpl extends EFactoryImpl implements Apsha
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public <T extends Entity> APSReqHardwareOption<T> createAPSReqHardwareOption() {
-		APSReqHardwareOptionImpl<T> apsReqHardwareOption = new APSReqHardwareOptionImpl<T>();
+	public APSReqHardwareOption createAPSReqHardwareOption() {
+		APSReqHardwareOptionImpl apsReqHardwareOption = new APSReqHardwareOptionImpl();
 		return apsReqHardwareOption;
 	}
 
@@ -83,9 +96,9 @@ public class ApshardwareoptionsFactoryImpl extends EFactoryImpl implements Apsha
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public <T extends Entity> APSReqIntroduceNewHardwareOption<T> createAPSReqIntroduceNewHardwareOption() {
-		APSReqIntroduceNewHardwareOptionImpl<T> apsReqIntroduceNewHardwareOption = new APSReqIntroduceNewHardwareOptionImpl<T>();
-		return apsReqIntroduceNewHardwareOption;
+	public APSReqStructureHardwareOption createAPSReqStructureHardwareOption() {
+		APSReqStructureHardwareOptionImpl apsReqStructureHardwareOption = new APSReqStructureHardwareOptionImpl();
+		return apsReqStructureHardwareOption;
 	}
 
 	/**
@@ -93,9 +106,9 @@ public class ApshardwareoptionsFactoryImpl extends EFactoryImpl implements Apsha
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public <T extends Entity> APSReqRemoveHardwareOption<T> createAPSReqRemoveHardwareOption() {
-		APSReqRemoveHardwareOptionImpl<T> apsReqRemoveHardwareOption = new APSReqRemoveHardwareOptionImpl<T>();
-		return apsReqRemoveHardwareOption;
+	public APSReqIntroduceNewStructureOption createAPSReqIntroduceNewStructureOption() {
+		APSReqIntroduceNewStructureOptionImpl apsReqIntroduceNewStructureOption = new APSReqIntroduceNewStructureOptionImpl();
+		return apsReqIntroduceNewStructureOption;
 	}
 
 	/**
@@ -103,9 +116,9 @@ public class ApshardwareoptionsFactoryImpl extends EFactoryImpl implements Apsha
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public <T extends Entity> APSReqChangeHardwareOption<T> createAPSReqChangeHardwareOption() {
-		APSReqChangeHardwareOptionImpl<T> apsReqChangeHardwareOption = new APSReqChangeHardwareOptionImpl<T>();
-		return apsReqChangeHardwareOption;
+	public APSReqChangeStructureOption createAPSReqChangeStructureOption() {
+		APSReqChangeStructureOptionImpl apsReqChangeStructureOption = new APSReqChangeStructureOptionImpl();
+		return apsReqChangeStructureOption;
 	}
 
 	/**
@@ -113,9 +126,159 @@ public class ApshardwareoptionsFactoryImpl extends EFactoryImpl implements Apsha
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public <T extends Entity> APSReqReplaceHardwareOption<T> createAPSReqReplaceHardwareOption() {
-		APSReqReplaceHardwareOptionImpl<T> apsReqReplaceHardwareOption = new APSReqReplaceHardwareOptionImpl<T>();
-		return apsReqReplaceHardwareOption;
+	public APSReqRemoveStructureOption createAPSReqRemoveStructureOption() {
+		APSReqRemoveStructureOptionImpl apsReqRemoveStructureOption = new APSReqRemoveStructureOptionImpl();
+		return apsReqRemoveStructureOption;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public APSReqReplaceStructureOption createAPSReqReplaceStructureOption() {
+		APSReqReplaceStructureOptionImpl apsReqReplaceStructureOption = new APSReqReplaceStructureOptionImpl();
+		return apsReqReplaceStructureOption;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public APSReqModuleHardwareOption createAPSReqModuleHardwareOption() {
+		APSReqModuleHardwareOptionImpl apsReqModuleHardwareOption = new APSReqModuleHardwareOptionImpl();
+		return apsReqModuleHardwareOption;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public APSReqIntroduceNewModuleOption createAPSReqIntroduceNewModuleOption() {
+		APSReqIntroduceNewModuleOptionImpl apsReqIntroduceNewModuleOption = new APSReqIntroduceNewModuleOptionImpl();
+		return apsReqIntroduceNewModuleOption;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public APSReqRemoveModuleOption createAPSReqRemoveModuleOption() {
+		APSReqRemoveModuleOptionImpl apsReqRemoveModuleOption = new APSReqRemoveModuleOptionImpl();
+		return apsReqRemoveModuleOption;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public APSReqChangeModuleOption createAPSReqChangeModuleOption() {
+		APSReqChangeModuleOptionImpl apsReqChangeModuleOption = new APSReqChangeModuleOptionImpl();
+		return apsReqChangeModuleOption;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public APSReqReplaceModuleOption createAPSReqReplaceModuleOption() {
+		APSReqReplaceModuleOptionImpl apsReqReplaceModuleOption = new APSReqReplaceModuleOptionImpl();
+		return apsReqReplaceModuleOption;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public APSReqComponentHardwareOption createAPSReqComponentHardwareOption() {
+		APSReqComponentHardwareOptionImpl apsReqComponentHardwareOption = new APSReqComponentHardwareOptionImpl();
+		return apsReqComponentHardwareOption;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public APSReqIntroduceNewComponentOption createAPSReqIntroduceNewComponentOption() {
+		APSReqIntroduceNewComponentOptionImpl apsReqIntroduceNewComponentOption = new APSReqIntroduceNewComponentOptionImpl();
+		return apsReqIntroduceNewComponentOption;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public APSReqRemoveComponentOption createAPSReqRemoveComponentOption() {
+		APSReqRemoveComponentOptionImpl apsReqRemoveComponentOption = new APSReqRemoveComponentOptionImpl();
+		return apsReqRemoveComponentOption;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public APSReqReplaceComponentOption createAPSReqReplaceComponentOption() {
+		APSReqReplaceComponentOptionImpl apsReqReplaceComponentOption = new APSReqReplaceComponentOptionImpl();
+		return apsReqReplaceComponentOption;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public APSReqInterfaceHardwareOption createAPSReqInterfaceHardwareOption() {
+		APSReqInterfaceHardwareOptionImpl apsReqInterfaceHardwareOption = new APSReqInterfaceHardwareOptionImpl();
+		return apsReqInterfaceHardwareOption;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public APSReqIntroduceNewInterfaceOption createAPSReqIntroduceNewInterfaceOption() {
+		APSReqIntroduceNewInterfaceOptionImpl apsReqIntroduceNewInterfaceOption = new APSReqIntroduceNewInterfaceOptionImpl();
+		return apsReqIntroduceNewInterfaceOption;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public APSReqChangeInterfaceOption createAPSReqChangeInterfaceOption() {
+		APSReqChangeInterfaceOptionImpl apsReqChangeInterfaceOption = new APSReqChangeInterfaceOptionImpl();
+		return apsReqChangeInterfaceOption;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public APSReqReplaceInterfaceOption createAPSReqReplaceInterfaceOption() {
+		APSReqReplaceInterfaceOptionImpl apsReqReplaceInterfaceOption = new APSReqReplaceInterfaceOptionImpl();
+		return apsReqReplaceInterfaceOption;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public APSReqRemoveInterfaceOption createAPSReqRemoveInterfaceOption() {
+		APSReqRemoveInterfaceOptionImpl apsReqRemoveInterfaceOption = new APSReqRemoveInterfaceOptionImpl();
+		return apsReqRemoveInterfaceOption;
 	}
 
 	/**

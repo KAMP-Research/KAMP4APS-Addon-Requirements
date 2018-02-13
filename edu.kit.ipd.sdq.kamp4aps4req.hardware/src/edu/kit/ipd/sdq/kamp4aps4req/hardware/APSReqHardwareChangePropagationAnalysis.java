@@ -5,11 +5,16 @@ import java.util.Collection;
 import java.util.Map;
 import java.util.Set;
 
+import org.eclipse.emf.ecore.EObject;
+import org.palladiosimulator.pcm.repository.DataType;
+
 import apshardwareoptions.APSReqHardwareOption;
 import apsoptions.APSReqOption;
 import decisions.Decision;
 import edu.kit.ipd.sdq.kamp.model.modificationmarks.AbstractModification;
 import edu.kit.ipd.sdq.kamp4aps.core.APSChangePropagationAnalysis;
+import edu.kit.ipd.sdq.kamp4aps.model.KAMP4aPSModificationmarks.KAMP4aPSModificationmarksFactory;
+import edu.kit.ipd.sdq.kamp4aps.model.KAMP4aPSModificationmarks.ModifyStructure;
 import edu.kit.ipd.sdq.kamp4aps.model.aPS.ComponentRepository.Component;
 import edu.kit.ipd.sdq.kamp4aps.model.aPS.InterfaceRepository.Interface;
 import edu.kit.ipd.sdq.kamp4aps.model.aPS.ModuleRepository.Module;
@@ -17,7 +22,10 @@ import edu.kit.ipd.sdq.kamp4aps.model.aPS.StructureRepository.Structure;
 import edu.kit.ipd.sdq.kamp4aps.model.basic.Entity;
 import edu.kit.ipd.sdq.kamp4aps4req.core.APSReqArchitectureModelLookup;
 import edu.kit.ipd.sdq.kamp4aps4req.core.AbstractAPSReqChangePropagationAnalysis;
+import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModificationmarksFactory;
+import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.ISModifyDataType;
 import options.Option;
+import relations.TraceableObject;
 
 /**
  * Change Propagation Analysis of KAMP4aPS4Req for the hardware part.
@@ -50,11 +58,11 @@ public class APSReqHardwareChangePropagationAnalysis extends AbstractAPSReqChang
 	}
 	
 	protected void calculateAndMarkOptionToArchitecturePropagation(APSReqHardwareArchitectureVersion version,
-			Map<Entity, APSReqHardwareOption<Entity>> elementsMarkedInThisStep) {
+			Map<EObject, AbstractModification<?, EObject>> elementsMarkedInThisStep) {
 		// I Option -> Structure
-		Map<Structure, Set<Option>> dataTypesToBeMarked = APSReqHardwareArchitectureModelLookup.
+		Map<Structure, Set<APSReqHardwareOption>> structuresToBeMarked = APSReqHardwareArchitectureModelLookup.
 				lookUpStructuresReferencedByOptions(version, this.getMarkedOptions());
-		createAndAddDataTypeModifications(dataTypesToBeMarked, elementsMarkedInThisStep);
+		createAndAddStructureModifications(structuresToBeMarked, elementsMarkedInThisStep);
 		// II Option -> Module
 		Map<Module, Set<Option>> interfacesToBeMarked = APSReqHardwareArchitectureModelLookup.
 				lookUpModulesReferencedByDecisions(version, this.getMarkedDecisions());
@@ -67,6 +75,26 @@ public class APSReqHardwareChangePropagationAnalysis extends AbstractAPSReqChang
 		Map<Interface, Set<APSReqHardwareOption<Interface>>> entitiesToBeMarked = APSReqHardwareArchitectureModelLookup.
 				lookUpInterfacesReferencedByOptions(version, (Collection<APSReqHardwareOption<Interface>>) this.getMarkedOptions());
 		createAndAddEntityModifications(entitiesToBeMarked, elementsMarkedInThisStep);
+	}
+	
+	private <T extends TraceableObject> void createAndAddStructureModifications(
+			Map<Structure, Set<T>> structuresToBeMarked, 
+			Map<EObject, AbstractModification<?, EObject>> elementsMarkedInThisStep) {
+		for (Map.Entry<Structure, Set<T>> structuresToBeMarkedEntry: structuresToBeMarked.entrySet()) {
+			if (elementsMarkedInThisStep.containsKey(structuresToBeMarkedEntry.getKey())) {
+				elementsMarkedInThisStep.get(structuresToBeMarkedEntry.getKey()).
+						getCausingElements().addAll(structuresToBeMarkedEntry.getValue());
+			} else {
+				ModifyStructure<Structure> modifyStructure = KAMP4aPSModificationmarksFactory.eINSTANCE.createModifyStructure();
+				modifyStructure.setToolderived(true);
+				modifyStructure.setAffectedElement(structuresToBeMarkedEntry.getKey());
+				modifyStructure.getCausingElements().addAll(structuresToBeMarkedEntry.getValue());
+				
+				elementsMarkedInThisStep.put(structuresToBeMarkedEntry.getKey(), modifyStructure);
+				this.getApsChangePropagationDueToSpecificationDependencies().
+						getStructureModifications().add(modifyStructure);
+			}
+		}
 	}
 	
 

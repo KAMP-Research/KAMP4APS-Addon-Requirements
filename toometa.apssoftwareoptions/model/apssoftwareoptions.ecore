@@ -2,12 +2,7 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="apssoftwareoptions" nsURI="http://www.example.org/apssoftwareoptions"
     nsPrefix="apssoftwareoptions">
-  <eClassifiers xsi:type="ecore:EClass" name="APSReqSoftwareOption">
-    <eTypeParameters name="T"/>
-    <eGenericSuperTypes eClassifier="ecore:EClass ../../toometa.apsoptions/model/apsoptions.ecore#//APSReqOption">
-      <eTypeArguments eClassifier="ecore:EClass ../../edu.kit.ipd.sdq.kamp4iec.model.repo/model/IECRepository.ecore#//IECComponent"/>
-    </eGenericSuperTypes>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="APSReqSoftwareOption" eSuperTypes="../../toometa.apsoptions/model/apsoptions.ecore#//APSReqOption"/>
   <eClassifiers xsi:type="ecore:EClass" name="APSReqChangeSoftwareOption">
     <eTypeParameters name="T">
       <eBounds eClassifier="ecore:EClass ../../edu.kit.ipd.sdq.kamp4iec.model.repo/model/IECRepository.ecore#//IECComponent"/>
@@ -54,5 +49,14 @@
     <eGenericSuperTypes eClassifier="#//APSReqSoftwareOption">
       <eTypeArguments eTypeParameter="#//APSReqIntroduceNewSoftwareOption/T"/>
     </eGenericSuperTypes>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="APSReqComponentSoftwareOption" eSuperTypes="#//APSReqSoftwareOption">
+    <eStructuralFeatures xsi:type="ecore:EReference" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EEnum"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="APSReqModificationType">
+    <eLiterals name="INTRODUCE_NEW"/>
+    <eLiterals name="CHANGE" value="1" literal="CHANGE"/>
+    <eLiterals name="REPLACE" value="2" literal=""/>
+    <eLiterals name="REMOVE" value="3"/>
   </eClassifiers>
 </ecore:EPackage>

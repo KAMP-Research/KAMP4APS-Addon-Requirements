@@ -23,7 +23,7 @@ public class APSReqHardwareOptionTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected APSReqHardwareOption<?> fixture = null;
+	protected APSReqHardwareOption fixture = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -50,7 +50,7 @@ public class APSReqHardwareOptionTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void setFixture(APSReqHardwareOption<?> fixture) {
+	protected void setFixture(APSReqHardwareOption fixture) {
 		this.fixture = fixture;
 	}
 
@@ -60,7 +60,7 @@ public class APSReqHardwareOptionTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected APSReqHardwareOption<?> getFixture() {
+	protected APSReqHardwareOption getFixture() {
 		return fixture;
 	}
 

@@ -67,8 +67,8 @@ public class ApsoptionsFactoryImpl extends EFactoryImpl implements ApsoptionsFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public <T> APSReqOption<T> createAPSReqOption() {
-		APSReqOptionImpl<T> apsReqOption = new APSReqOptionImpl<T>();
+	public APSReqOption createAPSReqOption() {
+		APSReqOptionImpl apsReqOption = new APSReqOptionImpl();
 		return apsReqOption;
 	}
 

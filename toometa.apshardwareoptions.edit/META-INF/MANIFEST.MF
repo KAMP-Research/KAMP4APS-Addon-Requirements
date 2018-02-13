@@ -12,6 +12,8 @@ Export-Package: apshardwareoptions.provider
 Require-Bundle: org.eclipse.core.runtime,
  toometa.apshardwareoptions;visibility:=reexport,
  org.eclipse.emf.edit;visibility:=reexport,
+ edu.kit.ipd.sdq.kamp4aps.aps;visibility:=reexport,
+ edu.kit.ipd.sdq.kamp4aps.aps.edit;visibility:=reexport,
  toometa.apsoptions;visibility:=reexport,
  toometa.apsoptions.edit;visibility:=reexport,
  toometa.archoptions;visibility:=reexport,

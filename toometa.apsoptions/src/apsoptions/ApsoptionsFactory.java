@@ -28,7 +28,7 @@ public interface ApsoptionsFactory extends EFactory {
 	 * @return a new object of class '<em>APS Req Option</em>'.
 	 * @generated
 	 */
-	<T> APSReqOption<T> createAPSReqOption();
+	APSReqOption createAPSReqOption();
 
 	/**
 	 * Returns the package supported by this factory.

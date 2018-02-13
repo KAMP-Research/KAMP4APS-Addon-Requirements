@@ -14,6 +14,8 @@ import de.uka.ipd.sdq.dsexplore.qml.units.provider.UnitsEditPlugin;
 
 import de.uka.ipd.sdq.identifier.provider.IdentifierEditPlugin;
 
+import edu.kit.ipd.sdq.kamp4aps.aps.aPS.provider.ApsEditPlugin;
+
 import edu.kit.ipd.sdq.kamp4aps.model.basic.provider.BasicEditPlugin;
 
 import effects.provider.EffectsEditPlugin;
@@ -66,6 +68,7 @@ public final class ApshardwareoptionsEditorPlugin extends EMFPlugin {
 	public ApshardwareoptionsEditorPlugin() {
 		super
 			(new ResourceLocator [] {
+				ApsEditPlugin.INSTANCE,
 				ApsoptionsEditPlugin.INSTANCE,
 				ArchoptionsEditPlugin.INSTANCE,
 				BasicEditPlugin.INSTANCE,

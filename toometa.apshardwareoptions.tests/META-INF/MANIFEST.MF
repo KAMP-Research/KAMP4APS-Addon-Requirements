@@ -10,6 +10,7 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: apshardwareoptions.tests
 Require-Bundle: org.eclipse.core.runtime,
  toometa.apshardwareoptions;visibility:=reexport,
+ edu.kit.ipd.sdq.kamp4aps.aps;visibility:=reexport,
  toometa.apsoptions;visibility:=reexport,
  toometa.archoptions;visibility:=reexport,
  edu.kit.ipd.sdq.kamp4aps.basic;visibility:=reexport,

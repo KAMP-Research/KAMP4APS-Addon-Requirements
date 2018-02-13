@@ -16,5 +16,5 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface APSReqOption<T> extends EObject, ArchOption {
+public interface APSReqOption extends EObject, ArchOption {
 } // APSReqOption

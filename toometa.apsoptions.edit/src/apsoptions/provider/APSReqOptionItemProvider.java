@@ -68,7 +68,7 @@ public class APSReqOptionItemProvider extends ArchOptionItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((APSReqOption<?>)object).getId();
+		String label = ((APSReqOption)object).getId();
 		return label == null || label.length() == 0 ?
 			getString("_UI_APSReqOption_type") :
 			getString("_UI_APSReqOption_type") + " " + label;

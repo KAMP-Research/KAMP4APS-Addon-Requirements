@@ -87,7 +87,7 @@ public class ApsoptionsAdapterFactory extends AdapterFactoryImpl {
 	protected ApsoptionsSwitch<Adapter> modelSwitch =
 		new ApsoptionsSwitch<Adapter>() {
 			@Override
-			public <T> Adapter caseAPSReqOption(APSReqOption<T> object) {
+			public Adapter caseAPSReqOption(APSReqOption object) {
 				return createAPSReqOptionAdapter();
 			}
 			@Override

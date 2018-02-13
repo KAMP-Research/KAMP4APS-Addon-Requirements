@@ -41,7 +41,7 @@ import relations.TriggerObject;
  * @see apsoptions.ApsoptionsPackage
  * @generated
  */
-public class ApsoptionsSwitch<T1> extends Switch<T1> {
+public class ApsoptionsSwitch<T> extends Switch<T> {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
@@ -83,11 +83,11 @@ public class ApsoptionsSwitch<T1> extends Switch<T1> {
 	 * @generated
 	 */
 	@Override
-	protected T1 doSwitch(int classifierID, EObject theEObject) {
+	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
 			case ApsoptionsPackage.APS_REQ_OPTION: {
-				APSReqOption<?> apsReqOption = (APSReqOption<?>)theEObject;
-				T1 result = caseAPSReqOption(apsReqOption);
+				APSReqOption apsReqOption = (APSReqOption)theEObject;
+				T result = caseAPSReqOption(apsReqOption);
 				if (result == null) result = caseArchOption(apsReqOption);
 				if (result == null) result = caseOption(apsReqOption);
 				if (result == null) result = caseTraceableObject(apsReqOption);
@@ -121,7 +121,7 @@ public class ApsoptionsSwitch<T1> extends Switch<T1> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public <T> T1 caseAPSReqOption(APSReqOption<T> object) {
+	public T caseAPSReqOption(APSReqOption object) {
 		return null;
 	}
 
@@ -136,7 +136,7 @@ public class ApsoptionsSwitch<T1> extends Switch<T1> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseIdentifier(Identifier object) {
+	public T caseIdentifier(Identifier object) {
 		return null;
 	}
 
@@ -151,7 +151,7 @@ public class ApsoptionsSwitch<T1> extends Switch<T1> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseRelationObject(RelationObject object) {
+	public T caseRelationObject(RelationObject object) {
 		return null;
 	}
 
@@ -166,7 +166,7 @@ public class ApsoptionsSwitch<T1> extends Switch<T1> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseConflictObject(ConflictObject object) {
+	public T caseConflictObject(ConflictObject object) {
 		return null;
 	}
 
@@ -181,7 +181,7 @@ public class ApsoptionsSwitch<T1> extends Switch<T1> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseDuplicationObject(DuplicationObject object) {
+	public T caseDuplicationObject(DuplicationObject object) {
 		return null;
 	}
 
@@ -196,7 +196,7 @@ public class ApsoptionsSwitch<T1> extends Switch<T1> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseDependencyObject(DependencyObject object) {
+	public T caseDependencyObject(DependencyObject object) {
 		return null;
 	}
 
@@ -211,7 +211,7 @@ public class ApsoptionsSwitch<T1> extends Switch<T1> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseParentalObject(ParentalObject object) {
+	public T caseParentalObject(ParentalObject object) {
 		return null;
 	}
 
@@ -226,7 +226,7 @@ public class ApsoptionsSwitch<T1> extends Switch<T1> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseTriggerObject(TriggerObject object) {
+	public T caseTriggerObject(TriggerObject object) {
 		return null;
 	}
 
@@ -241,7 +241,7 @@ public class ApsoptionsSwitch<T1> extends Switch<T1> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseResolveObject(ResolveObject object) {
+	public T caseResolveObject(ResolveObject object) {
 		return null;
 	}
 
@@ -256,7 +256,7 @@ public class ApsoptionsSwitch<T1> extends Switch<T1> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseAlternativeObject(AlternativeObject object) {
+	public T caseAlternativeObject(AlternativeObject object) {
 		return null;
 	}
 
@@ -271,7 +271,7 @@ public class ApsoptionsSwitch<T1> extends Switch<T1> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseCouldResolveObject(CouldResolveObject object) {
+	public T caseCouldResolveObject(CouldResolveObject object) {
 		return null;
 	}
 
@@ -286,7 +286,7 @@ public class ApsoptionsSwitch<T1> extends Switch<T1> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseStakeholderObject(StakeholderObject object) {
+	public T caseStakeholderObject(StakeholderObject object) {
 		return null;
 	}
 
@@ -301,7 +301,7 @@ public class ApsoptionsSwitch<T1> extends Switch<T1> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseSelectionObject(SelectionObject object) {
+	public T caseSelectionObject(SelectionObject object) {
 		return null;
 	}
 
@@ -316,7 +316,7 @@ public class ApsoptionsSwitch<T1> extends Switch<T1> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseTraceableObject(TraceableObject object) {
+	public T caseTraceableObject(TraceableObject object) {
 		return null;
 	}
 
@@ -331,7 +331,7 @@ public class ApsoptionsSwitch<T1> extends Switch<T1> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseOption(Option object) {
+	public T caseOption(Option object) {
 		return null;
 	}
 
@@ -346,7 +346,7 @@ public class ApsoptionsSwitch<T1> extends Switch<T1> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseArchOption(ArchOption object) {
+	public T caseArchOption(ArchOption object) {
 		return null;
 	}
 
@@ -362,7 +362,7 @@ public class ApsoptionsSwitch<T1> extends Switch<T1> {
 	 * @generated
 	 */
 	@Override
-	public T1 defaultCase(EObject object) {
+	public T defaultCase(EObject object) {
 		return null;
 	}
 

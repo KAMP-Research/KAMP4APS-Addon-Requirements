@@ -2,23 +2,44 @@
  */
 package apshardwareoptions.impl;
 
-import apshardwareoptions.APSReqChangeHardwareOption;
+import apshardwareoptions.APSReqChangeInterfaceOption;
+import apshardwareoptions.APSReqChangeModuleOption;
+import apshardwareoptions.APSReqChangeStructureOption;
+import apshardwareoptions.APSReqComponentHardwareOption;
 import apshardwareoptions.APSReqHardwareOption;
-import apshardwareoptions.APSReqIntroduceNewHardwareOption;
-import apshardwareoptions.APSReqRemoveHardwareOption;
-import apshardwareoptions.APSReqReplaceHardwareOption;
+import apshardwareoptions.APSReqInterfaceHardwareOption;
+import apshardwareoptions.APSReqIntroduceNewComponentOption;
+import apshardwareoptions.APSReqIntroduceNewInterfaceOption;
+import apshardwareoptions.APSReqIntroduceNewModuleOption;
+import apshardwareoptions.APSReqIntroduceNewStructureOption;
+import apshardwareoptions.APSReqModuleHardwareOption;
+import apshardwareoptions.APSReqRemoveComponentOption;
+import apshardwareoptions.APSReqRemoveInterfaceOption;
+import apshardwareoptions.APSReqRemoveModuleOption;
+import apshardwareoptions.APSReqRemoveStructureOption;
+import apshardwareoptions.APSReqReplaceComponentOption;
+import apshardwareoptions.APSReqReplaceInterfaceOption;
+import apshardwareoptions.APSReqReplaceModuleOption;
+import apshardwareoptions.APSReqReplaceStructureOption;
+import apshardwareoptions.APSReqStructureHardwareOption;
 import apshardwareoptions.ApshardwareoptionsFactory;
 import apshardwareoptions.ApshardwareoptionsPackage;
 
 import apsoptions.ApsoptionsPackage;
 
-import edu.kit.ipd.sdq.kamp4aps.model.basic.BasicPackage;
+import edu.kit.ipd.sdq.kamp4aps.model.aPS.ComponentRepository.ComponentRepositoryPackage;
+
+import edu.kit.ipd.sdq.kamp4aps.model.aPS.InterfaceRepository.InterfaceRepositoryPackage;
+
+import edu.kit.ipd.sdq.kamp4aps.model.aPS.ModuleRepository.ModuleRepositoryPackage;
+
+import edu.kit.ipd.sdq.kamp4aps.model.aPS.StructureRepository.StructureRepositoryPackage;
+
+import edu.kit.ipd.sdq.kamp4aps.model.aPS.apsPackage;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.ETypeParameter;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
@@ -41,28 +62,133 @@ public class ApshardwareoptionsPackageImpl extends EPackageImpl implements Apsha
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass apsReqIntroduceNewHardwareOptionEClass = null;
+	private EClass apsReqStructureHardwareOptionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass apsReqRemoveHardwareOptionEClass = null;
+	private EClass apsReqIntroduceNewStructureOptionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass apsReqChangeHardwareOptionEClass = null;
+	private EClass apsReqChangeStructureOptionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass apsReqReplaceHardwareOptionEClass = null;
+	private EClass apsReqRemoveStructureOptionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass apsReqReplaceStructureOptionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass apsReqModuleHardwareOptionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass apsReqIntroduceNewModuleOptionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass apsReqRemoveModuleOptionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass apsReqChangeModuleOptionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass apsReqReplaceModuleOptionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass apsReqComponentHardwareOptionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass apsReqIntroduceNewComponentOptionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass apsReqRemoveComponentOptionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass apsReqReplaceComponentOptionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass apsReqInterfaceHardwareOptionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass apsReqIntroduceNewInterfaceOptionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass apsReqChangeInterfaceOptionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass apsReqReplaceInterfaceOptionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass apsReqRemoveInterfaceOptionEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -111,8 +237,8 @@ public class ApshardwareoptionsPackageImpl extends EPackageImpl implements Apsha
 		isInited = true;
 
 		// Initialize simple dependencies
+		apsPackage.eINSTANCE.eClass();
 		ApsoptionsPackage.eINSTANCE.eClass();
-		BasicPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theApshardwareoptionsPackage.createPackageContents();
@@ -143,8 +269,8 @@ public class ApshardwareoptionsPackageImpl extends EPackageImpl implements Apsha
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getAPSReqIntroduceNewHardwareOption() {
-		return apsReqIntroduceNewHardwareOptionEClass;
+	public EClass getAPSReqStructureHardwareOption() {
+		return apsReqStructureHardwareOptionEClass;
 	}
 
 	/**
@@ -152,8 +278,8 @@ public class ApshardwareoptionsPackageImpl extends EPackageImpl implements Apsha
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAPSReqIntroduceNewHardwareOption_Entities() {
-		return (EReference)apsReqIntroduceNewHardwareOptionEClass.getEStructuralFeatures().get(0);
+	public EClass getAPSReqIntroduceNewStructureOption() {
+		return apsReqIntroduceNewStructureOptionEClass;
 	}
 
 	/**
@@ -161,8 +287,8 @@ public class ApshardwareoptionsPackageImpl extends EPackageImpl implements Apsha
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getAPSReqRemoveHardwareOption() {
-		return apsReqRemoveHardwareOptionEClass;
+	public EReference getAPSReqIntroduceNewStructureOption_Structures() {
+		return (EReference)apsReqIntroduceNewStructureOptionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -170,8 +296,8 @@ public class ApshardwareoptionsPackageImpl extends EPackageImpl implements Apsha
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAPSReqRemoveHardwareOption_Entities() {
-		return (EReference)apsReqRemoveHardwareOptionEClass.getEStructuralFeatures().get(0);
+	public EClass getAPSReqChangeStructureOption() {
+		return apsReqChangeStructureOptionEClass;
 	}
 
 	/**
@@ -179,8 +305,8 @@ public class ApshardwareoptionsPackageImpl extends EPackageImpl implements Apsha
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getAPSReqChangeHardwareOption() {
-		return apsReqChangeHardwareOptionEClass;
+	public EReference getAPSReqChangeStructureOption_Structures() {
+		return (EReference)apsReqChangeStructureOptionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -188,8 +314,8 @@ public class ApshardwareoptionsPackageImpl extends EPackageImpl implements Apsha
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAPSReqChangeHardwareOption_Entities() {
-		return (EReference)apsReqChangeHardwareOptionEClass.getEStructuralFeatures().get(0);
+	public EClass getAPSReqRemoveStructureOption() {
+		return apsReqRemoveStructureOptionEClass;
 	}
 
 	/**
@@ -197,8 +323,8 @@ public class ApshardwareoptionsPackageImpl extends EPackageImpl implements Apsha
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getAPSReqReplaceHardwareOption() {
-		return apsReqReplaceHardwareOptionEClass;
+	public EReference getAPSReqRemoveStructureOption_Structures() {
+		return (EReference)apsReqRemoveStructureOptionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -206,8 +332,8 @@ public class ApshardwareoptionsPackageImpl extends EPackageImpl implements Apsha
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAPSReqReplaceHardwareOption_OldEntity() {
-		return (EReference)apsReqReplaceHardwareOptionEClass.getEStructuralFeatures().get(0);
+	public EClass getAPSReqReplaceStructureOption() {
+		return apsReqReplaceStructureOptionEClass;
 	}
 
 	/**
@@ -215,8 +341,269 @@ public class ApshardwareoptionsPackageImpl extends EPackageImpl implements Apsha
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAPSReqReplaceHardwareOption_NewEntity() {
-		return (EReference)apsReqReplaceHardwareOptionEClass.getEStructuralFeatures().get(1);
+	public EReference getAPSReqReplaceStructureOption_OldStructure() {
+		return (EReference)apsReqReplaceStructureOptionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAPSReqReplaceStructureOption_NewStructure() {
+		return (EReference)apsReqReplaceStructureOptionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAPSReqModuleHardwareOption() {
+		return apsReqModuleHardwareOptionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAPSReqIntroduceNewModuleOption() {
+		return apsReqIntroduceNewModuleOptionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAPSReqIntroduceNewModuleOption_Modules() {
+		return (EReference)apsReqIntroduceNewModuleOptionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAPSReqRemoveModuleOption() {
+		return apsReqRemoveModuleOptionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAPSReqRemoveModuleOption_Modules() {
+		return (EReference)apsReqRemoveModuleOptionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAPSReqChangeModuleOption() {
+		return apsReqChangeModuleOptionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAPSReqChangeModuleOption_Modules() {
+		return (EReference)apsReqChangeModuleOptionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAPSReqReplaceModuleOption() {
+		return apsReqReplaceModuleOptionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAPSReqReplaceModuleOption_OldModule() {
+		return (EReference)apsReqReplaceModuleOptionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAPSReqReplaceModuleOption_NewModule() {
+		return (EReference)apsReqReplaceModuleOptionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAPSReqComponentHardwareOption() {
+		return apsReqComponentHardwareOptionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAPSReqIntroduceNewComponentOption() {
+		return apsReqIntroduceNewComponentOptionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAPSReqIntroduceNewComponentOption_Components() {
+		return (EReference)apsReqIntroduceNewComponentOptionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAPSReqRemoveComponentOption() {
+		return apsReqRemoveComponentOptionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAPSReqRemoveComponentOption_Components() {
+		return (EReference)apsReqRemoveComponentOptionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAPSReqReplaceComponentOption() {
+		return apsReqReplaceComponentOptionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAPSReqReplaceComponentOption_OldComponent() {
+		return (EReference)apsReqReplaceComponentOptionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAPSReqReplaceComponentOption_NewComponent() {
+		return (EReference)apsReqReplaceComponentOptionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAPSReqInterfaceHardwareOption() {
+		return apsReqInterfaceHardwareOptionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAPSReqIntroduceNewInterfaceOption() {
+		return apsReqIntroduceNewInterfaceOptionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAPSReqIntroduceNewInterfaceOption_Interfaces() {
+		return (EReference)apsReqIntroduceNewInterfaceOptionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAPSReqChangeInterfaceOption() {
+		return apsReqChangeInterfaceOptionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAPSReqChangeInterfaceOption_Interfaces() {
+		return (EReference)apsReqChangeInterfaceOptionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAPSReqReplaceInterfaceOption() {
+		return apsReqReplaceInterfaceOptionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAPSReqReplaceInterfaceOption_OldInterface() {
+		return (EReference)apsReqReplaceInterfaceOptionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAPSReqReplaceInterfaceOption_NewInterface() {
+		return (EReference)apsReqReplaceInterfaceOptionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAPSReqRemoveInterfaceOption() {
+		return apsReqRemoveInterfaceOptionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAPSReqRemoveInterfaceOption_Interfaces() {
+		return (EReference)apsReqRemoveInterfaceOptionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -249,18 +636,62 @@ public class ApshardwareoptionsPackageImpl extends EPackageImpl implements Apsha
 		// Create classes and their features
 		apsReqHardwareOptionEClass = createEClass(APS_REQ_HARDWARE_OPTION);
 
-		apsReqIntroduceNewHardwareOptionEClass = createEClass(APS_REQ_INTRODUCE_NEW_HARDWARE_OPTION);
-		createEReference(apsReqIntroduceNewHardwareOptionEClass, APS_REQ_INTRODUCE_NEW_HARDWARE_OPTION__ENTITIES);
+		apsReqStructureHardwareOptionEClass = createEClass(APS_REQ_STRUCTURE_HARDWARE_OPTION);
 
-		apsReqRemoveHardwareOptionEClass = createEClass(APS_REQ_REMOVE_HARDWARE_OPTION);
-		createEReference(apsReqRemoveHardwareOptionEClass, APS_REQ_REMOVE_HARDWARE_OPTION__ENTITIES);
+		apsReqIntroduceNewStructureOptionEClass = createEClass(APS_REQ_INTRODUCE_NEW_STRUCTURE_OPTION);
+		createEReference(apsReqIntroduceNewStructureOptionEClass, APS_REQ_INTRODUCE_NEW_STRUCTURE_OPTION__STRUCTURES);
 
-		apsReqChangeHardwareOptionEClass = createEClass(APS_REQ_CHANGE_HARDWARE_OPTION);
-		createEReference(apsReqChangeHardwareOptionEClass, APS_REQ_CHANGE_HARDWARE_OPTION__ENTITIES);
+		apsReqChangeStructureOptionEClass = createEClass(APS_REQ_CHANGE_STRUCTURE_OPTION);
+		createEReference(apsReqChangeStructureOptionEClass, APS_REQ_CHANGE_STRUCTURE_OPTION__STRUCTURES);
 
-		apsReqReplaceHardwareOptionEClass = createEClass(APS_REQ_REPLACE_HARDWARE_OPTION);
-		createEReference(apsReqReplaceHardwareOptionEClass, APS_REQ_REPLACE_HARDWARE_OPTION__OLD_ENTITY);
-		createEReference(apsReqReplaceHardwareOptionEClass, APS_REQ_REPLACE_HARDWARE_OPTION__NEW_ENTITY);
+		apsReqRemoveStructureOptionEClass = createEClass(APS_REQ_REMOVE_STRUCTURE_OPTION);
+		createEReference(apsReqRemoveStructureOptionEClass, APS_REQ_REMOVE_STRUCTURE_OPTION__STRUCTURES);
+
+		apsReqReplaceStructureOptionEClass = createEClass(APS_REQ_REPLACE_STRUCTURE_OPTION);
+		createEReference(apsReqReplaceStructureOptionEClass, APS_REQ_REPLACE_STRUCTURE_OPTION__OLD_STRUCTURE);
+		createEReference(apsReqReplaceStructureOptionEClass, APS_REQ_REPLACE_STRUCTURE_OPTION__NEW_STRUCTURE);
+
+		apsReqModuleHardwareOptionEClass = createEClass(APS_REQ_MODULE_HARDWARE_OPTION);
+
+		apsReqIntroduceNewModuleOptionEClass = createEClass(APS_REQ_INTRODUCE_NEW_MODULE_OPTION);
+		createEReference(apsReqIntroduceNewModuleOptionEClass, APS_REQ_INTRODUCE_NEW_MODULE_OPTION__MODULES);
+
+		apsReqRemoveModuleOptionEClass = createEClass(APS_REQ_REMOVE_MODULE_OPTION);
+		createEReference(apsReqRemoveModuleOptionEClass, APS_REQ_REMOVE_MODULE_OPTION__MODULES);
+
+		apsReqChangeModuleOptionEClass = createEClass(APS_REQ_CHANGE_MODULE_OPTION);
+		createEReference(apsReqChangeModuleOptionEClass, APS_REQ_CHANGE_MODULE_OPTION__MODULES);
+
+		apsReqReplaceModuleOptionEClass = createEClass(APS_REQ_REPLACE_MODULE_OPTION);
+		createEReference(apsReqReplaceModuleOptionEClass, APS_REQ_REPLACE_MODULE_OPTION__OLD_MODULE);
+		createEReference(apsReqReplaceModuleOptionEClass, APS_REQ_REPLACE_MODULE_OPTION__NEW_MODULE);
+
+		apsReqComponentHardwareOptionEClass = createEClass(APS_REQ_COMPONENT_HARDWARE_OPTION);
+
+		apsReqIntroduceNewComponentOptionEClass = createEClass(APS_REQ_INTRODUCE_NEW_COMPONENT_OPTION);
+		createEReference(apsReqIntroduceNewComponentOptionEClass, APS_REQ_INTRODUCE_NEW_COMPONENT_OPTION__COMPONENTS);
+
+		apsReqRemoveComponentOptionEClass = createEClass(APS_REQ_REMOVE_COMPONENT_OPTION);
+		createEReference(apsReqRemoveComponentOptionEClass, APS_REQ_REMOVE_COMPONENT_OPTION__COMPONENTS);
+
+		apsReqReplaceComponentOptionEClass = createEClass(APS_REQ_REPLACE_COMPONENT_OPTION);
+		createEReference(apsReqReplaceComponentOptionEClass, APS_REQ_REPLACE_COMPONENT_OPTION__OLD_COMPONENT);
+		createEReference(apsReqReplaceComponentOptionEClass, APS_REQ_REPLACE_COMPONENT_OPTION__NEW_COMPONENT);
+
+		apsReqInterfaceHardwareOptionEClass = createEClass(APS_REQ_INTERFACE_HARDWARE_OPTION);
+
+		apsReqIntroduceNewInterfaceOptionEClass = createEClass(APS_REQ_INTRODUCE_NEW_INTERFACE_OPTION);
+		createEReference(apsReqIntroduceNewInterfaceOptionEClass, APS_REQ_INTRODUCE_NEW_INTERFACE_OPTION__INTERFACES);
+
+		apsReqChangeInterfaceOptionEClass = createEClass(APS_REQ_CHANGE_INTERFACE_OPTION);
+		createEReference(apsReqChangeInterfaceOptionEClass, APS_REQ_CHANGE_INTERFACE_OPTION__INTERFACES);
+
+		apsReqReplaceInterfaceOptionEClass = createEClass(APS_REQ_REPLACE_INTERFACE_OPTION);
+		createEReference(apsReqReplaceInterfaceOptionEClass, APS_REQ_REPLACE_INTERFACE_OPTION__OLD_INTERFACE);
+		createEReference(apsReqReplaceInterfaceOptionEClass, APS_REQ_REPLACE_INTERFACE_OPTION__NEW_INTERFACE);
+
+		apsReqRemoveInterfaceOptionEClass = createEClass(APS_REQ_REMOVE_INTERFACE_OPTION);
+		createEReference(apsReqRemoveInterfaceOptionEClass, APS_REQ_REMOVE_INTERFACE_OPTION__INTERFACES);
 	}
 
 	/**
@@ -287,70 +718,97 @@ public class ApshardwareoptionsPackageImpl extends EPackageImpl implements Apsha
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		BasicPackage theBasicPackage = (BasicPackage)EPackage.Registry.INSTANCE.getEPackage(BasicPackage.eNS_URI);
 		ApsoptionsPackage theApsoptionsPackage = (ApsoptionsPackage)EPackage.Registry.INSTANCE.getEPackage(ApsoptionsPackage.eNS_URI);
+		StructureRepositoryPackage theStructureRepositoryPackage = (StructureRepositoryPackage)EPackage.Registry.INSTANCE.getEPackage(StructureRepositoryPackage.eNS_URI);
+		ModuleRepositoryPackage theModuleRepositoryPackage = (ModuleRepositoryPackage)EPackage.Registry.INSTANCE.getEPackage(ModuleRepositoryPackage.eNS_URI);
+		ComponentRepositoryPackage theComponentRepositoryPackage = (ComponentRepositoryPackage)EPackage.Registry.INSTANCE.getEPackage(ComponentRepositoryPackage.eNS_URI);
+		InterfaceRepositoryPackage theInterfaceRepositoryPackage = (InterfaceRepositoryPackage)EPackage.Registry.INSTANCE.getEPackage(InterfaceRepositoryPackage.eNS_URI);
 
 		// Create type parameters
-		ETypeParameter apsReqHardwareOptionEClass_T = addETypeParameter(apsReqHardwareOptionEClass, "T");
-		ETypeParameter apsReqIntroduceNewHardwareOptionEClass_T = addETypeParameter(apsReqIntroduceNewHardwareOptionEClass, "T");
-		ETypeParameter apsReqRemoveHardwareOptionEClass_T = addETypeParameter(apsReqRemoveHardwareOptionEClass, "T");
-		ETypeParameter apsReqChangeHardwareOptionEClass_T = addETypeParameter(apsReqChangeHardwareOptionEClass, "T");
-		ETypeParameter apsReqReplaceHardwareOptionEClass_T = addETypeParameter(apsReqReplaceHardwareOptionEClass, "T");
 
 		// Set bounds for type parameters
-		EGenericType g1 = createEGenericType(theBasicPackage.getEntity());
-		apsReqHardwareOptionEClass_T.getEBounds().add(g1);
-		g1 = createEGenericType(theBasicPackage.getEntity());
-		apsReqIntroduceNewHardwareOptionEClass_T.getEBounds().add(g1);
-		g1 = createEGenericType(theBasicPackage.getEntity());
-		apsReqRemoveHardwareOptionEClass_T.getEBounds().add(g1);
-		g1 = createEGenericType(theBasicPackage.getEntity());
-		apsReqChangeHardwareOptionEClass_T.getEBounds().add(g1);
-		g1 = createEGenericType(theBasicPackage.getEntity());
-		apsReqReplaceHardwareOptionEClass_T.getEBounds().add(g1);
 
 		// Add supertypes to classes
-		g1 = createEGenericType(theApsoptionsPackage.getAPSReqOption());
-		EGenericType g2 = createEGenericType(theBasicPackage.getEntity());
-		g1.getETypeArguments().add(g2);
-		apsReqHardwareOptionEClass.getEGenericSuperTypes().add(g1);
-		g1 = createEGenericType(this.getAPSReqHardwareOption());
-		g2 = createEGenericType(apsReqIntroduceNewHardwareOptionEClass_T);
-		g1.getETypeArguments().add(g2);
-		apsReqIntroduceNewHardwareOptionEClass.getEGenericSuperTypes().add(g1);
-		g1 = createEGenericType(this.getAPSReqHardwareOption());
-		g2 = createEGenericType(apsReqRemoveHardwareOptionEClass_T);
-		g1.getETypeArguments().add(g2);
-		apsReqRemoveHardwareOptionEClass.getEGenericSuperTypes().add(g1);
-		g1 = createEGenericType(this.getAPSReqHardwareOption());
-		g2 = createEGenericType(apsReqChangeHardwareOptionEClass_T);
-		g1.getETypeArguments().add(g2);
-		apsReqChangeHardwareOptionEClass.getEGenericSuperTypes().add(g1);
-		g1 = createEGenericType(this.getAPSReqHardwareOption());
-		g2 = createEGenericType(apsReqReplaceHardwareOptionEClass_T);
-		g1.getETypeArguments().add(g2);
-		apsReqReplaceHardwareOptionEClass.getEGenericSuperTypes().add(g1);
+		apsReqHardwareOptionEClass.getESuperTypes().add(theApsoptionsPackage.getAPSReqOption());
+		apsReqStructureHardwareOptionEClass.getESuperTypes().add(this.getAPSReqHardwareOption());
+		apsReqIntroduceNewStructureOptionEClass.getESuperTypes().add(this.getAPSReqStructureHardwareOption());
+		apsReqChangeStructureOptionEClass.getESuperTypes().add(this.getAPSReqStructureHardwareOption());
+		apsReqRemoveStructureOptionEClass.getESuperTypes().add(this.getAPSReqStructureHardwareOption());
+		apsReqReplaceStructureOptionEClass.getESuperTypes().add(this.getAPSReqStructureHardwareOption());
+		apsReqModuleHardwareOptionEClass.getESuperTypes().add(this.getAPSReqHardwareOption());
+		apsReqIntroduceNewModuleOptionEClass.getESuperTypes().add(this.getAPSReqModuleHardwareOption());
+		apsReqRemoveModuleOptionEClass.getESuperTypes().add(this.getAPSReqModuleHardwareOption());
+		apsReqChangeModuleOptionEClass.getESuperTypes().add(this.getAPSReqModuleHardwareOption());
+		apsReqReplaceModuleOptionEClass.getESuperTypes().add(this.getAPSReqModuleHardwareOption());
+		apsReqComponentHardwareOptionEClass.getESuperTypes().add(this.getAPSReqHardwareOption());
+		apsReqIntroduceNewComponentOptionEClass.getESuperTypes().add(this.getAPSReqComponentHardwareOption());
+		apsReqRemoveComponentOptionEClass.getESuperTypes().add(this.getAPSReqComponentHardwareOption());
+		apsReqReplaceComponentOptionEClass.getESuperTypes().add(this.getAPSReqComponentHardwareOption());
+		apsReqInterfaceHardwareOptionEClass.getESuperTypes().add(this.getAPSReqHardwareOption());
+		apsReqIntroduceNewInterfaceOptionEClass.getESuperTypes().add(this.getAPSReqInterfaceHardwareOption());
+		apsReqChangeInterfaceOptionEClass.getESuperTypes().add(this.getAPSReqHardwareOption());
+		apsReqReplaceInterfaceOptionEClass.getESuperTypes().add(this.getAPSReqInterfaceHardwareOption());
+		apsReqRemoveInterfaceOptionEClass.getESuperTypes().add(this.getAPSReqInterfaceHardwareOption());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(apsReqHardwareOptionEClass, APSReqHardwareOption.class, "APSReqHardwareOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(apsReqIntroduceNewHardwareOptionEClass, APSReqIntroduceNewHardwareOption.class, "APSReqIntroduceNewHardwareOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		g1 = createEGenericType(apsReqIntroduceNewHardwareOptionEClass_T);
-		initEReference(getAPSReqIntroduceNewHardwareOption_Entities(), g1, null, "entities", null, 0, -1, APSReqIntroduceNewHardwareOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(apsReqStructureHardwareOptionEClass, APSReqStructureHardwareOption.class, "APSReqStructureHardwareOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(apsReqRemoveHardwareOptionEClass, APSReqRemoveHardwareOption.class, "APSReqRemoveHardwareOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		g1 = createEGenericType(apsReqRemoveHardwareOptionEClass_T);
-		initEReference(getAPSReqRemoveHardwareOption_Entities(), g1, null, "entities", null, 0, -1, APSReqRemoveHardwareOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(apsReqIntroduceNewStructureOptionEClass, APSReqIntroduceNewStructureOption.class, "APSReqIntroduceNewStructureOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAPSReqIntroduceNewStructureOption_Structures(), theStructureRepositoryPackage.getStructure(), null, "structures", null, 0, -1, APSReqIntroduceNewStructureOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(apsReqChangeHardwareOptionEClass, APSReqChangeHardwareOption.class, "APSReqChangeHardwareOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		g1 = createEGenericType(apsReqChangeHardwareOptionEClass_T);
-		initEReference(getAPSReqChangeHardwareOption_Entities(), g1, null, "entities", null, 0, -1, APSReqChangeHardwareOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(apsReqChangeStructureOptionEClass, APSReqChangeStructureOption.class, "APSReqChangeStructureOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAPSReqChangeStructureOption_Structures(), theStructureRepositoryPackage.getStructure(), null, "structures", null, 0, -1, APSReqChangeStructureOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(apsReqReplaceHardwareOptionEClass, APSReqReplaceHardwareOption.class, "APSReqReplaceHardwareOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		g1 = createEGenericType(apsReqReplaceHardwareOptionEClass_T);
-		initEReference(getAPSReqReplaceHardwareOption_OldEntity(), g1, null, "oldEntity", null, 0, 1, APSReqReplaceHardwareOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		g1 = createEGenericType(apsReqReplaceHardwareOptionEClass_T);
-		initEReference(getAPSReqReplaceHardwareOption_NewEntity(), g1, null, "newEntity", null, 0, 1, APSReqReplaceHardwareOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(apsReqRemoveStructureOptionEClass, APSReqRemoveStructureOption.class, "APSReqRemoveStructureOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAPSReqRemoveStructureOption_Structures(), theStructureRepositoryPackage.getStructure(), null, "structures", null, 0, -1, APSReqRemoveStructureOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(apsReqReplaceStructureOptionEClass, APSReqReplaceStructureOption.class, "APSReqReplaceStructureOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAPSReqReplaceStructureOption_OldStructure(), theStructureRepositoryPackage.getStructure(), null, "oldStructure", null, 0, 1, APSReqReplaceStructureOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAPSReqReplaceStructureOption_NewStructure(), theStructureRepositoryPackage.getStructure(), null, "newStructure", null, 0, 1, APSReqReplaceStructureOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(apsReqModuleHardwareOptionEClass, APSReqModuleHardwareOption.class, "APSReqModuleHardwareOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(apsReqIntroduceNewModuleOptionEClass, APSReqIntroduceNewModuleOption.class, "APSReqIntroduceNewModuleOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAPSReqIntroduceNewModuleOption_Modules(), theModuleRepositoryPackage.getModule(), null, "modules", null, 0, -1, APSReqIntroduceNewModuleOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(apsReqRemoveModuleOptionEClass, APSReqRemoveModuleOption.class, "APSReqRemoveModuleOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAPSReqRemoveModuleOption_Modules(), theModuleRepositoryPackage.getModule(), null, "modules", null, 0, -1, APSReqRemoveModuleOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(apsReqChangeModuleOptionEClass, APSReqChangeModuleOption.class, "APSReqChangeModuleOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAPSReqChangeModuleOption_Modules(), theModuleRepositoryPackage.getModule(), null, "modules", null, 0, -1, APSReqChangeModuleOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(apsReqReplaceModuleOptionEClass, APSReqReplaceModuleOption.class, "APSReqReplaceModuleOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAPSReqReplaceModuleOption_OldModule(), theModuleRepositoryPackage.getModule(), null, "oldModule", null, 0, 1, APSReqReplaceModuleOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAPSReqReplaceModuleOption_NewModule(), theModuleRepositoryPackage.getModule(), null, "newModule", null, 0, 1, APSReqReplaceModuleOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(apsReqComponentHardwareOptionEClass, APSReqComponentHardwareOption.class, "APSReqComponentHardwareOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(apsReqIntroduceNewComponentOptionEClass, APSReqIntroduceNewComponentOption.class, "APSReqIntroduceNewComponentOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAPSReqIntroduceNewComponentOption_Components(), theComponentRepositoryPackage.getComponent(), null, "components", null, 0, -1, APSReqIntroduceNewComponentOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(apsReqRemoveComponentOptionEClass, APSReqRemoveComponentOption.class, "APSReqRemoveComponentOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAPSReqRemoveComponentOption_Components(), theComponentRepositoryPackage.getComponent(), null, "components", null, 0, -1, APSReqRemoveComponentOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(apsReqReplaceComponentOptionEClass, APSReqReplaceComponentOption.class, "APSReqReplaceComponentOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAPSReqReplaceComponentOption_OldComponent(), theComponentRepositoryPackage.getComponent(), null, "oldComponent", null, 0, 1, APSReqReplaceComponentOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAPSReqReplaceComponentOption_NewComponent(), theComponentRepositoryPackage.getComponent(), null, "newComponent", null, 0, 1, APSReqReplaceComponentOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(apsReqInterfaceHardwareOptionEClass, APSReqInterfaceHardwareOption.class, "APSReqInterfaceHardwareOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(apsReqIntroduceNewInterfaceOptionEClass, APSReqIntroduceNewInterfaceOption.class, "APSReqIntroduceNewInterfaceOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAPSReqIntroduceNewInterfaceOption_Interfaces(), theInterfaceRepositoryPackage.getInterface(), null, "interfaces", null, 0, -1, APSReqIntroduceNewInterfaceOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(apsReqChangeInterfaceOptionEClass, APSReqChangeInterfaceOption.class, "APSReqChangeInterfaceOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAPSReqChangeInterfaceOption_Interfaces(), theInterfaceRepositoryPackage.getInterface(), null, "interfaces", null, 0, -1, APSReqChangeInterfaceOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(apsReqReplaceInterfaceOptionEClass, APSReqReplaceInterfaceOption.class, "APSReqReplaceInterfaceOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAPSReqReplaceInterfaceOption_OldInterface(), theInterfaceRepositoryPackage.getInterface(), null, "oldInterface", null, 0, 1, APSReqReplaceInterfaceOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAPSReqReplaceInterfaceOption_NewInterface(), theInterfaceRepositoryPackage.getInterface(), null, "newInterface", null, 0, 1, APSReqReplaceInterfaceOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(apsReqRemoveInterfaceOptionEClass, APSReqRemoveInterfaceOption.class, "APSReqRemoveInterfaceOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAPSReqRemoveInterfaceOption_Interfaces(), theInterfaceRepositoryPackage.getInterface(), null, "interfaces", null, 0, -1, APSReqRemoveInterfaceOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

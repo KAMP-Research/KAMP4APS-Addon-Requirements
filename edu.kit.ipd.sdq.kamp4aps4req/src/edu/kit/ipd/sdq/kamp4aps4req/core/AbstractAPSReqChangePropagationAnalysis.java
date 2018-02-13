@@ -14,12 +14,12 @@ import requirements.Requirement;
 import options.Option;
 import relations.DependencyObject;
 import relations.TraceableObject;
-import apsoptions.APSReqOption;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
+import org.eclipse.emf.cdo.common.CDOCommonSession.Options;
 import org.eclipse.emf.ecore.EObject;
 
 import decisions.Decision;
@@ -45,7 +45,7 @@ public abstract class AbstractAPSReqChangePropagationAnalysis<T extends Abstract
 	
 	protected Collection<Requirement> markedRequirements;
 	protected Collection<Decision> markedDecisions;
-	protected Collection<APSReqOption<?>> markedOptions;
+	protected Collection<Option> markedOptions;
 	
 	@Override
 	public void runChangePropagationAnalysis(T version) {
@@ -68,7 +68,8 @@ public abstract class AbstractAPSReqChangePropagationAnalysis<T extends Abstract
 		this.setMarkedDecisions(ArchitectureModelLookup.lookUpMarkedObjectsOfAType(
 				version, Decision.class));
 		this.setMarkedOptions(ArchitectureModelLookup.lookUpMarkedObjectsOfAType(
-				version, APSReqOption.class));
+				version, Option.class));
+		
 	}
 
 	public void calculateRequirementsToArchitecturePropagation(T version, 
@@ -88,9 +89,9 @@ public abstract class AbstractAPSReqChangePropagationAnalysis<T extends Abstract
 				lookUpObjectsDependOnObjects(this.getMarkedOptions(), Option.class);
 		this.createAndAddOptionModifications(optionsToBeMarked, elementsMarkedInThisStep);
 		// 5 Decision -> Architecture/Business process (select an option)
-		calculateAndMarkDecisionToArchitectureAndBusinessProcessPropagation(version, elementsMarkedInThisStep);
+		// calculateAndMarkDecisionToArchitectureAndBusinessProcessPropagation(version, elementsMarkedInThisStep);
 		// 6 Option -> Architecture/Business process
-		calculateAndMarkOptionToArchitectureAndBusinessProcessPropagation(version, elementsMarkedInThisStep);
+		// calculateAndMarkOptionToArchitectureAndBusinessProcessPropagation(version, elementsMarkedInThisStep);
 				
 		//Remove step if it contains no element
 				if (this.getChangePropagationDueToSpecificationDependencies().eContents().isEmpty()) {
@@ -171,7 +172,7 @@ public abstract class AbstractAPSReqChangePropagationAnalysis<T extends Abstract
 	private <S extends EObject> void createAndAddOptionModifications(Map<Option, Set<S>> optionsToBeMarked,
 			Map<EObject, AbstractModification<?, EObject>> elementsMarkedInThisStep) {
 		filterCircularCauses(optionsToBeMarked, elementsMarkedInThisStep);
-		for(Map.Entry<APSReqOption<?>, Set<S>> optionToBeMarkedEntry: 
+		for(Map.Entry<Option, Set<S>> optionToBeMarkedEntry: 
 				optionsToBeMarked.entrySet()) {
 			Option option = optionToBeMarkedEntry.getKey();
 			if (elementsMarkedInThisStep.containsKey(option)) {
@@ -234,11 +235,11 @@ public abstract class AbstractAPSReqChangePropagationAnalysis<T extends Abstract
 		this.markedDecisions = markedDecisions;
 	}
 
-	public Collection<APSReqOption<?>> getMarkedOptions() {
+	public Collection<Option> getMarkedOptions() {
 		return markedOptions;
 	}
 
-	public void setMarkedOptions(Collection<APSReqOption<?>> markedOptions) {
+	public void setMarkedOptions(Collection<Option> markedOptions) {
 		this.markedOptions = markedOptions;
 	}
 

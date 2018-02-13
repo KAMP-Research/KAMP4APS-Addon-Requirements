@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class APSReqOptionImpl<T> extends ArchOptionImpl implements APSReqOption<T> {
+public class APSReqOptionImpl extends ArchOptionImpl implements APSReqOption {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -7,8 +7,6 @@ import apshardwareoptions.ApshardwareoptionsPackage;
 
 import apsoptions.impl.APSReqOptionImpl;
 
-import edu.kit.ipd.sdq.kamp4aps.model.basic.Entity;
-
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -18,7 +16,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class APSReqHardwareOptionImpl<T extends Entity> extends APSReqOptionImpl<Entity> implements APSReqHardwareOption<T> {
+public class APSReqHardwareOptionImpl extends APSReqOptionImpl implements APSReqHardwareOption {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

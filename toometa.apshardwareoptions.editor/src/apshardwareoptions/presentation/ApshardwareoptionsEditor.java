@@ -168,6 +168,22 @@ import de.uka.ipd.sdq.dsexplore.qml.units.provider.UnitsItemProviderAdapterFacto
 
 import de.uka.ipd.sdq.identifier.provider.IdentifierItemProviderAdapterFactory;
 
+import edu.kit.ipd.sdq.kamp4aps.model.aPS.BusComponents.provider.BusComponentsItemProviderAdapterFactory;
+
+import edu.kit.ipd.sdq.kamp4aps.model.aPS.ComponentRepository.provider.ComponentRepositoryItemProviderAdapterFactory;
+
+import edu.kit.ipd.sdq.kamp4aps.model.aPS.ElectronicComponents.provider.ElectronicComponentsItemProviderAdapterFactory;
+
+import edu.kit.ipd.sdq.kamp4aps.model.aPS.InterfaceRepository.provider.InterfaceRepositoryItemProviderAdapterFactory;
+
+import edu.kit.ipd.sdq.kamp4aps.model.aPS.MechanicalComponents.provider.MechanicalComponentsItemProviderAdapterFactory;
+
+import edu.kit.ipd.sdq.kamp4aps.model.aPS.ModuleRepository.provider.ModuleRepositoryItemProviderAdapterFactory;
+
+import edu.kit.ipd.sdq.kamp4aps.model.aPS.StructureRepository.provider.StructureRepositoryItemProviderAdapterFactory;
+
+import edu.kit.ipd.sdq.kamp4aps.model.aPS.provider.apsItemProviderAdapterFactory;
+
 import edu.kit.ipd.sdq.kamp4aps.model.basic.provider.BasicItemProviderAdapterFactory;
 
 import effects.provider.EffectsItemProviderAdapterFactory;
@@ -728,6 +744,14 @@ public class ApshardwareoptionsEditor
 
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ApshardwareoptionsItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new apsItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new ComponentRepositoryItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new BusComponentsItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new ElectronicComponentsItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new MechanicalComponentsItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new StructureRepositoryItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new ModuleRepositoryItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new InterfaceRepositoryItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ApsoptionsItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ArchoptionsItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new BasicItemProviderAdapterFactory());

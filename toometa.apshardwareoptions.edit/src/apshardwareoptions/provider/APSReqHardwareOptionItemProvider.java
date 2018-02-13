@@ -68,7 +68,7 @@ public class APSReqHardwareOptionItemProvider extends APSReqOptionItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((APSReqHardwareOption<?>)object).getId();
+		String label = ((APSReqHardwareOption)object).getId();
 		return label == null || label.length() == 0 ?
 			getString("_UI_APSReqHardwareOption_type") :
 			getString("_UI_APSReqHardwareOption_type") + " " + label;

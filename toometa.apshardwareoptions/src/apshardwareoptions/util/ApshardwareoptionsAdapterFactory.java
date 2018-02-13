@@ -10,8 +10,6 @@ import archoptions.ArchOption;
 
 import de.uka.ipd.sdq.identifier.Identifier;
 
-import edu.kit.ipd.sdq.kamp4aps.model.basic.Entity;
-
 import options.Option;
 
 import org.eclipse.emf.common.notify.Adapter;
@@ -91,24 +89,84 @@ public class ApshardwareoptionsAdapterFactory extends AdapterFactoryImpl {
 	protected ApshardwareoptionsSwitch<Adapter> modelSwitch =
 		new ApshardwareoptionsSwitch<Adapter>() {
 			@Override
-			public <T extends Entity> Adapter caseAPSReqHardwareOption(APSReqHardwareOption<T> object) {
+			public Adapter caseAPSReqHardwareOption(APSReqHardwareOption object) {
 				return createAPSReqHardwareOptionAdapter();
 			}
 			@Override
-			public <T extends Entity> Adapter caseAPSReqIntroduceNewHardwareOption(APSReqIntroduceNewHardwareOption<T> object) {
-				return createAPSReqIntroduceNewHardwareOptionAdapter();
+			public Adapter caseAPSReqStructureHardwareOption(APSReqStructureHardwareOption object) {
+				return createAPSReqStructureHardwareOptionAdapter();
 			}
 			@Override
-			public <T extends Entity> Adapter caseAPSReqRemoveHardwareOption(APSReqRemoveHardwareOption<T> object) {
-				return createAPSReqRemoveHardwareOptionAdapter();
+			public Adapter caseAPSReqIntroduceNewStructureOption(APSReqIntroduceNewStructureOption object) {
+				return createAPSReqIntroduceNewStructureOptionAdapter();
 			}
 			@Override
-			public <T extends Entity> Adapter caseAPSReqChangeHardwareOption(APSReqChangeHardwareOption<T> object) {
-				return createAPSReqChangeHardwareOptionAdapter();
+			public Adapter caseAPSReqChangeStructureOption(APSReqChangeStructureOption object) {
+				return createAPSReqChangeStructureOptionAdapter();
 			}
 			@Override
-			public <T extends Entity> Adapter caseAPSReqReplaceHardwareOption(APSReqReplaceHardwareOption<T> object) {
-				return createAPSReqReplaceHardwareOptionAdapter();
+			public Adapter caseAPSReqRemoveStructureOption(APSReqRemoveStructureOption object) {
+				return createAPSReqRemoveStructureOptionAdapter();
+			}
+			@Override
+			public Adapter caseAPSReqReplaceStructureOption(APSReqReplaceStructureOption object) {
+				return createAPSReqReplaceStructureOptionAdapter();
+			}
+			@Override
+			public Adapter caseAPSReqModuleHardwareOption(APSReqModuleHardwareOption object) {
+				return createAPSReqModuleHardwareOptionAdapter();
+			}
+			@Override
+			public Adapter caseAPSReqIntroduceNewModuleOption(APSReqIntroduceNewModuleOption object) {
+				return createAPSReqIntroduceNewModuleOptionAdapter();
+			}
+			@Override
+			public Adapter caseAPSReqRemoveModuleOption(APSReqRemoveModuleOption object) {
+				return createAPSReqRemoveModuleOptionAdapter();
+			}
+			@Override
+			public Adapter caseAPSReqChangeModuleOption(APSReqChangeModuleOption object) {
+				return createAPSReqChangeModuleOptionAdapter();
+			}
+			@Override
+			public Adapter caseAPSReqReplaceModuleOption(APSReqReplaceModuleOption object) {
+				return createAPSReqReplaceModuleOptionAdapter();
+			}
+			@Override
+			public Adapter caseAPSReqComponentHardwareOption(APSReqComponentHardwareOption object) {
+				return createAPSReqComponentHardwareOptionAdapter();
+			}
+			@Override
+			public Adapter caseAPSReqIntroduceNewComponentOption(APSReqIntroduceNewComponentOption object) {
+				return createAPSReqIntroduceNewComponentOptionAdapter();
+			}
+			@Override
+			public Adapter caseAPSReqRemoveComponentOption(APSReqRemoveComponentOption object) {
+				return createAPSReqRemoveComponentOptionAdapter();
+			}
+			@Override
+			public Adapter caseAPSReqReplaceComponentOption(APSReqReplaceComponentOption object) {
+				return createAPSReqReplaceComponentOptionAdapter();
+			}
+			@Override
+			public Adapter caseAPSReqInterfaceHardwareOption(APSReqInterfaceHardwareOption object) {
+				return createAPSReqInterfaceHardwareOptionAdapter();
+			}
+			@Override
+			public Adapter caseAPSReqIntroduceNewInterfaceOption(APSReqIntroduceNewInterfaceOption object) {
+				return createAPSReqIntroduceNewInterfaceOptionAdapter();
+			}
+			@Override
+			public Adapter caseAPSReqChangeInterfaceOption(APSReqChangeInterfaceOption object) {
+				return createAPSReqChangeInterfaceOptionAdapter();
+			}
+			@Override
+			public Adapter caseAPSReqReplaceInterfaceOption(APSReqReplaceInterfaceOption object) {
+				return createAPSReqReplaceInterfaceOptionAdapter();
+			}
+			@Override
+			public Adapter caseAPSReqRemoveInterfaceOption(APSReqRemoveInterfaceOption object) {
+				return createAPSReqRemoveInterfaceOptionAdapter();
 			}
 			@Override
 			public Adapter caseIdentifier(Identifier object) {
@@ -171,7 +229,7 @@ public class ApshardwareoptionsAdapterFactory extends AdapterFactoryImpl {
 				return createArchOptionAdapter();
 			}
 			@Override
-			public <T> Adapter caseAPSReqOption(APSReqOption<T> object) {
+			public Adapter caseAPSReqOption(APSReqOption object) {
 				return createAPSReqOptionAdapter();
 			}
 			@Override
@@ -209,58 +267,268 @@ public class ApshardwareoptionsAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link apshardwareoptions.APSReqIntroduceNewHardwareOption <em>APS Req Introduce New Hardware Option</em>}'.
+	 * Creates a new adapter for an object of class '{@link apshardwareoptions.APSReqStructureHardwareOption <em>APS Req Structure Hardware Option</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see apshardwareoptions.APSReqIntroduceNewHardwareOption
+	 * @see apshardwareoptions.APSReqStructureHardwareOption
 	 * @generated
 	 */
-	public Adapter createAPSReqIntroduceNewHardwareOptionAdapter() {
+	public Adapter createAPSReqStructureHardwareOptionAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link apshardwareoptions.APSReqRemoveHardwareOption <em>APS Req Remove Hardware Option</em>}'.
+	 * Creates a new adapter for an object of class '{@link apshardwareoptions.APSReqIntroduceNewStructureOption <em>APS Req Introduce New Structure Option</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see apshardwareoptions.APSReqRemoveHardwareOption
+	 * @see apshardwareoptions.APSReqIntroduceNewStructureOption
 	 * @generated
 	 */
-	public Adapter createAPSReqRemoveHardwareOptionAdapter() {
+	public Adapter createAPSReqIntroduceNewStructureOptionAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link apshardwareoptions.APSReqChangeHardwareOption <em>APS Req Change Hardware Option</em>}'.
+	 * Creates a new adapter for an object of class '{@link apshardwareoptions.APSReqChangeStructureOption <em>APS Req Change Structure Option</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see apshardwareoptions.APSReqChangeHardwareOption
+	 * @see apshardwareoptions.APSReqChangeStructureOption
 	 * @generated
 	 */
-	public Adapter createAPSReqChangeHardwareOptionAdapter() {
+	public Adapter createAPSReqChangeStructureOptionAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link apshardwareoptions.APSReqReplaceHardwareOption <em>APS Req Replace Hardware Option</em>}'.
+	 * Creates a new adapter for an object of class '{@link apshardwareoptions.APSReqRemoveStructureOption <em>APS Req Remove Structure Option</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see apshardwareoptions.APSReqReplaceHardwareOption
+	 * @see apshardwareoptions.APSReqRemoveStructureOption
 	 * @generated
 	 */
-	public Adapter createAPSReqReplaceHardwareOptionAdapter() {
+	public Adapter createAPSReqRemoveStructureOptionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link apshardwareoptions.APSReqReplaceStructureOption <em>APS Req Replace Structure Option</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see apshardwareoptions.APSReqReplaceStructureOption
+	 * @generated
+	 */
+	public Adapter createAPSReqReplaceStructureOptionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link apshardwareoptions.APSReqModuleHardwareOption <em>APS Req Module Hardware Option</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see apshardwareoptions.APSReqModuleHardwareOption
+	 * @generated
+	 */
+	public Adapter createAPSReqModuleHardwareOptionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link apshardwareoptions.APSReqIntroduceNewModuleOption <em>APS Req Introduce New Module Option</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see apshardwareoptions.APSReqIntroduceNewModuleOption
+	 * @generated
+	 */
+	public Adapter createAPSReqIntroduceNewModuleOptionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link apshardwareoptions.APSReqRemoveModuleOption <em>APS Req Remove Module Option</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see apshardwareoptions.APSReqRemoveModuleOption
+	 * @generated
+	 */
+	public Adapter createAPSReqRemoveModuleOptionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link apshardwareoptions.APSReqChangeModuleOption <em>APS Req Change Module Option</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see apshardwareoptions.APSReqChangeModuleOption
+	 * @generated
+	 */
+	public Adapter createAPSReqChangeModuleOptionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link apshardwareoptions.APSReqReplaceModuleOption <em>APS Req Replace Module Option</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see apshardwareoptions.APSReqReplaceModuleOption
+	 * @generated
+	 */
+	public Adapter createAPSReqReplaceModuleOptionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link apshardwareoptions.APSReqComponentHardwareOption <em>APS Req Component Hardware Option</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see apshardwareoptions.APSReqComponentHardwareOption
+	 * @generated
+	 */
+	public Adapter createAPSReqComponentHardwareOptionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link apshardwareoptions.APSReqIntroduceNewComponentOption <em>APS Req Introduce New Component Option</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see apshardwareoptions.APSReqIntroduceNewComponentOption
+	 * @generated
+	 */
+	public Adapter createAPSReqIntroduceNewComponentOptionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link apshardwareoptions.APSReqRemoveComponentOption <em>APS Req Remove Component Option</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see apshardwareoptions.APSReqRemoveComponentOption
+	 * @generated
+	 */
+	public Adapter createAPSReqRemoveComponentOptionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link apshardwareoptions.APSReqReplaceComponentOption <em>APS Req Replace Component Option</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see apshardwareoptions.APSReqReplaceComponentOption
+	 * @generated
+	 */
+	public Adapter createAPSReqReplaceComponentOptionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link apshardwareoptions.APSReqInterfaceHardwareOption <em>APS Req Interface Hardware Option</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see apshardwareoptions.APSReqInterfaceHardwareOption
+	 * @generated
+	 */
+	public Adapter createAPSReqInterfaceHardwareOptionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link apshardwareoptions.APSReqIntroduceNewInterfaceOption <em>APS Req Introduce New Interface Option</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see apshardwareoptions.APSReqIntroduceNewInterfaceOption
+	 * @generated
+	 */
+	public Adapter createAPSReqIntroduceNewInterfaceOptionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link apshardwareoptions.APSReqChangeInterfaceOption <em>APS Req Change Interface Option</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see apshardwareoptions.APSReqChangeInterfaceOption
+	 * @generated
+	 */
+	public Adapter createAPSReqChangeInterfaceOptionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link apshardwareoptions.APSReqReplaceInterfaceOption <em>APS Req Replace Interface Option</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see apshardwareoptions.APSReqReplaceInterfaceOption
+	 * @generated
+	 */
+	public Adapter createAPSReqReplaceInterfaceOptionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link apshardwareoptions.APSReqRemoveInterfaceOption <em>APS Req Remove Interface Option</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see apshardwareoptions.APSReqRemoveInterfaceOption
+	 * @generated
+	 */
+	public Adapter createAPSReqRemoveInterfaceOptionAdapter() {
 		return null;
 	}
 

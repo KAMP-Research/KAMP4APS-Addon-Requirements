@@ -22,7 +22,6 @@ public enum APSReqActivityElementType implements AbstractActivityElementType {
 		}
 		
 		
-	
 		@Override
 		public String getName() {
 			return this.name;

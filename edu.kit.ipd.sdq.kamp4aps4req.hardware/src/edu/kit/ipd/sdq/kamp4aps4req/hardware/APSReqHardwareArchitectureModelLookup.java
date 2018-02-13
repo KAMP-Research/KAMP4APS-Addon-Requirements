@@ -1,15 +1,13 @@
 package edu.kit.ipd.sdq.kamp4aps4req.hardware;
 
 import edu.kit.ipd.sdq.kamp4aps4req.core.APSReqArchitectureModelLookup;
+import options.Option;
+
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
-import apshardwareoptions.APSReqChangeHardwareOption;
-import apshardwareoptions.APSReqIntroduceNewHardwareOption;
-import apshardwareoptions.APSReqRemoveHardwareOption;
-import apshardwareoptions.APSReqReplaceHardwareOption;
-import apsoptions.APSReqOption;
+import apshardwareoptions.*;
 import apshardwareoptions.APSReqHardwareOption;
 import edu.kit.ipd.sdq.kamp.util.MapUtil;
 import edu.kit.ipd.sdq.kamp4aps.core.APSArchitectureModelLookup;
@@ -17,8 +15,7 @@ import edu.kit.ipd.sdq.kamp4aps.model.aPS.StructureRepository.Structure;
 import edu.kit.ipd.sdq.kamp4aps.model.aPS.ModuleRepository.Module;
 import edu.kit.ipd.sdq.kamp4aps.model.aPS.InterfaceRepository.Interface;
 import edu.kit.ipd.sdq.kamp4aps.model.aPS.ComponentRepository.Component;
-import edu.kit.ipd.sdq.kamp4aps.model.basic.Entity;
-import org.eclipse.emf.common.util.EList;
+
 
 public class APSReqHardwareArchitectureModelLookup extends APSReqArchitectureModelLookup {
 
@@ -36,17 +33,15 @@ public class APSReqHardwareArchitectureModelLookup extends APSReqArchitectureMod
 	 * @param options Changed Options
 	 * @return Map with Options and the Structures they reference 
 	 */
-	public static <T extends Entity> Map<Structure, Set<APSReqHardwareOption<T>>> lookUpStructuresReferencedByOptions(
-			APSReqHardwareArchitectureVersion version, Collection<? extends APSReqHardwareOption<T>> options, Class<T> entityType) {
-		Map<Structure, Set<APSReqHardwareOption<Structure>>> results = new HashMap<Structure, Set<APSReqHardwareOption<Structure>>>();
-		for (APSReqHardwareOption<T> option: options) {
-			if (entityType.getClass() == Structure.class) {
-			
-			}
-			if (option.)
-			for (T structureRepository : version.getApsArchitectureVersion().getAPSPlant().getStructures()) {
-				if (isStructureReferencedByOption(structureRepository, (APSReqHardwareOption) option)) {
-					MapUtil.putOrAddToMap(results, structureRepository, (APSReqHardwareOption) option);
+	public static Map<Structure, Set<APSReqHardwareOption>> lookUpStructuresReferencedByOptions(
+			APSReqHardwareArchitectureVersion version, Collection<? extends Option> options) {
+		Map<Structure, Set<APSReqHardwareOption>> results = new HashMap<Structure, Set<APSReqHardwareOption>>();
+		for (Option option: options) {
+			if (option instanceof APSReqStructureHardwareOption) {
+				for (Structure structureRepository : version.getApsArchitectureVersion().getAPSPlant().getStructures()) {
+					if (isStructureReferencedByOption(structureRepository, (APSReqStructureHardwareOption) option)) {
+						MapUtil.putOrAddToMap(results, structureRepository, (APSReqHardwareOption) option);
+					}
 				}
 			}
 		}
@@ -60,17 +55,17 @@ public class APSReqHardwareArchitectureModelLookup extends APSReqArchitectureMod
 	 * @param option Changed Option
 	 * @return True if referenced, false otherwise
 	 */
-	private static <T extends Entity> boolean isStructureReferencedByOption(T entity, 
-			APSReqHardwareOption<T> option) {
+	private static boolean isStructureReferencedByOption(Structure structure, 
+			APSReqStructureHardwareOption option) {
 		boolean result = false;
-		if (option instanceof APSReqIntroduceNewHardwareOption) {
-			result = isStructureReferencedByIntroduceNewOption(entity, (APSReqIntroduceNewHardwareOption<T>) option);
-		} else if (option instanceof APSReqChangeHardwareOption) {
-			result = isStructureReferencedByChangeOption(entity, (APSReqChangeHardwareOption<T>) option);
-		} else if (option instanceof APSReqReplaceHardwareOption) {
-			result = isStructureReferencedByReplaceOption(entity, (APSReqReplaceHardwareOption<T>) option);
-		} else if (option instanceof APSReqRemoveHardwareOption) {
-			result = isStructureReferencedByRemoveOption(entity, (APSReqRemoveHardwareOption<T>) option);
+		if (option instanceof APSReqIntroduceNewStructureOption) {
+			result = isStructureReferencedByIntroduceNewOption(structure, (APSReqIntroduceNewStructureOption) option);
+		} else if (option instanceof APSReqChangeStructureOption) {
+			result = isStructureReferencedByChangeOption(structure, (APSReqChangeStructureOption) option);
+		} else if (option instanceof APSReqReplaceStructureOption) {
+			result = isStructureReferencedByReplaceOption(structure, (APSReqReplaceStructureOption) option);
+		} else if (option instanceof APSReqRemoveStructureOption) {
+			result = isStructureReferencedByRemoveOption(structure, (APSReqRemoveStructureOption) option);
 		}
 		return result;
 	}
@@ -81,10 +76,10 @@ public class APSReqHardwareArchitectureModelLookup extends APSReqArchitectureMod
 	 * @param option The option which is changed
 	 * @return True, if the structure is affected by the option, false otherwise
 	 */
-	private static <T extends Entity> boolean isStructureReferencedByIntroduceNewOption(
-			T entity, APSReqIntroduceNewHardwareOption<T> option) {
-		for (T entities : option.getEntities()) {
-			if (entities.equals(entity)) {
+	private static boolean isStructureReferencedByIntroduceNewOption(
+			Structure structure, APSReqIntroduceNewStructureOption option) {
+		for (Structure structures : option.getStructures()) {
+			if (structures.equals(structure)) {
 				return true;
 			}
 		}
@@ -97,10 +92,10 @@ public class APSReqHardwareArchitectureModelLookup extends APSReqArchitectureMod
 	 * @param option The option which is changed
 	 * @return True, if the structure is affected by the option, false otherwise
 	 */
-	private static <T extends Entity> boolean isStructureReferencedByRemoveOption(
-			T entity, APSReqRemoveHardwareOption<T> option) {
-		for (T entities : option.getEntities()) {
-			if (entities.equals(entity)) {
+	private static boolean isStructureReferencedByRemoveOption(
+			Structure structure, APSReqRemoveStructureOption option) {
+		for (Structure structures : option.getStructures()) {
+			if (structures.equals(structure)) {
 				return true;
 			}
 		}
@@ -114,9 +109,9 @@ public class APSReqHardwareArchitectureModelLookup extends APSReqArchitectureMod
 	 * @param option The option which is changed
 	 * @return True, if the structure is affected by the option, false otherwise
 	 */
-	private static <T extends Entity> boolean isStructureReferencedByReplaceOption(
-			T entity, APSReqReplaceHardwareOption<T> option) {
-		if (option.getNewEntity().equals(entity) || option.getOldEntity().equals(entity)) {
+	private static boolean isStructureReferencedByReplaceOption(
+			Structure structure, APSReqReplaceStructureOption option) {
+		if (option.getNewStructure().equals(structure) || option.getOldStructure().equals(structure)) {
 			return true;
 		} else {
 			return false;
@@ -129,10 +124,10 @@ public class APSReqHardwareArchitectureModelLookup extends APSReqArchitectureMod
 	 * @param option The option which is changed
 	 * @return True, if the structure is affected by the option, false otherwise
 	 */
-	private static <T extends Entity> boolean isStructureReferencedByChangeOption(
-			T entity, APSReqChangeHardwareOption<T> option) {
-		for (T entities : option.getEntities()) {
-			if (entities.equals(entity)) {
+	private static  boolean isStructureReferencedByChangeOption(
+			Structure structure, APSReqChangeStructureOption option) {
+		for (Structure structures : option.getStructures()) {
+			if (structures.equals(structure)) {
 				return true;
 			}
 		}
@@ -144,39 +139,46 @@ public class APSReqHardwareArchitectureModelLookup extends APSReqArchitectureMod
 	 *  ########################################################################################################################              
 	 */
 	
-	public static Map<Module, Set<APSReqHardwareOption<Module>>> lookUpModulesReferencedByOptions(
-			APSReqHardwareArchitectureVersion version, Collection<? extends APSReqHardwareOption<Module>> options) {
-		Map<Module, Set<APSReqHardwareOption<Module>>> results = new HashMap<Module, Set<APSReqHardwareOption<Module>>>();
-		
-		for (APSReqHardwareOption<Module> option: options) {
-			for (Module moduleRepository : version.getApsArchitectureVersion().getAPSPlant().getModuleRepository().getAllModulesInPlant()) {
-				if (isModuleReferencedByOption(moduleRepository, option)) {
-					MapUtil.putOrAddToMap(results, moduleRepository, option);
+	/**
+	 * Looks up Modules which are referenced by changed options
+	 * @param version The Architecture version to work with
+	 * @param options Changed Options
+	 * @return Map with Options and the Modules they reference 
+	 */
+	public static Map<Module, Set<APSReqHardwareOption>> lookUpModulesReferencedByOptions(
+			APSReqHardwareArchitectureVersion version, Collection<? extends APSReqHardwareOption> options) {
+		Map<Module, Set<APSReqHardwareOption>> results = new HashMap<Module, Set<APSReqHardwareOption>>();
+		for (APSReqHardwareOption option: options) {
+			if (option instanceof APSReqModuleHardwareOption) {
+				for (Module moduleRepository : version.getApsArchitectureVersion().getAPSPlant().getModuleRepository().getAllModulesInPlant()) {
+					if (isModuleReferencedByOption(moduleRepository, (APSReqModuleHardwareOption) option)) {
+						MapUtil.putOrAddToMap(results, moduleRepository, (APSReqHardwareOption) option);
+					}
 				}
 			}
 		}
 		
 		return results;
 	}
-	
+
 	private static boolean isModuleReferencedByOption(Module module, 
-			APSReqHardwareOption<Module> option) {
+			APSReqModuleHardwareOption option) {
 		boolean result = false;
-		if (option instanceof APSReqIntroduceNewHardwareOption) {
-			result = isModuleReferencedByIntroduceNewOption(module, (APSReqIntroduceNewHardwareOption<Module>) option);
-		} else if (option instanceof APSReqChangeHardwareOption) {
-			result = isModuleReferencedByChangeOption(module, (APSReqChangeHardwareOption<Module>) option);
-		} else if (option instanceof APSReqReplaceHardwareOption) {
-			result = isModuleReferencedByReplaceOption(module, (APSReqReplaceHardwareOption<Module>) option);
-		} else if (option instanceof APSReqRemoveHardwareOption) {
-			result = isModuleReferencedByRemoveOption(module, (APSReqRemoveHardwareOption<Module>) option);
+		if (option instanceof APSReqIntroduceNewModuleOption) {
+			result = isModuleReferencedByIntroduceNewOption(module, (APSReqIntroduceNewModuleOption) option);
+		} else if (option instanceof APSReqChangeModuleOption) {
+			result = isModuleReferencedByChangeOption(module, (APSReqChangeModuleOption) option);
+		} else if (option instanceof APSReqReplaceModuleOption) {
+			result = isModuleReferencedByReplaceOption(module, (APSReqReplaceModuleOption) option);
+		} else if (option instanceof APSReqRemoveModuleOption) {
+			result = isModuleReferencedByRemoveOption(module, (APSReqRemoveModuleOption) option);
 		}
 		return result;
 	}
 	
 	private static boolean isModuleReferencedByIntroduceNewOption(
-			Module module, APSReqIntroduceNewHardwareOption<Module> option) {
-		for (Module modules : option.getEntities()) {
+			Module module, APSReqIntroduceNewModuleOption option) {
+		for (Module modules : option.getModules()) {
 			if (modules.equals(module)) {
 				return true;
 			}
@@ -185,16 +187,16 @@ public class APSReqHardwareArchitectureModelLookup extends APSReqArchitectureMod
 	}
 	
 	private static boolean isModuleReferencedByReplaceOption(
-			Module module, APSReqReplaceHardwareOption<Module> option) {
-		if (option.getNewEntity().equals(module) || option.getOldEntity().equals(module)) {
+			Module module, APSReqReplaceModuleOption option) {
+		if (option.getNewModule().equals(module) || option.getOldModule().equals(module)) {
 			return true;
 		}
 		return false;
 	}
 	
 	private static boolean isModuleReferencedByChangeOption(
-			Module module, APSReqChangeHardwareOption<Module> option) {
-		for (Module modules : option.getEntities()) {
+			Module module, APSReqChangeModuleOption option) {
+		for (Module modules : option.getModules()) {
 			if (modules.equals(module)) {
 				return true;
 			}
@@ -203,8 +205,8 @@ public class APSReqHardwareArchitectureModelLookup extends APSReqArchitectureMod
 	}
 	
 	private static boolean isModuleReferencedByRemoveOption(
-			Module module, APSReqRemoveHardwareOption<Module> option) {
-		for (Module modules : option.getEntities()) {
+			Module module, APSReqRemoveModuleOption option) {
+		for (Module modules : option.getModules()) {
 			if (modules.equals(module)) {
 				return true;
 			}
@@ -223,14 +225,15 @@ public class APSReqHardwareArchitectureModelLookup extends APSReqArchitectureMod
 	 * @param options Changed Options
 	 * @return Map with Options and the Components they reference 
 	 */
-	public static Map<Component, Set<APSReqHardwareOption<Component>>> lookUpComponentsReferencedByOptions(
-			APSReqHardwareArchitectureVersion version, Collection<? extends APSReqHardwareOption<Component>> options) {
-		Map<Component, Set<APSReqHardwareOption<Component>>> results = new HashMap<Component, Set<APSReqHardwareOption<Component>>>();
-		
-		for (APSReqHardwareOption<Component> option: options) {
-			for (Component componentRepository : version.getApsArchitectureVersion().getAPSPlant().getComponentRepository().getAllComponentsInPlant()) {
-				if (isComponentReferencedByOption(componentRepository, option)) {
-					MapUtil.putOrAddToMap(results, componentRepository, option);
+	public static Map<Component, Set<APSReqHardwareOption>> lookUpComponentsReferencedByOptions(
+			APSReqHardwareArchitectureVersion version, Collection<? extends APSReqHardwareOption> options) {
+		Map<Component, Set<APSReqHardwareOption>> results = new HashMap<Component, Set<APSReqHardwareOption>>();
+		for (APSReqHardwareOption option: options) {
+			if (option instanceof APSReqComponentHardwareOption) {
+				for (Component componentRepository : version.getApsArchitectureVersion().getAPSPlant().getComponentRepository().getAllComponentsInPlant()) {
+					if (isComponentReferencedByOption(componentRepository, (APSReqComponentHardwareOption) option)) {
+						MapUtil.putOrAddToMap(results, componentRepository, (APSReqHardwareOption) option);
+					}
 				}
 			}
 		}
@@ -238,36 +241,22 @@ public class APSReqHardwareArchitectureModelLookup extends APSReqArchitectureMod
 		return results;
 	}
 	
-	/**
-	 * Checks if a Component is referenced by any of the possible option types
-	 * @param component Component to check on
-	 * @param option Changed Option
-	 * @return True if referenced, false otherwise
-	 */
 	private static boolean isComponentReferencedByOption(Component component, 
-			APSReqHardwareOption<Component> option) {
+			APSReqComponentHardwareOption option) {
 		boolean result = false;
-		if (option instanceof APSReqIntroduceNewHardwareOption) {
-			result = isComponentReferencedByIntroduceNewOption(component, (APSReqIntroduceNewHardwareOption<Component>) option);
-		} else if (option instanceof APSReqChangeHardwareOption) {
-			result = isComponentReferencedByChangeOption(component, (APSReqChangeHardwareOption<Component>) option);
-		} else if (option instanceof APSReqReplaceHardwareOption) {
-			result = isComponentReferencedByReplaceOption(component, (APSReqReplaceHardwareOption<Component>) option);
-		} else if (option instanceof APSReqRemoveHardwareOption) {
-			result = isComponentReferencedByRemoveOption(component, (APSReqRemoveHardwareOption<Component>) option);
+		if (option instanceof APSReqIntroduceNewComponentOption) {
+			result = isComponentReferencedByIntroduceNewOption(component, (APSReqIntroduceNewComponentOption) option);
+		}  else if (option instanceof APSReqReplaceComponentOption) {
+			result = isComponentReferencedByReplaceOption(component, (APSReqReplaceComponentOption) option);
+		} else if (option instanceof APSReqRemoveComponentOption) {
+			result = isComponentReferencedByRemoveOption(component, (APSReqRemoveComponentOption) option);
 		}
 		return result;
 	}
 	
-	/**
-	 * Checks if an Component is affected by an "introduce new" option
-	 * @param Component The Component to check on
-	 * @param option The option which is changed
-	 * @return True, if the Component is affected by the option, false otherwise
-	 */
 	private static boolean isComponentReferencedByIntroduceNewOption(
-			Component component, APSReqIntroduceNewHardwareOption<Component> option) {
-		for (Component components : option.getEntities()) {
+			Component component, APSReqIntroduceNewComponentOption option) {
+		for (Component components : option.getComponents()) {
 			if (components.equals(component)) {
 				return true;
 			}
@@ -275,165 +264,105 @@ public class APSReqHardwareArchitectureModelLookup extends APSReqArchitectureMod
 		return false;
 	}
 	
-	/**
-	 * Checks if an Component is affected by an "remove" option
-	 * @param Component The Component to check on
-	 * @param option The option which is changed
-	 * @return True, if the Component is affected by the option, false otherwise
-	 */
-	private static boolean isComponentReferencedByRemoveOption(
-			Component component, APSReqRemoveHardwareOption<Component> option) {
-		for (Component components : option.getEntities()) {
-			if (components.equals(component)) {
-				return true;
-			}
-		}
-		return false;
-
-	}
-	
-	/**
-	 * Checks if a Component is affected by an "replace" option
-	 * @param Component The Component to check on
-	 * @param option The option which is changed
-	 * @return True, if the Component is affected by the option, false otherwise
-	 */
 	private static boolean isComponentReferencedByReplaceOption(
-			Component component, APSReqReplaceHardwareOption<Component> option) {
-		if (option.getNewEntity().equals(component) || option.getOldEntity().equals(component)) {
+			Component component, APSReqReplaceComponentOption option) {
+		if (option.getNewComponent().equals(component) || option.getOldComponent().equals(component)) {
 			return true;
-		} else {
-			return false;
-			}
+		}
+		return false;
 	}
 	
-	/**
-	 * Checks if a Component is affected by an "change" option
-	 * @param Component The Component to check on
-	 * @param option The option which is changed
-	 * @return True, if the Component is affected by the option, false otherwise
-	 */
-	private static boolean isComponentReferencedByChangeOption(
-			Component component, APSReqChangeHardwareOption<Component> option) {
-		for (Component components : option.getEntities()) {
+	private static boolean isComponentReferencedByRemoveOption(
+			Component component, APSReqRemoveComponentOption option) {
+		for (Component components : option.getComponents()) {
 			if (components.equals(component)) {
 				return true;
 			}
 		}
 		return false;
 	}
+	
+	
 	
 	
 	/*	########################################################################################################################
 	 * 	#  INTERFACE LOOKUP SECTION  ###########################################################################################
 	 *  ########################################################################################################################              
 	 */
+	
 	/**
 	 * Looks up Interfaces which are referenced by changed options
 	 * @param version The Architecture version to work with
 	 * @param options Changed Options
 	 * @return Map with Options and the Interfaces they reference 
 	 */
-	public static Map<Interface, Set<APSReqHardwareOption<Interface>>> lookUpInterfacesReferencedByOptions(
-			APSReqHardwareArchitectureVersion version, Collection<? extends APSReqHardwareOption<Interface>> options) {
-		Map<Interface, Set<APSReqHardwareOption<Interface>>> results = new HashMap<Interface, Set<APSReqHardwareOption<Interface>>>();
-		
-		for (APSReqHardwareOption<Interface> option: options) {
-			for (Interface interfaceRepository : version.getApsArchitectureVersion().getAPSPlant().getInterfaceRepository().getAllInterfacesInPlant()) {
-				if (isInterfaceReferencedByOption(interfaceRepository, option)) {
-					MapUtil.putOrAddToMap(results, interfaceRepository, option);
+	public static Map<Interface, Set<APSReqHardwareOption>> lookUpInterfacesReferencedByOptions(
+			APSReqHardwareArchitectureVersion version, Collection<? extends APSReqHardwareOption> options) {
+		Map<Interface, Set<APSReqHardwareOption>> results = new HashMap<Interface, Set<APSReqHardwareOption>>();
+		for (APSReqHardwareOption option: options) {
+			if (option instanceof APSReqInterfaceHardwareOption) {
+				for (Interface interfaceRepository : version.getApsArchitectureVersion().getAPSPlant().getInterfaceRepository().getAllInterfacesInPlant()) {
+					if (isInterfaceReferencedByOption(interfaceRepository, (APSReqInterfaceHardwareOption) option)) {
+						MapUtil.putOrAddToMap(results, interfaceRepository, (APSReqHardwareOption) option);
+					}
 				}
 			}
 		}
 		
 		return results;
 	}
-	
-	/**
-	 * Checks if an interface is referenced by any of the possible option types
-	 * @param interface Interface to check on
-	 * @param option Changed Option
-	 * @return True if referenced, false otherwise
-	 */
-	private static boolean isInterfaceReferencedByOption(Interface apsinterface, 
-			APSReqHardwareOption<Interface> option) {
+
+	private static boolean isInterfaceReferencedByOption(Interface interfac, 
+			APSReqInterfaceHardwareOption option) {
 		boolean result = false;
-		if (option instanceof APSReqIntroduceNewHardwareOption) {
-			result = isInterfaceReferencedByIntroduceNewOption(apsinterface, (APSReqIntroduceNewHardwareOption<Interface>) option);
-		} else if (option instanceof APSReqChangeHardwareOption) {
-			result = isInterfaceReferencedByChangeOption(apsinterface, (APSReqChangeHardwareOption<Interface>) option);
-		} else if (option instanceof APSReqReplaceHardwareOption) {
-			result = isInterfaceReferencedByReplaceOption(apsinterface, (APSReqReplaceHardwareOption<Interface>) option);
-		} else if (option instanceof APSReqRemoveHardwareOption) {
-			result = isInterfaceReferencedByRemoveOption(apsinterface, (APSReqRemoveHardwareOption<Interface>) option);
+		if (option instanceof APSReqIntroduceNewInterfaceOption) {
+			result = isInterfaceReferencedByIntroduceNewOption(interfac, (APSReqIntroduceNewInterfaceOption) option);
+		} else if (option instanceof APSReqChangeInterfaceOption) {
+			result = isInterfaceReferencedByChangeOption(interfac, (APSReqChangeInterfaceOption) option);
+		} else if (option instanceof APSReqReplaceInterfaceOption) {
+			result = isInterfaceReferencedByReplaceOption(interfac, (APSReqReplaceInterfaceOption) option);
+		} else if (option instanceof APSReqRemoveInterfaceOption) {
+			result = isInterfaceReferencedByRemoveOption(interfac, (APSReqRemoveInterfaceOption) option);
 		}
 		return result;
 	}
 	
-	/**
-	 * Checks if an Interface is affected by an "introduce new" option
-	 * @param interface The interface to check on
-	 * @param option The option which is changed
-	 * @return True, if the interface is affected by the option, false otherwise
-	 */
 	private static boolean isInterfaceReferencedByIntroduceNewOption(
-			Interface apsInterface, APSReqIntroduceNewHardwareOption<Interface> option) {
-		for (Interface apsInterfaces : option.getEntities()) {
-			if (apsInterfaces.equals(apsInterface)) {
+			Interface interfac, APSReqIntroduceNewInterfaceOption option) {
+		for (Interface interfaces : option.getInterfaces()) {
+			if (interfaces.equals(interfac)) {
 				return true;
 			}
 		}
 		return false;
 	}
 	
-	/**
-	 * Checks if an Interface is affected by an "remove" option
-	 * @param interface The interface to check on
-	 * @param option The option which is changed
-	 * @return True, if the interface is affected by the option, false otherwise
-	 */
-	private static boolean isInterfaceReferencedByRemoveOption(
-			Interface apsInterface, APSReqRemoveHardwareOption<Interface> option) {
-		for (Interface apsInterfaces : option.getEntities()) {
-			if (apsInterfaces.equals(apsInterface)) {
-				return true;
-			}
-		}
-		return false;
-
-	}
-	
-	/**
-	 * Checks if an Interface is affected by an "replace" option
-	 * @param interface The interface to check on
-	 * @param option The option which is changed
-	 * @return True, if the interface is affected by the option, false otherwise
-	 */
 	private static boolean isInterfaceReferencedByReplaceOption(
-			Interface apsInterface, APSReqReplaceHardwareOption<Interface> option) {
-		if (option.getNewEntity().equals(apsInterface) || option.getOldEntity().equals(apsInterface)) {
+			Interface interfac, APSReqReplaceInterfaceOption option) {
+		if (option.getNewInterface().equals(interfac) || option.getOldInterface().equals(interfac)) {
 			return true;
-		} else {
-			return false;
-			}
+		}
+		return false;
 	}
 	
-	/**
-	 * Checks if an Interface is affected by an "change" option
-	 * @param interface The interface to check on
-	 * @param option The option which is changed
-	 * @return True, if the interface is affected by the option, false otherwise
-	 */
 	private static boolean isInterfaceReferencedByChangeOption(
-			Interface apsInterface, APSReqChangeHardwareOption<Interface> option) {
-		for (Interface interfaces : option.getEntities()) {
-			if (interfaces.equals(apsInterface)) {
+			Interface interfac, APSReqChangeInterfaceOption option) {
+		for (Interface interfaces : option.getInterfaces()) {
+			if (interfaces.equals(interfac)) {
 				return true;
 			}
 		}
 		return false;
 	}
 	
-	
+	private static boolean isInterfaceReferencedByRemoveOption(
+			Interface interfac, APSReqRemoveInterfaceOption option) {
+		for (Interface interfaces : option.getInterfaces()) {
+			if (interfaces.equals(interfac)) {
+				return true;
+			}
+		}
+		return false;
+	}
 	
 }

@@ -2,8 +2,6 @@
  */
 package apshardwareoptions;
 
-import edu.kit.ipd.sdq.kamp4aps.model.basic.Entity;
-
 import org.eclipse.emf.ecore.EFactory;
 
 /**
@@ -30,43 +28,178 @@ public interface ApshardwareoptionsFactory extends EFactory {
 	 * @return a new object of class '<em>APS Req Hardware Option</em>'.
 	 * @generated
 	 */
-	<T extends Entity> APSReqHardwareOption<T> createAPSReqHardwareOption();
+	APSReqHardwareOption createAPSReqHardwareOption();
 
 	/**
-	 * Returns a new object of class '<em>APS Req Introduce New Hardware Option</em>'.
+	 * Returns a new object of class '<em>APS Req Structure Hardware Option</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>APS Req Introduce New Hardware Option</em>'.
+	 * @return a new object of class '<em>APS Req Structure Hardware Option</em>'.
 	 * @generated
 	 */
-	<T extends Entity> APSReqIntroduceNewHardwareOption<T> createAPSReqIntroduceNewHardwareOption();
+	APSReqStructureHardwareOption createAPSReqStructureHardwareOption();
 
 	/**
-	 * Returns a new object of class '<em>APS Req Remove Hardware Option</em>'.
+	 * Returns a new object of class '<em>APS Req Introduce New Structure Option</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>APS Req Remove Hardware Option</em>'.
+	 * @return a new object of class '<em>APS Req Introduce New Structure Option</em>'.
 	 * @generated
 	 */
-	<T extends Entity> APSReqRemoveHardwareOption<T> createAPSReqRemoveHardwareOption();
+	APSReqIntroduceNewStructureOption createAPSReqIntroduceNewStructureOption();
 
 	/**
-	 * Returns a new object of class '<em>APS Req Change Hardware Option</em>'.
+	 * Returns a new object of class '<em>APS Req Change Structure Option</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>APS Req Change Hardware Option</em>'.
+	 * @return a new object of class '<em>APS Req Change Structure Option</em>'.
 	 * @generated
 	 */
-	<T extends Entity> APSReqChangeHardwareOption<T> createAPSReqChangeHardwareOption();
+	APSReqChangeStructureOption createAPSReqChangeStructureOption();
 
 	/**
-	 * Returns a new object of class '<em>APS Req Replace Hardware Option</em>'.
+	 * Returns a new object of class '<em>APS Req Remove Structure Option</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>APS Req Replace Hardware Option</em>'.
+	 * @return a new object of class '<em>APS Req Remove Structure Option</em>'.
 	 * @generated
 	 */
-	<T extends Entity> APSReqReplaceHardwareOption<T> createAPSReqReplaceHardwareOption();
+	APSReqRemoveStructureOption createAPSReqRemoveStructureOption();
+
+	/**
+	 * Returns a new object of class '<em>APS Req Replace Structure Option</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>APS Req Replace Structure Option</em>'.
+	 * @generated
+	 */
+	APSReqReplaceStructureOption createAPSReqReplaceStructureOption();
+
+	/**
+	 * Returns a new object of class '<em>APS Req Module Hardware Option</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>APS Req Module Hardware Option</em>'.
+	 * @generated
+	 */
+	APSReqModuleHardwareOption createAPSReqModuleHardwareOption();
+
+	/**
+	 * Returns a new object of class '<em>APS Req Introduce New Module Option</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>APS Req Introduce New Module Option</em>'.
+	 * @generated
+	 */
+	APSReqIntroduceNewModuleOption createAPSReqIntroduceNewModuleOption();
+
+	/**
+	 * Returns a new object of class '<em>APS Req Remove Module Option</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>APS Req Remove Module Option</em>'.
+	 * @generated
+	 */
+	APSReqRemoveModuleOption createAPSReqRemoveModuleOption();
+
+	/**
+	 * Returns a new object of class '<em>APS Req Change Module Option</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>APS Req Change Module Option</em>'.
+	 * @generated
+	 */
+	APSReqChangeModuleOption createAPSReqChangeModuleOption();
+
+	/**
+	 * Returns a new object of class '<em>APS Req Replace Module Option</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>APS Req Replace Module Option</em>'.
+	 * @generated
+	 */
+	APSReqReplaceModuleOption createAPSReqReplaceModuleOption();
+
+	/**
+	 * Returns a new object of class '<em>APS Req Component Hardware Option</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>APS Req Component Hardware Option</em>'.
+	 * @generated
+	 */
+	APSReqComponentHardwareOption createAPSReqComponentHardwareOption();
+
+	/**
+	 * Returns a new object of class '<em>APS Req Introduce New Component Option</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>APS Req Introduce New Component Option</em>'.
+	 * @generated
+	 */
+	APSReqIntroduceNewComponentOption createAPSReqIntroduceNewComponentOption();
+
+	/**
+	 * Returns a new object of class '<em>APS Req Remove Component Option</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>APS Req Remove Component Option</em>'.
+	 * @generated
+	 */
+	APSReqRemoveComponentOption createAPSReqRemoveComponentOption();
+
+	/**
+	 * Returns a new object of class '<em>APS Req Replace Component Option</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>APS Req Replace Component Option</em>'.
+	 * @generated
+	 */
+	APSReqReplaceComponentOption createAPSReqReplaceComponentOption();
+
+	/**
+	 * Returns a new object of class '<em>APS Req Interface Hardware Option</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>APS Req Interface Hardware Option</em>'.
+	 * @generated
+	 */
+	APSReqInterfaceHardwareOption createAPSReqInterfaceHardwareOption();
+
+	/**
+	 * Returns a new object of class '<em>APS Req Introduce New Interface Option</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>APS Req Introduce New Interface Option</em>'.
+	 * @generated
+	 */
+	APSReqIntroduceNewInterfaceOption createAPSReqIntroduceNewInterfaceOption();
+
+	/**
+	 * Returns a new object of class '<em>APS Req Change Interface Option</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>APS Req Change Interface Option</em>'.
+	 * @generated
+	 */
+	APSReqChangeInterfaceOption createAPSReqChangeInterfaceOption();
+
+	/**
+	 * Returns a new object of class '<em>APS Req Replace Interface Option</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>APS Req Replace Interface Option</em>'.
+	 * @generated
+	 */
+	APSReqReplaceInterfaceOption createAPSReqReplaceInterfaceOption();
+
+	/**
+	 * Returns a new object of class '<em>APS Req Remove Interface Option</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>APS Req Remove Interface Option</em>'.
+	 * @generated
+	 */
+	APSReqRemoveInterfaceOption createAPSReqRemoveInterfaceOption();
 
 	/**
 	 * Returns the package supported by this factory.

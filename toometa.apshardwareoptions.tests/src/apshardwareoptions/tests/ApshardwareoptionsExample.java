@@ -60,7 +60,7 @@ public class ApshardwareoptionsExample {
 			System.out.println("Enter a list of file paths or URIs that have content like this:");
 			try {
 				Resource resource = resourceSet.createResource(URI.createURI("http:///My.apshardwareoptions"));
-				APSReqHardwareOption<?> root = ApshardwareoptionsFactory.eINSTANCE.createAPSReqHardwareOption();
+				APSReqHardwareOption root = ApshardwareoptionsFactory.eINSTANCE.createAPSReqHardwareOption();
 				resource.getContents().add(root);
 				resource.save(System.out, null);
 			}

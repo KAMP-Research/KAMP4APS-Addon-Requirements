@@ -95,95 +95,440 @@ public class ApshardwareoptionsItemProviderAdapterFactory extends Apshardwareopt
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link apshardwareoptions.APSReqIntroduceNewHardwareOption} instances.
+	 * This keeps track of the one adapter used for all {@link apshardwareoptions.APSReqStructureHardwareOption} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected APSReqIntroduceNewHardwareOptionItemProvider apsReqIntroduceNewHardwareOptionItemProvider;
+	protected APSReqStructureHardwareOptionItemProvider apsReqStructureHardwareOptionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link apshardwareoptions.APSReqIntroduceNewHardwareOption}.
+	 * This creates an adapter for a {@link apshardwareoptions.APSReqStructureHardwareOption}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createAPSReqIntroduceNewHardwareOptionAdapter() {
-		if (apsReqIntroduceNewHardwareOptionItemProvider == null) {
-			apsReqIntroduceNewHardwareOptionItemProvider = new APSReqIntroduceNewHardwareOptionItemProvider(this);
+	public Adapter createAPSReqStructureHardwareOptionAdapter() {
+		if (apsReqStructureHardwareOptionItemProvider == null) {
+			apsReqStructureHardwareOptionItemProvider = new APSReqStructureHardwareOptionItemProvider(this);
 		}
 
-		return apsReqIntroduceNewHardwareOptionItemProvider;
+		return apsReqStructureHardwareOptionItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link apshardwareoptions.APSReqRemoveHardwareOption} instances.
+	 * This keeps track of the one adapter used for all {@link apshardwareoptions.APSReqIntroduceNewStructureOption} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected APSReqRemoveHardwareOptionItemProvider apsReqRemoveHardwareOptionItemProvider;
+	protected APSReqIntroduceNewStructureOptionItemProvider apsReqIntroduceNewStructureOptionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link apshardwareoptions.APSReqRemoveHardwareOption}.
+	 * This creates an adapter for a {@link apshardwareoptions.APSReqIntroduceNewStructureOption}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createAPSReqRemoveHardwareOptionAdapter() {
-		if (apsReqRemoveHardwareOptionItemProvider == null) {
-			apsReqRemoveHardwareOptionItemProvider = new APSReqRemoveHardwareOptionItemProvider(this);
+	public Adapter createAPSReqIntroduceNewStructureOptionAdapter() {
+		if (apsReqIntroduceNewStructureOptionItemProvider == null) {
+			apsReqIntroduceNewStructureOptionItemProvider = new APSReqIntroduceNewStructureOptionItemProvider(this);
 		}
 
-		return apsReqRemoveHardwareOptionItemProvider;
+		return apsReqIntroduceNewStructureOptionItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link apshardwareoptions.APSReqChangeHardwareOption} instances.
+	 * This keeps track of the one adapter used for all {@link apshardwareoptions.APSReqChangeStructureOption} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected APSReqChangeHardwareOptionItemProvider apsReqChangeHardwareOptionItemProvider;
+	protected APSReqChangeStructureOptionItemProvider apsReqChangeStructureOptionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link apshardwareoptions.APSReqChangeHardwareOption}.
+	 * This creates an adapter for a {@link apshardwareoptions.APSReqChangeStructureOption}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createAPSReqChangeHardwareOptionAdapter() {
-		if (apsReqChangeHardwareOptionItemProvider == null) {
-			apsReqChangeHardwareOptionItemProvider = new APSReqChangeHardwareOptionItemProvider(this);
+	public Adapter createAPSReqChangeStructureOptionAdapter() {
+		if (apsReqChangeStructureOptionItemProvider == null) {
+			apsReqChangeStructureOptionItemProvider = new APSReqChangeStructureOptionItemProvider(this);
 		}
 
-		return apsReqChangeHardwareOptionItemProvider;
+		return apsReqChangeStructureOptionItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link apshardwareoptions.APSReqReplaceHardwareOption} instances.
+	 * This keeps track of the one adapter used for all {@link apshardwareoptions.APSReqRemoveStructureOption} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected APSReqReplaceHardwareOptionItemProvider apsReqReplaceHardwareOptionItemProvider;
+	protected APSReqRemoveStructureOptionItemProvider apsReqRemoveStructureOptionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link apshardwareoptions.APSReqReplaceHardwareOption}.
+	 * This creates an adapter for a {@link apshardwareoptions.APSReqRemoveStructureOption}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createAPSReqReplaceHardwareOptionAdapter() {
-		if (apsReqReplaceHardwareOptionItemProvider == null) {
-			apsReqReplaceHardwareOptionItemProvider = new APSReqReplaceHardwareOptionItemProvider(this);
+	public Adapter createAPSReqRemoveStructureOptionAdapter() {
+		if (apsReqRemoveStructureOptionItemProvider == null) {
+			apsReqRemoveStructureOptionItemProvider = new APSReqRemoveStructureOptionItemProvider(this);
 		}
 
-		return apsReqReplaceHardwareOptionItemProvider;
+		return apsReqRemoveStructureOptionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link apshardwareoptions.APSReqReplaceStructureOption} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected APSReqReplaceStructureOptionItemProvider apsReqReplaceStructureOptionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link apshardwareoptions.APSReqReplaceStructureOption}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAPSReqReplaceStructureOptionAdapter() {
+		if (apsReqReplaceStructureOptionItemProvider == null) {
+			apsReqReplaceStructureOptionItemProvider = new APSReqReplaceStructureOptionItemProvider(this);
+		}
+
+		return apsReqReplaceStructureOptionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link apshardwareoptions.APSReqModuleHardwareOption} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected APSReqModuleHardwareOptionItemProvider apsReqModuleHardwareOptionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link apshardwareoptions.APSReqModuleHardwareOption}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAPSReqModuleHardwareOptionAdapter() {
+		if (apsReqModuleHardwareOptionItemProvider == null) {
+			apsReqModuleHardwareOptionItemProvider = new APSReqModuleHardwareOptionItemProvider(this);
+		}
+
+		return apsReqModuleHardwareOptionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link apshardwareoptions.APSReqIntroduceNewModuleOption} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected APSReqIntroduceNewModuleOptionItemProvider apsReqIntroduceNewModuleOptionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link apshardwareoptions.APSReqIntroduceNewModuleOption}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAPSReqIntroduceNewModuleOptionAdapter() {
+		if (apsReqIntroduceNewModuleOptionItemProvider == null) {
+			apsReqIntroduceNewModuleOptionItemProvider = new APSReqIntroduceNewModuleOptionItemProvider(this);
+		}
+
+		return apsReqIntroduceNewModuleOptionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link apshardwareoptions.APSReqRemoveModuleOption} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected APSReqRemoveModuleOptionItemProvider apsReqRemoveModuleOptionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link apshardwareoptions.APSReqRemoveModuleOption}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAPSReqRemoveModuleOptionAdapter() {
+		if (apsReqRemoveModuleOptionItemProvider == null) {
+			apsReqRemoveModuleOptionItemProvider = new APSReqRemoveModuleOptionItemProvider(this);
+		}
+
+		return apsReqRemoveModuleOptionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link apshardwareoptions.APSReqChangeModuleOption} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected APSReqChangeModuleOptionItemProvider apsReqChangeModuleOptionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link apshardwareoptions.APSReqChangeModuleOption}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAPSReqChangeModuleOptionAdapter() {
+		if (apsReqChangeModuleOptionItemProvider == null) {
+			apsReqChangeModuleOptionItemProvider = new APSReqChangeModuleOptionItemProvider(this);
+		}
+
+		return apsReqChangeModuleOptionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link apshardwareoptions.APSReqReplaceModuleOption} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected APSReqReplaceModuleOptionItemProvider apsReqReplaceModuleOptionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link apshardwareoptions.APSReqReplaceModuleOption}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAPSReqReplaceModuleOptionAdapter() {
+		if (apsReqReplaceModuleOptionItemProvider == null) {
+			apsReqReplaceModuleOptionItemProvider = new APSReqReplaceModuleOptionItemProvider(this);
+		}
+
+		return apsReqReplaceModuleOptionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link apshardwareoptions.APSReqComponentHardwareOption} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected APSReqComponentHardwareOptionItemProvider apsReqComponentHardwareOptionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link apshardwareoptions.APSReqComponentHardwareOption}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAPSReqComponentHardwareOptionAdapter() {
+		if (apsReqComponentHardwareOptionItemProvider == null) {
+			apsReqComponentHardwareOptionItemProvider = new APSReqComponentHardwareOptionItemProvider(this);
+		}
+
+		return apsReqComponentHardwareOptionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link apshardwareoptions.APSReqIntroduceNewComponentOption} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected APSReqIntroduceNewComponentOptionItemProvider apsReqIntroduceNewComponentOptionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link apshardwareoptions.APSReqIntroduceNewComponentOption}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAPSReqIntroduceNewComponentOptionAdapter() {
+		if (apsReqIntroduceNewComponentOptionItemProvider == null) {
+			apsReqIntroduceNewComponentOptionItemProvider = new APSReqIntroduceNewComponentOptionItemProvider(this);
+		}
+
+		return apsReqIntroduceNewComponentOptionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link apshardwareoptions.APSReqRemoveComponentOption} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected APSReqRemoveComponentOptionItemProvider apsReqRemoveComponentOptionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link apshardwareoptions.APSReqRemoveComponentOption}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAPSReqRemoveComponentOptionAdapter() {
+		if (apsReqRemoveComponentOptionItemProvider == null) {
+			apsReqRemoveComponentOptionItemProvider = new APSReqRemoveComponentOptionItemProvider(this);
+		}
+
+		return apsReqRemoveComponentOptionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link apshardwareoptions.APSReqReplaceComponentOption} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected APSReqReplaceComponentOptionItemProvider apsReqReplaceComponentOptionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link apshardwareoptions.APSReqReplaceComponentOption}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAPSReqReplaceComponentOptionAdapter() {
+		if (apsReqReplaceComponentOptionItemProvider == null) {
+			apsReqReplaceComponentOptionItemProvider = new APSReqReplaceComponentOptionItemProvider(this);
+		}
+
+		return apsReqReplaceComponentOptionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link apshardwareoptions.APSReqInterfaceHardwareOption} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected APSReqInterfaceHardwareOptionItemProvider apsReqInterfaceHardwareOptionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link apshardwareoptions.APSReqInterfaceHardwareOption}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAPSReqInterfaceHardwareOptionAdapter() {
+		if (apsReqInterfaceHardwareOptionItemProvider == null) {
+			apsReqInterfaceHardwareOptionItemProvider = new APSReqInterfaceHardwareOptionItemProvider(this);
+		}
+
+		return apsReqInterfaceHardwareOptionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link apshardwareoptions.APSReqIntroduceNewInterfaceOption} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected APSReqIntroduceNewInterfaceOptionItemProvider apsReqIntroduceNewInterfaceOptionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link apshardwareoptions.APSReqIntroduceNewInterfaceOption}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAPSReqIntroduceNewInterfaceOptionAdapter() {
+		if (apsReqIntroduceNewInterfaceOptionItemProvider == null) {
+			apsReqIntroduceNewInterfaceOptionItemProvider = new APSReqIntroduceNewInterfaceOptionItemProvider(this);
+		}
+
+		return apsReqIntroduceNewInterfaceOptionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link apshardwareoptions.APSReqChangeInterfaceOption} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected APSReqChangeInterfaceOptionItemProvider apsReqChangeInterfaceOptionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link apshardwareoptions.APSReqChangeInterfaceOption}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAPSReqChangeInterfaceOptionAdapter() {
+		if (apsReqChangeInterfaceOptionItemProvider == null) {
+			apsReqChangeInterfaceOptionItemProvider = new APSReqChangeInterfaceOptionItemProvider(this);
+		}
+
+		return apsReqChangeInterfaceOptionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link apshardwareoptions.APSReqReplaceInterfaceOption} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected APSReqReplaceInterfaceOptionItemProvider apsReqReplaceInterfaceOptionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link apshardwareoptions.APSReqReplaceInterfaceOption}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAPSReqReplaceInterfaceOptionAdapter() {
+		if (apsReqReplaceInterfaceOptionItemProvider == null) {
+			apsReqReplaceInterfaceOptionItemProvider = new APSReqReplaceInterfaceOptionItemProvider(this);
+		}
+
+		return apsReqReplaceInterfaceOptionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link apshardwareoptions.APSReqRemoveInterfaceOption} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected APSReqRemoveInterfaceOptionItemProvider apsReqRemoveInterfaceOptionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link apshardwareoptions.APSReqRemoveInterfaceOption}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAPSReqRemoveInterfaceOptionAdapter() {
+		if (apsReqRemoveInterfaceOptionItemProvider == null) {
+			apsReqRemoveInterfaceOptionItemProvider = new APSReqRemoveInterfaceOptionItemProvider(this);
+		}
+
+		return apsReqRemoveInterfaceOptionItemProvider;
 	}
 
 	/**
@@ -286,10 +631,25 @@ public class ApshardwareoptionsItemProviderAdapterFactory extends Apshardwareopt
 	 */
 	public void dispose() {
 		if (apsReqHardwareOptionItemProvider != null) apsReqHardwareOptionItemProvider.dispose();
-		if (apsReqIntroduceNewHardwareOptionItemProvider != null) apsReqIntroduceNewHardwareOptionItemProvider.dispose();
-		if (apsReqRemoveHardwareOptionItemProvider != null) apsReqRemoveHardwareOptionItemProvider.dispose();
-		if (apsReqChangeHardwareOptionItemProvider != null) apsReqChangeHardwareOptionItemProvider.dispose();
-		if (apsReqReplaceHardwareOptionItemProvider != null) apsReqReplaceHardwareOptionItemProvider.dispose();
+		if (apsReqStructureHardwareOptionItemProvider != null) apsReqStructureHardwareOptionItemProvider.dispose();
+		if (apsReqIntroduceNewStructureOptionItemProvider != null) apsReqIntroduceNewStructureOptionItemProvider.dispose();
+		if (apsReqChangeStructureOptionItemProvider != null) apsReqChangeStructureOptionItemProvider.dispose();
+		if (apsReqRemoveStructureOptionItemProvider != null) apsReqRemoveStructureOptionItemProvider.dispose();
+		if (apsReqReplaceStructureOptionItemProvider != null) apsReqReplaceStructureOptionItemProvider.dispose();
+		if (apsReqModuleHardwareOptionItemProvider != null) apsReqModuleHardwareOptionItemProvider.dispose();
+		if (apsReqIntroduceNewModuleOptionItemProvider != null) apsReqIntroduceNewModuleOptionItemProvider.dispose();
+		if (apsReqRemoveModuleOptionItemProvider != null) apsReqRemoveModuleOptionItemProvider.dispose();
+		if (apsReqChangeModuleOptionItemProvider != null) apsReqChangeModuleOptionItemProvider.dispose();
+		if (apsReqReplaceModuleOptionItemProvider != null) apsReqReplaceModuleOptionItemProvider.dispose();
+		if (apsReqComponentHardwareOptionItemProvider != null) apsReqComponentHardwareOptionItemProvider.dispose();
+		if (apsReqIntroduceNewComponentOptionItemProvider != null) apsReqIntroduceNewComponentOptionItemProvider.dispose();
+		if (apsReqRemoveComponentOptionItemProvider != null) apsReqRemoveComponentOptionItemProvider.dispose();
+		if (apsReqReplaceComponentOptionItemProvider != null) apsReqReplaceComponentOptionItemProvider.dispose();
+		if (apsReqInterfaceHardwareOptionItemProvider != null) apsReqInterfaceHardwareOptionItemProvider.dispose();
+		if (apsReqIntroduceNewInterfaceOptionItemProvider != null) apsReqIntroduceNewInterfaceOptionItemProvider.dispose();
+		if (apsReqChangeInterfaceOptionItemProvider != null) apsReqChangeInterfaceOptionItemProvider.dispose();
+		if (apsReqReplaceInterfaceOptionItemProvider != null) apsReqReplaceInterfaceOptionItemProvider.dispose();
+		if (apsReqRemoveInterfaceOptionItemProvider != null) apsReqRemoveInterfaceOptionItemProvider.dispose();
 	}
 
 }
