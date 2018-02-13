@@ -36,12 +36,15 @@ public class APSReqHardwareArchitectureModelLookup extends APSReqArchitectureMod
 	 * @param options Changed Options
 	 * @return Map with Options and the Structures they reference 
 	 */
-	public static <T extends Entity> Map<Structure, Set<APSReqHardwareOption<Structure>>> lookUpStructuresReferencedByOptions(
-			APSReqHardwareArchitectureVersion version, Collection<? extends APSReqOption<Structure>> options) {
+	public static <T extends Entity> Map<Structure, Set<APSReqHardwareOption<T>>> lookUpStructuresReferencedByOptions(
+			APSReqHardwareArchitectureVersion version, Collection<? extends APSReqHardwareOption<T>> options, Class<T> entityType) {
 		Map<Structure, Set<APSReqHardwareOption<Structure>>> results = new HashMap<Structure, Set<APSReqHardwareOption<Structure>>>();
-		
-		for (APSReqOption<Structure> option: options) {
-			for (Structure structureRepository : version.getApsArchitectureVersion().getAPSPlant().getStructures()) {
+		for (APSReqHardwareOption<T> option: options) {
+			if (entityType.getClass() == Structure.class) {
+			
+			}
+			if (option.)
+			for (T structureRepository : version.getApsArchitectureVersion().getAPSPlant().getStructures()) {
 				if (isStructureReferencedByOption(structureRepository, (APSReqHardwareOption) option)) {
 					MapUtil.putOrAddToMap(results, structureRepository, (APSReqHardwareOption) option);
 				}
@@ -57,17 +60,17 @@ public class APSReqHardwareArchitectureModelLookup extends APSReqArchitectureMod
 	 * @param option Changed Option
 	 * @return True if referenced, false otherwise
 	 */
-	private static boolean isStructureReferencedByOption(Structure structure, 
-			APSReqHardwareOption<Structure> option) {
+	private static <T extends Entity> boolean isStructureReferencedByOption(T entity, 
+			APSReqHardwareOption<T> option) {
 		boolean result = false;
 		if (option instanceof APSReqIntroduceNewHardwareOption) {
-			result = isStructureReferencedByIntroduceNewOption(structure, (APSReqIntroduceNewHardwareOption<Structure>) option);
+			result = isStructureReferencedByIntroduceNewOption(entity, (APSReqIntroduceNewHardwareOption<T>) option);
 		} else if (option instanceof APSReqChangeHardwareOption) {
-			result = isStructureReferencedByChangeOption(structure, (APSReqChangeHardwareOption<Structure>) option);
+			result = isStructureReferencedByChangeOption(entity, (APSReqChangeHardwareOption<T>) option);
 		} else if (option instanceof APSReqReplaceHardwareOption) {
-			result = isStructureReferencedByReplaceOption(structure, (APSReqReplaceHardwareOption<Structure>) option);
+			result = isStructureReferencedByReplaceOption(entity, (APSReqReplaceHardwareOption<T>) option);
 		} else if (option instanceof APSReqRemoveHardwareOption) {
-			result = isStructureReferencedByRemoveOption(structure, (APSReqRemoveHardwareOption<Structure>) option);
+			result = isStructureReferencedByRemoveOption(entity, (APSReqRemoveHardwareOption<T>) option);
 		}
 		return result;
 	}
@@ -78,10 +81,10 @@ public class APSReqHardwareArchitectureModelLookup extends APSReqArchitectureMod
 	 * @param option The option which is changed
 	 * @return True, if the structure is affected by the option, false otherwise
 	 */
-	private static boolean isStructureReferencedByIntroduceNewOption(
-			Structure structure, APSReqIntroduceNewHardwareOption<Structure> option) {
-		for (Structure structures : option.getEntities()) {
-			if (structures.equals(structure)) {
+	private static <T extends Entity> boolean isStructureReferencedByIntroduceNewOption(
+			T entity, APSReqIntroduceNewHardwareOption<T> option) {
+		for (T entities : option.getEntities()) {
+			if (entities.equals(entity)) {
 				return true;
 			}
 		}
@@ -94,10 +97,10 @@ public class APSReqHardwareArchitectureModelLookup extends APSReqArchitectureMod
 	 * @param option The option which is changed
 	 * @return True, if the structure is affected by the option, false otherwise
 	 */
-	private static boolean isStructureReferencedByRemoveOption(
-			Structure structure, APSReqRemoveHardwareOption<Structure> option) {
-		for (Structure structures : option.getEntities()) {
-			if (structures.equals(structure)) {
+	private static <T extends Entity> boolean isStructureReferencedByRemoveOption(
+			T entity, APSReqRemoveHardwareOption<T> option) {
+		for (T entities : option.getEntities()) {
+			if (entities.equals(entity)) {
 				return true;
 			}
 		}
@@ -111,9 +114,9 @@ public class APSReqHardwareArchitectureModelLookup extends APSReqArchitectureMod
 	 * @param option The option which is changed
 	 * @return True, if the structure is affected by the option, false otherwise
 	 */
-	private static boolean isStructureReferencedByReplaceOption(
-			Structure structure, APSReqReplaceHardwareOption<Structure> option) {
-		if (option.getNewEntity().equals(structure) || option.getOldEntity().equals(structure)) {
+	private static <T extends Entity> boolean isStructureReferencedByReplaceOption(
+			T entity, APSReqReplaceHardwareOption<T> option) {
+		if (option.getNewEntity().equals(entity) || option.getOldEntity().equals(entity)) {
 			return true;
 		} else {
 			return false;
@@ -126,10 +129,10 @@ public class APSReqHardwareArchitectureModelLookup extends APSReqArchitectureMod
 	 * @param option The option which is changed
 	 * @return True, if the structure is affected by the option, false otherwise
 	 */
-	private static boolean isStructureReferencedByChangeOption(
-			Structure structure, APSReqChangeHardwareOption<Structure> option) {
-		for (Structure structures : option.getEntities()) {
-			if (structures.equals(structure)) {
+	private static <T extends Entity> boolean isStructureReferencedByChangeOption(
+			T entity, APSReqChangeHardwareOption<T> option) {
+		for (T entities : option.getEntities()) {
+			if (entities.equals(entity)) {
 				return true;
 			}
 		}
