@@ -100,8 +100,8 @@ public class ModificationmarksAdapterFactory extends AdapterFactoryImpl {
 				return createAPSReqSeedModificationsAdapter();
 			}
 			@Override
-			public Adapter caseAPSReqChangePropagationDueToSpecificationDependencies(APSReqChangePropagationDueToSpecificationDependencies object) {
-				return createAPSReqChangePropagationDueToSpecificationDependenciesAdapter();
+			public Adapter caseAbstractAPSReqChangePropagationDueToSpecificationDependencies(AbstractAPSReqChangePropagationDueToSpecificationDependencies object) {
+				return createAbstractAPSReqChangePropagationDueToSpecificationDependenciesAdapter();
 			}
 			@Override
 			public <S, T> Adapter caseAbstractModification(AbstractModification<S, T> object) {
@@ -228,16 +228,16 @@ public class ModificationmarksAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqChangePropagationDueToSpecificationDependencies <em>APS Req Change Propagation Due To Specification Dependencies</em>}'.
+	 * Creates a new adapter for an object of class '{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.AbstractAPSReqChangePropagationDueToSpecificationDependencies <em>Abstract APS Req Change Propagation Due To Specification Dependencies</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqChangePropagationDueToSpecificationDependencies
+	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.AbstractAPSReqChangePropagationDueToSpecificationDependencies
 	 * @generated
 	 */
-	public Adapter createAPSReqChangePropagationDueToSpecificationDependenciesAdapter() {
+	public Adapter createAbstractAPSReqChangePropagationDueToSpecificationDependenciesAdapter() {
 		return null;
 	}
 

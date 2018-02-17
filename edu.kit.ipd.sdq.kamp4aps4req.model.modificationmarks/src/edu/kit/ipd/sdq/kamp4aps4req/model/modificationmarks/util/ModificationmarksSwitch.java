@@ -119,11 +119,11 @@ public class ModificationmarksSwitch<T1> extends Switch<T1> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ModificationmarksPackage.APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES: {
-				APSReqChangePropagationDueToSpecificationDependencies apsReqChangePropagationDueToSpecificationDependencies = (APSReqChangePropagationDueToSpecificationDependencies)theEObject;
-				T1 result = caseAPSReqChangePropagationDueToSpecificationDependencies(apsReqChangePropagationDueToSpecificationDependencies);
-				if (result == null) result = caseChangePropagationStep(apsReqChangePropagationDueToSpecificationDependencies);
-				if (result == null) result = caseAbstractChangePropagationStep(apsReqChangePropagationDueToSpecificationDependencies);
+			case ModificationmarksPackage.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES: {
+				AbstractAPSReqChangePropagationDueToSpecificationDependencies abstractAPSReqChangePropagationDueToSpecificationDependencies = (AbstractAPSReqChangePropagationDueToSpecificationDependencies)theEObject;
+				T1 result = caseAbstractAPSReqChangePropagationDueToSpecificationDependencies(abstractAPSReqChangePropagationDueToSpecificationDependencies);
+				if (result == null) result = caseChangePropagationStep(abstractAPSReqChangePropagationDueToSpecificationDependencies);
+				if (result == null) result = caseAbstractChangePropagationStep(abstractAPSReqChangePropagationDueToSpecificationDependencies);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -222,17 +222,17 @@ public class ModificationmarksSwitch<T1> extends Switch<T1> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>APS Req Change Propagation Due To Specification Dependencies</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Abstract APS Req Change Propagation Due To Specification Dependencies</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>APS Req Change Propagation Due To Specification Dependencies</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Abstract APS Req Change Propagation Due To Specification Dependencies</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseAPSReqChangePropagationDueToSpecificationDependencies(APSReqChangePropagationDueToSpecificationDependencies object) {
+	public T1 caseAbstractAPSReqChangePropagationDueToSpecificationDependencies(AbstractAPSReqChangePropagationDueToSpecificationDependencies object) {
 		return null;
 	}
 

@@ -3,13 +3,8 @@
 package edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.provider;
 
 
-import edu.kit.ipd.sdq.kamp.model.modificationmarks.ModificationmarksPackage;
-
-import edu.kit.ipd.sdq.kamp4aps.model.KAMP4aPSModificationmarks.KAMP4aPSModificationmarksFactory;
-
-import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.provider.AbstractKAMP4aPS4ReqModificationRepositoryItemProvider;
-
-import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.Modificationmarks_hardwareFactory;
+import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.provider.AbstractAPSReqChangePropagationDueToSpecificationDependenciesItemProvider;
+import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.Modificationmarks_hardwarePackage;
 
 import java.util.Collection;
 import java.util.List;
@@ -19,22 +14,23 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 /**
- * This is the item provider adapter for a {@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.APSReqHardwareModificationRepository} object.
+ * This is the item provider adapter for a {@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.APSReqHardwareChangePropagationDueToSpecificationDependencies} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class APSReqHardwareModificationRepositoryItemProvider extends AbstractKAMP4aPS4ReqModificationRepositoryItemProvider {
+public class APSReqHardwareChangePropagationDueToSpecificationDependenciesItemProvider extends AbstractAPSReqChangePropagationDueToSpecificationDependenciesItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public APSReqHardwareModificationRepositoryItemProvider(AdapterFactory adapterFactory) {
+	public APSReqHardwareChangePropagationDueToSpecificationDependenciesItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -49,19 +45,42 @@ public class APSReqHardwareModificationRepositoryItemProvider extends AbstractKA
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addApsChangePropagationDueToHardwareChangePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This returns APSReqHardwareModificationRepository.gif.
+	 * This adds a property descriptor for the Aps Change Propagation Due To Hardware Change feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addApsChangePropagationDueToHardwareChangePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_APSReqHardwareChangePropagationDueToSpecificationDependencies_apsChangePropagationDueToHardwareChange_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_APSReqHardwareChangePropagationDueToSpecificationDependencies_apsChangePropagationDueToHardwareChange_feature", "_UI_APSReqHardwareChangePropagationDueToSpecificationDependencies_type"),
+				 Modificationmarks_hardwarePackage.Literals.APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__APS_CHANGE_PROPAGATION_DUE_TO_HARDWARE_CHANGE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This returns APSReqHardwareChangePropagationDueToSpecificationDependencies.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/APSReqHardwareModificationRepository"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/APSReqHardwareChangePropagationDueToSpecificationDependencies"));
 	}
 
 	/**
@@ -72,7 +91,7 @@ public class APSReqHardwareModificationRepositoryItemProvider extends AbstractKA
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_APSReqHardwareModificationRepository_type");
+		return getString("_UI_APSReqHardwareChangePropagationDueToSpecificationDependencies_type");
 	}
 	
 
@@ -99,26 +118,6 @@ public class APSReqHardwareModificationRepositoryItemProvider extends AbstractKA
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModificationmarksPackage.Literals.ABSTRACT_MODIFICATION_REPOSITORY__SEED_MODIFICATIONS,
-				 Modificationmarks_hardwareFactory.eINSTANCE.createAPSReqHardwareSeedModifications()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModificationmarksPackage.Literals.ABSTRACT_MODIFICATION_REPOSITORY__SEED_MODIFICATIONS,
-				 KAMP4aPSModificationmarksFactory.eINSTANCE.createKAMP4aPSSeedModifications()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModificationmarksPackage.Literals.ABSTRACT_MODIFICATION_REPOSITORY__CHANGE_PROPAGATION_STEPS,
-				 Modificationmarks_hardwareFactory.eINSTANCE.createAPSReqHardwareChangePropagationDueToSpecificationDependencies()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModificationmarksPackage.Literals.ABSTRACT_MODIFICATION_REPOSITORY__CHANGE_PROPAGATION_STEPS,
-				 KAMP4aPSModificationmarksFactory.eINSTANCE.createChangePropagationDueToHardwareChange()));
 	}
 
 	/**

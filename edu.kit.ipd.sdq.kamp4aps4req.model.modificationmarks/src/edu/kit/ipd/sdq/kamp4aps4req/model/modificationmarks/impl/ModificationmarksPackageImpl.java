@@ -4,12 +4,12 @@ package edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.impl;
 
 import decisions.DecisionsPackage;
 
-import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqChangePropagationDueToSpecificationDependencies;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModifyDecision;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModifyOption;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModifyRequirement;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModifyTraceableObject;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqSeedModifications;
+import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.AbstractAPSReqChangePropagationDueToSpecificationDependencies;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.AbstractKAMP4aPS4ReqModificationRepository;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.ModificationmarksFactory;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.ModificationmarksPackage;
@@ -82,7 +82,7 @@ public class ModificationmarksPackageImpl extends EPackageImpl implements Modifi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass apsReqChangePropagationDueToSpecificationDependenciesEClass = null;
+	private EClass abstractAPSReqChangePropagationDueToSpecificationDependenciesEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -246,8 +246,8 @@ public class ModificationmarksPackageImpl extends EPackageImpl implements Modifi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getAPSReqChangePropagationDueToSpecificationDependencies() {
-		return apsReqChangePropagationDueToSpecificationDependenciesEClass;
+	public EClass getAbstractAPSReqChangePropagationDueToSpecificationDependencies() {
+		return abstractAPSReqChangePropagationDueToSpecificationDependenciesEClass;
 	}
 
 	/**
@@ -255,8 +255,8 @@ public class ModificationmarksPackageImpl extends EPackageImpl implements Modifi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAPSReqChangePropagationDueToSpecificationDependencies_DecisionModifications() {
-		return (EReference)apsReqChangePropagationDueToSpecificationDependenciesEClass.getEStructuralFeatures().get(0);
+	public EReference getAbstractAPSReqChangePropagationDueToSpecificationDependencies_DecisionModifications() {
+		return (EReference)abstractAPSReqChangePropagationDueToSpecificationDependenciesEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -264,8 +264,8 @@ public class ModificationmarksPackageImpl extends EPackageImpl implements Modifi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAPSReqChangePropagationDueToSpecificationDependencies_RequirementModifications() {
-		return (EReference)apsReqChangePropagationDueToSpecificationDependenciesEClass.getEStructuralFeatures().get(1);
+	public EReference getAbstractAPSReqChangePropagationDueToSpecificationDependencies_RequirementModifications() {
+		return (EReference)abstractAPSReqChangePropagationDueToSpecificationDependenciesEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -273,8 +273,8 @@ public class ModificationmarksPackageImpl extends EPackageImpl implements Modifi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAPSReqChangePropagationDueToSpecificationDependencies_OptionModifications() {
-		return (EReference)apsReqChangePropagationDueToSpecificationDependenciesEClass.getEStructuralFeatures().get(2);
+	public EReference getAbstractAPSReqChangePropagationDueToSpecificationDependencies_OptionModifications() {
+		return (EReference)abstractAPSReqChangePropagationDueToSpecificationDependenciesEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -321,10 +321,10 @@ public class ModificationmarksPackageImpl extends EPackageImpl implements Modifi
 		createEReference(apsReqSeedModificationsEClass, APS_REQ_SEED_MODIFICATIONS__OPTION_MODIFICATIONS);
 		createEReference(apsReqSeedModificationsEClass, APS_REQ_SEED_MODIFICATIONS__APSIEC_SEED_MODIFICATIONS);
 
-		apsReqChangePropagationDueToSpecificationDependenciesEClass = createEClass(APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES);
-		createEReference(apsReqChangePropagationDueToSpecificationDependenciesEClass, APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__DECISION_MODIFICATIONS);
-		createEReference(apsReqChangePropagationDueToSpecificationDependenciesEClass, APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__REQUIREMENT_MODIFICATIONS);
-		createEReference(apsReqChangePropagationDueToSpecificationDependenciesEClass, APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__OPTION_MODIFICATIONS);
+		abstractAPSReqChangePropagationDueToSpecificationDependenciesEClass = createEClass(ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES);
+		createEReference(abstractAPSReqChangePropagationDueToSpecificationDependenciesEClass, ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__DECISION_MODIFICATIONS);
+		createEReference(abstractAPSReqChangePropagationDueToSpecificationDependenciesEClass, ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__REQUIREMENT_MODIFICATIONS);
+		createEReference(abstractAPSReqChangePropagationDueToSpecificationDependenciesEClass, ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__OPTION_MODIFICATIONS);
 	}
 
 	/**
@@ -396,9 +396,9 @@ public class ModificationmarksPackageImpl extends EPackageImpl implements Modifi
 		g1.getETypeArguments().add(g2);
 		abstractKAMP4aPS4ReqModificationRepositoryEClass.getEGenericSuperTypes().add(g1);
 		apsReqSeedModificationsEClass.getESuperTypes().add(theModificationmarksPackage_1.getAbstractSeedModifications());
-		apsReqChangePropagationDueToSpecificationDependenciesEClass.getESuperTypes().add(theModificationmarksPackage_1.getChangePropagationStep());
+		abstractAPSReqChangePropagationDueToSpecificationDependenciesEClass.getESuperTypes().add(theModificationmarksPackage_1.getChangePropagationStep());
 
-		// Initialize classes, features, and operations; add parameters
+		// Initialize classes and features; add operations and parameters
 		initEClass(apsReqModifyTraceableObjectEClass, APSReqModifyTraceableObject.class, "APSReqModifyTraceableObject", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(apsReqModifyRequirementEClass, APSReqModifyRequirement.class, "APSReqModifyRequirement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -416,10 +416,10 @@ public class ModificationmarksPackageImpl extends EPackageImpl implements Modifi
 		g1 = createEGenericType(apsReqSeedModificationsEClass_T);
 		initEReference(getAPSReqSeedModifications_ApsiecSeedModifications(), g1, null, "apsiecSeedModifications", null, 0, -1, APSReqSeedModifications.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(apsReqChangePropagationDueToSpecificationDependenciesEClass, APSReqChangePropagationDueToSpecificationDependencies.class, "APSReqChangePropagationDueToSpecificationDependencies", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAPSReqChangePropagationDueToSpecificationDependencies_DecisionModifications(), this.getAPSReqModifyDecision(), null, "decisionModifications", null, 0, -1, APSReqChangePropagationDueToSpecificationDependencies.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAPSReqChangePropagationDueToSpecificationDependencies_RequirementModifications(), this.getAPSReqModifyRequirement(), null, "requirementModifications", null, 0, -1, APSReqChangePropagationDueToSpecificationDependencies.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAPSReqChangePropagationDueToSpecificationDependencies_OptionModifications(), this.getAPSReqModifyOption(), null, "optionModifications", null, 0, -1, APSReqChangePropagationDueToSpecificationDependencies.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(abstractAPSReqChangePropagationDueToSpecificationDependenciesEClass, AbstractAPSReqChangePropagationDueToSpecificationDependencies.class, "AbstractAPSReqChangePropagationDueToSpecificationDependencies", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAbstractAPSReqChangePropagationDueToSpecificationDependencies_DecisionModifications(), this.getAPSReqModifyDecision(), null, "decisionModifications", null, 0, -1, AbstractAPSReqChangePropagationDueToSpecificationDependencies.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAbstractAPSReqChangePropagationDueToSpecificationDependencies_RequirementModifications(), this.getAPSReqModifyRequirement(), null, "requirementModifications", null, 0, -1, AbstractAPSReqChangePropagationDueToSpecificationDependencies.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAbstractAPSReqChangePropagationDueToSpecificationDependencies_OptionModifications(), this.getAPSReqModifyOption(), null, "optionModifications", null, 0, -1, AbstractAPSReqChangePropagationDueToSpecificationDependencies.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -5,8 +5,9 @@ package edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.util;
 import edu.kit.ipd.sdq.kamp.model.modificationmarks.AbstractChangePropagationStep;
 import edu.kit.ipd.sdq.kamp.model.modificationmarks.AbstractModificationRepository;
 import edu.kit.ipd.sdq.kamp.model.modificationmarks.AbstractSeedModifications;
-
+import edu.kit.ipd.sdq.kamp.model.modificationmarks.ChangePropagationStep;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqSeedModifications;
+import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.AbstractAPSReqChangePropagationDueToSpecificationDependencies;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.AbstractKAMP4aPS4ReqModificationRepository;
 
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.*;
@@ -83,6 +84,10 @@ public class Modificationmarks_hardwareAdapterFactory extends AdapterFactoryImpl
 				return createAPSReqHardwareModificationRepositoryAdapter();
 			}
 			@Override
+			public Adapter caseAPSReqHardwareChangePropagationDueToSpecificationDependencies(APSReqHardwareChangePropagationDueToSpecificationDependencies object) {
+				return createAPSReqHardwareChangePropagationDueToSpecificationDependenciesAdapter();
+			}
+			@Override
 			public Adapter caseAbstractSeedModifications(AbstractSeedModifications object) {
 				return createAbstractSeedModificationsAdapter();
 			}
@@ -97,6 +102,18 @@ public class Modificationmarks_hardwareAdapterFactory extends AdapterFactoryImpl
 			@Override
 			public <T extends AbstractSeedModifications> Adapter caseAbstractKAMP4aPS4ReqModificationRepository(AbstractKAMP4aPS4ReqModificationRepository<T> object) {
 				return createAbstractKAMP4aPS4ReqModificationRepositoryAdapter();
+			}
+			@Override
+			public Adapter caseAbstractChangePropagationStep(AbstractChangePropagationStep object) {
+				return createAbstractChangePropagationStepAdapter();
+			}
+			@Override
+			public Adapter caseChangePropagationStep(ChangePropagationStep object) {
+				return createChangePropagationStepAdapter();
+			}
+			@Override
+			public Adapter caseAbstractAPSReqChangePropagationDueToSpecificationDependencies(AbstractAPSReqChangePropagationDueToSpecificationDependencies object) {
+				return createAbstractAPSReqChangePropagationDueToSpecificationDependenciesAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -143,6 +160,20 @@ public class Modificationmarks_hardwareAdapterFactory extends AdapterFactoryImpl
 	 * @generated
 	 */
 	public Adapter createAPSReqHardwareModificationRepositoryAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.APSReqHardwareChangePropagationDueToSpecificationDependencies <em>APS Req Hardware Change Propagation Due To Specification Dependencies</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.APSReqHardwareChangePropagationDueToSpecificationDependencies
+	 * @generated
+	 */
+	public Adapter createAPSReqHardwareChangePropagationDueToSpecificationDependenciesAdapter() {
 		return null;
 	}
 
@@ -199,6 +230,48 @@ public class Modificationmarks_hardwareAdapterFactory extends AdapterFactoryImpl
 	 * @generated
 	 */
 	public Adapter createAbstractKAMP4aPS4ReqModificationRepositoryAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link edu.kit.ipd.sdq.kamp.model.modificationmarks.AbstractChangePropagationStep <em>Abstract Change Propagation Step</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see edu.kit.ipd.sdq.kamp.model.modificationmarks.AbstractChangePropagationStep
+	 * @generated
+	 */
+	public Adapter createAbstractChangePropagationStepAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link edu.kit.ipd.sdq.kamp.model.modificationmarks.ChangePropagationStep <em>Change Propagation Step</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see edu.kit.ipd.sdq.kamp.model.modificationmarks.ChangePropagationStep
+	 * @generated
+	 */
+	public Adapter createChangePropagationStepAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.AbstractAPSReqChangePropagationDueToSpecificationDependencies <em>Abstract APS Req Change Propagation Due To Specification Dependencies</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.AbstractAPSReqChangePropagationDueToSpecificationDependencies
+	 * @generated
+	 */
+	public Adapter createAbstractAPSReqChangePropagationDueToSpecificationDependenciesAdapter() {
 		return null;
 	}
 

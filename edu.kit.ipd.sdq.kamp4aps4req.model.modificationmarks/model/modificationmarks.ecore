@@ -52,8 +52,8 @@
       <eGenericType eTypeParameter="#//APSReqSeedModifications/T"/>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="APSReqChangePropagationDueToSpecificationDependencies"
-      eSuperTypes="../../edu.kit.ipd.sdq.kamp.model.modificationmarks/model/Modificationmarks.ecore#//ChangePropagationStep">
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractAPSReqChangePropagationDueToSpecificationDependencies"
+      abstract="true" eSuperTypes="../../edu.kit.ipd.sdq.kamp.model.modificationmarks/model/Modificationmarks.ecore#//ChangePropagationStep">
     <eStructuralFeatures xsi:type="ecore:EReference" name="decisionModifications"
         upperBound="-1" eType="#//APSReqModifyDecision" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="requirementModifications"

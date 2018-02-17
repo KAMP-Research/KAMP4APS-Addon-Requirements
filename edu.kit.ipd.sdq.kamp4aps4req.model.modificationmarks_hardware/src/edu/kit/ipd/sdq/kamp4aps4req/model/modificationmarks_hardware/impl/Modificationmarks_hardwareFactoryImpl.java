@@ -58,6 +58,7 @@ public class Modificationmarks_hardwareFactoryImpl extends EFactoryImpl implemen
 		switch (eClass.getClassifierID()) {
 			case Modificationmarks_hardwarePackage.APS_REQ_HARDWARE_SEED_MODIFICATIONS: return createAPSReqHardwareSeedModifications();
 			case Modificationmarks_hardwarePackage.APS_REQ_HARDWARE_MODIFICATION_REPOSITORY: return createAPSReqHardwareModificationRepository();
+			case Modificationmarks_hardwarePackage.APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES: return createAPSReqHardwareChangePropagationDueToSpecificationDependencies();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -81,6 +82,16 @@ public class Modificationmarks_hardwareFactoryImpl extends EFactoryImpl implemen
 	public APSReqHardwareModificationRepository createAPSReqHardwareModificationRepository() {
 		APSReqHardwareModificationRepositoryImpl apsReqHardwareModificationRepository = new APSReqHardwareModificationRepositoryImpl();
 		return apsReqHardwareModificationRepository;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public APSReqHardwareChangePropagationDueToSpecificationDependencies createAPSReqHardwareChangePropagationDueToSpecificationDependencies() {
+		APSReqHardwareChangePropagationDueToSpecificationDependenciesImpl apsReqHardwareChangePropagationDueToSpecificationDependencies = new APSReqHardwareChangePropagationDueToSpecificationDependenciesImpl();
+		return apsReqHardwareChangePropagationDueToSpecificationDependencies;
 	}
 
 	/**

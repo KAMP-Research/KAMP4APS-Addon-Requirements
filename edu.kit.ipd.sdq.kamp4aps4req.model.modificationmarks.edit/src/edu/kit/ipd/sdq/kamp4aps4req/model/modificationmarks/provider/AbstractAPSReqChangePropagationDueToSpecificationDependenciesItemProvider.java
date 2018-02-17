@@ -5,7 +5,7 @@ package edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.provider;
 
 import edu.kit.ipd.sdq.kamp.model.modificationmarks.provider.ChangePropagationStepItemProvider;
 
-import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqChangePropagationDueToSpecificationDependencies;
+import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.AbstractAPSReqChangePropagationDueToSpecificationDependencies;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.ModificationmarksFactory;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.ModificationmarksPackage;
 
@@ -23,19 +23,19 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqChangePropagationDueToSpecificationDependencies} object.
+ * This is the item provider adapter for a {@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.AbstractAPSReqChangePropagationDueToSpecificationDependencies} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class APSReqChangePropagationDueToSpecificationDependenciesItemProvider extends ChangePropagationStepItemProvider {
+public class AbstractAPSReqChangePropagationDueToSpecificationDependenciesItemProvider extends ChangePropagationStepItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public APSReqChangePropagationDueToSpecificationDependenciesItemProvider(AdapterFactory adapterFactory) {
+	public AbstractAPSReqChangePropagationDueToSpecificationDependenciesItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -66,9 +66,9 @@ public class APSReqChangePropagationDueToSpecificationDependenciesItemProvider e
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ModificationmarksPackage.Literals.APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__DECISION_MODIFICATIONS);
-			childrenFeatures.add(ModificationmarksPackage.Literals.APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__REQUIREMENT_MODIFICATIONS);
-			childrenFeatures.add(ModificationmarksPackage.Literals.APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__OPTION_MODIFICATIONS);
+			childrenFeatures.add(ModificationmarksPackage.Literals.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__DECISION_MODIFICATIONS);
+			childrenFeatures.add(ModificationmarksPackage.Literals.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__REQUIREMENT_MODIFICATIONS);
+			childrenFeatures.add(ModificationmarksPackage.Literals.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__OPTION_MODIFICATIONS);
 		}
 		return childrenFeatures;
 	}
@@ -87,17 +87,6 @@ public class APSReqChangePropagationDueToSpecificationDependenciesItemProvider e
 	}
 
 	/**
-	 * This returns APSReqChangePropagationDueToSpecificationDependencies.gif.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/APSReqChangePropagationDueToSpecificationDependencies"));
-	}
-
-	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -105,7 +94,7 @@ public class APSReqChangePropagationDueToSpecificationDependenciesItemProvider e
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_APSReqChangePropagationDueToSpecificationDependencies_type");
+		return getString("_UI_AbstractAPSReqChangePropagationDueToSpecificationDependencies_type");
 	}
 	
 
@@ -120,10 +109,10 @@ public class APSReqChangePropagationDueToSpecificationDependenciesItemProvider e
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(APSReqChangePropagationDueToSpecificationDependencies.class)) {
-			case ModificationmarksPackage.APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__DECISION_MODIFICATIONS:
-			case ModificationmarksPackage.APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__REQUIREMENT_MODIFICATIONS:
-			case ModificationmarksPackage.APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__OPTION_MODIFICATIONS:
+		switch (notification.getFeatureID(AbstractAPSReqChangePropagationDueToSpecificationDependencies.class)) {
+			case ModificationmarksPackage.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__DECISION_MODIFICATIONS:
+			case ModificationmarksPackage.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__REQUIREMENT_MODIFICATIONS:
+			case ModificationmarksPackage.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__OPTION_MODIFICATIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -143,17 +132,17 @@ public class APSReqChangePropagationDueToSpecificationDependenciesItemProvider e
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ModificationmarksPackage.Literals.APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__DECISION_MODIFICATIONS,
+				(ModificationmarksPackage.Literals.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__DECISION_MODIFICATIONS,
 				 ModificationmarksFactory.eINSTANCE.createAPSReqModifyDecision()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ModificationmarksPackage.Literals.APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__REQUIREMENT_MODIFICATIONS,
+				(ModificationmarksPackage.Literals.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__REQUIREMENT_MODIFICATIONS,
 				 ModificationmarksFactory.eINSTANCE.createAPSReqModifyRequirement()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ModificationmarksPackage.Literals.APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__OPTION_MODIFICATIONS,
+				(ModificationmarksPackage.Literals.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__OPTION_MODIFICATIONS,
 				 ModificationmarksFactory.eINSTANCE.createAPSReqModifyOption()));
 	}
 

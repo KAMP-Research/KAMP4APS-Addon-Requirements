@@ -33,14 +33,14 @@ public class APSReqHardwareArchitectureModelLookup extends APSReqArchitectureMod
 	 * @param options Changed Options
 	 * @return Map with Options and the Structures they reference 
 	 */
-	public static Map<Structure, Set<APSReqHardwareOption>> lookUpStructuresReferencedByOptions(
+	public static Map<Structure, Set<Option>> lookUpStructuresReferencedByOptions(
 			APSReqHardwareArchitectureVersion version, Collection<? extends Option> options) {
-		Map<Structure, Set<APSReqHardwareOption>> results = new HashMap<Structure, Set<APSReqHardwareOption>>();
+		Map<Structure, Set<Option>> results = new HashMap<Structure, Set<Option>>();
 		for (Option option: options) {
 			if (option instanceof APSReqStructureHardwareOption) {
 				for (Structure structureRepository : version.getApsArchitectureVersion().getAPSPlant().getStructures()) {
 					if (isStructureReferencedByOption(structureRepository, (APSReqStructureHardwareOption) option)) {
-						MapUtil.putOrAddToMap(results, structureRepository, (APSReqHardwareOption) option);
+						MapUtil.putOrAddToMap(results, structureRepository, option);
 					}
 				}
 			}
@@ -145,14 +145,14 @@ public class APSReqHardwareArchitectureModelLookup extends APSReqArchitectureMod
 	 * @param options Changed Options
 	 * @return Map with Options and the Modules they reference 
 	 */
-	public static Map<Module, Set<APSReqHardwareOption>> lookUpModulesReferencedByOptions(
-			APSReqHardwareArchitectureVersion version, Collection<? extends APSReqHardwareOption> options) {
-		Map<Module, Set<APSReqHardwareOption>> results = new HashMap<Module, Set<APSReqHardwareOption>>();
-		for (APSReqHardwareOption option: options) {
+	public static Map<Module, Set<Option>> lookUpModulesReferencedByOptions(
+			APSReqHardwareArchitectureVersion version, Collection<? extends Option> options) {
+		Map<Module, Set<Option>> results = new HashMap<Module, Set<Option>>();
+		for (Option option: options) {
 			if (option instanceof APSReqModuleHardwareOption) {
 				for (Module moduleRepository : version.getApsArchitectureVersion().getAPSPlant().getModuleRepository().getAllModulesInPlant()) {
 					if (isModuleReferencedByOption(moduleRepository, (APSReqModuleHardwareOption) option)) {
-						MapUtil.putOrAddToMap(results, moduleRepository, (APSReqHardwareOption) option);
+						MapUtil.putOrAddToMap(results, moduleRepository, option);
 					}
 				}
 			}
@@ -225,14 +225,14 @@ public class APSReqHardwareArchitectureModelLookup extends APSReqArchitectureMod
 	 * @param options Changed Options
 	 * @return Map with Options and the Components they reference 
 	 */
-	public static Map<Component, Set<APSReqHardwareOption>> lookUpComponentsReferencedByOptions(
-			APSReqHardwareArchitectureVersion version, Collection<? extends APSReqHardwareOption> options) {
-		Map<Component, Set<APSReqHardwareOption>> results = new HashMap<Component, Set<APSReqHardwareOption>>();
-		for (APSReqHardwareOption option: options) {
+	public static Map<Component, Set<Option>> lookUpComponentsReferencedByOptions(
+			APSReqHardwareArchitectureVersion version, Collection<? extends Option> options) {
+		Map<Component, Set<Option>> results = new HashMap<Component, Set<Option>>();
+		for (Option option: options) {
 			if (option instanceof APSReqComponentHardwareOption) {
 				for (Component componentRepository : version.getApsArchitectureVersion().getAPSPlant().getComponentRepository().getAllComponentsInPlant()) {
 					if (isComponentReferencedByOption(componentRepository, (APSReqComponentHardwareOption) option)) {
-						MapUtil.putOrAddToMap(results, componentRepository, (APSReqHardwareOption) option);
+						MapUtil.putOrAddToMap(results, componentRepository, option);
 					}
 				}
 			}
@@ -296,14 +296,14 @@ public class APSReqHardwareArchitectureModelLookup extends APSReqArchitectureMod
 	 * @param options Changed Options
 	 * @return Map with Options and the Interfaces they reference 
 	 */
-	public static Map<Interface, Set<APSReqHardwareOption>> lookUpInterfacesReferencedByOptions(
-			APSReqHardwareArchitectureVersion version, Collection<? extends APSReqHardwareOption> options) {
-		Map<Interface, Set<APSReqHardwareOption>> results = new HashMap<Interface, Set<APSReqHardwareOption>>();
-		for (APSReqHardwareOption option: options) {
+	public static Map<Interface, Set<Option>> lookUpInterfacesReferencedByOptions(
+			APSReqHardwareArchitectureVersion version, Collection<? extends Option> options) {
+		Map<Interface, Set<Option>> results = new HashMap<Interface, Set<Option>>();
+		for (Option option: options) {
 			if (option instanceof APSReqInterfaceHardwareOption) {
 				for (Interface interfaceRepository : version.getApsArchitectureVersion().getAPSPlant().getInterfaceRepository().getAllInterfacesInPlant()) {
 					if (isInterfaceReferencedByOption(interfaceRepository, (APSReqInterfaceHardwareOption) option)) {
-						MapUtil.putOrAddToMap(results, interfaceRepository, (APSReqHardwareOption) option);
+						MapUtil.putOrAddToMap(results, interfaceRepository, option);
 					}
 				}
 			}

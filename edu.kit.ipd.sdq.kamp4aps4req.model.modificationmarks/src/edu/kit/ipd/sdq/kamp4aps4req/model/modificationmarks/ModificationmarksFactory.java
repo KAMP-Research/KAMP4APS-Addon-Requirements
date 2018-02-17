@@ -49,15 +49,6 @@ public interface ModificationmarksFactory extends EFactory {
 	APSReqModifyOption createAPSReqModifyOption();
 
 	/**
-	 * Returns a new object of class '<em>APS Req Change Propagation Due To Specification Dependencies</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>APS Req Change Propagation Due To Specification Dependencies</em>'.
-	 * @generated
-	 */
-	APSReqChangePropagationDueToSpecificationDependencies createAPSReqChangePropagationDueToSpecificationDependencies();
-
-	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

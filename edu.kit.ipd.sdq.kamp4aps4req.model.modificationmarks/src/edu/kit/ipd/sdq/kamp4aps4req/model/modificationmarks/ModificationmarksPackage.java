@@ -13,7 +13,6 @@ import org.eclipse.emf.ecore.EReference;
  * <ul>
  *   <li>each class,</li>
  *   <li>each feature of each class,</li>
- *   <li>each operation of each class,</li>
  *   <li>each enum,</li>
  *   <li>and each data type</li>
  * </ul>
@@ -120,15 +119,6 @@ public interface ModificationmarksPackage extends EPackage {
 	int APS_REQ_MODIFY_TRACEABLE_OBJECT_FEATURE_COUNT = edu.kit.ipd.sdq.kamp.model.modificationmarks.ModificationmarksPackage.ABSTRACT_MODIFICATION_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of operations of the '<em>APS Req Modify Traceable Object</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int APS_REQ_MODIFY_TRACEABLE_OBJECT_OPERATION_COUNT = edu.kit.ipd.sdq.kamp.model.modificationmarks.ModificationmarksPackage.ABSTRACT_MODIFICATION_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.impl.APSReqModifyRequirementImpl <em>APS Req Modify Requirement</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -191,15 +181,6 @@ public interface ModificationmarksPackage extends EPackage {
 	 * @ordered
 	 */
 	int APS_REQ_MODIFY_REQUIREMENT_FEATURE_COUNT = APS_REQ_MODIFY_TRACEABLE_OBJECT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>APS Req Modify Requirement</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int APS_REQ_MODIFY_REQUIREMENT_OPERATION_COUNT = APS_REQ_MODIFY_TRACEABLE_OBJECT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.impl.APSReqModifyDecisionImpl <em>APS Req Modify Decision</em>}' class.
@@ -266,15 +247,6 @@ public interface ModificationmarksPackage extends EPackage {
 	int APS_REQ_MODIFY_DECISION_FEATURE_COUNT = APS_REQ_MODIFY_TRACEABLE_OBJECT_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of operations of the '<em>APS Req Modify Decision</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int APS_REQ_MODIFY_DECISION_OPERATION_COUNT = APS_REQ_MODIFY_TRACEABLE_OBJECT_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.impl.APSReqModifyOptionImpl <em>APS Req Modify Option</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -339,15 +311,6 @@ public interface ModificationmarksPackage extends EPackage {
 	int APS_REQ_MODIFY_OPTION_FEATURE_COUNT = APS_REQ_MODIFY_TRACEABLE_OBJECT_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of operations of the '<em>APS Req Modify Option</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int APS_REQ_MODIFY_OPTION_OPERATION_COUNT = APS_REQ_MODIFY_TRACEABLE_OBJECT_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.impl.AbstractKAMP4aPS4ReqModificationRepositoryImpl <em>Abstract KAMP 4a PS4 Req Modification Repository</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -383,15 +346,6 @@ public interface ModificationmarksPackage extends EPackage {
 	 * @ordered
 	 */
 	int ABSTRACT_KAMP_4A_PS4_REQ_MODIFICATION_REPOSITORY_FEATURE_COUNT = edu.kit.ipd.sdq.kamp.model.modificationmarks.ModificationmarksPackage.ABSTRACT_MODIFICATION_REPOSITORY_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Abstract KAMP 4a PS4 Req Modification Repository</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_KAMP_4A_PS4_REQ_MODIFICATION_REPOSITORY_OPERATION_COUNT = edu.kit.ipd.sdq.kamp.model.modificationmarks.ModificationmarksPackage.ABSTRACT_MODIFICATION_REPOSITORY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.impl.APSReqSeedModificationsImpl <em>APS Req Seed Modifications</em>}' class.
@@ -449,23 +403,14 @@ public interface ModificationmarksPackage extends EPackage {
 	int APS_REQ_SEED_MODIFICATIONS_FEATURE_COUNT = edu.kit.ipd.sdq.kamp.model.modificationmarks.ModificationmarksPackage.ABSTRACT_SEED_MODIFICATIONS_FEATURE_COUNT + 4;
 
 	/**
-	 * The number of operations of the '<em>APS Req Seed Modifications</em>' class.
+	 * The meta object id for the '{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.impl.AbstractAPSReqChangePropagationDueToSpecificationDependenciesImpl <em>Abstract APS Req Change Propagation Due To Specification Dependencies</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int APS_REQ_SEED_MODIFICATIONS_OPERATION_COUNT = edu.kit.ipd.sdq.kamp.model.modificationmarks.ModificationmarksPackage.ABSTRACT_SEED_MODIFICATIONS_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.impl.APSReqChangePropagationDueToSpecificationDependenciesImpl <em>APS Req Change Propagation Due To Specification Dependencies</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.impl.APSReqChangePropagationDueToSpecificationDependenciesImpl
-	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.impl.ModificationmarksPackageImpl#getAPSReqChangePropagationDueToSpecificationDependencies()
+	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.impl.AbstractAPSReqChangePropagationDueToSpecificationDependenciesImpl
+	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.impl.ModificationmarksPackageImpl#getAbstractAPSReqChangePropagationDueToSpecificationDependencies()
 	 * @generated
 	 */
-	int APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES = 6;
+	int ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES = 6;
 
 	/**
 	 * The feature id for the '<em><b>Decision Modifications</b></em>' containment reference list.
@@ -474,7 +419,7 @@ public interface ModificationmarksPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__DECISION_MODIFICATIONS = edu.kit.ipd.sdq.kamp.model.modificationmarks.ModificationmarksPackage.CHANGE_PROPAGATION_STEP_FEATURE_COUNT + 0;
+	int ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__DECISION_MODIFICATIONS = edu.kit.ipd.sdq.kamp.model.modificationmarks.ModificationmarksPackage.CHANGE_PROPAGATION_STEP_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Requirement Modifications</b></em>' containment reference list.
@@ -483,7 +428,7 @@ public interface ModificationmarksPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__REQUIREMENT_MODIFICATIONS = edu.kit.ipd.sdq.kamp.model.modificationmarks.ModificationmarksPackage.CHANGE_PROPAGATION_STEP_FEATURE_COUNT + 1;
+	int ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__REQUIREMENT_MODIFICATIONS = edu.kit.ipd.sdq.kamp.model.modificationmarks.ModificationmarksPackage.CHANGE_PROPAGATION_STEP_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Option Modifications</b></em>' containment reference list.
@@ -492,25 +437,16 @@ public interface ModificationmarksPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__OPTION_MODIFICATIONS = edu.kit.ipd.sdq.kamp.model.modificationmarks.ModificationmarksPackage.CHANGE_PROPAGATION_STEP_FEATURE_COUNT + 2;
+	int ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__OPTION_MODIFICATIONS = edu.kit.ipd.sdq.kamp.model.modificationmarks.ModificationmarksPackage.CHANGE_PROPAGATION_STEP_FEATURE_COUNT + 2;
 
 	/**
-	 * The number of structural features of the '<em>APS Req Change Propagation Due To Specification Dependencies</em>' class.
+	 * The number of structural features of the '<em>Abstract APS Req Change Propagation Due To Specification Dependencies</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES_FEATURE_COUNT = edu.kit.ipd.sdq.kamp.model.modificationmarks.ModificationmarksPackage.CHANGE_PROPAGATION_STEP_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of operations of the '<em>APS Req Change Propagation Due To Specification Dependencies</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES_OPERATION_COUNT = edu.kit.ipd.sdq.kamp.model.modificationmarks.ModificationmarksPackage.CHANGE_PROPAGATION_STEP_OPERATION_COUNT + 0;
+	int ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES_FEATURE_COUNT = edu.kit.ipd.sdq.kamp.model.modificationmarks.ModificationmarksPackage.CHANGE_PROPAGATION_STEP_FEATURE_COUNT + 3;
 
 
 	/**
@@ -618,47 +554,47 @@ public interface ModificationmarksPackage extends EPackage {
 	EReference getAPSReqSeedModifications_ApsiecSeedModifications();
 
 	/**
-	 * Returns the meta object for class '{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqChangePropagationDueToSpecificationDependencies <em>APS Req Change Propagation Due To Specification Dependencies</em>}'.
+	 * Returns the meta object for class '{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.AbstractAPSReqChangePropagationDueToSpecificationDependencies <em>Abstract APS Req Change Propagation Due To Specification Dependencies</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>APS Req Change Propagation Due To Specification Dependencies</em>'.
-	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqChangePropagationDueToSpecificationDependencies
+	 * @return the meta object for class '<em>Abstract APS Req Change Propagation Due To Specification Dependencies</em>'.
+	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.AbstractAPSReqChangePropagationDueToSpecificationDependencies
 	 * @generated
 	 */
-	EClass getAPSReqChangePropagationDueToSpecificationDependencies();
+	EClass getAbstractAPSReqChangePropagationDueToSpecificationDependencies();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqChangePropagationDueToSpecificationDependencies#getDecisionModifications <em>Decision Modifications</em>}'.
+	 * Returns the meta object for the containment reference list '{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.AbstractAPSReqChangePropagationDueToSpecificationDependencies#getDecisionModifications <em>Decision Modifications</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Decision Modifications</em>'.
-	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqChangePropagationDueToSpecificationDependencies#getDecisionModifications()
-	 * @see #getAPSReqChangePropagationDueToSpecificationDependencies()
+	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.AbstractAPSReqChangePropagationDueToSpecificationDependencies#getDecisionModifications()
+	 * @see #getAbstractAPSReqChangePropagationDueToSpecificationDependencies()
 	 * @generated
 	 */
-	EReference getAPSReqChangePropagationDueToSpecificationDependencies_DecisionModifications();
+	EReference getAbstractAPSReqChangePropagationDueToSpecificationDependencies_DecisionModifications();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqChangePropagationDueToSpecificationDependencies#getRequirementModifications <em>Requirement Modifications</em>}'.
+	 * Returns the meta object for the containment reference list '{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.AbstractAPSReqChangePropagationDueToSpecificationDependencies#getRequirementModifications <em>Requirement Modifications</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Requirement Modifications</em>'.
-	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqChangePropagationDueToSpecificationDependencies#getRequirementModifications()
-	 * @see #getAPSReqChangePropagationDueToSpecificationDependencies()
+	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.AbstractAPSReqChangePropagationDueToSpecificationDependencies#getRequirementModifications()
+	 * @see #getAbstractAPSReqChangePropagationDueToSpecificationDependencies()
 	 * @generated
 	 */
-	EReference getAPSReqChangePropagationDueToSpecificationDependencies_RequirementModifications();
+	EReference getAbstractAPSReqChangePropagationDueToSpecificationDependencies_RequirementModifications();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqChangePropagationDueToSpecificationDependencies#getOptionModifications <em>Option Modifications</em>}'.
+	 * Returns the meta object for the containment reference list '{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.AbstractAPSReqChangePropagationDueToSpecificationDependencies#getOptionModifications <em>Option Modifications</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Option Modifications</em>'.
-	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqChangePropagationDueToSpecificationDependencies#getOptionModifications()
-	 * @see #getAPSReqChangePropagationDueToSpecificationDependencies()
+	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.AbstractAPSReqChangePropagationDueToSpecificationDependencies#getOptionModifications()
+	 * @see #getAbstractAPSReqChangePropagationDueToSpecificationDependencies()
 	 * @generated
 	 */
-	EReference getAPSReqChangePropagationDueToSpecificationDependencies_OptionModifications();
+	EReference getAbstractAPSReqChangePropagationDueToSpecificationDependencies_OptionModifications();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -675,7 +611,6 @@ public interface ModificationmarksPackage extends EPackage {
 	 * <ul>
 	 *   <li>each class,</li>
 	 *   <li>each feature of each class,</li>
-	 *   <li>each operation of each class,</li>
 	 *   <li>each enum,</li>
 	 *   <li>and each data type</li>
 	 * </ul>
@@ -776,14 +711,14 @@ public interface ModificationmarksPackage extends EPackage {
 		EReference APS_REQ_SEED_MODIFICATIONS__APSIEC_SEED_MODIFICATIONS = eINSTANCE.getAPSReqSeedModifications_ApsiecSeedModifications();
 
 		/**
-		 * The meta object literal for the '{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.impl.APSReqChangePropagationDueToSpecificationDependenciesImpl <em>APS Req Change Propagation Due To Specification Dependencies</em>}' class.
+		 * The meta object literal for the '{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.impl.AbstractAPSReqChangePropagationDueToSpecificationDependenciesImpl <em>Abstract APS Req Change Propagation Due To Specification Dependencies</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.impl.APSReqChangePropagationDueToSpecificationDependenciesImpl
-		 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.impl.ModificationmarksPackageImpl#getAPSReqChangePropagationDueToSpecificationDependencies()
+		 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.impl.AbstractAPSReqChangePropagationDueToSpecificationDependenciesImpl
+		 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.impl.ModificationmarksPackageImpl#getAbstractAPSReqChangePropagationDueToSpecificationDependencies()
 		 * @generated
 		 */
-		EClass APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES = eINSTANCE.getAPSReqChangePropagationDueToSpecificationDependencies();
+		EClass ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES = eINSTANCE.getAbstractAPSReqChangePropagationDueToSpecificationDependencies();
 
 		/**
 		 * The meta object literal for the '<em><b>Decision Modifications</b></em>' containment reference list feature.
@@ -791,7 +726,7 @@ public interface ModificationmarksPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__DECISION_MODIFICATIONS = eINSTANCE.getAPSReqChangePropagationDueToSpecificationDependencies_DecisionModifications();
+		EReference ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__DECISION_MODIFICATIONS = eINSTANCE.getAbstractAPSReqChangePropagationDueToSpecificationDependencies_DecisionModifications();
 
 		/**
 		 * The meta object literal for the '<em><b>Requirement Modifications</b></em>' containment reference list feature.
@@ -799,7 +734,7 @@ public interface ModificationmarksPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__REQUIREMENT_MODIFICATIONS = eINSTANCE.getAPSReqChangePropagationDueToSpecificationDependencies_RequirementModifications();
+		EReference ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__REQUIREMENT_MODIFICATIONS = eINSTANCE.getAbstractAPSReqChangePropagationDueToSpecificationDependencies_RequirementModifications();
 
 		/**
 		 * The meta object literal for the '<em><b>Option Modifications</b></em>' containment reference list feature.
@@ -807,7 +742,7 @@ public interface ModificationmarksPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__OPTION_MODIFICATIONS = eINSTANCE.getAPSReqChangePropagationDueToSpecificationDependencies_OptionModifications();
+		EReference ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__OPTION_MODIFICATIONS = eINSTANCE.getAbstractAPSReqChangePropagationDueToSpecificationDependencies_OptionModifications();
 
 	}
 

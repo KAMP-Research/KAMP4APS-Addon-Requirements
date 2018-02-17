@@ -14,4 +14,9 @@
       </eTypeArguments>
     </eGenericSuperTypes>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="APSReqHardwareChangePropagationDueToSpecificationDependencies"
+      eSuperTypes="../../edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks/model/modificationmarks.ecore#//AbstractAPSReqChangePropagationDueToSpecificationDependencies">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="apsChangePropagationDueToHardwareChange"
+        eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4aps.model.modificationmarks/model/KAMP4aPSModificationsmarks.ecore#//ChangePropagationDueToHardwareChange"/>
+  </eClassifiers>
 </ecore:EPackage>

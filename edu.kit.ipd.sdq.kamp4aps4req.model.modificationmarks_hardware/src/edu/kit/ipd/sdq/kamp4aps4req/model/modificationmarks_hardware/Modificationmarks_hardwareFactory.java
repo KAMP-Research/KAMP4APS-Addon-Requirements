@@ -40,6 +40,15 @@ public interface Modificationmarks_hardwareFactory extends EFactory {
 	APSReqHardwareModificationRepository createAPSReqHardwareModificationRepository();
 
 	/**
+	 * Returns a new object of class '<em>APS Req Hardware Change Propagation Due To Specification Dependencies</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>APS Req Hardware Change Propagation Due To Specification Dependencies</em>'.
+	 * @generated
+	 */
+	APSReqHardwareChangePropagationDueToSpecificationDependencies createAPSReqHardwareChangePropagationDueToSpecificationDependencies();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

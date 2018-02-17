@@ -8,23 +8,23 @@ import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>APS Req Change Propagation Due To Specification Dependencies</b></em>'.
+ * A representation of the model object '<em><b>Abstract APS Req Change Propagation Due To Specification Dependencies</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqChangePropagationDueToSpecificationDependencies#getDecisionModifications <em>Decision Modifications</em>}</li>
- *   <li>{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqChangePropagationDueToSpecificationDependencies#getRequirementModifications <em>Requirement Modifications</em>}</li>
- *   <li>{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqChangePropagationDueToSpecificationDependencies#getOptionModifications <em>Option Modifications</em>}</li>
+ *   <li>{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.AbstractAPSReqChangePropagationDueToSpecificationDependencies#getDecisionModifications <em>Decision Modifications</em>}</li>
+ *   <li>{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.AbstractAPSReqChangePropagationDueToSpecificationDependencies#getRequirementModifications <em>Requirement Modifications</em>}</li>
+ *   <li>{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.AbstractAPSReqChangePropagationDueToSpecificationDependencies#getOptionModifications <em>Option Modifications</em>}</li>
  * </ul>
  *
- * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.ModificationmarksPackage#getAPSReqChangePropagationDueToSpecificationDependencies()
- * @model
+ * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.ModificationmarksPackage#getAbstractAPSReqChangePropagationDueToSpecificationDependencies()
+ * @model abstract="true"
  * @generated
  */
-public interface APSReqChangePropagationDueToSpecificationDependencies extends ChangePropagationStep {
+public interface AbstractAPSReqChangePropagationDueToSpecificationDependencies extends ChangePropagationStep {
 	/**
 	 * Returns the value of the '<em><b>Decision Modifications</b></em>' containment reference list.
 	 * The list contents are of type {@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModifyDecision}.
@@ -35,7 +35,7 @@ public interface APSReqChangePropagationDueToSpecificationDependencies extends C
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Decision Modifications</em>' containment reference list.
-	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.ModificationmarksPackage#getAPSReqChangePropagationDueToSpecificationDependencies_DecisionModifications()
+	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.ModificationmarksPackage#getAbstractAPSReqChangePropagationDueToSpecificationDependencies_DecisionModifications()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -51,7 +51,7 @@ public interface APSReqChangePropagationDueToSpecificationDependencies extends C
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Requirement Modifications</em>' containment reference list.
-	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.ModificationmarksPackage#getAPSReqChangePropagationDueToSpecificationDependencies_RequirementModifications()
+	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.ModificationmarksPackage#getAbstractAPSReqChangePropagationDueToSpecificationDependencies_RequirementModifications()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -67,10 +67,10 @@ public interface APSReqChangePropagationDueToSpecificationDependencies extends C
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Option Modifications</em>' containment reference list.
-	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.ModificationmarksPackage#getAPSReqChangePropagationDueToSpecificationDependencies_OptionModifications()
+	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.ModificationmarksPackage#getAbstractAPSReqChangePropagationDueToSpecificationDependencies_OptionModifications()
 	 * @model containment="true"
 	 * @generated
 	 */
 	EList<APSReqModifyOption> getOptionModifications();
 
-} // APSReqChangePropagationDueToSpecificationDependencies
+} // AbstractAPSReqChangePropagationDueToSpecificationDependencies

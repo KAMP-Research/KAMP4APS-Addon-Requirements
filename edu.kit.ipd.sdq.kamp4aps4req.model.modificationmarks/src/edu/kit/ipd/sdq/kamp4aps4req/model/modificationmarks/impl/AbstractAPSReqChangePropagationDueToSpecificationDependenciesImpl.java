@@ -4,10 +4,10 @@ package edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.impl;
 
 import edu.kit.ipd.sdq.kamp.model.modificationmarks.impl.ChangePropagationStepImpl;
 
-import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqChangePropagationDueToSpecificationDependencies;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModifyDecision;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModifyOption;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModifyRequirement;
+import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.AbstractAPSReqChangePropagationDueToSpecificationDependencies;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.ModificationmarksPackage;
 
 import java.util.Collection;
@@ -24,20 +24,20 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>APS Req Change Propagation Due To Specification Dependencies</b></em>'.
+ * An implementation of the model object '<em><b>Abstract APS Req Change Propagation Due To Specification Dependencies</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.impl.APSReqChangePropagationDueToSpecificationDependenciesImpl#getDecisionModifications <em>Decision Modifications</em>}</li>
- *   <li>{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.impl.APSReqChangePropagationDueToSpecificationDependenciesImpl#getRequirementModifications <em>Requirement Modifications</em>}</li>
- *   <li>{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.impl.APSReqChangePropagationDueToSpecificationDependenciesImpl#getOptionModifications <em>Option Modifications</em>}</li>
+ *   <li>{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.impl.AbstractAPSReqChangePropagationDueToSpecificationDependenciesImpl#getDecisionModifications <em>Decision Modifications</em>}</li>
+ *   <li>{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.impl.AbstractAPSReqChangePropagationDueToSpecificationDependenciesImpl#getRequirementModifications <em>Requirement Modifications</em>}</li>
+ *   <li>{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.impl.AbstractAPSReqChangePropagationDueToSpecificationDependenciesImpl#getOptionModifications <em>Option Modifications</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class APSReqChangePropagationDueToSpecificationDependenciesImpl extends ChangePropagationStepImpl implements APSReqChangePropagationDueToSpecificationDependencies {
+public abstract class AbstractAPSReqChangePropagationDueToSpecificationDependenciesImpl extends ChangePropagationStepImpl implements AbstractAPSReqChangePropagationDueToSpecificationDependencies {
 	/**
 	 * The cached value of the '{@link #getDecisionModifications() <em>Decision Modifications</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -73,7 +73,7 @@ public class APSReqChangePropagationDueToSpecificationDependenciesImpl extends C
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected APSReqChangePropagationDueToSpecificationDependenciesImpl() {
+	protected AbstractAPSReqChangePropagationDueToSpecificationDependenciesImpl() {
 		super();
 	}
 
@@ -84,7 +84,7 @@ public class APSReqChangePropagationDueToSpecificationDependenciesImpl extends C
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ModificationmarksPackage.Literals.APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES;
+		return ModificationmarksPackage.Literals.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES;
 	}
 
 	/**
@@ -94,7 +94,7 @@ public class APSReqChangePropagationDueToSpecificationDependenciesImpl extends C
 	 */
 	public EList<APSReqModifyDecision> getDecisionModifications() {
 		if (decisionModifications == null) {
-			decisionModifications = new EObjectContainmentEList<APSReqModifyDecision>(APSReqModifyDecision.class, this, ModificationmarksPackage.APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__DECISION_MODIFICATIONS);
+			decisionModifications = new EObjectContainmentEList<APSReqModifyDecision>(APSReqModifyDecision.class, this, ModificationmarksPackage.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__DECISION_MODIFICATIONS);
 		}
 		return decisionModifications;
 	}
@@ -106,7 +106,7 @@ public class APSReqChangePropagationDueToSpecificationDependenciesImpl extends C
 	 */
 	public EList<APSReqModifyRequirement> getRequirementModifications() {
 		if (requirementModifications == null) {
-			requirementModifications = new EObjectContainmentEList<APSReqModifyRequirement>(APSReqModifyRequirement.class, this, ModificationmarksPackage.APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__REQUIREMENT_MODIFICATIONS);
+			requirementModifications = new EObjectContainmentEList<APSReqModifyRequirement>(APSReqModifyRequirement.class, this, ModificationmarksPackage.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__REQUIREMENT_MODIFICATIONS);
 		}
 		return requirementModifications;
 	}
@@ -118,7 +118,7 @@ public class APSReqChangePropagationDueToSpecificationDependenciesImpl extends C
 	 */
 	public EList<APSReqModifyOption> getOptionModifications() {
 		if (optionModifications == null) {
-			optionModifications = new EObjectContainmentEList<APSReqModifyOption>(APSReqModifyOption.class, this, ModificationmarksPackage.APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__OPTION_MODIFICATIONS);
+			optionModifications = new EObjectContainmentEList<APSReqModifyOption>(APSReqModifyOption.class, this, ModificationmarksPackage.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__OPTION_MODIFICATIONS);
 		}
 		return optionModifications;
 	}
@@ -131,11 +131,11 @@ public class APSReqChangePropagationDueToSpecificationDependenciesImpl extends C
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ModificationmarksPackage.APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__DECISION_MODIFICATIONS:
+			case ModificationmarksPackage.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__DECISION_MODIFICATIONS:
 				return ((InternalEList<?>)getDecisionModifications()).basicRemove(otherEnd, msgs);
-			case ModificationmarksPackage.APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__REQUIREMENT_MODIFICATIONS:
+			case ModificationmarksPackage.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__REQUIREMENT_MODIFICATIONS:
 				return ((InternalEList<?>)getRequirementModifications()).basicRemove(otherEnd, msgs);
-			case ModificationmarksPackage.APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__OPTION_MODIFICATIONS:
+			case ModificationmarksPackage.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__OPTION_MODIFICATIONS:
 				return ((InternalEList<?>)getOptionModifications()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -149,11 +149,11 @@ public class APSReqChangePropagationDueToSpecificationDependenciesImpl extends C
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ModificationmarksPackage.APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__DECISION_MODIFICATIONS:
+			case ModificationmarksPackage.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__DECISION_MODIFICATIONS:
 				return getDecisionModifications();
-			case ModificationmarksPackage.APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__REQUIREMENT_MODIFICATIONS:
+			case ModificationmarksPackage.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__REQUIREMENT_MODIFICATIONS:
 				return getRequirementModifications();
-			case ModificationmarksPackage.APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__OPTION_MODIFICATIONS:
+			case ModificationmarksPackage.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__OPTION_MODIFICATIONS:
 				return getOptionModifications();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -168,15 +168,15 @@ public class APSReqChangePropagationDueToSpecificationDependenciesImpl extends C
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ModificationmarksPackage.APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__DECISION_MODIFICATIONS:
+			case ModificationmarksPackage.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__DECISION_MODIFICATIONS:
 				getDecisionModifications().clear();
 				getDecisionModifications().addAll((Collection<? extends APSReqModifyDecision>)newValue);
 				return;
-			case ModificationmarksPackage.APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__REQUIREMENT_MODIFICATIONS:
+			case ModificationmarksPackage.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__REQUIREMENT_MODIFICATIONS:
 				getRequirementModifications().clear();
 				getRequirementModifications().addAll((Collection<? extends APSReqModifyRequirement>)newValue);
 				return;
-			case ModificationmarksPackage.APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__OPTION_MODIFICATIONS:
+			case ModificationmarksPackage.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__OPTION_MODIFICATIONS:
 				getOptionModifications().clear();
 				getOptionModifications().addAll((Collection<? extends APSReqModifyOption>)newValue);
 				return;
@@ -192,13 +192,13 @@ public class APSReqChangePropagationDueToSpecificationDependenciesImpl extends C
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ModificationmarksPackage.APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__DECISION_MODIFICATIONS:
+			case ModificationmarksPackage.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__DECISION_MODIFICATIONS:
 				getDecisionModifications().clear();
 				return;
-			case ModificationmarksPackage.APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__REQUIREMENT_MODIFICATIONS:
+			case ModificationmarksPackage.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__REQUIREMENT_MODIFICATIONS:
 				getRequirementModifications().clear();
 				return;
-			case ModificationmarksPackage.APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__OPTION_MODIFICATIONS:
+			case ModificationmarksPackage.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__OPTION_MODIFICATIONS:
 				getOptionModifications().clear();
 				return;
 		}
@@ -213,14 +213,14 @@ public class APSReqChangePropagationDueToSpecificationDependenciesImpl extends C
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ModificationmarksPackage.APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__DECISION_MODIFICATIONS:
+			case ModificationmarksPackage.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__DECISION_MODIFICATIONS:
 				return decisionModifications != null && !decisionModifications.isEmpty();
-			case ModificationmarksPackage.APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__REQUIREMENT_MODIFICATIONS:
+			case ModificationmarksPackage.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__REQUIREMENT_MODIFICATIONS:
 				return requirementModifications != null && !requirementModifications.isEmpty();
-			case ModificationmarksPackage.APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__OPTION_MODIFICATIONS:
+			case ModificationmarksPackage.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__OPTION_MODIFICATIONS:
 				return optionModifications != null && !optionModifications.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //APSReqChangePropagationDueToSpecificationDependenciesImpl
+} //AbstractAPSReqChangePropagationDueToSpecificationDependenciesImpl

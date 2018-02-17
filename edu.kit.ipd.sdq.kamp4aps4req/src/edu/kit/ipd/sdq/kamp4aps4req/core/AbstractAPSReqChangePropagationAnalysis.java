@@ -4,8 +4,8 @@ import edu.kit.ipd.sdq.kamp.architecture.ArchitectureModelLookup;
 import edu.kit.ipd.sdq.kamp.model.modificationmarks.AbstractModification;
 import edu.kit.ipd.sdq.kamp.propagation.AbstractChangePropagationAnalysis;
 import edu.kit.ipd.sdq.kamp.util.MapUtil;
-import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqChangePropagationDueToSpecificationDependencies;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModifyRequirement;
+import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.AbstractAPSReqChangePropagationDueToSpecificationDependencies;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModifyDecision;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModifyOption;
 import edu.kit.ipd.sdq.kamp4aps4req.core.AbstractAPSReqArchitectureVersion;
@@ -18,10 +18,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
-
-import org.eclipse.emf.cdo.common.CDOCommonSession.Options;
 import org.eclipse.emf.ecore.EObject;
-
 import decisions.Decision;
 
 /**
@@ -41,28 +38,14 @@ import decisions.Decision;
  */
 public abstract class AbstractAPSReqChangePropagationAnalysis<T extends AbstractAPSReqArchitectureVersion> implements AbstractChangePropagationAnalysis<T> {
 
-	protected APSReqChangePropagationDueToSpecificationDependencies changePropagationDueToSpecificationDependencies;
+	private AbstractAPSReqChangePropagationDueToSpecificationDependencies changePropagationDueToSpecificationDependencies;
 	
-	protected Collection<Requirement> markedRequirements;
-	protected Collection<Decision> markedDecisions;
-	protected Collection<Option> markedOptions;
+	private Collection<Requirement> markedRequirements;
+	private Collection<Decision> markedDecisions;
+	private Collection<Option> markedOptions;
 	
-	@Override
-	public void runChangePropagationAnalysis(T version) {
-		// Create only one modification mark per element in this step
-		Map<EObject, AbstractModification<?, EObject>> elementsMarkedInThisStep = 
-				new HashMap<EObject, AbstractModification<?, EObject>>();
-		
-		this.prepareAnalysis(version);
-		this.calculateRequirementsToArchitecturePropagation(version, elementsMarkedInThisStep);
-	}
 	
-	private void prepareAnalysis(T version) {
-		this.setChangePropagationDueToSpecificationDependencies(
-				edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.ModificationmarksFactory.
-				eINSTANCE.createAPSReqChangePropagationDueToSpecificationDependencies());
-		version.getModificationMarkRepository().getChangePropagationSteps().add(
-				this.getChangePropagationDueToSpecificationDependencies());
+	protected void prepareAnalysis(T version) {
 		this.setMarkedRequirements(ArchitectureModelLookup.lookUpMarkedObjectsOfAType(
 				version, Requirement.class));
 		this.setMarkedDecisions(ArchitectureModelLookup.lookUpMarkedObjectsOfAType(
@@ -72,6 +55,13 @@ public abstract class AbstractAPSReqChangePropagationAnalysis<T extends Abstract
 		
 	}
 
+	/**
+	 * Template method which is called from subclasses (hardware/software). Here, common propagation steps
+	 * are handled, the subclasses then extend the propagation to the architecture (which has to be handled different
+	 * for hardware and software)
+	 * @param version Architecture version to work with
+	 * @param elementsMarkedInThisStep Marked elements
+	 */
 	public void calculateRequirementsToArchitecturePropagation(T version, 
 			Map<EObject, AbstractModification<?, EObject>> elementsMarkedInThisStep) {
 		// 1 Requirement -> Requirement (depend)
@@ -88,18 +78,12 @@ public abstract class AbstractAPSReqChangePropagationAnalysis<T extends Abstract
 		Map<Option, Set<DependencyObject>> optionsToBeMarked = APSReqArchitectureModelLookup.
 				lookUpObjectsDependOnObjects(this.getMarkedOptions(), Option.class);
 		this.createAndAddOptionModifications(optionsToBeMarked, elementsMarkedInThisStep);
-		// 5 Decision -> Architecture/Business process (select an option)
-		// calculateAndMarkDecisionToArchitectureAndBusinessProcessPropagation(version, elementsMarkedInThisStep);
-		// 6 Option -> Architecture/Business process
-		// calculateAndMarkOptionToArchitectureAndBusinessProcessPropagation(version, elementsMarkedInThisStep);
-				
-		//Remove step if it contains no element
-				if (this.getChangePropagationDueToSpecificationDependencies().eContents().isEmpty()) {
-					version.getModificationMarkRepository().getChangePropagationSteps().remove(
-							this.getChangePropagationDueToSpecificationDependencies());
-				}
 	}
 	
+	/**
+	 * Calculates change propagation from requirements to options and decisions
+	 * @param elementsMarkedInThisStep
+	 */
 	protected void calculateAndMarkRequirementToDecisionAndOptionPropagation(
 			Map<EObject, AbstractModification<?, EObject>> elementsMarkedInThisStep) {
 		// I Requirement -> Decision (trigger, resolve, couldResolve)
@@ -243,12 +227,14 @@ public abstract class AbstractAPSReqChangePropagationAnalysis<T extends Abstract
 		this.markedOptions = markedOptions;
 	}
 
-	public APSReqChangePropagationDueToSpecificationDependencies getChangePropagationDueToSpecificationDependencies() {
+	public AbstractAPSReqChangePropagationDueToSpecificationDependencies getChangePropagationDueToSpecificationDependencies() {
 		return changePropagationDueToSpecificationDependencies;
 	}
 
 	public void setChangePropagationDueToSpecificationDependencies(
-			APSReqChangePropagationDueToSpecificationDependencies changePropagationDueToSpecificationDependencies) {
+			AbstractAPSReqChangePropagationDueToSpecificationDependencies changePropagationDueToSpecificationDependencies) {
 		this.changePropagationDueToSpecificationDependencies = changePropagationDueToSpecificationDependencies;
 	}
+
+
 }

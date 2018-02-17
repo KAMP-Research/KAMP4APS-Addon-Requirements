@@ -141,29 +141,6 @@ public class ModificationmarksItemProviderAdapterFactory extends Modificationmar
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqChangePropagationDueToSpecificationDependencies} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected APSReqChangePropagationDueToSpecificationDependenciesItemProvider apsReqChangePropagationDueToSpecificationDependenciesItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqChangePropagationDueToSpecificationDependencies}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createAPSReqChangePropagationDueToSpecificationDependenciesAdapter() {
-		if (apsReqChangePropagationDueToSpecificationDependenciesItemProvider == null) {
-			apsReqChangePropagationDueToSpecificationDependenciesItemProvider = new APSReqChangePropagationDueToSpecificationDependenciesItemProvider(this);
-		}
-
-		return apsReqChangePropagationDueToSpecificationDependenciesItemProvider;
-	}
-
-	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -265,7 +242,6 @@ public class ModificationmarksItemProviderAdapterFactory extends Modificationmar
 		if (apsReqModifyRequirementItemProvider != null) apsReqModifyRequirementItemProvider.dispose();
 		if (apsReqModifyDecisionItemProvider != null) apsReqModifyDecisionItemProvider.dispose();
 		if (apsReqModifyOptionItemProvider != null) apsReqModifyOptionItemProvider.dispose();
-		if (apsReqChangePropagationDueToSpecificationDependenciesItemProvider != null) apsReqChangePropagationDueToSpecificationDependenciesItemProvider.dispose();
 	}
 
 }

@@ -3,11 +3,7 @@
 package edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.provider;
 
 
-import edu.kit.ipd.sdq.kamp.model.modificationmarks.ModificationmarksPackage;
-
 import edu.kit.ipd.sdq.kamp.model.modificationmarks.provider.AbstractModificationRepositoryItemProvider;
-
-import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.ModificationmarksFactory;
 
 import java.util.Collection;
 import java.util.List;
@@ -86,11 +82,6 @@ public class AbstractKAMP4aPS4ReqModificationRepositoryItemProvider extends Abst
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModificationmarksPackage.Literals.ABSTRACT_MODIFICATION_REPOSITORY__CHANGE_PROPAGATION_STEPS,
-				 ModificationmarksFactory.eINSTANCE.createAPSReqChangePropagationDueToSpecificationDependencies()));
 	}
 
 	/**

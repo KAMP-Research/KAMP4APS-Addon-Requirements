@@ -5,8 +5,9 @@ package edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.util;
 import edu.kit.ipd.sdq.kamp.model.modificationmarks.AbstractChangePropagationStep;
 import edu.kit.ipd.sdq.kamp.model.modificationmarks.AbstractModificationRepository;
 import edu.kit.ipd.sdq.kamp.model.modificationmarks.AbstractSeedModifications;
-
+import edu.kit.ipd.sdq.kamp.model.modificationmarks.ChangePropagationStep;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqSeedModifications;
+import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.AbstractAPSReqChangePropagationDueToSpecificationDependencies;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.AbstractKAMP4aPS4ReqModificationRepository;
 
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.*;
@@ -89,6 +90,15 @@ public class Modificationmarks_hardwareSwitch<T1> extends Switch<T1> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case Modificationmarks_hardwarePackage.APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES: {
+				APSReqHardwareChangePropagationDueToSpecificationDependencies apsReqHardwareChangePropagationDueToSpecificationDependencies = (APSReqHardwareChangePropagationDueToSpecificationDependencies)theEObject;
+				T1 result = caseAPSReqHardwareChangePropagationDueToSpecificationDependencies(apsReqHardwareChangePropagationDueToSpecificationDependencies);
+				if (result == null) result = caseAbstractAPSReqChangePropagationDueToSpecificationDependencies(apsReqHardwareChangePropagationDueToSpecificationDependencies);
+				if (result == null) result = caseChangePropagationStep(apsReqHardwareChangePropagationDueToSpecificationDependencies);
+				if (result == null) result = caseAbstractChangePropagationStep(apsReqHardwareChangePropagationDueToSpecificationDependencies);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -120,6 +130,21 @@ public class Modificationmarks_hardwareSwitch<T1> extends Switch<T1> {
 	 * @generated
 	 */
 	public T1 caseAPSReqHardwareModificationRepository(APSReqHardwareModificationRepository object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>APS Req Hardware Change Propagation Due To Specification Dependencies</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>APS Req Hardware Change Propagation Due To Specification Dependencies</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseAPSReqHardwareChangePropagationDueToSpecificationDependencies(APSReqHardwareChangePropagationDueToSpecificationDependencies object) {
 		return null;
 	}
 
@@ -180,6 +205,51 @@ public class Modificationmarks_hardwareSwitch<T1> extends Switch<T1> {
 	 * @generated
 	 */
 	public <T extends AbstractSeedModifications> T1 caseAbstractKAMP4aPS4ReqModificationRepository(AbstractKAMP4aPS4ReqModificationRepository<T> object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Abstract Change Propagation Step</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Abstract Change Propagation Step</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseAbstractChangePropagationStep(AbstractChangePropagationStep object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Change Propagation Step</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Change Propagation Step</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseChangePropagationStep(ChangePropagationStep object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Abstract APS Req Change Propagation Due To Specification Dependencies</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Abstract APS Req Change Propagation Due To Specification Dependencies</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseAbstractAPSReqChangePropagationDueToSpecificationDependencies(AbstractAPSReqChangePropagationDueToSpecificationDependencies object) {
 		return null;
 	}
 

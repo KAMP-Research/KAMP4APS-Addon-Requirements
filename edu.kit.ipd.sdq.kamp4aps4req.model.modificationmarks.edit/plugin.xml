@@ -7,10 +7,10 @@
 <plugin>
 
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
-      <!-- @generated modificationmarks -->
+      <!-- @generated APSReqmodificationmarks -->
       <factory
             uri="http://www.example.org/modificationmarks"
-            class="edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.provider.ModificationmarksItemProviderAdapterFactory"
+            class="modificationmarks.provider.ModificationmarksItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
@@ -20,10 +20,10 @@
    </extension>
 
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
-      <!-- @generated APSReqmodificationmarks -->
+      <!-- @generated modificationmarks -->
       <factory
             uri="http://www.example.org/modificationmarks"
-            class="modificationmarks.provider.ModificationmarksItemProviderAdapterFactory"
+            class="edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.provider.ModificationmarksItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
