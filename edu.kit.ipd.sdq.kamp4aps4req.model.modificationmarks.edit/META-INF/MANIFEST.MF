@@ -37,5 +37,7 @@ Require-Bundle: org.eclipse.core.runtime,
  toometa.requirements;visibility:=reexport,
  toometa.requirements.edit;visibility:=reexport,
  de.uka.ipd.sdq.dsexplore.qml.units;visibility:=reexport,
- de.uka.ipd.sdq.dsexplore.qml.units.edit;visibility:=reexport
+ de.uka.ipd.sdq.dsexplore.qml.units.edit;visibility:=reexport,
+ org.palladiosimulator.pcm
 Bundle-ActivationPolicy: lazy
+Import-Package: org.palladiosimulator.pcm.repository.provider

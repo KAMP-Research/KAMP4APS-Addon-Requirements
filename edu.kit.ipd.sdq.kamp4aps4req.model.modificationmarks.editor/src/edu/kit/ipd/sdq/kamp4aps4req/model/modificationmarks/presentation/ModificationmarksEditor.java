@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.EventObject;
@@ -16,6 +17,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IMarker;
 import org.eclipse.core.resources.IResource;
@@ -154,6 +156,7 @@ import org.eclipse.emf.edit.ui.util.EditUIUtil;
 
 import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 
+import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.provider.APSReqModificationmarksRepositoryItemProviderAdapterFactory;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.provider.ModificationmarksItemProviderAdapterFactory;
 
 import de.uka.ipd.sdq.dsexplore.qml.dimensions.provider.DimensionsItemProviderAdapterFactory;
@@ -717,7 +720,7 @@ public class ModificationmarksEditor
 	 * This sets up the editing domain for the model editor.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void initializeEditingDomain() {
 		// Create an adapter factory that yields item providers.
@@ -733,6 +736,9 @@ public class ModificationmarksEditor
 		adapterFactory.addAdapterFactory(new GlossaryItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new IdentifierItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new edu.kit.ipd.sdq.kamp.model.modificationmarks.provider.ModificationmarksItemProviderAdapterFactory());
+		// --Start manually modified code
+		adapterFactory.addAdapterFactory((AdapterFactory) new APSReqModificationmarksRepositoryItemProviderAdapterFactory());
+		// --End manually modified code
 		adapterFactory.addAdapterFactory(new NamedelementItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new OptionsItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new QualitiesItemProviderAdapterFactory());
@@ -983,7 +989,7 @@ public class ModificationmarksEditor
 	 * This is the method called to load a resource into the editing domain's resource set based on the editor's input.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void createModel() {
 		URI resourceURI = EditUIUtil.getURI(getEditorInput(), editingDomain.getResourceSet().getURIConverter());
@@ -998,6 +1004,34 @@ public class ModificationmarksEditor
 			exception = e;
 			resource = editingDomain.getResourceSet().getResource(resourceURI, false);
 		}
+		
+		// --Start manually added code
+				// Try to load some resources that can be referenced from the modificationsmarks 
+				String folderPath = resourceURI.trimSegments(1).toPlatformString(false);
+				IResource containerResource = ResourcesPlugin.getWorkspace().getRoot().findMember(folderPath);
+				Collection<String> fileExtensionsToLoad = Arrays.asList("repository", "system", "usagemodel",
+						"bpusagemodel", "datamodel", "organizationenvironmentmodel", "requirements",
+						"decisions", "options");
+				
+				if (containerResource instanceof IContainer) {
+					try {
+						for (IResource member : ((IContainer)containerResource).members()) {
+							if (member instanceof IFile && fileExtensionsToLoad.contains(
+									member.getFileExtension())) {
+								URI URIToLoad = URI.createPlatformResourceURI(member.getFullPath().toString(), false);
+								try {
+									resource = editingDomain.getResourceSet().getResource(URIToLoad, true);
+								} catch (Exception e) {
+									exception = e;
+									resource = editingDomain.getResourceSet().getResource(URIToLoad, false);
+								}
+							}
+						}
+					} catch (CoreException e) {
+						e.printStackTrace();
+					}
+				}
+		// --End manually added code
 
 		Diagnostic diagnostic = analyzeResourceProblems(resource, exception);
 		if (diagnostic.getSeverity() != Diagnostic.OK) {

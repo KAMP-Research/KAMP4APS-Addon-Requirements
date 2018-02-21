@@ -72,7 +72,8 @@ import org.eclipse.ui.part.ISetSelectionTarget;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.Modificationmarks_hardwareFactory;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.Modificationmarks_hardwarePackage;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.provider.Modificationmarks_hardwareEditPlugin;
-
+import edu.kit.ipd.sdq.kamp4aps4req.hardware.APSReqHardwareArchitectureModelFactoryFacade;
+import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.APSReqHardwareModificationRepository;
 
 import org.eclipse.core.runtime.Path;
 
@@ -205,19 +206,20 @@ public class Modificationmarks_hardwareModelWizard extends Wizard implements INe
 	 * Create a new model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected EObject createInitialModel() {
-		EClass eClass = (EClass)modificationmarks_hardwarePackage.getEClassifier(initialObjectCreationPage.getInitialObjectName());
-		EObject rootObject = modificationmarks_hardwareFactory.create(eClass);
-		return rootObject;
+		// --Start manually modified code
+		APSReqHardwareModificationRepository repository = APSReqHardwareArchitectureModelFactoryFacade.createModificationRepository();
+		return repository;
+		// --End manually modified code
 	}
 
 	/**
 	 * Do the work after everything is specified.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public boolean performFinish() {
@@ -256,6 +258,9 @@ public class Modificationmarks_hardwareModelWizard extends Wizard implements INe
 							//
 							Map<Object, Object> options = new HashMap<Object, Object>();
 							options.put(XMLResource.OPTION_ENCODING, initialObjectCreationPage.getEncoding());
+							// --Start manually modified code
+							options.put(XMLResource.OPTION_ENCODING, "UTF-8");
+							// --End manually modified code
 							resource.save(options);
 						}
 						catch (Exception exception) {
@@ -563,7 +568,7 @@ public class Modificationmarks_hardwareModelWizard extends Wizard implements INe
 	 * The framework calls this to create the contents of the wizard.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 		@Override
 	public void addPages() {
@@ -608,10 +613,12 @@ public class Modificationmarks_hardwareModelWizard extends Wizard implements INe
 				}
 			}
 		}
-		initialObjectCreationPage = new Modificationmarks_hardwareModelWizardInitialObjectCreationPage("Whatever2");
-		initialObjectCreationPage.setTitle(Modificationmarks_hardwareEditorPlugin.INSTANCE.getString("_UI_Modificationmarks_hardwareModelWizard_label"));
-		initialObjectCreationPage.setDescription(Modificationmarks_hardwareEditorPlugin.INSTANCE.getString("_UI_Wizard_initial_object_description"));
-		addPage(initialObjectCreationPage);
+		// --Start manually commented out code
+//		initialObjectCreationPage = new Modificationmarks_hardwareModelWizardInitialObjectCreationPage("Whatever2");
+//		initialObjectCreationPage.setTitle(Modificationmarks_hardwareEditorPlugin.INSTANCE.getString("_UI_Modificationmarks_hardwareModelWizard_label"));
+//		initialObjectCreationPage.setDescription(Modificationmarks_hardwareEditorPlugin.INSTANCE.getString("_UI_Wizard_initial_object_description"));
+//		addPage(initialObjectCreationPage);
+		// --End manually commented out code
 	}
 
 	/**

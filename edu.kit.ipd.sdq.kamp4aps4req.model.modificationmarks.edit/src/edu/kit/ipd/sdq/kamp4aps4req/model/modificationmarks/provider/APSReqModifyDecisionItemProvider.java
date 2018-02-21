@@ -4,6 +4,8 @@ package edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.provider;
 
 
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModifyDecision;
+import edu.kit.ipd.sdq.kamp4bp.model.modificationmarks.BPModifyRole;
+import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.provider.ISLabelCustomizing;
 
 import java.util.Collection;
 import java.util.List;
@@ -60,11 +62,13 @@ public class APSReqModifyDecisionItemProvider extends APSReqModifyTraceableObjec
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((APSReqModifyDecision)object).getId();
+		// --Start manually modified code
+		String label = APSReqLabelCustomizing.customize((APSReqModifyDecision)object);
+		// --End manually modified code
 		return label == null || label.length() == 0 ?
 			getString("_UI_APSReqModifyDecision_type") :
 			getString("_UI_APSReqModifyDecision_type") + " " + label;
