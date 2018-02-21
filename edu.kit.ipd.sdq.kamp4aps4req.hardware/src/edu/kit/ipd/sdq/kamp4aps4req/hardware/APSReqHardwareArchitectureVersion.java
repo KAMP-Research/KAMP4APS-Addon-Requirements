@@ -17,7 +17,7 @@ import edu.kit.ipd.sdq.kamp4aps.model.KAMP4aPSModificationmarks.KAMP4aPSSeedModi
 public class APSReqHardwareArchitectureVersion extends AbstractAPSReqArchitectureVersion {
 
 	/**
-	 * Represents architecture version of the software
+	 * Represents architecture version of the hardware
 	 */
 	private APSArchitectureVersion apsArchitectureVersion;
 	

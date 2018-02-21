@@ -2,15 +2,14 @@ package edu.kit.ipd.sdq.kamp4aps4req.hardware;
 
 import edu.kit.ipd.sdq.kamp4aps4req.core.APSReqArchitectureModelLookup;
 import options.Option;
-
+import relations.SelectionObject;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 import apshardwareoptions.*;
-import apshardwareoptions.APSReqHardwareOption;
+import decisions.Decision;
 import edu.kit.ipd.sdq.kamp.util.MapUtil;
-import edu.kit.ipd.sdq.kamp4aps.core.APSArchitectureModelLookup;
 import edu.kit.ipd.sdq.kamp4aps.model.aPS.StructureRepository.Structure;
 import edu.kit.ipd.sdq.kamp4aps.model.aPS.ModuleRepository.Module;
 import edu.kit.ipd.sdq.kamp4aps.model.aPS.InterfaceRepository.Interface;
@@ -19,8 +18,6 @@ import edu.kit.ipd.sdq.kamp4aps.model.aPS.ComponentRepository.Component;
 
 public class APSReqHardwareArchitectureModelLookup extends APSReqArchitectureModelLookup {
 
-	private APSArchitectureModelLookup apsArchitectureModelLookup;
-	
 	
 	/*	########################################################################################################################
 	 * 	#  STRUCTURE LOOKUP SECTION  ###########################################################################################
@@ -134,6 +131,32 @@ public class APSReqHardwareArchitectureModelLookup extends APSReqArchitectureMod
 		return false;
 	}
 	
+	/**
+	 * Looks up Structures which are referenced by changed Decisions
+	 * @param version The Architecture version to work with
+	 * @param decisions Changed Decisions
+	 * @return Map with Decisions and the Structures they reference 
+	 */
+	public static Map<Structure, Set<Decision>> lookUpStructuresReferencedByDecisions(
+			APSReqHardwareArchitectureVersion version, Collection<? extends Decision> decisions) {
+		Map<Structure, Set<Decision>> results = new HashMap<Structure, Set<Decision>>();
+		
+		for (Decision decision: decisions) {
+			for (SelectionObject selection: decision.getSelected()) {
+				if (selection instanceof APSReqStructureHardwareOption) {
+					for (Structure structure : version.getApsArchitectureVersion().getAPSPlant().getStructures()) {
+						if (structure instanceof Structure && isStructureReferencedByOption(
+								structure, (APSReqStructureHardwareOption) selection)) {
+							MapUtil.putOrAddToMap(results, structure, decision);
+						}
+					}
+				}
+			}
+		}
+		
+		return results;
+	}
+	
 	/*	########################################################################################################################
 	 * 	#  MODULE LOOKUP SECTION  ###########################################################################################
 	 *  ########################################################################################################################              
@@ -214,6 +237,32 @@ public class APSReqHardwareArchitectureModelLookup extends APSReqArchitectureMod
 		return false;
 	}
 	
+	/**
+	 * Looks up Modules which are referenced by changed Decisions
+	 * @param version The Architecture version to work with
+	 * @param decisions Changed Decisions
+	 * @return Map with Decisions and the Modules they reference 
+	 */
+	public static Map<Module, Set<Decision>> lookUpModulesReferencedByDecisions(
+			APSReqHardwareArchitectureVersion version, Collection<? extends Decision> decisions) {
+		Map<Module, Set<Decision>> results = new HashMap<Module, Set<Decision>>();
+		
+		for (Decision decision: decisions) {
+			for (SelectionObject selection: decision.getSelected()) {
+				if (selection instanceof APSReqModuleHardwareOption) {
+					for (Module module : version.getApsArchitectureVersion().getAPSPlant().getModuleRepository().getAllModulesInPlant()) {
+						if (module instanceof Module && isModuleReferencedByOption(
+								module, (APSReqModuleHardwareOption) selection)) {
+							MapUtil.putOrAddToMap(results, module, decision);
+						}
+					}
+				}
+			}
+		}
+		
+		return results;
+	}
+	
 	/*	########################################################################################################################
 	 * 	#  COMPONENT LOOKUP SECTION  ###########################################################################################
 	 *  ########################################################################################################################              
@@ -282,7 +331,31 @@ public class APSReqHardwareArchitectureModelLookup extends APSReqArchitectureMod
 		return false;
 	}
 	
-	
+	/**
+	 * Looks up Components which are referenced by changed Decisions
+	 * @param version The Architecture version to work with
+	 * @param decisions Changed Decisions
+	 * @return Map with Decisions and the Components they reference 
+	 */
+	public static Map<Component, Set<Decision>> lookUpComponentsReferencedByDecisions(
+			APSReqHardwareArchitectureVersion version, Collection<? extends Decision> decisions) {
+		Map<Component, Set<Decision>> results = new HashMap<Component, Set<Decision>>();
+		
+		for (Decision decision: decisions) {
+			for (SelectionObject selection: decision.getSelected()) {
+				if (selection instanceof APSReqComponentHardwareOption) {
+					for (Component component : version.getApsArchitectureVersion().getAPSPlant().getComponentRepository().getAllComponentsInPlant()) {
+						if (component instanceof Component && isComponentReferencedByOption(
+								component, (APSReqComponentHardwareOption) selection)) {
+							MapUtil.putOrAddToMap(results, component, decision);
+						}
+					}
+				}
+			}
+		}
+		
+		return results;
+	}
 	
 	
 	/*	########################################################################################################################
@@ -365,4 +438,29 @@ public class APSReqHardwareArchitectureModelLookup extends APSReqArchitectureMod
 		return false;
 	}
 	
+	/**
+	 * Looks up Interfaces which are referenced by changed Decisions
+	 * @param version The Architecture version to work with
+	 * @param decisions Changed Decisions
+	 * @return Map with Decisions and the Interfaces they reference 
+	 */
+	public static Map<Interface, Set<Decision>> lookUpInterfacesReferencedByDecisions(
+			APSReqHardwareArchitectureVersion version, Collection<? extends Decision> decisions) {
+		Map<Interface, Set<Decision>> results = new HashMap<Interface, Set<Decision>>();
+		
+		for (Decision decision: decisions) {
+			for (SelectionObject selection: decision.getSelected()) {
+				if (selection instanceof APSReqInterfaceHardwareOption) {
+					for (Interface interfac : version.getApsArchitectureVersion().getAPSPlant().getInterfaceRepository().getAllInterfacesInPlant()) {
+						if (interfac instanceof Interface && isInterfaceReferencedByOption(
+								interfac, (APSReqInterfaceHardwareOption) selection)) {
+							MapUtil.putOrAddToMap(results, interfac, decision);
+						}
+					}
+				}
+			}
+		}
+		
+		return results;
+	}
 }

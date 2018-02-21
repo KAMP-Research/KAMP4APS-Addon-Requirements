@@ -1,10 +1,10 @@
 package edu.kit.ipd.sdq.kamp4aps4req.hardware;
 
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 import org.eclipse.emf.ecore.EObject;
+import decisions.Decision;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.Modificationmarks_hardwareFactory;
 import edu.kit.ipd.sdq.kamp.model.modificationmarks.AbstractModification;
 import edu.kit.ipd.sdq.kamp4aps.core.APSChangePropagationAnalysis;
@@ -51,7 +51,7 @@ public class APSReqHardwareChangePropagationAnalysis extends AbstractAPSReqChang
 		this.calculateRequirementsToArchitecturePropagation(version, elementsMarkedInThisStep);
 		
 		
-		// Run IEC-Specific Change Propagation Analysis
+		// Run APS-Specific Change Propagation Analysis
 		this.getApsChangePropagationAnalysis().runChangePropagationAnalysis(version.getApsArchitectureVersion());
 		
 		// Update
@@ -76,7 +76,7 @@ public class APSReqHardwareChangePropagationAnalysis extends AbstractAPSReqChang
 			Map<EObject, AbstractModification<?, EObject>> elementsMarkedInThisStep) {
 		super.calculateRequirementsToArchitecturePropagation(version, elementsMarkedInThisStep);
 		// 5 Decision -> Architecture (select an option)
-		// calculateAndMarkDecisionToArchitecturePropagation(version, elementsMarkedInThisStep);
+		calculateAndMarkDecisionToArchitecturePropagation(version, elementsMarkedInThisStep);
 		// 6 Option -> Architecture
 		calculateAndMarkOptionToArchitecturePropagation(version, elementsMarkedInThisStep);
 				
@@ -109,6 +109,31 @@ public class APSReqHardwareChangePropagationAnalysis extends AbstractAPSReqChang
 		// IV Option -> Interface
 		Map<Interface, Set<Option>> interfacesToBeMarked = APSReqHardwareArchitectureModelLookup.
 				lookUpInterfacesReferencedByOptions(version, this.getMarkedOptions());
+		createAndAddInterfaceModifications(interfacesToBeMarked, elementsMarkedInThisStep);
+	}
+	
+	/**
+	 * Calculates the propagation of Decision changes to the architecture
+	 * @param version The Architecture Version to work with
+	 * @param elementsMarkedInThisStep Marked elements
+	 */
+	private void calculateAndMarkDecisionToArchitecturePropagation(
+			APSReqHardwareArchitectureVersion version, Map<EObject, AbstractModification<?, EObject>> elementsMarkedInThisStep) {
+		// I Decision -> Structure
+		Map<Structure, Set<Decision>> structuresToBeMarked = APSReqHardwareArchitectureModelLookup.
+				lookUpStructuresReferencedByDecisions(version, this.getMarkedDecisions());
+		createAndAddStructureModifications(structuresToBeMarked, elementsMarkedInThisStep);
+		// II Decision -> Module
+		Map<Module, Set<Decision>> modulesToBeMarked = APSReqHardwareArchitectureModelLookup.
+				lookUpModulesReferencedByDecisions(version, this.getMarkedDecisions());
+		createAndAddModuleModifications(modulesToBeMarked, elementsMarkedInThisStep);
+		// III Decision -> Component
+		Map<Component, Set<Decision>> componentsToBeMarked = APSReqHardwareArchitectureModelLookup.
+				lookUpComponentsReferencedByDecisions(version, this.getMarkedDecisions());
+		createAndAddComponentModifications(componentsToBeMarked, elementsMarkedInThisStep);
+		// IV Decision -> Interface
+		Map<Interface, Set<Decision>> interfacesToBeMarked = APSReqHardwareArchitectureModelLookup.
+				lookUpInterfacesReferencedByDecisions(version, this.getMarkedDecisions());
 		createAndAddInterfaceModifications(interfacesToBeMarked, elementsMarkedInThisStep);
 	}
 	

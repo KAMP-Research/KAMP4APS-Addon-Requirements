@@ -55,7 +55,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="interfaces" upperBound="-1"
         eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4aps.aps/model/aPS.ecore#//InterfaceRepository/Interface"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="APSReqChangeInterfaceOption" eSuperTypes="#//APSReqHardwareOption">
+  <eClassifiers xsi:type="ecore:EClass" name="APSReqChangeInterfaceOption" eSuperTypes="#//APSReqInterfaceHardwareOption">
     <eStructuralFeatures xsi:type="ecore:EReference" name="interfaces" upperBound="-1"
         eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4aps.aps/model/aPS.ecore#//InterfaceRepository/Interface"/>
   </eClassifiers>
