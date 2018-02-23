@@ -3,6 +3,8 @@
 package apsoptions.provider;
 
 
+import apsoptions.APSReqRemoveOption;
+import apsoptions.OptionType;
 import java.util.Collection;
 import java.util.List;
 
@@ -51,7 +53,11 @@ public class APSReqRemoveOptionItemProvider extends APSReqOptionItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_APSReqRemoveOption_type");
+		OptionType labelValue = ((APSReqRemoveOption)object).getOptionType();
+		String label = labelValue == null ? null : labelValue.toString();
+		return label == null || label.length() == 0 ?
+			getString("_UI_APSReqRemoveOption_type") :
+			getString("_UI_APSReqRemoveOption_type") + " " + label;
 	}
 	
 

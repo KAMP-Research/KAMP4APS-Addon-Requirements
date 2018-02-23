@@ -3,8 +3,10 @@
 package apshardwareoptions.provider;
 
 
+import apshardwareoptions.APSReqRemoveEntities;
 import apshardwareoptions.ApshardwareoptionsPackage;
 
+import apshardwareoptions.EntityType;
 import apsoptions.provider.APSReqRemoveOptionItemProvider;
 
 import java.util.Collection;
@@ -17,6 +19,8 @@ import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
  * This is the item provider adapter for a {@link apshardwareoptions.APSReqRemoveEntities} object.
@@ -47,6 +51,7 @@ public class APSReqRemoveEntitiesItemProvider extends APSReqRemoveOptionItemProv
 			super.getPropertyDescriptors(object);
 
 			addEntitiesPropertyDescriptor(object);
+			addEntityTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -74,6 +79,28 @@ public class APSReqRemoveEntitiesItemProvider extends APSReqRemoveOptionItemProv
 	}
 
 	/**
+	 * This adds a property descriptor for the Entity Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addEntityTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_APSReqRemoveEntities_entityType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_APSReqRemoveEntities_entityType_feature", "_UI_APSReqRemoveEntities_type"),
+				 ApshardwareoptionsPackage.Literals.APS_REQ_REMOVE_ENTITIES__ENTITY_TYPE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns APSReqRemoveEntities.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -92,7 +119,11 @@ public class APSReqRemoveEntitiesItemProvider extends APSReqRemoveOptionItemProv
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_APSReqRemoveEntities_type");
+		EntityType labelValue = ((APSReqRemoveEntities)object).getEntityType();
+		String label = labelValue == null ? null : labelValue.toString();
+		return label == null || label.length() == 0 ?
+			getString("_UI_APSReqRemoveEntities_type") :
+			getString("_UI_APSReqRemoveEntities_type") + " " + label;
 	}
 	
 
@@ -106,6 +137,12 @@ public class APSReqRemoveEntitiesItemProvider extends APSReqRemoveOptionItemProv
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(APSReqRemoveEntities.class)) {
+			case ApshardwareoptionsPackage.APS_REQ_REMOVE_ENTITIES__ENTITY_TYPE:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

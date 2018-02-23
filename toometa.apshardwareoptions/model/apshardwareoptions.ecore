@@ -2,22 +2,16 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="apshardwareoptions" nsURI="http://www.example.org/apshardwareoptions"
     nsPrefix="apshardwareoptions">
-  <eClassifiers xsi:type="ecore:EClass" name="APSReqIntroduceNewEntitites" eSuperTypes="../../toometa.apsoptions/model/apsoptions.ecore#//APSReqIntrodueNewOption">
+  <eClassifiers xsi:type="ecore:EClass" name="APSReqHardwareOption" eSuperTypes="../../toometa.apsoptions/model/apsoptions.ecore#//APSReqOption">
     <eStructuralFeatures xsi:type="ecore:EReference" name="entities" upperBound="-1"
         eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4aps.basic/model/basic.ecore#//Entity"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="entityType" lowerBound="1"
+        eType="#//EntityType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="APSReqRemoveEntities" eSuperTypes="../../toometa.apsoptions/model/apsoptions.ecore#//APSReqRemoveOption">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="entities" upperBound="-1"
-        eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4aps.basic/model/basic.ecore#//Entity"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="APSReqReplaceEntities" eSuperTypes="../../toometa.apsoptions/model/apsoptions.ecore#//APSReqReplaceOption">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="oldEntities" upperBound="-1"
-        eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4aps.basic/model/basic.ecore#//Entity"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="newEntities" upperBound="-1"
-        eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4aps.basic/model/basic.ecore#//Entity"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="APSReqChangeEntities" eSuperTypes="../../toometa.apsoptions/model/apsoptions.ecore#//APSReqChangeOption">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="entities" upperBound="-1"
-        eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4aps.basic/model/basic.ecore#//Entity"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="EntityType">
+    <eLiterals name="Structure"/>
+    <eLiterals name="Module" value="1"/>
+    <eLiterals name="Component" value="2"/>
+    <eLiterals name="Interface" value="3"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -5,6 +5,7 @@ package apsoptions.impl;
 import apsoptions.APSReqOption;
 import apsoptions.APSReqOptionRepository;
 import apsoptions.ApsoptionsPackage;
+import apsoptions.OptionType;
 import options.Option;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -25,6 +26,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * <ul>
  *   <li>{@link apsoptions.impl.APSReqOptionImpl#getOption <em>Option</em>}</li>
  *   <li>{@link apsoptions.impl.APSReqOptionImpl#getRepository <em>Repository</em>}</li>
+ *   <li>{@link apsoptions.impl.APSReqOptionImpl#getOptionType <em>Option Type</em>}</li>
  * </ul>
  *
  * @generated
@@ -39,6 +41,25 @@ public abstract class APSReqOptionImpl extends MinimalEObjectImpl.Container impl
 	 * @ordered
 	 */
 	protected Option option;
+
+	/**
+	 * The default value of the '{@link #getOptionType() <em>Option Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOptionType()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final OptionType OPTION_TYPE_EDEFAULT = OptionType.INTRODUCE_NEW;
+	/**
+	 * The cached value of the '{@link #getOptionType() <em>Option Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOptionType()
+	 * @generated
+	 * @ordered
+	 */
+	protected OptionType optionType = OPTION_TYPE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -143,6 +164,27 @@ public abstract class APSReqOptionImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public OptionType getOptionType() {
+		return optionType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOptionType(OptionType newOptionType) {
+		OptionType oldOptionType = optionType;
+		optionType = newOptionType == null ? OPTION_TYPE_EDEFAULT : newOptionType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ApsoptionsPackage.APS_REQ_OPTION__OPTION_TYPE, oldOptionType, optionType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -195,6 +237,8 @@ public abstract class APSReqOptionImpl extends MinimalEObjectImpl.Container impl
 				return basicGetOption();
 			case ApsoptionsPackage.APS_REQ_OPTION__REPOSITORY:
 				return getRepository();
+			case ApsoptionsPackage.APS_REQ_OPTION__OPTION_TYPE:
+				return getOptionType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -212,6 +256,9 @@ public abstract class APSReqOptionImpl extends MinimalEObjectImpl.Container impl
 				return;
 			case ApsoptionsPackage.APS_REQ_OPTION__REPOSITORY:
 				setRepository((APSReqOptionRepository)newValue);
+				return;
+			case ApsoptionsPackage.APS_REQ_OPTION__OPTION_TYPE:
+				setOptionType((OptionType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -231,6 +278,9 @@ public abstract class APSReqOptionImpl extends MinimalEObjectImpl.Container impl
 			case ApsoptionsPackage.APS_REQ_OPTION__REPOSITORY:
 				setRepository((APSReqOptionRepository)null);
 				return;
+			case ApsoptionsPackage.APS_REQ_OPTION__OPTION_TYPE:
+				setOptionType(OPTION_TYPE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -247,8 +297,26 @@ public abstract class APSReqOptionImpl extends MinimalEObjectImpl.Container impl
 				return option != null;
 			case ApsoptionsPackage.APS_REQ_OPTION__REPOSITORY:
 				return getRepository() != null;
+			case ApsoptionsPackage.APS_REQ_OPTION__OPTION_TYPE:
+				return optionType != OPTION_TYPE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (optionType: ");
+		result.append(optionType);
+		result.append(')');
+		return result.toString();
 	}
 
 } //APSReqOptionImpl

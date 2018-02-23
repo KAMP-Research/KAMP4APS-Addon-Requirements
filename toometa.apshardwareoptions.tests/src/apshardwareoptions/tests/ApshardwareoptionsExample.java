@@ -2,7 +2,7 @@
  */
 package apshardwareoptions.tests;
 
-import apshardwareoptions.APSReqIntroduceNewEntitites;
+import apshardwareoptions.APSReqHardwareOption;
 import apshardwareoptions.ApshardwareoptionsFactory;
 import apshardwareoptions.ApshardwareoptionsPackage;
 
@@ -60,7 +60,7 @@ public class ApshardwareoptionsExample {
 			System.out.println("Enter a list of file paths or URIs that have content like this:");
 			try {
 				Resource resource = resourceSet.createResource(URI.createURI("http:///My.apshardwareoptions"));
-				APSReqIntroduceNewEntitites root = ApshardwareoptionsFactory.eINSTANCE.createAPSReqIntroduceNewEntitites();
+				APSReqHardwareOption root = ApshardwareoptionsFactory.eINSTANCE.createAPSReqHardwareOption();
 				resource.getContents().add(root);
 				resource.save(System.out, null);
 			}

@@ -2,7 +2,9 @@
  */
 package apsoptions;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -84,13 +86,22 @@ public interface ApsoptionsPackage extends EPackage {
 	int APS_REQ_OPTION__REPOSITORY = 1;
 
 	/**
+	 * The feature id for the '<em><b>Option Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APS_REQ_OPTION__OPTION_TYPE = 2;
+
+	/**
 	 * The number of structural features of the '<em>APS Req Option</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int APS_REQ_OPTION_FEATURE_COUNT = 2;
+	int APS_REQ_OPTION_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link apsoptions.impl.APSReqIntrodueNewOptionImpl <em>APS Req Introdue New Option</em>}' class.
@@ -119,6 +130,15 @@ public interface ApsoptionsPackage extends EPackage {
 	 * @ordered
 	 */
 	int APS_REQ_INTRODUE_NEW_OPTION__REPOSITORY = APS_REQ_OPTION__REPOSITORY;
+
+	/**
+	 * The feature id for the '<em><b>Option Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APS_REQ_INTRODUE_NEW_OPTION__OPTION_TYPE = APS_REQ_OPTION__OPTION_TYPE;
 
 	/**
 	 * The number of structural features of the '<em>APS Req Introdue New Option</em>' class.
@@ -158,6 +178,15 @@ public interface ApsoptionsPackage extends EPackage {
 	int APS_REQ_REMOVE_OPTION__REPOSITORY = APS_REQ_OPTION__REPOSITORY;
 
 	/**
+	 * The feature id for the '<em><b>Option Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APS_REQ_REMOVE_OPTION__OPTION_TYPE = APS_REQ_OPTION__OPTION_TYPE;
+
+	/**
 	 * The number of structural features of the '<em>APS Req Remove Option</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -193,6 +222,15 @@ public interface ApsoptionsPackage extends EPackage {
 	 * @ordered
 	 */
 	int APS_REQ_REPLACE_OPTION__REPOSITORY = APS_REQ_OPTION__REPOSITORY;
+
+	/**
+	 * The feature id for the '<em><b>Option Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APS_REQ_REPLACE_OPTION__OPTION_TYPE = APS_REQ_OPTION__OPTION_TYPE;
 
 	/**
 	 * The number of structural features of the '<em>APS Req Replace Option</em>' class.
@@ -232,6 +270,15 @@ public interface ApsoptionsPackage extends EPackage {
 	int APS_REQ_CHANGE_OPTION__REPOSITORY = APS_REQ_OPTION__REPOSITORY;
 
 	/**
+	 * The feature id for the '<em><b>Option Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APS_REQ_CHANGE_OPTION__OPTION_TYPE = APS_REQ_OPTION__OPTION_TYPE;
+
+	/**
 	 * The number of structural features of the '<em>APS Req Change Option</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -267,6 +314,16 @@ public interface ApsoptionsPackage extends EPackage {
 	 * @ordered
 	 */
 	int APS_REQ_OPTION_REPOSITORY_FEATURE_COUNT = 1;
+
+	/**
+	 * The meta object id for the '{@link apsoptions.OptionType <em>Option Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see apsoptions.OptionType
+	 * @see apsoptions.impl.ApsoptionsPackageImpl#getOptionType()
+	 * @generated
+	 */
+	int OPTION_TYPE = 6;
 
 	/**
 	 * Returns the meta object for class '{@link apsoptions.APSReqIntrodueNewOption <em>APS Req Introdue New Option</em>}'.
@@ -341,6 +398,17 @@ public interface ApsoptionsPackage extends EPackage {
 	EReference getAPSReqOption_Repository();
 
 	/**
+	 * Returns the meta object for the attribute '{@link apsoptions.APSReqOption#getOptionType <em>Option Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Option Type</em>'.
+	 * @see apsoptions.APSReqOption#getOptionType()
+	 * @see #getAPSReqOption()
+	 * @generated
+	 */
+	EAttribute getAPSReqOption_OptionType();
+
+	/**
 	 * Returns the meta object for class '{@link apsoptions.APSReqOptionRepository <em>APS Req Option Repository</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -360,6 +428,16 @@ public interface ApsoptionsPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getAPSReqOptionRepository_Apsreqoption();
+
+	/**
+	 * Returns the meta object for enum '{@link apsoptions.OptionType <em>Option Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Option Type</em>'.
+	 * @see apsoptions.OptionType
+	 * @generated
+	 */
+	EEnum getOptionType();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -444,6 +522,13 @@ public interface ApsoptionsPackage extends EPackage {
 		 */
 		EReference APS_REQ_OPTION__REPOSITORY = eINSTANCE.getAPSReqOption_Repository();
 		/**
+		 * The meta object literal for the '<em><b>Option Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute APS_REQ_OPTION__OPTION_TYPE = eINSTANCE.getAPSReqOption_OptionType();
+		/**
 		 * The meta object literal for the '{@link apsoptions.impl.APSReqOptionRepositoryImpl <em>APS Req Option Repository</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -459,6 +544,15 @@ public interface ApsoptionsPackage extends EPackage {
 		 * @generated
 		 */
 		EReference APS_REQ_OPTION_REPOSITORY__APSREQOPTION = eINSTANCE.getAPSReqOptionRepository_Apsreqoption();
+		/**
+		 * The meta object literal for the '{@link apsoptions.OptionType <em>Option Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see apsoptions.OptionType
+		 * @see apsoptions.impl.ApsoptionsPackageImpl#getOptionType()
+		 * @generated
+		 */
+		EEnum OPTION_TYPE = eINSTANCE.getOptionType();
 
 	}
 

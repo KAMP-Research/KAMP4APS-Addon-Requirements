@@ -22,40 +22,13 @@ public interface ApshardwareoptionsFactory extends EFactory {
 	ApshardwareoptionsFactory eINSTANCE = apshardwareoptions.impl.ApshardwareoptionsFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>APS Req Introduce New Entitites</em>'.
+	 * Returns a new object of class '<em>APS Req Hardware Option</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>APS Req Introduce New Entitites</em>'.
+	 * @return a new object of class '<em>APS Req Hardware Option</em>'.
 	 * @generated
 	 */
-	APSReqIntroduceNewEntitites createAPSReqIntroduceNewEntitites();
-
-	/**
-	 * Returns a new object of class '<em>APS Req Remove Entities</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>APS Req Remove Entities</em>'.
-	 * @generated
-	 */
-	APSReqRemoveEntities createAPSReqRemoveEntities();
-
-	/**
-	 * Returns a new object of class '<em>APS Req Replace Entities</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>APS Req Replace Entities</em>'.
-	 * @generated
-	 */
-	APSReqReplaceEntities createAPSReqReplaceEntities();
-
-	/**
-	 * Returns a new object of class '<em>APS Req Change Entities</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>APS Req Change Entities</em>'.
-	 * @generated
-	 */
-	APSReqChangeEntities createAPSReqChangeEntities();
+	APSReqHardwareOption createAPSReqHardwareOption();
 
 	/**
 	 * Returns the package supported by this factory.

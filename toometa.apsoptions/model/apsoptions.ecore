@@ -13,9 +13,16 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="option" eType="ecore:EClass ../../toometa.options/model/options.ecore#//Option"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="repository" lowerBound="1"
         eType="#//APSReqOptionRepository" eOpposite="#//APSReqOptionRepository/apsreqoption"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="optionType" lowerBound="1"
+        eType="#//OptionType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="APSReqOptionRepository">
     <eStructuralFeatures xsi:type="ecore:EReference" name="apsreqoption" upperBound="-1"
         eType="#//APSReqOption" containment="true" eOpposite="#//APSReqOption/repository"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="OptionType">
+    <eLiterals name="introduceNew" literal="IntroduceNew"/>
+    <eLiterals name="remove" value="1" literal="remove"/>
+    <eLiterals name="change" value="2"/>
   </eClassifiers>
 </ecore:EPackage>

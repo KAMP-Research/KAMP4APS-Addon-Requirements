@@ -2,20 +2,20 @@
  */
 package apshardwareoptions.impl;
 
-import apshardwareoptions.APSReqChangeEntities;
-import apshardwareoptions.APSReqIntroduceNewEntitites;
-import apshardwareoptions.APSReqRemoveEntities;
-import apshardwareoptions.APSReqReplaceEntities;
+import apshardwareoptions.APSReqHardwareOption;
 import apshardwareoptions.ApshardwareoptionsFactory;
 import apshardwareoptions.ApshardwareoptionsPackage;
 
+import apshardwareoptions.EntityType;
 import apsoptions.ApsoptionsPackage;
 
 import edu.kit.ipd.sdq.kamp4aps.model.aPS.apsPackage;
 
 import edu.kit.ipd.sdq.kamp4aps.model.basic.BasicPackage;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -33,28 +33,14 @@ public class ApshardwareoptionsPackageImpl extends EPackageImpl implements Apsha
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass apsReqIntroduceNewEntititesEClass = null;
+	private EClass apsReqHardwareOptionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass apsReqRemoveEntitiesEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass apsReqReplaceEntitiesEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass apsReqChangeEntitiesEClass = null;
+	private EEnum entityTypeEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -126,8 +112,8 @@ public class ApshardwareoptionsPackageImpl extends EPackageImpl implements Apsha
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getAPSReqIntroduceNewEntitites() {
-		return apsReqIntroduceNewEntititesEClass;
+	public EClass getAPSReqHardwareOption() {
+		return apsReqHardwareOptionEClass;
 	}
 
 	/**
@@ -135,8 +121,8 @@ public class ApshardwareoptionsPackageImpl extends EPackageImpl implements Apsha
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAPSReqIntroduceNewEntitites_Entities() {
-		return (EReference)apsReqIntroduceNewEntititesEClass.getEStructuralFeatures().get(0);
+	public EReference getAPSReqHardwareOption_Entities() {
+		return (EReference)apsReqHardwareOptionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -144,8 +130,8 @@ public class ApshardwareoptionsPackageImpl extends EPackageImpl implements Apsha
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getAPSReqRemoveEntities() {
-		return apsReqRemoveEntitiesEClass;
+	public EAttribute getAPSReqHardwareOption_EntityType() {
+		return (EAttribute)apsReqHardwareOptionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -153,53 +139,8 @@ public class ApshardwareoptionsPackageImpl extends EPackageImpl implements Apsha
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAPSReqRemoveEntities_Entities() {
-		return (EReference)apsReqRemoveEntitiesEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getAPSReqReplaceEntities() {
-		return apsReqReplaceEntitiesEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAPSReqReplaceEntities_OldEntities() {
-		return (EReference)apsReqReplaceEntitiesEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAPSReqReplaceEntities_NewEntities() {
-		return (EReference)apsReqReplaceEntitiesEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getAPSReqChangeEntities() {
-		return apsReqChangeEntitiesEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAPSReqChangeEntities_Entities() {
-		return (EReference)apsReqChangeEntitiesEClass.getEStructuralFeatures().get(0);
+	public EEnum getEntityType() {
+		return entityTypeEEnum;
 	}
 
 	/**
@@ -230,18 +171,12 @@ public class ApshardwareoptionsPackageImpl extends EPackageImpl implements Apsha
 		isCreated = true;
 
 		// Create classes and their features
-		apsReqIntroduceNewEntititesEClass = createEClass(APS_REQ_INTRODUCE_NEW_ENTITITES);
-		createEReference(apsReqIntroduceNewEntititesEClass, APS_REQ_INTRODUCE_NEW_ENTITITES__ENTITIES);
+		apsReqHardwareOptionEClass = createEClass(APS_REQ_HARDWARE_OPTION);
+		createEReference(apsReqHardwareOptionEClass, APS_REQ_HARDWARE_OPTION__ENTITIES);
+		createEAttribute(apsReqHardwareOptionEClass, APS_REQ_HARDWARE_OPTION__ENTITY_TYPE);
 
-		apsReqRemoveEntitiesEClass = createEClass(APS_REQ_REMOVE_ENTITIES);
-		createEReference(apsReqRemoveEntitiesEClass, APS_REQ_REMOVE_ENTITIES__ENTITIES);
-
-		apsReqReplaceEntitiesEClass = createEClass(APS_REQ_REPLACE_ENTITIES);
-		createEReference(apsReqReplaceEntitiesEClass, APS_REQ_REPLACE_ENTITIES__OLD_ENTITIES);
-		createEReference(apsReqReplaceEntitiesEClass, APS_REQ_REPLACE_ENTITIES__NEW_ENTITIES);
-
-		apsReqChangeEntitiesEClass = createEClass(APS_REQ_CHANGE_ENTITIES);
-		createEReference(apsReqChangeEntitiesEClass, APS_REQ_CHANGE_ENTITIES__ENTITIES);
+		// Create enums
+		entityTypeEEnum = createEEnum(ENTITY_TYPE);
 	}
 
 	/**
@@ -276,24 +211,19 @@ public class ApshardwareoptionsPackageImpl extends EPackageImpl implements Apsha
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		apsReqIntroduceNewEntititesEClass.getESuperTypes().add(theApsoptionsPackage.getAPSReqIntrodueNewOption());
-		apsReqRemoveEntitiesEClass.getESuperTypes().add(theApsoptionsPackage.getAPSReqRemoveOption());
-		apsReqReplaceEntitiesEClass.getESuperTypes().add(theApsoptionsPackage.getAPSReqReplaceOption());
-		apsReqChangeEntitiesEClass.getESuperTypes().add(theApsoptionsPackage.getAPSReqChangeOption());
+		apsReqHardwareOptionEClass.getESuperTypes().add(theApsoptionsPackage.getAPSReqOption());
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(apsReqIntroduceNewEntititesEClass, APSReqIntroduceNewEntitites.class, "APSReqIntroduceNewEntitites", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAPSReqIntroduceNewEntitites_Entities(), theBasicPackage.getEntity(), null, "entities", null, 0, -1, APSReqIntroduceNewEntitites.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(apsReqHardwareOptionEClass, APSReqHardwareOption.class, "APSReqHardwareOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAPSReqHardwareOption_Entities(), theBasicPackage.getEntity(), null, "entities", null, 0, -1, APSReqHardwareOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAPSReqHardwareOption_EntityType(), this.getEntityType(), "entityType", null, 1, 1, APSReqHardwareOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(apsReqRemoveEntitiesEClass, APSReqRemoveEntities.class, "APSReqRemoveEntities", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAPSReqRemoveEntities_Entities(), theBasicPackage.getEntity(), null, "entities", null, 0, -1, APSReqRemoveEntities.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(apsReqReplaceEntitiesEClass, APSReqReplaceEntities.class, "APSReqReplaceEntities", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAPSReqReplaceEntities_OldEntities(), theBasicPackage.getEntity(), null, "oldEntities", null, 0, -1, APSReqReplaceEntities.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAPSReqReplaceEntities_NewEntities(), theBasicPackage.getEntity(), null, "newEntities", null, 0, -1, APSReqReplaceEntities.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(apsReqChangeEntitiesEClass, APSReqChangeEntities.class, "APSReqChangeEntities", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAPSReqChangeEntities_Entities(), theBasicPackage.getEntity(), null, "entities", null, 0, -1, APSReqChangeEntities.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		// Initialize enums and add enum literals
+		initEEnum(entityTypeEEnum, EntityType.class, "EntityType");
+		addEEnumLiteral(entityTypeEEnum, EntityType.STRUCTURE);
+		addEEnumLiteral(entityTypeEEnum, EntityType.MODULE);
+		addEEnumLiteral(entityTypeEEnum, EntityType.COMPONENT);
+		addEEnumLiteral(entityTypeEEnum, EntityType.INTERFACE);
 
 		// Create resource
 		createResource(eNS_URI);
