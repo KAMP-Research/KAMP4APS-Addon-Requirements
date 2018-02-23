@@ -256,9 +256,6 @@ public class ModificationmarksModelWizard extends Wizard implements INewWizard {
 							//
 							Map<Object, Object> options = new HashMap<Object, Object>();
 							options.put(XMLResource.OPTION_ENCODING, initialObjectCreationPage.getEncoding());
-							// --Start manually modified code
-							options.put(XMLResource.OPTION_ENCODING, "UTF-8");
-							// --End manually modified code
 							resource.save(options);
 						}
 						catch (Exception exception) {
@@ -398,8 +395,7 @@ public class ModificationmarksModelWizard extends Wizard implements INewWizard {
 		 * @generated
 		 */
 		public void createControl(Composite parent) {
-			Composite composite = new Composite(parent, SWT.NONE);
-			{
+			Composite composite = new Composite(parent, SWT.NONE); {
 				GridLayout layout = new GridLayout();
 				layout.numColumns = 1;
 				layout.verticalSpacing = 12;
@@ -612,12 +608,10 @@ public class ModificationmarksModelWizard extends Wizard implements INewWizard {
 				}
 			}
 		}
-		// --Start manually commented out code
-//		initialObjectCreationPage = new ModificationmarksModelWizardInitialObjectCreationPage("Whatever2");
-//		initialObjectCreationPage.setTitle(ModificationmarksEditorPlugin.INSTANCE.getString("_UI_ModificationmarksModelWizard_label"));
-//		initialObjectCreationPage.setDescription(ModificationmarksEditorPlugin.INSTANCE.getString("_UI_Wizard_initial_object_description"));
-//		addPage(initialObjectCreationPage);
-		// --End manually commented out code
+		initialObjectCreationPage = new ModificationmarksModelWizardInitialObjectCreationPage("Whatever2");
+		initialObjectCreationPage.setTitle(ModificationmarksEditorPlugin.INSTANCE.getString("_UI_ModificationmarksModelWizard_label"));
+		initialObjectCreationPage.setDescription(ModificationmarksEditorPlugin.INSTANCE.getString("_UI_Wizard_initial_object_description"));
+		addPage(initialObjectCreationPage);
 	}
 
 	/**

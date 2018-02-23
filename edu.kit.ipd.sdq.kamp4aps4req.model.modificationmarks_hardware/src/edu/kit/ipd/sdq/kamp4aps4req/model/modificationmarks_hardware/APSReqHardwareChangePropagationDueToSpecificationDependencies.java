@@ -3,6 +3,7 @@
 package edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware;
 
 import edu.kit.ipd.sdq.kamp4aps.model.KAMP4aPSModificationmarks.ChangePropagationDueToHardwareChange;
+
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.AbstractAPSReqChangePropagationDueToSpecificationDependencies;
 
 /**

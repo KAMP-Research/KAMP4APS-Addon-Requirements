@@ -4,9 +4,6 @@ package edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.provider;
 
 
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModifyDecision;
-import edu.kit.ipd.sdq.kamp4bp.model.modificationmarks.BPModifyRole;
-import edu.kit.ipd.sdq.kamp4is.model.modificationmarks.provider.ISLabelCustomizing;
-
 import java.util.Collection;
 import java.util.List;
 

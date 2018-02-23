@@ -3,7 +3,6 @@
 package edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.provider;
 
 
-import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModifyOption;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModifyRequirement;
 
 import java.util.Collection;

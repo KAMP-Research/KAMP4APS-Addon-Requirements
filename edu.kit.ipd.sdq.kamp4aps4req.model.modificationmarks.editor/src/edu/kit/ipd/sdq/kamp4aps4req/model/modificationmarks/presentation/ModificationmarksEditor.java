@@ -192,7 +192,7 @@ import requirements.provider.RequirementsItemProviderAdapterFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ModificationmarksEditor
+public class ModificationmarksEditor2
 	extends MultiPageEditorPart
 	implements IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, IGotoMarker {
 	/**
@@ -354,18 +354,18 @@ public class ModificationmarksEditor
 			public void partActivated(IWorkbenchPart p) {
 				if (p instanceof ContentOutline) {
 					if (((ContentOutline)p).getCurrentPage() == contentOutlinePage) {
-						getActionBarContributor().setActiveEditor(ModificationmarksEditor.this);
+						getActionBarContributor().setActiveEditor(ModificationmarksEditor2.this);
 
 						setCurrentViewer(contentOutlineViewer);
 					}
 				}
 				else if (p instanceof PropertySheet) {
 					if (propertySheetPages.contains(((PropertySheet)p).getCurrentPage())) {
-						getActionBarContributor().setActiveEditor(ModificationmarksEditor.this);
+						getActionBarContributor().setActiveEditor(ModificationmarksEditor2.this);
 						handleActivate();
 					}
 				}
-				else if (p == ModificationmarksEditor.this) {
+				else if (p == ModificationmarksEditor2.this) {
 					handleActivate();
 				}
 			}
@@ -538,7 +538,7 @@ public class ModificationmarksEditor
 								 public void run() {
 									 removedResources.addAll(visitor.getRemovedResources());
 									 if (!isDirty()) {
-										 getSite().getPage().closeEditor(ModificationmarksEditor.this, false);
+										 getSite().getPage().closeEditor(ModificationmarksEditor2.this, false);
 									 }
 								 }
 							 });
@@ -549,7 +549,7 @@ public class ModificationmarksEditor
 							(new Runnable() {
 								 public void run() {
 									 changedResources.addAll(visitor.getChangedResources());
-									 if (getSite().getPage().getActiveEditor() == ModificationmarksEditor.this) {
+									 if (getSite().getPage().getActiveEditor() == ModificationmarksEditor2.this) {
 										 handleActivate();
 									 }
 								 }
@@ -581,7 +581,7 @@ public class ModificationmarksEditor
 
 		if (!removedResources.isEmpty()) {
 			if (handleDirtyConflict()) {
-				getSite().getPage().closeEditor(ModificationmarksEditor.this, false);
+				getSite().getPage().closeEditor(ModificationmarksEditor2.this, false);
 			}
 			else {
 				removedResources.clear();
@@ -711,7 +711,7 @@ public class ModificationmarksEditor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ModificationmarksEditor() {
+	public ModificationmarksEditor2() {
 		super();
 		initializeEditingDomain();
 	}
@@ -1093,7 +1093,7 @@ public class ModificationmarksEditor
 			//
 			{
 				ViewerPane viewerPane =
-					new ViewerPane(getSite().getPage(), ModificationmarksEditor.this) {
+					new ViewerPane(getSite().getPage(), ModificationmarksEditor2.this) {
 						@Override
 						public Viewer createViewer(Composite composite) {
 							Tree tree = new Tree(composite, SWT.MULTI);
@@ -1127,7 +1127,7 @@ public class ModificationmarksEditor
 			//
 			{
 				ViewerPane viewerPane =
-					new ViewerPane(getSite().getPage(), ModificationmarksEditor.this) {
+					new ViewerPane(getSite().getPage(), ModificationmarksEditor2.this) {
 						@Override
 						public Viewer createViewer(Composite composite) {
 							Tree tree = new Tree(composite, SWT.MULTI);
@@ -1156,7 +1156,7 @@ public class ModificationmarksEditor
 			//
 			{
 				ViewerPane viewerPane =
-					new ViewerPane(getSite().getPage(), ModificationmarksEditor.this) {
+					new ViewerPane(getSite().getPage(), ModificationmarksEditor2.this) {
 						@Override
 						public Viewer createViewer(Composite composite) {
 							return new ListViewer(composite);
@@ -1181,7 +1181,7 @@ public class ModificationmarksEditor
 			//
 			{
 				ViewerPane viewerPane =
-					new ViewerPane(getSite().getPage(), ModificationmarksEditor.this) {
+					new ViewerPane(getSite().getPage(), ModificationmarksEditor2.this) {
 						@Override
 						public Viewer createViewer(Composite composite) {
 							return new TreeViewer(composite);
@@ -1208,7 +1208,7 @@ public class ModificationmarksEditor
 			//
 			{
 				ViewerPane viewerPane =
-					new ViewerPane(getSite().getPage(), ModificationmarksEditor.this) {
+					new ViewerPane(getSite().getPage(), ModificationmarksEditor2.this) {
 						@Override
 						public Viewer createViewer(Composite composite) {
 							return new TableViewer(composite);
@@ -1251,7 +1251,7 @@ public class ModificationmarksEditor
 			//
 			{
 				ViewerPane viewerPane =
-					new ViewerPane(getSite().getPage(), ModificationmarksEditor.this) {
+					new ViewerPane(getSite().getPage(), ModificationmarksEditor2.this) {
 						@Override
 						public Viewer createViewer(Composite composite) {
 							return new TreeViewer(composite);
@@ -1471,8 +1471,8 @@ public class ModificationmarksEditor
 			new ExtendedPropertySheetPage(editingDomain) {
 				@Override
 				public void setSelectionToViewer(List<?> selection) {
-					ModificationmarksEditor.this.setSelectionToViewer(selection);
-					ModificationmarksEditor.this.setFocus();
+					ModificationmarksEditor2.this.setSelectionToViewer(selection);
+					ModificationmarksEditor2.this.setFocus();
 				}
 
 				@Override

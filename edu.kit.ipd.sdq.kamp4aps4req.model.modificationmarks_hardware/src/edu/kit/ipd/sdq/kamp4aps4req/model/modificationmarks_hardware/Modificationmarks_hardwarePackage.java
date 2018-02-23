@@ -148,7 +148,6 @@ public interface Modificationmarks_hardwarePackage extends EPackage {
 	 */
 	int APS_REQ_HARDWARE_MODIFICATION_REPOSITORY_FEATURE_COUNT = ModificationmarksPackage.ABSTRACT_KAMP_4A_PS4_REQ_MODIFICATION_REPOSITORY_FEATURE_COUNT + 0;
 
-
 	/**
 	 * The meta object id for the '{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.impl.APSReqHardwareChangePropagationDueToSpecificationDependenciesImpl <em>APS Req Hardware Change Propagation Due To Specification Dependencies</em>}' class.
 	 * <!-- begin-user-doc -->
