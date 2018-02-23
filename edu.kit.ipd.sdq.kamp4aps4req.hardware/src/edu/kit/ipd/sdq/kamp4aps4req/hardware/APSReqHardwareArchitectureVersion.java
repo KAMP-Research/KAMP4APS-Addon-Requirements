@@ -4,6 +4,7 @@ import decisions.DecisionRepository;
 import edu.kit.ipd.sdq.kamp4aps4req.core.AbstractAPSReqArchitectureVersion;
 import edu.kit.ipd.sdq.kamp4aps.core.APSArchitectureVersion;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.AbstractKAMP4aPS4ReqModificationRepository;
+import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.APSReqHardwareModificationRepository;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqSeedModifications;
 import options.OptionRepository;
 import requirements.ReqRepository;
@@ -14,7 +15,7 @@ import edu.kit.ipd.sdq.kamp4aps.model.KAMP4aPSModificationmarks.KAMP4aPSSeedModi
  * @author Timo Maier
  *
  */
-public class APSReqHardwareArchitectureVersion extends AbstractAPSReqArchitectureVersion {
+public class APSReqHardwareArchitectureVersion extends AbstractAPSReqArchitectureVersion<APSReqHardwareModificationRepository> {
 
 	/**
 	 * Represents architecture version of the hardware
@@ -32,7 +33,7 @@ public class APSReqHardwareArchitectureVersion extends AbstractAPSReqArchitectur
 	 */
 	public APSReqHardwareArchitectureVersion(String name, ReqRepository requirementsRepository, DecisionRepository decisionRepository,
 			OptionRepository optionRepository, 
-			AbstractKAMP4aPS4ReqModificationRepository<APSReqSeedModifications<KAMP4aPSSeedModifications>> modificationMarksRepository,
+			APSReqHardwareModificationRepository modificationMarksRepository,
 			APSArchitectureVersion apsArchitectureVersion) {
 		
 		super(name, requirementsRepository, decisionRepository, optionRepository, modificationMarksRepository);

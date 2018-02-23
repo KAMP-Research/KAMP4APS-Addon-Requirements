@@ -15,7 +15,7 @@ import options.OptionsFactory;
  * @author Timo Maier
  *
  */
-public abstract class AbstractAPSReqArchitectureVersion extends AbstractArchitectureVersion<AbstractKAMP4aPS4ReqModificationRepository<?>> {
+public abstract class AbstractAPSReqArchitectureVersion<T extends AbstractKAMP4aPS4ReqModificationRepository<?>> extends AbstractArchitectureVersion<T> {
 
 		protected ReqRepository requirementsRepository;
 		protected DecisionRepository decisionRepository;
@@ -23,7 +23,7 @@ public abstract class AbstractAPSReqArchitectureVersion extends AbstractArchitec
 
 		
 		public AbstractAPSReqArchitectureVersion(String name, ReqRepository requirementsRepository, DecisionRepository decisionRepository,
-				OptionRepository optionRepository, AbstractKAMP4aPS4ReqModificationRepository<?> modificationMarksRepository) {
+				OptionRepository optionRepository, T modificationMarksRepository) {
 			
 			super(name, modificationMarksRepository);
 			if (requirementsRepository == null) {
