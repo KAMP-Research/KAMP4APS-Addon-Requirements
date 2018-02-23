@@ -8,18 +8,15 @@
   <foreignModel>apshardwareoptions.ecore</foreignModel>
   <genPackages prefix="Apshardwareoptions" disposableProviderFactory="true" childCreationExtenders="true"
       ecorePackage="apshardwareoptions.ecore#/">
-    <genClasses ecoreClass="apshardwareoptions.ecore#//APSReqIntroduceNewEntitites">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference apshardwareoptions.ecore#//APSReqIntroduceNewEntitites/entities"/>
-    </genClasses>
-    <genClasses ecoreClass="apshardwareoptions.ecore#//APSReqRemoveEntities">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference apshardwareoptions.ecore#//APSReqRemoveEntities/entities"/>
-    </genClasses>
-    <genClasses ecoreClass="apshardwareoptions.ecore#//APSReqReplaceEntities">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference apshardwareoptions.ecore#//APSReqReplaceEntities/oldEntities"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference apshardwareoptions.ecore#//APSReqReplaceEntities/newEntities"/>
-    </genClasses>
-    <genClasses ecoreClass="apshardwareoptions.ecore#//APSReqChangeEntities">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference apshardwareoptions.ecore#//APSReqChangeEntities/entities"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="apshardwareoptions.ecore#//EntityType">
+      <genEnumLiterals ecoreEnumLiteral="apshardwareoptions.ecore#//EntityType/Structure"/>
+      <genEnumLiterals ecoreEnumLiteral="apshardwareoptions.ecore#//EntityType/Module"/>
+      <genEnumLiterals ecoreEnumLiteral="apshardwareoptions.ecore#//EntityType/Component"/>
+      <genEnumLiterals ecoreEnumLiteral="apshardwareoptions.ecore#//EntityType/Interface"/>
+    </genEnums>
+    <genClasses ecoreClass="apshardwareoptions.ecore#//APSReqHardwareOption">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference apshardwareoptions.ecore#//APSReqHardwareOption/entities"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute apshardwareoptions.ecore#//APSReqHardwareOption/entityType"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

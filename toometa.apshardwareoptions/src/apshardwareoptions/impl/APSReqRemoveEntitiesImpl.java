@@ -5,16 +5,19 @@ package apshardwareoptions.impl;
 import apshardwareoptions.APSReqRemoveEntities;
 import apshardwareoptions.ApshardwareoptionsPackage;
 
+import apshardwareoptions.EntityType;
 import apsoptions.impl.APSReqRemoveOptionImpl;
 
 import edu.kit.ipd.sdq.kamp4aps.model.basic.Entity;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
@@ -26,6 +29,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * </p>
  * <ul>
  *   <li>{@link apshardwareoptions.impl.APSReqRemoveEntitiesImpl#getEntities <em>Entities</em>}</li>
+ *   <li>{@link apshardwareoptions.impl.APSReqRemoveEntitiesImpl#getEntityType <em>Entity Type</em>}</li>
  * </ul>
  *
  * @generated
@@ -40,6 +44,25 @@ public class APSReqRemoveEntitiesImpl extends APSReqRemoveOptionImpl implements 
 	 * @ordered
 	 */
 	protected EList<Entity> entities;
+
+	/**
+	 * The default value of the '{@link #getEntityType() <em>Entity Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEntityType()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final EntityType ENTITY_TYPE_EDEFAULT = EntityType.STRUCTURE;
+	/**
+	 * The cached value of the '{@link #getEntityType() <em>Entity Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEntityType()
+	 * @generated
+	 * @ordered
+	 */
+	protected EntityType entityType = ENTITY_TYPE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -77,11 +100,34 @@ public class APSReqRemoveEntitiesImpl extends APSReqRemoveOptionImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EntityType getEntityType() {
+		return entityType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEntityType(EntityType newEntityType) {
+		EntityType oldEntityType = entityType;
+		entityType = newEntityType == null ? ENTITY_TYPE_EDEFAULT : newEntityType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ApshardwareoptionsPackage.APS_REQ_REMOVE_ENTITIES__ENTITY_TYPE, oldEntityType, entityType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ApshardwareoptionsPackage.APS_REQ_REMOVE_ENTITIES__ENTITIES:
 				return getEntities();
+			case ApshardwareoptionsPackage.APS_REQ_REMOVE_ENTITIES__ENTITY_TYPE:
+				return getEntityType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -99,6 +145,9 @@ public class APSReqRemoveEntitiesImpl extends APSReqRemoveOptionImpl implements 
 				getEntities().clear();
 				getEntities().addAll((Collection<? extends Entity>)newValue);
 				return;
+			case ApshardwareoptionsPackage.APS_REQ_REMOVE_ENTITIES__ENTITY_TYPE:
+				setEntityType((EntityType)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -114,6 +163,9 @@ public class APSReqRemoveEntitiesImpl extends APSReqRemoveOptionImpl implements 
 			case ApshardwareoptionsPackage.APS_REQ_REMOVE_ENTITIES__ENTITIES:
 				getEntities().clear();
 				return;
+			case ApshardwareoptionsPackage.APS_REQ_REMOVE_ENTITIES__ENTITY_TYPE:
+				setEntityType(ENTITY_TYPE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -128,8 +180,26 @@ public class APSReqRemoveEntitiesImpl extends APSReqRemoveOptionImpl implements 
 		switch (featureID) {
 			case ApshardwareoptionsPackage.APS_REQ_REMOVE_ENTITIES__ENTITIES:
 				return entities != null && !entities.isEmpty();
+			case ApshardwareoptionsPackage.APS_REQ_REMOVE_ENTITIES__ENTITY_TYPE:
+				return entityType != ENTITY_TYPE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (entityType: ");
+		result.append(entityType);
+		result.append(')');
+		return result.toString();
 	}
 
 } //APSReqRemoveEntitiesImpl

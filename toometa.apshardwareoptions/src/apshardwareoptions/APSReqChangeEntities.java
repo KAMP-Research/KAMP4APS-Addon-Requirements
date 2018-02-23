@@ -18,6 +18,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link apshardwareoptions.APSReqChangeEntities#getEntities <em>Entities</em>}</li>
+ *   <li>{@link apshardwareoptions.APSReqChangeEntities#getEntityType <em>Entity Type</em>}</li>
  * </ul>
  *
  * @see apshardwareoptions.ApshardwareoptionsPackage#getAPSReqChangeEntities()
@@ -40,5 +41,34 @@ public interface APSReqChangeEntities extends APSReqChangeOption {
 	 * @generated
 	 */
 	EList<Entity> getEntities();
+
+	/**
+	 * Returns the value of the '<em><b>Entity Type</b></em>' attribute.
+	 * The literals are from the enumeration {@link apshardwareoptions.EntityType}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Entity Type</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Entity Type</em>' attribute.
+	 * @see apshardwareoptions.EntityType
+	 * @see #setEntityType(EntityType)
+	 * @see apshardwareoptions.ApshardwareoptionsPackage#getAPSReqChangeEntities_EntityType()
+	 * @model required="true"
+	 * @generated
+	 */
+	EntityType getEntityType();
+
+	/**
+	 * Sets the value of the '{@link apshardwareoptions.APSReqChangeEntities#getEntityType <em>Entity Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Entity Type</em>' attribute.
+	 * @see apshardwareoptions.EntityType
+	 * @see #getEntityType()
+	 * @generated
+	 */
+	void setEntityType(EntityType value);
 
 } // APSReqChangeEntities

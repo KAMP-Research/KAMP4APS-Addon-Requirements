@@ -5,6 +5,7 @@ package apshardwareoptions.impl;
 import apshardwareoptions.*;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -56,10 +57,7 @@ public class ApshardwareoptionsFactoryImpl extends EFactoryImpl implements Apsha
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case ApshardwareoptionsPackage.APS_REQ_INTRODUCE_NEW_ENTITITES: return createAPSReqIntroduceNewEntitites();
-			case ApshardwareoptionsPackage.APS_REQ_REMOVE_ENTITIES: return createAPSReqRemoveEntities();
-			case ApshardwareoptionsPackage.APS_REQ_REPLACE_ENTITIES: return createAPSReqReplaceEntities();
-			case ApshardwareoptionsPackage.APS_REQ_CHANGE_ENTITIES: return createAPSReqChangeEntities();
+			case ApshardwareoptionsPackage.APS_REQ_HARDWARE_OPTION: return createAPSReqHardwareOption();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -70,9 +68,14 @@ public class ApshardwareoptionsFactoryImpl extends EFactoryImpl implements Apsha
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public APSReqIntroduceNewEntitites createAPSReqIntroduceNewEntitites() {
-		APSReqIntroduceNewEntititesImpl apsReqIntroduceNewEntitites = new APSReqIntroduceNewEntititesImpl();
-		return apsReqIntroduceNewEntitites;
+	@Override
+	public Object createFromString(EDataType eDataType, String initialValue) {
+		switch (eDataType.getClassifierID()) {
+			case ApshardwareoptionsPackage.ENTITY_TYPE:
+				return createEntityTypeFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
 	}
 
 	/**
@@ -80,9 +83,14 @@ public class ApshardwareoptionsFactoryImpl extends EFactoryImpl implements Apsha
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public APSReqRemoveEntities createAPSReqRemoveEntities() {
-		APSReqRemoveEntitiesImpl apsReqRemoveEntities = new APSReqRemoveEntitiesImpl();
-		return apsReqRemoveEntities;
+	@Override
+	public String convertToString(EDataType eDataType, Object instanceValue) {
+		switch (eDataType.getClassifierID()) {
+			case ApshardwareoptionsPackage.ENTITY_TYPE:
+				return convertEntityTypeToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
 	}
 
 	/**
@@ -90,9 +98,9 @@ public class ApshardwareoptionsFactoryImpl extends EFactoryImpl implements Apsha
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public APSReqReplaceEntities createAPSReqReplaceEntities() {
-		APSReqReplaceEntitiesImpl apsReqReplaceEntities = new APSReqReplaceEntitiesImpl();
-		return apsReqReplaceEntities;
+	public APSReqHardwareOption createAPSReqHardwareOption() {
+		APSReqHardwareOptionImpl apsReqHardwareOption = new APSReqHardwareOptionImpl();
+		return apsReqHardwareOption;
 	}
 
 	/**
@@ -100,9 +108,19 @@ public class ApshardwareoptionsFactoryImpl extends EFactoryImpl implements Apsha
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public APSReqChangeEntities createAPSReqChangeEntities() {
-		APSReqChangeEntitiesImpl apsReqChangeEntities = new APSReqChangeEntitiesImpl();
-		return apsReqChangeEntities;
+	public EntityType createEntityTypeFromString(EDataType eDataType, String initialValue) {
+		EntityType result = EntityType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertEntityTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**

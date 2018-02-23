@@ -5,16 +5,19 @@ package apshardwareoptions.impl;
 import apshardwareoptions.APSReqReplaceEntities;
 import apshardwareoptions.ApshardwareoptionsPackage;
 
+import apshardwareoptions.EntityType;
 import apsoptions.impl.APSReqReplaceOptionImpl;
 
 import edu.kit.ipd.sdq.kamp4aps.model.basic.Entity;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
@@ -27,6 +30,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * <ul>
  *   <li>{@link apshardwareoptions.impl.APSReqReplaceEntitiesImpl#getOldEntities <em>Old Entities</em>}</li>
  *   <li>{@link apshardwareoptions.impl.APSReqReplaceEntitiesImpl#getNewEntities <em>New Entities</em>}</li>
+ *   <li>{@link apshardwareoptions.impl.APSReqReplaceEntitiesImpl#getEntityType <em>Entity Type</em>}</li>
  * </ul>
  *
  * @generated
@@ -51,6 +55,26 @@ public class APSReqReplaceEntitiesImpl extends APSReqReplaceOptionImpl implement
 	 * @ordered
 	 */
 	protected EList<Entity> newEntities;
+
+	/**
+	 * The default value of the '{@link #getEntityType() <em>Entity Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEntityType()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final EntityType ENTITY_TYPE_EDEFAULT = EntityType.STRUCTURE;
+
+	/**
+	 * The cached value of the '{@link #getEntityType() <em>Entity Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEntityType()
+	 * @generated
+	 * @ordered
+	 */
+	protected EntityType entityType = ENTITY_TYPE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -100,6 +124,27 @@ public class APSReqReplaceEntitiesImpl extends APSReqReplaceOptionImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EntityType getEntityType() {
+		return entityType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEntityType(EntityType newEntityType) {
+		EntityType oldEntityType = entityType;
+		entityType = newEntityType == null ? ENTITY_TYPE_EDEFAULT : newEntityType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ApshardwareoptionsPackage.APS_REQ_REPLACE_ENTITIES__ENTITY_TYPE, oldEntityType, entityType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -107,6 +152,8 @@ public class APSReqReplaceEntitiesImpl extends APSReqReplaceOptionImpl implement
 				return getOldEntities();
 			case ApshardwareoptionsPackage.APS_REQ_REPLACE_ENTITIES__NEW_ENTITIES:
 				return getNewEntities();
+			case ApshardwareoptionsPackage.APS_REQ_REPLACE_ENTITIES__ENTITY_TYPE:
+				return getEntityType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -128,6 +175,9 @@ public class APSReqReplaceEntitiesImpl extends APSReqReplaceOptionImpl implement
 				getNewEntities().clear();
 				getNewEntities().addAll((Collection<? extends Entity>)newValue);
 				return;
+			case ApshardwareoptionsPackage.APS_REQ_REPLACE_ENTITIES__ENTITY_TYPE:
+				setEntityType((EntityType)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -146,6 +196,9 @@ public class APSReqReplaceEntitiesImpl extends APSReqReplaceOptionImpl implement
 			case ApshardwareoptionsPackage.APS_REQ_REPLACE_ENTITIES__NEW_ENTITIES:
 				getNewEntities().clear();
 				return;
+			case ApshardwareoptionsPackage.APS_REQ_REPLACE_ENTITIES__ENTITY_TYPE:
+				setEntityType(ENTITY_TYPE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -162,8 +215,26 @@ public class APSReqReplaceEntitiesImpl extends APSReqReplaceOptionImpl implement
 				return oldEntities != null && !oldEntities.isEmpty();
 			case ApshardwareoptionsPackage.APS_REQ_REPLACE_ENTITIES__NEW_ENTITIES:
 				return newEntities != null && !newEntities.isEmpty();
+			case ApshardwareoptionsPackage.APS_REQ_REPLACE_ENTITIES__ENTITY_TYPE:
+				return entityType != ENTITY_TYPE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (entityType: ");
+		result.append(entityType);
+		result.append(')');
+		return result.toString();
 	}
 
 } //APSReqReplaceEntitiesImpl

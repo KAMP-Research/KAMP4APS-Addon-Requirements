@@ -3,6 +3,8 @@
 package apsoptions.provider;
 
 
+import apsoptions.APSReqReplaceOption;
+import apsoptions.OptionType;
 import java.util.Collection;
 import java.util.List;
 
@@ -51,7 +53,11 @@ public class APSReqReplaceOptionItemProvider extends APSReqOptionItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_APSReqReplaceOption_type");
+		OptionType labelValue = ((APSReqReplaceOption)object).getOptionType();
+		String label = labelValue == null ? null : labelValue.toString();
+		return label == null || label.length() == 0 ?
+			getString("_UI_APSReqReplaceOption_type") :
+			getString("_UI_APSReqReplaceOption_type") + " " + label;
 	}
 	
 

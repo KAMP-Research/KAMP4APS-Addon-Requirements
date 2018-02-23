@@ -84,95 +84,26 @@ public class ApshardwareoptionsItemProviderAdapterFactory extends Apshardwareopt
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link apshardwareoptions.APSReqIntroduceNewEntitites} instances.
+	 * This keeps track of the one adapter used for all {@link apshardwareoptions.APSReqHardwareOption} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected APSReqIntroduceNewEntititesItemProvider apsReqIntroduceNewEntititesItemProvider;
+	protected APSReqHardwareOptionItemProvider apsReqHardwareOptionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link apshardwareoptions.APSReqIntroduceNewEntitites}.
+	 * This creates an adapter for a {@link apshardwareoptions.APSReqHardwareOption}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createAPSReqIntroduceNewEntititesAdapter() {
-		if (apsReqIntroduceNewEntititesItemProvider == null) {
-			apsReqIntroduceNewEntititesItemProvider = new APSReqIntroduceNewEntititesItemProvider(this);
+	public Adapter createAPSReqHardwareOptionAdapter() {
+		if (apsReqHardwareOptionItemProvider == null) {
+			apsReqHardwareOptionItemProvider = new APSReqHardwareOptionItemProvider(this);
 		}
 
-		return apsReqIntroduceNewEntititesItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link apshardwareoptions.APSReqRemoveEntities} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected APSReqRemoveEntitiesItemProvider apsReqRemoveEntitiesItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link apshardwareoptions.APSReqRemoveEntities}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createAPSReqRemoveEntitiesAdapter() {
-		if (apsReqRemoveEntitiesItemProvider == null) {
-			apsReqRemoveEntitiesItemProvider = new APSReqRemoveEntitiesItemProvider(this);
-		}
-
-		return apsReqRemoveEntitiesItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link apshardwareoptions.APSReqReplaceEntities} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected APSReqReplaceEntitiesItemProvider apsReqReplaceEntitiesItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link apshardwareoptions.APSReqReplaceEntities}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createAPSReqReplaceEntitiesAdapter() {
-		if (apsReqReplaceEntitiesItemProvider == null) {
-			apsReqReplaceEntitiesItemProvider = new APSReqReplaceEntitiesItemProvider(this);
-		}
-
-		return apsReqReplaceEntitiesItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link apshardwareoptions.APSReqChangeEntities} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected APSReqChangeEntitiesItemProvider apsReqChangeEntitiesItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link apshardwareoptions.APSReqChangeEntities}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createAPSReqChangeEntitiesAdapter() {
-		if (apsReqChangeEntitiesItemProvider == null) {
-			apsReqChangeEntitiesItemProvider = new APSReqChangeEntitiesItemProvider(this);
-		}
-
-		return apsReqChangeEntitiesItemProvider;
+		return apsReqHardwareOptionItemProvider;
 	}
 
 	/**
@@ -274,10 +205,7 @@ public class ApshardwareoptionsItemProviderAdapterFactory extends Apshardwareopt
 	 * @generated
 	 */
 	public void dispose() {
-		if (apsReqIntroduceNewEntititesItemProvider != null) apsReqIntroduceNewEntititesItemProvider.dispose();
-		if (apsReqRemoveEntitiesItemProvider != null) apsReqRemoveEntitiesItemProvider.dispose();
-		if (apsReqReplaceEntitiesItemProvider != null) apsReqReplaceEntitiesItemProvider.dispose();
-		if (apsReqChangeEntitiesItemProvider != null) apsReqChangeEntitiesItemProvider.dispose();
+		if (apsReqHardwareOptionItemProvider != null) apsReqHardwareOptionItemProvider.dispose();
 	}
 
 	/**
@@ -330,22 +258,7 @@ public class ApshardwareoptionsItemProviderAdapterFactory extends Apshardwareopt
 				newChildDescriptors.add
 					(createChildParameter
 						(ApsoptionsPackage.Literals.APS_REQ_OPTION_REPOSITORY__APSREQOPTION,
-						 ApshardwareoptionsFactory.eINSTANCE.createAPSReqIntroduceNewEntitites()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ApsoptionsPackage.Literals.APS_REQ_OPTION_REPOSITORY__APSREQOPTION,
-						 ApshardwareoptionsFactory.eINSTANCE.createAPSReqRemoveEntities()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ApsoptionsPackage.Literals.APS_REQ_OPTION_REPOSITORY__APSREQOPTION,
-						 ApshardwareoptionsFactory.eINSTANCE.createAPSReqReplaceEntities()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(ApsoptionsPackage.Literals.APS_REQ_OPTION_REPOSITORY__APSREQOPTION,
-						 ApshardwareoptionsFactory.eINSTANCE.createAPSReqChangeEntities()));
+						 ApshardwareoptionsFactory.eINSTANCE.createAPSReqHardwareOption()));
 
 				return null;
 			}
@@ -431,22 +344,7 @@ public class ApshardwareoptionsItemProviderAdapterFactory extends Apshardwareopt
 				newChildDescriptors.add
 					(createChildParameter
 						(DimensiontypesPackage.Literals.DIMENSION_TYPE_SCALE__SCALE_ELEMENTS,
-						 ApshardwareoptionsFactory.eINSTANCE.createAPSReqIntroduceNewEntitites()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(DimensiontypesPackage.Literals.DIMENSION_TYPE_SCALE__SCALE_ELEMENTS,
-						 ApshardwareoptionsFactory.eINSTANCE.createAPSReqRemoveEntities()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(DimensiontypesPackage.Literals.DIMENSION_TYPE_SCALE__SCALE_ELEMENTS,
-						 ApshardwareoptionsFactory.eINSTANCE.createAPSReqReplaceEntities()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(DimensiontypesPackage.Literals.DIMENSION_TYPE_SCALE__SCALE_ELEMENTS,
-						 ApshardwareoptionsFactory.eINSTANCE.createAPSReqChangeEntities()));
+						 ApshardwareoptionsFactory.eINSTANCE.createAPSReqHardwareOption()));
 
 				return null;
 			}

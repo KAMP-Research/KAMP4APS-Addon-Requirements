@@ -3,12 +3,7 @@
 package apshardwareoptions.util;
 
 import apshardwareoptions.*;
-
-import apsoptions.APSReqChangeOption;
-import apsoptions.APSReqIntrodueNewOption;
 import apsoptions.APSReqOption;
-import apsoptions.APSReqRemoveOption;
-import apsoptions.APSReqReplaceOption;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -71,35 +66,10 @@ public class ApshardwareoptionsSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case ApshardwareoptionsPackage.APS_REQ_INTRODUCE_NEW_ENTITITES: {
-				APSReqIntroduceNewEntitites apsReqIntroduceNewEntitites = (APSReqIntroduceNewEntitites)theEObject;
-				T result = caseAPSReqIntroduceNewEntitites(apsReqIntroduceNewEntitites);
-				if (result == null) result = caseAPSReqIntrodueNewOption(apsReqIntroduceNewEntitites);
-				if (result == null) result = caseAPSReqOption(apsReqIntroduceNewEntitites);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ApshardwareoptionsPackage.APS_REQ_REMOVE_ENTITIES: {
-				APSReqRemoveEntities apsReqRemoveEntities = (APSReqRemoveEntities)theEObject;
-				T result = caseAPSReqRemoveEntities(apsReqRemoveEntities);
-				if (result == null) result = caseAPSReqRemoveOption(apsReqRemoveEntities);
-				if (result == null) result = caseAPSReqOption(apsReqRemoveEntities);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ApshardwareoptionsPackage.APS_REQ_REPLACE_ENTITIES: {
-				APSReqReplaceEntities apsReqReplaceEntities = (APSReqReplaceEntities)theEObject;
-				T result = caseAPSReqReplaceEntities(apsReqReplaceEntities);
-				if (result == null) result = caseAPSReqReplaceOption(apsReqReplaceEntities);
-				if (result == null) result = caseAPSReqOption(apsReqReplaceEntities);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ApshardwareoptionsPackage.APS_REQ_CHANGE_ENTITIES: {
-				APSReqChangeEntities apsReqChangeEntities = (APSReqChangeEntities)theEObject;
-				T result = caseAPSReqChangeEntities(apsReqChangeEntities);
-				if (result == null) result = caseAPSReqChangeOption(apsReqChangeEntities);
-				if (result == null) result = caseAPSReqOption(apsReqChangeEntities);
+			case ApshardwareoptionsPackage.APS_REQ_HARDWARE_OPTION: {
+				APSReqHardwareOption apsReqHardwareOption = (APSReqHardwareOption)theEObject;
+				T result = caseAPSReqHardwareOption(apsReqHardwareOption);
+				if (result == null) result = caseAPSReqOption(apsReqHardwareOption);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -108,62 +78,17 @@ public class ApshardwareoptionsSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>APS Req Introduce New Entitites</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>APS Req Hardware Option</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>APS Req Introduce New Entitites</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>APS Req Hardware Option</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseAPSReqIntroduceNewEntitites(APSReqIntroduceNewEntitites object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>APS Req Remove Entities</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>APS Req Remove Entities</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseAPSReqRemoveEntities(APSReqRemoveEntities object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>APS Req Replace Entities</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>APS Req Replace Entities</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseAPSReqReplaceEntities(APSReqReplaceEntities object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>APS Req Change Entities</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>APS Req Change Entities</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseAPSReqChangeEntities(APSReqChangeEntities object) {
+	public T caseAPSReqHardwareOption(APSReqHardwareOption object) {
 		return null;
 	}
 
@@ -179,66 +104,6 @@ public class ApshardwareoptionsSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseAPSReqOption(APSReqOption object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>APS Req Introdue New Option</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>APS Req Introdue New Option</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseAPSReqIntrodueNewOption(APSReqIntrodueNewOption object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>APS Req Remove Option</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>APS Req Remove Option</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseAPSReqRemoveOption(APSReqRemoveOption object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>APS Req Replace Option</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>APS Req Replace Option</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseAPSReqReplaceOption(APSReqReplaceOption object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>APS Req Change Option</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>APS Req Change Option</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseAPSReqChangeOption(APSReqChangeOption object) {
 		return null;
 	}
 

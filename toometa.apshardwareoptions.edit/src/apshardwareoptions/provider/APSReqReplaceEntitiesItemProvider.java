@@ -3,8 +3,10 @@
 package apshardwareoptions.provider;
 
 
+import apshardwareoptions.APSReqReplaceEntities;
 import apshardwareoptions.ApshardwareoptionsPackage;
 
+import apshardwareoptions.EntityType;
 import apsoptions.provider.APSReqReplaceOptionItemProvider;
 
 import java.util.Collection;
@@ -17,6 +19,8 @@ import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
  * This is the item provider adapter for a {@link apshardwareoptions.APSReqReplaceEntities} object.
@@ -48,6 +52,7 @@ public class APSReqReplaceEntitiesItemProvider extends APSReqReplaceOptionItemPr
 
 			addOldEntitiesPropertyDescriptor(object);
 			addNewEntitiesPropertyDescriptor(object);
+			addEntityTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -97,6 +102,28 @@ public class APSReqReplaceEntitiesItemProvider extends APSReqReplaceOptionItemPr
 	}
 
 	/**
+	 * This adds a property descriptor for the Entity Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addEntityTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_APSReqReplaceEntities_entityType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_APSReqReplaceEntities_entityType_feature", "_UI_APSReqReplaceEntities_type"),
+				 ApshardwareoptionsPackage.Literals.APS_REQ_REPLACE_ENTITIES__ENTITY_TYPE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns APSReqReplaceEntities.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -115,7 +142,11 @@ public class APSReqReplaceEntitiesItemProvider extends APSReqReplaceOptionItemPr
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_APSReqReplaceEntities_type");
+		EntityType labelValue = ((APSReqReplaceEntities)object).getEntityType();
+		String label = labelValue == null ? null : labelValue.toString();
+		return label == null || label.length() == 0 ?
+			getString("_UI_APSReqReplaceEntities_type") :
+			getString("_UI_APSReqReplaceEntities_type") + " " + label;
 	}
 	
 
@@ -129,6 +160,12 @@ public class APSReqReplaceEntitiesItemProvider extends APSReqReplaceOptionItemPr
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(APSReqReplaceEntities.class)) {
+			case ApshardwareoptionsPackage.APS_REQ_REPLACE_ENTITIES__ENTITY_TYPE:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 
