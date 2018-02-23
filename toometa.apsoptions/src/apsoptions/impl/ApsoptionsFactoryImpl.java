@@ -56,7 +56,7 @@ public class ApsoptionsFactoryImpl extends EFactoryImpl implements ApsoptionsFac
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case ApsoptionsPackage.APS_REQ_OPTION: return createAPSReqOption();
+			case ApsoptionsPackage.APS_REQ_OPTION_CONTAINER: return createAPSReqOptionContainer();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -67,9 +67,9 @@ public class ApsoptionsFactoryImpl extends EFactoryImpl implements ApsoptionsFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public APSReqOption createAPSReqOption() {
-		APSReqOptionImpl apsReqOption = new APSReqOptionImpl();
-		return apsReqOption;
+	public APSReqOptionContainer createAPSReqOptionContainer() {
+		APSReqOptionContainerImpl apsReqOptionContainer = new APSReqOptionContainerImpl();
+		return apsReqOptionContainer;
 	}
 
 	/**

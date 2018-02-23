@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="apsoptions" nsURI="http://www.example.org/apsoptions" nsPrefix="apsoptions">
-  <eClassifiers xsi:type="ecore:EClass" name="APSReqOption" eSuperTypes="../../toometa.archoptions/model/archoptions.ecore#//ArchOption"/>
+  <eClassifiers xsi:type="ecore:EClass" name="APSReqIntrodueNewOption" abstract="true"
+      eSuperTypes="#//APSReqOption"/>
+  <eClassifiers xsi:type="ecore:EClass" name="APSReqRemoveOption" abstract="true"
+      eSuperTypes="#//APSReqOption"/>
+  <eClassifiers xsi:type="ecore:EClass" name="APSReqReplaceOption" abstract="true"
+      eSuperTypes="#//APSReqOption"/>
+  <eClassifiers xsi:type="ecore:EClass" name="APSReqChangeOption" abstract="true"
+      eSuperTypes="#//APSReqOption"/>
+  <eClassifiers xsi:type="ecore:EClass" name="APSReqOption" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="option" eType="ecore:EClass ../../toometa.options/model/options.ecore#//Option"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="repository" lowerBound="1"
+        eType="#//APSReqOptionContainer" eOpposite="#//APSReqOptionContainer/apsreqoption"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="APSReqOptionContainer">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="apsreqoption" upperBound="-1"
+        eType="#//APSReqOption" containment="true" eOpposite="#//APSReqOption/repository"/>
+  </eClassifiers>
 </ecore:EPackage>

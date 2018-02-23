@@ -2,13 +2,12 @@
  */
 package apsoptions.tests;
 
-import apsoptions.APSReqOption;
+import apsoptions.APSReqOptionContainer;
 import apsoptions.ApsoptionsFactory;
 import apsoptions.ApsoptionsPackage;
 
 import java.io.File;
 import java.io.IOException;
-
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.URI;
 
@@ -60,7 +59,7 @@ public class ApsoptionsExample {
 			System.out.println("Enter a list of file paths or URIs that have content like this:");
 			try {
 				Resource resource = resourceSet.createResource(URI.createURI("http:///My.apsoptions"));
-				APSReqOption root = ApsoptionsFactory.eINSTANCE.createAPSReqOption();
+				APSReqOptionContainer root = ApsoptionsFactory.eINSTANCE.createAPSReqOptionContainer();
 				resource.getContents().add(root);
 				resource.save(System.out, null);
 			}

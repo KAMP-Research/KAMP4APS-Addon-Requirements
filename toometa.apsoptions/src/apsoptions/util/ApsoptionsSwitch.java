@@ -3,30 +3,10 @@
 package apsoptions.util;
 
 import apsoptions.*;
-
-import archoptions.ArchOption;
-
-import de.uka.ipd.sdq.identifier.Identifier;
-
-import options.Option;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
-
-import relations.AlternativeObject;
-import relations.ConflictObject;
-import relations.CouldResolveObject;
-import relations.DependencyObject;
-import relations.DuplicationObject;
-import relations.ParentalObject;
-import relations.RelationObject;
-import relations.ResolveObject;
-import relations.SelectionObject;
-import relations.StakeholderObject;
-import relations.TraceableObject;
-import relations.TriggerObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -85,29 +65,108 @@ public class ApsoptionsSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
+			case ApsoptionsPackage.APS_REQ_INTRODUE_NEW_OPTION: {
+				APSReqIntrodueNewOption apsReqIntrodueNewOption = (APSReqIntrodueNewOption)theEObject;
+				T result = caseAPSReqIntrodueNewOption(apsReqIntrodueNewOption);
+				if (result == null) result = caseAPSReqOption(apsReqIntrodueNewOption);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ApsoptionsPackage.APS_REQ_REMOVE_OPTION: {
+				APSReqRemoveOption apsReqRemoveOption = (APSReqRemoveOption)theEObject;
+				T result = caseAPSReqRemoveOption(apsReqRemoveOption);
+				if (result == null) result = caseAPSReqOption(apsReqRemoveOption);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ApsoptionsPackage.APS_REQ_REPLACE_OPTION: {
+				APSReqReplaceOption apsReqReplaceOption = (APSReqReplaceOption)theEObject;
+				T result = caseAPSReqReplaceOption(apsReqReplaceOption);
+				if (result == null) result = caseAPSReqOption(apsReqReplaceOption);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ApsoptionsPackage.APS_REQ_CHANGE_OPTION: {
+				APSReqChangeOption apsReqChangeOption = (APSReqChangeOption)theEObject;
+				T result = caseAPSReqChangeOption(apsReqChangeOption);
+				if (result == null) result = caseAPSReqOption(apsReqChangeOption);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case ApsoptionsPackage.APS_REQ_OPTION: {
 				APSReqOption apsReqOption = (APSReqOption)theEObject;
 				T result = caseAPSReqOption(apsReqOption);
-				if (result == null) result = caseArchOption(apsReqOption);
-				if (result == null) result = caseOption(apsReqOption);
-				if (result == null) result = caseTraceableObject(apsReqOption);
-				if (result == null) result = caseRelationObject(apsReqOption);
-				if (result == null) result = caseConflictObject(apsReqOption);
-				if (result == null) result = caseDuplicationObject(apsReqOption);
-				if (result == null) result = caseDependencyObject(apsReqOption);
-				if (result == null) result = caseParentalObject(apsReqOption);
-				if (result == null) result = caseTriggerObject(apsReqOption);
-				if (result == null) result = caseResolveObject(apsReqOption);
-				if (result == null) result = caseAlternativeObject(apsReqOption);
-				if (result == null) result = caseCouldResolveObject(apsReqOption);
-				if (result == null) result = caseStakeholderObject(apsReqOption);
-				if (result == null) result = caseSelectionObject(apsReqOption);
-				if (result == null) result = caseIdentifier(apsReqOption);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ApsoptionsPackage.APS_REQ_OPTION_CONTAINER: {
+				APSReqOptionContainer apsReqOptionContainer = (APSReqOptionContainer)theEObject;
+				T result = caseAPSReqOptionContainer(apsReqOptionContainer);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			default: return defaultCase(theEObject);
 		}
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>APS Req Introdue New Option</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>APS Req Introdue New Option</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAPSReqIntrodueNewOption(APSReqIntrodueNewOption object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>APS Req Remove Option</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>APS Req Remove Option</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAPSReqRemoveOption(APSReqRemoveOption object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>APS Req Replace Option</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>APS Req Replace Option</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAPSReqReplaceOption(APSReqReplaceOption object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>APS Req Change Option</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>APS Req Change Option</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAPSReqChangeOption(APSReqChangeOption object) {
+		return null;
 	}
 
 	/**
@@ -126,227 +185,17 @@ public class ApsoptionsSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Identifier</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>APS Req Option Container</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Identifier</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>APS Req Option Container</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseIdentifier(Identifier object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Relation Object</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Relation Object</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseRelationObject(RelationObject object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Conflict Object</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Conflict Object</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseConflictObject(ConflictObject object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Duplication Object</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Duplication Object</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseDuplicationObject(DuplicationObject object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Dependency Object</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Dependency Object</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseDependencyObject(DependencyObject object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Parental Object</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Parental Object</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseParentalObject(ParentalObject object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Trigger Object</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Trigger Object</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseTriggerObject(TriggerObject object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Resolve Object</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Resolve Object</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseResolveObject(ResolveObject object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Alternative Object</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Alternative Object</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseAlternativeObject(AlternativeObject object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Could Resolve Object</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Could Resolve Object</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseCouldResolveObject(CouldResolveObject object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Stakeholder Object</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Stakeholder Object</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseStakeholderObject(StakeholderObject object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Selection Object</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Selection Object</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseSelectionObject(SelectionObject object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Traceable Object</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Traceable Object</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseTraceableObject(TraceableObject object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Option</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Option</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseOption(Option object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Arch Option</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Arch Option</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseArchOption(ArchOption object) {
+	public T caseAPSReqOptionContainer(APSReqOptionContainer object) {
 		return null;
 	}
 

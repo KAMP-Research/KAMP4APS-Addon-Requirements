@@ -2,69 +2,22 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="apshardwareoptions" nsURI="http://www.example.org/apshardwareoptions"
     nsPrefix="apshardwareoptions">
-  <eClassifiers xsi:type="ecore:EClass" name="APSReqHardwareOption" eSuperTypes="../../toometa.apsoptions/model/apsoptions.ecore#//APSReqOption"/>
-  <eClassifiers xsi:type="ecore:EClass" name="APSReqStructureHardwareOption" eSuperTypes="#//APSReqHardwareOption"/>
-  <eClassifiers xsi:type="ecore:EClass" name="APSReqIntroduceNewStructureOption" eSuperTypes="#//APSReqStructureHardwareOption">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="structures" upperBound="-1"
-        eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4aps.aps/model/aPS.ecore#//StructureRepository/Structure"/>
+  <eClassifiers xsi:type="ecore:EClass" name="APSReqIntroduceNewEntitites" eSuperTypes="../../toometa.apsoptions/model/apsoptions.ecore#//APSReqIntrodueNewOption">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entities" upperBound="-1"
+        eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4aps.basic/model/basic.ecore#//Entity"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="APSReqChangeStructureOption" eSuperTypes="#//APSReqStructureHardwareOption">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="structures" upperBound="-1"
-        eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4aps.aps/model/aPS.ecore#//StructureRepository/Structure"/>
+  <eClassifiers xsi:type="ecore:EClass" name="APSReqRemoveEntities" eSuperTypes="../../toometa.apsoptions/model/apsoptions.ecore#//APSReqRemoveOption">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entities" upperBound="-1"
+        eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4aps.basic/model/basic.ecore#//Entity"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="APSReqRemoveStructureOption" eSuperTypes="#//APSReqStructureHardwareOption">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="structures" upperBound="-1"
-        eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4aps.aps/model/aPS.ecore#//StructureRepository/Structure"/>
+  <eClassifiers xsi:type="ecore:EClass" name="APSReqReplaceEntities" eSuperTypes="../../toometa.apsoptions/model/apsoptions.ecore#//APSReqReplaceOption">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="oldEntities" upperBound="-1"
+        eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4aps.basic/model/basic.ecore#//Entity"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="newEntities" upperBound="-1"
+        eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4aps.basic/model/basic.ecore#//Entity"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="APSReqReplaceStructureOption" eSuperTypes="#//APSReqStructureHardwareOption">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="oldStructure" eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4aps.aps/model/aPS.ecore#//StructureRepository/Structure"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="newStructure" eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4aps.aps/model/aPS.ecore#//StructureRepository/Structure"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="APSReqModuleHardwareOption" eSuperTypes="#//APSReqHardwareOption"/>
-  <eClassifiers xsi:type="ecore:EClass" name="APSReqIntroduceNewModuleOption" eSuperTypes="#//APSReqModuleHardwareOption">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="modules" upperBound="-1"
-        eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4aps.aps/model/aPS.ecore#//ModuleRepository/Module"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="APSReqRemoveModuleOption" eSuperTypes="#//APSReqModuleHardwareOption">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="modules" upperBound="-1"
-        eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4aps.aps/model/aPS.ecore#//ModuleRepository/Module"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="APSReqChangeModuleOption" eSuperTypes="#//APSReqModuleHardwareOption">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="modules" upperBound="-1"
-        eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4aps.aps/model/aPS.ecore#//ModuleRepository/Module"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="APSReqReplaceModuleOption" eSuperTypes="#//APSReqModuleHardwareOption">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="oldModule" eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4aps.aps/model/aPS.ecore#//ModuleRepository/Module"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="newModule" eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4aps.aps/model/aPS.ecore#//ModuleRepository/Module"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="APSReqComponentHardwareOption" eSuperTypes="#//APSReqHardwareOption"/>
-  <eClassifiers xsi:type="ecore:EClass" name="APSReqIntroduceNewComponentOption" eSuperTypes="#//APSReqComponentHardwareOption">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="components" upperBound="-1"
-        eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4aps.aps/model/aPS.ecore#//ComponentRepository/Component"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="APSReqRemoveComponentOption" eSuperTypes="#//APSReqComponentHardwareOption">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="components" upperBound="-1"
-        eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4aps.aps/model/aPS.ecore#//ComponentRepository/Component"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="APSReqReplaceComponentOption" eSuperTypes="#//APSReqComponentHardwareOption">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="oldComponent" eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4aps.aps/model/aPS.ecore#//ComponentRepository/Component"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="newComponent" eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4aps.aps/model/aPS.ecore#//ComponentRepository/Component"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="APSReqInterfaceHardwareOption" eSuperTypes="#//APSReqHardwareOption"/>
-  <eClassifiers xsi:type="ecore:EClass" name="APSReqIntroduceNewInterfaceOption" eSuperTypes="#//APSReqInterfaceHardwareOption">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="interfaces" upperBound="-1"
-        eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4aps.aps/model/aPS.ecore#//InterfaceRepository/Interface"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="APSReqChangeInterfaceOption" eSuperTypes="#//APSReqInterfaceHardwareOption">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="interfaces" upperBound="-1"
-        eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4aps.aps/model/aPS.ecore#//InterfaceRepository/Interface"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="APSReqReplaceInterfaceOption" eSuperTypes="#//APSReqInterfaceHardwareOption">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="oldInterface" eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4aps.aps/model/aPS.ecore#//InterfaceRepository/Interface"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="newInterface" eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4aps.aps/model/aPS.ecore#//InterfaceRepository/Interface"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="APSReqRemoveInterfaceOption" eSuperTypes="#//APSReqInterfaceHardwareOption">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="interfaces" upperBound="-1"
-        eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4aps.aps/model/aPS.ecore#//InterfaceRepository/Interface"/>
+  <eClassifiers xsi:type="ecore:EClass" name="APSReqChangeEntities" eSuperTypes="../../toometa.apsoptions/model/apsoptions.ecore#//APSReqChangeOption">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entities" upperBound="-1"
+        eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4aps.basic/model/basic.ecore#//Entity"/>
   </eClassifiers>
 </ecore:EPackage>

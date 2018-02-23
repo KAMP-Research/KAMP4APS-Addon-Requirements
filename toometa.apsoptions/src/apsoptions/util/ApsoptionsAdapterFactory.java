@@ -3,32 +3,12 @@
 package apsoptions.util;
 
 import apsoptions.*;
-
-import archoptions.ArchOption;
-
-import de.uka.ipd.sdq.identifier.Identifier;
-
-import options.Option;
-
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
-
-import relations.AlternativeObject;
-import relations.ConflictObject;
-import relations.CouldResolveObject;
-import relations.DependencyObject;
-import relations.DuplicationObject;
-import relations.ParentalObject;
-import relations.RelationObject;
-import relations.ResolveObject;
-import relations.SelectionObject;
-import relations.StakeholderObject;
-import relations.TraceableObject;
-import relations.TriggerObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -87,68 +67,28 @@ public class ApsoptionsAdapterFactory extends AdapterFactoryImpl {
 	protected ApsoptionsSwitch<Adapter> modelSwitch =
 		new ApsoptionsSwitch<Adapter>() {
 			@Override
+			public Adapter caseAPSReqIntrodueNewOption(APSReqIntrodueNewOption object) {
+				return createAPSReqIntrodueNewOptionAdapter();
+			}
+			@Override
+			public Adapter caseAPSReqRemoveOption(APSReqRemoveOption object) {
+				return createAPSReqRemoveOptionAdapter();
+			}
+			@Override
+			public Adapter caseAPSReqReplaceOption(APSReqReplaceOption object) {
+				return createAPSReqReplaceOptionAdapter();
+			}
+			@Override
+			public Adapter caseAPSReqChangeOption(APSReqChangeOption object) {
+				return createAPSReqChangeOptionAdapter();
+			}
+			@Override
 			public Adapter caseAPSReqOption(APSReqOption object) {
 				return createAPSReqOptionAdapter();
 			}
 			@Override
-			public Adapter caseIdentifier(Identifier object) {
-				return createIdentifierAdapter();
-			}
-			@Override
-			public Adapter caseRelationObject(RelationObject object) {
-				return createRelationObjectAdapter();
-			}
-			@Override
-			public Adapter caseConflictObject(ConflictObject object) {
-				return createConflictObjectAdapter();
-			}
-			@Override
-			public Adapter caseDuplicationObject(DuplicationObject object) {
-				return createDuplicationObjectAdapter();
-			}
-			@Override
-			public Adapter caseDependencyObject(DependencyObject object) {
-				return createDependencyObjectAdapter();
-			}
-			@Override
-			public Adapter caseParentalObject(ParentalObject object) {
-				return createParentalObjectAdapter();
-			}
-			@Override
-			public Adapter caseTriggerObject(TriggerObject object) {
-				return createTriggerObjectAdapter();
-			}
-			@Override
-			public Adapter caseResolveObject(ResolveObject object) {
-				return createResolveObjectAdapter();
-			}
-			@Override
-			public Adapter caseAlternativeObject(AlternativeObject object) {
-				return createAlternativeObjectAdapter();
-			}
-			@Override
-			public Adapter caseCouldResolveObject(CouldResolveObject object) {
-				return createCouldResolveObjectAdapter();
-			}
-			@Override
-			public Adapter caseStakeholderObject(StakeholderObject object) {
-				return createStakeholderObjectAdapter();
-			}
-			@Override
-			public Adapter caseSelectionObject(SelectionObject object) {
-				return createSelectionObjectAdapter();
-			}
-			@Override
-			public Adapter caseTraceableObject(TraceableObject object) {
-				return createTraceableObjectAdapter();
-			}
-			@Override
-			public Adapter caseOption(Option object) {
-				return createOptionAdapter();
-			}
-			@Override
-			public Adapter caseArchOption(ArchOption object) {
-				return createArchOptionAdapter();
+			public Adapter caseAPSReqOptionContainer(APSReqOptionContainer object) {
+				return createAPSReqOptionContainerAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -171,6 +111,62 @@ public class ApsoptionsAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
+	 * Creates a new adapter for an object of class '{@link apsoptions.APSReqIntrodueNewOption <em>APS Req Introdue New Option</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see apsoptions.APSReqIntrodueNewOption
+	 * @generated
+	 */
+	public Adapter createAPSReqIntrodueNewOptionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link apsoptions.APSReqRemoveOption <em>APS Req Remove Option</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see apsoptions.APSReqRemoveOption
+	 * @generated
+	 */
+	public Adapter createAPSReqRemoveOptionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link apsoptions.APSReqReplaceOption <em>APS Req Replace Option</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see apsoptions.APSReqReplaceOption
+	 * @generated
+	 */
+	public Adapter createAPSReqReplaceOptionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link apsoptions.APSReqChangeOption <em>APS Req Change Option</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see apsoptions.APSReqChangeOption
+	 * @generated
+	 */
+	public Adapter createAPSReqChangeOptionAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link apsoptions.APSReqOption <em>APS Req Option</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -185,212 +181,16 @@ public class ApsoptionsAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.uka.ipd.sdq.identifier.Identifier <em>Identifier</em>}'.
+	 * Creates a new adapter for an object of class '{@link apsoptions.APSReqOptionContainer <em>APS Req Option Container</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.uka.ipd.sdq.identifier.Identifier
+	 * @see apsoptions.APSReqOptionContainer
 	 * @generated
 	 */
-	public Adapter createIdentifierAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link relations.RelationObject <em>Relation Object</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see relations.RelationObject
-	 * @generated
-	 */
-	public Adapter createRelationObjectAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link relations.ConflictObject <em>Conflict Object</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see relations.ConflictObject
-	 * @generated
-	 */
-	public Adapter createConflictObjectAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link relations.DuplicationObject <em>Duplication Object</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see relations.DuplicationObject
-	 * @generated
-	 */
-	public Adapter createDuplicationObjectAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link relations.DependencyObject <em>Dependency Object</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see relations.DependencyObject
-	 * @generated
-	 */
-	public Adapter createDependencyObjectAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link relations.ParentalObject <em>Parental Object</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see relations.ParentalObject
-	 * @generated
-	 */
-	public Adapter createParentalObjectAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link relations.TriggerObject <em>Trigger Object</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see relations.TriggerObject
-	 * @generated
-	 */
-	public Adapter createTriggerObjectAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link relations.ResolveObject <em>Resolve Object</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see relations.ResolveObject
-	 * @generated
-	 */
-	public Adapter createResolveObjectAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link relations.AlternativeObject <em>Alternative Object</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see relations.AlternativeObject
-	 * @generated
-	 */
-	public Adapter createAlternativeObjectAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link relations.CouldResolveObject <em>Could Resolve Object</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see relations.CouldResolveObject
-	 * @generated
-	 */
-	public Adapter createCouldResolveObjectAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link relations.StakeholderObject <em>Stakeholder Object</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see relations.StakeholderObject
-	 * @generated
-	 */
-	public Adapter createStakeholderObjectAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link relations.SelectionObject <em>Selection Object</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see relations.SelectionObject
-	 * @generated
-	 */
-	public Adapter createSelectionObjectAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link relations.TraceableObject <em>Traceable Object</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see relations.TraceableObject
-	 * @generated
-	 */
-	public Adapter createTraceableObjectAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link options.Option <em>Option</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see options.Option
-	 * @generated
-	 */
-	public Adapter createOptionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link archoptions.ArchOption <em>Arch Option</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see archoptions.ArchOption
-	 * @generated
-	 */
-	public Adapter createArchOptionAdapter() {
+	public Adapter createAPSReqOptionContainerAdapter() {
 		return null;
 	}
 

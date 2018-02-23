@@ -3,11 +3,7 @@
 package apsoptions.tests;
 
 import apsoptions.APSReqOption;
-import apsoptions.ApsoptionsFactory;
-
 import junit.framework.TestCase;
-
-import junit.textui.TestRunner;
 
 /**
  * <!-- begin-user-doc -->
@@ -15,7 +11,7 @@ import junit.textui.TestRunner;
  * <!-- end-user-doc -->
  * @generated
  */
-public class APSReqOptionTest extends TestCase {
+public abstract class APSReqOptionTest extends TestCase {
 
 	/**
 	 * The fixture for this APS Req Option test case.
@@ -24,15 +20,6 @@ public class APSReqOptionTest extends TestCase {
 	 * @generated
 	 */
 	protected APSReqOption fixture = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static void main(String[] args) {
-		TestRunner.run(APSReqOptionTest.class);
-	}
 
 	/**
 	 * Constructs a new APS Req Option test case with the given name.
@@ -62,28 +49,6 @@ public class APSReqOptionTest extends TestCase {
 	 */
 	protected APSReqOption getFixture() {
 		return fixture;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see junit.framework.TestCase#setUp()
-	 * @generated
-	 */
-	@Override
-	protected void setUp() throws Exception {
-		setFixture(ApsoptionsFactory.eINSTANCE.createAPSReqOption());
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see junit.framework.TestCase#tearDown()
-	 * @generated
-	 */
-	@Override
-	protected void tearDown() throws Exception {
-		setFixture(null);
 	}
 
 } //APSReqOptionTest

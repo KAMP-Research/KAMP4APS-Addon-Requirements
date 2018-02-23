@@ -2,15 +2,22 @@
  */
 package apsoptions.impl;
 
+import apsoptions.APSReqChangeOption;
+import apsoptions.APSReqIntrodueNewOption;
 import apsoptions.APSReqOption;
+import apsoptions.APSReqOptionContainer;
+import apsoptions.APSReqRemoveOption;
+import apsoptions.APSReqReplaceOption;
 import apsoptions.ApsoptionsFactory;
 import apsoptions.ApsoptionsPackage;
 
 import archoptions.ArchoptionsPackage;
 
+import options.OptionsPackage;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -25,8 +32,38 @@ public class ApsoptionsPackageImpl extends EPackageImpl implements ApsoptionsPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass apsReqIntrodueNewOptionEClass = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass apsReqRemoveOptionEClass = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass apsReqReplaceOptionEClass = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass apsReqChangeOptionEClass = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass apsReqOptionEClass = null;
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass apsReqOptionContainerEClass = null;
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
@@ -96,8 +133,80 @@ public class ApsoptionsPackageImpl extends EPackageImpl implements ApsoptionsPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getAPSReqIntrodueNewOption() {
+		return apsReqIntrodueNewOptionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAPSReqRemoveOption() {
+		return apsReqRemoveOptionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAPSReqReplaceOption() {
+		return apsReqReplaceOptionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAPSReqChangeOption() {
+		return apsReqChangeOptionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getAPSReqOption() {
 		return apsReqOptionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAPSReqOption_Option() {
+		return (EReference)apsReqOptionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAPSReqOption_Repository() {
+		return (EReference)apsReqOptionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAPSReqOptionContainer() {
+		return apsReqOptionContainerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAPSReqOptionContainer_Apsreqoption() {
+		return (EReference)apsReqOptionContainerEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -128,7 +237,20 @@ public class ApsoptionsPackageImpl extends EPackageImpl implements ApsoptionsPac
 		isCreated = true;
 
 		// Create classes and their features
+		apsReqIntrodueNewOptionEClass = createEClass(APS_REQ_INTRODUE_NEW_OPTION);
+
+		apsReqRemoveOptionEClass = createEClass(APS_REQ_REMOVE_OPTION);
+
+		apsReqReplaceOptionEClass = createEClass(APS_REQ_REPLACE_OPTION);
+
+		apsReqChangeOptionEClass = createEClass(APS_REQ_CHANGE_OPTION);
+
 		apsReqOptionEClass = createEClass(APS_REQ_OPTION);
+		createEReference(apsReqOptionEClass, APS_REQ_OPTION__OPTION);
+		createEReference(apsReqOptionEClass, APS_REQ_OPTION__REPOSITORY);
+
+		apsReqOptionContainerEClass = createEClass(APS_REQ_OPTION_CONTAINER);
+		createEReference(apsReqOptionContainerEClass, APS_REQ_OPTION_CONTAINER__APSREQOPTION);
 	}
 
 	/**
@@ -155,17 +277,33 @@ public class ApsoptionsPackageImpl extends EPackageImpl implements ApsoptionsPac
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		ArchoptionsPackage theArchoptionsPackage = (ArchoptionsPackage)EPackage.Registry.INSTANCE.getEPackage(ArchoptionsPackage.eNS_URI);
+		OptionsPackage theOptionsPackage = (OptionsPackage)EPackage.Registry.INSTANCE.getEPackage(OptionsPackage.eNS_URI);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		apsReqOptionEClass.getESuperTypes().add(theArchoptionsPackage.getArchOption());
+		apsReqIntrodueNewOptionEClass.getESuperTypes().add(this.getAPSReqOption());
+		apsReqRemoveOptionEClass.getESuperTypes().add(this.getAPSReqOption());
+		apsReqReplaceOptionEClass.getESuperTypes().add(this.getAPSReqOption());
+		apsReqChangeOptionEClass.getESuperTypes().add(this.getAPSReqOption());
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(apsReqOptionEClass, APSReqOption.class, "APSReqOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(apsReqIntrodueNewOptionEClass, APSReqIntrodueNewOption.class, "APSReqIntrodueNewOption", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(apsReqRemoveOptionEClass, APSReqRemoveOption.class, "APSReqRemoveOption", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(apsReqReplaceOptionEClass, APSReqReplaceOption.class, "APSReqReplaceOption", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(apsReqChangeOptionEClass, APSReqChangeOption.class, "APSReqChangeOption", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(apsReqOptionEClass, APSReqOption.class, "APSReqOption", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAPSReqOption_Option(), theOptionsPackage.getOption(), null, "option", null, 0, 1, APSReqOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAPSReqOption_Repository(), this.getAPSReqOptionContainer(), this.getAPSReqOptionContainer_Apsreqoption(), "repository", null, 1, 1, APSReqOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(apsReqOptionContainerEClass, APSReqOptionContainer.class, "APSReqOptionContainer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAPSReqOptionContainer_Apsreqoption(), this.getAPSReqOption(), this.getAPSReqOption_Repository(), "apsreqoption", null, 0, -1, APSReqOptionContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -22,13 +22,13 @@ public interface ApsoptionsFactory extends EFactory {
 	ApsoptionsFactory eINSTANCE = apsoptions.impl.ApsoptionsFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>APS Req Option</em>'.
+	 * Returns a new object of class '<em>APS Req Option Container</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>APS Req Option</em>'.
+	 * @return a new object of class '<em>APS Req Option Container</em>'.
 	 * @generated
 	 */
-	APSReqOption createAPSReqOption();
+	APSReqOptionContainer createAPSReqOptionContainer();
 
 	/**
 	 * Returns the package supported by this factory.

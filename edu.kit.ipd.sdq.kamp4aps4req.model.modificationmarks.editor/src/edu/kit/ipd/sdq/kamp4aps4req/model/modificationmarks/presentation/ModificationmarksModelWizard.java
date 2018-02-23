@@ -205,7 +205,7 @@ public class ModificationmarksModelWizard extends Wizard implements INewWizard {
 	 * Create a new model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	protected EObject createInitialModel() {
 		EClass eClass = (EClass)modificationmarksPackage.getEClassifier(initialObjectCreationPage.getInitialObjectName());

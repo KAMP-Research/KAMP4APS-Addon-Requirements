@@ -2,10 +2,9 @@
  */
 package apsoptions;
 
-import archoptions.ArchoptionsPackage;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -64,223 +63,16 @@ public interface ApsoptionsPackage extends EPackage {
 	 * @see apsoptions.impl.ApsoptionsPackageImpl#getAPSReqOption()
 	 * @generated
 	 */
-	int APS_REQ_OPTION = 0;
+	int APS_REQ_OPTION = 4;
 
 	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Option</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int APS_REQ_OPTION__ID = ArchoptionsPackage.ARCH_OPTION__ID;
-
-	/**
-	 * The feature id for the '<em><b>Relations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int APS_REQ_OPTION__RELATIONS = ArchoptionsPackage.ARCH_OPTION__RELATIONS;
-
-	/**
-	 * The feature id for the '<em><b>Conflicts With</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int APS_REQ_OPTION__CONFLICTS_WITH = ArchoptionsPackage.ARCH_OPTION__CONFLICTS_WITH;
-
-	/**
-	 * The feature id for the '<em><b>Has Conflicts</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int APS_REQ_OPTION__HAS_CONFLICTS = ArchoptionsPackage.ARCH_OPTION__HAS_CONFLICTS;
-
-	/**
-	 * The feature id for the '<em><b>Duplicate Of</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int APS_REQ_OPTION__DUPLICATE_OF = ArchoptionsPackage.ARCH_OPTION__DUPLICATE_OF;
-
-	/**
-	 * The feature id for the '<em><b>Has Duplicates</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int APS_REQ_OPTION__HAS_DUPLICATES = ArchoptionsPackage.ARCH_OPTION__HAS_DUPLICATES;
-
-	/**
-	 * The feature id for the '<em><b>Depends On</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int APS_REQ_OPTION__DEPENDS_ON = ArchoptionsPackage.ARCH_OPTION__DEPENDS_ON;
-
-	/**
-	 * The feature id for the '<em><b>Has Dependents</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int APS_REQ_OPTION__HAS_DEPENDENTS = ArchoptionsPackage.ARCH_OPTION__HAS_DEPENDENTS;
-
-	/**
-	 * The feature id for the '<em><b>Parent Of</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int APS_REQ_OPTION__PARENT_OF = ArchoptionsPackage.ARCH_OPTION__PARENT_OF;
-
-	/**
-	 * The feature id for the '<em><b>Subpart Of</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int APS_REQ_OPTION__SUBPART_OF = ArchoptionsPackage.ARCH_OPTION__SUBPART_OF;
-
-	/**
-	 * The feature id for the '<em><b>Trigger Of</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int APS_REQ_OPTION__TRIGGER_OF = ArchoptionsPackage.ARCH_OPTION__TRIGGER_OF;
-
-	/**
-	 * The feature id for the '<em><b>Triggered By</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int APS_REQ_OPTION__TRIGGERED_BY = ArchoptionsPackage.ARCH_OPTION__TRIGGERED_BY;
-
-	/**
-	 * The feature id for the '<em><b>Resolves</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int APS_REQ_OPTION__RESOLVES = ArchoptionsPackage.ARCH_OPTION__RESOLVES;
-
-	/**
-	 * The feature id for the '<em><b>Resolved By</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int APS_REQ_OPTION__RESOLVED_BY = ArchoptionsPackage.ARCH_OPTION__RESOLVED_BY;
-
-	/**
-	 * The feature id for the '<em><b>Alternative To</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int APS_REQ_OPTION__ALTERNATIVE_TO = ArchoptionsPackage.ARCH_OPTION__ALTERNATIVE_TO;
-
-	/**
-	 * The feature id for the '<em><b>Has Alternatives</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int APS_REQ_OPTION__HAS_ALTERNATIVES = ArchoptionsPackage.ARCH_OPTION__HAS_ALTERNATIVES;
-
-	/**
-	 * The feature id for the '<em><b>Could Resolve</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int APS_REQ_OPTION__COULD_RESOLVE = ArchoptionsPackage.ARCH_OPTION__COULD_RESOLVE;
-
-	/**
-	 * The feature id for the '<em><b>Could Be Resolved By</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int APS_REQ_OPTION__COULD_BE_RESOLVED_BY = ArchoptionsPackage.ARCH_OPTION__COULD_BE_RESOLVED_BY;
-
-	/**
-	 * The feature id for the '<em><b>Stakeholder Of</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int APS_REQ_OPTION__STAKEHOLDER_OF = ArchoptionsPackage.ARCH_OPTION__STAKEHOLDER_OF;
-
-	/**
-	 * The feature id for the '<em><b>Has Stakeholders</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int APS_REQ_OPTION__HAS_STAKEHOLDERS = ArchoptionsPackage.ARCH_OPTION__HAS_STAKEHOLDERS;
-
-	/**
-	 * The feature id for the '<em><b>Selected</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int APS_REQ_OPTION__SELECTED = ArchoptionsPackage.ARCH_OPTION__SELECTED;
-
-	/**
-	 * The feature id for the '<em><b>Selected By</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int APS_REQ_OPTION__SELECTED_BY = ArchoptionsPackage.ARCH_OPTION__SELECTED_BY;
-
-	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int APS_REQ_OPTION__DESCRIPTION = ArchoptionsPackage.ARCH_OPTION__DESCRIPTION;
-
-	/**
-	 * The feature id for the '<em><b>Keywords</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int APS_REQ_OPTION__KEYWORDS = ArchoptionsPackage.ARCH_OPTION__KEYWORDS;
+	int APS_REQ_OPTION__OPTION = 0;
 
 	/**
 	 * The feature id for the '<em><b>Repository</b></em>' container reference.
@@ -289,70 +81,7 @@ public interface ApsoptionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APS_REQ_OPTION__REPOSITORY = ArchoptionsPackage.ARCH_OPTION__REPOSITORY;
-
-	/**
-	 * The feature id for the '<em><b>Rationale</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int APS_REQ_OPTION__RATIONALE = ArchoptionsPackage.ARCH_OPTION__RATIONALE;
-
-	/**
-	 * The feature id for the '<em><b>Is Modelled</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int APS_REQ_OPTION__IS_MODELLED = ArchoptionsPackage.ARCH_OPTION__IS_MODELLED;
-
-	/**
-	 * The feature id for the '<em><b>Is Implemented</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int APS_REQ_OPTION__IS_IMPLEMENTED = ArchoptionsPackage.ARCH_OPTION__IS_IMPLEMENTED;
-
-	/**
-	 * The feature id for the '<em><b>Time Stamp</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int APS_REQ_OPTION__TIME_STAMP = ArchoptionsPackage.ARCH_OPTION__TIME_STAMP;
-
-	/**
-	 * The feature id for the '<em><b>Effects</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int APS_REQ_OPTION__EFFECTS = ArchoptionsPackage.ARCH_OPTION__EFFECTS;
-
-	/**
-	 * The feature id for the '<em><b>Used Terms</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int APS_REQ_OPTION__USED_TERMS = ArchoptionsPackage.ARCH_OPTION__USED_TERMS;
-
-	/**
-	 * The feature id for the '<em><b>Analysis Rationale</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int APS_REQ_OPTION__ANALYSIS_RATIONALE = ArchoptionsPackage.ARCH_OPTION__ANALYSIS_RATIONALE;
+	int APS_REQ_OPTION__REPOSITORY = 1;
 
 	/**
 	 * The number of structural features of the '<em>APS Req Option</em>' class.
@@ -361,7 +90,223 @@ public interface ApsoptionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APS_REQ_OPTION_FEATURE_COUNT = ArchoptionsPackage.ARCH_OPTION_FEATURE_COUNT + 0;
+	int APS_REQ_OPTION_FEATURE_COUNT = 2;
+
+	/**
+	 * The meta object id for the '{@link apsoptions.impl.APSReqIntrodueNewOptionImpl <em>APS Req Introdue New Option</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see apsoptions.impl.APSReqIntrodueNewOptionImpl
+	 * @see apsoptions.impl.ApsoptionsPackageImpl#getAPSReqIntrodueNewOption()
+	 * @generated
+	 */
+	int APS_REQ_INTRODUE_NEW_OPTION = 0;
+
+	/**
+	 * The feature id for the '<em><b>Option</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APS_REQ_INTRODUE_NEW_OPTION__OPTION = APS_REQ_OPTION__OPTION;
+
+	/**
+	 * The feature id for the '<em><b>Repository</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APS_REQ_INTRODUE_NEW_OPTION__REPOSITORY = APS_REQ_OPTION__REPOSITORY;
+
+	/**
+	 * The number of structural features of the '<em>APS Req Introdue New Option</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APS_REQ_INTRODUE_NEW_OPTION_FEATURE_COUNT = APS_REQ_OPTION_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link apsoptions.impl.APSReqRemoveOptionImpl <em>APS Req Remove Option</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see apsoptions.impl.APSReqRemoveOptionImpl
+	 * @see apsoptions.impl.ApsoptionsPackageImpl#getAPSReqRemoveOption()
+	 * @generated
+	 */
+	int APS_REQ_REMOVE_OPTION = 1;
+
+	/**
+	 * The feature id for the '<em><b>Option</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APS_REQ_REMOVE_OPTION__OPTION = APS_REQ_OPTION__OPTION;
+
+	/**
+	 * The feature id for the '<em><b>Repository</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APS_REQ_REMOVE_OPTION__REPOSITORY = APS_REQ_OPTION__REPOSITORY;
+
+	/**
+	 * The number of structural features of the '<em>APS Req Remove Option</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APS_REQ_REMOVE_OPTION_FEATURE_COUNT = APS_REQ_OPTION_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link apsoptions.impl.APSReqReplaceOptionImpl <em>APS Req Replace Option</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see apsoptions.impl.APSReqReplaceOptionImpl
+	 * @see apsoptions.impl.ApsoptionsPackageImpl#getAPSReqReplaceOption()
+	 * @generated
+	 */
+	int APS_REQ_REPLACE_OPTION = 2;
+
+	/**
+	 * The feature id for the '<em><b>Option</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APS_REQ_REPLACE_OPTION__OPTION = APS_REQ_OPTION__OPTION;
+
+	/**
+	 * The feature id for the '<em><b>Repository</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APS_REQ_REPLACE_OPTION__REPOSITORY = APS_REQ_OPTION__REPOSITORY;
+
+	/**
+	 * The number of structural features of the '<em>APS Req Replace Option</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APS_REQ_REPLACE_OPTION_FEATURE_COUNT = APS_REQ_OPTION_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link apsoptions.impl.APSReqChangeOptionImpl <em>APS Req Change Option</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see apsoptions.impl.APSReqChangeOptionImpl
+	 * @see apsoptions.impl.ApsoptionsPackageImpl#getAPSReqChangeOption()
+	 * @generated
+	 */
+	int APS_REQ_CHANGE_OPTION = 3;
+
+	/**
+	 * The feature id for the '<em><b>Option</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APS_REQ_CHANGE_OPTION__OPTION = APS_REQ_OPTION__OPTION;
+
+	/**
+	 * The feature id for the '<em><b>Repository</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APS_REQ_CHANGE_OPTION__REPOSITORY = APS_REQ_OPTION__REPOSITORY;
+
+	/**
+	 * The number of structural features of the '<em>APS Req Change Option</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APS_REQ_CHANGE_OPTION_FEATURE_COUNT = APS_REQ_OPTION_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link apsoptions.impl.APSReqOptionContainerImpl <em>APS Req Option Container</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see apsoptions.impl.APSReqOptionContainerImpl
+	 * @see apsoptions.impl.ApsoptionsPackageImpl#getAPSReqOptionContainer()
+	 * @generated
+	 */
+	int APS_REQ_OPTION_CONTAINER = 5;
+
+	/**
+	 * The feature id for the '<em><b>Apsreqoption</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APS_REQ_OPTION_CONTAINER__APSREQOPTION = 0;
+
+	/**
+	 * The number of structural features of the '<em>APS Req Option Container</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APS_REQ_OPTION_CONTAINER_FEATURE_COUNT = 1;
+
+	/**
+	 * Returns the meta object for class '{@link apsoptions.APSReqIntrodueNewOption <em>APS Req Introdue New Option</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>APS Req Introdue New Option</em>'.
+	 * @see apsoptions.APSReqIntrodueNewOption
+	 * @generated
+	 */
+	EClass getAPSReqIntrodueNewOption();
+
+	/**
+	 * Returns the meta object for class '{@link apsoptions.APSReqRemoveOption <em>APS Req Remove Option</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>APS Req Remove Option</em>'.
+	 * @see apsoptions.APSReqRemoveOption
+	 * @generated
+	 */
+	EClass getAPSReqRemoveOption();
+
+	/**
+	 * Returns the meta object for class '{@link apsoptions.APSReqReplaceOption <em>APS Req Replace Option</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>APS Req Replace Option</em>'.
+	 * @see apsoptions.APSReqReplaceOption
+	 * @generated
+	 */
+	EClass getAPSReqReplaceOption();
+
+	/**
+	 * Returns the meta object for class '{@link apsoptions.APSReqChangeOption <em>APS Req Change Option</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>APS Req Change Option</em>'.
+	 * @see apsoptions.APSReqChangeOption
+	 * @generated
+	 */
+	EClass getAPSReqChangeOption();
 
 	/**
 	 * Returns the meta object for class '{@link apsoptions.APSReqOption <em>APS Req Option</em>}'.
@@ -372,6 +317,49 @@ public interface ApsoptionsPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getAPSReqOption();
+
+	/**
+	 * Returns the meta object for the reference '{@link apsoptions.APSReqOption#getOption <em>Option</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Option</em>'.
+	 * @see apsoptions.APSReqOption#getOption()
+	 * @see #getAPSReqOption()
+	 * @generated
+	 */
+	EReference getAPSReqOption_Option();
+
+	/**
+	 * Returns the meta object for the container reference '{@link apsoptions.APSReqOption#getRepository <em>Repository</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Repository</em>'.
+	 * @see apsoptions.APSReqOption#getRepository()
+	 * @see #getAPSReqOption()
+	 * @generated
+	 */
+	EReference getAPSReqOption_Repository();
+
+	/**
+	 * Returns the meta object for class '{@link apsoptions.APSReqOptionContainer <em>APS Req Option Container</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>APS Req Option Container</em>'.
+	 * @see apsoptions.APSReqOptionContainer
+	 * @generated
+	 */
+	EClass getAPSReqOptionContainer();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link apsoptions.APSReqOptionContainer#getApsreqoption <em>Apsreqoption</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Apsreqoption</em>'.
+	 * @see apsoptions.APSReqOptionContainer#getApsreqoption()
+	 * @see #getAPSReqOptionContainer()
+	 * @generated
+	 */
+	EReference getAPSReqOptionContainer_Apsreqoption();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -397,6 +385,42 @@ public interface ApsoptionsPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
+		 * The meta object literal for the '{@link apsoptions.impl.APSReqIntrodueNewOptionImpl <em>APS Req Introdue New Option</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see apsoptions.impl.APSReqIntrodueNewOptionImpl
+		 * @see apsoptions.impl.ApsoptionsPackageImpl#getAPSReqIntrodueNewOption()
+		 * @generated
+		 */
+		EClass APS_REQ_INTRODUE_NEW_OPTION = eINSTANCE.getAPSReqIntrodueNewOption();
+		/**
+		 * The meta object literal for the '{@link apsoptions.impl.APSReqRemoveOptionImpl <em>APS Req Remove Option</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see apsoptions.impl.APSReqRemoveOptionImpl
+		 * @see apsoptions.impl.ApsoptionsPackageImpl#getAPSReqRemoveOption()
+		 * @generated
+		 */
+		EClass APS_REQ_REMOVE_OPTION = eINSTANCE.getAPSReqRemoveOption();
+		/**
+		 * The meta object literal for the '{@link apsoptions.impl.APSReqReplaceOptionImpl <em>APS Req Replace Option</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see apsoptions.impl.APSReqReplaceOptionImpl
+		 * @see apsoptions.impl.ApsoptionsPackageImpl#getAPSReqReplaceOption()
+		 * @generated
+		 */
+		EClass APS_REQ_REPLACE_OPTION = eINSTANCE.getAPSReqReplaceOption();
+		/**
+		 * The meta object literal for the '{@link apsoptions.impl.APSReqChangeOptionImpl <em>APS Req Change Option</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see apsoptions.impl.APSReqChangeOptionImpl
+		 * @see apsoptions.impl.ApsoptionsPackageImpl#getAPSReqChangeOption()
+		 * @generated
+		 */
+		EClass APS_REQ_CHANGE_OPTION = eINSTANCE.getAPSReqChangeOption();
+		/**
 		 * The meta object literal for the '{@link apsoptions.impl.APSReqOptionImpl <em>APS Req Option</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -405,6 +429,36 @@ public interface ApsoptionsPackage extends EPackage {
 		 * @generated
 		 */
 		EClass APS_REQ_OPTION = eINSTANCE.getAPSReqOption();
+		/**
+		 * The meta object literal for the '<em><b>Option</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference APS_REQ_OPTION__OPTION = eINSTANCE.getAPSReqOption_Option();
+		/**
+		 * The meta object literal for the '<em><b>Repository</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference APS_REQ_OPTION__REPOSITORY = eINSTANCE.getAPSReqOption_Repository();
+		/**
+		 * The meta object literal for the '{@link apsoptions.impl.APSReqOptionContainerImpl <em>APS Req Option Container</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see apsoptions.impl.APSReqOptionContainerImpl
+		 * @see apsoptions.impl.ApsoptionsPackageImpl#getAPSReqOptionContainer()
+		 * @generated
+		 */
+		EClass APS_REQ_OPTION_CONTAINER = eINSTANCE.getAPSReqOptionContainer();
+		/**
+		 * The meta object literal for the '<em><b>Apsreqoption</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference APS_REQ_OPTION_CONTAINER__APSREQOPTION = eINSTANCE.getAPSReqOptionContainer_Apsreqoption();
 
 	}
 

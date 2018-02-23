@@ -19,4 +19,14 @@
                org.eclipse.emf.edit.provider.IItemPropertySource"/>
    </extension>
 
+   <extension point="org.eclipse.emf.edit.childCreationExtenders">
+      <!-- @generated apshardwareoptions -->
+      <extender
+            uri="http://www.example.org/apsoptions"
+            class="apshardwareoptions.provider.ApshardwareoptionsItemProviderAdapterFactory$ApsoptionsChildCreationExtender"/>
+      <extender
+            uri="http://sdq.ipd.kit.edu/QML/dimensiontypes/1.0"
+            class="apshardwareoptions.provider.ApshardwareoptionsItemProviderAdapterFactory$DimensiontypesChildCreationExtender"/>
+   </extension>
+
 </plugin>
