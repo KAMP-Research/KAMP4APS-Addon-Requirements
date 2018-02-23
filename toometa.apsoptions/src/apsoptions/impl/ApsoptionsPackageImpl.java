@@ -5,7 +5,7 @@ package apsoptions.impl;
 import apsoptions.APSReqChangeOption;
 import apsoptions.APSReqIntrodueNewOption;
 import apsoptions.APSReqOption;
-import apsoptions.APSReqOptionContainer;
+import apsoptions.APSReqOptionRepository;
 import apsoptions.APSReqRemoveOption;
 import apsoptions.APSReqReplaceOption;
 import apsoptions.ApsoptionsFactory;
@@ -63,7 +63,7 @@ public class ApsoptionsPackageImpl extends EPackageImpl implements ApsoptionsPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass apsReqOptionContainerEClass = null;
+	private EClass apsReqOptionRepositoryEClass = null;
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
@@ -196,8 +196,8 @@ public class ApsoptionsPackageImpl extends EPackageImpl implements ApsoptionsPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getAPSReqOptionContainer() {
-		return apsReqOptionContainerEClass;
+	public EClass getAPSReqOptionRepository() {
+		return apsReqOptionRepositoryEClass;
 	}
 
 	/**
@@ -205,8 +205,8 @@ public class ApsoptionsPackageImpl extends EPackageImpl implements ApsoptionsPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAPSReqOptionContainer_Apsreqoption() {
-		return (EReference)apsReqOptionContainerEClass.getEStructuralFeatures().get(0);
+	public EReference getAPSReqOptionRepository_Apsreqoption() {
+		return (EReference)apsReqOptionRepositoryEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -249,8 +249,8 @@ public class ApsoptionsPackageImpl extends EPackageImpl implements ApsoptionsPac
 		createEReference(apsReqOptionEClass, APS_REQ_OPTION__OPTION);
 		createEReference(apsReqOptionEClass, APS_REQ_OPTION__REPOSITORY);
 
-		apsReqOptionContainerEClass = createEClass(APS_REQ_OPTION_CONTAINER);
-		createEReference(apsReqOptionContainerEClass, APS_REQ_OPTION_CONTAINER__APSREQOPTION);
+		apsReqOptionRepositoryEClass = createEClass(APS_REQ_OPTION_REPOSITORY);
+		createEReference(apsReqOptionRepositoryEClass, APS_REQ_OPTION_REPOSITORY__APSREQOPTION);
 	}
 
 	/**
@@ -300,10 +300,10 @@ public class ApsoptionsPackageImpl extends EPackageImpl implements ApsoptionsPac
 
 		initEClass(apsReqOptionEClass, APSReqOption.class, "APSReqOption", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAPSReqOption_Option(), theOptionsPackage.getOption(), null, "option", null, 0, 1, APSReqOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAPSReqOption_Repository(), this.getAPSReqOptionContainer(), this.getAPSReqOptionContainer_Apsreqoption(), "repository", null, 1, 1, APSReqOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAPSReqOption_Repository(), this.getAPSReqOptionRepository(), this.getAPSReqOptionRepository_Apsreqoption(), "repository", null, 1, 1, APSReqOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(apsReqOptionContainerEClass, APSReqOptionContainer.class, "APSReqOptionContainer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAPSReqOptionContainer_Apsreqoption(), this.getAPSReqOption(), this.getAPSReqOption_Repository(), "apsreqoption", null, 0, -1, APSReqOptionContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(apsReqOptionRepositoryEClass, APSReqOptionRepository.class, "APSReqOptionRepository", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAPSReqOptionRepository_Apsreqoption(), this.getAPSReqOption(), this.getAPSReqOption_Repository(), "apsreqoption", null, 0, -1, APSReqOptionRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

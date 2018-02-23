@@ -241,14 +241,14 @@ public interface ApsoptionsPackage extends EPackage {
 	int APS_REQ_CHANGE_OPTION_FEATURE_COUNT = APS_REQ_OPTION_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link apsoptions.impl.APSReqOptionContainerImpl <em>APS Req Option Container</em>}' class.
+	 * The meta object id for the '{@link apsoptions.impl.APSReqOptionRepositoryImpl <em>APS Req Option Repository</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see apsoptions.impl.APSReqOptionContainerImpl
-	 * @see apsoptions.impl.ApsoptionsPackageImpl#getAPSReqOptionContainer()
+	 * @see apsoptions.impl.APSReqOptionRepositoryImpl
+	 * @see apsoptions.impl.ApsoptionsPackageImpl#getAPSReqOptionRepository()
 	 * @generated
 	 */
-	int APS_REQ_OPTION_CONTAINER = 5;
+	int APS_REQ_OPTION_REPOSITORY = 5;
 
 	/**
 	 * The feature id for the '<em><b>Apsreqoption</b></em>' containment reference list.
@@ -257,16 +257,16 @@ public interface ApsoptionsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APS_REQ_OPTION_CONTAINER__APSREQOPTION = 0;
+	int APS_REQ_OPTION_REPOSITORY__APSREQOPTION = 0;
 
 	/**
-	 * The number of structural features of the '<em>APS Req Option Container</em>' class.
+	 * The number of structural features of the '<em>APS Req Option Repository</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int APS_REQ_OPTION_CONTAINER_FEATURE_COUNT = 1;
+	int APS_REQ_OPTION_REPOSITORY_FEATURE_COUNT = 1;
 
 	/**
 	 * Returns the meta object for class '{@link apsoptions.APSReqIntrodueNewOption <em>APS Req Introdue New Option</em>}'.
@@ -341,25 +341,25 @@ public interface ApsoptionsPackage extends EPackage {
 	EReference getAPSReqOption_Repository();
 
 	/**
-	 * Returns the meta object for class '{@link apsoptions.APSReqOptionContainer <em>APS Req Option Container</em>}'.
+	 * Returns the meta object for class '{@link apsoptions.APSReqOptionRepository <em>APS Req Option Repository</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>APS Req Option Container</em>'.
-	 * @see apsoptions.APSReqOptionContainer
+	 * @return the meta object for class '<em>APS Req Option Repository</em>'.
+	 * @see apsoptions.APSReqOptionRepository
 	 * @generated
 	 */
-	EClass getAPSReqOptionContainer();
+	EClass getAPSReqOptionRepository();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link apsoptions.APSReqOptionContainer#getApsreqoption <em>Apsreqoption</em>}'.
+	 * Returns the meta object for the containment reference list '{@link apsoptions.APSReqOptionRepository#getApsreqoption <em>Apsreqoption</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Apsreqoption</em>'.
-	 * @see apsoptions.APSReqOptionContainer#getApsreqoption()
-	 * @see #getAPSReqOptionContainer()
+	 * @see apsoptions.APSReqOptionRepository#getApsreqoption()
+	 * @see #getAPSReqOptionRepository()
 	 * @generated
 	 */
-	EReference getAPSReqOptionContainer_Apsreqoption();
+	EReference getAPSReqOptionRepository_Apsreqoption();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -444,21 +444,21 @@ public interface ApsoptionsPackage extends EPackage {
 		 */
 		EReference APS_REQ_OPTION__REPOSITORY = eINSTANCE.getAPSReqOption_Repository();
 		/**
-		 * The meta object literal for the '{@link apsoptions.impl.APSReqOptionContainerImpl <em>APS Req Option Container</em>}' class.
+		 * The meta object literal for the '{@link apsoptions.impl.APSReqOptionRepositoryImpl <em>APS Req Option Repository</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see apsoptions.impl.APSReqOptionContainerImpl
-		 * @see apsoptions.impl.ApsoptionsPackageImpl#getAPSReqOptionContainer()
+		 * @see apsoptions.impl.APSReqOptionRepositoryImpl
+		 * @see apsoptions.impl.ApsoptionsPackageImpl#getAPSReqOptionRepository()
 		 * @generated
 		 */
-		EClass APS_REQ_OPTION_CONTAINER = eINSTANCE.getAPSReqOptionContainer();
+		EClass APS_REQ_OPTION_REPOSITORY = eINSTANCE.getAPSReqOptionRepository();
 		/**
 		 * The meta object literal for the '<em><b>Apsreqoption</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference APS_REQ_OPTION_CONTAINER__APSREQOPTION = eINSTANCE.getAPSReqOptionContainer_Apsreqoption();
+		EReference APS_REQ_OPTION_REPOSITORY__APSREQOPTION = eINSTANCE.getAPSReqOptionRepository_Apsreqoption();
 
 	}
 

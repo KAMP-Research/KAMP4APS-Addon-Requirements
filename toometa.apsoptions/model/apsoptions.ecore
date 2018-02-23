@@ -12,9 +12,9 @@
   <eClassifiers xsi:type="ecore:EClass" name="APSReqOption" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="option" eType="ecore:EClass ../../toometa.options/model/options.ecore#//Option"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="repository" lowerBound="1"
-        eType="#//APSReqOptionContainer" eOpposite="#//APSReqOptionContainer/apsreqoption"/>
+        eType="#//APSReqOptionRepository" eOpposite="#//APSReqOptionRepository/apsreqoption"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="APSReqOptionContainer">
+  <eClassifiers xsi:type="ecore:EClass" name="APSReqOptionRepository">
     <eStructuralFeatures xsi:type="ecore:EReference" name="apsreqoption" upperBound="-1"
         eType="#//APSReqOption" containment="true" eOpposite="#//APSReqOption/repository"/>
   </eClassifiers>

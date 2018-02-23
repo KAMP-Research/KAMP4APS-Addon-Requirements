@@ -2,7 +2,7 @@
  */
 package apsoptions.tests;
 
-import apsoptions.APSReqOptionContainer;
+import apsoptions.APSReqOptionRepository;
 import apsoptions.ApsoptionsFactory;
 import apsoptions.ApsoptionsPackage;
 
@@ -59,7 +59,7 @@ public class ApsoptionsExample {
 			System.out.println("Enter a list of file paths or URIs that have content like this:");
 			try {
 				Resource resource = resourceSet.createResource(URI.createURI("http:///My.apsoptions"));
-				APSReqOptionContainer root = ApsoptionsFactory.eINSTANCE.createAPSReqOptionContainer();
+				APSReqOptionRepository root = ApsoptionsFactory.eINSTANCE.createAPSReqOptionRepository();
 				resource.getContents().add(root);
 				resource.save(System.out, null);
 			}

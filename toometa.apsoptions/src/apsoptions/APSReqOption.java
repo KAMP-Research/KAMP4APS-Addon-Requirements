@@ -52,7 +52,7 @@ public interface APSReqOption extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Repository</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link apsoptions.APSReqOptionContainer#getApsreqoption <em>Apsreqoption</em>}'.
+	 * It is bidirectional and its opposite is '{@link apsoptions.APSReqOptionRepository#getApsreqoption <em>Apsreqoption</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Repository</em>' container reference isn't clear,
@@ -60,13 +60,13 @@ public interface APSReqOption extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Repository</em>' container reference.
-	 * @see #setRepository(APSReqOptionContainer)
+	 * @see #setRepository(APSReqOptionRepository)
 	 * @see apsoptions.ApsoptionsPackage#getAPSReqOption_Repository()
-	 * @see apsoptions.APSReqOptionContainer#getApsreqoption
+	 * @see apsoptions.APSReqOptionRepository#getApsreqoption
 	 * @model opposite="apsreqoption" required="true" transient="false"
 	 * @generated
 	 */
-	APSReqOptionContainer getRepository();
+	APSReqOptionRepository getRepository();
 
 	/**
 	 * Sets the value of the '{@link apsoptions.APSReqOption#getRepository <em>Repository</em>}' container reference.
@@ -76,5 +76,5 @@ public interface APSReqOption extends EObject {
 	 * @see #getRepository()
 	 * @generated
 	 */
-	void setRepository(APSReqOptionContainer value);
+	void setRepository(APSReqOptionRepository value);
 } // APSReqOption

@@ -87,8 +87,8 @@ public class ApsoptionsAdapterFactory extends AdapterFactoryImpl {
 				return createAPSReqOptionAdapter();
 			}
 			@Override
-			public Adapter caseAPSReqOptionContainer(APSReqOptionContainer object) {
-				return createAPSReqOptionContainerAdapter();
+			public Adapter caseAPSReqOptionRepository(APSReqOptionRepository object) {
+				return createAPSReqOptionRepositoryAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -181,16 +181,16 @@ public class ApsoptionsAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link apsoptions.APSReqOptionContainer <em>APS Req Option Container</em>}'.
+	 * Creates a new adapter for an object of class '{@link apsoptions.APSReqOptionRepository <em>APS Req Option Repository</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see apsoptions.APSReqOptionContainer
+	 * @see apsoptions.APSReqOptionRepository
 	 * @generated
 	 */
-	public Adapter createAPSReqOptionContainerAdapter() {
+	public Adapter createAPSReqOptionRepositoryAdapter() {
 		return null;
 	}
 

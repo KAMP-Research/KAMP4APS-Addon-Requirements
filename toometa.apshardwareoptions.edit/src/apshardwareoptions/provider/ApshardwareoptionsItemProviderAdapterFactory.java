@@ -4,8 +4,7 @@ package apshardwareoptions.provider;
 
 import apshardwareoptions.ApshardwareoptionsFactory;
 import apshardwareoptions.util.ApshardwareoptionsAdapterFactory;
-
-import apsoptions.APSReqOptionContainer;
+import apsoptions.APSReqOptionRepository;
 import apsoptions.ApsoptionsPackage;
 import apsoptions.util.ApsoptionsSwitch;
 import de.uka.ipd.sdq.dsexplore.qml.dimensiontypes.DimensionTypeScale;
@@ -327,30 +326,29 @@ public class ApshardwareoptionsItemProviderAdapterFactory extends Apshardwareopt
 			 * @generated
 			 */
 			@Override
-			public Object caseAPSReqOptionContainer(APSReqOptionContainer object) {
+			public Object caseAPSReqOptionRepository(APSReqOptionRepository object) {
 				newChildDescriptors.add
 					(createChildParameter
-						(ApsoptionsPackage.Literals.APS_REQ_OPTION_CONTAINER__APSREQOPTION,
+						(ApsoptionsPackage.Literals.APS_REQ_OPTION_REPOSITORY__APSREQOPTION,
 						 ApshardwareoptionsFactory.eINSTANCE.createAPSReqIntroduceNewEntitites()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(ApsoptionsPackage.Literals.APS_REQ_OPTION_CONTAINER__APSREQOPTION,
+						(ApsoptionsPackage.Literals.APS_REQ_OPTION_REPOSITORY__APSREQOPTION,
 						 ApshardwareoptionsFactory.eINSTANCE.createAPSReqRemoveEntities()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(ApsoptionsPackage.Literals.APS_REQ_OPTION_CONTAINER__APSREQOPTION,
+						(ApsoptionsPackage.Literals.APS_REQ_OPTION_REPOSITORY__APSREQOPTION,
 						 ApshardwareoptionsFactory.eINSTANCE.createAPSReqReplaceEntities()));
 
 				newChildDescriptors.add
 					(createChildParameter
-						(ApsoptionsPackage.Literals.APS_REQ_OPTION_CONTAINER__APSREQOPTION,
+						(ApsoptionsPackage.Literals.APS_REQ_OPTION_REPOSITORY__APSREQOPTION,
 						 ApshardwareoptionsFactory.eINSTANCE.createAPSReqChangeEntities()));
 
 				return null;
 			}
- 
 			/**
 			 * <!-- begin-user-doc -->
 			 * <!-- end-user-doc -->

@@ -3,7 +3,7 @@
 package apsoptions.impl;
 
 import apsoptions.APSReqOption;
-import apsoptions.APSReqOptionContainer;
+import apsoptions.APSReqOptionRepository;
 import apsoptions.ApsoptionsPackage;
 import options.Option;
 import org.eclipse.emf.common.notify.Notification;
@@ -102,9 +102,9 @@ public abstract class APSReqOptionImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public APSReqOptionContainer getRepository() {
+	public APSReqOptionRepository getRepository() {
 		if (eContainerFeatureID() != ApsoptionsPackage.APS_REQ_OPTION__REPOSITORY) return null;
-		return (APSReqOptionContainer)eInternalContainer();
+		return (APSReqOptionRepository)eInternalContainer();
 	}
 
 	/**
@@ -112,7 +112,7 @@ public abstract class APSReqOptionImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetRepository(APSReqOptionContainer newRepository, NotificationChain msgs) {
+	public NotificationChain basicSetRepository(APSReqOptionRepository newRepository, NotificationChain msgs) {
 		msgs = eBasicSetContainer((InternalEObject)newRepository, ApsoptionsPackage.APS_REQ_OPTION__REPOSITORY, msgs);
 		return msgs;
 	}
@@ -122,7 +122,7 @@ public abstract class APSReqOptionImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setRepository(APSReqOptionContainer newRepository) {
+	public void setRepository(APSReqOptionRepository newRepository) {
 		if (newRepository != eInternalContainer() || (eContainerFeatureID() != ApsoptionsPackage.APS_REQ_OPTION__REPOSITORY && newRepository != null)) {
 			if (EcoreUtil.isAncestor(this, newRepository))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
@@ -130,7 +130,7 @@ public abstract class APSReqOptionImpl extends MinimalEObjectImpl.Container impl
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newRepository != null)
-				msgs = ((InternalEObject)newRepository).eInverseAdd(this, ApsoptionsPackage.APS_REQ_OPTION_CONTAINER__APSREQOPTION, APSReqOptionContainer.class, msgs);
+				msgs = ((InternalEObject)newRepository).eInverseAdd(this, ApsoptionsPackage.APS_REQ_OPTION_REPOSITORY__APSREQOPTION, APSReqOptionRepository.class, msgs);
 			msgs = basicSetRepository(newRepository, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -149,7 +149,7 @@ public abstract class APSReqOptionImpl extends MinimalEObjectImpl.Container impl
 			case ApsoptionsPackage.APS_REQ_OPTION__REPOSITORY:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetRepository((APSReqOptionContainer)otherEnd, msgs);
+				return basicSetRepository((APSReqOptionRepository)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -177,7 +177,7 @@ public abstract class APSReqOptionImpl extends MinimalEObjectImpl.Container impl
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case ApsoptionsPackage.APS_REQ_OPTION__REPOSITORY:
-				return eInternalContainer().eInverseRemove(this, ApsoptionsPackage.APS_REQ_OPTION_CONTAINER__APSREQOPTION, APSReqOptionContainer.class, msgs);
+				return eInternalContainer().eInverseRemove(this, ApsoptionsPackage.APS_REQ_OPTION_REPOSITORY__APSREQOPTION, APSReqOptionRepository.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -211,7 +211,7 @@ public abstract class APSReqOptionImpl extends MinimalEObjectImpl.Container impl
 				setOption((Option)newValue);
 				return;
 			case ApsoptionsPackage.APS_REQ_OPTION__REPOSITORY:
-				setRepository((APSReqOptionContainer)newValue);
+				setRepository((APSReqOptionRepository)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -229,7 +229,7 @@ public abstract class APSReqOptionImpl extends MinimalEObjectImpl.Container impl
 				setOption((Option)null);
 				return;
 			case ApsoptionsPackage.APS_REQ_OPTION__REPOSITORY:
-				setRepository((APSReqOptionContainer)null);
+				setRepository((APSReqOptionRepository)null);
 				return;
 		}
 		super.eUnset(featureID);

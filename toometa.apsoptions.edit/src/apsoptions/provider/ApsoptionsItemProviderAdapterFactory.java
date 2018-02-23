@@ -92,26 +92,26 @@ public class ApsoptionsItemProviderAdapterFactory extends ApsoptionsAdapterFacto
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link apsoptions.APSReqOptionContainer} instances.
+	 * This keeps track of the one adapter used for all {@link apsoptions.APSReqOptionRepository} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected APSReqOptionContainerItemProvider apsReqOptionContainerItemProvider;
+	protected APSReqOptionRepositoryItemProvider apsReqOptionRepositoryItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link apsoptions.APSReqOptionContainer}.
+	 * This creates an adapter for a {@link apsoptions.APSReqOptionRepository}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createAPSReqOptionContainerAdapter() {
-		if (apsReqOptionContainerItemProvider == null) {
-			apsReqOptionContainerItemProvider = new APSReqOptionContainerItemProvider(this);
+	public Adapter createAPSReqOptionRepositoryAdapter() {
+		if (apsReqOptionRepositoryItemProvider == null) {
+			apsReqOptionRepositoryItemProvider = new APSReqOptionRepositoryItemProvider(this);
 		}
 
-		return apsReqOptionContainerItemProvider;
+		return apsReqOptionRepositoryItemProvider;
 	}
 
 	/**
@@ -240,7 +240,7 @@ public class ApsoptionsItemProviderAdapterFactory extends ApsoptionsAdapterFacto
 	 * @generated
 	 */
 	public void dispose() {
-		if (apsReqOptionContainerItemProvider != null) apsReqOptionContainerItemProvider.dispose();
+		if (apsReqOptionRepositoryItemProvider != null) apsReqOptionRepositoryItemProvider.dispose();
 	}
 
 	/**
@@ -293,7 +293,7 @@ public class ApsoptionsItemProviderAdapterFactory extends ApsoptionsAdapterFacto
 				newChildDescriptors.add
 					(createChildParameter
 						(DimensiontypesPackage.Literals.DIMENSION_TYPE_SCALE__SCALE_ELEMENTS,
-						 ApsoptionsFactory.eINSTANCE.createAPSReqOptionContainer()));
+						 ApsoptionsFactory.eINSTANCE.createAPSReqOptionRepository()));
 
 				return null;
 			}

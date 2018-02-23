@@ -99,9 +99,9 @@ public class ApsoptionsSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ApsoptionsPackage.APS_REQ_OPTION_CONTAINER: {
-				APSReqOptionContainer apsReqOptionContainer = (APSReqOptionContainer)theEObject;
-				T result = caseAPSReqOptionContainer(apsReqOptionContainer);
+			case ApsoptionsPackage.APS_REQ_OPTION_REPOSITORY: {
+				APSReqOptionRepository apsReqOptionRepository = (APSReqOptionRepository)theEObject;
+				T result = caseAPSReqOptionRepository(apsReqOptionRepository);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -185,17 +185,17 @@ public class ApsoptionsSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>APS Req Option Container</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>APS Req Option Repository</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>APS Req Option Container</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>APS Req Option Repository</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseAPSReqOptionContainer(APSReqOptionContainer object) {
+	public T caseAPSReqOptionRepository(APSReqOptionRepository object) {
 		return null;
 	}
 
