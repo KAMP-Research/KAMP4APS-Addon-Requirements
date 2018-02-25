@@ -1,10 +1,10 @@
 package edu.kit.ipd.sdq.kamp4aps4req.hardware;
 
+import apsoptions.APSReqOptionRepository;
 import decisions.DecisionRepository;
 import edu.kit.ipd.sdq.kamp4aps4req.core.AbstractAPSReqArchitectureVersion;
 import edu.kit.ipd.sdq.kamp4aps.core.APSArchitectureVersion;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.APSReqHardwareModificationRepository;
-import options.OptionRepository;
 import requirements.ReqRepository;
 
 /**
@@ -29,7 +29,7 @@ public class APSReqHardwareArchitectureVersion extends AbstractAPSReqArchitectur
 	 * @param apsArchitectureVersion Architecture Version of the hardware in the system
 	 */
 	public APSReqHardwareArchitectureVersion(String name, ReqRepository requirementsRepository, DecisionRepository decisionRepository,
-			OptionRepository optionRepository, 
+			APSReqOptionRepository optionRepository, 
 			APSReqHardwareModificationRepository modificationMarksRepository,
 			APSArchitectureVersion apsArchitectureVersion) {
 		

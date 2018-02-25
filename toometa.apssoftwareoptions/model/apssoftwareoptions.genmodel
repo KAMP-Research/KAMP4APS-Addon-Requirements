@@ -7,23 +7,27 @@
     importOrganizing="true">
   <foreignModel>apssoftwareoptions.ecore</foreignModel>
   <genPackages prefix="Apssoftwareoptions" disposableProviderFactory="true" ecorePackage="apssoftwareoptions.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="apssoftwareoptions.ecore#//APSReqModificationType">
+      <genEnumLiterals ecoreEnumLiteral="apssoftwareoptions.ecore#//APSReqModificationType/INTRODUCE_NEW"/>
+      <genEnumLiterals ecoreEnumLiteral="apssoftwareoptions.ecore#//APSReqModificationType/CHANGE"/>
+      <genEnumLiterals ecoreEnumLiteral="apssoftwareoptions.ecore#//APSReqModificationType/REPLACE"/>
+      <genEnumLiterals ecoreEnumLiteral="apssoftwareoptions.ecore#//APSReqModificationType/REMOVE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="apssoftwareoptions.ecore#//NewEnum2">
+      <genEnumLiterals ecoreEnumLiteral="apssoftwareoptions.ecore#//NewEnum2/LITERAL0"/>
+      <genEnumLiterals ecoreEnumLiteral="apssoftwareoptions.ecore#//NewEnum2/LITERAL1"/>
+      <genEnumLiterals ecoreEnumLiteral="apssoftwareoptions.ecore#//NewEnum2/LITERAL2"/>
+      <genEnumLiterals ecoreEnumLiteral="apssoftwareoptions.ecore#//NewEnum2/LITERAL3"/>
+      <genEnumLiterals ecoreEnumLiteral="apssoftwareoptions.ecore#//NewEnum2/LITERAL4"/>
+      <genEnumLiterals ecoreEnumLiteral="apssoftwareoptions.ecore#//NewEnum2/LITERAL5"/>
+      <genEnumLiterals ecoreEnumLiteral="apssoftwareoptions.ecore#//NewEnum2/LITERAL6"/>
+      <genEnumLiterals ecoreEnumLiteral="apssoftwareoptions.ecore#//NewEnum2/LITERAL7"/>
+      <genEnumLiterals ecoreEnumLiteral="apssoftwareoptions.ecore#//NewEnum2/LITERAL8"/>
+      <genEnumLiterals ecoreEnumLiteral="apssoftwareoptions.ecore#//NewEnum2/LITERAL9"/>
+    </genEnums>
     <genClasses ecoreClass="apssoftwareoptions.ecore#//APSReqSoftwareOption"/>
-    <genClasses ecoreClass="apssoftwareoptions.ecore#//APSReqChangeSoftwareOption">
-      <genTypeParameters ecoreTypeParameter="apssoftwareoptions.ecore#//APSReqChangeSoftwareOption/T"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference apssoftwareoptions.ecore#//APSReqChangeSoftwareOption/components"/>
-    </genClasses>
-    <genClasses ecoreClass="apssoftwareoptions.ecore#//APSReqRemoveSoftwareOption">
-      <genTypeParameters ecoreTypeParameter="apssoftwareoptions.ecore#//APSReqRemoveSoftwareOption/T"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference apssoftwareoptions.ecore#//APSReqRemoveSoftwareOption/components"/>
-    </genClasses>
-    <genClasses ecoreClass="apssoftwareoptions.ecore#//APSReqReplaceSoftwareOption">
-      <genTypeParameters ecoreTypeParameter="apssoftwareoptions.ecore#//APSReqReplaceSoftwareOption/T"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference apssoftwareoptions.ecore#//APSReqReplaceSoftwareOption/oldComponent"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference apssoftwareoptions.ecore#//APSReqReplaceSoftwareOption/newComponent"/>
-    </genClasses>
-    <genClasses ecoreClass="apssoftwareoptions.ecore#//APSReqIntroduceNewSoftwareOption">
-      <genTypeParameters ecoreTypeParameter="apssoftwareoptions.ecore#//APSReqIntroduceNewSoftwareOption/T"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference apssoftwareoptions.ecore#//APSReqIntroduceNewSoftwareOption/components"/>
+    <genClasses ecoreClass="apssoftwareoptions.ecore#//APSReqComponentSoftwareOption">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference apssoftwareoptions.ecore#//APSReqComponentSoftwareOption/%"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

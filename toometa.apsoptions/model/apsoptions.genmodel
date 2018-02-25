@@ -8,16 +8,18 @@
   <foreignModel>apsoptions.ecore</foreignModel>
   <genPackages prefix="Apsoptions" disposableProviderFactory="true" extensibleProviderFactory="true"
       childCreationExtenders="true" ecorePackage="apsoptions.ecore#/">
-    <genClasses image="false" ecoreClass="apsoptions.ecore#//APSReqIntrodueNewOption"/>
-    <genClasses image="false" ecoreClass="apsoptions.ecore#//APSReqRemoveOption"/>
-    <genClasses image="false" ecoreClass="apsoptions.ecore#//APSReqReplaceOption"/>
-    <genClasses image="false" ecoreClass="apsoptions.ecore#//APSReqChangeOption"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="apsoptions.ecore#//OptionType">
+      <genEnumLiterals ecoreEnumLiteral="apsoptions.ecore#//OptionType/introduceNew"/>
+      <genEnumLiterals ecoreEnumLiteral="apsoptions.ecore#//OptionType/remove"/>
+      <genEnumLiterals ecoreEnumLiteral="apsoptions.ecore#//OptionType/change"/>
+    </genEnums>
     <genClasses ecoreClass="apsoptions.ecore#//APSReqOption">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference apsoptions.ecore#//APSReqOption/option"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute apsoptions.ecore#//APSReqOption/optionType"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference apsoptions.ecore#//APSReqOption/repository"/>
     </genClasses>
-    <genClasses ecoreClass="apsoptions.ecore#//APSReqOptionContainer">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference apsoptions.ecore#//APSReqOptionContainer/apsreqoption"/>
+    <genClasses ecoreClass="apsoptions.ecore#//APSReqOptionRepository">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference apsoptions.ecore#//APSReqOptionRepository/apsreqoption"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

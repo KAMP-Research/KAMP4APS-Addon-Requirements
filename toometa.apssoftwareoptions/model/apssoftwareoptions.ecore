@@ -2,61 +2,22 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="apssoftwareoptions" nsURI="http://www.example.org/apssoftwareoptions"
     nsPrefix="apssoftwareoptions">
-  <eClassifiers xsi:type="ecore:EClass" name="APSReqSoftwareOption" eSuperTypes="../../toometa.apsoptions/model/apsoptions.ecore#//APSReqOption"/>
-  <eClassifiers xsi:type="ecore:EClass" name="APSReqChangeSoftwareOption">
-    <eTypeParameters name="T">
-      <eBounds eClassifier="ecore:EClass ../../edu.kit.ipd.sdq.kamp4iec.model.repo/model/IECRepository.ecore#//IECComponent"/>
-    </eTypeParameters>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="components" upperBound="-1">
-      <eGenericType eTypeParameter="#//APSReqChangeSoftwareOption/T"/>
-    </eStructuralFeatures>
-    <eGenericSuperTypes eClassifier="#//APSReqSoftwareOption">
-      <eTypeArguments eTypeParameter="#//APSReqChangeSoftwareOption/T"/>
-    </eGenericSuperTypes>
+  <eClassifiers xsi:type="ecore:EClass" name="APSReqSoftwareOption" eSuperTypes="../../toometa.apsoptions/model/apsoptions.ecore#//APSReqOption">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="iecComponents" upperBound="-1"
+        eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4iec.model.repo/model/IECRepository.ecore#//IECComponent"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="iecComponentType" lowerBound="1"
+        eType="#//IECComponentType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="APSReqRemoveSoftwareOption">
-    <eTypeParameters name="T">
-      <eBounds eClassifier="ecore:EClass ../../edu.kit.ipd.sdq.kamp4iec.model.repo/model/IECRepository.ecore#//IECComponent"/>
-    </eTypeParameters>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="components" upperBound="-1">
-      <eGenericType eTypeParameter="#//APSReqRemoveSoftwareOption/T"/>
-    </eStructuralFeatures>
-    <eGenericSuperTypes eClassifier="#//APSReqSoftwareOption">
-      <eTypeArguments eTypeParameter="#//APSReqRemoveSoftwareOption/T"/>
-    </eGenericSuperTypes>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="APSReqReplaceSoftwareOption">
-    <eTypeParameters name="T">
-      <eBounds eClassifier="ecore:EClass ../../edu.kit.ipd.sdq.kamp4iec.model.repo/model/IECRepository.ecore#//IECComponent"/>
-    </eTypeParameters>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="oldComponent">
-      <eGenericType eTypeParameter="#//APSReqReplaceSoftwareOption/T"/>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="newComponent">
-      <eGenericType eTypeParameter="#//APSReqReplaceSoftwareOption/T"/>
-    </eStructuralFeatures>
-    <eGenericSuperTypes eClassifier="#//APSReqSoftwareOption">
-      <eTypeArguments eTypeParameter="#//APSReqReplaceSoftwareOption/T"/>
-    </eGenericSuperTypes>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="APSReqIntroduceNewSoftwareOption">
-    <eTypeParameters name="T">
-      <eBounds eClassifier="ecore:EClass ../../edu.kit.ipd.sdq.kamp4iec.model.repo/model/IECRepository.ecore#//IECComponent"/>
-    </eTypeParameters>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="components" upperBound="-1">
-      <eGenericType eTypeParameter="#//APSReqIntroduceNewSoftwareOption/T"/>
-    </eStructuralFeatures>
-    <eGenericSuperTypes eClassifier="#//APSReqSoftwareOption">
-      <eTypeArguments eTypeParameter="#//APSReqIntroduceNewSoftwareOption/T"/>
-    </eGenericSuperTypes>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="APSReqComponentSoftwareOption" eSuperTypes="#//APSReqSoftwareOption">
-    <eStructuralFeatures xsi:type="ecore:EReference" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EEnum"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="APSReqModificationType">
-    <eLiterals name="INTRODUCE_NEW"/>
-    <eLiterals name="CHANGE" value="1" literal="CHANGE"/>
-    <eLiterals name="REPLACE" value="2" literal=""/>
-    <eLiterals name="REMOVE" value="3"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="IECComponentType">
+    <eLiterals name="Program"/>
+    <eLiterals name="Configuration" value="1"/>
+    <eLiterals name="FunctionBlock" value="2"/>
+    <eLiterals name="Function" value="3"/>
+    <eLiterals name="GlobalVariable" value="4"/>
+    <eLiterals name="Interface" value="5"/>
+    <eLiterals name="Method" value="6"/>
+    <eLiterals name="AbstractMethod" value="7"/>
+    <eLiterals name="Property" value="8"/>
+    <eLiterals name="AbstractProperty" value="9"/>
   </eClassifiers>
 </ecore:EPackage>

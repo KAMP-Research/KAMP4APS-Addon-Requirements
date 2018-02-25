@@ -1,8 +1,11 @@
 package edu.kit.ipd.sdq.kamp4aps4req.hardware;
 
+import org.eclipse.core.resources.IContainer;
+import org.eclipse.core.resources.IFile;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 
+import edu.kit.ipd.sdq.kamp.util.FileAndFolderManagement;
 import edu.kit.ipd.sdq.kamp4aps.core.APSArchitectureVersion;
 import edu.kit.ipd.sdq.kamp4aps.core.APSArchitectureVersionPersistency;
 import edu.kit.ipd.sdq.kamp4aps4req.core.AbstractAPSReqArchitectureVersion;
@@ -44,12 +47,54 @@ public class APSReqHardwareArchitectureVersionPersistency extends AbstractAPSReq
 				modificationMarksFilePath, loadResourceSet);
 		
 		// load the APS model
-		APSArchitectureVersion apsArchitectureVersion = apsArchitectureVersionPersistency.load(folderpath, filename, versionname);
+		APSArchitectureVersion apsArchitectureVersion = this.getApsArchitectureVersionPersistency().load(folderpath, filename, versionname);
 				
 		return new APSReqHardwareArchitectureVersion(versionname, requirementRepository, decisionRepository, optionRepository, modificationMarkRepository, apsArchitectureVersion);
 		
 	}
+	
+	@Override
+	public APSReqHardwareArchitectureVersion load(IContainer folder, String versionname) {
+		ResourceSet loadResourceSet = new ResourceSetImpl();
+		IFile requirementsFile = FileAndFolderManagement.retrieveFileWithExtension(folder, FILEEXTENSION_REQUIREMENTS);
+		IFile decisionsFile = FileAndFolderManagement.retrieveFileWithExtension(folder, FILEEXTENSION_DECISIONS);
+		IFile apsOptionsFile = FileAndFolderManagement.retrieveFileWithExtension(folder, FILEEXTENSION_OPTIONS);
+		IFile modificationMarksFile = FileAndFolderManagement.retrieveFileWithExtension(folder, FILEEXTENSION_MODIFICATIONMARK);
+		
+		ReqRepository reqRepository = null;
+		DecisionRepository decisionRepository = null;
+		APSReqOptionRepository optionRepository = null;
+		APSReqHardwareModificationRepository modificationMarksRepository = null;
+		
+		if (requirementsFile != null && requirementsFile.exists()) {
+			reqRepository = (ReqRepository)loadEmfModelFromResource(requirementsFile.getFullPath().toString(), null, loadResourceSet);
+		}
+		if (decisionsFile != null && decisionsFile.exists()) {
+			decisionRepository = (DecisionRepository)loadEmfModelFromResource(decisionsFile.getFullPath().toString(), null, loadResourceSet);
+		}
+		if (apsOptionsFile != null && apsOptionsFile.exists()) {
+			optionRepository = (APSReqOptionRepository)loadEmfModelFromResource(apsOptionsFile.getFullPath().toString(), null, loadResourceSet);
+		}
+		if (modificationMarksFile != null && modificationMarksFile.exists()) {
+			modificationMarksRepository = (APSReqHardwareModificationRepository)loadEmfModelFromResource(modificationMarksFile.getFullPath().toString(), null, loadResourceSet);
+		}
+		
+		// load the APS model
+		APSArchitectureVersion apsArchitectureVersion = this.getApsArchitectureVersionPersistency().load(folder, versionname);
+				
+		
+		return new APSReqHardwareArchitectureVersion(versionname, reqRepository, decisionRepository, optionRepository, modificationMarksRepository, apsArchitectureVersion);
+	}
+	
+	@Override
+	public void save(String targetDirectoryPath, String filename, APSReqHardwareArchitectureVersion version) {
+		saveAPSReqModels(targetDirectoryPath, filename, (AbstractAPSReqArchitectureVersion<?>) version);
+		// save APS model
+		this.getApsArchitectureVersionPersistency().save(targetDirectoryPath, filename, version.getApsArchitectureVersion());
+		
+	}
 
+	
 
 	public APSArchitectureVersionPersistency getApsArchitectureVersionPersistency() {
 		return apsArchitectureVersionPersistency;
