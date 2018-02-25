@@ -4,16 +4,22 @@ package apshardwareoptions.impl;
 
 import apshardwareoptions.APSReqHardwareOption;
 import apshardwareoptions.ApshardwareoptionsPackage;
-
 import apshardwareoptions.EntityType;
+
 import apsoptions.impl.APSReqOptionImpl;
 
 import edu.kit.ipd.sdq.kamp4aps.model.basic.Entity;
+
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
@@ -40,6 +46,7 @@ public class APSReqHardwareOptionImpl extends APSReqOptionImpl implements APSReq
 	 * @ordered
 	 */
 	protected EList<Entity> entities;
+
 	/**
 	 * The default value of the '{@link #getEntityType() <em>Entity Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -49,6 +56,7 @@ public class APSReqHardwareOptionImpl extends APSReqOptionImpl implements APSReq
 	 * @ordered
 	 */
 	protected static final EntityType ENTITY_TYPE_EDEFAULT = EntityType.STRUCTURE;
+
 	/**
 	 * The cached value of the '{@link #getEntityType() <em>Entity Type</em>}' attribute.
 	 * <!-- begin-user-doc -->

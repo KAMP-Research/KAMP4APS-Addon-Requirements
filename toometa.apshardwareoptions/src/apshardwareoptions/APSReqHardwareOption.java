@@ -3,7 +3,9 @@
 package apshardwareoptions;
 
 import apsoptions.APSReqOption;
+
 import edu.kit.ipd.sdq.kamp4aps.model.basic.Entity;
+
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -24,7 +26,6 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface APSReqHardwareOption extends APSReqOption {
-
 	/**
 	 * Returns the value of the '<em><b>Entities</b></em>' reference list.
 	 * The list contents are of type {@link edu.kit.ipd.sdq.kamp4aps.model.basic.Entity}.
@@ -69,4 +70,5 @@ public interface APSReqHardwareOption extends APSReqOption {
 	 * @generated
 	 */
 	void setEntityType(EntityType value);
+
 } // APSReqHardwareOption

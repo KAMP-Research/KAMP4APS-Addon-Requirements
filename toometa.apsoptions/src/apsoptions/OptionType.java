@@ -19,37 +19,37 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum OptionType implements Enumerator {
 	/**
-	 * The '<em><b>INTRODUCE NEW</b></em>' literal object.
+	 * The '<em><b>Introduce New</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #INTRODUCE_NEW_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	INTRODUCE_NEW(0, "INTRODUCE_NEW", "INTRODUCE_NEW"),
+	INTRODUCE_NEW(0, "introduceNew", "IntroduceNew"),
 
 	/**
-	 * The '<em><b>REMOVE</b></em>' literal object.
+	 * The '<em><b>Remove</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #REMOVE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	REMOVE(1, "REMOVE", "REMOVE"),
+	REMOVE(1, "remove", "remove"),
 
 	/**
-	 * The '<em><b>CHANGE</b></em>' literal object.
+	 * The '<em><b>Change</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #CHANGE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	CHANGE(2, "CHANGE", "CHANGE");
+	CHANGE(2, "change", "change");
 
 	/**
-	 * The '<em><b>INTRODUCE NEW</b></em>' literal value.
+	 * The '<em><b>Introduce New</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>INTRODUCE NEW</b></em>' literal object isn't clear,
@@ -57,14 +57,14 @@ public enum OptionType implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #INTRODUCE_NEW
-	 * @model
+	 * @model name="introduceNew" literal="IntroduceNew"
 	 * @generated
 	 * @ordered
 	 */
 	public static final int INTRODUCE_NEW_VALUE = 0;
 
 	/**
-	 * The '<em><b>REMOVE</b></em>' literal value.
+	 * The '<em><b>Remove</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>REMOVE</b></em>' literal object isn't clear,
@@ -72,14 +72,14 @@ public enum OptionType implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #REMOVE
-	 * @model
+	 * @model name="remove"
 	 * @generated
 	 * @ordered
 	 */
 	public static final int REMOVE_VALUE = 1;
 
 	/**
-	 * The '<em><b>CHANGE</b></em>' literal value.
+	 * The '<em><b>Change</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>CHANGE</b></em>' literal object isn't clear,
@@ -87,7 +87,7 @@ public enum OptionType implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #CHANGE
-	 * @model
+	 * @model name="change"
 	 * @generated
 	 * @ordered
 	 */

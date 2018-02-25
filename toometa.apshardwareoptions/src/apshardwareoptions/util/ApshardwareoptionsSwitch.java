@@ -3,7 +3,9 @@
 package apshardwareoptions.util;
 
 import apshardwareoptions.*;
+
 import apsoptions.APSReqOption;
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 

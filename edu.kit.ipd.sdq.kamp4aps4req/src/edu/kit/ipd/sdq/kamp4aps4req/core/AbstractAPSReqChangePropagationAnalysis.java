@@ -36,7 +36,7 @@ import decisions.Decision;
  * @author Timo Maier
  *
  */
-public abstract class AbstractAPSReqChangePropagationAnalysis<T extends AbstractAPSReqArchitectureVersion> implements AbstractChangePropagationAnalysis<T> {
+public abstract class AbstractAPSReqChangePropagationAnalysis<T extends AbstractAPSReqArchitectureVersion<?>> implements AbstractChangePropagationAnalysis<T> {
 
 	private AbstractAPSReqChangePropagationDueToSpecificationDependencies changePropagationDueToSpecificationDependencies;
 	

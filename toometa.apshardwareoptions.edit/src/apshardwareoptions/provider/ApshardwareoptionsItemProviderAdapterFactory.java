@@ -3,25 +3,35 @@
 package apshardwareoptions.provider;
 
 import apshardwareoptions.ApshardwareoptionsFactory;
+
 import apshardwareoptions.util.ApshardwareoptionsAdapterFactory;
+
 import apsoptions.APSReqOptionRepository;
 import apsoptions.ApsoptionsPackage;
+
 import apsoptions.util.ApsoptionsSwitch;
+
 import de.uka.ipd.sdq.dsexplore.qml.dimensiontypes.DimensionTypeScale;
 import de.uka.ipd.sdq.dsexplore.qml.dimensiontypes.DimensiontypesPackage;
+
 import de.uka.ipd.sdq.dsexplore.qml.dimensiontypes.util.DimensiontypesSwitch;
+
 import java.util.ArrayList;
 import java.util.Collection;
-
 import java.util.List;
+
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
 
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.ecore.EObject;
+
 import org.eclipse.emf.edit.command.CommandParameter;
+
 import org.eclipse.emf.edit.domain.EditingDomain;
+
 import org.eclipse.emf.edit.provider.ChangeNotifier;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
@@ -262,6 +272,7 @@ public class ApshardwareoptionsItemProviderAdapterFactory extends Apshardwareopt
 
 				return null;
 			}
+ 
 			/**
 			 * <!-- begin-user-doc -->
 			 * <!-- end-user-doc -->

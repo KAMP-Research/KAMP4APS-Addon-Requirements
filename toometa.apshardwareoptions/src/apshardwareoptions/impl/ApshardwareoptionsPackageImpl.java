@@ -5,8 +5,8 @@ package apshardwareoptions.impl;
 import apshardwareoptions.APSReqHardwareOption;
 import apshardwareoptions.ApshardwareoptionsFactory;
 import apshardwareoptions.ApshardwareoptionsPackage;
-
 import apshardwareoptions.EntityType;
+
 import apsoptions.ApsoptionsPackage;
 
 import edu.kit.ipd.sdq.kamp4aps.model.aPS.apsPackage;

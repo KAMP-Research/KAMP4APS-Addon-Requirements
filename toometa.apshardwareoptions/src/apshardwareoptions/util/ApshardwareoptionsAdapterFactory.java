@@ -3,7 +3,9 @@
 package apshardwareoptions.util;
 
 import apshardwareoptions.*;
+
 import apsoptions.APSReqOption;
+
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 

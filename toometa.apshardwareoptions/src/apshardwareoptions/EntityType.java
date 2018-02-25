@@ -19,100 +19,100 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum EntityType implements Enumerator {
 	/**
-	 * The '<em><b>STRUCTURE</b></em>' literal object.
+	 * The '<em><b>Structure</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #STRUCTURE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	STRUCTURE(0, "STRUCTURE", "STRUCTURE"),
+	STRUCTURE(0, "Structure", "Structure"),
 
 	/**
-	 * The '<em><b>MODULE</b></em>' literal object.
+	 * The '<em><b>Module</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #MODULE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	MODULE(1, "MODULE", "MODULE"),
+	MODULE(1, "Module", "Module"),
 
 	/**
-	 * The '<em><b>COMPONENT</b></em>' literal object.
+	 * The '<em><b>Component</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #COMPONENT_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	COMPONENT(2, "COMPONENT", "COMPONENT"),
+	COMPONENT(2, "Component", "Component"),
 
 	/**
-	 * The '<em><b>INTERFACE</b></em>' literal object.
+	 * The '<em><b>Interface</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #INTERFACE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	INTERFACE(3, "INTERFACE", "INTERFACE");
+	INTERFACE(3, "Interface", "Interface");
 
 	/**
-	 * The '<em><b>STRUCTURE</b></em>' literal value.
+	 * The '<em><b>Structure</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>STRUCTURE</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Structure</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #STRUCTURE
-	 * @model
+	 * @model name="Structure"
 	 * @generated
 	 * @ordered
 	 */
 	public static final int STRUCTURE_VALUE = 0;
 
 	/**
-	 * The '<em><b>MODULE</b></em>' literal value.
+	 * The '<em><b>Module</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>MODULE</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Module</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #MODULE
-	 * @model
+	 * @model name="Module"
 	 * @generated
 	 * @ordered
 	 */
 	public static final int MODULE_VALUE = 1;
 
 	/**
-	 * The '<em><b>COMPONENT</b></em>' literal value.
+	 * The '<em><b>Component</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>COMPONENT</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Component</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #COMPONENT
-	 * @model
+	 * @model name="Component"
 	 * @generated
 	 * @ordered
 	 */
 	public static final int COMPONENT_VALUE = 2;
 
 	/**
-	 * The '<em><b>INTERFACE</b></em>' literal value.
+	 * The '<em><b>Interface</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>INTERFACE</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Interface</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #INTERFACE
-	 * @model
+	 * @model name="Interface"
 	 * @generated
 	 * @ordered
 	 */

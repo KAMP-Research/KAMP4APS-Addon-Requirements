@@ -3,12 +3,9 @@ package edu.kit.ipd.sdq.kamp4aps4req.hardware;
 import decisions.DecisionRepository;
 import edu.kit.ipd.sdq.kamp4aps4req.core.AbstractAPSReqArchitectureVersion;
 import edu.kit.ipd.sdq.kamp4aps.core.APSArchitectureVersion;
-import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.AbstractKAMP4aPS4ReqModificationRepository;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.APSReqHardwareModificationRepository;
-import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqSeedModifications;
 import options.OptionRepository;
 import requirements.ReqRepository;
-import edu.kit.ipd.sdq.kamp4aps.model.KAMP4aPSModificationmarks.KAMP4aPSSeedModifications;
 
 /**
  * Sub class of APSReqArchitectureVersion, representing the software side
@@ -29,7 +26,7 @@ public class APSReqHardwareArchitectureVersion extends AbstractAPSReqArchitectur
 	 * @param decisionRepository Decision Repository
 	 * @param optionRepository Option Repository
 	 * @param modificationMarksRepository Modification marks Repository
-	 * @param iecArchitectureVersion Architecture Version of the software in the system
+	 * @param apsArchitectureVersion Architecture Version of the hardware in the system
 	 */
 	public APSReqHardwareArchitectureVersion(String name, ReqRepository requirementsRepository, DecisionRepository decisionRepository,
 			OptionRepository optionRepository, 
