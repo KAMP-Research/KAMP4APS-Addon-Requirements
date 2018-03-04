@@ -3,20 +3,19 @@
 package apsoptions.impl;
 
 import apsoptions.APSReqOption;
-import apsoptions.APSReqOptionRepository;
 import apsoptions.ApsoptionsFactory;
 import apsoptions.ApsoptionsPackage;
-
 import apsoptions.OptionType;
+
 import archoptions.ArchoptionsPackage;
 
 import options.OptionsPackage;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 
-import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -38,13 +37,8 @@ public class ApsoptionsPackageImpl extends EPackageImpl implements ApsoptionsPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass apsReqOptionRepositoryEClass = null;
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EEnum optionTypeEEnum = null;
+
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
@@ -123,44 +117,8 @@ public class ApsoptionsPackageImpl extends EPackageImpl implements ApsoptionsPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAPSReqOption_Option() {
-		return (EReference)apsReqOptionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAPSReqOption_Repository() {
-		return (EReference)apsReqOptionEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getAPSReqOption_OptionType() {
-		return (EAttribute)apsReqOptionEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getAPSReqOptionRepository() {
-		return apsReqOptionRepositoryEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAPSReqOptionRepository_Apsreqoption() {
-		return (EReference)apsReqOptionRepositoryEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)apsReqOptionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -201,12 +159,7 @@ public class ApsoptionsPackageImpl extends EPackageImpl implements ApsoptionsPac
 
 		// Create classes and their features
 		apsReqOptionEClass = createEClass(APS_REQ_OPTION);
-		createEReference(apsReqOptionEClass, APS_REQ_OPTION__OPTION);
-		createEReference(apsReqOptionEClass, APS_REQ_OPTION__REPOSITORY);
 		createEAttribute(apsReqOptionEClass, APS_REQ_OPTION__OPTION_TYPE);
-
-		apsReqOptionRepositoryEClass = createEClass(APS_REQ_OPTION_REPOSITORY);
-		createEReference(apsReqOptionRepositoryEClass, APS_REQ_OPTION_REPOSITORY__APSREQOPTION);
 
 		// Create enums
 		optionTypeEEnum = createEEnum(OPTION_TYPE);
@@ -243,15 +196,11 @@ public class ApsoptionsPackageImpl extends EPackageImpl implements ApsoptionsPac
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		apsReqOptionEClass.getESuperTypes().add(theOptionsPackage.getOption());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(apsReqOptionEClass, APSReqOption.class, "APSReqOption", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAPSReqOption_Option(), theOptionsPackage.getOption(), null, "option", null, 0, 1, APSReqOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAPSReqOption_Repository(), this.getAPSReqOptionRepository(), this.getAPSReqOptionRepository_Apsreqoption(), "repository", null, 1, 1, APSReqOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAPSReqOption_OptionType(), this.getOptionType(), "optionType", null, 1, 1, APSReqOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(apsReqOptionRepositoryEClass, APSReqOptionRepository.class, "APSReqOptionRepository", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAPSReqOptionRepository_Apsreqoption(), this.getAPSReqOption(), this.getAPSReqOption_Repository(), "apsreqoption", null, 0, -1, APSReqOptionRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(optionTypeEEnum, OptionType.class, "OptionType");

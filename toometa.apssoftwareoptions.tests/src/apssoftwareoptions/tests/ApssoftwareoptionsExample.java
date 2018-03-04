@@ -60,7 +60,7 @@ public class ApssoftwareoptionsExample {
 			System.out.println("Enter a list of file paths or URIs that have content like this:");
 			try {
 				Resource resource = resourceSet.createResource(URI.createURI("http:///My.apssoftwareoptions"));
-				APSReqSoftwareOption<?> root = ApssoftwareoptionsFactory.eINSTANCE.createAPSReqSoftwareOption();
+				APSReqSoftwareOption root = ApssoftwareoptionsFactory.eINSTANCE.createAPSReqSoftwareOption();
 				resource.getContents().add(root);
 				resource.save(System.out, null);
 			}

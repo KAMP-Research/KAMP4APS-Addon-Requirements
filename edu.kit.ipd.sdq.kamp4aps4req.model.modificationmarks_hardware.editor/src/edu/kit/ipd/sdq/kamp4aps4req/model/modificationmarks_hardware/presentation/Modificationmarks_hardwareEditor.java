@@ -1043,8 +1043,7 @@ public class Modificationmarks_hardwareEditor
 				// Try to load some resources that can be referenced from the modificationsmarks 
 				String folderPath = resourceURI.trimSegments(1).toPlatformString(false);
 				IResource containerResource = ResourcesPlugin.getWorkspace().getRoot().findMember(folderPath);
-				Collection<String> fileExtensionsToLoad = Arrays.asList("repository", "system", "usagemodel",
-						"bpusagemodel", "datamodel", "organizationenvironmentmodel", "requirements",
+				Collection<String> fileExtensionsToLoad = Arrays.asList("repository", "requirements",
 						"decisions", "options");
 				
 				if (containerResource instanceof IContainer) {
@@ -1065,7 +1064,7 @@ public class Modificationmarks_hardwareEditor
 						e.printStackTrace();
 					}
 				}
-				// --End manually added code
+		// --End manually added code
 
 		Diagnostic diagnostic = analyzeResourceProblems(resource, exception);
 		if (diagnostic.getSeverity() != Diagnostic.OK) {

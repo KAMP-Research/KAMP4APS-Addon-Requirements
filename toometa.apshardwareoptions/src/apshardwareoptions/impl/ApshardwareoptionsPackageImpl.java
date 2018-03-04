@@ -2,20 +2,26 @@
  */
 package apshardwareoptions.impl;
 
-import apshardwareoptions.APSReqHardwareOption;
+import apshardwareoptions.APSReqComponentOption;
+import apshardwareoptions.APSReqInterfaceOption;
+import apshardwareoptions.APSReqModuleOption;
+import apshardwareoptions.APSReqStructureOption;
 import apshardwareoptions.ApshardwareoptionsFactory;
 import apshardwareoptions.ApshardwareoptionsPackage;
-import apshardwareoptions.EntityType;
 
 import apsoptions.ApsoptionsPackage;
 
+import edu.kit.ipd.sdq.kamp4aps.model.aPS.ComponentRepository.ComponentRepositoryPackage;
+
+import edu.kit.ipd.sdq.kamp4aps.model.aPS.InterfaceRepository.InterfaceRepositoryPackage;
+
+import edu.kit.ipd.sdq.kamp4aps.model.aPS.ModuleRepository.ModuleRepositoryPackage;
+
+import edu.kit.ipd.sdq.kamp4aps.model.aPS.StructureRepository.StructureRepositoryPackage;
+
 import edu.kit.ipd.sdq.kamp4aps.model.aPS.apsPackage;
 
-import edu.kit.ipd.sdq.kamp4aps.model.basic.BasicPackage;
-
-import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -33,14 +39,28 @@ public class ApshardwareoptionsPackageImpl extends EPackageImpl implements Apsha
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass apsReqHardwareOptionEClass = null;
+	private EClass apsReqStructureOptionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum entityTypeEEnum = null;
+	private EClass apsReqModuleOptionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass apsReqComponentOptionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass apsReqInterfaceOptionEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -112,8 +132,8 @@ public class ApshardwareoptionsPackageImpl extends EPackageImpl implements Apsha
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getAPSReqHardwareOption() {
-		return apsReqHardwareOptionEClass;
+	public EClass getAPSReqStructureOption() {
+		return apsReqStructureOptionEClass;
 	}
 
 	/**
@@ -121,8 +141,8 @@ public class ApshardwareoptionsPackageImpl extends EPackageImpl implements Apsha
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAPSReqHardwareOption_Entities() {
-		return (EReference)apsReqHardwareOptionEClass.getEStructuralFeatures().get(0);
+	public EReference getAPSReqStructureOption_Structures() {
+		return (EReference)apsReqStructureOptionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -130,8 +150,8 @@ public class ApshardwareoptionsPackageImpl extends EPackageImpl implements Apsha
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAPSReqHardwareOption_EntityType() {
-		return (EAttribute)apsReqHardwareOptionEClass.getEStructuralFeatures().get(1);
+	public EClass getAPSReqModuleOption() {
+		return apsReqModuleOptionEClass;
 	}
 
 	/**
@@ -139,8 +159,44 @@ public class ApshardwareoptionsPackageImpl extends EPackageImpl implements Apsha
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EEnum getEntityType() {
-		return entityTypeEEnum;
+	public EReference getAPSReqModuleOption_Modules() {
+		return (EReference)apsReqModuleOptionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAPSReqComponentOption() {
+		return apsReqComponentOptionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAPSReqComponentOption_Components() {
+		return (EReference)apsReqComponentOptionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAPSReqInterfaceOption() {
+		return apsReqInterfaceOptionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAPSReqInterfaceOption_Interfaces() {
+		return (EReference)apsReqInterfaceOptionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -171,12 +227,17 @@ public class ApshardwareoptionsPackageImpl extends EPackageImpl implements Apsha
 		isCreated = true;
 
 		// Create classes and their features
-		apsReqHardwareOptionEClass = createEClass(APS_REQ_HARDWARE_OPTION);
-		createEReference(apsReqHardwareOptionEClass, APS_REQ_HARDWARE_OPTION__ENTITIES);
-		createEAttribute(apsReqHardwareOptionEClass, APS_REQ_HARDWARE_OPTION__ENTITY_TYPE);
+		apsReqStructureOptionEClass = createEClass(APS_REQ_STRUCTURE_OPTION);
+		createEReference(apsReqStructureOptionEClass, APS_REQ_STRUCTURE_OPTION__STRUCTURES);
 
-		// Create enums
-		entityTypeEEnum = createEEnum(ENTITY_TYPE);
+		apsReqModuleOptionEClass = createEClass(APS_REQ_MODULE_OPTION);
+		createEReference(apsReqModuleOptionEClass, APS_REQ_MODULE_OPTION__MODULES);
+
+		apsReqComponentOptionEClass = createEClass(APS_REQ_COMPONENT_OPTION);
+		createEReference(apsReqComponentOptionEClass, APS_REQ_COMPONENT_OPTION__COMPONENTS);
+
+		apsReqInterfaceOptionEClass = createEClass(APS_REQ_INTERFACE_OPTION);
+		createEReference(apsReqInterfaceOptionEClass, APS_REQ_INTERFACE_OPTION__INTERFACES);
 	}
 
 	/**
@@ -204,26 +265,33 @@ public class ApshardwareoptionsPackageImpl extends EPackageImpl implements Apsha
 
 		// Obtain other dependent packages
 		ApsoptionsPackage theApsoptionsPackage = (ApsoptionsPackage)EPackage.Registry.INSTANCE.getEPackage(ApsoptionsPackage.eNS_URI);
-		BasicPackage theBasicPackage = (BasicPackage)EPackage.Registry.INSTANCE.getEPackage(BasicPackage.eNS_URI);
+		StructureRepositoryPackage theStructureRepositoryPackage = (StructureRepositoryPackage)EPackage.Registry.INSTANCE.getEPackage(StructureRepositoryPackage.eNS_URI);
+		ModuleRepositoryPackage theModuleRepositoryPackage = (ModuleRepositoryPackage)EPackage.Registry.INSTANCE.getEPackage(ModuleRepositoryPackage.eNS_URI);
+		ComponentRepositoryPackage theComponentRepositoryPackage = (ComponentRepositoryPackage)EPackage.Registry.INSTANCE.getEPackage(ComponentRepositoryPackage.eNS_URI);
+		InterfaceRepositoryPackage theInterfaceRepositoryPackage = (InterfaceRepositoryPackage)EPackage.Registry.INSTANCE.getEPackage(InterfaceRepositoryPackage.eNS_URI);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		apsReqHardwareOptionEClass.getESuperTypes().add(theApsoptionsPackage.getAPSReqOption());
+		apsReqStructureOptionEClass.getESuperTypes().add(theApsoptionsPackage.getAPSReqOption());
+		apsReqModuleOptionEClass.getESuperTypes().add(theApsoptionsPackage.getAPSReqOption());
+		apsReqComponentOptionEClass.getESuperTypes().add(theApsoptionsPackage.getAPSReqOption());
+		apsReqInterfaceOptionEClass.getESuperTypes().add(theApsoptionsPackage.getAPSReqOption());
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(apsReqHardwareOptionEClass, APSReqHardwareOption.class, "APSReqHardwareOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAPSReqHardwareOption_Entities(), theBasicPackage.getEntity(), null, "entities", null, 0, -1, APSReqHardwareOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAPSReqHardwareOption_EntityType(), this.getEntityType(), "entityType", null, 1, 1, APSReqHardwareOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(apsReqStructureOptionEClass, APSReqStructureOption.class, "APSReqStructureOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAPSReqStructureOption_Structures(), theStructureRepositoryPackage.getStructure(), null, "structures", null, 0, -1, APSReqStructureOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		// Initialize enums and add enum literals
-		initEEnum(entityTypeEEnum, EntityType.class, "EntityType");
-		addEEnumLiteral(entityTypeEEnum, EntityType.STRUCTURE);
-		addEEnumLiteral(entityTypeEEnum, EntityType.MODULE);
-		addEEnumLiteral(entityTypeEEnum, EntityType.COMPONENT);
-		addEEnumLiteral(entityTypeEEnum, EntityType.INTERFACE);
+		initEClass(apsReqModuleOptionEClass, APSReqModuleOption.class, "APSReqModuleOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAPSReqModuleOption_Modules(), theModuleRepositoryPackage.getModule(), null, "modules", null, 0, -1, APSReqModuleOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(apsReqComponentOptionEClass, APSReqComponentOption.class, "APSReqComponentOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAPSReqComponentOption_Components(), theComponentRepositoryPackage.getComponent(), null, "components", null, 0, -1, APSReqComponentOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(apsReqInterfaceOptionEClass, APSReqInterfaceOption.class, "APSReqInterfaceOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAPSReqInterfaceOption_Interfaces(), theInterfaceRepositoryPackage.getInterface(), null, "interfaces", null, 0, -1, APSReqInterfaceOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

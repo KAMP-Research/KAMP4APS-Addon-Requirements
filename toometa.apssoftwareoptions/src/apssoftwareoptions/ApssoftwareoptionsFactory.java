@@ -2,8 +2,6 @@
  */
 package apssoftwareoptions;
 
-import edu.kit.ipd.sdq.kamp4iec.model.IECRepository.IECComponent;
-
 import org.eclipse.emf.ecore.EFactory;
 
 /**
@@ -30,43 +28,7 @@ public interface ApssoftwareoptionsFactory extends EFactory {
 	 * @return a new object of class '<em>APS Req Software Option</em>'.
 	 * @generated
 	 */
-	<T> APSReqSoftwareOption<T> createAPSReqSoftwareOption();
-
-	/**
-	 * Returns a new object of class '<em>APS Req Change Software Option</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>APS Req Change Software Option</em>'.
-	 * @generated
-	 */
-	<T extends IECComponent> APSReqChangeSoftwareOption<T> createAPSReqChangeSoftwareOption();
-
-	/**
-	 * Returns a new object of class '<em>APS Req Remove Software Option</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>APS Req Remove Software Option</em>'.
-	 * @generated
-	 */
-	<T extends IECComponent> APSReqRemoveSoftwareOption<T> createAPSReqRemoveSoftwareOption();
-
-	/**
-	 * Returns a new object of class '<em>APS Req Replace Software Option</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>APS Req Replace Software Option</em>'.
-	 * @generated
-	 */
-	<T extends IECComponent> APSReqReplaceSoftwareOption<T> createAPSReqReplaceSoftwareOption();
-
-	/**
-	 * Returns a new object of class '<em>APS Req Introduce New Software Option</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>APS Req Introduce New Software Option</em>'.
-	 * @generated
-	 */
-	<T extends IECComponent> APSReqIntroduceNewSoftwareOption<T> createAPSReqIntroduceNewSoftwareOption();
+	APSReqSoftwareOption createAPSReqSoftwareOption();
 
 	/**
 	 * Returns the package supported by this factory.

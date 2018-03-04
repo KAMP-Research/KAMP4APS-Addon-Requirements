@@ -192,7 +192,7 @@ import requirements.provider.RequirementsItemProviderAdapterFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ModificationmarksEditor2
+public class ModificationmarksEditor
 	extends MultiPageEditorPart
 	implements IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, IGotoMarker {
 	/**
@@ -354,18 +354,18 @@ public class ModificationmarksEditor2
 			public void partActivated(IWorkbenchPart p) {
 				if (p instanceof ContentOutline) {
 					if (((ContentOutline)p).getCurrentPage() == contentOutlinePage) {
-						getActionBarContributor().setActiveEditor(ModificationmarksEditor2.this);
+						getActionBarContributor().setActiveEditor(ModificationmarksEditor.this);
 
 						setCurrentViewer(contentOutlineViewer);
 					}
 				}
 				else if (p instanceof PropertySheet) {
 					if (propertySheetPages.contains(((PropertySheet)p).getCurrentPage())) {
-						getActionBarContributor().setActiveEditor(ModificationmarksEditor2.this);
+						getActionBarContributor().setActiveEditor(ModificationmarksEditor.this);
 						handleActivate();
 					}
 				}
-				else if (p == ModificationmarksEditor2.this) {
+				else if (p == ModificationmarksEditor.this) {
 					handleActivate();
 				}
 			}
@@ -538,7 +538,7 @@ public class ModificationmarksEditor2
 								 public void run() {
 									 removedResources.addAll(visitor.getRemovedResources());
 									 if (!isDirty()) {
-										 getSite().getPage().closeEditor(ModificationmarksEditor2.this, false);
+										 getSite().getPage().closeEditor(ModificationmarksEditor.this, false);
 									 }
 								 }
 							 });
@@ -549,7 +549,7 @@ public class ModificationmarksEditor2
 							(new Runnable() {
 								 public void run() {
 									 changedResources.addAll(visitor.getChangedResources());
-									 if (getSite().getPage().getActiveEditor() == ModificationmarksEditor2.this) {
+									 if (getSite().getPage().getActiveEditor() == ModificationmarksEditor.this) {
 										 handleActivate();
 									 }
 								 }
@@ -581,7 +581,7 @@ public class ModificationmarksEditor2
 
 		if (!removedResources.isEmpty()) {
 			if (handleDirtyConflict()) {
-				getSite().getPage().closeEditor(ModificationmarksEditor2.this, false);
+				getSite().getPage().closeEditor(ModificationmarksEditor.this, false);
 			}
 			else {
 				removedResources.clear();
@@ -711,7 +711,7 @@ public class ModificationmarksEditor2
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ModificationmarksEditor2() {
+	public ModificationmarksEditor() {
 		super();
 		initializeEditingDomain();
 	}
@@ -720,7 +720,7 @@ public class ModificationmarksEditor2
 	 * This sets up the editing domain for the model editor.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	protected void initializeEditingDomain() {
 		// Create an adapter factory that yields item providers.
@@ -989,7 +989,7 @@ public class ModificationmarksEditor2
 	 * This is the method called to load a resource into the editing domain's resource set based on the editor's input.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public void createModel() {
 		URI resourceURI = EditUIUtil.getURI(getEditorInput(), editingDomain.getResourceSet().getURIConverter());
@@ -1004,33 +1004,31 @@ public class ModificationmarksEditor2
 			exception = e;
 			resource = editingDomain.getResourceSet().getResource(resourceURI, false);
 		}
-		
 		// --Start manually added code
-				// Try to load some resources that can be referenced from the modificationsmarks 
-				String folderPath = resourceURI.trimSegments(1).toPlatformString(false);
-				IResource containerResource = ResourcesPlugin.getWorkspace().getRoot().findMember(folderPath);
-				Collection<String> fileExtensionsToLoad = Arrays.asList("repository", "system", "usagemodel",
-						"bpusagemodel", "datamodel", "organizationenvironmentmodel", "requirements",
-						"decisions", "options");
-				
-				if (containerResource instanceof IContainer) {
-					try {
-						for (IResource member : ((IContainer)containerResource).members()) {
-							if (member instanceof IFile && fileExtensionsToLoad.contains(
-									member.getFileExtension())) {
-								URI URIToLoad = URI.createPlatformResourceURI(member.getFullPath().toString(), false);
-								try {
-									resource = editingDomain.getResourceSet().getResource(URIToLoad, true);
-								} catch (Exception e) {
-									exception = e;
-									resource = editingDomain.getResourceSet().getResource(URIToLoad, false);
-								}
-							}
+		// Try to load some resources that can be referenced from the modificationsmarks 
+		String folderPath = resourceURI.trimSegments(1).toPlatformString(false);
+		IResource containerResource = ResourcesPlugin.getWorkspace().getRoot().findMember(folderPath);
+		Collection<String> fileExtensionsToLoad = Arrays.asList("repository", "requirements",
+				"decisions", "options");
+		
+		if (containerResource instanceof IContainer) {
+			try {
+				for (IResource member : ((IContainer)containerResource).members()) {
+					if (member instanceof IFile && fileExtensionsToLoad.contains(
+							member.getFileExtension())) {
+						URI URIToLoad = URI.createPlatformResourceURI(member.getFullPath().toString(), false);
+						try {
+							resource = editingDomain.getResourceSet().getResource(URIToLoad, true);
+						} catch (Exception e) {
+							exception = e;
+							resource = editingDomain.getResourceSet().getResource(URIToLoad, false);
 						}
-					} catch (CoreException e) {
-						e.printStackTrace();
 					}
 				}
+			} catch (CoreException e) {
+				e.printStackTrace();
+			}
+		}
 		// --End manually added code
 
 		Diagnostic diagnostic = analyzeResourceProblems(resource, exception);
@@ -1093,7 +1091,7 @@ public class ModificationmarksEditor2
 			//
 			{
 				ViewerPane viewerPane =
-					new ViewerPane(getSite().getPage(), ModificationmarksEditor2.this) {
+					new ViewerPane(getSite().getPage(), ModificationmarksEditor.this) {
 						@Override
 						public Viewer createViewer(Composite composite) {
 							Tree tree = new Tree(composite, SWT.MULTI);
@@ -1127,7 +1125,7 @@ public class ModificationmarksEditor2
 			//
 			{
 				ViewerPane viewerPane =
-					new ViewerPane(getSite().getPage(), ModificationmarksEditor2.this) {
+					new ViewerPane(getSite().getPage(), ModificationmarksEditor.this) {
 						@Override
 						public Viewer createViewer(Composite composite) {
 							Tree tree = new Tree(composite, SWT.MULTI);
@@ -1156,7 +1154,7 @@ public class ModificationmarksEditor2
 			//
 			{
 				ViewerPane viewerPane =
-					new ViewerPane(getSite().getPage(), ModificationmarksEditor2.this) {
+					new ViewerPane(getSite().getPage(), ModificationmarksEditor.this) {
 						@Override
 						public Viewer createViewer(Composite composite) {
 							return new ListViewer(composite);
@@ -1181,7 +1179,7 @@ public class ModificationmarksEditor2
 			//
 			{
 				ViewerPane viewerPane =
-					new ViewerPane(getSite().getPage(), ModificationmarksEditor2.this) {
+					new ViewerPane(getSite().getPage(), ModificationmarksEditor.this) {
 						@Override
 						public Viewer createViewer(Composite composite) {
 							return new TreeViewer(composite);
@@ -1208,7 +1206,7 @@ public class ModificationmarksEditor2
 			//
 			{
 				ViewerPane viewerPane =
-					new ViewerPane(getSite().getPage(), ModificationmarksEditor2.this) {
+					new ViewerPane(getSite().getPage(), ModificationmarksEditor.this) {
 						@Override
 						public Viewer createViewer(Composite composite) {
 							return new TableViewer(composite);
@@ -1251,7 +1249,7 @@ public class ModificationmarksEditor2
 			//
 			{
 				ViewerPane viewerPane =
-					new ViewerPane(getSite().getPage(), ModificationmarksEditor2.this) {
+					new ViewerPane(getSite().getPage(), ModificationmarksEditor.this) {
 						@Override
 						public Viewer createViewer(Composite composite) {
 							return new TreeViewer(composite);
@@ -1471,8 +1469,8 @@ public class ModificationmarksEditor2
 			new ExtendedPropertySheetPage(editingDomain) {
 				@Override
 				public void setSelectionToViewer(List<?> selection) {
-					ModificationmarksEditor2.this.setSelectionToViewer(selection);
-					ModificationmarksEditor2.this.setFocus();
+					ModificationmarksEditor.this.setSelectionToViewer(selection);
+					ModificationmarksEditor.this.setFocus();
 				}
 
 				@Override

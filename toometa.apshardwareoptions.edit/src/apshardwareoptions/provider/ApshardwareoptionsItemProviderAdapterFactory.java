@@ -6,11 +6,6 @@ import apshardwareoptions.ApshardwareoptionsFactory;
 
 import apshardwareoptions.util.ApshardwareoptionsAdapterFactory;
 
-import apsoptions.APSReqOptionRepository;
-import apsoptions.ApsoptionsPackage;
-
-import apsoptions.util.ApsoptionsSwitch;
-
 import de.uka.ipd.sdq.dsexplore.qml.dimensiontypes.DimensionTypeScale;
 import de.uka.ipd.sdq.dsexplore.qml.dimensiontypes.DimensiontypesPackage;
 
@@ -19,6 +14,11 @@ import de.uka.ipd.sdq.dsexplore.qml.dimensiontypes.util.DimensiontypesSwitch;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+
+import options.OptionRepository;
+import options.OptionsPackage;
+
+import options.util.OptionsSwitch;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
@@ -94,26 +94,95 @@ public class ApshardwareoptionsItemProviderAdapterFactory extends Apshardwareopt
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link apshardwareoptions.APSReqHardwareOption} instances.
+	 * This keeps track of the one adapter used for all {@link apshardwareoptions.APSReqStructureOption} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected APSReqHardwareOptionItemProvider apsReqHardwareOptionItemProvider;
+	protected APSReqStructureOptionItemProvider apsReqStructureOptionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link apshardwareoptions.APSReqHardwareOption}.
+	 * This creates an adapter for a {@link apshardwareoptions.APSReqStructureOption}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createAPSReqHardwareOptionAdapter() {
-		if (apsReqHardwareOptionItemProvider == null) {
-			apsReqHardwareOptionItemProvider = new APSReqHardwareOptionItemProvider(this);
+	public Adapter createAPSReqStructureOptionAdapter() {
+		if (apsReqStructureOptionItemProvider == null) {
+			apsReqStructureOptionItemProvider = new APSReqStructureOptionItemProvider(this);
 		}
 
-		return apsReqHardwareOptionItemProvider;
+		return apsReqStructureOptionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link apshardwareoptions.APSReqModuleOption} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected APSReqModuleOptionItemProvider apsReqModuleOptionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link apshardwareoptions.APSReqModuleOption}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAPSReqModuleOptionAdapter() {
+		if (apsReqModuleOptionItemProvider == null) {
+			apsReqModuleOptionItemProvider = new APSReqModuleOptionItemProvider(this);
+		}
+
+		return apsReqModuleOptionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link apshardwareoptions.APSReqComponentOption} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected APSReqComponentOptionItemProvider apsReqComponentOptionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link apshardwareoptions.APSReqComponentOption}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAPSReqComponentOptionAdapter() {
+		if (apsReqComponentOptionItemProvider == null) {
+			apsReqComponentOptionItemProvider = new APSReqComponentOptionItemProvider(this);
+		}
+
+		return apsReqComponentOptionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link apshardwareoptions.APSReqInterfaceOption} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected APSReqInterfaceOptionItemProvider apsReqInterfaceOptionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link apshardwareoptions.APSReqInterfaceOption}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAPSReqInterfaceOptionAdapter() {
+		if (apsReqInterfaceOptionItemProvider == null) {
+			apsReqInterfaceOptionItemProvider = new APSReqInterfaceOptionItemProvider(this);
+		}
+
+		return apsReqInterfaceOptionItemProvider;
 	}
 
 	/**
@@ -215,94 +284,10 @@ public class ApshardwareoptionsItemProviderAdapterFactory extends Apshardwareopt
 	 * @generated
 	 */
 	public void dispose() {
-		if (apsReqHardwareOptionItemProvider != null) apsReqHardwareOptionItemProvider.dispose();
-	}
-
-	/**
-	 * A child creation extender for the {@link ApsoptionsPackage}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static class ApsoptionsChildCreationExtender implements IChildCreationExtender {
-		/**
-		 * The switch for creating child descriptors specific to each extended class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		protected static class CreationSwitch extends ApsoptionsSwitch<Object> {
-			/**
-			 * The child descriptors being populated.
-			 * <!-- begin-user-doc -->
-			 * <!-- end-user-doc -->
-			 * @generated
-			 */
-			protected List<Object> newChildDescriptors;
-
-			/**
-			 * The domain in which to create the children.
-			 * <!-- begin-user-doc -->
-			 * <!-- end-user-doc -->
-			 * @generated
-			 */
-			protected EditingDomain editingDomain;
-
-			/**
-			 * Creates the a switch for populating child descriptors in the given domain.
-			 * <!-- begin-user-doc -->
-			 * <!-- end-user-doc -->
-			 * @generated
-			 */
-			CreationSwitch(List<Object> newChildDescriptors, EditingDomain editingDomain) {
-				this.newChildDescriptors = newChildDescriptors;
-				this.editingDomain = editingDomain;
-			}
-			/**
-			 * <!-- begin-user-doc -->
-			 * <!-- end-user-doc -->
-			 * @generated
-			 */
-			@Override
-			public Object caseAPSReqOptionRepository(APSReqOptionRepository object) {
-				newChildDescriptors.add
-					(createChildParameter
-						(ApsoptionsPackage.Literals.APS_REQ_OPTION_REPOSITORY__APSREQOPTION,
-						 ApshardwareoptionsFactory.eINSTANCE.createAPSReqHardwareOption()));
-
-				return null;
-			}
- 
-			/**
-			 * <!-- begin-user-doc -->
-			 * <!-- end-user-doc -->
-			 * @generated
-			 */
-			protected CommandParameter createChildParameter(Object feature, Object child) {
-				return new CommandParameter(null, feature, child);
-			}
-
-		}
-
-		/**
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		public Collection<Object> getNewChildDescriptors(Object object, EditingDomain editingDomain) {
-			ArrayList<Object> result = new ArrayList<Object>();
-			new CreationSwitch(result, editingDomain).doSwitch((EObject)object);
-			return result;
-		}
-
-		/**
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		public ResourceLocator getResourceLocator() {
-			return ApshardwareoptionsEditPlugin.INSTANCE;
-		}
+		if (apsReqStructureOptionItemProvider != null) apsReqStructureOptionItemProvider.dispose();
+		if (apsReqModuleOptionItemProvider != null) apsReqModuleOptionItemProvider.dispose();
+		if (apsReqComponentOptionItemProvider != null) apsReqComponentOptionItemProvider.dispose();
+		if (apsReqInterfaceOptionItemProvider != null) apsReqInterfaceOptionItemProvider.dispose();
 	}
 
 	/**
@@ -355,7 +340,124 @@ public class ApshardwareoptionsItemProviderAdapterFactory extends Apshardwareopt
 				newChildDescriptors.add
 					(createChildParameter
 						(DimensiontypesPackage.Literals.DIMENSION_TYPE_SCALE__SCALE_ELEMENTS,
-						 ApshardwareoptionsFactory.eINSTANCE.createAPSReqHardwareOption()));
+						 ApshardwareoptionsFactory.eINSTANCE.createAPSReqStructureOption()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(DimensiontypesPackage.Literals.DIMENSION_TYPE_SCALE__SCALE_ELEMENTS,
+						 ApshardwareoptionsFactory.eINSTANCE.createAPSReqModuleOption()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(DimensiontypesPackage.Literals.DIMENSION_TYPE_SCALE__SCALE_ELEMENTS,
+						 ApshardwareoptionsFactory.eINSTANCE.createAPSReqComponentOption()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(DimensiontypesPackage.Literals.DIMENSION_TYPE_SCALE__SCALE_ELEMENTS,
+						 ApshardwareoptionsFactory.eINSTANCE.createAPSReqInterfaceOption()));
+
+				return null;
+			}
+ 
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected CommandParameter createChildParameter(Object feature, Object child) {
+				return new CommandParameter(null, feature, child);
+			}
+
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public Collection<Object> getNewChildDescriptors(Object object, EditingDomain editingDomain) {
+			ArrayList<Object> result = new ArrayList<Object>();
+			new CreationSwitch(result, editingDomain).doSwitch((EObject)object);
+			return result;
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public ResourceLocator getResourceLocator() {
+			return ApshardwareoptionsEditPlugin.INSTANCE;
+		}
+	}
+
+	/**
+	 * A child creation extender for the {@link OptionsPackage}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static class OptionsChildCreationExtender implements IChildCreationExtender {
+		/**
+		 * The switch for creating child descriptors specific to each extended class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		protected static class CreationSwitch extends OptionsSwitch<Object> {
+			/**
+			 * The child descriptors being populated.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected List<Object> newChildDescriptors;
+
+			/**
+			 * The domain in which to create the children.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected EditingDomain editingDomain;
+
+			/**
+			 * Creates the a switch for populating child descriptors in the given domain.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			CreationSwitch(List<Object> newChildDescriptors, EditingDomain editingDomain) {
+				this.newChildDescriptors = newChildDescriptors;
+				this.editingDomain = editingDomain;
+			}
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			@Override
+			public Object caseOptionRepository(OptionRepository object) {
+				newChildDescriptors.add
+					(createChildParameter
+						(OptionsPackage.Literals.OPTION_REPOSITORY__OPTIONS,
+						 ApshardwareoptionsFactory.eINSTANCE.createAPSReqStructureOption()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(OptionsPackage.Literals.OPTION_REPOSITORY__OPTIONS,
+						 ApshardwareoptionsFactory.eINSTANCE.createAPSReqModuleOption()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(OptionsPackage.Literals.OPTION_REPOSITORY__OPTIONS,
+						 ApshardwareoptionsFactory.eINSTANCE.createAPSReqComponentOption()));
+
+				newChildDescriptors.add
+					(createChildParameter
+						(OptionsPackage.Literals.OPTION_REPOSITORY__OPTIONS,
+						 ApshardwareoptionsFactory.eINSTANCE.createAPSReqInterfaceOption()));
 
 				return null;
 			}

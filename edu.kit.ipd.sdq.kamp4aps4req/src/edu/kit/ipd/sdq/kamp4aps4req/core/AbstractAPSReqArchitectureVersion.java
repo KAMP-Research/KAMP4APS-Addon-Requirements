@@ -6,8 +6,8 @@ import decisions.DecisionRepository;
 import decisions.DecisionsFactory;
 import requirements.ReqRepository;
 import requirements.RequirementsFactory;
-import apsoptions.APSReqOptionRepository;
-import apsoptions.ApsoptionsFactory;
+import options.OptionRepository;
+import options.OptionsFactory;
 
 /**
  * Class representing an @code{APSReqArchitectureVersion}. Super class of the software and hardware parts.
@@ -19,11 +19,11 @@ public abstract class AbstractAPSReqArchitectureVersion<T extends AbstractKAMP4a
 
 		protected ReqRepository requirementsRepository;
 		protected DecisionRepository decisionRepository;
-		protected APSReqOptionRepository optionRepository;
+		protected OptionRepository optionRepository;
 
 		
 		public AbstractAPSReqArchitectureVersion(String name, ReqRepository requirementsRepository, DecisionRepository decisionRepository,
-				APSReqOptionRepository optionRepository, T modificationMarksRepository) {
+				OptionRepository optionRepository, T modificationMarksRepository) {
 			
 			super(name, modificationMarksRepository);
 			if (requirementsRepository == null) {
@@ -35,7 +35,7 @@ public abstract class AbstractAPSReqArchitectureVersion<T extends AbstractKAMP4a
 			}
 			this.setDecisionRepository(decisionRepository);
 			if (optionRepository == null) {
-				optionRepository = ApsoptionsFactory.eINSTANCE.createAPSReqOptionRepository();
+				optionRepository = OptionsFactory.eINSTANCE.createOptionRepository();
 			}
 			this.setOptionRepository(optionRepository);
 		}
@@ -61,12 +61,12 @@ public abstract class AbstractAPSReqArchitectureVersion<T extends AbstractKAMP4a
 		}
 
 
-		public APSReqOptionRepository getOptionRepository() {
+		public OptionRepository getOptionRepository() {
 			return optionRepository;
 		}
 
 
-		public void setOptionRepository(APSReqOptionRepository optionRepository) {
+		public void setOptionRepository(OptionRepository optionRepository) {
 			this.optionRepository = optionRepository;
 		}
 }

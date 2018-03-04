@@ -9,15 +9,15 @@
         eType="#//IECComponentType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="IECComponentType">
-    <eLiterals name="Program"/>
-    <eLiterals name="Configuration" value="1"/>
-    <eLiterals name="FunctionBlock" value="2"/>
-    <eLiterals name="Function" value="3"/>
-    <eLiterals name="GlobalVariable" value="4"/>
-    <eLiterals name="Interface" value="5"/>
-    <eLiterals name="Method" value="6"/>
-    <eLiterals name="AbstractMethod" value="7"/>
-    <eLiterals name="Property" value="8"/>
-    <eLiterals name="AbstractProperty" value="9"/>
+    <eLiterals name="program" literal="Program"/>
+    <eLiterals name="configuration" value="1" literal="Configuration"/>
+    <eLiterals name="functionBlock" value="2" literal="Function Block"/>
+    <eLiterals name="function" value="3" literal="Function"/>
+    <eLiterals name="globalVariable" value="4" literal="Global Variable"/>
+    <eLiterals name="interface" value="5" literal="Interface"/>
+    <eLiterals name="method" value="6" literal="Method"/>
+    <eLiterals name="abstractMethod" value="7" literal="Abstract Method"/>
+    <eLiterals name="property" value="8" literal="Property"/>
+    <eLiterals name="abstractProperty" value="9" literal="Abstract Property"/>
   </eClassifiers>
 </ecore:EPackage>

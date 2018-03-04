@@ -4,9 +4,8 @@ package apssoftwareoptions.impl;
 
 import apssoftwareoptions.*;
 
-import edu.kit.ipd.sdq.kamp4iec.model.IECRepository.IECComponent;
-
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -59,10 +58,6 @@ public class ApssoftwareoptionsFactoryImpl extends EFactoryImpl implements Apsso
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case ApssoftwareoptionsPackage.APS_REQ_SOFTWARE_OPTION: return createAPSReqSoftwareOption();
-			case ApssoftwareoptionsPackage.APS_REQ_CHANGE_SOFTWARE_OPTION: return createAPSReqChangeSoftwareOption();
-			case ApssoftwareoptionsPackage.APS_REQ_REMOVE_SOFTWARE_OPTION: return createAPSReqRemoveSoftwareOption();
-			case ApssoftwareoptionsPackage.APS_REQ_REPLACE_SOFTWARE_OPTION: return createAPSReqReplaceSoftwareOption();
-			case ApssoftwareoptionsPackage.APS_REQ_INTRODUCE_NEW_SOFTWARE_OPTION: return createAPSReqIntroduceNewSoftwareOption();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -73,8 +68,38 @@ public class ApssoftwareoptionsFactoryImpl extends EFactoryImpl implements Apsso
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public <T> APSReqSoftwareOption<T> createAPSReqSoftwareOption() {
-		APSReqSoftwareOptionImpl<T> apsReqSoftwareOption = new APSReqSoftwareOptionImpl<T>();
+	@Override
+	public Object createFromString(EDataType eDataType, String initialValue) {
+		switch (eDataType.getClassifierID()) {
+			case ApssoftwareoptionsPackage.IEC_COMPONENT_TYPE:
+				return createIECComponentTypeFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String convertToString(EDataType eDataType, Object instanceValue) {
+		switch (eDataType.getClassifierID()) {
+			case ApssoftwareoptionsPackage.IEC_COMPONENT_TYPE:
+				return convertIECComponentTypeToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public APSReqSoftwareOption createAPSReqSoftwareOption() {
+		APSReqSoftwareOptionImpl apsReqSoftwareOption = new APSReqSoftwareOptionImpl();
 		return apsReqSoftwareOption;
 	}
 
@@ -83,9 +108,10 @@ public class ApssoftwareoptionsFactoryImpl extends EFactoryImpl implements Apsso
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public <T extends IECComponent> APSReqChangeSoftwareOption<T> createAPSReqChangeSoftwareOption() {
-		APSReqChangeSoftwareOptionImpl<T> apsReqChangeSoftwareOption = new APSReqChangeSoftwareOptionImpl<T>();
-		return apsReqChangeSoftwareOption;
+	public IECComponentType createIECComponentTypeFromString(EDataType eDataType, String initialValue) {
+		IECComponentType result = IECComponentType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
 	}
 
 	/**
@@ -93,29 +119,8 @@ public class ApssoftwareoptionsFactoryImpl extends EFactoryImpl implements Apsso
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public <T extends IECComponent> APSReqRemoveSoftwareOption<T> createAPSReqRemoveSoftwareOption() {
-		APSReqRemoveSoftwareOptionImpl<T> apsReqRemoveSoftwareOption = new APSReqRemoveSoftwareOptionImpl<T>();
-		return apsReqRemoveSoftwareOption;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public <T extends IECComponent> APSReqReplaceSoftwareOption<T> createAPSReqReplaceSoftwareOption() {
-		APSReqReplaceSoftwareOptionImpl<T> apsReqReplaceSoftwareOption = new APSReqReplaceSoftwareOptionImpl<T>();
-		return apsReqReplaceSoftwareOption;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public <T extends IECComponent> APSReqIntroduceNewSoftwareOption<T> createAPSReqIntroduceNewSoftwareOption() {
-		APSReqIntroduceNewSoftwareOptionImpl<T> apsReqIntroduceNewSoftwareOption = new APSReqIntroduceNewSoftwareOptionImpl<T>();
-		return apsReqIntroduceNewSoftwareOption;
+	public String convertIECComponentTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**

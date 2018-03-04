@@ -22,13 +22,40 @@ public interface ApshardwareoptionsFactory extends EFactory {
 	ApshardwareoptionsFactory eINSTANCE = apshardwareoptions.impl.ApshardwareoptionsFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>APS Req Hardware Option</em>'.
+	 * Returns a new object of class '<em>APS Req Structure Option</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>APS Req Hardware Option</em>'.
+	 * @return a new object of class '<em>APS Req Structure Option</em>'.
 	 * @generated
 	 */
-	APSReqHardwareOption createAPSReqHardwareOption();
+	APSReqStructureOption createAPSReqStructureOption();
+
+	/**
+	 * Returns a new object of class '<em>APS Req Module Option</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>APS Req Module Option</em>'.
+	 * @generated
+	 */
+	APSReqModuleOption createAPSReqModuleOption();
+
+	/**
+	 * Returns a new object of class '<em>APS Req Component Option</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>APS Req Component Option</em>'.
+	 * @generated
+	 */
+	APSReqComponentOption createAPSReqComponentOption();
+
+	/**
+	 * Returns a new object of class '<em>APS Req Interface Option</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>APS Req Interface Option</em>'.
+	 * @generated
+	 */
+	APSReqInterfaceOption createAPSReqInterfaceOption();
 
 	/**
 	 * Returns the package supported by this factory.

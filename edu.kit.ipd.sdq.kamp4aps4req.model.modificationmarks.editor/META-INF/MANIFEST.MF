@@ -8,7 +8,8 @@ Bundle-Activator: edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.presentat
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.presentation
+Export-Package: edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.editor,
+ edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
  edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.edit;visibility:=reexport,
@@ -27,5 +28,8 @@ Require-Bundle: org.eclipse.core.runtime,
  toometa.qualities.edit;visibility:=reexport,
  toometa.relations.edit;visibility:=reexport,
  toometa.requirements.edit;visibility:=reexport,
- de.uka.ipd.sdq.dsexplore.qml.units.edit;visibility:=reexport
+ de.uka.ipd.sdq.dsexplore.qml.units.edit;visibility:=reexport,
+ edu.kit.ipd.sdq.kamp.model.modificationmarks.editor;bundle-version="1.0.0",
+ edu.kit.ipd.sdq.kamp4aps4req;bundle-version="1.0.0",
+ edu.kit.ipd.sdq.kamp
 Bundle-ActivationPolicy: lazy

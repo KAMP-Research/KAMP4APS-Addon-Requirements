@@ -6,11 +6,7 @@ import apsoptions.APSReqOption;
 
 import apssoftwareoptions.*;
 
-import archoptions.ArchOption;
-
 import de.uka.ipd.sdq.identifier.Identifier;
-
-import edu.kit.ipd.sdq.kamp4iec.model.IECRepository.IECComponent;
 
 import options.Option;
 
@@ -91,24 +87,8 @@ public class ApssoftwareoptionsAdapterFactory extends AdapterFactoryImpl {
 	protected ApssoftwareoptionsSwitch<Adapter> modelSwitch =
 		new ApssoftwareoptionsSwitch<Adapter>() {
 			@Override
-			public <T> Adapter caseAPSReqSoftwareOption(APSReqSoftwareOption<T> object) {
+			public Adapter caseAPSReqSoftwareOption(APSReqSoftwareOption object) {
 				return createAPSReqSoftwareOptionAdapter();
-			}
-			@Override
-			public <T extends IECComponent> Adapter caseAPSReqChangeSoftwareOption(APSReqChangeSoftwareOption<T> object) {
-				return createAPSReqChangeSoftwareOptionAdapter();
-			}
-			@Override
-			public <T extends IECComponent> Adapter caseAPSReqRemoveSoftwareOption(APSReqRemoveSoftwareOption<T> object) {
-				return createAPSReqRemoveSoftwareOptionAdapter();
-			}
-			@Override
-			public <T extends IECComponent> Adapter caseAPSReqReplaceSoftwareOption(APSReqReplaceSoftwareOption<T> object) {
-				return createAPSReqReplaceSoftwareOptionAdapter();
-			}
-			@Override
-			public <T extends IECComponent> Adapter caseAPSReqIntroduceNewSoftwareOption(APSReqIntroduceNewSoftwareOption<T> object) {
-				return createAPSReqIntroduceNewSoftwareOptionAdapter();
 			}
 			@Override
 			public Adapter caseIdentifier(Identifier object) {
@@ -167,11 +147,7 @@ public class ApssoftwareoptionsAdapterFactory extends AdapterFactoryImpl {
 				return createOptionAdapter();
 			}
 			@Override
-			public Adapter caseArchOption(ArchOption object) {
-				return createArchOptionAdapter();
-			}
-			@Override
-			public <T> Adapter caseAPSReqOption(APSReqOption<T> object) {
+			public Adapter caseAPSReqOption(APSReqOption object) {
 				return createAPSReqOptionAdapter();
 			}
 			@Override
@@ -205,62 +181,6 @@ public class ApssoftwareoptionsAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAPSReqSoftwareOptionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link apssoftwareoptions.APSReqChangeSoftwareOption <em>APS Req Change Software Option</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see apssoftwareoptions.APSReqChangeSoftwareOption
-	 * @generated
-	 */
-	public Adapter createAPSReqChangeSoftwareOptionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link apssoftwareoptions.APSReqRemoveSoftwareOption <em>APS Req Remove Software Option</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see apssoftwareoptions.APSReqRemoveSoftwareOption
-	 * @generated
-	 */
-	public Adapter createAPSReqRemoveSoftwareOptionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link apssoftwareoptions.APSReqReplaceSoftwareOption <em>APS Req Replace Software Option</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see apssoftwareoptions.APSReqReplaceSoftwareOption
-	 * @generated
-	 */
-	public Adapter createAPSReqReplaceSoftwareOptionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link apssoftwareoptions.APSReqIntroduceNewSoftwareOption <em>APS Req Introduce New Software Option</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see apssoftwareoptions.APSReqIntroduceNewSoftwareOption
-	 * @generated
-	 */
-	public Adapter createAPSReqIntroduceNewSoftwareOptionAdapter() {
 		return null;
 	}
 
@@ -457,20 +377,6 @@ public class ApssoftwareoptionsAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createOptionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link archoptions.ArchOption <em>Arch Option</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see archoptions.ArchOption
-	 * @generated
-	 */
-	public Adapter createArchOptionAdapter() {
 		return null;
 	}
 

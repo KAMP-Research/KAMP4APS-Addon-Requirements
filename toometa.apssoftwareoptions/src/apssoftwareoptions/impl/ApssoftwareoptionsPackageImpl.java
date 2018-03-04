@@ -4,21 +4,18 @@ package apssoftwareoptions.impl;
 
 import apsoptions.ApsoptionsPackage;
 
-import apssoftwareoptions.APSReqChangeSoftwareOption;
-import apssoftwareoptions.APSReqIntroduceNewSoftwareOption;
-import apssoftwareoptions.APSReqRemoveSoftwareOption;
-import apssoftwareoptions.APSReqReplaceSoftwareOption;
 import apssoftwareoptions.APSReqSoftwareOption;
 import apssoftwareoptions.ApssoftwareoptionsFactory;
 import apssoftwareoptions.ApssoftwareoptionsPackage;
+import apssoftwareoptions.IECComponentType;
 
 import edu.kit.ipd.sdq.kamp4iec.model.IECRepository.IECRepositoryPackage;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EGenericType;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.ETypeParameter;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
@@ -41,28 +38,7 @@ public class ApssoftwareoptionsPackageImpl extends EPackageImpl implements Apsso
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass apsReqChangeSoftwareOptionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass apsReqRemoveSoftwareOptionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass apsReqReplaceSoftwareOptionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass apsReqIntroduceNewSoftwareOptionEClass = null;
+	private EEnum iecComponentTypeEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -143,8 +119,8 @@ public class ApssoftwareoptionsPackageImpl extends EPackageImpl implements Apsso
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getAPSReqChangeSoftwareOption() {
-		return apsReqChangeSoftwareOptionEClass;
+	public EReference getAPSReqSoftwareOption_IecComponents() {
+		return (EReference)apsReqSoftwareOptionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -152,8 +128,8 @@ public class ApssoftwareoptionsPackageImpl extends EPackageImpl implements Apsso
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAPSReqChangeSoftwareOption_Components() {
-		return (EReference)apsReqChangeSoftwareOptionEClass.getEStructuralFeatures().get(0);
+	public EAttribute getAPSReqSoftwareOption_IecComponentType() {
+		return (EAttribute)apsReqSoftwareOptionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -161,62 +137,8 @@ public class ApssoftwareoptionsPackageImpl extends EPackageImpl implements Apsso
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getAPSReqRemoveSoftwareOption() {
-		return apsReqRemoveSoftwareOptionEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAPSReqRemoveSoftwareOption_Components() {
-		return (EReference)apsReqRemoveSoftwareOptionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getAPSReqReplaceSoftwareOption() {
-		return apsReqReplaceSoftwareOptionEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAPSReqReplaceSoftwareOption_OldComponent() {
-		return (EReference)apsReqReplaceSoftwareOptionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAPSReqReplaceSoftwareOption_NewComponent() {
-		return (EReference)apsReqReplaceSoftwareOptionEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getAPSReqIntroduceNewSoftwareOption() {
-		return apsReqIntroduceNewSoftwareOptionEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAPSReqIntroduceNewSoftwareOption_Components() {
-		return (EReference)apsReqIntroduceNewSoftwareOptionEClass.getEStructuralFeatures().get(0);
+	public EEnum getIECComponentType() {
+		return iecComponentTypeEEnum;
 	}
 
 	/**
@@ -248,19 +170,11 @@ public class ApssoftwareoptionsPackageImpl extends EPackageImpl implements Apsso
 
 		// Create classes and their features
 		apsReqSoftwareOptionEClass = createEClass(APS_REQ_SOFTWARE_OPTION);
+		createEReference(apsReqSoftwareOptionEClass, APS_REQ_SOFTWARE_OPTION__IEC_COMPONENTS);
+		createEAttribute(apsReqSoftwareOptionEClass, APS_REQ_SOFTWARE_OPTION__IEC_COMPONENT_TYPE);
 
-		apsReqChangeSoftwareOptionEClass = createEClass(APS_REQ_CHANGE_SOFTWARE_OPTION);
-		createEReference(apsReqChangeSoftwareOptionEClass, APS_REQ_CHANGE_SOFTWARE_OPTION__COMPONENTS);
-
-		apsReqRemoveSoftwareOptionEClass = createEClass(APS_REQ_REMOVE_SOFTWARE_OPTION);
-		createEReference(apsReqRemoveSoftwareOptionEClass, APS_REQ_REMOVE_SOFTWARE_OPTION__COMPONENTS);
-
-		apsReqReplaceSoftwareOptionEClass = createEClass(APS_REQ_REPLACE_SOFTWARE_OPTION);
-		createEReference(apsReqReplaceSoftwareOptionEClass, APS_REQ_REPLACE_SOFTWARE_OPTION__OLD_COMPONENT);
-		createEReference(apsReqReplaceSoftwareOptionEClass, APS_REQ_REPLACE_SOFTWARE_OPTION__NEW_COMPONENT);
-
-		apsReqIntroduceNewSoftwareOptionEClass = createEClass(APS_REQ_INTRODUCE_NEW_SOFTWARE_OPTION);
-		createEReference(apsReqIntroduceNewSoftwareOptionEClass, APS_REQ_INTRODUCE_NEW_SOFTWARE_OPTION__COMPONENTS);
+		// Create enums
+		iecComponentTypeEEnum = createEEnum(IEC_COMPONENT_TYPE);
 	}
 
 	/**
@@ -291,64 +205,29 @@ public class ApssoftwareoptionsPackageImpl extends EPackageImpl implements Apsso
 		IECRepositoryPackage theIECRepositoryPackage = (IECRepositoryPackage)EPackage.Registry.INSTANCE.getEPackage(IECRepositoryPackage.eNS_URI);
 
 		// Create type parameters
-		addETypeParameter(apsReqSoftwareOptionEClass, "T");
-		ETypeParameter apsReqChangeSoftwareOptionEClass_T = addETypeParameter(apsReqChangeSoftwareOptionEClass, "T");
-		ETypeParameter apsReqRemoveSoftwareOptionEClass_T = addETypeParameter(apsReqRemoveSoftwareOptionEClass, "T");
-		ETypeParameter apsReqReplaceSoftwareOptionEClass_T = addETypeParameter(apsReqReplaceSoftwareOptionEClass, "T");
-		ETypeParameter apsReqIntroduceNewSoftwareOptionEClass_T = addETypeParameter(apsReqIntroduceNewSoftwareOptionEClass, "T");
 
 		// Set bounds for type parameters
-		EGenericType g1 = createEGenericType(theIECRepositoryPackage.getIECComponent());
-		apsReqChangeSoftwareOptionEClass_T.getEBounds().add(g1);
-		g1 = createEGenericType(theIECRepositoryPackage.getIECComponent());
-		apsReqRemoveSoftwareOptionEClass_T.getEBounds().add(g1);
-		g1 = createEGenericType(theIECRepositoryPackage.getIECComponent());
-		apsReqReplaceSoftwareOptionEClass_T.getEBounds().add(g1);
-		g1 = createEGenericType(theIECRepositoryPackage.getIECComponent());
-		apsReqIntroduceNewSoftwareOptionEClass_T.getEBounds().add(g1);
 
 		// Add supertypes to classes
-		g1 = createEGenericType(theApsoptionsPackage.getAPSReqOption());
-		EGenericType g2 = createEGenericType(theIECRepositoryPackage.getIECComponent());
-		g1.getETypeArguments().add(g2);
-		apsReqSoftwareOptionEClass.getEGenericSuperTypes().add(g1);
-		g1 = createEGenericType(this.getAPSReqSoftwareOption());
-		g2 = createEGenericType(apsReqChangeSoftwareOptionEClass_T);
-		g1.getETypeArguments().add(g2);
-		apsReqChangeSoftwareOptionEClass.getEGenericSuperTypes().add(g1);
-		g1 = createEGenericType(this.getAPSReqSoftwareOption());
-		g2 = createEGenericType(apsReqRemoveSoftwareOptionEClass_T);
-		g1.getETypeArguments().add(g2);
-		apsReqRemoveSoftwareOptionEClass.getEGenericSuperTypes().add(g1);
-		g1 = createEGenericType(this.getAPSReqSoftwareOption());
-		g2 = createEGenericType(apsReqReplaceSoftwareOptionEClass_T);
-		g1.getETypeArguments().add(g2);
-		apsReqReplaceSoftwareOptionEClass.getEGenericSuperTypes().add(g1);
-		g1 = createEGenericType(this.getAPSReqSoftwareOption());
-		g2 = createEGenericType(apsReqIntroduceNewSoftwareOptionEClass_T);
-		g1.getETypeArguments().add(g2);
-		apsReqIntroduceNewSoftwareOptionEClass.getEGenericSuperTypes().add(g1);
+		apsReqSoftwareOptionEClass.getESuperTypes().add(theApsoptionsPackage.getAPSReqOption());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(apsReqSoftwareOptionEClass, APSReqSoftwareOption.class, "APSReqSoftwareOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAPSReqSoftwareOption_IecComponents(), theIECRepositoryPackage.getIECComponent(), null, "iecComponents", null, 0, -1, APSReqSoftwareOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAPSReqSoftwareOption_IecComponentType(), this.getIECComponentType(), "iecComponentType", null, 1, 1, APSReqSoftwareOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(apsReqChangeSoftwareOptionEClass, APSReqChangeSoftwareOption.class, "APSReqChangeSoftwareOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		g1 = createEGenericType(apsReqChangeSoftwareOptionEClass_T);
-		initEReference(getAPSReqChangeSoftwareOption_Components(), g1, null, "components", null, 0, -1, APSReqChangeSoftwareOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(apsReqRemoveSoftwareOptionEClass, APSReqRemoveSoftwareOption.class, "APSReqRemoveSoftwareOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		g1 = createEGenericType(apsReqRemoveSoftwareOptionEClass_T);
-		initEReference(getAPSReqRemoveSoftwareOption_Components(), g1, null, "components", null, 0, -1, APSReqRemoveSoftwareOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(apsReqReplaceSoftwareOptionEClass, APSReqReplaceSoftwareOption.class, "APSReqReplaceSoftwareOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		g1 = createEGenericType(apsReqReplaceSoftwareOptionEClass_T);
-		initEReference(getAPSReqReplaceSoftwareOption_OldComponent(), g1, null, "oldComponent", null, 0, 1, APSReqReplaceSoftwareOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		g1 = createEGenericType(apsReqReplaceSoftwareOptionEClass_T);
-		initEReference(getAPSReqReplaceSoftwareOption_NewComponent(), g1, null, "newComponent", null, 0, 1, APSReqReplaceSoftwareOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(apsReqIntroduceNewSoftwareOptionEClass, APSReqIntroduceNewSoftwareOption.class, "APSReqIntroduceNewSoftwareOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		g1 = createEGenericType(apsReqIntroduceNewSoftwareOptionEClass_T);
-		initEReference(getAPSReqIntroduceNewSoftwareOption_Components(), g1, null, "components", null, 0, -1, APSReqIntroduceNewSoftwareOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		// Initialize enums and add enum literals
+		initEEnum(iecComponentTypeEEnum, IECComponentType.class, "IECComponentType");
+		addEEnumLiteral(iecComponentTypeEEnum, IECComponentType.PROGRAM);
+		addEEnumLiteral(iecComponentTypeEEnum, IECComponentType.CONFIGURATION);
+		addEEnumLiteral(iecComponentTypeEEnum, IECComponentType.FUNCTION_BLOCK);
+		addEEnumLiteral(iecComponentTypeEEnum, IECComponentType.FUNCTION);
+		addEEnumLiteral(iecComponentTypeEEnum, IECComponentType.GLOBAL_VARIABLE);
+		addEEnumLiteral(iecComponentTypeEEnum, IECComponentType.INTERFACE);
+		addEEnumLiteral(iecComponentTypeEEnum, IECComponentType.METHOD);
+		addEEnumLiteral(iecComponentTypeEEnum, IECComponentType.ABSTRACT_METHOD);
+		addEEnumLiteral(iecComponentTypeEEnum, IECComponentType.PROPERTY);
+		addEEnumLiteral(iecComponentTypeEEnum, IECComponentType.ABSTRACT_PROPERTY);
 
 		// Create resource
 		createResource(eNS_URI);

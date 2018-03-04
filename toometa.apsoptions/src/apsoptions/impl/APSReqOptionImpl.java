@@ -3,18 +3,16 @@
 package apsoptions.impl;
 
 import apsoptions.APSReqOption;
-import apsoptions.APSReqOptionRepository;
 import apsoptions.ApsoptionsPackage;
 import apsoptions.OptionType;
-import options.Option;
+
+import options.impl.OptionImpl;
+
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,24 +22,12 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link apsoptions.impl.APSReqOptionImpl#getOption <em>Option</em>}</li>
- *   <li>{@link apsoptions.impl.APSReqOptionImpl#getRepository <em>Repository</em>}</li>
  *   <li>{@link apsoptions.impl.APSReqOptionImpl#getOptionType <em>Option Type</em>}</li>
  * </ul>
  *
  * @generated
  */
-public abstract class APSReqOptionImpl extends MinimalEObjectImpl.Container implements APSReqOption {
-	/**
-	 * The cached value of the '{@link #getOption() <em>Option</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOption()
-	 * @generated
-	 * @ordered
-	 */
-	protected Option option;
-
+public abstract class APSReqOptionImpl extends OptionImpl implements APSReqOption {
 	/**
 	 * The default value of the '{@link #getOptionType() <em>Option Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -51,6 +37,7 @@ public abstract class APSReqOptionImpl extends MinimalEObjectImpl.Container impl
 	 * @ordered
 	 */
 	protected static final OptionType OPTION_TYPE_EDEFAULT = OptionType.INTRODUCE_NEW;
+
 	/**
 	 * The cached value of the '{@link #getOptionType() <em>Option Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -85,85 +72,6 @@ public abstract class APSReqOptionImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Option getOption() {
-		if (option != null && ((EObject)option).eIsProxy()) {
-			InternalEObject oldOption = (InternalEObject)option;
-			option = (Option)eResolveProxy(oldOption);
-			if (option != oldOption) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ApsoptionsPackage.APS_REQ_OPTION__OPTION, oldOption, option));
-			}
-		}
-		return option;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Option basicGetOption() {
-		return option;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setOption(Option newOption) {
-		Option oldOption = option;
-		option = newOption;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ApsoptionsPackage.APS_REQ_OPTION__OPTION, oldOption, option));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public APSReqOptionRepository getRepository() {
-		if (eContainerFeatureID() != ApsoptionsPackage.APS_REQ_OPTION__REPOSITORY) return null;
-		return (APSReqOptionRepository)eInternalContainer();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetRepository(APSReqOptionRepository newRepository, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newRepository, ApsoptionsPackage.APS_REQ_OPTION__REPOSITORY, msgs);
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setRepository(APSReqOptionRepository newRepository) {
-		if (newRepository != eInternalContainer() || (eContainerFeatureID() != ApsoptionsPackage.APS_REQ_OPTION__REPOSITORY && newRepository != null)) {
-			if (EcoreUtil.isAncestor(this, newRepository))
-				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
-				msgs = eBasicRemoveFromContainer(msgs);
-			if (newRepository != null)
-				msgs = ((InternalEObject)newRepository).eInverseAdd(this, ApsoptionsPackage.APS_REQ_OPTION_REPOSITORY__APSREQOPTION, APSReqOptionRepository.class, msgs);
-			msgs = basicSetRepository(newRepository, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ApsoptionsPackage.APS_REQ_OPTION__REPOSITORY, newRepository, newRepository));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public OptionType getOptionType() {
 		return optionType;
 	}
@@ -186,57 +94,8 @@ public abstract class APSReqOptionImpl extends MinimalEObjectImpl.Container impl
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case ApsoptionsPackage.APS_REQ_OPTION__REPOSITORY:
-				if (eInternalContainer() != null)
-					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetRepository((APSReqOptionRepository)otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case ApsoptionsPackage.APS_REQ_OPTION__REPOSITORY:
-				return basicSetRepository(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-		switch (eContainerFeatureID()) {
-			case ApsoptionsPackage.APS_REQ_OPTION__REPOSITORY:
-				return eInternalContainer().eInverseRemove(this, ApsoptionsPackage.APS_REQ_OPTION_REPOSITORY__APSREQOPTION, APSReqOptionRepository.class, msgs);
-		}
-		return super.eBasicRemoveFromContainerFeature(msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ApsoptionsPackage.APS_REQ_OPTION__OPTION:
-				if (resolve) return getOption();
-				return basicGetOption();
-			case ApsoptionsPackage.APS_REQ_OPTION__REPOSITORY:
-				return getRepository();
 			case ApsoptionsPackage.APS_REQ_OPTION__OPTION_TYPE:
 				return getOptionType();
 		}
@@ -251,12 +110,6 @@ public abstract class APSReqOptionImpl extends MinimalEObjectImpl.Container impl
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ApsoptionsPackage.APS_REQ_OPTION__OPTION:
-				setOption((Option)newValue);
-				return;
-			case ApsoptionsPackage.APS_REQ_OPTION__REPOSITORY:
-				setRepository((APSReqOptionRepository)newValue);
-				return;
 			case ApsoptionsPackage.APS_REQ_OPTION__OPTION_TYPE:
 				setOptionType((OptionType)newValue);
 				return;
@@ -272,12 +125,6 @@ public abstract class APSReqOptionImpl extends MinimalEObjectImpl.Container impl
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ApsoptionsPackage.APS_REQ_OPTION__OPTION:
-				setOption((Option)null);
-				return;
-			case ApsoptionsPackage.APS_REQ_OPTION__REPOSITORY:
-				setRepository((APSReqOptionRepository)null);
-				return;
 			case ApsoptionsPackage.APS_REQ_OPTION__OPTION_TYPE:
 				setOptionType(OPTION_TYPE_EDEFAULT);
 				return;
@@ -293,10 +140,6 @@ public abstract class APSReqOptionImpl extends MinimalEObjectImpl.Container impl
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ApsoptionsPackage.APS_REQ_OPTION__OPTION:
-				return option != null;
-			case ApsoptionsPackage.APS_REQ_OPTION__REPOSITORY:
-				return getRepository() != null;
 			case ApsoptionsPackage.APS_REQ_OPTION__OPTION_TYPE:
 				return optionType != OPTION_TYPE_EDEFAULT;
 		}

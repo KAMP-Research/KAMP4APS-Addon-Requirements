@@ -5,7 +5,6 @@ package apshardwareoptions.impl;
 import apshardwareoptions.*;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -57,7 +56,10 @@ public class ApshardwareoptionsFactoryImpl extends EFactoryImpl implements Apsha
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case ApshardwareoptionsPackage.APS_REQ_HARDWARE_OPTION: return createAPSReqHardwareOption();
+			case ApshardwareoptionsPackage.APS_REQ_STRUCTURE_OPTION: return createAPSReqStructureOption();
+			case ApshardwareoptionsPackage.APS_REQ_MODULE_OPTION: return createAPSReqModuleOption();
+			case ApshardwareoptionsPackage.APS_REQ_COMPONENT_OPTION: return createAPSReqComponentOption();
+			case ApshardwareoptionsPackage.APS_REQ_INTERFACE_OPTION: return createAPSReqInterfaceOption();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -68,14 +70,9 @@ public class ApshardwareoptionsFactoryImpl extends EFactoryImpl implements Apsha
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public Object createFromString(EDataType eDataType, String initialValue) {
-		switch (eDataType.getClassifierID()) {
-			case ApshardwareoptionsPackage.ENTITY_TYPE:
-				return createEntityTypeFromString(eDataType, initialValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-		}
+	public APSReqStructureOption createAPSReqStructureOption() {
+		APSReqStructureOptionImpl apsReqStructureOption = new APSReqStructureOptionImpl();
+		return apsReqStructureOption;
 	}
 
 	/**
@@ -83,14 +80,9 @@ public class ApshardwareoptionsFactoryImpl extends EFactoryImpl implements Apsha
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public String convertToString(EDataType eDataType, Object instanceValue) {
-		switch (eDataType.getClassifierID()) {
-			case ApshardwareoptionsPackage.ENTITY_TYPE:
-				return convertEntityTypeToString(eDataType, instanceValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-		}
+	public APSReqModuleOption createAPSReqModuleOption() {
+		APSReqModuleOptionImpl apsReqModuleOption = new APSReqModuleOptionImpl();
+		return apsReqModuleOption;
 	}
 
 	/**
@@ -98,9 +90,9 @@ public class ApshardwareoptionsFactoryImpl extends EFactoryImpl implements Apsha
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public APSReqHardwareOption createAPSReqHardwareOption() {
-		APSReqHardwareOptionImpl apsReqHardwareOption = new APSReqHardwareOptionImpl();
-		return apsReqHardwareOption;
+	public APSReqComponentOption createAPSReqComponentOption() {
+		APSReqComponentOptionImpl apsReqComponentOption = new APSReqComponentOptionImpl();
+		return apsReqComponentOption;
 	}
 
 	/**
@@ -108,19 +100,9 @@ public class ApshardwareoptionsFactoryImpl extends EFactoryImpl implements Apsha
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EntityType createEntityTypeFromString(EDataType eDataType, String initialValue) {
-		EntityType result = EntityType.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertEntityTypeToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+	public APSReqInterfaceOption createAPSReqInterfaceOption() {
+		APSReqInterfaceOptionImpl apsReqInterfaceOption = new APSReqInterfaceOptionImpl();
+		return apsReqInterfaceOption;
 	}
 
 	/**

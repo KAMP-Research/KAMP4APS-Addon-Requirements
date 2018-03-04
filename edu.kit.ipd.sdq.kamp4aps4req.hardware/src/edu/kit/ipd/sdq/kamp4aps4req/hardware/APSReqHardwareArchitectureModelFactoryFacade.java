@@ -1,6 +1,5 @@
 package edu.kit.ipd.sdq.kamp4aps4req.hardware;
 
-import edu.kit.ipd.sdq.kamp4aps4req.core.AbstractAPSReqArchitectureVersion;
 import edu.kit.ipd.sdq.kamp4aps.core.APSArchitectureModelFactoryFacade;
 import edu.kit.ipd.sdq.kamp4aps.core.APSArchitectureVersion;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.Modificationmarks_hardwareFactory;
@@ -24,7 +23,7 @@ public class APSReqHardwareArchitectureModelFactoryFacade {
 	 * @param name Name of the architecture version
 	 * @return Hardware architecture version
 	 */
-	public static AbstractAPSReqArchitectureVersion createEmptyHardwareModel(String name) {
+	public static APSReqHardwareArchitectureVersion createEmptyHardwareModel(String name) {
 		APSArchitectureVersion apsModel = APSReqHardwareArchitectureModelFactoryFacade.createAPSArchitectureVersion(name);
 		ReqRepository reqRepository = RequirementsFactory.eINSTANCE.createReqRepository();
 		DecisionRepository decisionRepository = DecisionsFactory.eINSTANCE.createDecisionRepository();

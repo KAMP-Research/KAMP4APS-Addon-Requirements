@@ -2,19 +2,41 @@
  */
 package apssoftwareoptions.provider;
 
+import apssoftwareoptions.ApssoftwareoptionsFactory;
+
 import apssoftwareoptions.util.ApssoftwareoptionsAdapterFactory;
+
+import de.uka.ipd.sdq.dsexplore.qml.dimensiontypes.DimensionTypeScale;
+import de.uka.ipd.sdq.dsexplore.qml.dimensiontypes.DimensiontypesPackage;
+
+import de.uka.ipd.sdq.dsexplore.qml.dimensiontypes.util.DimensiontypesSwitch;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
+
+import options.OptionRepository;
+import options.OptionsPackage;
+
+import options.util.OptionsSwitch;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
 
+import org.eclipse.emf.common.util.ResourceLocator;
+
+import org.eclipse.emf.ecore.EObject;
+
+import org.eclipse.emf.edit.command.CommandParameter;
+
+import org.eclipse.emf.edit.domain.EditingDomain;
+
 import org.eclipse.emf.edit.provider.ChangeNotifier;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.IChangeNotifier;
+import org.eclipse.emf.edit.provider.IChildCreationExtender;
 import org.eclipse.emf.edit.provider.IDisposable;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -92,98 +114,6 @@ public class ApssoftwareoptionsItemProviderAdapterFactory extends Apssoftwareopt
 		}
 
 		return apsReqSoftwareOptionItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link apssoftwareoptions.APSReqChangeSoftwareOption} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected APSReqChangeSoftwareOptionItemProvider apsReqChangeSoftwareOptionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link apssoftwareoptions.APSReqChangeSoftwareOption}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createAPSReqChangeSoftwareOptionAdapter() {
-		if (apsReqChangeSoftwareOptionItemProvider == null) {
-			apsReqChangeSoftwareOptionItemProvider = new APSReqChangeSoftwareOptionItemProvider(this);
-		}
-
-		return apsReqChangeSoftwareOptionItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link apssoftwareoptions.APSReqRemoveSoftwareOption} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected APSReqRemoveSoftwareOptionItemProvider apsReqRemoveSoftwareOptionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link apssoftwareoptions.APSReqRemoveSoftwareOption}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createAPSReqRemoveSoftwareOptionAdapter() {
-		if (apsReqRemoveSoftwareOptionItemProvider == null) {
-			apsReqRemoveSoftwareOptionItemProvider = new APSReqRemoveSoftwareOptionItemProvider(this);
-		}
-
-		return apsReqRemoveSoftwareOptionItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link apssoftwareoptions.APSReqReplaceSoftwareOption} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected APSReqReplaceSoftwareOptionItemProvider apsReqReplaceSoftwareOptionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link apssoftwareoptions.APSReqReplaceSoftwareOption}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createAPSReqReplaceSoftwareOptionAdapter() {
-		if (apsReqReplaceSoftwareOptionItemProvider == null) {
-			apsReqReplaceSoftwareOptionItemProvider = new APSReqReplaceSoftwareOptionItemProvider(this);
-		}
-
-		return apsReqReplaceSoftwareOptionItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link apssoftwareoptions.APSReqIntroduceNewSoftwareOption} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected APSReqIntroduceNewSoftwareOptionItemProvider apsReqIntroduceNewSoftwareOptionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link apssoftwareoptions.APSReqIntroduceNewSoftwareOption}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createAPSReqIntroduceNewSoftwareOptionAdapter() {
-		if (apsReqIntroduceNewSoftwareOptionItemProvider == null) {
-			apsReqIntroduceNewSoftwareOptionItemProvider = new APSReqIntroduceNewSoftwareOptionItemProvider(this);
-		}
-
-		return apsReqIntroduceNewSoftwareOptionItemProvider;
 	}
 
 	/**
@@ -286,10 +216,180 @@ public class ApssoftwareoptionsItemProviderAdapterFactory extends Apssoftwareopt
 	 */
 	public void dispose() {
 		if (apsReqSoftwareOptionItemProvider != null) apsReqSoftwareOptionItemProvider.dispose();
-		if (apsReqChangeSoftwareOptionItemProvider != null) apsReqChangeSoftwareOptionItemProvider.dispose();
-		if (apsReqRemoveSoftwareOptionItemProvider != null) apsReqRemoveSoftwareOptionItemProvider.dispose();
-		if (apsReqReplaceSoftwareOptionItemProvider != null) apsReqReplaceSoftwareOptionItemProvider.dispose();
-		if (apsReqIntroduceNewSoftwareOptionItemProvider != null) apsReqIntroduceNewSoftwareOptionItemProvider.dispose();
+	}
+
+	/**
+	 * A child creation extender for the {@link DimensiontypesPackage}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static class DimensiontypesChildCreationExtender implements IChildCreationExtender {
+		/**
+		 * The switch for creating child descriptors specific to each extended class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		protected static class CreationSwitch extends DimensiontypesSwitch<Object> {
+			/**
+			 * The child descriptors being populated.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected List<Object> newChildDescriptors;
+
+			/**
+			 * The domain in which to create the children.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected EditingDomain editingDomain;
+
+			/**
+			 * Creates the a switch for populating child descriptors in the given domain.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			CreationSwitch(List<Object> newChildDescriptors, EditingDomain editingDomain) {
+				this.newChildDescriptors = newChildDescriptors;
+				this.editingDomain = editingDomain;
+			}
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			@Override
+			public <T extends Number> Object caseDimensionTypeScale(DimensionTypeScale<T> object) {
+				newChildDescriptors.add
+					(createChildParameter
+						(DimensiontypesPackage.Literals.DIMENSION_TYPE_SCALE__SCALE_ELEMENTS,
+						 ApssoftwareoptionsFactory.eINSTANCE.createAPSReqSoftwareOption()));
+
+				return null;
+			}
+ 
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected CommandParameter createChildParameter(Object feature, Object child) {
+				return new CommandParameter(null, feature, child);
+			}
+
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public Collection<Object> getNewChildDescriptors(Object object, EditingDomain editingDomain) {
+			ArrayList<Object> result = new ArrayList<Object>();
+			new CreationSwitch(result, editingDomain).doSwitch((EObject)object);
+			return result;
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public ResourceLocator getResourceLocator() {
+			return ApssoftwareoptionsEditPlugin.INSTANCE;
+		}
+	}
+
+	/**
+	 * A child creation extender for the {@link OptionsPackage}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static class OptionsChildCreationExtender implements IChildCreationExtender {
+		/**
+		 * The switch for creating child descriptors specific to each extended class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		protected static class CreationSwitch extends OptionsSwitch<Object> {
+			/**
+			 * The child descriptors being populated.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected List<Object> newChildDescriptors;
+
+			/**
+			 * The domain in which to create the children.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected EditingDomain editingDomain;
+
+			/**
+			 * Creates the a switch for populating child descriptors in the given domain.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			CreationSwitch(List<Object> newChildDescriptors, EditingDomain editingDomain) {
+				this.newChildDescriptors = newChildDescriptors;
+				this.editingDomain = editingDomain;
+			}
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			@Override
+			public Object caseOptionRepository(OptionRepository object) {
+				newChildDescriptors.add
+					(createChildParameter
+						(OptionsPackage.Literals.OPTION_REPOSITORY__OPTIONS,
+						 ApssoftwareoptionsFactory.eINSTANCE.createAPSReqSoftwareOption()));
+
+				return null;
+			}
+ 
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected CommandParameter createChildParameter(Object feature, Object child) {
+				return new CommandParameter(null, feature, child);
+			}
+
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public Collection<Object> getNewChildDescriptors(Object object, EditingDomain editingDomain) {
+			ArrayList<Object> result = new ArrayList<Object>();
+			new CreationSwitch(result, editingDomain).doSwitch((EObject)object);
+			return result;
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public ResourceLocator getResourceLocator() {
+			return ApssoftwareoptionsEditPlugin.INSTANCE;
+		}
 	}
 
 }

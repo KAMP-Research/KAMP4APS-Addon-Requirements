@@ -23,7 +23,7 @@ public class APSReqSoftwareOptionTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected APSReqSoftwareOption<?> fixture = null;
+	protected APSReqSoftwareOption fixture = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -50,7 +50,7 @@ public class APSReqSoftwareOptionTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void setFixture(APSReqSoftwareOption<?> fixture) {
+	protected void setFixture(APSReqSoftwareOption fixture) {
 		this.fixture = fixture;
 	}
 
@@ -60,7 +60,7 @@ public class APSReqSoftwareOptionTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected APSReqSoftwareOption<?> getFixture() {
+	protected APSReqSoftwareOption getFixture() {
 		return fixture;
 	}
 

@@ -32,7 +32,9 @@ Require-Bundle: org.eclipse.core.runtime,
  toometa.relations.edit;visibility:=reexport,
  toometa.requirements.edit;visibility:=reexport,
  de.uka.ipd.sdq.dsexplore.qml.units.edit;visibility:=reexport,
- edu.kit.ipd.sdq.kamp4aps4req.hardware;bundle-version="1.0.0"
+ edu.kit.ipd.sdq.kamp4aps4req.hardware;bundle-version="1.0.0",
+ edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.editor;bundle-version="1.0.0",
+ edu.kit.ipd.sdq.kamp
 Bundle-ActivationPolicy: lazy
 Import-Package: edu.kit.ipd.sdq.kamp.architecture,
  edu.kit.ipd.sdq.kamp.model.modificationmarks.editor,

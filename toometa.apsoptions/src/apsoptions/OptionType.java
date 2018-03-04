@@ -26,7 +26,7 @@ public enum OptionType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	INTRODUCE_NEW(0, "introduceNew", "IntroduceNew"),
+	INTRODUCE_NEW(0, "introduceNew", "Introduce new"),
 
 	/**
 	 * The '<em><b>Remove</b></em>' literal object.
@@ -36,7 +36,7 @@ public enum OptionType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	REMOVE(1, "remove", "remove"),
+	REMOVE(1, "remove", "Remove"),
 
 	/**
 	 * The '<em><b>Change</b></em>' literal object.
@@ -46,18 +46,18 @@ public enum OptionType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	CHANGE(2, "change", "change");
+	CHANGE(2, "change", "Change");
 
 	/**
 	 * The '<em><b>Introduce New</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>INTRODUCE NEW</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Introduce New</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #INTRODUCE_NEW
-	 * @model name="introduceNew" literal="IntroduceNew"
+	 * @model name="introduceNew" literal="Introduce new"
 	 * @generated
 	 * @ordered
 	 */
@@ -67,12 +67,12 @@ public enum OptionType implements Enumerator {
 	 * The '<em><b>Remove</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>REMOVE</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Remove</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #REMOVE
-	 * @model name="remove"
+	 * @model name="remove" literal="Remove"
 	 * @generated
 	 * @ordered
 	 */
@@ -82,12 +82,12 @@ public enum OptionType implements Enumerator {
 	 * The '<em><b>Change</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of '<em><b>CHANGE</b></em>' literal object isn't clear,
+	 * If the meaning of '<em><b>Change</b></em>' literal object isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #CHANGE
-	 * @model name="change"
+	 * @model name="change" literal="Change"
 	 * @generated
 	 * @ordered
 	 */

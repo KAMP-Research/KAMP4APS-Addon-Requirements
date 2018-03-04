@@ -7,7 +7,11 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
-import apshardwareoptions.*;
+
+import apshardwareoptions.APSReqComponentOption;
+import apshardwareoptions.APSReqInterfaceOption;
+import apshardwareoptions.APSReqModuleOption;
+import apshardwareoptions.APSReqStructureOption;
 import decisions.Decision;
 import edu.kit.ipd.sdq.kamp.util.MapUtil;
 import edu.kit.ipd.sdq.kamp4aps.model.aPS.StructureRepository.Structure;
@@ -34,15 +38,14 @@ public class APSReqHardwareArchitectureModelLookup extends APSReqArchitectureMod
 			APSReqHardwareArchitectureVersion version, Collection<? extends Option> options) {
 		Map<Structure, Set<Option>> results = new HashMap<Structure, Set<Option>>();
 		for (Option option: options) {
-			if (option instanceof APSReqStructureHardwareOption) {
+			if (option instanceof APSReqStructureOption) {
 				for (Structure structureRepository : version.getApsArchitectureVersion().getAPSPlant().getStructures()) {
-					if (isStructureReferencedByOption(structureRepository, (APSReqStructureHardwareOption) option)) {
+					if (isStructureReferencedByOption(structureRepository,  (APSReqStructureOption) option)) {
 						MapUtil.putOrAddToMap(results, structureRepository, option);
 					}
 				}
 			}
 		}
-		
 		return results;
 	}
 	
@@ -53,28 +56,7 @@ public class APSReqHardwareArchitectureModelLookup extends APSReqArchitectureMod
 	 * @return True if referenced, false otherwise
 	 */
 	private static boolean isStructureReferencedByOption(Structure structure, 
-			APSReqStructureHardwareOption option) {
-		boolean result = false;
-		if (option instanceof APSReqIntroduceNewStructureOption) {
-			result = isStructureReferencedByIntroduceNewOption(structure, (APSReqIntroduceNewStructureOption) option);
-		} else if (option instanceof APSReqChangeStructureOption) {
-			result = isStructureReferencedByChangeOption(structure, (APSReqChangeStructureOption) option);
-		} else if (option instanceof APSReqReplaceStructureOption) {
-			result = isStructureReferencedByReplaceOption(structure, (APSReqReplaceStructureOption) option);
-		} else if (option instanceof APSReqRemoveStructureOption) {
-			result = isStructureReferencedByRemoveOption(structure, (APSReqRemoveStructureOption) option);
-		}
-		return result;
-	}
-	
-	/**
-	 * Checks if a structure is affected by an "introduce new" option
-	 * @param structure The structure to check on
-	 * @param option The option which is changed
-	 * @return True, if the structure is affected by the option, false otherwise
-	 */
-	private static boolean isStructureReferencedByIntroduceNewOption(
-			Structure structure, APSReqIntroduceNewStructureOption option) {
+			APSReqStructureOption option) {
 		for (Structure structures : option.getStructures()) {
 			if (structures.equals(structure)) {
 				return true;
@@ -83,53 +65,6 @@ public class APSReqHardwareArchitectureModelLookup extends APSReqArchitectureMod
 		return false;
 	}
 	
-	/**
-	 * Checks if a structure is affected by an "remove" option
-	 * @param structure The structure to check on
-	 * @param option The option which is changed
-	 * @return True, if the structure is affected by the option, false otherwise
-	 */
-	private static boolean isStructureReferencedByRemoveOption(
-			Structure structure, APSReqRemoveStructureOption option) {
-		for (Structure structures : option.getStructures()) {
-			if (structures.equals(structure)) {
-				return true;
-			}
-		}
-		return false;
-
-	}
-	
-	/**
-	 * Checks if a structure is affected by an "replace" option
-	 * @param structure The structure to check on
-	 * @param option The option which is changed
-	 * @return True, if the structure is affected by the option, false otherwise
-	 */
-	private static boolean isStructureReferencedByReplaceOption(
-			Structure structure, APSReqReplaceStructureOption option) {
-		if (option.getNewStructure().equals(structure) || option.getOldStructure().equals(structure)) {
-			return true;
-		} else {
-			return false;
-			}
-	}
-	
-	/**
-	 * Checks if a structure is affected by an "change" option
-	 * @param structure The structure to check on
-	 * @param option The option which is changed
-	 * @return True, if the structure is affected by the option, false otherwise
-	 */
-	private static  boolean isStructureReferencedByChangeOption(
-			Structure structure, APSReqChangeStructureOption option) {
-		for (Structure structures : option.getStructures()) {
-			if (structures.equals(structure)) {
-				return true;
-			}
-		}
-		return false;
-	}
 	
 	/**
 	 * Looks up Structures which are referenced by changed Decisions
@@ -143,10 +78,9 @@ public class APSReqHardwareArchitectureModelLookup extends APSReqArchitectureMod
 		
 		for (Decision decision: decisions) {
 			for (SelectionObject selection: decision.getSelected()) {
-				if (selection instanceof APSReqStructureHardwareOption) {
+				if (selection instanceof APSReqStructureOption) {
 					for (Structure structure : version.getApsArchitectureVersion().getAPSPlant().getStructures()) {
-						if (structure instanceof Structure && isStructureReferencedByOption(
-								structure, (APSReqStructureHardwareOption) selection)) {
+						if (isStructureReferencedByOption(structure, (APSReqStructureOption) selection)) {
 							MapUtil.putOrAddToMap(results, structure, decision);
 						}
 					}
@@ -172,9 +106,9 @@ public class APSReqHardwareArchitectureModelLookup extends APSReqArchitectureMod
 			APSReqHardwareArchitectureVersion version, Collection<? extends Option> options) {
 		Map<Module, Set<Option>> results = new HashMap<Module, Set<Option>>();
 		for (Option option: options) {
-			if (option instanceof APSReqModuleHardwareOption) {
+			if (option instanceof APSReqModuleOption) {
 				for (Module moduleRepository : version.getApsArchitectureVersion().getAPSPlant().getModuleRepository().getAllModulesInPlant()) {
-					if (isModuleReferencedByOption(moduleRepository, (APSReqModuleHardwareOption) option)) {
+					if (isModuleReferencedByOption(moduleRepository, (APSReqModuleOption) option)) {
 						MapUtil.putOrAddToMap(results, moduleRepository, option);
 					}
 				}
@@ -185,50 +119,7 @@ public class APSReqHardwareArchitectureModelLookup extends APSReqArchitectureMod
 	}
 
 	private static boolean isModuleReferencedByOption(Module module, 
-			APSReqModuleHardwareOption option) {
-		boolean result = false;
-		if (option instanceof APSReqIntroduceNewModuleOption) {
-			result = isModuleReferencedByIntroduceNewOption(module, (APSReqIntroduceNewModuleOption) option);
-		} else if (option instanceof APSReqChangeModuleOption) {
-			result = isModuleReferencedByChangeOption(module, (APSReqChangeModuleOption) option);
-		} else if (option instanceof APSReqReplaceModuleOption) {
-			result = isModuleReferencedByReplaceOption(module, (APSReqReplaceModuleOption) option);
-		} else if (option instanceof APSReqRemoveModuleOption) {
-			result = isModuleReferencedByRemoveOption(module, (APSReqRemoveModuleOption) option);
-		}
-		return result;
-	}
-	
-	private static boolean isModuleReferencedByIntroduceNewOption(
-			Module module, APSReqIntroduceNewModuleOption option) {
-		for (Module modules : option.getModules()) {
-			if (modules.equals(module)) {
-				return true;
-			}
-		}
-		return false;
-	}
-	
-	private static boolean isModuleReferencedByReplaceOption(
-			Module module, APSReqReplaceModuleOption option) {
-		if (option.getNewModule().equals(module) || option.getOldModule().equals(module)) {
-			return true;
-		}
-		return false;
-	}
-	
-	private static boolean isModuleReferencedByChangeOption(
-			Module module, APSReqChangeModuleOption option) {
-		for (Module modules : option.getModules()) {
-			if (modules.equals(module)) {
-				return true;
-			}
-		}
-		return false;
-	}
-	
-	private static boolean isModuleReferencedByRemoveOption(
-			Module module, APSReqRemoveModuleOption option) {
+			APSReqModuleOption option) {
 		for (Module modules : option.getModules()) {
 			if (modules.equals(module)) {
 				return true;
@@ -249,10 +140,9 @@ public class APSReqHardwareArchitectureModelLookup extends APSReqArchitectureMod
 		
 		for (Decision decision: decisions) {
 			for (SelectionObject selection: decision.getSelected()) {
-				if (selection instanceof APSReqModuleHardwareOption) {
+				if (selection instanceof APSReqModuleOption) {
 					for (Module module : version.getApsArchitectureVersion().getAPSPlant().getModuleRepository().getAllModulesInPlant()) {
-						if (module instanceof Module && isModuleReferencedByOption(
-								module, (APSReqModuleHardwareOption) selection)) {
+						if (isModuleReferencedByOption(module, (APSReqModuleOption) selection)) {
 							MapUtil.putOrAddToMap(results, module, decision);
 						}
 					}
@@ -278,9 +168,9 @@ public class APSReqHardwareArchitectureModelLookup extends APSReqArchitectureMod
 			APSReqHardwareArchitectureVersion version, Collection<? extends Option> options) {
 		Map<Component, Set<Option>> results = new HashMap<Component, Set<Option>>();
 		for (Option option: options) {
-			if (option instanceof APSReqComponentHardwareOption) {
+			if (option instanceof APSReqComponentOption) {
 				for (Component componentRepository : version.getApsArchitectureVersion().getAPSPlant().getComponentRepository().getAllComponentsInPlant()) {
-					if (isComponentReferencedByOption(componentRepository, (APSReqComponentHardwareOption) option)) {
+					if (isComponentReferencedByOption(componentRepository, (APSReqComponentOption) option)) {
 						MapUtil.putOrAddToMap(results, componentRepository, option);
 					}
 				}
@@ -291,38 +181,7 @@ public class APSReqHardwareArchitectureModelLookup extends APSReqArchitectureMod
 	}
 	
 	private static boolean isComponentReferencedByOption(Component component, 
-			APSReqComponentHardwareOption option) {
-		boolean result = false;
-		if (option instanceof APSReqIntroduceNewComponentOption) {
-			result = isComponentReferencedByIntroduceNewOption(component, (APSReqIntroduceNewComponentOption) option);
-		}  else if (option instanceof APSReqReplaceComponentOption) {
-			result = isComponentReferencedByReplaceOption(component, (APSReqReplaceComponentOption) option);
-		} else if (option instanceof APSReqRemoveComponentOption) {
-			result = isComponentReferencedByRemoveOption(component, (APSReqRemoveComponentOption) option);
-		}
-		return result;
-	}
-	
-	private static boolean isComponentReferencedByIntroduceNewOption(
-			Component component, APSReqIntroduceNewComponentOption option) {
-		for (Component components : option.getComponents()) {
-			if (components.equals(component)) {
-				return true;
-			}
-		}
-		return false;
-	}
-	
-	private static boolean isComponentReferencedByReplaceOption(
-			Component component, APSReqReplaceComponentOption option) {
-		if (option.getNewComponent().equals(component) || option.getOldComponent().equals(component)) {
-			return true;
-		}
-		return false;
-	}
-	
-	private static boolean isComponentReferencedByRemoveOption(
-			Component component, APSReqRemoveComponentOption option) {
+			APSReqComponentOption option) {
 		for (Component components : option.getComponents()) {
 			if (components.equals(component)) {
 				return true;
@@ -340,20 +199,17 @@ public class APSReqHardwareArchitectureModelLookup extends APSReqArchitectureMod
 	public static Map<Component, Set<Decision>> lookUpComponentsReferencedByDecisions(
 			APSReqHardwareArchitectureVersion version, Collection<? extends Decision> decisions) {
 		Map<Component, Set<Decision>> results = new HashMap<Component, Set<Decision>>();
-		
 		for (Decision decision: decisions) {
 			for (SelectionObject selection: decision.getSelected()) {
-				if (selection instanceof APSReqComponentHardwareOption) {
+				if (selection instanceof APSReqComponentOption) {
 					for (Component component : version.getApsArchitectureVersion().getAPSPlant().getComponentRepository().getAllComponentsInPlant()) {
-						if (component instanceof Component && isComponentReferencedByOption(
-								component, (APSReqComponentHardwareOption) selection)) {
+						if (isComponentReferencedByOption(component, (APSReqComponentOption) selection)) {
 							MapUtil.putOrAddToMap(results, component, decision);
 						}
 					}
 				}
 			}
 		}
-		
 		return results;
 	}
 	
@@ -373,9 +229,9 @@ public class APSReqHardwareArchitectureModelLookup extends APSReqArchitectureMod
 			APSReqHardwareArchitectureVersion version, Collection<? extends Option> options) {
 		Map<Interface, Set<Option>> results = new HashMap<Interface, Set<Option>>();
 		for (Option option: options) {
-			if (option instanceof APSReqInterfaceHardwareOption) {
+			if (option instanceof APSReqInterfaceOption) {
 				for (Interface interfaceRepository : version.getApsArchitectureVersion().getAPSPlant().getInterfaceRepository().getAllInterfacesInPlant()) {
-					if (isInterfaceReferencedByOption(interfaceRepository, (APSReqInterfaceHardwareOption) option)) {
+					if (isInterfaceReferencedByOption(interfaceRepository, (APSReqInterfaceOption) option)) {
 						MapUtil.putOrAddToMap(results, interfaceRepository, option);
 					}
 				}
@@ -386,50 +242,7 @@ public class APSReqHardwareArchitectureModelLookup extends APSReqArchitectureMod
 	}
 
 	private static boolean isInterfaceReferencedByOption(Interface interfac, 
-			APSReqInterfaceHardwareOption option) {
-		boolean result = false;
-		if (option instanceof APSReqIntroduceNewInterfaceOption) {
-			result = isInterfaceReferencedByIntroduceNewOption(interfac, (APSReqIntroduceNewInterfaceOption) option);
-		} else if (option instanceof APSReqChangeInterfaceOption) {
-			result = isInterfaceReferencedByChangeOption(interfac, (APSReqChangeInterfaceOption) option);
-		} else if (option instanceof APSReqReplaceInterfaceOption) {
-			result = isInterfaceReferencedByReplaceOption(interfac, (APSReqReplaceInterfaceOption) option);
-		} else if (option instanceof APSReqRemoveInterfaceOption) {
-			result = isInterfaceReferencedByRemoveOption(interfac, (APSReqRemoveInterfaceOption) option);
-		}
-		return result;
-	}
-	
-	private static boolean isInterfaceReferencedByIntroduceNewOption(
-			Interface interfac, APSReqIntroduceNewInterfaceOption option) {
-		for (Interface interfaces : option.getInterfaces()) {
-			if (interfaces.equals(interfac)) {
-				return true;
-			}
-		}
-		return false;
-	}
-	
-	private static boolean isInterfaceReferencedByReplaceOption(
-			Interface interfac, APSReqReplaceInterfaceOption option) {
-		if (option.getNewInterface().equals(interfac) || option.getOldInterface().equals(interfac)) {
-			return true;
-		}
-		return false;
-	}
-	
-	private static boolean isInterfaceReferencedByChangeOption(
-			Interface interfac, APSReqChangeInterfaceOption option) {
-		for (Interface interfaces : option.getInterfaces()) {
-			if (interfaces.equals(interfac)) {
-				return true;
-			}
-		}
-		return false;
-	}
-	
-	private static boolean isInterfaceReferencedByRemoveOption(
-			Interface interfac, APSReqRemoveInterfaceOption option) {
+			APSReqInterfaceOption option) {
 		for (Interface interfaces : option.getInterfaces()) {
 			if (interfaces.equals(interfac)) {
 				return true;
@@ -450,17 +263,15 @@ public class APSReqHardwareArchitectureModelLookup extends APSReqArchitectureMod
 		
 		for (Decision decision: decisions) {
 			for (SelectionObject selection: decision.getSelected()) {
-				if (selection instanceof APSReqInterfaceHardwareOption) {
+				if (selection instanceof APSReqInterfaceOption) {
 					for (Interface interfac : version.getApsArchitectureVersion().getAPSPlant().getInterfaceRepository().getAllInterfacesInPlant()) {
-						if (interfac instanceof Interface && isInterfaceReferencedByOption(
-								interfac, (APSReqInterfaceHardwareOption) selection)) {
+						if (isInterfaceReferencedByOption(interfac, (APSReqInterfaceOption) selection)) {
 							MapUtil.putOrAddToMap(results, interfac, decision);
 						}
 					}
 				}
 			}
 		}
-		
 		return results;
 	}
 }
