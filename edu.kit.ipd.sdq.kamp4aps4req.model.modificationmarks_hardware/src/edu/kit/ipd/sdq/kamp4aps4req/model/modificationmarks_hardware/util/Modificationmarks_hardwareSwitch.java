@@ -3,10 +3,15 @@
 package edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.util;
 
 import edu.kit.ipd.sdq.kamp.model.modificationmarks.AbstractChangePropagationStep;
+import edu.kit.ipd.sdq.kamp.model.modificationmarks.AbstractModification;
 import edu.kit.ipd.sdq.kamp.model.modificationmarks.AbstractModificationRepository;
 import edu.kit.ipd.sdq.kamp.model.modificationmarks.AbstractSeedModifications;
 import edu.kit.ipd.sdq.kamp.model.modificationmarks.ChangePropagationStep;
 
+import edu.kit.ipd.sdq.kamp4aps.model.KAMP4aPSModificationmarks.AbstractKAMP4aPSModificationRepository;
+import edu.kit.ipd.sdq.kamp4aps.model.KAMP4aPSModificationmarks.KAMP4aPSSeedModifications;
+import edu.kit.ipd.sdq.kamp4aps.model.KAMP4aPSModificationmarks.ModifyEntity;
+import edu.kit.ipd.sdq.kamp4aps.model.basic.Entity;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqSeedModifications;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.AbstractAPSReqChangePropagationDueToSpecificationDependencies;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.AbstractKAMP4aPS4ReqModificationRepository;
@@ -78,6 +83,7 @@ public class Modificationmarks_hardwareSwitch<T1> extends Switch<T1> {
 			case Modificationmarks_hardwarePackage.APS_REQ_HARDWARE_SEED_MODIFICATIONS: {
 				APSReqHardwareSeedModifications apsReqHardwareSeedModifications = (APSReqHardwareSeedModifications)theEObject;
 				T1 result = caseAPSReqHardwareSeedModifications(apsReqHardwareSeedModifications);
+				if (result == null) result = caseKAMP4aPSSeedModifications(apsReqHardwareSeedModifications);
 				if (result == null) result = caseAPSReqSeedModifications(apsReqHardwareSeedModifications);
 				if (result == null) result = caseAbstractSeedModifications(apsReqHardwareSeedModifications);
 				if (result == null) result = defaultCase(theEObject);
@@ -86,6 +92,7 @@ public class Modificationmarks_hardwareSwitch<T1> extends Switch<T1> {
 			case Modificationmarks_hardwarePackage.APS_REQ_HARDWARE_MODIFICATION_REPOSITORY: {
 				APSReqHardwareModificationRepository apsReqHardwareModificationRepository = (APSReqHardwareModificationRepository)theEObject;
 				T1 result = caseAPSReqHardwareModificationRepository(apsReqHardwareModificationRepository);
+				if (result == null) result = caseAbstractKAMP4aPSModificationRepository(apsReqHardwareModificationRepository);
 				if (result == null) result = caseAbstractKAMP4aPS4ReqModificationRepository(apsReqHardwareModificationRepository);
 				if (result == null) result = caseAbstractModificationRepository(apsReqHardwareModificationRepository);
 				if (result == null) result = defaultCase(theEObject);
@@ -97,6 +104,14 @@ public class Modificationmarks_hardwareSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseAbstractAPSReqChangePropagationDueToSpecificationDependencies(apsReqHardwareChangePropagationDueToSpecificationDependencies);
 				if (result == null) result = caseChangePropagationStep(apsReqHardwareChangePropagationDueToSpecificationDependencies);
 				if (result == null) result = caseAbstractChangePropagationStep(apsReqHardwareChangePropagationDueToSpecificationDependencies);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case Modificationmarks_hardwarePackage.APS_REQ_MODIFY_ENTITY: {
+				APSReqModifyEntity apsReqModifyEntity = (APSReqModifyEntity)theEObject;
+				T1 result = caseAPSReqModifyEntity(apsReqModifyEntity);
+				if (result == null) result = caseModifyEntity(apsReqModifyEntity);
+				if (result == null) result = caseAbstractModification(apsReqModifyEntity);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -150,6 +165,21 @@ public class Modificationmarks_hardwareSwitch<T1> extends Switch<T1> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>APS Req Modify Entity</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>APS Req Modify Entity</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseAPSReqModifyEntity(APSReqModifyEntity object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Abstract Seed Modifications</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -165,6 +195,21 @@ public class Modificationmarks_hardwareSwitch<T1> extends Switch<T1> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>KAMP 4a PS Seed Modifications</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>KAMP 4a PS Seed Modifications</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseKAMP4aPSSeedModifications(KAMP4aPSSeedModifications object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>APS Req Seed Modifications</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -175,7 +220,7 @@ public class Modificationmarks_hardwareSwitch<T1> extends Switch<T1> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public <T extends AbstractSeedModifications> T1 caseAPSReqSeedModifications(APSReqSeedModifications<T> object) {
+	public T1 caseAPSReqSeedModifications(APSReqSeedModifications object) {
 		return null;
 	}
 
@@ -195,6 +240,21 @@ public class Modificationmarks_hardwareSwitch<T1> extends Switch<T1> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Abstract KAMP 4a PS Modification Repository</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Abstract KAMP 4a PS Modification Repository</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public <T extends KAMP4aPSSeedModifications> T1 caseAbstractKAMP4aPSModificationRepository(AbstractKAMP4aPSModificationRepository<T> object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Abstract KAMP 4a PS4 Req Modification Repository</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -205,7 +265,7 @@ public class Modificationmarks_hardwareSwitch<T1> extends Switch<T1> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public <T extends AbstractSeedModifications> T1 caseAbstractKAMP4aPS4ReqModificationRepository(AbstractKAMP4aPS4ReqModificationRepository<T> object) {
+	public <T extends APSReqSeedModifications> T1 caseAbstractKAMP4aPS4ReqModificationRepository(AbstractKAMP4aPS4ReqModificationRepository<T> object) {
 		return null;
 	}
 
@@ -251,6 +311,36 @@ public class Modificationmarks_hardwareSwitch<T1> extends Switch<T1> {
 	 * @generated
 	 */
 	public T1 caseAbstractAPSReqChangePropagationDueToSpecificationDependencies(AbstractAPSReqChangePropagationDueToSpecificationDependencies object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Abstract Modification</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Abstract Modification</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public <S, T> T1 caseAbstractModification(AbstractModification<S, T> object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Modify Entity</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Modify Entity</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public <T extends Entity> T1 caseModifyEntity(ModifyEntity<T> object) {
 		return null;
 	}
 

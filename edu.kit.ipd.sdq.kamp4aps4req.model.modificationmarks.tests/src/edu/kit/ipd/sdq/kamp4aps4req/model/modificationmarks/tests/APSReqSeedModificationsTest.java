@@ -20,7 +20,7 @@ public abstract class APSReqSeedModificationsTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected APSReqSeedModifications<?> fixture = null;
+	protected APSReqSeedModifications fixture = null;
 
 	/**
 	 * Constructs a new APS Req Seed Modifications test case with the given name.
@@ -38,7 +38,7 @@ public abstract class APSReqSeedModificationsTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void setFixture(APSReqSeedModifications<?> fixture) {
+	protected void setFixture(APSReqSeedModifications fixture) {
 		this.fixture = fixture;
 	}
 
@@ -48,7 +48,7 @@ public abstract class APSReqSeedModificationsTest extends TestCase {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected APSReqSeedModifications<?> getFixture() {
+	protected APSReqSeedModifications getFixture() {
 		return fixture;
 	}
 

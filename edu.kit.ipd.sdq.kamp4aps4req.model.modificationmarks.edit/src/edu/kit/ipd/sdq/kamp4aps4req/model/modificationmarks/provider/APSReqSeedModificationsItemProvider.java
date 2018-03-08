@@ -70,7 +70,6 @@ public class APSReqSeedModificationsItemProvider extends AbstractSeedModificatio
 			childrenFeatures.add(ModificationmarksPackage.Literals.APS_REQ_SEED_MODIFICATIONS__REQUIREMENT_MODIFICATIONS);
 			childrenFeatures.add(ModificationmarksPackage.Literals.APS_REQ_SEED_MODIFICATIONS__DECISION_MODIFICATIONS);
 			childrenFeatures.add(ModificationmarksPackage.Literals.APS_REQ_SEED_MODIFICATIONS__OPTION_MODIFICATIONS);
-			childrenFeatures.add(ModificationmarksPackage.Literals.APS_REQ_SEED_MODIFICATIONS__APSIEC_SEED_MODIFICATIONS);
 		}
 		return childrenFeatures;
 	}
@@ -115,7 +114,6 @@ public class APSReqSeedModificationsItemProvider extends AbstractSeedModificatio
 			case ModificationmarksPackage.APS_REQ_SEED_MODIFICATIONS__REQUIREMENT_MODIFICATIONS:
 			case ModificationmarksPackage.APS_REQ_SEED_MODIFICATIONS__DECISION_MODIFICATIONS:
 			case ModificationmarksPackage.APS_REQ_SEED_MODIFICATIONS__OPTION_MODIFICATIONS:
-			case ModificationmarksPackage.APS_REQ_SEED_MODIFICATIONS__APSIEC_SEED_MODIFICATIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -147,11 +145,6 @@ public class APSReqSeedModificationsItemProvider extends AbstractSeedModificatio
 			(createChildParameter
 				(ModificationmarksPackage.Literals.APS_REQ_SEED_MODIFICATIONS__OPTION_MODIFICATIONS,
 				 ModificationmarksFactory.eINSTANCE.createAPSReqModifyOption()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModificationmarksPackage.Literals.APS_REQ_SEED_MODIFICATIONS__APSIEC_SEED_MODIFICATIONS,
-				 edu.kit.ipd.sdq.kamp.model.modificationmarks.ModificationmarksFactory.eINSTANCE.createSeedModifications()));
 	}
 
 	/**

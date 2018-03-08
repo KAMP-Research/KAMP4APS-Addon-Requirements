@@ -92,11 +92,11 @@ public class ModificationmarksAdapterFactory extends AdapterFactoryImpl {
 				return createAPSReqModifyOptionAdapter();
 			}
 			@Override
-			public <T extends AbstractSeedModifications> Adapter caseAbstractKAMP4aPS4ReqModificationRepository(AbstractKAMP4aPS4ReqModificationRepository<T> object) {
+			public <T extends APSReqSeedModifications> Adapter caseAbstractKAMP4aPS4ReqModificationRepository(AbstractKAMP4aPS4ReqModificationRepository<T> object) {
 				return createAbstractKAMP4aPS4ReqModificationRepositoryAdapter();
 			}
 			@Override
-			public <T extends AbstractSeedModifications> Adapter caseAPSReqSeedModifications(APSReqSeedModifications<T> object) {
+			public Adapter caseAPSReqSeedModifications(APSReqSeedModifications object) {
 				return createAPSReqSeedModificationsAdapter();
 			}
 			@Override

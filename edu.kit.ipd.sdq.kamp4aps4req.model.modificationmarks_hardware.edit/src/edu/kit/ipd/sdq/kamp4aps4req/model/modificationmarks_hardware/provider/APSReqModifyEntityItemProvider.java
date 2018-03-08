@@ -3,8 +3,9 @@
 package edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.provider;
 
 
-import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.provider.AbstractAPSReqChangePropagationDueToSpecificationDependenciesItemProvider;
-import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.Modificationmarks_hardwarePackage;
+import edu.kit.ipd.sdq.kamp4aps.model.KAMP4aPSModificationmarks.provider.ModifyEntityItemProvider;
+
+import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.APSReqModifyEntity;
 
 import java.util.Collection;
 import java.util.List;
@@ -14,23 +15,22 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 /**
- * This is the item provider adapter for a {@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.APSReqHardwareChangePropagationDueToSpecificationDependencies} object.
+ * This is the item provider adapter for a {@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.APSReqModifyEntity} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class APSReqHardwareChangePropagationDueToSpecificationDependenciesItemProvider extends AbstractAPSReqChangePropagationDueToSpecificationDependenciesItemProvider {
+public class APSReqModifyEntityItemProvider extends ModifyEntityItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public APSReqHardwareChangePropagationDueToSpecificationDependenciesItemProvider(AdapterFactory adapterFactory) {
+	public APSReqModifyEntityItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -45,42 +45,19 @@ public class APSReqHardwareChangePropagationDueToSpecificationDependenciesItemPr
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addEntityModificationsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Entity Modifications feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addEntityModificationsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_APSReqHardwareChangePropagationDueToSpecificationDependencies_entityModifications_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_APSReqHardwareChangePropagationDueToSpecificationDependencies_entityModifications_feature", "_UI_APSReqHardwareChangePropagationDueToSpecificationDependencies_type"),
-				 Modificationmarks_hardwarePackage.Literals.APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__ENTITY_MODIFICATIONS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This returns APSReqHardwareChangePropagationDueToSpecificationDependencies.gif.
+	 * This returns APSReqModifyEntity.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/APSReqHardwareChangePropagationDueToSpecificationDependencies"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/APSReqModifyEntity"));
 	}
 
 	/**
@@ -91,7 +68,10 @@ public class APSReqHardwareChangePropagationDueToSpecificationDependenciesItemPr
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_APSReqHardwareChangePropagationDueToSpecificationDependencies_type");
+		String label = ((APSReqModifyEntity)object).getId();
+		return label == null || label.length() == 0 ?
+			getString("_UI_APSReqModifyEntity_type") :
+			getString("_UI_APSReqModifyEntity_type") + " " + label;
 	}
 	
 

@@ -4,11 +4,13 @@ package edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.impl;
 
 import edu.kit.ipd.sdq.kamp4aps.model.KAMP4aPSModificationmarks.KAMP4aPSModificationmarksPackage;
 
+import edu.kit.ipd.sdq.kamp4aps.model.basic.BasicPackage;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.ModificationmarksPackage;
 
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.APSReqHardwareChangePropagationDueToSpecificationDependencies;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.APSReqHardwareModificationRepository;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.APSReqHardwareSeedModifications;
+import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.APSReqModifyEntity;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.Modificationmarks_hardwareFactory;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.Modificationmarks_hardwarePackage;
 
@@ -46,6 +48,13 @@ public class Modificationmarks_hardwarePackageImpl extends EPackageImpl implemen
 	 * @generated
 	 */
 	private EClass apsReqHardwareChangePropagationDueToSpecificationDependenciesEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass apsReqModifyEntityEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -144,8 +153,17 @@ public class Modificationmarks_hardwarePackageImpl extends EPackageImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAPSReqHardwareChangePropagationDueToSpecificationDependencies_ApsChangePropagationDueToHardwareChange() {
+	public EReference getAPSReqHardwareChangePropagationDueToSpecificationDependencies_EntityModifications() {
 		return (EReference)apsReqHardwareChangePropagationDueToSpecificationDependenciesEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAPSReqModifyEntity() {
+		return apsReqModifyEntityEClass;
 	}
 
 	/**
@@ -181,7 +199,9 @@ public class Modificationmarks_hardwarePackageImpl extends EPackageImpl implemen
 		apsReqHardwareModificationRepositoryEClass = createEClass(APS_REQ_HARDWARE_MODIFICATION_REPOSITORY);
 
 		apsReqHardwareChangePropagationDueToSpecificationDependenciesEClass = createEClass(APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES);
-		createEReference(apsReqHardwareChangePropagationDueToSpecificationDependenciesEClass, APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__APS_CHANGE_PROPAGATION_DUE_TO_HARDWARE_CHANGE);
+		createEReference(apsReqHardwareChangePropagationDueToSpecificationDependenciesEClass, APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__ENTITY_MODIFICATIONS);
+
+		apsReqModifyEntityEClass = createEClass(APS_REQ_MODIFY_ENTITY);
 	}
 
 	/**
@@ -208,25 +228,30 @@ public class Modificationmarks_hardwarePackageImpl extends EPackageImpl implemen
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		ModificationmarksPackage theModificationmarksPackage = (ModificationmarksPackage)EPackage.Registry.INSTANCE.getEPackage(ModificationmarksPackage.eNS_URI);
 		KAMP4aPSModificationmarksPackage theKAMP4aPSModificationmarksPackage = (KAMP4aPSModificationmarksPackage)EPackage.Registry.INSTANCE.getEPackage(KAMP4aPSModificationmarksPackage.eNS_URI);
+		ModificationmarksPackage theModificationmarksPackage = (ModificationmarksPackage)EPackage.Registry.INSTANCE.getEPackage(ModificationmarksPackage.eNS_URI);
+		BasicPackage theBasicPackage = (BasicPackage)EPackage.Registry.INSTANCE.getEPackage(BasicPackage.eNS_URI);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		EGenericType g1 = createEGenericType(theModificationmarksPackage.getAPSReqSeedModifications());
-		EGenericType g2 = createEGenericType(theKAMP4aPSModificationmarksPackage.getKAMP4aPSSeedModifications());
+		apsReqHardwareSeedModificationsEClass.getESuperTypes().add(theKAMP4aPSModificationmarksPackage.getKAMP4aPSSeedModifications());
+		apsReqHardwareSeedModificationsEClass.getESuperTypes().add(theModificationmarksPackage.getAPSReqSeedModifications());
+		EGenericType g1 = createEGenericType(theKAMP4aPSModificationmarksPackage.getAbstractKAMP4aPSModificationRepository());
+		EGenericType g2 = createEGenericType(this.getAPSReqHardwareSeedModifications());
 		g1.getETypeArguments().add(g2);
-		apsReqHardwareSeedModificationsEClass.getEGenericSuperTypes().add(g1);
+		apsReqHardwareModificationRepositoryEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(theModificationmarksPackage.getAbstractKAMP4aPS4ReqModificationRepository());
-		g2 = createEGenericType(theModificationmarksPackage.getAPSReqSeedModifications());
+		g2 = createEGenericType(this.getAPSReqHardwareSeedModifications());
 		g1.getETypeArguments().add(g2);
-		EGenericType g3 = createEGenericType(theKAMP4aPSModificationmarksPackage.getKAMP4aPSSeedModifications());
-		g2.getETypeArguments().add(g3);
 		apsReqHardwareModificationRepositoryEClass.getEGenericSuperTypes().add(g1);
 		apsReqHardwareChangePropagationDueToSpecificationDependenciesEClass.getESuperTypes().add(theModificationmarksPackage.getAbstractAPSReqChangePropagationDueToSpecificationDependencies());
+		g1 = createEGenericType(theKAMP4aPSModificationmarksPackage.getModifyEntity());
+		g2 = createEGenericType(theBasicPackage.getEntity());
+		g1.getETypeArguments().add(g2);
+		apsReqModifyEntityEClass.getEGenericSuperTypes().add(g1);
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(apsReqHardwareSeedModificationsEClass, APSReqHardwareSeedModifications.class, "APSReqHardwareSeedModifications", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -234,7 +259,9 @@ public class Modificationmarks_hardwarePackageImpl extends EPackageImpl implemen
 		initEClass(apsReqHardwareModificationRepositoryEClass, APSReqHardwareModificationRepository.class, "APSReqHardwareModificationRepository", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(apsReqHardwareChangePropagationDueToSpecificationDependenciesEClass, APSReqHardwareChangePropagationDueToSpecificationDependencies.class, "APSReqHardwareChangePropagationDueToSpecificationDependencies", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAPSReqHardwareChangePropagationDueToSpecificationDependencies_ApsChangePropagationDueToHardwareChange(), theKAMP4aPSModificationmarksPackage.getChangePropagationDueToHardwareChange(), null, "apsChangePropagationDueToHardwareChange", null, 0, 1, APSReqHardwareChangePropagationDueToSpecificationDependencies.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAPSReqHardwareChangePropagationDueToSpecificationDependencies_EntityModifications(), this.getAPSReqModifyEntity(), null, "entityModifications", null, 0, -1, APSReqHardwareChangePropagationDueToSpecificationDependencies.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(apsReqModifyEntityEClass, APSReqModifyEntity.class, "APSReqModifyEntity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

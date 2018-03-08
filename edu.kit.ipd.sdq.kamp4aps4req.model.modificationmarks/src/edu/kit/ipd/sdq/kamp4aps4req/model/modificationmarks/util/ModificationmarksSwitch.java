@@ -113,7 +113,7 @@ public class ModificationmarksSwitch<T1> extends Switch<T1> {
 				return result;
 			}
 			case ModificationmarksPackage.APS_REQ_SEED_MODIFICATIONS: {
-				APSReqSeedModifications<?> apsReqSeedModifications = (APSReqSeedModifications<?>)theEObject;
+				APSReqSeedModifications apsReqSeedModifications = (APSReqSeedModifications)theEObject;
 				T1 result = caseAPSReqSeedModifications(apsReqSeedModifications);
 				if (result == null) result = caseAbstractSeedModifications(apsReqSeedModifications);
 				if (result == null) result = defaultCase(theEObject);
@@ -202,7 +202,7 @@ public class ModificationmarksSwitch<T1> extends Switch<T1> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public <T extends AbstractSeedModifications> T1 caseAbstractKAMP4aPS4ReqModificationRepository(AbstractKAMP4aPS4ReqModificationRepository<T> object) {
+	public <T extends APSReqSeedModifications> T1 caseAbstractKAMP4aPS4ReqModificationRepository(AbstractKAMP4aPS4ReqModificationRepository<T> object) {
 		return null;
 	}
 
@@ -217,7 +217,7 @@ public class ModificationmarksSwitch<T1> extends Switch<T1> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public <T extends AbstractSeedModifications> T1 caseAPSReqSeedModifications(APSReqSeedModifications<T> object) {
+	public T1 caseAPSReqSeedModifications(APSReqSeedModifications object) {
 		return null;
 	}
 

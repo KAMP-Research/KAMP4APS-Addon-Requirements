@@ -2,19 +2,16 @@
  */
 package edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.impl;
 
-import edu.kit.ipd.sdq.kamp4aps.model.KAMP4aPSModificationmarks.ChangePropagationDueToHardwareChange;
-
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.impl.AbstractAPSReqChangePropagationDueToSpecificationDependenciesImpl;
 
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.APSReqHardwareChangePropagationDueToSpecificationDependencies;
+import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.APSReqModifyEntity;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.Modificationmarks_hardwarePackage;
 
-import org.eclipse.emf.common.notify.Notification;
-
+import java.util.Collection;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,22 +21,21 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.impl.APSReqHardwareChangePropagationDueToSpecificationDependenciesImpl#getApsChangePropagationDueToHardwareChange <em>Aps Change Propagation Due To Hardware Change</em>}</li>
+ *   <li>{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.impl.APSReqHardwareChangePropagationDueToSpecificationDependenciesImpl#getEntityModifications <em>Entity Modifications</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class APSReqHardwareChangePropagationDueToSpecificationDependenciesImpl extends AbstractAPSReqChangePropagationDueToSpecificationDependenciesImpl implements APSReqHardwareChangePropagationDueToSpecificationDependencies {
 	/**
-	 * The cached value of the '{@link #getApsChangePropagationDueToHardwareChange() <em>Aps Change Propagation Due To Hardware Change</em>}' reference.
+	 * The cached value of the '{@link #getEntityModifications() <em>Entity Modifications</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getApsChangePropagationDueToHardwareChange()
+	 * @see #getEntityModifications()
 	 * @generated
 	 * @ordered
 	 */
-	protected ChangePropagationDueToHardwareChange apsChangePropagationDueToHardwareChange;
-
+	protected EList<APSReqModifyEntity> entityModifications;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -64,37 +60,11 @@ public class APSReqHardwareChangePropagationDueToSpecificationDependenciesImpl e
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ChangePropagationDueToHardwareChange getApsChangePropagationDueToHardwareChange() {
-		if (apsChangePropagationDueToHardwareChange != null && apsChangePropagationDueToHardwareChange.eIsProxy()) {
-			InternalEObject oldApsChangePropagationDueToHardwareChange = (InternalEObject)apsChangePropagationDueToHardwareChange;
-			apsChangePropagationDueToHardwareChange = (ChangePropagationDueToHardwareChange)eResolveProxy(oldApsChangePropagationDueToHardwareChange);
-			if (apsChangePropagationDueToHardwareChange != oldApsChangePropagationDueToHardwareChange) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Modificationmarks_hardwarePackage.APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__APS_CHANGE_PROPAGATION_DUE_TO_HARDWARE_CHANGE, oldApsChangePropagationDueToHardwareChange, apsChangePropagationDueToHardwareChange));
-			}
+	public EList<APSReqModifyEntity> getEntityModifications() {
+		if (entityModifications == null) {
+			entityModifications = new EObjectResolvingEList<APSReqModifyEntity>(APSReqModifyEntity.class, this, Modificationmarks_hardwarePackage.APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__ENTITY_MODIFICATIONS);
 		}
-		return apsChangePropagationDueToHardwareChange;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ChangePropagationDueToHardwareChange basicGetApsChangePropagationDueToHardwareChange() {
-		return apsChangePropagationDueToHardwareChange;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setApsChangePropagationDueToHardwareChange(ChangePropagationDueToHardwareChange newApsChangePropagationDueToHardwareChange) {
-		ChangePropagationDueToHardwareChange oldApsChangePropagationDueToHardwareChange = apsChangePropagationDueToHardwareChange;
-		apsChangePropagationDueToHardwareChange = newApsChangePropagationDueToHardwareChange;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Modificationmarks_hardwarePackage.APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__APS_CHANGE_PROPAGATION_DUE_TO_HARDWARE_CHANGE, oldApsChangePropagationDueToHardwareChange, apsChangePropagationDueToHardwareChange));
+		return entityModifications;
 	}
 
 	/**
@@ -105,9 +75,8 @@ public class APSReqHardwareChangePropagationDueToSpecificationDependenciesImpl e
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Modificationmarks_hardwarePackage.APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__APS_CHANGE_PROPAGATION_DUE_TO_HARDWARE_CHANGE:
-				if (resolve) return getApsChangePropagationDueToHardwareChange();
-				return basicGetApsChangePropagationDueToHardwareChange();
+			case Modificationmarks_hardwarePackage.APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__ENTITY_MODIFICATIONS:
+				return getEntityModifications();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -117,11 +86,13 @@ public class APSReqHardwareChangePropagationDueToSpecificationDependenciesImpl e
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Modificationmarks_hardwarePackage.APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__APS_CHANGE_PROPAGATION_DUE_TO_HARDWARE_CHANGE:
-				setApsChangePropagationDueToHardwareChange((ChangePropagationDueToHardwareChange)newValue);
+			case Modificationmarks_hardwarePackage.APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__ENTITY_MODIFICATIONS:
+				getEntityModifications().clear();
+				getEntityModifications().addAll((Collection<? extends APSReqModifyEntity>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -135,8 +106,8 @@ public class APSReqHardwareChangePropagationDueToSpecificationDependenciesImpl e
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Modificationmarks_hardwarePackage.APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__APS_CHANGE_PROPAGATION_DUE_TO_HARDWARE_CHANGE:
-				setApsChangePropagationDueToHardwareChange((ChangePropagationDueToHardwareChange)null);
+			case Modificationmarks_hardwarePackage.APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__ENTITY_MODIFICATIONS:
+				getEntityModifications().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -150,8 +121,8 @@ public class APSReqHardwareChangePropagationDueToSpecificationDependenciesImpl e
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Modificationmarks_hardwarePackage.APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__APS_CHANGE_PROPAGATION_DUE_TO_HARDWARE_CHANGE:
-				return apsChangePropagationDueToHardwareChange != null;
+			case Modificationmarks_hardwarePackage.APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__ENTITY_MODIFICATIONS:
+				return entityModifications != null && !entityModifications.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

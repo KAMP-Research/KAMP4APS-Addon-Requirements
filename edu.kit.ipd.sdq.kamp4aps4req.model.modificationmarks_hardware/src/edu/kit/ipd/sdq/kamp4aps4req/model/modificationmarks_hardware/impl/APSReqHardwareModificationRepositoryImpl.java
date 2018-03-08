@@ -2,13 +2,9 @@
  */
 package edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.impl;
 
-import edu.kit.ipd.sdq.kamp4aps.model.KAMP4aPSModificationmarks.KAMP4aPSSeedModifications;
-
-import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqSeedModifications;
-
-import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.impl.AbstractKAMP4aPS4ReqModificationRepositoryImpl;
-
+import edu.kit.ipd.sdq.kamp4aps.model.KAMP4aPSModificationmarks.impl.AbstractKAMP4aPSModificationRepositoryImpl;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.APSReqHardwareModificationRepository;
+import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.APSReqHardwareSeedModifications;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.Modificationmarks_hardwarePackage;
 
 import org.eclipse.emf.ecore.EClass;
@@ -20,7 +16,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class APSReqHardwareModificationRepositoryImpl extends AbstractKAMP4aPS4ReqModificationRepositoryImpl<APSReqSeedModifications<KAMP4aPSSeedModifications>> implements APSReqHardwareModificationRepository {
+public class APSReqHardwareModificationRepositoryImpl extends AbstractKAMP4aPSModificationRepositoryImpl<APSReqHardwareSeedModifications> implements APSReqHardwareModificationRepository {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

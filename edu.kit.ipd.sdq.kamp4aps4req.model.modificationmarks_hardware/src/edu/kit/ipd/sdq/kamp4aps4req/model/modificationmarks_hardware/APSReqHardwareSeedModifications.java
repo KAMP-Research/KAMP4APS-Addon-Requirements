@@ -16,5 +16,5 @@ import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqSeedModificati
  * @model
  * @generated
  */
-public interface APSReqHardwareSeedModifications extends APSReqSeedModifications<KAMP4aPSSeedModifications> {
+public interface APSReqHardwareSeedModifications extends KAMP4aPSSeedModifications, APSReqSeedModifications {
 } // APSReqHardwareSeedModifications
