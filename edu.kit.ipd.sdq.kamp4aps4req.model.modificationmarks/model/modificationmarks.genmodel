@@ -7,7 +7,8 @@
     importOrganizing="true">
   <foreignModel>modificationmarks.ecore</foreignModel>
   <genPackages prefix="Modificationmarks" basePackage="edu.kit.ipd.sdq.kamp4aps4req.model"
-      disposableProviderFactory="true" ecorePackage="modificationmarks.ecore#/">
+      disposableProviderFactory="true" extensibleProviderFactory="true" childCreationExtenders="true"
+      ecorePackage="modificationmarks.ecore#/">
     <genClasses image="false" ecoreClass="modificationmarks.ecore#//APSReqModifyTraceableObject">
       <genTypeParameters ecoreTypeParameter="modificationmarks.ecore#//APSReqModifyTraceableObject/T"/>
     </genClasses>
@@ -24,10 +25,10 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modificationmarks.ecore#//APSReqSeedModifications/optionModifications"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modificationmarks.ecore#//APSReqSeedModifications/apsiecSeedModifications"/>
     </genClasses>
-    <genClasses ecoreClass="modificationmarks.ecore#//APSReqChangePropagationDueToSpecificationDependencies">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modificationmarks.ecore#//APSReqChangePropagationDueToSpecificationDependencies/decisionModifications"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modificationmarks.ecore#//APSReqChangePropagationDueToSpecificationDependencies/requirementModifications"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modificationmarks.ecore#//APSReqChangePropagationDueToSpecificationDependencies/optionModifications"/>
+    <genClasses image="false" ecoreClass="modificationmarks.ecore#//AbstractAPSReqChangePropagationDueToSpecificationDependencies">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modificationmarks.ecore#//AbstractAPSReqChangePropagationDueToSpecificationDependencies/decisionModifications"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modificationmarks.ecore#//AbstractAPSReqChangePropagationDueToSpecificationDependencies/requirementModifications"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modificationmarks.ecore#//AbstractAPSReqChangePropagationDueToSpecificationDependencies/optionModifications"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

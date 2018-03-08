@@ -8,9 +8,6 @@ import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.ModificationmarksPac
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.provider.APSReqSeedModificationsItemProvider;
 
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.Modificationmarks_softwareFactory;
-
-import edu.kit.ipd.sdq.kamp4iec.model.modificationmarks.IECModificationmarksFactory;
-
 import java.util.Collection;
 import java.util.List;
 
@@ -108,7 +105,7 @@ public class APSReqSoftwareSeedModificationsItemProvider extends APSReqSeedModif
 		newChildDescriptors.add
 			(createChildParameter
 				(ModificationmarksPackage.Literals.APS_REQ_SEED_MODIFICATIONS__APSIEC_SEED_MODIFICATIONS,
-				 IECModificationmarksFactory.eINSTANCE.createIECSeedModifications()));
+				 edu.kit.ipd.sdq.kamp4iec.model.IECModificationmarks.IECModificationmarksFactory.eINSTANCE.createIECSeedModifications()));
 	}
 
 	/**

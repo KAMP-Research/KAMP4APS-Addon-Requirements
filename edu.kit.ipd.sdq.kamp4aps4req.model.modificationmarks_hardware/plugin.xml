@@ -14,4 +14,11 @@
             genModel="model/modificationmarks_hardware.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated modificationmarks_hardware -->
+      <parser
+            type="modificationmarks_hardware"
+            class="edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.util.Modificationmarks_hardwareResourceFactoryImpl"/>
+   </extension>
+
 </plugin>

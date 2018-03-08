@@ -8,9 +8,6 @@ import edu.kit.ipd.sdq.kamp.model.modificationmarks.ModificationmarksPackage;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.provider.AbstractKAMP4aPS4ReqModificationRepositoryItemProvider;
 
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.Modificationmarks_softwareFactory;
-
-import edu.kit.ipd.sdq.kamp4iec.model.modificationmarks.IECModificationmarksFactory;
-
 import java.util.Collection;
 import java.util.List;
 
@@ -108,12 +105,12 @@ public class APSReqSoftwareModificationRepositoryItemProvider extends AbstractKA
 		newChildDescriptors.add
 			(createChildParameter
 				(ModificationmarksPackage.Literals.ABSTRACT_MODIFICATION_REPOSITORY__SEED_MODIFICATIONS,
-				 IECModificationmarksFactory.eINSTANCE.createIECSeedModifications()));
+				 edu.kit.ipd.sdq.kamp4iec.model.IECModificationmarks.IECModificationmarksFactory.eINSTANCE.createIECSeedModifications()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ModificationmarksPackage.Literals.ABSTRACT_MODIFICATION_REPOSITORY__CHANGE_PROPAGATION_STEPS,
-				 IECModificationmarksFactory.eINSTANCE.createIECChangePropagationDueToDataDependency()));
+				 edu.kit.ipd.sdq.kamp4iec.model.IECModificationmarks.IECModificationmarksFactory.eINSTANCE.createIECChangePropagationDueToDataDependency()));
 	}
 
 	/**

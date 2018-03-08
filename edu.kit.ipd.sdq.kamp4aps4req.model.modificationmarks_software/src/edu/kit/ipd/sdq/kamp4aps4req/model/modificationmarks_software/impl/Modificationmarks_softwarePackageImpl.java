@@ -8,9 +8,6 @@ import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.APSReqSoftw
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.APSReqSoftwareSeedModifications;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.Modificationmarks_softwareFactory;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.Modificationmarks_softwarePackage;
-
-import edu.kit.ipd.sdq.kamp4iec.model.modificationmarks.IECModificationmarksPackage;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EPackage;
@@ -85,7 +82,7 @@ public class Modificationmarks_softwarePackageImpl extends EPackageImpl implemen
 		isInited = true;
 
 		// Initialize simple dependencies
-		IECModificationmarksPackage.eINSTANCE.eClass();
+		edu.kit.ipd.sdq.kamp4iec.model.IECModificationmarks.IECModificationmarksPackage.eINSTANCE.eClass();
 		ModificationmarksPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
@@ -179,7 +176,7 @@ public class Modificationmarks_softwarePackageImpl extends EPackageImpl implemen
 
 		// Obtain other dependent packages
 		ModificationmarksPackage theModificationmarksPackage = (ModificationmarksPackage)EPackage.Registry.INSTANCE.getEPackage(ModificationmarksPackage.eNS_URI);
-		IECModificationmarksPackage theIECModificationmarksPackage = (IECModificationmarksPackage)EPackage.Registry.INSTANCE.getEPackage(IECModificationmarksPackage.eNS_URI);
+		edu.kit.ipd.sdq.kamp4iec.model.IECModificationmarks.IECModificationmarksPackage theIECModificationmarksPackage = (edu.kit.ipd.sdq.kamp4iec.model.IECModificationmarks.IECModificationmarksPackage)EPackage.Registry.INSTANCE.getEPackage(edu.kit.ipd.sdq.kamp4iec.model.IECModificationmarks.IECModificationmarksPackage.eNS_URI);
 
 		// Create type parameters
 

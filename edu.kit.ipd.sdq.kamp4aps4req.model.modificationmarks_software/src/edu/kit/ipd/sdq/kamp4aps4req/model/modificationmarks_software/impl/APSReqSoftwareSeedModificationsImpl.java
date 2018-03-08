@@ -6,9 +6,6 @@ import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.impl.APSReqSeedModif
 
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.APSReqSoftwareSeedModifications;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.Modificationmarks_softwarePackage;
-
-import edu.kit.ipd.sdq.kamp4iec.model.modificationmarks.IECSeedModifications;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -22,7 +19,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
  *
  * @generated
  */
-public class APSReqSoftwareSeedModificationsImpl extends APSReqSeedModificationsImpl<IECSeedModifications> implements APSReqSoftwareSeedModifications {
+public class APSReqSoftwareSeedModificationsImpl extends APSReqSeedModificationsImpl<edu.kit.ipd.sdq.kamp4iec.model.IECModificationmarks.IECSeedModifications> implements APSReqSoftwareSeedModifications {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -49,9 +46,9 @@ public class APSReqSoftwareSeedModificationsImpl extends APSReqSeedModifications
 	 * @generated
 	 */
 	@Override
-	public EList<IECSeedModifications> getApsiecSeedModifications() {
+	public EList<edu.kit.ipd.sdq.kamp4iec.model.IECModificationmarks.IECSeedModifications> getApsiecSeedModifications() {
 		if (apsiecSeedModifications == null) {
-			apsiecSeedModifications = new EObjectContainmentEList<IECSeedModifications>(IECSeedModifications.class, this, Modificationmarks_softwarePackage.APS_REQ_SOFTWARE_SEED_MODIFICATIONS__APSIEC_SEED_MODIFICATIONS);
+			apsiecSeedModifications = new EObjectContainmentEList<edu.kit.ipd.sdq.kamp4iec.model.IECModificationmarks.IECSeedModifications>(edu.kit.ipd.sdq.kamp4iec.model.IECModificationmarks.IECSeedModifications.class, this, Modificationmarks_softwarePackage.APS_REQ_SOFTWARE_SEED_MODIFICATIONS__APSIEC_SEED_MODIFICATIONS);
 		}
 		return apsiecSeedModifications;
 	}

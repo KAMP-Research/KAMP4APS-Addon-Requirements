@@ -1,4 +1,3 @@
-
 /**
  */
 package edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.presentation;
@@ -157,7 +156,6 @@ import org.eclipse.emf.edit.ui.util.EditUIUtil;
 
 import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 
-import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.provider.APSReqModificationmarksRepositoryItemProviderAdapterFactory;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.provider.Modificationmarks_hardwareItemProviderAdapterFactory;
 
 import de.uka.ipd.sdq.dsexplore.qml.dimensions.provider.DimensionsItemProviderAdapterFactory;
@@ -771,7 +769,7 @@ public class Modificationmarks_hardwareEditor
 		adapterFactory.addAdapterFactory(new ModificationmarksItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.provider.ModificationmarksItemProviderAdapterFactory());
 		// --Start manually modified code
-		adapterFactory.addAdapterFactory((AdapterFactory) new APSReqModificationmarksRepositoryItemProviderAdapterFactory());
+		//adapterFactory.addAdapterFactory((AdapterFactory) new APSReqModificationmarksRepositoryItemProviderAdapterFactory());
 		// --End manually modified code
 		adapterFactory.addAdapterFactory(new NamedelementItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new OptionsItemProviderAdapterFactory());

@@ -171,9 +171,6 @@ import edu.kit.ipd.sdq.kamp.model.modificationmarks.provider.ModificationmarksIt
 import edu.kit.ipd.sdq.kamp4iec.model.IECModel.provider.IECModelItemProviderAdapterFactory;
 
 import edu.kit.ipd.sdq.kamp4iec.model.IECRepository.provider.IECRepositoryItemProviderAdapterFactory;
-
-import edu.kit.ipd.sdq.kamp4iec.model.modificationmarks.provider.IECModificationmarksItemProviderAdapterFactory;
-
 import effects.provider.EffectsItemProviderAdapterFactory;
 
 import glossary.provider.GlossaryItemProviderAdapterFactory;
@@ -741,7 +738,7 @@ public class Modificationmarks_softwareEditor
 		adapterFactory.addAdapterFactory(new GlossaryItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new IdentifierItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new IECModelItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new IECModificationmarksItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new edu.kit.ipd.sdq.kamp4iec.model.IECModificationmarks.provider.IECModificationmarksItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new IECRepositoryItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ModificationmarksItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.provider.ModificationmarksItemProviderAdapterFactory());

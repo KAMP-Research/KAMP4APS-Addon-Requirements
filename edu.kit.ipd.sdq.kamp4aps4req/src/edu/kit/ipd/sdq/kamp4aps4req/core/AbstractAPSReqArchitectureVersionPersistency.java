@@ -16,7 +16,7 @@ public abstract class AbstractAPSReqArchitectureVersionPersistency<T extends Abs
 
 	public static final String FILEEXTENSION_REQUIREMENTS = "requirements";
 	public static final String FILEEXTENSION_DECISIONS = "decisions";
-	public static final String FILEEXTENSION_OPTIONS = "apsoptions";
+	public static final String FILEEXTENSION_OPTIONS = "options";
 	
 	@Override
 	public abstract T load(String folderpath, String filename, String versionname);

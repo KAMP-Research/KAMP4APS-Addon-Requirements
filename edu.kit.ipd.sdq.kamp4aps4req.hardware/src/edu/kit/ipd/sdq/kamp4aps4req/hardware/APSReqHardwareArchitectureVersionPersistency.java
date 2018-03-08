@@ -13,7 +13,7 @@ import edu.kit.ipd.sdq.kamp4aps4req.core.AbstractAPSReqArchitectureVersionPersis
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.APSReqHardwareModificationRepository;
 import requirements.ReqRepository;
 import decisions.DecisionRepository;
-import apsoptions.APSReqOptionRepository;
+import options.OptionRepository;
 
 /**
  * This class provides loading and saving mechanism for models.
@@ -23,7 +23,8 @@ import apsoptions.APSReqOptionRepository;
  */
 public class APSReqHardwareArchitectureVersionPersistency extends AbstractAPSReqArchitectureVersionPersistency<APSReqHardwareArchitectureVersion> {
 
-
+	public static final String FILEEXTENSION_MODIFICATIONMARK = "modificationmarks_hardware";
+	
 	// Represents the APS specific models
 	private APSArchitectureVersionPersistency apsArchitectureVersionPersistency;
 	
@@ -42,7 +43,7 @@ public class APSReqHardwareArchitectureVersionPersistency extends AbstractAPSReq
 		
 		ReqRepository requirementRepository = (ReqRepository)loadEmfModelFromResource(folderpath, requirementsFilePath, loadResourceSet);
 		DecisionRepository decisionRepository = (DecisionRepository)loadEmfModelFromResource(folderpath, decisionsFilePath, loadResourceSet);
-		APSReqOptionRepository optionRepository = (APSReqOptionRepository)loadEmfModelFromResource(folderpath, optionsFilePath, loadResourceSet);
+		OptionRepository optionRepository = (OptionRepository)loadEmfModelFromResource(folderpath, optionsFilePath, loadResourceSet);
 		APSReqHardwareModificationRepository modificationMarkRepository = (APSReqHardwareModificationRepository)loadEmfModelFromResource(folderpath, 
 				modificationMarksFilePath, loadResourceSet);
 		
@@ -63,7 +64,7 @@ public class APSReqHardwareArchitectureVersionPersistency extends AbstractAPSReq
 		
 		ReqRepository reqRepository = null;
 		DecisionRepository decisionRepository = null;
-		APSReqOptionRepository optionRepository = null;
+		OptionRepository optionRepository = null;
 		APSReqHardwareModificationRepository modificationMarksRepository = null;
 		
 		if (requirementsFile != null && requirementsFile.exists()) {
@@ -73,7 +74,7 @@ public class APSReqHardwareArchitectureVersionPersistency extends AbstractAPSReq
 			decisionRepository = (DecisionRepository)loadEmfModelFromResource(decisionsFile.getFullPath().toString(), null, loadResourceSet);
 		}
 		if (apsOptionsFile != null && apsOptionsFile.exists()) {
-			optionRepository = (APSReqOptionRepository)loadEmfModelFromResource(apsOptionsFile.getFullPath().toString(), null, loadResourceSet);
+			optionRepository = (OptionRepository)loadEmfModelFromResource(apsOptionsFile.getFullPath().toString(), null, loadResourceSet);
 		}
 		if (modificationMarksFile != null && modificationMarksFile.exists()) {
 			modificationMarksRepository = (APSReqHardwareModificationRepository)loadEmfModelFromResource(modificationMarksFile.getFullPath().toString(), null, loadResourceSet);

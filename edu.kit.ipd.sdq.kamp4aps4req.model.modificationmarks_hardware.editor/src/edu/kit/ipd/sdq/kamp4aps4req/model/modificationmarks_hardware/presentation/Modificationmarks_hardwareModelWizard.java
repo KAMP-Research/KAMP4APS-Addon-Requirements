@@ -257,7 +257,6 @@ public class Modificationmarks_hardwareModelWizard extends Wizard implements INe
 							// Save the contents of the resource to the file system.
 							//
 							Map<Object, Object> options = new HashMap<Object, Object>();
-							options.put(XMLResource.OPTION_ENCODING, initialObjectCreationPage.getEncoding());
 							// --Start manually modified code
 							options.put(XMLResource.OPTION_ENCODING, "UTF-8");
 							// --End manually modified code

@@ -21,9 +21,13 @@ import requirements.Requirement;
 public class APSReqHardwareDifferenceCalculation extends AbstractAPSReqDifferenceCalculation<APSReqHardwareArchitectureVersion> {
 
 	private final APSDifferenceCalculation apsDifferenceCalculation = new APSDifferenceCalculation();
+
+	private final APSReqHardwareInternalModificationDerivation internalModificationDerivation = 
+			new APSReqHardwareInternalModificationDerivation();
 	
 	@Override
-	public List<Activity> deriveWorkplan(APSReqHardwareArchitectureVersion baseVersion, APSReqHardwareArchitectureVersion targetVersion) {
+	public List<Activity> deriveWorkplan(APSReqHardwareArchitectureVersion baseVersion, 
+			APSReqHardwareArchitectureVersion targetVersion) {
 		List<Activity> activityList = this.apsDifferenceCalculation.deriveWorkplan(
 				baseVersion.getApsArchitectureVersion(), targetVersion.getApsArchitectureVersion());
 		activityList.addAll(this.deriveAddAndRemoveActivities(AbstractWorkplanDerivation.calculateDiffModel(
@@ -32,12 +36,12 @@ public class APSReqHardwareDifferenceCalculation extends AbstractAPSReqDifferenc
 				baseVersion.getDecisionRepository(), targetVersion.getDecisionRepository())));
 		activityList.addAll(this.deriveAddAndRemoveActivities(AbstractWorkplanDerivation.calculateDiffModel(
 				baseVersion.getOptionRepository(), targetVersion.getOptionRepository())));
-		activityList.addAll(this.internalModificationDerivation.deriveInternalModifications(targetVersion));
+		activityList.addAll(this.getInternalModificationDerivation().deriveInternalModifications(targetVersion));
 		return activityList;
 	}
 	
 	@Override
-	protected void checkForDifferencesAndAddToWorkplan(Diff diffElement, List<Activity> workplan) {
+	public void checkForDifferencesAndAddToWorkplan(Diff diffElement, List<Activity> workplan) {
 		this.apsDifferenceCalculation.checkForDifferencesAndAddToWorkplan(diffElement, workplan);
 		if (detectionRuleAdded(diffElement, Requirement.class)) {
 			Requirement requirement = (Requirement)(((ReferenceChange)diffElement).getValue());
@@ -80,5 +84,13 @@ public class APSReqHardwareDifferenceCalculation extends AbstractAPSReqDifferenc
 		return new Activity(APSActivityType.INTERNALMODIFICATIONMARK, 
 				activityElementType, element, elementName, null, BasicActivity.MODIFY, "Remove " + 
 				element.eClass().getName() + " " + elementName + ".");
+	}
+	
+	public APSDifferenceCalculation getApsDifferenceCalculation() {
+		return apsDifferenceCalculation;
+	}
+
+	public APSReqHardwareInternalModificationDerivation getInternalModificationDerivation() {
+		return internalModificationDerivation;
 	}
 }

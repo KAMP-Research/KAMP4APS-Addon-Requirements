@@ -19,6 +19,7 @@ import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
 
+import org.eclipse.emf.edit.provider.IChildCreationExtender;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -154,7 +155,7 @@ public class AbstractAPSReqChangePropagationDueToSpecificationDependenciesItemPr
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return ModificationmarksEditPlugin.INSTANCE;
+		return ((IChildCreationExtender)adapterFactory).getResourceLocator();
 	}
 
 }

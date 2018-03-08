@@ -1,23 +1,18 @@
 package edu.kit.ipd.sdq.kamp4aps4req.derivation;
 
-import java.util.LinkedList;
-import java.util.List;
-
-import org.palladiosimulator.pcm.core.entity.Entity;
-import org.palladiosimulator.pcm.repository.DataType;
-
 import decisions.Decision;
-import edu.kit.ipd.sdq.kamp.model.modificationmarks.AbstractModification;
-import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.provider.APSReqLabelCustomizing;
 import options.Option;
 import relations.TraceableObject;
 import requirements.Requirement;
 
+/**
+ * Superclass of the internal mod. derivation for HW and SW, which use KAMP4aPS resp. KAMP4IEC
+ * @author Timo Maier
+ *
+ */
 public class APSReqInternalModificationDerivation {
 	
 
-	
-	
 	protected static String getElementNameForTraceableObject(TraceableObject object) {
 		if (object instanceof Requirement) {
 			return "\"" + ((Requirement)object).getSpecification() + "\"";
@@ -29,5 +24,7 @@ public class APSReqInternalModificationDerivation {
 			return null;
 		}
 	}
+	
+
 	
 }

@@ -13,6 +13,7 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import org.eclipse.emf.edit.provider.IChildCreationExtender;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 /**
@@ -97,7 +98,7 @@ public class APSReqModifyTraceableObjectItemProvider extends AbstractModificatio
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return ModificationmarksEditPlugin.INSTANCE;
+		return ((IChildCreationExtender)adapterFactory).getResourceLocator();
 	}
 
 }

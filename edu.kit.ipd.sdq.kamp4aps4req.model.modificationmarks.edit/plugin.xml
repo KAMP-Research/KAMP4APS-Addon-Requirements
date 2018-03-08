@@ -32,4 +32,11 @@
                org.eclipse.emf.edit.provider.IItemPropertySource"/>
    </extension>
 
+   <extension point="org.eclipse.emf.edit.childCreationExtenders">
+      <!-- @generated modificationmarks -->
+      <extender
+            uri="http://sdq.ipd.kit.edu/QML/dimensiontypes/1.0"
+            class="edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.provider.ModificationmarksItemProviderAdapterFactory$DimensiontypesChildCreationExtender"/>
+   </extension>
+
 </plugin>

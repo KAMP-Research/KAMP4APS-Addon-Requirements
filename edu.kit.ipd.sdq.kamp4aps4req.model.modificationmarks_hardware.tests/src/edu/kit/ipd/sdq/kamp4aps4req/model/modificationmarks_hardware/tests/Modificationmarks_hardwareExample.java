@@ -6,6 +6,7 @@ import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.APSReqHardw
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.Modificationmarks_hardwareFactory;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.Modificationmarks_hardwarePackage;
 
+import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.util.Modificationmarks_hardwareResourceFactoryImpl;
 import java.io.File;
 import java.io.IOException;
 
@@ -20,8 +21,6 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 
 import org.eclipse.emf.ecore.util.Diagnostician;
-
-import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -46,7 +45,7 @@ public class Modificationmarks_hardwareExample {
 		//
 		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put
 			(Resource.Factory.Registry.DEFAULT_EXTENSION, 
-			 new XMIResourceFactoryImpl());
+			 new Modificationmarks_hardwareResourceFactoryImpl());
 
 		// Register the package to ensure it is available during loading.
 		//

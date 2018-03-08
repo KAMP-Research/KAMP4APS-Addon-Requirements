@@ -17,9 +17,6 @@ import edu.kit.ipd.sdq.kamp.model.modificationmarks.provider.ModificationmarksEd
 import edu.kit.ipd.sdq.kamp4iec.model.IECModel.provider.IECModelEditPlugin;
 
 import edu.kit.ipd.sdq.kamp4iec.model.IECRepository.provider.IECRepositoryEditPlugin;
-
-import edu.kit.ipd.sdq.kamp4iec.model.modificationmarks.provider.IECModificationmarksEditPlugin;
-
 import effects.provider.EffectsEditPlugin;
 
 import glossary.provider.GlossaryEditPlugin;
@@ -79,7 +76,7 @@ public final class Modificationmarks_softwareEditorPlugin extends EMFPlugin {
 				GlossaryEditPlugin.INSTANCE,
 				IdentifierEditPlugin.INSTANCE,
 				IECModelEditPlugin.INSTANCE,
-				IECModificationmarksEditPlugin.INSTANCE,
+				edu.kit.ipd.sdq.kamp4iec.model.IECModificationmarks.provider.IECModificationmarksEditPlugin.INSTANCE,
 				IECRepositoryEditPlugin.INSTANCE,
 				ModificationmarksEditPlugin.INSTANCE,
 				edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.provider.ModificationmarksEditPlugin.INSTANCE,
