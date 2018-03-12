@@ -1,7 +1,10 @@
 package edu.kit.ipd.sdq.kamp4aps4req.hardware;
 
 import edu.kit.ipd.sdq.kamp4aps.core.APSArchitectureModelFactoryFacade;
-import edu.kit.ipd.sdq.kamp4aps.core.APSArchitectureVersion;
+import edu.kit.ipd.sdq.kamp4aps.model.DeploymentContext.DeploymentContextRepository;
+import edu.kit.ipd.sdq.kamp4aps.model.aPS.Plant;
+import edu.kit.ipd.sdq.kamp4aps.model.aPS.apsFactory;
+import edu.kit.ipd.sdq.kamp4aps.model.fieldofactivityannotations.FieldOfActivityAnnotationRepository;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.Modificationmarks_hardwareFactory;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.APSReqHardwareModificationRepository;
 import options.OptionRepository;
@@ -24,18 +27,15 @@ public class APSReqHardwareArchitectureModelFactoryFacade {
 	 * @return Hardware architecture version
 	 */
 	public static APSReqHardwareArchitectureVersion createEmptyHardwareModel(String name) {
-		APSArchitectureVersion apsModel = APSReqHardwareArchitectureModelFactoryFacade.createAPSArchitectureVersion(name);
+		FieldOfActivityAnnotationRepository fieldOfActivityRepository = APSArchitectureModelFactoryFacade.createFieldOfActivityAnnotationsRepository();
+		DeploymentContextRepository deploymentContextRepository = APSArchitectureModelFactoryFacade.createDeploymentContextRepository();
+		Plant apsPlant = apsFactory.eINSTANCE.createPlant();
 		ReqRepository reqRepository = RequirementsFactory.eINSTANCE.createReqRepository();
 		DecisionRepository decisionRepository = DecisionsFactory.eINSTANCE.createDecisionRepository();
 		OptionRepository optionRepository = OptionsFactory.eINSTANCE.createOptionRepository();
-		APSReqHardwareModificationRepository repository = APSReqHardwareArchitectureModelFactoryFacade.createModificationRepository();
-		return new APSReqHardwareArchitectureVersion(name, reqRepository, decisionRepository, optionRepository, repository,
-				apsModel);
-	}
-	
-	
-	public static APSArchitectureVersion createAPSArchitectureVersion(String name) {
-		return APSArchitectureModelFactoryFacade.createEmptyModel(name);
+		APSReqHardwareModificationRepository modificationMarksRepository = APSReqHardwareArchitectureModelFactoryFacade.createModificationRepository();
+		return new APSReqHardwareArchitectureVersion(name, fieldOfActivityRepository, modificationMarksRepository, 
+				deploymentContextRepository, apsPlant, reqRepository, decisionRepository, optionRepository);
 	}
 	
 	public static APSReqHardwareModificationRepository createModificationRepository() {

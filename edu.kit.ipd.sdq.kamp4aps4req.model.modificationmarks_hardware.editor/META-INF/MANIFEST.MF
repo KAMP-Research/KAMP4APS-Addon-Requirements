@@ -34,7 +34,8 @@ Require-Bundle: org.eclipse.core.runtime,
  de.uka.ipd.sdq.dsexplore.qml.units.edit;visibility:=reexport,
  edu.kit.ipd.sdq.kamp4aps4req.hardware;bundle-version="1.0.0",
  edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.editor;bundle-version="1.0.0",
- edu.kit.ipd.sdq.kamp
+ edu.kit.ipd.sdq.kamp,
+ edu.kit.ipd.sdq.kamp4aps;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy
 Import-Package: edu.kit.ipd.sdq.kamp.architecture,
  edu.kit.ipd.sdq.kamp.model.modificationmarks.editor,

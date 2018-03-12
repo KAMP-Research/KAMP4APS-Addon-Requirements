@@ -20,7 +20,8 @@ Require-Bundle: edu.kit.ipd.sdq.kamp,
  edu.kit.ipd.sdq.kamp4aps.model.fieldofactivityannotations,
  edu.kit.ipd.sdq.kamp4aps.model.deploymentcontext,
  edu.kit.ipd.sdq.kamp4iec.model.modificationmarks,
- edu.kit.ipd.sdq.kamp4iec.model.fieldofactivityannotations
+ edu.kit.ipd.sdq.kamp4iec.model.fieldofactivityannotations,
+ edu.kit.ipd.sdq.kamp4aps.aps
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8

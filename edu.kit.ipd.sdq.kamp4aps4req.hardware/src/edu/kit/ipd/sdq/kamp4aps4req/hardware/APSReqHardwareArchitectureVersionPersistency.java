@@ -5,10 +5,13 @@ import org.eclipse.core.resources.IFile;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 
+import edu.kit.ipd.sdq.kamp.architecture.AbstractArchitectureVersionPersistency;
 import edu.kit.ipd.sdq.kamp.util.FileAndFolderManagement;
-import edu.kit.ipd.sdq.kamp4aps.core.APSArchitectureVersion;
 import edu.kit.ipd.sdq.kamp4aps.core.APSArchitectureVersionPersistency;
-import edu.kit.ipd.sdq.kamp4aps4req.core.AbstractAPSReqArchitectureVersion;
+import edu.kit.ipd.sdq.kamp4aps.model.DeploymentContext.DeploymentContextRepository;
+import edu.kit.ipd.sdq.kamp4aps.model.aPS.Plant;
+import edu.kit.ipd.sdq.kamp4aps.model.fieldofactivityannotations.FieldOfActivityAnnotationRepository;
+
 import edu.kit.ipd.sdq.kamp4aps4req.core.AbstractAPSReqArchitectureVersionPersistency;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.APSReqHardwareModificationRepository;
 import requirements.ReqRepository;
@@ -21,51 +24,74 @@ import options.OptionRepository;
  * @author Timo Maier
  *
  */
-public class APSReqHardwareArchitectureVersionPersistency extends AbstractAPSReqArchitectureVersionPersistency<APSReqHardwareArchitectureVersion> {
+public class APSReqHardwareArchitectureVersionPersistency extends AbstractArchitectureVersionPersistency<APSReqHardwareArchitectureVersion> {
 
+	// TODO: Replace with KAMP modmark
 	public static final String FILEEXTENSION_MODIFICATIONMARK = "modificationmarks_hardware";
 	
-	// Represents the APS specific models
-	private APSArchitectureVersionPersistency apsArchitectureVersionPersistency;
-	
-	
-	public APSReqHardwareArchitectureVersionPersistency() {
-		this.setApsArchitectureVersionPersistency(new APSArchitectureVersionPersistency());
-	}
 	
 	@Override
 	public APSReqHardwareArchitectureVersion load(String folderpath, String filename, String versionname) {
 		ResourceSet loadResourceSet = new ResourceSetImpl();
-		String requirementsFilePath = filename + "." + FILEEXTENSION_REQUIREMENTS;
-		String decisionsFilePath = filename + "." + FILEEXTENSION_DECISIONS;
-		String optionsFilePath = filename + "." + FILEEXTENSION_OPTIONS;
+		String fieldOfActivityRepositoryFilePath = filename + "." + APSArchitectureVersionPersistency.FILEEXTENSION_FIELDOFACTIVITYANNOTATIONS;
+		String deploymenContextFilePath = filename + "." + APSArchitectureVersionPersistency.FILEEXTENSION_DEPLOYMENTCONTEXT;
+		String plantFilePath = filename + "." + APSArchitectureVersionPersistency.FILEEXTENSION_APS;
+		String requirementsFilePath = filename + "." + AbstractAPSReqArchitectureVersionPersistency.FILEEXTENSION_REQUIREMENTS;
+		String decisionsFilePath = filename + "." + AbstractAPSReqArchitectureVersionPersistency.FILEEXTENSION_DECISIONS;
+		String optionsFilePath = filename + "." + AbstractAPSReqArchitectureVersionPersistency.FILEEXTENSION_OPTIONS;
 		String modificationMarksFilePath = filename + "." + FILEEXTENSION_MODIFICATIONMARK;
+
+		// load the APS-related models
+		FieldOfActivityAnnotationRepository fieldOfActivityRepository = 
+				(FieldOfActivityAnnotationRepository)loadEmfModelFromResource(folderpath, fieldOfActivityRepositoryFilePath, loadResourceSet);
+		Plant aPSPlant = (Plant)loadEmfModelFromResource(folderpath, plantFilePath, loadResourceSet);
+		DeploymentContextRepository deploymentContextRepository = 
+				(DeploymentContextRepository)loadEmfModelFromResource(folderpath, deploymenContextFilePath, loadResourceSet);
 		
 		ReqRepository requirementRepository = (ReqRepository)loadEmfModelFromResource(folderpath, requirementsFilePath, loadResourceSet);
 		DecisionRepository decisionRepository = (DecisionRepository)loadEmfModelFromResource(folderpath, decisionsFilePath, loadResourceSet);
 		OptionRepository optionRepository = (OptionRepository)loadEmfModelFromResource(folderpath, optionsFilePath, loadResourceSet);
 		APSReqHardwareModificationRepository modificationMarkRepository = (APSReqHardwareModificationRepository)loadEmfModelFromResource(folderpath, 
 				modificationMarksFilePath, loadResourceSet);
-		
-		// load the APS model
-		APSArchitectureVersion apsArchitectureVersion = this.getApsArchitectureVersionPersistency().load(folderpath, filename, versionname);
 				
-		return new APSReqHardwareArchitectureVersion(versionname, requirementRepository, decisionRepository, optionRepository, modificationMarkRepository, apsArchitectureVersion);
+		return new APSReqHardwareArchitectureVersion(versionname, fieldOfActivityRepository, modificationMarkRepository, 
+				deploymentContextRepository, aPSPlant, requirementRepository, decisionRepository, optionRepository);
 		
 	}
 	
 	@Override
 	public APSReqHardwareArchitectureVersion load(IContainer folder, String versionname) {
 		ResourceSet loadResourceSet = new ResourceSetImpl();
-		IFile requirementsFile = FileAndFolderManagement.retrieveFileWithExtension(folder, FILEEXTENSION_REQUIREMENTS);
-		IFile decisionsFile = FileAndFolderManagement.retrieveFileWithExtension(folder, FILEEXTENSION_DECISIONS);
-		IFile apsOptionsFile = FileAndFolderManagement.retrieveFileWithExtension(folder, FILEEXTENSION_OPTIONS);
+		IFile fieldOfActivityRepositoryFile = FileAndFolderManagement.retrieveFileWithExtension(
+				folder, APSArchitectureVersionPersistency.FILEEXTENSION_FIELDOFACTIVITYANNOTATIONS);
+		IFile apsPlantFile = FileAndFolderManagement.retrieveFileWithExtension(folder, APSArchitectureVersionPersistency.FILEEXTENSION_APS);
+		IFile deploymentContextFile = FileAndFolderManagement.retrieveFileWithExtension(folder, APSArchitectureVersionPersistency.FILEEXTENSION_DEPLOYMENTCONTEXT);
+		IFile requirementsFile = FileAndFolderManagement.retrieveFileWithExtension(folder, AbstractAPSReqArchitectureVersionPersistency.FILEEXTENSION_REQUIREMENTS);
+		IFile decisionsFile = FileAndFolderManagement.retrieveFileWithExtension(folder, AbstractAPSReqArchitectureVersionPersistency.FILEEXTENSION_DECISIONS);
+		IFile apsOptionsFile = FileAndFolderManagement.retrieveFileWithExtension(folder, AbstractAPSReqArchitectureVersionPersistency.FILEEXTENSION_OPTIONS);
 		IFile modificationMarksFile = FileAndFolderManagement.retrieveFileWithExtension(folder, FILEEXTENSION_MODIFICATIONMARK);
+		
+		FieldOfActivityAnnotationRepository fieldOfActivityRepository = null;
+		Plant apsPlant = null;
+		DeploymentContextRepository deploymentContextRepository = null;
 		
 		ReqRepository reqRepository = null;
 		DecisionRepository decisionRepository = null;
 		OptionRepository optionRepository = null;
 		APSReqHardwareModificationRepository modificationMarksRepository = null;
+		
+		if (fieldOfActivityRepositoryFile != null && fieldOfActivityRepositoryFile.exists()) {
+			fieldOfActivityRepository = (FieldOfActivityAnnotationRepository)loadEmfModelFromResource(
+					fieldOfActivityRepositoryFile.getFullPath().toString(), null, loadResourceSet);
+		}
+		if (apsPlantFile != null && apsPlantFile.exists()) {
+			apsPlant = (Plant)loadEmfModelFromResource(apsPlantFile.getFullPath().toString(), null, loadResourceSet);
+		}
+		if (deploymentContextFile != null && deploymentContextFile.exists()) {
+			deploymentContextRepository = (DeploymentContextRepository)loadEmfModelFromResource(deploymentContextFile.getFullPath().toString(), 
+					null, loadResourceSet);
+		}
+		
 		
 		if (requirementsFile != null && requirementsFile.exists()) {
 			reqRepository = (ReqRepository)loadEmfModelFromResource(requirementsFile.getFullPath().toString(), null, loadResourceSet);
@@ -77,33 +103,46 @@ public class APSReqHardwareArchitectureVersionPersistency extends AbstractAPSReq
 			optionRepository = (OptionRepository)loadEmfModelFromResource(apsOptionsFile.getFullPath().toString(), null, loadResourceSet);
 		}
 		if (modificationMarksFile != null && modificationMarksFile.exists()) {
-			modificationMarksRepository = (APSReqHardwareModificationRepository)loadEmfModelFromResource(modificationMarksFile.getFullPath().toString(), null, loadResourceSet);
+			modificationMarksRepository = (APSReqHardwareModificationRepository)
+					loadEmfModelFromResource(modificationMarksFile.getFullPath().toString(), null, loadResourceSet);
 		}
 		
-		// load the APS model
-		APSArchitectureVersion apsArchitectureVersion = this.getApsArchitectureVersionPersistency().load(folder, versionname);
-				
-		
-		return new APSReqHardwareArchitectureVersion(versionname, reqRepository, decisionRepository, optionRepository, modificationMarksRepository, apsArchitectureVersion);
+		return new APSReqHardwareArchitectureVersion(versionname, fieldOfActivityRepository, modificationMarksRepository, 
+				deploymentContextRepository, apsPlant, reqRepository, decisionRepository, optionRepository);
 	}
 	
 	@Override
 	public void save(String targetDirectoryPath, String filename, APSReqHardwareArchitectureVersion version) {
-		saveAPSReqModels(targetDirectoryPath, filename, (AbstractAPSReqArchitectureVersion<?>) version);
-		// save APS model
-		this.getApsArchitectureVersionPersistency().save(targetDirectoryPath, filename, version.getApsArchitectureVersion());
-		
+		APSArchitectureVersionPersistency.savePCMAndKAMP4APSModels(targetDirectoryPath, filename, version);
+		saveAPSReqModels(targetDirectoryPath, filename, version);
 	}
-
 	
-
-	public APSArchitectureVersionPersistency getApsArchitectureVersionPersistency() {
-		return apsArchitectureVersionPersistency;
-	}
-
-
-	public void setApsArchitectureVersionPersistency(APSArchitectureVersionPersistency apsArchitectureVersionPersistency) {
-		this.apsArchitectureVersionPersistency = apsArchitectureVersionPersistency;
+	/**
+	 * Saves the APS Req related models to a file
+	 * @param targetDirectoryPath Path of file to save to
+	 * @param filename Filename
+	 * @param version Architecture version to save
+	 */
+	public static void saveAPSReqModels(String targetDirectoryPath, String filename, APSReqHardwareArchitectureVersion version) {
+		ResourceSet resourceSet = new ResourceSetImpl();
+		
+		String requirementsFilePath = filename + "." + AbstractAPSReqArchitectureVersionPersistency.FILEEXTENSION_REQUIREMENTS;
+		String decisionsFilePath = filename + "." + AbstractAPSReqArchitectureVersionPersistency.FILEEXTENSION_DECISIONS;
+		String optionsFilePath = filename + "." + AbstractAPSReqArchitectureVersionPersistency.FILEEXTENSION_OPTIONS;
+		//String modificationMarksFilePath = filename + "." + FILEEXTENSION_MODIFICATIONMARK;
+		
+		if (version.getRequirementsRepository() != null) {
+			saveEmfModelToResource(version.getRequirementsRepository(), targetDirectoryPath, requirementsFilePath, resourceSet);
+		}
+		if (version.getDecisionRepository() != null) {
+			saveEmfModelToResource(version.getDecisionRepository(), targetDirectoryPath, decisionsFilePath, resourceSet);
+		}
+		if (version.getOptionRepository() != null) {
+			saveEmfModelToResource(version.getOptionRepository(), targetDirectoryPath, optionsFilePath, resourceSet);
+		}
+//		if (version.getModificationMarkRepository() != null) {
+//			saveEmfModelToResource(version.getModificationMarkRepository(), targetDirectoryPath, modificationMarksFilePath, resourceSet);
+//		}
 	}
 	
 }
