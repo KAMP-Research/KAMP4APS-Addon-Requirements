@@ -39,7 +39,7 @@ public class APSReqHardwareArchitectureModelLookup extends APSReqArchitectureMod
 		Map<Structure, Set<Option>> results = new HashMap<Structure, Set<Option>>();
 		for (Option option: options) {
 			if (option instanceof APSReqStructureOption) {
-				for (Structure structureRepository : version.getApsArchitectureVersion().getAPSPlant().getStructures()) {
+				for (Structure structureRepository : version.getAPSPlant().getStructures()) {
 					if (isStructureReferencedByOption(structureRepository,  (APSReqStructureOption) option)) {
 						MapUtil.putOrAddToMap(results, structureRepository, option);
 					}
@@ -79,7 +79,7 @@ public class APSReqHardwareArchitectureModelLookup extends APSReqArchitectureMod
 		for (Decision decision: decisions) {
 			for (SelectionObject selection: decision.getSelected()) {
 				if (selection instanceof APSReqStructureOption) {
-					for (Structure structure : version.getApsArchitectureVersion().getAPSPlant().getStructures()) {
+					for (Structure structure : version.getAPSPlant().getStructures()) {
 						if (isStructureReferencedByOption(structure, (APSReqStructureOption) selection)) {
 							MapUtil.putOrAddToMap(results, structure, decision);
 						}
@@ -107,7 +107,7 @@ public class APSReqHardwareArchitectureModelLookup extends APSReqArchitectureMod
 		Map<Module, Set<Option>> results = new HashMap<Module, Set<Option>>();
 		for (Option option: options) {
 			if (option instanceof APSReqModuleOption) {
-				for (Module moduleRepository : version.getApsArchitectureVersion().getAPSPlant().getModuleRepository().getAllModulesInPlant()) {
+				for (Module moduleRepository : version.getAPSPlant().getModuleRepository().getAllModulesInPlant()) {
 					if (isModuleReferencedByOption(moduleRepository, (APSReqModuleOption) option)) {
 						MapUtil.putOrAddToMap(results, moduleRepository, option);
 					}
@@ -141,7 +141,7 @@ public class APSReqHardwareArchitectureModelLookup extends APSReqArchitectureMod
 		for (Decision decision: decisions) {
 			for (SelectionObject selection: decision.getSelected()) {
 				if (selection instanceof APSReqModuleOption) {
-					for (Module module : version.getApsArchitectureVersion().getAPSPlant().getModuleRepository().getAllModulesInPlant()) {
+					for (Module module : version.getAPSPlant().getModuleRepository().getAllModulesInPlant()) {
 						if (isModuleReferencedByOption(module, (APSReqModuleOption) selection)) {
 							MapUtil.putOrAddToMap(results, module, decision);
 						}
@@ -169,7 +169,7 @@ public class APSReqHardwareArchitectureModelLookup extends APSReqArchitectureMod
 		Map<Component, Set<Option>> results = new HashMap<Component, Set<Option>>();
 		for (Option option: options) {
 			if (option instanceof APSReqComponentOption) {
-				for (Component componentRepository : version.getApsArchitectureVersion().getAPSPlant().getComponentRepository().getAllComponentsInPlant()) {
+				for (Component componentRepository : version.getAPSPlant().getComponentRepository().getAllComponentsInPlant()) {
 					if (isComponentReferencedByOption(componentRepository, (APSReqComponentOption) option)) {
 						MapUtil.putOrAddToMap(results, componentRepository, option);
 					}
@@ -202,7 +202,7 @@ public class APSReqHardwareArchitectureModelLookup extends APSReqArchitectureMod
 		for (Decision decision: decisions) {
 			for (SelectionObject selection: decision.getSelected()) {
 				if (selection instanceof APSReqComponentOption) {
-					for (Component component : version.getApsArchitectureVersion().getAPSPlant().getComponentRepository().getAllComponentsInPlant()) {
+					for (Component component : version.getAPSPlant().getComponentRepository().getAllComponentsInPlant()) {
 						if (isComponentReferencedByOption(component, (APSReqComponentOption) selection)) {
 							MapUtil.putOrAddToMap(results, component, decision);
 						}
@@ -230,7 +230,7 @@ public class APSReqHardwareArchitectureModelLookup extends APSReqArchitectureMod
 		Map<Interface, Set<Option>> results = new HashMap<Interface, Set<Option>>();
 		for (Option option: options) {
 			if (option instanceof APSReqInterfaceOption) {
-				for (Interface interfaceRepository : version.getApsArchitectureVersion().getAPSPlant().getInterfaceRepository().getAllInterfacesInPlant()) {
+				for (Interface interfaceRepository : version.getAPSPlant().getInterfaceRepository().getAllInterfacesInPlant()) {
 					if (isInterfaceReferencedByOption(interfaceRepository, (APSReqInterfaceOption) option)) {
 						MapUtil.putOrAddToMap(results, interfaceRepository, option);
 					}
@@ -264,7 +264,7 @@ public class APSReqHardwareArchitectureModelLookup extends APSReqArchitectureMod
 		for (Decision decision: decisions) {
 			for (SelectionObject selection: decision.getSelected()) {
 				if (selection instanceof APSReqInterfaceOption) {
-					for (Interface interfac : version.getApsArchitectureVersion().getAPSPlant().getInterfaceRepository().getAllInterfacesInPlant()) {
+					for (Interface interfac : version.getAPSPlant().getInterfaceRepository().getAllInterfacesInPlant()) {
 						if (isInterfaceReferencedByOption(interfac, (APSReqInterfaceOption) selection)) {
 							MapUtil.putOrAddToMap(results, interfac, decision);
 						}

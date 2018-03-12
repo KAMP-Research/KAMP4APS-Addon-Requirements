@@ -13,12 +13,15 @@ import edu.kit.ipd.sdq.kamp4aps.model.KAMP4aPSModificationmarks.ModifyStructure;
 import edu.kit.ipd.sdq.kamp4aps.model.KAMP4aPSModificationmarks.ModifyModule;
 import edu.kit.ipd.sdq.kamp4aps.model.KAMP4aPSModificationmarks.ModifyInterface;
 import edu.kit.ipd.sdq.kamp4aps.model.KAMP4aPSModificationmarks.ModifyComponent;
+import edu.kit.ipd.sdq.kamp4aps.model.KAMP4aPSModificationmarks.ModifyEntity;
 import edu.kit.ipd.sdq.kamp4aps.model.aPS.ComponentRepository.Component;
 import edu.kit.ipd.sdq.kamp4aps.model.aPS.InterfaceRepository.Interface;
 import edu.kit.ipd.sdq.kamp4aps.model.aPS.ModuleRepository.Module;
 import edu.kit.ipd.sdq.kamp4aps.model.aPS.StructureRepository.Structure;
+import edu.kit.ipd.sdq.kamp4aps.model.basic.Entity;
 import edu.kit.ipd.sdq.kamp4aps4req.core.AbstractAPSReqChangePropagationAnalysis;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.APSReqHardwareChangePropagationDueToSpecificationDependencies;
+import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.APSReqModifyEntity;
 import options.Option;
 import relations.TraceableObject;
 
@@ -52,7 +55,7 @@ public class APSReqHardwareChangePropagationAnalysis extends AbstractAPSReqChang
 		
 		
 		// Run APS-Specific Change Propagation Analysis
-		this.getApsChangePropagationAnalysis().runChangePropagationAnalysis(version.getApsArchitectureVersion());
+		this.getApsChangePropagationAnalysis().runChangePropagationAnalysis(version);
 		
 		// Update
 	}
@@ -138,28 +141,28 @@ public class APSReqHardwareChangePropagationAnalysis extends AbstractAPSReqChang
 	}
 	
 	
-	private <T extends TraceableObject> void createAndAddStructureModifications(
-			Map<Structure, Set<T>> structuresToBeMarked, 
+	private <T extends TraceableObject> void createAndAddEntityModifications(
+			Map<Entity, Set<T>> entitiesToBeMarked, 
 			Map<EObject, AbstractModification<?, EObject>> elementsMarkedInThisStep) {
-		for (Map.Entry<Structure, Set<T>> structuresToBeMarkedEntry: structuresToBeMarked.entrySet()) {
-			if (elementsMarkedInThisStep.containsKey(structuresToBeMarkedEntry.getKey())) {
-				elementsMarkedInThisStep.get(structuresToBeMarkedEntry.getKey()).
-						getCausingElements().addAll(structuresToBeMarkedEntry.getValue());
+		for (Map.Entry<Entity, Set<T>> entitiesToBeMarkedEntry: entitiesToBeMarked.entrySet()) {
+			if (elementsMarkedInThisStep.containsKey(entitiesToBeMarkedEntry.getKey())) {
+				elementsMarkedInThisStep.get(entitiesToBeMarkedEntry.getKey()).
+						getCausingElements().addAll(entitiesToBeMarkedEntry.getValue());
 			} else {
-				ModifyStructure<Structure> modifyStructure = KAMP4aPSModificationmarksFactory.eINSTANCE.createModifyStructure();
-				modifyStructure.setToolderived(true);
-				modifyStructure.setAffectedElement(structuresToBeMarkedEntry.getKey());
-				modifyStructure.getCausingElements().addAll(structuresToBeMarkedEntry.getValue());
+				APSReqModifyEntity modifyEntity = Modificationmarks_hardwareFactory.eINSTANCE.createAPSReqModifyEntity();
+				modifyEntity.setToolderived(true);
+				modifyEntity.setAffectedElement(entitiesToBeMarkedEntry.getKey());
+				modifyEntity.getCausingElements().addAll(entitiesToBeMarkedEntry.getValue());
 			
-				elementsMarkedInThisStep.put(structuresToBeMarkedEntry.getKey(), modifyStructure);
+				elementsMarkedInThisStep.put(entitiesToBeMarkedEntry.getKey(), modifyEntity);
 				//  cast to hardware change propagation step (set in prepareAnalysis so we can be sure of conversion)
 				APSReqHardwareChangePropagationDueToSpecificationDependencies hardwareChanges = 
 						(APSReqHardwareChangePropagationDueToSpecificationDependencies) this.getChangePropagationDueToSpecificationDependencies();
-				hardwareChanges.getApsChangePropagationDueToHardwareChange().getStructureModifications().add(modifyStructure);
+				hardwareChanges.getEntityModifications().add(modifyEntity);
 			}
 		}
 	}
-	
+	/*
 	private <T extends TraceableObject> void createAndAddModuleModifications(
 			Map<Module, Set<T>> modulesToBeMarked, 
 			Map<EObject, AbstractModification<?, EObject>> elementsMarkedInThisStep) {
@@ -222,6 +225,7 @@ public class APSReqHardwareChangePropagationAnalysis extends AbstractAPSReqChang
 			}
 		}
 	}
+	*/
 	
 
 	public APSChangePropagationAnalysis getApsChangePropagationAnalysis() {
