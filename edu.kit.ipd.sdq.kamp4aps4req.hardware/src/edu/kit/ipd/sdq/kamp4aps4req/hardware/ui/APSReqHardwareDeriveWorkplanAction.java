@@ -1,10 +1,10 @@
 package edu.kit.ipd.sdq.kamp4aps4req.hardware.ui;
 
 import edu.kit.ipd.sdq.kamp.ui.AbstractDeriveWorkplanAction;
+import edu.kit.ipd.sdq.kamp4aps.core.derivation.APSEnrichedWorkplanDerivation;
 import edu.kit.ipd.sdq.kamp4aps4req.hardware.APSReqHardwareArchitectureVersion;
 import edu.kit.ipd.sdq.kamp4aps4req.hardware.APSReqHardwareArchitectureVersionPersistency;
 import edu.kit.ipd.sdq.kamp4aps4req.hardware.derivation.APSReqHardwareDifferenceCalculation;
-import edu.kit.ipd.sdq.kamp4aps4req.hardware.derivation.APSReqHardwareEnrichedWorkplanDerivation;
 
 /**
  * 
@@ -15,7 +15,7 @@ public class APSReqHardwareDeriveWorkplanAction extends AbstractDeriveWorkplanAc
 
 	public APSReqHardwareDeriveWorkplanAction() {
 		this.setWorkplanDerivation(new APSReqHardwareDifferenceCalculation());
-		this.setEnrichedWorkplanDerivation(new APSReqHardwareEnrichedWorkplanDerivation());
+		this.setEnrichedWorkplanDerivation(new APSEnrichedWorkplanDerivation());
 		this.setArchitectureVersionPersistency(new APSReqHardwareArchitectureVersionPersistency());
 		
 	}

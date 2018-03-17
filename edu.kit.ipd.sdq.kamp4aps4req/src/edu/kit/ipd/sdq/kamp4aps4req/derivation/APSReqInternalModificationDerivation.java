@@ -1,6 +1,7 @@
 package edu.kit.ipd.sdq.kamp4aps4req.derivation;
 
 import decisions.Decision;
+
 import options.Option;
 import relations.TraceableObject;
 import requirements.Requirement;
@@ -24,7 +25,4 @@ public class APSReqInternalModificationDerivation {
 			return null;
 		}
 	}
-	
-
-	
 }

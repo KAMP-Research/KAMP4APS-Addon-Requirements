@@ -1,5 +1,6 @@
 package edu.kit.ipd.sdq.kamp4aps4req.core;
 
+import edu.kit.ipd.sdq.kamp.architecture.AbstractArchitectureVersion;
 import edu.kit.ipd.sdq.kamp.architecture.ArchitectureModelLookup;
 import edu.kit.ipd.sdq.kamp.model.modificationmarks.AbstractModification;
 import edu.kit.ipd.sdq.kamp.propagation.AbstractChangePropagationAnalysis;
@@ -8,7 +9,6 @@ import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModifyRequirem
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.AbstractAPSReqChangePropagationDueToSpecificationDependencies;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModifyDecision;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModifyOption;
-import edu.kit.ipd.sdq.kamp4aps4req.core.AbstractAPSReqArchitectureVersion;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.ModificationmarksFactory;
 import requirements.Requirement;
 import options.Option;
@@ -36,7 +36,7 @@ import decisions.Decision;
  * @author Timo Maier
  *
  */
-public abstract class AbstractAPSReqChangePropagationAnalysis<T extends APSReqArchitectureVersion> implements AbstractChangePropagationAnalysis<T> {
+public abstract class AbstractAPSReqChangePropagationAnalysis<T extends AbstractArchitectureVersion<?>> implements AbstractChangePropagationAnalysis<T> {
 
 	private AbstractAPSReqChangePropagationDueToSpecificationDependencies changePropagationDueToSpecificationDependencies;
 	

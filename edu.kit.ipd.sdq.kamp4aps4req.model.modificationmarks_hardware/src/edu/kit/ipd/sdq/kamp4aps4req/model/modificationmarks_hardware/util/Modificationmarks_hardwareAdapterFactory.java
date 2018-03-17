@@ -3,15 +3,12 @@
 package edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.util;
 
 import edu.kit.ipd.sdq.kamp.model.modificationmarks.AbstractChangePropagationStep;
-import edu.kit.ipd.sdq.kamp.model.modificationmarks.AbstractModification;
 import edu.kit.ipd.sdq.kamp.model.modificationmarks.AbstractModificationRepository;
 import edu.kit.ipd.sdq.kamp.model.modificationmarks.AbstractSeedModifications;
 import edu.kit.ipd.sdq.kamp.model.modificationmarks.ChangePropagationStep;
 
 import edu.kit.ipd.sdq.kamp4aps.model.KAMP4aPSModificationmarks.AbstractKAMP4aPSModificationRepository;
 import edu.kit.ipd.sdq.kamp4aps.model.KAMP4aPSModificationmarks.KAMP4aPSSeedModifications;
-import edu.kit.ipd.sdq.kamp4aps.model.KAMP4aPSModificationmarks.ModifyEntity;
-import edu.kit.ipd.sdq.kamp4aps.model.basic.Entity;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqSeedModifications;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.AbstractAPSReqChangePropagationDueToSpecificationDependencies;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.AbstractKAMP4aPS4ReqModificationRepository;
@@ -94,10 +91,6 @@ public class Modificationmarks_hardwareAdapterFactory extends AdapterFactoryImpl
 				return createAPSReqHardwareChangePropagationDueToSpecificationDependenciesAdapter();
 			}
 			@Override
-			public Adapter caseAPSReqModifyEntity(APSReqModifyEntity object) {
-				return createAPSReqModifyEntityAdapter();
-			}
-			@Override
 			public Adapter caseAbstractSeedModifications(AbstractSeedModifications object) {
 				return createAbstractSeedModificationsAdapter();
 			}
@@ -132,14 +125,6 @@ public class Modificationmarks_hardwareAdapterFactory extends AdapterFactoryImpl
 			@Override
 			public Adapter caseAbstractAPSReqChangePropagationDueToSpecificationDependencies(AbstractAPSReqChangePropagationDueToSpecificationDependencies object) {
 				return createAbstractAPSReqChangePropagationDueToSpecificationDependenciesAdapter();
-			}
-			@Override
-			public <S, T> Adapter caseAbstractModification(AbstractModification<S, T> object) {
-				return createAbstractModificationAdapter();
-			}
-			@Override
-			public <T extends Entity> Adapter caseModifyEntity(ModifyEntity<T> object) {
-				return createModifyEntityAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -200,20 +185,6 @@ public class Modificationmarks_hardwareAdapterFactory extends AdapterFactoryImpl
 	 * @generated
 	 */
 	public Adapter createAPSReqHardwareChangePropagationDueToSpecificationDependenciesAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.APSReqModifyEntity <em>APS Req Modify Entity</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.APSReqModifyEntity
-	 * @generated
-	 */
-	public Adapter createAPSReqModifyEntityAdapter() {
 		return null;
 	}
 
@@ -340,34 +311,6 @@ public class Modificationmarks_hardwareAdapterFactory extends AdapterFactoryImpl
 	 * @generated
 	 */
 	public Adapter createAbstractAPSReqChangePropagationDueToSpecificationDependenciesAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link edu.kit.ipd.sdq.kamp.model.modificationmarks.AbstractModification <em>Abstract Modification</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see edu.kit.ipd.sdq.kamp.model.modificationmarks.AbstractModification
-	 * @generated
-	 */
-	public Adapter createAbstractModificationAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link edu.kit.ipd.sdq.kamp4aps.model.KAMP4aPSModificationmarks.ModifyEntity <em>Modify Entity</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see edu.kit.ipd.sdq.kamp4aps.model.KAMP4aPSModificationmarks.ModifyEntity
-	 * @generated
-	 */
-	public Adapter createModifyEntityAdapter() {
 		return null;
 	}
 

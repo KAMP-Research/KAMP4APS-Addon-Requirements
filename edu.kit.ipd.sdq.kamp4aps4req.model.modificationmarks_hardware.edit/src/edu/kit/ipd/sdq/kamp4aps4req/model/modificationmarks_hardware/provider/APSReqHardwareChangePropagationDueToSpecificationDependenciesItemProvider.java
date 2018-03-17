@@ -45,25 +45,94 @@ public class APSReqHardwareChangePropagationDueToSpecificationDependenciesItemPr
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addEntityModificationsPropertyDescriptor(object);
+			addStructureModificationsPropertyDescriptor(object);
+			addModuleModificationsPropertyDescriptor(object);
+			addComponentModificationsPropertyDescriptor(object);
+			addInterfaceModificationsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Entity Modifications feature.
+	 * This adds a property descriptor for the Structure Modifications feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addEntityModificationsPropertyDescriptor(Object object) {
+	protected void addStructureModificationsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_APSReqHardwareChangePropagationDueToSpecificationDependencies_entityModifications_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_APSReqHardwareChangePropagationDueToSpecificationDependencies_entityModifications_feature", "_UI_APSReqHardwareChangePropagationDueToSpecificationDependencies_type"),
-				 Modificationmarks_hardwarePackage.Literals.APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__ENTITY_MODIFICATIONS,
+				 getString("_UI_APSReqHardwareChangePropagationDueToSpecificationDependencies_structureModifications_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_APSReqHardwareChangePropagationDueToSpecificationDependencies_structureModifications_feature", "_UI_APSReqHardwareChangePropagationDueToSpecificationDependencies_type"),
+				 Modificationmarks_hardwarePackage.Literals.APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__STRUCTURE_MODIFICATIONS,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Module Modifications feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addModuleModificationsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_APSReqHardwareChangePropagationDueToSpecificationDependencies_moduleModifications_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_APSReqHardwareChangePropagationDueToSpecificationDependencies_moduleModifications_feature", "_UI_APSReqHardwareChangePropagationDueToSpecificationDependencies_type"),
+				 Modificationmarks_hardwarePackage.Literals.APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__MODULE_MODIFICATIONS,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Component Modifications feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addComponentModificationsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_APSReqHardwareChangePropagationDueToSpecificationDependencies_componentModifications_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_APSReqHardwareChangePropagationDueToSpecificationDependencies_componentModifications_feature", "_UI_APSReqHardwareChangePropagationDueToSpecificationDependencies_type"),
+				 Modificationmarks_hardwarePackage.Literals.APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__COMPONENT_MODIFICATIONS,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Interface Modifications feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addInterfaceModificationsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_APSReqHardwareChangePropagationDueToSpecificationDependencies_interfaceModifications_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_APSReqHardwareChangePropagationDueToSpecificationDependencies_interfaceModifications_feature", "_UI_APSReqHardwareChangePropagationDueToSpecificationDependencies_type"),
+				 Modificationmarks_hardwarePackage.Literals.APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__INTERFACE_MODIFICATIONS,
 				 true,
 				 false,
 				 true,

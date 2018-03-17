@@ -14,7 +14,7 @@ import requirements.ReqRepository;
 import requirements.RequirementsFactory;
 
 /**
- * Sub class of APSReqArchitectureVersion, representing the software side
+ * 
  * @author Timo Maier
  *
  */

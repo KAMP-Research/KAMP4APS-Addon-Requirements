@@ -139,29 +139,6 @@ public class Modificationmarks_hardwareItemProviderAdapterFactory extends Modifi
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.APSReqModifyEntity} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected APSReqModifyEntityItemProvider apsReqModifyEntityItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.APSReqModifyEntity}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createAPSReqModifyEntityAdapter() {
-		if (apsReqModifyEntityItemProvider == null) {
-			apsReqModifyEntityItemProvider = new APSReqModifyEntityItemProvider(this);
-		}
-
-		return apsReqModifyEntityItemProvider;
-	}
-
-	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -263,7 +240,6 @@ public class Modificationmarks_hardwareItemProviderAdapterFactory extends Modifi
 		if (apsReqHardwareSeedModificationsItemProvider != null) apsReqHardwareSeedModificationsItemProvider.dispose();
 		if (apsReqHardwareModificationRepositoryItemProvider != null) apsReqHardwareModificationRepositoryItemProvider.dispose();
 		if (apsReqHardwareChangePropagationDueToSpecificationDependenciesItemProvider != null) apsReqHardwareChangePropagationDueToSpecificationDependenciesItemProvider.dispose();
-		if (apsReqModifyEntityItemProvider != null) apsReqModifyEntityItemProvider.dispose();
 	}
 
 }

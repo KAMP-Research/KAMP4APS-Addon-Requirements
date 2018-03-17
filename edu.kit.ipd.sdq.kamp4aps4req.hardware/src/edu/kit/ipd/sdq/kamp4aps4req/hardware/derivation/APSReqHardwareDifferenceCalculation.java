@@ -7,18 +7,18 @@ import org.eclipse.emf.compare.ReferenceChange;
 import org.eclipse.emf.ecore.EObject;
 
 import decisions.Decision;
+import edu.kit.ipd.sdq.kamp.derivation.AbstractDifferenceCalculation;
 import edu.kit.ipd.sdq.kamp.workplan.AbstractWorkplanDerivation;
 import edu.kit.ipd.sdq.kamp.workplan.Activity;
 import edu.kit.ipd.sdq.kamp.workplan.BasicActivity;
 import edu.kit.ipd.sdq.kamp4aps.core.APSActivityType;
 import edu.kit.ipd.sdq.kamp4aps.core.derivation.APSDifferenceCalculation;
 import edu.kit.ipd.sdq.kamp4aps4req.core.APSReqActivityElementType;
-import edu.kit.ipd.sdq.kamp4aps4req.derivation.AbstractAPSReqDifferenceCalculation;
 import edu.kit.ipd.sdq.kamp4aps4req.hardware.APSReqHardwareArchitectureVersion;
 import options.Option;
 import requirements.Requirement;
 
-public class APSReqHardwareDifferenceCalculation extends AbstractAPSReqDifferenceCalculation<APSReqHardwareArchitectureVersion> {
+public class APSReqHardwareDifferenceCalculation extends AbstractDifferenceCalculation<APSReqHardwareArchitectureVersion> {
 
 	private final APSDifferenceCalculation apsDifferenceCalculation = new APSDifferenceCalculation();
 
@@ -29,7 +29,7 @@ public class APSReqHardwareDifferenceCalculation extends AbstractAPSReqDifferenc
 	public List<Activity> deriveWorkplan(APSReqHardwareArchitectureVersion baseVersion, 
 			APSReqHardwareArchitectureVersion targetVersion) {
 		List<Activity> activityList = this.apsDifferenceCalculation.deriveWorkplan(
-				baseVersion.getApsArchitectureVersion(), targetVersion.getApsArchitectureVersion());
+				baseVersion, targetVersion);
 		activityList.addAll(this.deriveAddAndRemoveActivities(AbstractWorkplanDerivation.calculateDiffModel(
 				baseVersion.getRequirementsRepository(), targetVersion.getRequirementsRepository())));
 		activityList.addAll(this.deriveAddAndRemoveActivities(AbstractWorkplanDerivation.calculateDiffModel(

@@ -59,7 +59,6 @@ public class Modificationmarks_hardwareFactoryImpl extends EFactoryImpl implemen
 			case Modificationmarks_hardwarePackage.APS_REQ_HARDWARE_SEED_MODIFICATIONS: return createAPSReqHardwareSeedModifications();
 			case Modificationmarks_hardwarePackage.APS_REQ_HARDWARE_MODIFICATION_REPOSITORY: return createAPSReqHardwareModificationRepository();
 			case Modificationmarks_hardwarePackage.APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES: return createAPSReqHardwareChangePropagationDueToSpecificationDependencies();
-			case Modificationmarks_hardwarePackage.APS_REQ_MODIFY_ENTITY: return createAPSReqModifyEntity();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -93,16 +92,6 @@ public class Modificationmarks_hardwareFactoryImpl extends EFactoryImpl implemen
 	public APSReqHardwareChangePropagationDueToSpecificationDependencies createAPSReqHardwareChangePropagationDueToSpecificationDependencies() {
 		APSReqHardwareChangePropagationDueToSpecificationDependenciesImpl apsReqHardwareChangePropagationDueToSpecificationDependencies = new APSReqHardwareChangePropagationDueToSpecificationDependenciesImpl();
 		return apsReqHardwareChangePropagationDueToSpecificationDependencies;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public APSReqModifyEntity createAPSReqModifyEntity() {
-		APSReqModifyEntityImpl apsReqModifyEntity = new APSReqModifyEntityImpl();
-		return apsReqModifyEntity;
 	}
 
 	/**

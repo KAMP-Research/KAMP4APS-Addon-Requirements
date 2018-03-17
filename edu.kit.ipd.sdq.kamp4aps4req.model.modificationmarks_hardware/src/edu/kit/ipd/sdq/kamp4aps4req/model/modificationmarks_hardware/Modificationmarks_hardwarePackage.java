@@ -214,13 +214,40 @@ public interface Modificationmarks_hardwarePackage extends EPackage {
 	int APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__OPTION_MODIFICATIONS = ModificationmarksPackage.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__OPTION_MODIFICATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Entity Modifications</b></em>' reference list.
+	 * The feature id for the '<em><b>Structure Modifications</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__ENTITY_MODIFICATIONS = ModificationmarksPackage.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES_FEATURE_COUNT + 0;
+	int APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__STRUCTURE_MODIFICATIONS = ModificationmarksPackage.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Module Modifications</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__MODULE_MODIFICATIONS = ModificationmarksPackage.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Component Modifications</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__COMPONENT_MODIFICATIONS = ModificationmarksPackage.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Interface Modifications</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__INTERFACE_MODIFICATIONS = ModificationmarksPackage.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>APS Req Hardware Change Propagation Due To Specification Dependencies</em>' class.
@@ -229,72 +256,7 @@ public interface Modificationmarks_hardwarePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES_FEATURE_COUNT = ModificationmarksPackage.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES_FEATURE_COUNT + 1;
-
-
-	/**
-	 * The meta object id for the '{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.impl.APSReqModifyEntityImpl <em>APS Req Modify Entity</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.impl.APSReqModifyEntityImpl
-	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.impl.Modificationmarks_hardwarePackageImpl#getAPSReqModifyEntity()
-	 * @generated
-	 */
-	int APS_REQ_MODIFY_ENTITY = 3;
-
-	/**
-	 * The feature id for the '<em><b>Affected Element</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int APS_REQ_MODIFY_ENTITY__AFFECTED_ELEMENT = KAMP4aPSModificationmarksPackage.MODIFY_ENTITY__AFFECTED_ELEMENT;
-
-	/**
-	 * The feature id for the '<em><b>Causing Elements</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int APS_REQ_MODIFY_ENTITY__CAUSING_ELEMENTS = KAMP4aPSModificationmarksPackage.MODIFY_ENTITY__CAUSING_ELEMENTS;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int APS_REQ_MODIFY_ENTITY__ID = KAMP4aPSModificationmarksPackage.MODIFY_ENTITY__ID;
-
-	/**
-	 * The feature id for the '<em><b>Toolderived</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int APS_REQ_MODIFY_ENTITY__TOOLDERIVED = KAMP4aPSModificationmarksPackage.MODIFY_ENTITY__TOOLDERIVED;
-
-	/**
-	 * The feature id for the '<em><b>User Decision</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int APS_REQ_MODIFY_ENTITY__USER_DECISION = KAMP4aPSModificationmarksPackage.MODIFY_ENTITY__USER_DECISION;
-
-	/**
-	 * The number of structural features of the '<em>APS Req Modify Entity</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int APS_REQ_MODIFY_ENTITY_FEATURE_COUNT = KAMP4aPSModificationmarksPackage.MODIFY_ENTITY_FEATURE_COUNT + 0;
+	int APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES_FEATURE_COUNT = ModificationmarksPackage.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES_FEATURE_COUNT + 4;
 
 
 	/**
@@ -328,25 +290,48 @@ public interface Modificationmarks_hardwarePackage extends EPackage {
 	EClass getAPSReqHardwareChangePropagationDueToSpecificationDependencies();
 
 	/**
-	 * Returns the meta object for the reference list '{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.APSReqHardwareChangePropagationDueToSpecificationDependencies#getEntityModifications <em>Entity Modifications</em>}'.
+	 * Returns the meta object for the reference list '{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.APSReqHardwareChangePropagationDueToSpecificationDependencies#getStructureModifications <em>Structure Modifications</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Entity Modifications</em>'.
-	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.APSReqHardwareChangePropagationDueToSpecificationDependencies#getEntityModifications()
+	 * @return the meta object for the reference list '<em>Structure Modifications</em>'.
+	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.APSReqHardwareChangePropagationDueToSpecificationDependencies#getStructureModifications()
 	 * @see #getAPSReqHardwareChangePropagationDueToSpecificationDependencies()
 	 * @generated
 	 */
-	EReference getAPSReqHardwareChangePropagationDueToSpecificationDependencies_EntityModifications();
+	EReference getAPSReqHardwareChangePropagationDueToSpecificationDependencies_StructureModifications();
 
 	/**
-	 * Returns the meta object for class '{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.APSReqModifyEntity <em>APS Req Modify Entity</em>}'.
+	 * Returns the meta object for the reference list '{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.APSReqHardwareChangePropagationDueToSpecificationDependencies#getModuleModifications <em>Module Modifications</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>APS Req Modify Entity</em>'.
-	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.APSReqModifyEntity
+	 * @return the meta object for the reference list '<em>Module Modifications</em>'.
+	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.APSReqHardwareChangePropagationDueToSpecificationDependencies#getModuleModifications()
+	 * @see #getAPSReqHardwareChangePropagationDueToSpecificationDependencies()
 	 * @generated
 	 */
-	EClass getAPSReqModifyEntity();
+	EReference getAPSReqHardwareChangePropagationDueToSpecificationDependencies_ModuleModifications();
+
+	/**
+	 * Returns the meta object for the reference list '{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.APSReqHardwareChangePropagationDueToSpecificationDependencies#getComponentModifications <em>Component Modifications</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Component Modifications</em>'.
+	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.APSReqHardwareChangePropagationDueToSpecificationDependencies#getComponentModifications()
+	 * @see #getAPSReqHardwareChangePropagationDueToSpecificationDependencies()
+	 * @generated
+	 */
+	EReference getAPSReqHardwareChangePropagationDueToSpecificationDependencies_ComponentModifications();
+
+	/**
+	 * Returns the meta object for the reference list '{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.APSReqHardwareChangePropagationDueToSpecificationDependencies#getInterfaceModifications <em>Interface Modifications</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Interface Modifications</em>'.
+	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.APSReqHardwareChangePropagationDueToSpecificationDependencies#getInterfaceModifications()
+	 * @see #getAPSReqHardwareChangePropagationDueToSpecificationDependencies()
+	 * @generated
+	 */
+	EReference getAPSReqHardwareChangePropagationDueToSpecificationDependencies_InterfaceModifications();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -401,22 +386,36 @@ public interface Modificationmarks_hardwarePackage extends EPackage {
 		EClass APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES = eINSTANCE.getAPSReqHardwareChangePropagationDueToSpecificationDependencies();
 
 		/**
-		 * The meta object literal for the '<em><b>Entity Modifications</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Structure Modifications</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__ENTITY_MODIFICATIONS = eINSTANCE.getAPSReqHardwareChangePropagationDueToSpecificationDependencies_EntityModifications();
+		EReference APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__STRUCTURE_MODIFICATIONS = eINSTANCE.getAPSReqHardwareChangePropagationDueToSpecificationDependencies_StructureModifications();
 
 		/**
-		 * The meta object literal for the '{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.impl.APSReqModifyEntityImpl <em>APS Req Modify Entity</em>}' class.
+		 * The meta object literal for the '<em><b>Module Modifications</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.impl.APSReqModifyEntityImpl
-		 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.impl.Modificationmarks_hardwarePackageImpl#getAPSReqModifyEntity()
 		 * @generated
 		 */
-		EClass APS_REQ_MODIFY_ENTITY = eINSTANCE.getAPSReqModifyEntity();
+		EReference APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__MODULE_MODIFICATIONS = eINSTANCE.getAPSReqHardwareChangePropagationDueToSpecificationDependencies_ModuleModifications();
+
+		/**
+		 * The meta object literal for the '<em><b>Component Modifications</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__COMPONENT_MODIFICATIONS = eINSTANCE.getAPSReqHardwareChangePropagationDueToSpecificationDependencies_ComponentModifications();
+
+		/**
+		 * The meta object literal for the '<em><b>Interface Modifications</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__INTERFACE_MODIFICATIONS = eINSTANCE.getAPSReqHardwareChangePropagationDueToSpecificationDependencies_InterfaceModifications();
 
 	}
 

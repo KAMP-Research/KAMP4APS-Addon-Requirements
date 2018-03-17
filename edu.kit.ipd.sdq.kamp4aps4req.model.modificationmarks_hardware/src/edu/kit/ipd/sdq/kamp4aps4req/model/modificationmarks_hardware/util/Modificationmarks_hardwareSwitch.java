@@ -3,15 +3,12 @@
 package edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.util;
 
 import edu.kit.ipd.sdq.kamp.model.modificationmarks.AbstractChangePropagationStep;
-import edu.kit.ipd.sdq.kamp.model.modificationmarks.AbstractModification;
 import edu.kit.ipd.sdq.kamp.model.modificationmarks.AbstractModificationRepository;
 import edu.kit.ipd.sdq.kamp.model.modificationmarks.AbstractSeedModifications;
 import edu.kit.ipd.sdq.kamp.model.modificationmarks.ChangePropagationStep;
 
 import edu.kit.ipd.sdq.kamp4aps.model.KAMP4aPSModificationmarks.AbstractKAMP4aPSModificationRepository;
 import edu.kit.ipd.sdq.kamp4aps.model.KAMP4aPSModificationmarks.KAMP4aPSSeedModifications;
-import edu.kit.ipd.sdq.kamp4aps.model.KAMP4aPSModificationmarks.ModifyEntity;
-import edu.kit.ipd.sdq.kamp4aps.model.basic.Entity;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqSeedModifications;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.AbstractAPSReqChangePropagationDueToSpecificationDependencies;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.AbstractKAMP4aPS4ReqModificationRepository;
@@ -107,14 +104,6 @@ public class Modificationmarks_hardwareSwitch<T1> extends Switch<T1> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Modificationmarks_hardwarePackage.APS_REQ_MODIFY_ENTITY: {
-				APSReqModifyEntity apsReqModifyEntity = (APSReqModifyEntity)theEObject;
-				T1 result = caseAPSReqModifyEntity(apsReqModifyEntity);
-				if (result == null) result = caseModifyEntity(apsReqModifyEntity);
-				if (result == null) result = caseAbstractModification(apsReqModifyEntity);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -161,21 +150,6 @@ public class Modificationmarks_hardwareSwitch<T1> extends Switch<T1> {
 	 * @generated
 	 */
 	public T1 caseAPSReqHardwareChangePropagationDueToSpecificationDependencies(APSReqHardwareChangePropagationDueToSpecificationDependencies object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>APS Req Modify Entity</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>APS Req Modify Entity</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T1 caseAPSReqModifyEntity(APSReqModifyEntity object) {
 		return null;
 	}
 
@@ -311,36 +285,6 @@ public class Modificationmarks_hardwareSwitch<T1> extends Switch<T1> {
 	 * @generated
 	 */
 	public T1 caseAbstractAPSReqChangePropagationDueToSpecificationDependencies(AbstractAPSReqChangePropagationDueToSpecificationDependencies object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Abstract Modification</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Abstract Modification</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public <S, T> T1 caseAbstractModification(AbstractModification<S, T> object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Modify Entity</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Modify Entity</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public <T extends Entity> T1 caseModifyEntity(ModifyEntity<T> object) {
 		return null;
 	}
 

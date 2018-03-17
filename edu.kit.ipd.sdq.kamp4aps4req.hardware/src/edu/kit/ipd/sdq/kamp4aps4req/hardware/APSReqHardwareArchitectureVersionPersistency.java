@@ -27,7 +27,7 @@ import options.OptionRepository;
 public class APSReqHardwareArchitectureVersionPersistency extends AbstractArchitectureVersionPersistency<APSReqHardwareArchitectureVersion> {
 
 	// TODO: Replace with KAMP modmark
-	public static final String FILEEXTENSION_MODIFICATIONMARK = "modificationmarks_hardware";
+	//public static final String FILEEXTENSION_MODIFICATIONMARK = "modificationmarks_hardware";
 	
 	
 	@Override

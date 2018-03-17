@@ -9,8 +9,13 @@ import edu.kit.ipd.sdq.kamp.model.modificationmarks.ChangePropagationStep;
 import edu.kit.ipd.sdq.kamp.workplan.AbstractActivityElementType;
 import edu.kit.ipd.sdq.kamp.workplan.Activity;
 import edu.kit.ipd.sdq.kamp.workplan.BasicActivity;
+import edu.kit.ipd.sdq.kamp4aps.core.APSActivityElementType;
 import edu.kit.ipd.sdq.kamp4aps.core.APSActivityType;
 import edu.kit.ipd.sdq.kamp4aps.core.derivation.APSInternalModificationDerivation;
+import edu.kit.ipd.sdq.kamp4aps.model.KAMP4aPSModificationmarks.ModifyComponent;
+import edu.kit.ipd.sdq.kamp4aps.model.KAMP4aPSModificationmarks.ModifyInterface;
+import edu.kit.ipd.sdq.kamp4aps.model.KAMP4aPSModificationmarks.ModifyModule;
+import edu.kit.ipd.sdq.kamp4aps.model.KAMP4aPSModificationmarks.ModifyStructure;
 import edu.kit.ipd.sdq.kamp4aps.model.aPS.ComponentRepository.Component;
 import edu.kit.ipd.sdq.kamp4aps.model.aPS.InterfaceRepository.Interface;
 import edu.kit.ipd.sdq.kamp4aps.model.aPS.ModuleRepository.Module;
@@ -72,7 +77,11 @@ public class APSReqHardwareInternalModificationDerivation extends APSReqInternal
 	 */
 	public static Activity createModificationActivity(AbstractModification<?,?> 
 	modification, List<String> causingElementNames, AbstractActivityElementType activityElementType) {
-		if (modification instanceof APSReqModifyTraceableObject<?>) {
+		Activity result = APSInternalModificationDerivation.createModificationActivity(
+				modification, causingElementNames, activityElementType);
+		if (result != null) {
+			return result;
+		} else if (modification instanceof APSReqModifyTraceableObject<?>) {
 			TraceableObject traceableObject = ((APSReqModifyTraceableObject<?>) modification).
 					getAffectedElement();
 			String elementName = getElementNameForTraceableObject(traceableObject);
@@ -80,8 +89,7 @@ public class APSReqHardwareInternalModificationDerivation extends APSReqInternal
 					traceableObject, elementName, causingElementNames, BasicActivity.MODIFY, 
 					"Modify " + traceableObject.eClass().getName() + " " + elementName + ".");
 		} else {
-			return APSInternalModificationDerivation.createModificationActivity(
-					modification, causingElementNames, activityElementType);
+			return null;
 		}
 	}
 	
@@ -96,6 +104,8 @@ public class APSReqHardwareInternalModificationDerivation extends APSReqInternal
 		List<String> causingElementNames = getCausingElementsNames(modification);
 		return createModificationActivity(modification, causingElementNames, activityElementType);
 	}
+	
+
 	
 	/**
 	 * 
@@ -112,24 +122,56 @@ public class APSReqHardwareInternalModificationDerivation extends APSReqInternal
 				this.deriveTraceableObjectModifications(cp.getRequirementModifications(), activityList);
 				this.deriveTraceableObjectModifications(cp.getDecisionModifications(), activityList);
 				this.deriveTraceableObjectModifications(cp.getOptionModifications(), activityList);
+				this.deriveStructureModifications(cp.getStructureModifications(), activityList);
+				this.deriveComponentModifications(cp.getComponentModifications(), activityList);
+				this.deriveModuleModifications(cp.getModuleModifications(), activityList);
+				this.deriveInterfaceModifications(cp.getInterfaceModifications(), activityList);
 			}
 		}
 		return activityList;
 	}
 	
-	/**
-	 * 
-	 * @param modifications
-	 * @param activityList
-	 */
-	private void deriveTraceableObjectModifications(Collection<? extends APSReqModifyTraceableObject<?>> 
-		modifications, List<Activity> activityList) {
+	private void deriveTraceableObjectModifications(Collection<? extends APSReqModifyTraceableObject<?>> modifications, 
+			List<Activity> activityList) {
 		for (APSReqModifyTraceableObject<?> modification: modifications) {
-			activityList.add(createModificationActivity(modification, APSReqActivityElementType.
-			getActivityTypeForObject(modification.getAffectedElement())));
+			activityList.add(createModificationActivity(modification, 
+					APSReqActivityElementType.getActivityTypeForObject(modification.getAffectedElement())));
+		}
+	}
+
+
+	private void deriveStructureModifications(Collection<ModifyStructure<Structure>> modifications, 
+			List<Activity> activityList) {
+		for (ModifyStructure<Structure> modification: modifications) {
+			activityList.add(createModificationActivity(modification, 
+					APSActivityElementType.STRUCTURE));
 		}
 	}
 	
+	private void deriveModuleModifications(Collection<ModifyModule<Module>> modifications, 
+			List<Activity> activityList) {
+		for (ModifyModule<Module> modification: modifications) {
+			activityList.add(createModificationActivity(modification, 
+					APSActivityElementType.MODULE));
+		}
+	}
 	
+	private void deriveComponentModifications(Collection<ModifyComponent<Component>> modifications, 
+			List<Activity> activityList) {
+		for (ModifyComponent<Component> modification: modifications) {
+			activityList.add(createModificationActivity(modification, 
+					APSActivityElementType.COMPONENT));
+		}
+	}
+	
+	private void deriveInterfaceModifications(Collection<ModifyInterface<Interface>> modifications, 
+			List<Activity> activityList) {
+		for (ModifyInterface<Interface> modification: modifications) {
+			activityList.add(createModificationActivity(modification, 
+					APSActivityElementType.INTERFACE));
+		}
+	}
+
+
 	
 }
