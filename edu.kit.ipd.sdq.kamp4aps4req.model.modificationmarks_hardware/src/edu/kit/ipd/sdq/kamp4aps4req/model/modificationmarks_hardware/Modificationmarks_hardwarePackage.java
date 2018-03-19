@@ -214,7 +214,7 @@ public interface Modificationmarks_hardwarePackage extends EPackage {
 	int APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__OPTION_MODIFICATIONS = ModificationmarksPackage.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__OPTION_MODIFICATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Structure Modifications</b></em>' reference list.
+	 * The feature id for the '<em><b>Structure Modifications</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -223,7 +223,7 @@ public interface Modificationmarks_hardwarePackage extends EPackage {
 	int APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__STRUCTURE_MODIFICATIONS = ModificationmarksPackage.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Module Modifications</b></em>' reference list.
+	 * The feature id for the '<em><b>Module Modifications</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -232,7 +232,7 @@ public interface Modificationmarks_hardwarePackage extends EPackage {
 	int APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__MODULE_MODIFICATIONS = ModificationmarksPackage.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Component Modifications</b></em>' reference list.
+	 * The feature id for the '<em><b>Component Modifications</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -241,7 +241,7 @@ public interface Modificationmarks_hardwarePackage extends EPackage {
 	int APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__COMPONENT_MODIFICATIONS = ModificationmarksPackage.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Interface Modifications</b></em>' reference list.
+	 * The feature id for the '<em><b>Interface Modifications</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -290,10 +290,10 @@ public interface Modificationmarks_hardwarePackage extends EPackage {
 	EClass getAPSReqHardwareChangePropagationDueToSpecificationDependencies();
 
 	/**
-	 * Returns the meta object for the reference list '{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.APSReqHardwareChangePropagationDueToSpecificationDependencies#getStructureModifications <em>Structure Modifications</em>}'.
+	 * Returns the meta object for the containment reference list '{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.APSReqHardwareChangePropagationDueToSpecificationDependencies#getStructureModifications <em>Structure Modifications</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Structure Modifications</em>'.
+	 * @return the meta object for the containment reference list '<em>Structure Modifications</em>'.
 	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.APSReqHardwareChangePropagationDueToSpecificationDependencies#getStructureModifications()
 	 * @see #getAPSReqHardwareChangePropagationDueToSpecificationDependencies()
 	 * @generated
@@ -301,10 +301,10 @@ public interface Modificationmarks_hardwarePackage extends EPackage {
 	EReference getAPSReqHardwareChangePropagationDueToSpecificationDependencies_StructureModifications();
 
 	/**
-	 * Returns the meta object for the reference list '{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.APSReqHardwareChangePropagationDueToSpecificationDependencies#getModuleModifications <em>Module Modifications</em>}'.
+	 * Returns the meta object for the containment reference list '{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.APSReqHardwareChangePropagationDueToSpecificationDependencies#getModuleModifications <em>Module Modifications</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Module Modifications</em>'.
+	 * @return the meta object for the containment reference list '<em>Module Modifications</em>'.
 	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.APSReqHardwareChangePropagationDueToSpecificationDependencies#getModuleModifications()
 	 * @see #getAPSReqHardwareChangePropagationDueToSpecificationDependencies()
 	 * @generated
@@ -312,10 +312,10 @@ public interface Modificationmarks_hardwarePackage extends EPackage {
 	EReference getAPSReqHardwareChangePropagationDueToSpecificationDependencies_ModuleModifications();
 
 	/**
-	 * Returns the meta object for the reference list '{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.APSReqHardwareChangePropagationDueToSpecificationDependencies#getComponentModifications <em>Component Modifications</em>}'.
+	 * Returns the meta object for the containment reference list '{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.APSReqHardwareChangePropagationDueToSpecificationDependencies#getComponentModifications <em>Component Modifications</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Component Modifications</em>'.
+	 * @return the meta object for the containment reference list '<em>Component Modifications</em>'.
 	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.APSReqHardwareChangePropagationDueToSpecificationDependencies#getComponentModifications()
 	 * @see #getAPSReqHardwareChangePropagationDueToSpecificationDependencies()
 	 * @generated
@@ -323,10 +323,10 @@ public interface Modificationmarks_hardwarePackage extends EPackage {
 	EReference getAPSReqHardwareChangePropagationDueToSpecificationDependencies_ComponentModifications();
 
 	/**
-	 * Returns the meta object for the reference list '{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.APSReqHardwareChangePropagationDueToSpecificationDependencies#getInterfaceModifications <em>Interface Modifications</em>}'.
+	 * Returns the meta object for the containment reference list '{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.APSReqHardwareChangePropagationDueToSpecificationDependencies#getInterfaceModifications <em>Interface Modifications</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Interface Modifications</em>'.
+	 * @return the meta object for the containment reference list '<em>Interface Modifications</em>'.
 	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.APSReqHardwareChangePropagationDueToSpecificationDependencies#getInterfaceModifications()
 	 * @see #getAPSReqHardwareChangePropagationDueToSpecificationDependencies()
 	 * @generated
@@ -386,7 +386,7 @@ public interface Modificationmarks_hardwarePackage extends EPackage {
 		EClass APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES = eINSTANCE.getAPSReqHardwareChangePropagationDueToSpecificationDependencies();
 
 		/**
-		 * The meta object literal for the '<em><b>Structure Modifications</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Structure Modifications</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -394,7 +394,7 @@ public interface Modificationmarks_hardwarePackage extends EPackage {
 		EReference APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__STRUCTURE_MODIFICATIONS = eINSTANCE.getAPSReqHardwareChangePropagationDueToSpecificationDependencies_StructureModifications();
 
 		/**
-		 * The meta object literal for the '<em><b>Module Modifications</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Module Modifications</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -402,7 +402,7 @@ public interface Modificationmarks_hardwarePackage extends EPackage {
 		EReference APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__MODULE_MODIFICATIONS = eINSTANCE.getAPSReqHardwareChangePropagationDueToSpecificationDependencies_ModuleModifications();
 
 		/**
-		 * The meta object literal for the '<em><b>Component Modifications</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Component Modifications</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -410,7 +410,7 @@ public interface Modificationmarks_hardwarePackage extends EPackage {
 		EReference APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__COMPONENT_MODIFICATIONS = eINSTANCE.getAPSReqHardwareChangePropagationDueToSpecificationDependencies_ComponentModifications();
 
 		/**
-		 * The meta object literal for the '<em><b>Interface Modifications</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Interface Modifications</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

@@ -34,7 +34,7 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface APSReqHardwareChangePropagationDueToSpecificationDependencies extends AbstractAPSReqChangePropagationDueToSpecificationDependencies {
 	/**
-	 * Returns the value of the '<em><b>Structure Modifications</b></em>' reference list.
+	 * Returns the value of the '<em><b>Structure Modifications</b></em>' containment reference list.
 	 * The list contents are of type {@link edu.kit.ipd.sdq.kamp4aps.model.KAMP4aPSModificationmarks.ModifyStructure}&lt;edu.kit.ipd.sdq.kamp4aps.model.aPS.StructureRepository.Structure>.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -42,15 +42,15 @@ public interface APSReqHardwareChangePropagationDueToSpecificationDependencies e
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Structure Modifications</em>' reference list.
+	 * @return the value of the '<em>Structure Modifications</em>' containment reference list.
 	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.Modificationmarks_hardwarePackage#getAPSReqHardwareChangePropagationDueToSpecificationDependencies_StructureModifications()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<ModifyStructure<Structure>> getStructureModifications();
 
 	/**
-	 * Returns the value of the '<em><b>Module Modifications</b></em>' reference list.
+	 * Returns the value of the '<em><b>Module Modifications</b></em>' containment reference list.
 	 * The list contents are of type {@link edu.kit.ipd.sdq.kamp4aps.model.KAMP4aPSModificationmarks.ModifyModule}&lt;edu.kit.ipd.sdq.kamp4aps.model.aPS.ModuleRepository.Module>.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -58,15 +58,15 @@ public interface APSReqHardwareChangePropagationDueToSpecificationDependencies e
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Module Modifications</em>' reference list.
+	 * @return the value of the '<em>Module Modifications</em>' containment reference list.
 	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.Modificationmarks_hardwarePackage#getAPSReqHardwareChangePropagationDueToSpecificationDependencies_ModuleModifications()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<ModifyModule<Module>> getModuleModifications();
 
 	/**
-	 * Returns the value of the '<em><b>Component Modifications</b></em>' reference list.
+	 * Returns the value of the '<em><b>Component Modifications</b></em>' containment reference list.
 	 * The list contents are of type {@link edu.kit.ipd.sdq.kamp4aps.model.KAMP4aPSModificationmarks.ModifyComponent}&lt;edu.kit.ipd.sdq.kamp4aps.model.aPS.ComponentRepository.Component>.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -74,15 +74,15 @@ public interface APSReqHardwareChangePropagationDueToSpecificationDependencies e
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Component Modifications</em>' reference list.
+	 * @return the value of the '<em>Component Modifications</em>' containment reference list.
 	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.Modificationmarks_hardwarePackage#getAPSReqHardwareChangePropagationDueToSpecificationDependencies_ComponentModifications()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<ModifyComponent<Component>> getComponentModifications();
 
 	/**
-	 * Returns the value of the '<em><b>Interface Modifications</b></em>' reference list.
+	 * Returns the value of the '<em><b>Interface Modifications</b></em>' containment reference list.
 	 * The list contents are of type {@link edu.kit.ipd.sdq.kamp4aps.model.KAMP4aPSModificationmarks.ModifyInterface}&lt;edu.kit.ipd.sdq.kamp4aps.model.aPS.InterfaceRepository.Interface>.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -90,9 +90,9 @@ public interface APSReqHardwareChangePropagationDueToSpecificationDependencies e
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Interface Modifications</em>' reference list.
+	 * @return the value of the '<em>Interface Modifications</em>' containment reference list.
 	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.Modificationmarks_hardwarePackage#getAPSReqHardwareChangePropagationDueToSpecificationDependencies_InterfaceModifications()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<ModifyInterface<Interface>> getInterfaceModifications();

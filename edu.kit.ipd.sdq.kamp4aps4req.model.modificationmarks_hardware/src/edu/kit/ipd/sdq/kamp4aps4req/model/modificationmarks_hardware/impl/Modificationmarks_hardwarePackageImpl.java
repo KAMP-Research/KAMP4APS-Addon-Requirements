@@ -275,19 +275,19 @@ public class Modificationmarks_hardwarePackageImpl extends EPackageImpl implemen
 		g1 = createEGenericType(theKAMP4aPSModificationmarksPackage.getModifyStructure());
 		g2 = createEGenericType(theStructureRepositoryPackage.getStructure());
 		g1.getETypeArguments().add(g2);
-		initEReference(getAPSReqHardwareChangePropagationDueToSpecificationDependencies_StructureModifications(), g1, null, "structureModifications", null, 0, -1, APSReqHardwareChangePropagationDueToSpecificationDependencies.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAPSReqHardwareChangePropagationDueToSpecificationDependencies_StructureModifications(), g1, null, "structureModifications", null, 0, -1, APSReqHardwareChangePropagationDueToSpecificationDependencies.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		g1 = createEGenericType(theKAMP4aPSModificationmarksPackage.getModifyModule());
 		g2 = createEGenericType(theModuleRepositoryPackage.getModule());
 		g1.getETypeArguments().add(g2);
-		initEReference(getAPSReqHardwareChangePropagationDueToSpecificationDependencies_ModuleModifications(), g1, null, "moduleModifications", null, 0, -1, APSReqHardwareChangePropagationDueToSpecificationDependencies.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAPSReqHardwareChangePropagationDueToSpecificationDependencies_ModuleModifications(), g1, null, "moduleModifications", null, 0, -1, APSReqHardwareChangePropagationDueToSpecificationDependencies.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		g1 = createEGenericType(theKAMP4aPSModificationmarksPackage.getModifyComponent());
 		g2 = createEGenericType(theComponentRepositoryPackage.getComponent());
 		g1.getETypeArguments().add(g2);
-		initEReference(getAPSReqHardwareChangePropagationDueToSpecificationDependencies_ComponentModifications(), g1, null, "componentModifications", null, 0, -1, APSReqHardwareChangePropagationDueToSpecificationDependencies.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAPSReqHardwareChangePropagationDueToSpecificationDependencies_ComponentModifications(), g1, null, "componentModifications", null, 0, -1, APSReqHardwareChangePropagationDueToSpecificationDependencies.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		g1 = createEGenericType(theKAMP4aPSModificationmarksPackage.getModifyInterface());
 		g2 = createEGenericType(theInterfaceRepositoryPackage.getInterface());
 		g1.getETypeArguments().add(g2);
-		initEReference(getAPSReqHardwareChangePropagationDueToSpecificationDependencies_InterfaceModifications(), g1, null, "interfaceModifications", null, 0, -1, APSReqHardwareChangePropagationDueToSpecificationDependencies.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAPSReqHardwareChangePropagationDueToSpecificationDependencies_InterfaceModifications(), g1, null, "interfaceModifications", null, 0, -1, APSReqHardwareChangePropagationDueToSpecificationDependencies.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
