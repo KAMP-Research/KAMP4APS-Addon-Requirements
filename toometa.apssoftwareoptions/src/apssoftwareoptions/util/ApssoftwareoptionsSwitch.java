@@ -85,24 +85,213 @@ public class ApssoftwareoptionsSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case ApssoftwareoptionsPackage.APS_REQ_SOFTWARE_OPTION: {
-				APSReqSoftwareOption apsReqSoftwareOption = (APSReqSoftwareOption)theEObject;
-				T result = caseAPSReqSoftwareOption(apsReqSoftwareOption);
-				if (result == null) result = caseAPSReqOption(apsReqSoftwareOption);
-				if (result == null) result = caseOption(apsReqSoftwareOption);
-				if (result == null) result = caseTraceableObject(apsReqSoftwareOption);
-				if (result == null) result = caseRelationObject(apsReqSoftwareOption);
-				if (result == null) result = caseConflictObject(apsReqSoftwareOption);
-				if (result == null) result = caseDuplicationObject(apsReqSoftwareOption);
-				if (result == null) result = caseDependencyObject(apsReqSoftwareOption);
-				if (result == null) result = caseParentalObject(apsReqSoftwareOption);
-				if (result == null) result = caseTriggerObject(apsReqSoftwareOption);
-				if (result == null) result = caseResolveObject(apsReqSoftwareOption);
-				if (result == null) result = caseAlternativeObject(apsReqSoftwareOption);
-				if (result == null) result = caseCouldResolveObject(apsReqSoftwareOption);
-				if (result == null) result = caseStakeholderObject(apsReqSoftwareOption);
-				if (result == null) result = caseSelectionObject(apsReqSoftwareOption);
-				if (result == null) result = caseIdentifier(apsReqSoftwareOption);
+			case ApssoftwareoptionsPackage.APS_REQ_PROGRAM_OPTION: {
+				APSReqProgramOption apsReqProgramOption = (APSReqProgramOption)theEObject;
+				T result = caseAPSReqProgramOption(apsReqProgramOption);
+				if (result == null) result = caseAPSReqOption(apsReqProgramOption);
+				if (result == null) result = caseOption(apsReqProgramOption);
+				if (result == null) result = caseTraceableObject(apsReqProgramOption);
+				if (result == null) result = caseRelationObject(apsReqProgramOption);
+				if (result == null) result = caseConflictObject(apsReqProgramOption);
+				if (result == null) result = caseDuplicationObject(apsReqProgramOption);
+				if (result == null) result = caseDependencyObject(apsReqProgramOption);
+				if (result == null) result = caseParentalObject(apsReqProgramOption);
+				if (result == null) result = caseTriggerObject(apsReqProgramOption);
+				if (result == null) result = caseResolveObject(apsReqProgramOption);
+				if (result == null) result = caseAlternativeObject(apsReqProgramOption);
+				if (result == null) result = caseCouldResolveObject(apsReqProgramOption);
+				if (result == null) result = caseStakeholderObject(apsReqProgramOption);
+				if (result == null) result = caseSelectionObject(apsReqProgramOption);
+				if (result == null) result = caseIdentifier(apsReqProgramOption);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ApssoftwareoptionsPackage.APS_REQ_FUNCTION_OPTION: {
+				APSReqFunctionOption apsReqFunctionOption = (APSReqFunctionOption)theEObject;
+				T result = caseAPSReqFunctionOption(apsReqFunctionOption);
+				if (result == null) result = caseAPSReqOption(apsReqFunctionOption);
+				if (result == null) result = caseOption(apsReqFunctionOption);
+				if (result == null) result = caseTraceableObject(apsReqFunctionOption);
+				if (result == null) result = caseRelationObject(apsReqFunctionOption);
+				if (result == null) result = caseConflictObject(apsReqFunctionOption);
+				if (result == null) result = caseDuplicationObject(apsReqFunctionOption);
+				if (result == null) result = caseDependencyObject(apsReqFunctionOption);
+				if (result == null) result = caseParentalObject(apsReqFunctionOption);
+				if (result == null) result = caseTriggerObject(apsReqFunctionOption);
+				if (result == null) result = caseResolveObject(apsReqFunctionOption);
+				if (result == null) result = caseAlternativeObject(apsReqFunctionOption);
+				if (result == null) result = caseCouldResolveObject(apsReqFunctionOption);
+				if (result == null) result = caseStakeholderObject(apsReqFunctionOption);
+				if (result == null) result = caseSelectionObject(apsReqFunctionOption);
+				if (result == null) result = caseIdentifier(apsReqFunctionOption);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ApssoftwareoptionsPackage.APS_REQ_FUNCTION_BLOCK_OPTION: {
+				APSReqFunctionBlockOption apsReqFunctionBlockOption = (APSReqFunctionBlockOption)theEObject;
+				T result = caseAPSReqFunctionBlockOption(apsReqFunctionBlockOption);
+				if (result == null) result = caseAPSReqOption(apsReqFunctionBlockOption);
+				if (result == null) result = caseOption(apsReqFunctionBlockOption);
+				if (result == null) result = caseTraceableObject(apsReqFunctionBlockOption);
+				if (result == null) result = caseRelationObject(apsReqFunctionBlockOption);
+				if (result == null) result = caseConflictObject(apsReqFunctionBlockOption);
+				if (result == null) result = caseDuplicationObject(apsReqFunctionBlockOption);
+				if (result == null) result = caseDependencyObject(apsReqFunctionBlockOption);
+				if (result == null) result = caseParentalObject(apsReqFunctionBlockOption);
+				if (result == null) result = caseTriggerObject(apsReqFunctionBlockOption);
+				if (result == null) result = caseResolveObject(apsReqFunctionBlockOption);
+				if (result == null) result = caseAlternativeObject(apsReqFunctionBlockOption);
+				if (result == null) result = caseCouldResolveObject(apsReqFunctionBlockOption);
+				if (result == null) result = caseStakeholderObject(apsReqFunctionBlockOption);
+				if (result == null) result = caseSelectionObject(apsReqFunctionBlockOption);
+				if (result == null) result = caseIdentifier(apsReqFunctionBlockOption);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ApssoftwareoptionsPackage.APS_REQ_CONFIGURATION_OPTION: {
+				APSReqConfigurationOption apsReqConfigurationOption = (APSReqConfigurationOption)theEObject;
+				T result = caseAPSReqConfigurationOption(apsReqConfigurationOption);
+				if (result == null) result = caseAPSReqOption(apsReqConfigurationOption);
+				if (result == null) result = caseOption(apsReqConfigurationOption);
+				if (result == null) result = caseTraceableObject(apsReqConfigurationOption);
+				if (result == null) result = caseRelationObject(apsReqConfigurationOption);
+				if (result == null) result = caseConflictObject(apsReqConfigurationOption);
+				if (result == null) result = caseDuplicationObject(apsReqConfigurationOption);
+				if (result == null) result = caseDependencyObject(apsReqConfigurationOption);
+				if (result == null) result = caseParentalObject(apsReqConfigurationOption);
+				if (result == null) result = caseTriggerObject(apsReqConfigurationOption);
+				if (result == null) result = caseResolveObject(apsReqConfigurationOption);
+				if (result == null) result = caseAlternativeObject(apsReqConfigurationOption);
+				if (result == null) result = caseCouldResolveObject(apsReqConfigurationOption);
+				if (result == null) result = caseStakeholderObject(apsReqConfigurationOption);
+				if (result == null) result = caseSelectionObject(apsReqConfigurationOption);
+				if (result == null) result = caseIdentifier(apsReqConfigurationOption);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ApssoftwareoptionsPackage.APS_REQ_IEC_METHOD_OPTION: {
+				APSReqIECMethodOption apsReqIECMethodOption = (APSReqIECMethodOption)theEObject;
+				T result = caseAPSReqIECMethodOption(apsReqIECMethodOption);
+				if (result == null) result = caseAPSReqOption(apsReqIECMethodOption);
+				if (result == null) result = caseOption(apsReqIECMethodOption);
+				if (result == null) result = caseTraceableObject(apsReqIECMethodOption);
+				if (result == null) result = caseRelationObject(apsReqIECMethodOption);
+				if (result == null) result = caseConflictObject(apsReqIECMethodOption);
+				if (result == null) result = caseDuplicationObject(apsReqIECMethodOption);
+				if (result == null) result = caseDependencyObject(apsReqIECMethodOption);
+				if (result == null) result = caseParentalObject(apsReqIECMethodOption);
+				if (result == null) result = caseTriggerObject(apsReqIECMethodOption);
+				if (result == null) result = caseResolveObject(apsReqIECMethodOption);
+				if (result == null) result = caseAlternativeObject(apsReqIECMethodOption);
+				if (result == null) result = caseCouldResolveObject(apsReqIECMethodOption);
+				if (result == null) result = caseStakeholderObject(apsReqIECMethodOption);
+				if (result == null) result = caseSelectionObject(apsReqIECMethodOption);
+				if (result == null) result = caseIdentifier(apsReqIECMethodOption);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ApssoftwareoptionsPackage.APS_REQ_GLOBAL_VARIABLE_OPTION: {
+				APSReqGlobalVariableOption apsReqGlobalVariableOption = (APSReqGlobalVariableOption)theEObject;
+				T result = caseAPSReqGlobalVariableOption(apsReqGlobalVariableOption);
+				if (result == null) result = caseAPSReqOption(apsReqGlobalVariableOption);
+				if (result == null) result = caseOption(apsReqGlobalVariableOption);
+				if (result == null) result = caseTraceableObject(apsReqGlobalVariableOption);
+				if (result == null) result = caseRelationObject(apsReqGlobalVariableOption);
+				if (result == null) result = caseConflictObject(apsReqGlobalVariableOption);
+				if (result == null) result = caseDuplicationObject(apsReqGlobalVariableOption);
+				if (result == null) result = caseDependencyObject(apsReqGlobalVariableOption);
+				if (result == null) result = caseParentalObject(apsReqGlobalVariableOption);
+				if (result == null) result = caseTriggerObject(apsReqGlobalVariableOption);
+				if (result == null) result = caseResolveObject(apsReqGlobalVariableOption);
+				if (result == null) result = caseAlternativeObject(apsReqGlobalVariableOption);
+				if (result == null) result = caseCouldResolveObject(apsReqGlobalVariableOption);
+				if (result == null) result = caseStakeholderObject(apsReqGlobalVariableOption);
+				if (result == null) result = caseSelectionObject(apsReqGlobalVariableOption);
+				if (result == null) result = caseIdentifier(apsReqGlobalVariableOption);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ApssoftwareoptionsPackage.APS_REQ_IEC_PROPERTY_OPTION: {
+				APSReqIECPropertyOption apsReqIECPropertyOption = (APSReqIECPropertyOption)theEObject;
+				T result = caseAPSReqIECPropertyOption(apsReqIECPropertyOption);
+				if (result == null) result = caseAPSReqOption(apsReqIECPropertyOption);
+				if (result == null) result = caseOption(apsReqIECPropertyOption);
+				if (result == null) result = caseTraceableObject(apsReqIECPropertyOption);
+				if (result == null) result = caseRelationObject(apsReqIECPropertyOption);
+				if (result == null) result = caseConflictObject(apsReqIECPropertyOption);
+				if (result == null) result = caseDuplicationObject(apsReqIECPropertyOption);
+				if (result == null) result = caseDependencyObject(apsReqIECPropertyOption);
+				if (result == null) result = caseParentalObject(apsReqIECPropertyOption);
+				if (result == null) result = caseTriggerObject(apsReqIECPropertyOption);
+				if (result == null) result = caseResolveObject(apsReqIECPropertyOption);
+				if (result == null) result = caseAlternativeObject(apsReqIECPropertyOption);
+				if (result == null) result = caseCouldResolveObject(apsReqIECPropertyOption);
+				if (result == null) result = caseStakeholderObject(apsReqIECPropertyOption);
+				if (result == null) result = caseSelectionObject(apsReqIECPropertyOption);
+				if (result == null) result = caseIdentifier(apsReqIECPropertyOption);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ApssoftwareoptionsPackage.APS_REQ_IEC_INTERFACE_OPTION: {
+				APSReqIECInterfaceOption apsReqIECInterfaceOption = (APSReqIECInterfaceOption)theEObject;
+				T result = caseAPSReqIECInterfaceOption(apsReqIECInterfaceOption);
+				if (result == null) result = caseAPSReqOption(apsReqIECInterfaceOption);
+				if (result == null) result = caseOption(apsReqIECInterfaceOption);
+				if (result == null) result = caseTraceableObject(apsReqIECInterfaceOption);
+				if (result == null) result = caseRelationObject(apsReqIECInterfaceOption);
+				if (result == null) result = caseConflictObject(apsReqIECInterfaceOption);
+				if (result == null) result = caseDuplicationObject(apsReqIECInterfaceOption);
+				if (result == null) result = caseDependencyObject(apsReqIECInterfaceOption);
+				if (result == null) result = caseParentalObject(apsReqIECInterfaceOption);
+				if (result == null) result = caseTriggerObject(apsReqIECInterfaceOption);
+				if (result == null) result = caseResolveObject(apsReqIECInterfaceOption);
+				if (result == null) result = caseAlternativeObject(apsReqIECInterfaceOption);
+				if (result == null) result = caseCouldResolveObject(apsReqIECInterfaceOption);
+				if (result == null) result = caseStakeholderObject(apsReqIECInterfaceOption);
+				if (result == null) result = caseSelectionObject(apsReqIECInterfaceOption);
+				if (result == null) result = caseIdentifier(apsReqIECInterfaceOption);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ApssoftwareoptionsPackage.APS_REQ_ABSTRACT_METHOD_OPTION: {
+				APSReqAbstractMethodOption apsReqAbstractMethodOption = (APSReqAbstractMethodOption)theEObject;
+				T result = caseAPSReqAbstractMethodOption(apsReqAbstractMethodOption);
+				if (result == null) result = caseAPSReqOption(apsReqAbstractMethodOption);
+				if (result == null) result = caseOption(apsReqAbstractMethodOption);
+				if (result == null) result = caseTraceableObject(apsReqAbstractMethodOption);
+				if (result == null) result = caseRelationObject(apsReqAbstractMethodOption);
+				if (result == null) result = caseConflictObject(apsReqAbstractMethodOption);
+				if (result == null) result = caseDuplicationObject(apsReqAbstractMethodOption);
+				if (result == null) result = caseDependencyObject(apsReqAbstractMethodOption);
+				if (result == null) result = caseParentalObject(apsReqAbstractMethodOption);
+				if (result == null) result = caseTriggerObject(apsReqAbstractMethodOption);
+				if (result == null) result = caseResolveObject(apsReqAbstractMethodOption);
+				if (result == null) result = caseAlternativeObject(apsReqAbstractMethodOption);
+				if (result == null) result = caseCouldResolveObject(apsReqAbstractMethodOption);
+				if (result == null) result = caseStakeholderObject(apsReqAbstractMethodOption);
+				if (result == null) result = caseSelectionObject(apsReqAbstractMethodOption);
+				if (result == null) result = caseIdentifier(apsReqAbstractMethodOption);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ApssoftwareoptionsPackage.APS_REQ_ABSTRACT_PROPERTY_OPTION: {
+				APSReqAbstractPropertyOption apsReqAbstractPropertyOption = (APSReqAbstractPropertyOption)theEObject;
+				T result = caseAPSReqAbstractPropertyOption(apsReqAbstractPropertyOption);
+				if (result == null) result = caseAPSReqOption(apsReqAbstractPropertyOption);
+				if (result == null) result = caseOption(apsReqAbstractPropertyOption);
+				if (result == null) result = caseTraceableObject(apsReqAbstractPropertyOption);
+				if (result == null) result = caseRelationObject(apsReqAbstractPropertyOption);
+				if (result == null) result = caseConflictObject(apsReqAbstractPropertyOption);
+				if (result == null) result = caseDuplicationObject(apsReqAbstractPropertyOption);
+				if (result == null) result = caseDependencyObject(apsReqAbstractPropertyOption);
+				if (result == null) result = caseParentalObject(apsReqAbstractPropertyOption);
+				if (result == null) result = caseTriggerObject(apsReqAbstractPropertyOption);
+				if (result == null) result = caseResolveObject(apsReqAbstractPropertyOption);
+				if (result == null) result = caseAlternativeObject(apsReqAbstractPropertyOption);
+				if (result == null) result = caseCouldResolveObject(apsReqAbstractPropertyOption);
+				if (result == null) result = caseStakeholderObject(apsReqAbstractPropertyOption);
+				if (result == null) result = caseSelectionObject(apsReqAbstractPropertyOption);
+				if (result == null) result = caseIdentifier(apsReqAbstractPropertyOption);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -111,17 +300,152 @@ public class ApssoftwareoptionsSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>APS Req Software Option</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>APS Req Program Option</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>APS Req Software Option</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>APS Req Program Option</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseAPSReqSoftwareOption(APSReqSoftwareOption object) {
+	public T caseAPSReqProgramOption(APSReqProgramOption object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>APS Req Function Option</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>APS Req Function Option</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAPSReqFunctionOption(APSReqFunctionOption object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>APS Req Function Block Option</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>APS Req Function Block Option</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAPSReqFunctionBlockOption(APSReqFunctionBlockOption object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>APS Req Configuration Option</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>APS Req Configuration Option</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAPSReqConfigurationOption(APSReqConfigurationOption object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>APS Req IEC Method Option</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>APS Req IEC Method Option</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAPSReqIECMethodOption(APSReqIECMethodOption object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>APS Req Global Variable Option</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>APS Req Global Variable Option</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAPSReqGlobalVariableOption(APSReqGlobalVariableOption object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>APS Req IEC Property Option</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>APS Req IEC Property Option</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAPSReqIECPropertyOption(APSReqIECPropertyOption object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>APS Req IEC Interface Option</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>APS Req IEC Interface Option</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAPSReqIECInterfaceOption(APSReqIECInterfaceOption object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>APS Req Abstract Method Option</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>APS Req Abstract Method Option</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAPSReqAbstractMethodOption(APSReqAbstractMethodOption object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>APS Req Abstract Property Option</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>APS Req Abstract Property Option</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAPSReqAbstractPropertyOption(APSReqAbstractPropertyOption object) {
 		return null;
 	}
 

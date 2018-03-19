@@ -3,14 +3,21 @@
 package edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.util;
 
 import edu.kit.ipd.sdq.kamp.model.modificationmarks.AbstractChangePropagationStep;
+import edu.kit.ipd.sdq.kamp.model.modificationmarks.AbstractModification;
 import edu.kit.ipd.sdq.kamp.model.modificationmarks.AbstractModificationRepository;
 import edu.kit.ipd.sdq.kamp.model.modificationmarks.AbstractSeedModifications;
 
+import edu.kit.ipd.sdq.kamp.model.modificationmarks.ChangePropagationStep;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqSeedModifications;
+import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.AbstractAPSReqChangePropagationDueToSpecificationDependencies;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.AbstractKAMP4aPS4ReqModificationRepository;
 
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.*;
 
+import edu.kit.ipd.sdq.kamp4iec.model.IECModificationmarks.AbstractKAMP4IECModificationRepository;
+import edu.kit.ipd.sdq.kamp4iec.model.IECModificationmarks.IECModifyComponent;
+import edu.kit.ipd.sdq.kamp4iec.model.IECModificationmarks.IECSeedModifications;
+import edu.kit.ipd.sdq.kamp4iec.model.IECRepository.IECComponent;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -77,6 +84,7 @@ public class Modificationmarks_softwareSwitch<T1> extends Switch<T1> {
 				APSReqSoftwareSeedModifications apsReqSoftwareSeedModifications = (APSReqSoftwareSeedModifications)theEObject;
 				T1 result = caseAPSReqSoftwareSeedModifications(apsReqSoftwareSeedModifications);
 				if (result == null) result = caseAPSReqSeedModifications(apsReqSoftwareSeedModifications);
+				if (result == null) result = caseIECSeedModifications(apsReqSoftwareSeedModifications);
 				if (result == null) result = caseAbstractSeedModifications(apsReqSoftwareSeedModifications);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -84,8 +92,26 @@ public class Modificationmarks_softwareSwitch<T1> extends Switch<T1> {
 			case Modificationmarks_softwarePackage.APS_REQ_SOFTWARE_MODIFICATION_REPOSITORY: {
 				APSReqSoftwareModificationRepository apsReqSoftwareModificationRepository = (APSReqSoftwareModificationRepository)theEObject;
 				T1 result = caseAPSReqSoftwareModificationRepository(apsReqSoftwareModificationRepository);
+				if (result == null) result = caseAbstractKAMP4IECModificationRepository(apsReqSoftwareModificationRepository);
 				if (result == null) result = caseAbstractKAMP4aPS4ReqModificationRepository(apsReqSoftwareModificationRepository);
 				if (result == null) result = caseAbstractModificationRepository(apsReqSoftwareModificationRepository);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case Modificationmarks_softwarePackage.APS_REQ_SOFTWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES: {
+				APSReqSoftwareChangePropagationDueToSpecificationDependencies apsReqSoftwareChangePropagationDueToSpecificationDependencies = (APSReqSoftwareChangePropagationDueToSpecificationDependencies)theEObject;
+				T1 result = caseAPSReqSoftwareChangePropagationDueToSpecificationDependencies(apsReqSoftwareChangePropagationDueToSpecificationDependencies);
+				if (result == null) result = caseAbstractAPSReqChangePropagationDueToSpecificationDependencies(apsReqSoftwareChangePropagationDueToSpecificationDependencies);
+				if (result == null) result = caseChangePropagationStep(apsReqSoftwareChangePropagationDueToSpecificationDependencies);
+				if (result == null) result = caseAbstractChangePropagationStep(apsReqSoftwareChangePropagationDueToSpecificationDependencies);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case Modificationmarks_softwarePackage.APS_REQ_MODIFY_COMPONENT: {
+				APSReqModifyComponent apsReqModifyComponent = (APSReqModifyComponent)theEObject;
+				T1 result = caseAPSReqModifyComponent(apsReqModifyComponent);
+				if (result == null) result = caseIECModifyComponent(apsReqModifyComponent);
+				if (result == null) result = caseAbstractModification(apsReqModifyComponent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -124,6 +150,36 @@ public class Modificationmarks_softwareSwitch<T1> extends Switch<T1> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>APS Req Software Change Propagation Due To Specification Dependencies</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>APS Req Software Change Propagation Due To Specification Dependencies</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseAPSReqSoftwareChangePropagationDueToSpecificationDependencies(APSReqSoftwareChangePropagationDueToSpecificationDependencies object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>APS Req Modify Component</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>APS Req Modify Component</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseAPSReqModifyComponent(APSReqModifyComponent object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Abstract Seed Modifications</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -149,7 +205,22 @@ public class Modificationmarks_softwareSwitch<T1> extends Switch<T1> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public <T extends AbstractSeedModifications> T1 caseAPSReqSeedModifications(APSReqSeedModifications<T> object) {
+	public T1 caseAPSReqSeedModifications(APSReqSeedModifications object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>IEC Seed Modifications</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>IEC Seed Modifications</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseIECSeedModifications(IECSeedModifications object) {
 		return null;
 	}
 
@@ -169,6 +240,21 @@ public class Modificationmarks_softwareSwitch<T1> extends Switch<T1> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Abstract KAMP4IEC Modification Repository</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Abstract KAMP4IEC Modification Repository</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public <T extends IECSeedModifications> T1 caseAbstractKAMP4IECModificationRepository(AbstractKAMP4IECModificationRepository<T> object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Abstract KAMP 4a PS4 Req Modification Repository</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -179,7 +265,82 @@ public class Modificationmarks_softwareSwitch<T1> extends Switch<T1> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public <T extends AbstractSeedModifications> T1 caseAbstractKAMP4aPS4ReqModificationRepository(AbstractKAMP4aPS4ReqModificationRepository<T> object) {
+	public <T extends APSReqSeedModifications> T1 caseAbstractKAMP4aPS4ReqModificationRepository(AbstractKAMP4aPS4ReqModificationRepository<T> object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Abstract Change Propagation Step</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Abstract Change Propagation Step</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseAbstractChangePropagationStep(AbstractChangePropagationStep object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Change Propagation Step</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Change Propagation Step</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseChangePropagationStep(ChangePropagationStep object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Abstract APS Req Change Propagation Due To Specification Dependencies</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Abstract APS Req Change Propagation Due To Specification Dependencies</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseAbstractAPSReqChangePropagationDueToSpecificationDependencies(AbstractAPSReqChangePropagationDueToSpecificationDependencies object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Abstract Modification</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Abstract Modification</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public <S, T> T1 caseAbstractModification(AbstractModification<S, T> object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>IEC Modify Component</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>IEC Modify Component</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public <T extends IECComponent> T1 caseIECModifyComponent(IECModifyComponent<T> object) {
 		return null;
 	}
 

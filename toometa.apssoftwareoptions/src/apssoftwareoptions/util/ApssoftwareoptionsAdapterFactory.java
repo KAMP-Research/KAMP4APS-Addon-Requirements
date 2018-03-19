@@ -87,8 +87,44 @@ public class ApssoftwareoptionsAdapterFactory extends AdapterFactoryImpl {
 	protected ApssoftwareoptionsSwitch<Adapter> modelSwitch =
 		new ApssoftwareoptionsSwitch<Adapter>() {
 			@Override
-			public Adapter caseAPSReqSoftwareOption(APSReqSoftwareOption object) {
-				return createAPSReqSoftwareOptionAdapter();
+			public Adapter caseAPSReqProgramOption(APSReqProgramOption object) {
+				return createAPSReqProgramOptionAdapter();
+			}
+			@Override
+			public Adapter caseAPSReqFunctionOption(APSReqFunctionOption object) {
+				return createAPSReqFunctionOptionAdapter();
+			}
+			@Override
+			public Adapter caseAPSReqFunctionBlockOption(APSReqFunctionBlockOption object) {
+				return createAPSReqFunctionBlockOptionAdapter();
+			}
+			@Override
+			public Adapter caseAPSReqConfigurationOption(APSReqConfigurationOption object) {
+				return createAPSReqConfigurationOptionAdapter();
+			}
+			@Override
+			public Adapter caseAPSReqIECMethodOption(APSReqIECMethodOption object) {
+				return createAPSReqIECMethodOptionAdapter();
+			}
+			@Override
+			public Adapter caseAPSReqGlobalVariableOption(APSReqGlobalVariableOption object) {
+				return createAPSReqGlobalVariableOptionAdapter();
+			}
+			@Override
+			public Adapter caseAPSReqIECPropertyOption(APSReqIECPropertyOption object) {
+				return createAPSReqIECPropertyOptionAdapter();
+			}
+			@Override
+			public Adapter caseAPSReqIECInterfaceOption(APSReqIECInterfaceOption object) {
+				return createAPSReqIECInterfaceOptionAdapter();
+			}
+			@Override
+			public Adapter caseAPSReqAbstractMethodOption(APSReqAbstractMethodOption object) {
+				return createAPSReqAbstractMethodOptionAdapter();
+			}
+			@Override
+			public Adapter caseAPSReqAbstractPropertyOption(APSReqAbstractPropertyOption object) {
+				return createAPSReqAbstractPropertyOptionAdapter();
 			}
 			@Override
 			public Adapter caseIdentifier(Identifier object) {
@@ -171,16 +207,142 @@ public class ApssoftwareoptionsAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link apssoftwareoptions.APSReqSoftwareOption <em>APS Req Software Option</em>}'.
+	 * Creates a new adapter for an object of class '{@link apssoftwareoptions.APSReqProgramOption <em>APS Req Program Option</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see apssoftwareoptions.APSReqSoftwareOption
+	 * @see apssoftwareoptions.APSReqProgramOption
 	 * @generated
 	 */
-	public Adapter createAPSReqSoftwareOptionAdapter() {
+	public Adapter createAPSReqProgramOptionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link apssoftwareoptions.APSReqFunctionOption <em>APS Req Function Option</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see apssoftwareoptions.APSReqFunctionOption
+	 * @generated
+	 */
+	public Adapter createAPSReqFunctionOptionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link apssoftwareoptions.APSReqFunctionBlockOption <em>APS Req Function Block Option</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see apssoftwareoptions.APSReqFunctionBlockOption
+	 * @generated
+	 */
+	public Adapter createAPSReqFunctionBlockOptionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link apssoftwareoptions.APSReqConfigurationOption <em>APS Req Configuration Option</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see apssoftwareoptions.APSReqConfigurationOption
+	 * @generated
+	 */
+	public Adapter createAPSReqConfigurationOptionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link apssoftwareoptions.APSReqIECMethodOption <em>APS Req IEC Method Option</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see apssoftwareoptions.APSReqIECMethodOption
+	 * @generated
+	 */
+	public Adapter createAPSReqIECMethodOptionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link apssoftwareoptions.APSReqGlobalVariableOption <em>APS Req Global Variable Option</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see apssoftwareoptions.APSReqGlobalVariableOption
+	 * @generated
+	 */
+	public Adapter createAPSReqGlobalVariableOptionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link apssoftwareoptions.APSReqIECPropertyOption <em>APS Req IEC Property Option</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see apssoftwareoptions.APSReqIECPropertyOption
+	 * @generated
+	 */
+	public Adapter createAPSReqIECPropertyOptionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link apssoftwareoptions.APSReqIECInterfaceOption <em>APS Req IEC Interface Option</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see apssoftwareoptions.APSReqIECInterfaceOption
+	 * @generated
+	 */
+	public Adapter createAPSReqIECInterfaceOptionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link apssoftwareoptions.APSReqAbstractMethodOption <em>APS Req Abstract Method Option</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see apssoftwareoptions.APSReqAbstractMethodOption
+	 * @generated
+	 */
+	public Adapter createAPSReqAbstractMethodOptionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link apssoftwareoptions.APSReqAbstractPropertyOption <em>APS Req Abstract Property Option</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see apssoftwareoptions.APSReqAbstractPropertyOption
+	 * @generated
+	 */
+	public Adapter createAPSReqAbstractPropertyOptionAdapter() {
 		return null;
 	}
 

@@ -40,6 +40,24 @@ public interface Modificationmarks_softwareFactory extends EFactory {
 	APSReqSoftwareModificationRepository createAPSReqSoftwareModificationRepository();
 
 	/**
+	 * Returns a new object of class '<em>APS Req Software Change Propagation Due To Specification Dependencies</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>APS Req Software Change Propagation Due To Specification Dependencies</em>'.
+	 * @generated
+	 */
+	APSReqSoftwareChangePropagationDueToSpecificationDependencies createAPSReqSoftwareChangePropagationDueToSpecificationDependencies();
+
+	/**
+	 * Returns a new object of class '<em>APS Req Modify Component</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>APS Req Modify Component</em>'.
+	 * @generated
+	 */
+	APSReqModifyComponent createAPSReqModifyComponent();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

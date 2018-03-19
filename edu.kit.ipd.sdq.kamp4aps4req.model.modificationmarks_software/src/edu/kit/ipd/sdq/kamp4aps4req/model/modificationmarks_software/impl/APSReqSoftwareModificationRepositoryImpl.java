@@ -2,12 +2,10 @@
  */
 package edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.impl;
 
-import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqSeedModifications;
-
-import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.impl.AbstractKAMP4aPS4ReqModificationRepositoryImpl;
-
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.APSReqSoftwareModificationRepository;
+import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.APSReqSoftwareSeedModifications;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.Modificationmarks_softwarePackage;
+import edu.kit.ipd.sdq.kamp4iec.model.IECModificationmarks.impl.AbstractKAMP4IECModificationRepositoryImpl;
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -17,7 +15,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class APSReqSoftwareModificationRepositoryImpl extends AbstractKAMP4aPS4ReqModificationRepositoryImpl<APSReqSeedModifications<edu.kit.ipd.sdq.kamp4iec.model.IECModificationmarks.IECSeedModifications>> implements APSReqSoftwareModificationRepository {
+public class APSReqSoftwareModificationRepositoryImpl extends AbstractKAMP4IECModificationRepositoryImpl<APSReqSoftwareSeedModifications> implements APSReqSoftwareModificationRepository {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

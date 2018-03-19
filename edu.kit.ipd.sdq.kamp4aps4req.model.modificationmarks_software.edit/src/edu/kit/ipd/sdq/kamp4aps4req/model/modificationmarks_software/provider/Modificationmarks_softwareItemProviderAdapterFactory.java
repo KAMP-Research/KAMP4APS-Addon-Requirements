@@ -118,6 +118,52 @@ public class Modificationmarks_softwareItemProviderAdapterFactory extends Modifi
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.APSReqSoftwareChangePropagationDueToSpecificationDependencies} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected APSReqSoftwareChangePropagationDueToSpecificationDependenciesItemProvider apsReqSoftwareChangePropagationDueToSpecificationDependenciesItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.APSReqSoftwareChangePropagationDueToSpecificationDependencies}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAPSReqSoftwareChangePropagationDueToSpecificationDependenciesAdapter() {
+		if (apsReqSoftwareChangePropagationDueToSpecificationDependenciesItemProvider == null) {
+			apsReqSoftwareChangePropagationDueToSpecificationDependenciesItemProvider = new APSReqSoftwareChangePropagationDueToSpecificationDependenciesItemProvider(this);
+		}
+
+		return apsReqSoftwareChangePropagationDueToSpecificationDependenciesItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.APSReqModifyComponent} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected APSReqModifyComponentItemProvider apsReqModifyComponentItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.APSReqModifyComponent}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAPSReqModifyComponentAdapter() {
+		if (apsReqModifyComponentItemProvider == null) {
+			apsReqModifyComponentItemProvider = new APSReqModifyComponentItemProvider(this);
+		}
+
+		return apsReqModifyComponentItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -218,6 +264,8 @@ public class Modificationmarks_softwareItemProviderAdapterFactory extends Modifi
 	public void dispose() {
 		if (apsReqSoftwareSeedModificationsItemProvider != null) apsReqSoftwareSeedModificationsItemProvider.dispose();
 		if (apsReqSoftwareModificationRepositoryItemProvider != null) apsReqSoftwareModificationRepositoryItemProvider.dispose();
+		if (apsReqSoftwareChangePropagationDueToSpecificationDependenciesItemProvider != null) apsReqSoftwareChangePropagationDueToSpecificationDependenciesItemProvider.dispose();
+		if (apsReqModifyComponentItemProvider != null) apsReqModifyComponentItemProvider.dispose();
 	}
 
 }

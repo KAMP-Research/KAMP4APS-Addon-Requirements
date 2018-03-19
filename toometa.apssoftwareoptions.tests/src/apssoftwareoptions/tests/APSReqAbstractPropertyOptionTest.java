@@ -2,7 +2,7 @@
  */
 package apssoftwareoptions.tests;
 
-import apssoftwareoptions.APSReqSoftwareOption;
+import apssoftwareoptions.APSReqAbstractPropertyOption;
 import apssoftwareoptions.ApssoftwareoptionsFactory;
 
 import junit.framework.TestCase;
@@ -11,19 +11,19 @@ import junit.textui.TestRunner;
 
 /**
  * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>APS Req Software Option</b></em>'.
+ * A test case for the model object '<em><b>APS Req Abstract Property Option</b></em>'.
  * <!-- end-user-doc -->
  * @generated
  */
-public class APSReqSoftwareOptionTest extends TestCase {
+public class APSReqAbstractPropertyOptionTest extends TestCase {
 
 	/**
-	 * The fixture for this APS Req Software Option test case.
+	 * The fixture for this APS Req Abstract Property Option test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected APSReqSoftwareOption fixture = null;
+	protected APSReqAbstractPropertyOption fixture = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -31,36 +31,36 @@ public class APSReqSoftwareOptionTest extends TestCase {
 	 * @generated
 	 */
 	public static void main(String[] args) {
-		TestRunner.run(APSReqSoftwareOptionTest.class);
+		TestRunner.run(APSReqAbstractPropertyOptionTest.class);
 	}
 
 	/**
-	 * Constructs a new APS Req Software Option test case with the given name.
+	 * Constructs a new APS Req Abstract Property Option test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public APSReqSoftwareOptionTest(String name) {
+	public APSReqAbstractPropertyOptionTest(String name) {
 		super(name);
 	}
 
 	/**
-	 * Sets the fixture for this APS Req Software Option test case.
+	 * Sets the fixture for this APS Req Abstract Property Option test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void setFixture(APSReqSoftwareOption fixture) {
+	protected void setFixture(APSReqAbstractPropertyOption fixture) {
 		this.fixture = fixture;
 	}
 
 	/**
-	 * Returns the fixture for this APS Req Software Option test case.
+	 * Returns the fixture for this APS Req Abstract Property Option test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected APSReqSoftwareOption getFixture() {
+	protected APSReqAbstractPropertyOption getFixture() {
 		return fixture;
 	}
 
@@ -72,7 +72,7 @@ public class APSReqSoftwareOptionTest extends TestCase {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(ApssoftwareoptionsFactory.eINSTANCE.createAPSReqSoftwareOption());
+		setFixture(ApssoftwareoptionsFactory.eINSTANCE.createAPSReqAbstractPropertyOption());
 	}
 
 	/**
@@ -86,4 +86,4 @@ public class APSReqSoftwareOptionTest extends TestCase {
 		setFixture(null);
 	}
 
-} //APSReqSoftwareOptionTest
+} //APSReqAbstractPropertyOptionTest

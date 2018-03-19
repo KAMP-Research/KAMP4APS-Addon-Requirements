@@ -3,6 +3,7 @@
 package edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software;
 
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqSeedModifications;
+import edu.kit.ipd.sdq.kamp4iec.model.IECModificationmarks.IECSeedModifications;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,5 +15,5 @@ import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqSeedModificati
  * @model
  * @generated
  */
-public interface APSReqSoftwareSeedModifications extends APSReqSeedModifications<edu.kit.ipd.sdq.kamp4iec.model.IECModificationmarks.IECSeedModifications> {
+public interface APSReqSoftwareSeedModifications extends APSReqSeedModifications, IECSeedModifications {
 } // APSReqSoftwareSeedModifications
