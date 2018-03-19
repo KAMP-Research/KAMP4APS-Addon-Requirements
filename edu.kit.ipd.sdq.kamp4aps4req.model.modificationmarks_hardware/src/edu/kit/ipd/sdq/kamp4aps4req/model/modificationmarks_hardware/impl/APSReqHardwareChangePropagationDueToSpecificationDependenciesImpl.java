@@ -16,9 +16,12 @@ import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.APSReqHardw
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.Modificationmarks_hardwarePackage;
 
 import java.util.Collection;
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,7 +41,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  */
 public class APSReqHardwareChangePropagationDueToSpecificationDependenciesImpl extends AbstractAPSReqChangePropagationDueToSpecificationDependenciesImpl implements APSReqHardwareChangePropagationDueToSpecificationDependencies {
 	/**
-	 * The cached value of the '{@link #getStructureModifications() <em>Structure Modifications</em>}' reference list.
+	 * The cached value of the '{@link #getStructureModifications() <em>Structure Modifications</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getStructureModifications()
@@ -47,7 +50,7 @@ public class APSReqHardwareChangePropagationDueToSpecificationDependenciesImpl e
 	 */
 	protected EList<ModifyStructure<Structure>> structureModifications;
 	/**
-	 * The cached value of the '{@link #getModuleModifications() <em>Module Modifications</em>}' reference list.
+	 * The cached value of the '{@link #getModuleModifications() <em>Module Modifications</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getModuleModifications()
@@ -56,7 +59,7 @@ public class APSReqHardwareChangePropagationDueToSpecificationDependenciesImpl e
 	 */
 	protected EList<ModifyModule<Module>> moduleModifications;
 	/**
-	 * The cached value of the '{@link #getComponentModifications() <em>Component Modifications</em>}' reference list.
+	 * The cached value of the '{@link #getComponentModifications() <em>Component Modifications</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getComponentModifications()
@@ -65,7 +68,7 @@ public class APSReqHardwareChangePropagationDueToSpecificationDependenciesImpl e
 	 */
 	protected EList<ModifyComponent<Component>> componentModifications;
 	/**
-	 * The cached value of the '{@link #getInterfaceModifications() <em>Interface Modifications</em>}' reference list.
+	 * The cached value of the '{@link #getInterfaceModifications() <em>Interface Modifications</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getInterfaceModifications()
@@ -99,7 +102,7 @@ public class APSReqHardwareChangePropagationDueToSpecificationDependenciesImpl e
 	 */
 	public EList<ModifyStructure<Structure>> getStructureModifications() {
 		if (structureModifications == null) {
-			structureModifications = new EObjectResolvingEList<ModifyStructure<Structure>>(ModifyStructure.class, this, Modificationmarks_hardwarePackage.APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__STRUCTURE_MODIFICATIONS);
+			structureModifications = new EObjectContainmentEList<ModifyStructure<Structure>>(ModifyStructure.class, this, Modificationmarks_hardwarePackage.APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__STRUCTURE_MODIFICATIONS);
 		}
 		return structureModifications;
 	}
@@ -111,7 +114,7 @@ public class APSReqHardwareChangePropagationDueToSpecificationDependenciesImpl e
 	 */
 	public EList<ModifyModule<Module>> getModuleModifications() {
 		if (moduleModifications == null) {
-			moduleModifications = new EObjectResolvingEList<ModifyModule<Module>>(ModifyModule.class, this, Modificationmarks_hardwarePackage.APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__MODULE_MODIFICATIONS);
+			moduleModifications = new EObjectContainmentEList<ModifyModule<Module>>(ModifyModule.class, this, Modificationmarks_hardwarePackage.APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__MODULE_MODIFICATIONS);
 		}
 		return moduleModifications;
 	}
@@ -123,7 +126,7 @@ public class APSReqHardwareChangePropagationDueToSpecificationDependenciesImpl e
 	 */
 	public EList<ModifyComponent<Component>> getComponentModifications() {
 		if (componentModifications == null) {
-			componentModifications = new EObjectResolvingEList<ModifyComponent<Component>>(ModifyComponent.class, this, Modificationmarks_hardwarePackage.APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__COMPONENT_MODIFICATIONS);
+			componentModifications = new EObjectContainmentEList<ModifyComponent<Component>>(ModifyComponent.class, this, Modificationmarks_hardwarePackage.APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__COMPONENT_MODIFICATIONS);
 		}
 		return componentModifications;
 	}
@@ -135,9 +138,29 @@ public class APSReqHardwareChangePropagationDueToSpecificationDependenciesImpl e
 	 */
 	public EList<ModifyInterface<Interface>> getInterfaceModifications() {
 		if (interfaceModifications == null) {
-			interfaceModifications = new EObjectResolvingEList<ModifyInterface<Interface>>(ModifyInterface.class, this, Modificationmarks_hardwarePackage.APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__INTERFACE_MODIFICATIONS);
+			interfaceModifications = new EObjectContainmentEList<ModifyInterface<Interface>>(ModifyInterface.class, this, Modificationmarks_hardwarePackage.APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__INTERFACE_MODIFICATIONS);
 		}
 		return interfaceModifications;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case Modificationmarks_hardwarePackage.APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__STRUCTURE_MODIFICATIONS:
+				return ((InternalEList<?>)getStructureModifications()).basicRemove(otherEnd, msgs);
+			case Modificationmarks_hardwarePackage.APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__MODULE_MODIFICATIONS:
+				return ((InternalEList<?>)getModuleModifications()).basicRemove(otherEnd, msgs);
+			case Modificationmarks_hardwarePackage.APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__COMPONENT_MODIFICATIONS:
+				return ((InternalEList<?>)getComponentModifications()).basicRemove(otherEnd, msgs);
+			case Modificationmarks_hardwarePackage.APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__INTERFACE_MODIFICATIONS:
+				return ((InternalEList<?>)getInterfaceModifications()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**

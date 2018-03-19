@@ -14,24 +14,25 @@
   <eClassifiers xsi:type="ecore:EClass" name="APSReqHardwareChangePropagationDueToSpecificationDependencies"
       eSuperTypes="../../edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks/model/modificationmarks.ecore#//AbstractAPSReqChangePropagationDueToSpecificationDependencies">
     <eStructuralFeatures xsi:type="ecore:EReference" name="structureModifications"
-        upperBound="-1">
+        upperBound="-1" containment="true">
       <eGenericType eClassifier="ecore:EClass ../../edu.kit.ipd.sdq.kamp4aps.model.modificationmarks/model/KAMP4aPSModificationsmarks.ecore#//ModifyStructure">
         <eTypeArguments eClassifier="ecore:EClass ../../edu.kit.ipd.sdq.kamp4aps.aps/model/aPS.ecore#//StructureRepository/Structure"/>
       </eGenericType>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="moduleModifications" upperBound="-1">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="moduleModifications" upperBound="-1"
+        containment="true">
       <eGenericType eClassifier="ecore:EClass ../../edu.kit.ipd.sdq.kamp4aps.model.modificationmarks/model/KAMP4aPSModificationsmarks.ecore#//ModifyModule">
         <eTypeArguments eClassifier="ecore:EClass ../../edu.kit.ipd.sdq.kamp4aps.aps/model/aPS.ecore#//ModuleRepository/Module"/>
       </eGenericType>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="componentModifications"
-        upperBound="-1">
+        upperBound="-1" containment="true">
       <eGenericType eClassifier="ecore:EClass ../../edu.kit.ipd.sdq.kamp4aps.model.modificationmarks/model/KAMP4aPSModificationsmarks.ecore#//ModifyComponent">
         <eTypeArguments eClassifier="ecore:EClass ../../edu.kit.ipd.sdq.kamp4aps.aps/model/aPS.ecore#//ComponentRepository/Component"/>
       </eGenericType>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="interfaceModifications"
-        upperBound="-1">
+        upperBound="-1" containment="true">
       <eGenericType eClassifier="ecore:EClass ../../edu.kit.ipd.sdq.kamp4aps.model.modificationmarks/model/KAMP4aPSModificationsmarks.ecore#//ModifyInterface">
         <eTypeArguments eClassifier="ecore:EClass ../../edu.kit.ipd.sdq.kamp4aps.aps/model/aPS.ecore#//InterfaceRepository/Interface"/>
       </eGenericType>
