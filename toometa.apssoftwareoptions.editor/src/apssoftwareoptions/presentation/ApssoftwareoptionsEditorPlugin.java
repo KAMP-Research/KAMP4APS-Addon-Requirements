@@ -3,9 +3,6 @@
 package apssoftwareoptions.presentation;
 
 import apsoptions.provider.ApsoptionsEditPlugin;
-
-import archoptions.provider.ArchoptionsEditPlugin;
-
 import de.uka.ipd.sdq.dsexplore.qml.dimensions.provider.DimensionsEditPlugin;
 
 import de.uka.ipd.sdq.dsexplore.qml.dimensiontypes.provider.DimensiontypesEditPlugin;
@@ -14,6 +11,7 @@ import de.uka.ipd.sdq.dsexplore.qml.units.provider.UnitsEditPlugin;
 
 import de.uka.ipd.sdq.identifier.provider.IdentifierEditPlugin;
 
+import edu.kit.ipd.sdq.kamp4iec.model.IECModel.provider.IECModelEditPlugin;
 import edu.kit.ipd.sdq.kamp4iec.model.IECRepository.provider.IECRepositoryEditPlugin;
 
 import effects.provider.EffectsEditPlugin;
@@ -67,12 +65,12 @@ public final class ApssoftwareoptionsEditorPlugin extends EMFPlugin {
 		super
 			(new ResourceLocator [] {
 				ApsoptionsEditPlugin.INSTANCE,
-				ArchoptionsEditPlugin.INSTANCE,
 				DimensionsEditPlugin.INSTANCE,
 				DimensiontypesEditPlugin.INSTANCE,
 				EffectsEditPlugin.INSTANCE,
 				GlossaryEditPlugin.INSTANCE,
 				IdentifierEditPlugin.INSTANCE,
+				IECModelEditPlugin.INSTANCE,
 				IECRepositoryEditPlugin.INSTANCE,
 				NamedelementEditPlugin.INSTANCE,
 				OptionsEditPlugin.INSTANCE,

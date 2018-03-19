@@ -2,7 +2,7 @@
  */
 package apssoftwareoptions.tests;
 
-import apssoftwareoptions.APSReqSoftwareOption;
+import apssoftwareoptions.APSReqProgramOption;
 import apssoftwareoptions.ApssoftwareoptionsFactory;
 import apssoftwareoptions.ApssoftwareoptionsPackage;
 
@@ -60,7 +60,7 @@ public class ApssoftwareoptionsExample {
 			System.out.println("Enter a list of file paths or URIs that have content like this:");
 			try {
 				Resource resource = resourceSet.createResource(URI.createURI("http:///My.apssoftwareoptions"));
-				APSReqSoftwareOption root = ApssoftwareoptionsFactory.eINSTANCE.createAPSReqSoftwareOption();
+				APSReqProgramOption root = ApssoftwareoptionsFactory.eINSTANCE.createAPSReqProgramOption();
 				resource.getContents().add(root);
 				resource.save(System.out, null);
 			}

@@ -4,10 +4,8 @@ package edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.provider;
 
 
 import edu.kit.ipd.sdq.kamp.model.modificationmarks.ModificationmarksPackage;
-
-import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.provider.AbstractKAMP4aPS4ReqModificationRepositoryItemProvider;
-
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.Modificationmarks_softwareFactory;
+import edu.kit.ipd.sdq.kamp4iec.model.IECModificationmarks.provider.AbstractKAMP4IECModificationRepositoryItemProvider;
 import java.util.Collection;
 import java.util.List;
 
@@ -24,7 +22,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
  * <!-- end-user-doc -->
  * @generated
  */
-public class APSReqSoftwareModificationRepositoryItemProvider extends AbstractKAMP4aPS4ReqModificationRepositoryItemProvider {
+public class APSReqSoftwareModificationRepositoryItemProvider extends AbstractKAMP4IECModificationRepositoryItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -104,13 +102,8 @@ public class APSReqSoftwareModificationRepositoryItemProvider extends AbstractKA
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ModificationmarksPackage.Literals.ABSTRACT_MODIFICATION_REPOSITORY__SEED_MODIFICATIONS,
-				 edu.kit.ipd.sdq.kamp4iec.model.IECModificationmarks.IECModificationmarksFactory.eINSTANCE.createIECSeedModifications()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(ModificationmarksPackage.Literals.ABSTRACT_MODIFICATION_REPOSITORY__CHANGE_PROPAGATION_STEPS,
-				 edu.kit.ipd.sdq.kamp4iec.model.IECModificationmarks.IECModificationmarksFactory.eINSTANCE.createIECChangePropagationDueToDataDependency()));
+				 Modificationmarks_softwareFactory.eINSTANCE.createAPSReqSoftwareChangePropagationDueToSpecificationDependencies()));
 	}
 
 	/**

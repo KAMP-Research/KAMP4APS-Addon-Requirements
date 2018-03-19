@@ -5,7 +5,6 @@ package apssoftwareoptions.impl;
 import apssoftwareoptions.*;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -57,7 +56,16 @@ public class ApssoftwareoptionsFactoryImpl extends EFactoryImpl implements Apsso
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case ApssoftwareoptionsPackage.APS_REQ_SOFTWARE_OPTION: return createAPSReqSoftwareOption();
+			case ApssoftwareoptionsPackage.APS_REQ_PROGRAM_OPTION: return createAPSReqProgramOption();
+			case ApssoftwareoptionsPackage.APS_REQ_FUNCTION_OPTION: return createAPSReqFunctionOption();
+			case ApssoftwareoptionsPackage.APS_REQ_FUNCTION_BLOCK_OPTION: return createAPSReqFunctionBlockOption();
+			case ApssoftwareoptionsPackage.APS_REQ_CONFIGURATION_OPTION: return createAPSReqConfigurationOption();
+			case ApssoftwareoptionsPackage.APS_REQ_IEC_METHOD_OPTION: return createAPSReqIECMethodOption();
+			case ApssoftwareoptionsPackage.APS_REQ_GLOBAL_VARIABLE_OPTION: return createAPSReqGlobalVariableOption();
+			case ApssoftwareoptionsPackage.APS_REQ_IEC_PROPERTY_OPTION: return createAPSReqIECPropertyOption();
+			case ApssoftwareoptionsPackage.APS_REQ_IEC_INTERFACE_OPTION: return createAPSReqIECInterfaceOption();
+			case ApssoftwareoptionsPackage.APS_REQ_ABSTRACT_METHOD_OPTION: return createAPSReqAbstractMethodOption();
+			case ApssoftwareoptionsPackage.APS_REQ_ABSTRACT_PROPERTY_OPTION: return createAPSReqAbstractPropertyOption();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -68,14 +76,9 @@ public class ApssoftwareoptionsFactoryImpl extends EFactoryImpl implements Apsso
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public Object createFromString(EDataType eDataType, String initialValue) {
-		switch (eDataType.getClassifierID()) {
-			case ApssoftwareoptionsPackage.IEC_COMPONENT_TYPE:
-				return createIECComponentTypeFromString(eDataType, initialValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-		}
+	public APSReqProgramOption createAPSReqProgramOption() {
+		APSReqProgramOptionImpl apsReqProgramOption = new APSReqProgramOptionImpl();
+		return apsReqProgramOption;
 	}
 
 	/**
@@ -83,14 +86,9 @@ public class ApssoftwareoptionsFactoryImpl extends EFactoryImpl implements Apsso
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public String convertToString(EDataType eDataType, Object instanceValue) {
-		switch (eDataType.getClassifierID()) {
-			case ApssoftwareoptionsPackage.IEC_COMPONENT_TYPE:
-				return convertIECComponentTypeToString(eDataType, instanceValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-		}
+	public APSReqFunctionOption createAPSReqFunctionOption() {
+		APSReqFunctionOptionImpl apsReqFunctionOption = new APSReqFunctionOptionImpl();
+		return apsReqFunctionOption;
 	}
 
 	/**
@@ -98,9 +96,9 @@ public class ApssoftwareoptionsFactoryImpl extends EFactoryImpl implements Apsso
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public APSReqSoftwareOption createAPSReqSoftwareOption() {
-		APSReqSoftwareOptionImpl apsReqSoftwareOption = new APSReqSoftwareOptionImpl();
-		return apsReqSoftwareOption;
+	public APSReqFunctionBlockOption createAPSReqFunctionBlockOption() {
+		APSReqFunctionBlockOptionImpl apsReqFunctionBlockOption = new APSReqFunctionBlockOptionImpl();
+		return apsReqFunctionBlockOption;
 	}
 
 	/**
@@ -108,10 +106,9 @@ public class ApssoftwareoptionsFactoryImpl extends EFactoryImpl implements Apsso
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public IECComponentType createIECComponentTypeFromString(EDataType eDataType, String initialValue) {
-		IECComponentType result = IECComponentType.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
+	public APSReqConfigurationOption createAPSReqConfigurationOption() {
+		APSReqConfigurationOptionImpl apsReqConfigurationOption = new APSReqConfigurationOptionImpl();
+		return apsReqConfigurationOption;
 	}
 
 	/**
@@ -119,8 +116,59 @@ public class ApssoftwareoptionsFactoryImpl extends EFactoryImpl implements Apsso
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertIECComponentTypeToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+	public APSReqIECMethodOption createAPSReqIECMethodOption() {
+		APSReqIECMethodOptionImpl apsReqIECMethodOption = new APSReqIECMethodOptionImpl();
+		return apsReqIECMethodOption;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public APSReqGlobalVariableOption createAPSReqGlobalVariableOption() {
+		APSReqGlobalVariableOptionImpl apsReqGlobalVariableOption = new APSReqGlobalVariableOptionImpl();
+		return apsReqGlobalVariableOption;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public APSReqIECPropertyOption createAPSReqIECPropertyOption() {
+		APSReqIECPropertyOptionImpl apsReqIECPropertyOption = new APSReqIECPropertyOptionImpl();
+		return apsReqIECPropertyOption;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public APSReqIECInterfaceOption createAPSReqIECInterfaceOption() {
+		APSReqIECInterfaceOptionImpl apsReqIECInterfaceOption = new APSReqIECInterfaceOptionImpl();
+		return apsReqIECInterfaceOption;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public APSReqAbstractMethodOption createAPSReqAbstractMethodOption() {
+		APSReqAbstractMethodOptionImpl apsReqAbstractMethodOption = new APSReqAbstractMethodOptionImpl();
+		return apsReqAbstractMethodOption;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public APSReqAbstractPropertyOption createAPSReqAbstractPropertyOption() {
+		APSReqAbstractPropertyOptionImpl apsReqAbstractPropertyOption = new APSReqAbstractPropertyOptionImpl();
+		return apsReqAbstractPropertyOption;
 	}
 
 	/**

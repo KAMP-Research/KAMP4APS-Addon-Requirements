@@ -4,16 +4,21 @@ package apssoftwareoptions.impl;
 
 import apsoptions.ApsoptionsPackage;
 
-import apssoftwareoptions.APSReqSoftwareOption;
+import apssoftwareoptions.APSReqAbstractMethodOption;
+import apssoftwareoptions.APSReqAbstractPropertyOption;
+import apssoftwareoptions.APSReqConfigurationOption;
+import apssoftwareoptions.APSReqFunctionBlockOption;
+import apssoftwareoptions.APSReqFunctionOption;
+import apssoftwareoptions.APSReqGlobalVariableOption;
+import apssoftwareoptions.APSReqIECInterfaceOption;
+import apssoftwareoptions.APSReqIECMethodOption;
+import apssoftwareoptions.APSReqIECPropertyOption;
+import apssoftwareoptions.APSReqProgramOption;
 import apssoftwareoptions.ApssoftwareoptionsFactory;
 import apssoftwareoptions.ApssoftwareoptionsPackage;
-import apssoftwareoptions.IECComponentType;
-
+import edu.kit.ipd.sdq.kamp4iec.model.IECModel.IECModelPackage;
 import edu.kit.ipd.sdq.kamp4iec.model.IECRepository.IECRepositoryPackage;
-
-import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -31,14 +36,70 @@ public class ApssoftwareoptionsPackageImpl extends EPackageImpl implements Apsso
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass apsReqSoftwareOptionEClass = null;
+	private EClass apsReqProgramOptionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum iecComponentTypeEEnum = null;
+	private EClass apsReqFunctionOptionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass apsReqFunctionBlockOptionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass apsReqConfigurationOptionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass apsReqIECMethodOptionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass apsReqGlobalVariableOptionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass apsReqIECPropertyOptionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass apsReqIECInterfaceOptionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass apsReqAbstractMethodOptionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass apsReqAbstractPropertyOptionEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -88,7 +149,7 @@ public class ApssoftwareoptionsPackageImpl extends EPackageImpl implements Apsso
 
 		// Initialize simple dependencies
 		ApsoptionsPackage.eINSTANCE.eClass();
-		IECRepositoryPackage.eINSTANCE.eClass();
+		IECModelPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theApssoftwareoptionsPackage.createPackageContents();
@@ -110,8 +171,8 @@ public class ApssoftwareoptionsPackageImpl extends EPackageImpl implements Apsso
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getAPSReqSoftwareOption() {
-		return apsReqSoftwareOptionEClass;
+	public EClass getAPSReqProgramOption() {
+		return apsReqProgramOptionEClass;
 	}
 
 	/**
@@ -119,8 +180,8 @@ public class ApssoftwareoptionsPackageImpl extends EPackageImpl implements Apsso
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAPSReqSoftwareOption_IecComponents() {
-		return (EReference)apsReqSoftwareOptionEClass.getEStructuralFeatures().get(0);
+	public EReference getAPSReqProgramOption_Program() {
+		return (EReference)apsReqProgramOptionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -128,8 +189,8 @@ public class ApssoftwareoptionsPackageImpl extends EPackageImpl implements Apsso
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAPSReqSoftwareOption_IecComponentType() {
-		return (EAttribute)apsReqSoftwareOptionEClass.getEStructuralFeatures().get(1);
+	public EClass getAPSReqFunctionOption() {
+		return apsReqFunctionOptionEClass;
 	}
 
 	/**
@@ -137,8 +198,152 @@ public class ApssoftwareoptionsPackageImpl extends EPackageImpl implements Apsso
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EEnum getIECComponentType() {
-		return iecComponentTypeEEnum;
+	public EReference getAPSReqFunctionOption_Functions() {
+		return (EReference)apsReqFunctionOptionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAPSReqFunctionBlockOption() {
+		return apsReqFunctionBlockOptionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAPSReqFunctionBlockOption_FunctionBlocks() {
+		return (EReference)apsReqFunctionBlockOptionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAPSReqConfigurationOption() {
+		return apsReqConfigurationOptionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAPSReqConfigurationOption_Configuration() {
+		return (EReference)apsReqConfigurationOptionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAPSReqIECMethodOption() {
+		return apsReqIECMethodOptionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAPSReqIECMethodOption_IecMethods() {
+		return (EReference)apsReqIECMethodOptionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAPSReqGlobalVariableOption() {
+		return apsReqGlobalVariableOptionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAPSReqGlobalVariableOption_GlobalVariables() {
+		return (EReference)apsReqGlobalVariableOptionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAPSReqIECPropertyOption() {
+		return apsReqIECPropertyOptionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAPSReqIECPropertyOption_IecProperties() {
+		return (EReference)apsReqIECPropertyOptionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAPSReqIECInterfaceOption() {
+		return apsReqIECInterfaceOptionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAPSReqIECInterfaceOption_IecInterfaces() {
+		return (EReference)apsReqIECInterfaceOptionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAPSReqAbstractMethodOption() {
+		return apsReqAbstractMethodOptionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAPSReqAbstractMethodOption_AbstractMethods() {
+		return (EReference)apsReqAbstractMethodOptionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAPSReqAbstractPropertyOption() {
+		return apsReqAbstractPropertyOptionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAPSReqAbstractPropertyOption_AbstractProperties() {
+		return (EReference)apsReqAbstractPropertyOptionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -169,12 +374,35 @@ public class ApssoftwareoptionsPackageImpl extends EPackageImpl implements Apsso
 		isCreated = true;
 
 		// Create classes and their features
-		apsReqSoftwareOptionEClass = createEClass(APS_REQ_SOFTWARE_OPTION);
-		createEReference(apsReqSoftwareOptionEClass, APS_REQ_SOFTWARE_OPTION__IEC_COMPONENTS);
-		createEAttribute(apsReqSoftwareOptionEClass, APS_REQ_SOFTWARE_OPTION__IEC_COMPONENT_TYPE);
+		apsReqProgramOptionEClass = createEClass(APS_REQ_PROGRAM_OPTION);
+		createEReference(apsReqProgramOptionEClass, APS_REQ_PROGRAM_OPTION__PROGRAM);
 
-		// Create enums
-		iecComponentTypeEEnum = createEEnum(IEC_COMPONENT_TYPE);
+		apsReqFunctionOptionEClass = createEClass(APS_REQ_FUNCTION_OPTION);
+		createEReference(apsReqFunctionOptionEClass, APS_REQ_FUNCTION_OPTION__FUNCTIONS);
+
+		apsReqFunctionBlockOptionEClass = createEClass(APS_REQ_FUNCTION_BLOCK_OPTION);
+		createEReference(apsReqFunctionBlockOptionEClass, APS_REQ_FUNCTION_BLOCK_OPTION__FUNCTION_BLOCKS);
+
+		apsReqConfigurationOptionEClass = createEClass(APS_REQ_CONFIGURATION_OPTION);
+		createEReference(apsReqConfigurationOptionEClass, APS_REQ_CONFIGURATION_OPTION__CONFIGURATION);
+
+		apsReqIECMethodOptionEClass = createEClass(APS_REQ_IEC_METHOD_OPTION);
+		createEReference(apsReqIECMethodOptionEClass, APS_REQ_IEC_METHOD_OPTION__IEC_METHODS);
+
+		apsReqGlobalVariableOptionEClass = createEClass(APS_REQ_GLOBAL_VARIABLE_OPTION);
+		createEReference(apsReqGlobalVariableOptionEClass, APS_REQ_GLOBAL_VARIABLE_OPTION__GLOBAL_VARIABLES);
+
+		apsReqIECPropertyOptionEClass = createEClass(APS_REQ_IEC_PROPERTY_OPTION);
+		createEReference(apsReqIECPropertyOptionEClass, APS_REQ_IEC_PROPERTY_OPTION__IEC_PROPERTIES);
+
+		apsReqIECInterfaceOptionEClass = createEClass(APS_REQ_IEC_INTERFACE_OPTION);
+		createEReference(apsReqIECInterfaceOptionEClass, APS_REQ_IEC_INTERFACE_OPTION__IEC_INTERFACES);
+
+		apsReqAbstractMethodOptionEClass = createEClass(APS_REQ_ABSTRACT_METHOD_OPTION);
+		createEReference(apsReqAbstractMethodOptionEClass, APS_REQ_ABSTRACT_METHOD_OPTION__ABSTRACT_METHODS);
+
+		apsReqAbstractPropertyOptionEClass = createEClass(APS_REQ_ABSTRACT_PROPERTY_OPTION);
+		createEReference(apsReqAbstractPropertyOptionEClass, APS_REQ_ABSTRACT_PROPERTY_OPTION__ABSTRACT_PROPERTIES);
 	}
 
 	/**
@@ -202,6 +430,7 @@ public class ApssoftwareoptionsPackageImpl extends EPackageImpl implements Apsso
 
 		// Obtain other dependent packages
 		ApsoptionsPackage theApsoptionsPackage = (ApsoptionsPackage)EPackage.Registry.INSTANCE.getEPackage(ApsoptionsPackage.eNS_URI);
+		IECModelPackage theIECModelPackage = (IECModelPackage)EPackage.Registry.INSTANCE.getEPackage(IECModelPackage.eNS_URI);
 		IECRepositoryPackage theIECRepositoryPackage = (IECRepositoryPackage)EPackage.Registry.INSTANCE.getEPackage(IECRepositoryPackage.eNS_URI);
 
 		// Create type parameters
@@ -209,25 +438,47 @@ public class ApssoftwareoptionsPackageImpl extends EPackageImpl implements Apsso
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		apsReqSoftwareOptionEClass.getESuperTypes().add(theApsoptionsPackage.getAPSReqOption());
+		apsReqProgramOptionEClass.getESuperTypes().add(theApsoptionsPackage.getAPSReqOption());
+		apsReqFunctionOptionEClass.getESuperTypes().add(theApsoptionsPackage.getAPSReqOption());
+		apsReqFunctionBlockOptionEClass.getESuperTypes().add(theApsoptionsPackage.getAPSReqOption());
+		apsReqConfigurationOptionEClass.getESuperTypes().add(theApsoptionsPackage.getAPSReqOption());
+		apsReqIECMethodOptionEClass.getESuperTypes().add(theApsoptionsPackage.getAPSReqOption());
+		apsReqGlobalVariableOptionEClass.getESuperTypes().add(theApsoptionsPackage.getAPSReqOption());
+		apsReqIECPropertyOptionEClass.getESuperTypes().add(theApsoptionsPackage.getAPSReqOption());
+		apsReqIECInterfaceOptionEClass.getESuperTypes().add(theApsoptionsPackage.getAPSReqOption());
+		apsReqAbstractMethodOptionEClass.getESuperTypes().add(theApsoptionsPackage.getAPSReqOption());
+		apsReqAbstractPropertyOptionEClass.getESuperTypes().add(theApsoptionsPackage.getAPSReqOption());
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(apsReqSoftwareOptionEClass, APSReqSoftwareOption.class, "APSReqSoftwareOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAPSReqSoftwareOption_IecComponents(), theIECRepositoryPackage.getIECComponent(), null, "iecComponents", null, 0, -1, APSReqSoftwareOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAPSReqSoftwareOption_IecComponentType(), this.getIECComponentType(), "iecComponentType", null, 1, 1, APSReqSoftwareOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(apsReqProgramOptionEClass, APSReqProgramOption.class, "APSReqProgramOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAPSReqProgramOption_Program(), theIECModelPackage.getProgram(), null, "program", null, 0, 1, APSReqProgramOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		// Initialize enums and add enum literals
-		initEEnum(iecComponentTypeEEnum, IECComponentType.class, "IECComponentType");
-		addEEnumLiteral(iecComponentTypeEEnum, IECComponentType.PROGRAM);
-		addEEnumLiteral(iecComponentTypeEEnum, IECComponentType.CONFIGURATION);
-		addEEnumLiteral(iecComponentTypeEEnum, IECComponentType.FUNCTION_BLOCK);
-		addEEnumLiteral(iecComponentTypeEEnum, IECComponentType.FUNCTION);
-		addEEnumLiteral(iecComponentTypeEEnum, IECComponentType.GLOBAL_VARIABLE);
-		addEEnumLiteral(iecComponentTypeEEnum, IECComponentType.INTERFACE);
-		addEEnumLiteral(iecComponentTypeEEnum, IECComponentType.METHOD);
-		addEEnumLiteral(iecComponentTypeEEnum, IECComponentType.ABSTRACT_METHOD);
-		addEEnumLiteral(iecComponentTypeEEnum, IECComponentType.PROPERTY);
-		addEEnumLiteral(iecComponentTypeEEnum, IECComponentType.ABSTRACT_PROPERTY);
+		initEClass(apsReqFunctionOptionEClass, APSReqFunctionOption.class, "APSReqFunctionOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAPSReqFunctionOption_Functions(), theIECRepositoryPackage.getFunction(), null, "functions", null, 0, -1, APSReqFunctionOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(apsReqFunctionBlockOptionEClass, APSReqFunctionBlockOption.class, "APSReqFunctionBlockOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAPSReqFunctionBlockOption_FunctionBlocks(), theIECRepositoryPackage.getFunctionBlock(), null, "functionBlocks", null, 0, -1, APSReqFunctionBlockOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(apsReqConfigurationOptionEClass, APSReqConfigurationOption.class, "APSReqConfigurationOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAPSReqConfigurationOption_Configuration(), theIECModelPackage.getConfiguration(), null, "configuration", null, 0, 1, APSReqConfigurationOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(apsReqIECMethodOptionEClass, APSReqIECMethodOption.class, "APSReqIECMethodOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAPSReqIECMethodOption_IecMethods(), theIECRepositoryPackage.getIECMethod(), null, "iecMethods", null, 0, -1, APSReqIECMethodOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(apsReqGlobalVariableOptionEClass, APSReqGlobalVariableOption.class, "APSReqGlobalVariableOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAPSReqGlobalVariableOption_GlobalVariables(), theIECRepositoryPackage.getGlobalVariable(), null, "globalVariables", null, 0, -1, APSReqGlobalVariableOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(apsReqIECPropertyOptionEClass, APSReqIECPropertyOption.class, "APSReqIECPropertyOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAPSReqIECPropertyOption_IecProperties(), theIECRepositoryPackage.getIsProperty(), null, "iecProperties", null, 0, -1, APSReqIECPropertyOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(apsReqIECInterfaceOptionEClass, APSReqIECInterfaceOption.class, "APSReqIECInterfaceOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAPSReqIECInterfaceOption_IecInterfaces(), theIECRepositoryPackage.getIECInterface(), null, "iecInterfaces", null, 0, -1, APSReqIECInterfaceOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(apsReqAbstractMethodOptionEClass, APSReqAbstractMethodOption.class, "APSReqAbstractMethodOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAPSReqAbstractMethodOption_AbstractMethods(), theIECRepositoryPackage.getIECAbstractMethod(), null, "abstractMethods", null, 0, -1, APSReqAbstractMethodOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(apsReqAbstractPropertyOptionEClass, APSReqAbstractPropertyOption.class, "APSReqAbstractPropertyOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAPSReqAbstractPropertyOption_AbstractProperties(), theIECRepositoryPackage.getIECAbstractProperty(), null, "abstractProperties", null, 0, -1, APSReqAbstractPropertyOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

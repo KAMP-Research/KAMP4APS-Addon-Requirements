@@ -2,8 +2,8 @@
  */
 package edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software;
 
-import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqSeedModifications;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.AbstractKAMP4aPS4ReqModificationRepository;
+import edu.kit.ipd.sdq.kamp4iec.model.IECModificationmarks.AbstractKAMP4IECModificationRepository;
 
 /**
  * <!-- begin-user-doc -->
@@ -15,5 +15,5 @@ import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.AbstractKAMP4aPS4Req
  * @model
  * @generated
  */
-public interface APSReqSoftwareModificationRepository extends AbstractKAMP4aPS4ReqModificationRepository<APSReqSeedModifications<edu.kit.ipd.sdq.kamp4iec.model.IECModificationmarks.IECSeedModifications>> {
+public interface APSReqSoftwareModificationRepository extends AbstractKAMP4IECModificationRepository<APSReqSoftwareSeedModifications>, AbstractKAMP4aPS4ReqModificationRepository<APSReqSoftwareSeedModifications> {
 } // APSReqSoftwareModificationRepository

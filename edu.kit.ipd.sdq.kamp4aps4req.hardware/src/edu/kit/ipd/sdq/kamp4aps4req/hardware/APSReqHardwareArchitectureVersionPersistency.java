@@ -5,7 +5,6 @@ import org.eclipse.core.resources.IFile;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 
-import edu.kit.ipd.sdq.kamp.architecture.AbstractArchitectureVersionPersistency;
 import edu.kit.ipd.sdq.kamp.util.FileAndFolderManagement;
 import edu.kit.ipd.sdq.kamp4aps.core.APSArchitectureVersionPersistency;
 import edu.kit.ipd.sdq.kamp4aps.model.DeploymentContext.DeploymentContextRepository;
@@ -24,11 +23,7 @@ import options.OptionRepository;
  * @author Timo Maier
  *
  */
-public class APSReqHardwareArchitectureVersionPersistency extends AbstractArchitectureVersionPersistency<APSReqHardwareArchitectureVersion> {
-
-	// TODO: Replace with KAMP modmark
-	//public static final String FILEEXTENSION_MODIFICATIONMARK = "modificationmarks_hardware";
-	
+public class APSReqHardwareArchitectureVersionPersistency extends AbstractAPSReqArchitectureVersionPersistency<APSReqHardwareArchitectureVersion> {
 	
 	@Override
 	public APSReqHardwareArchitectureVersion load(String folderpath, String filename, String versionname) {
@@ -115,34 +110,6 @@ public class APSReqHardwareArchitectureVersionPersistency extends AbstractArchit
 	public void save(String targetDirectoryPath, String filename, APSReqHardwareArchitectureVersion version) {
 		APSArchitectureVersionPersistency.savePCMAndKAMP4APSModels(targetDirectoryPath, filename, version);
 		saveAPSReqModels(targetDirectoryPath, filename, version);
-	}
-	
-	/**
-	 * Saves the APS Req related models to a file
-	 * @param targetDirectoryPath Path of file to save to
-	 * @param filename Filename
-	 * @param version Architecture version to save
-	 */
-	public static void saveAPSReqModels(String targetDirectoryPath, String filename, APSReqHardwareArchitectureVersion version) {
-		ResourceSet resourceSet = new ResourceSetImpl();
-		
-		String requirementsFilePath = filename + "." + AbstractAPSReqArchitectureVersionPersistency.FILEEXTENSION_REQUIREMENTS;
-		String decisionsFilePath = filename + "." + AbstractAPSReqArchitectureVersionPersistency.FILEEXTENSION_DECISIONS;
-		String optionsFilePath = filename + "." + AbstractAPSReqArchitectureVersionPersistency.FILEEXTENSION_OPTIONS;
-		//String modificationMarksFilePath = filename + "." + FILEEXTENSION_MODIFICATIONMARK;
-		
-		if (version.getRequirementsRepository() != null) {
-			saveEmfModelToResource(version.getRequirementsRepository(), targetDirectoryPath, requirementsFilePath, resourceSet);
-		}
-		if (version.getDecisionRepository() != null) {
-			saveEmfModelToResource(version.getDecisionRepository(), targetDirectoryPath, decisionsFilePath, resourceSet);
-		}
-		if (version.getOptionRepository() != null) {
-			saveEmfModelToResource(version.getOptionRepository(), targetDirectoryPath, optionsFilePath, resourceSet);
-		}
-//		if (version.getModificationMarkRepository() != null) {
-//			saveEmfModelToResource(version.getModificationMarkRepository(), targetDirectoryPath, modificationMarksFilePath, resourceSet);
-//		}
 	}
 	
 }

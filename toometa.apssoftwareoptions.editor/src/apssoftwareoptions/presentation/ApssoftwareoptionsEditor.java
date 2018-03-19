@@ -157,9 +157,6 @@ import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 import apssoftwareoptions.provider.ApssoftwareoptionsItemProviderAdapterFactory;
 
 import apsoptions.provider.ApsoptionsItemProviderAdapterFactory;
-
-import archoptions.provider.ArchoptionsItemProviderAdapterFactory;
-
 import de.uka.ipd.sdq.dsexplore.qml.dimensions.provider.DimensionsItemProviderAdapterFactory;
 
 import de.uka.ipd.sdq.dsexplore.qml.dimensiontypes.provider.DimensiontypesItemProviderAdapterFactory;
@@ -168,6 +165,7 @@ import de.uka.ipd.sdq.dsexplore.qml.units.provider.UnitsItemProviderAdapterFacto
 
 import de.uka.ipd.sdq.identifier.provider.IdentifierItemProviderAdapterFactory;
 
+import edu.kit.ipd.sdq.kamp4iec.model.IECModel.provider.IECModelItemProviderAdapterFactory;
 import edu.kit.ipd.sdq.kamp4iec.model.IECRepository.provider.IECRepositoryItemProviderAdapterFactory;
 
 import effects.provider.EffectsItemProviderAdapterFactory;
@@ -729,12 +727,12 @@ public class ApssoftwareoptionsEditor
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ApssoftwareoptionsItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ApsoptionsItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new ArchoptionsItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new DimensionsItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new DimensiontypesItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new EffectsItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new GlossaryItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new IdentifierItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new IECModelItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new IECRepositoryItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new NamedelementItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new OptionsItemProviderAdapterFactory());

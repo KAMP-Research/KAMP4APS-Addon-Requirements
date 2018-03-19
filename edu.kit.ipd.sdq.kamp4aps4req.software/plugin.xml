@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+         <objectContribution
+            adaptable="true"
+            id="edu.kit.ipd.sdq.kamp4apsreq.hardware.ui.CreateSubalternativeContribution"
+            objectClass="org.eclipse.core.resources.IContainer">
+         <menu
+               icon="../edu.kit.ipd.sdq.kamp/icons/edit.png"
+               id="edu.kit.ipd.sdq.kamp4aps4req.hardware.menukamp"
+               label="KAMP4aPS4Req Analysis">
+         </menu>
+         <action
+               class="edu.kit.ipd.sdq.kamp4aps4req.hardware.ui.APSReqHardwareCreateEmptyBaseModelAction"
+               icon="../edu.kit.ipd.sdq.kamp/icons/filenew.png"
+               id="edu.kit.ipd.sdq.kamp4aps4req.hardware.ui.APSReqHardwareCreateEmptyBaseModelActionID"
+               label="Create empty KAMP4aPS4Req architecture"
+               menubarPath="kamp4aps4req">
+         </action>
+         <action
+               class="edu.kit.ipd.sdq.kamp4aps4req.hardware.ui.APSReqDeriveWorkplanAction"
+               icon="../edu.kit.ipd.sdq.kamp/icons/run.png"
+               id="edu.kit.ipd.sdq.kamp4aps4req.hardware.ui.APSReqHardwareDeriveWorkplanActionID"
+               label="Derive KAMP4aPS4Req workplan"
+               menubarPath="kamp4aps4req">
+         </action>
+      </objectContribution>
+   </extension>
+
+</plugin>

@@ -40,5 +40,4 @@ Bundle-ActivationPolicy: lazy
 Import-Package: edu.kit.ipd.sdq.kamp.architecture,
  edu.kit.ipd.sdq.kamp.model.modificationmarks.editor,
  edu.kit.ipd.sdq.kamp.propagation,
- edu.kit.ipd.sdq.kamp4aps4req.core,
- edu.kit.ipd.sdq.kamp4req.core
+ edu.kit.ipd.sdq.kamp4aps4req.core

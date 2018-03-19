@@ -5,7 +5,7 @@ package apssoftwareoptions.provider;
 
 import apsoptions.provider.APSReqOptionItemProvider;
 
-import apssoftwareoptions.APSReqSoftwareOption;
+import apssoftwareoptions.APSReqGlobalVariableOption;
 import apssoftwareoptions.ApssoftwareoptionsPackage;
 
 import java.util.Collection;
@@ -18,23 +18,21 @@ import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link apssoftwareoptions.APSReqSoftwareOption} object.
+ * This is the item provider adapter for a {@link apssoftwareoptions.APSReqGlobalVariableOption} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class APSReqSoftwareOptionItemProvider extends APSReqOptionItemProvider {
+public class APSReqGlobalVariableOptionItemProvider extends APSReqOptionItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public APSReqSoftwareOptionItemProvider(AdapterFactory adapterFactory) {
+	public APSReqGlobalVariableOptionItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -49,26 +47,25 @@ public class APSReqSoftwareOptionItemProvider extends APSReqOptionItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addIecComponentsPropertyDescriptor(object);
-			addIecComponentTypePropertyDescriptor(object);
+			addGlobalVariablesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Iec Components feature.
+	 * This adds a property descriptor for the Global Variables feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addIecComponentsPropertyDescriptor(Object object) {
+	protected void addGlobalVariablesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_APSReqSoftwareOption_iecComponents_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_APSReqSoftwareOption_iecComponents_feature", "_UI_APSReqSoftwareOption_type"),
-				 ApssoftwareoptionsPackage.Literals.APS_REQ_SOFTWARE_OPTION__IEC_COMPONENTS,
+				 getString("_UI_APSReqGlobalVariableOption_globalVariables_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_APSReqGlobalVariableOption_globalVariables_feature", "_UI_APSReqGlobalVariableOption_type"),
+				 ApssoftwareoptionsPackage.Literals.APS_REQ_GLOBAL_VARIABLE_OPTION__GLOBAL_VARIABLES,
 				 true,
 				 false,
 				 true,
@@ -78,36 +75,14 @@ public class APSReqSoftwareOptionItemProvider extends APSReqOptionItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Iec Component Type feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIecComponentTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_APSReqSoftwareOption_iecComponentType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_APSReqSoftwareOption_iecComponentType_feature", "_UI_APSReqSoftwareOption_type"),
-				 ApssoftwareoptionsPackage.Literals.APS_REQ_SOFTWARE_OPTION__IEC_COMPONENT_TYPE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This returns APSReqSoftwareOption.gif.
+	 * This returns APSReqGlobalVariableOption.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/APSReqSoftwareOption"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/APSReqGlobalVariableOption"));
 	}
 
 	/**
@@ -118,10 +93,10 @@ public class APSReqSoftwareOptionItemProvider extends APSReqOptionItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((APSReqSoftwareOption)object).getId();
+		String label = ((APSReqGlobalVariableOption)object).getId();
 		return label == null || label.length() == 0 ?
-			getString("_UI_APSReqSoftwareOption_type") :
-			getString("_UI_APSReqSoftwareOption_type") + " " + label;
+			getString("_UI_APSReqGlobalVariableOption_type") :
+			getString("_UI_APSReqGlobalVariableOption_type") + " " + label;
 	}
 	
 
@@ -135,12 +110,6 @@ public class APSReqSoftwareOptionItemProvider extends APSReqOptionItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(APSReqSoftwareOption.class)) {
-			case ApssoftwareoptionsPackage.APS_REQ_SOFTWARE_OPTION__IEC_COMPONENT_TYPE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-		}
 		super.notifyChanged(notification);
 	}
 

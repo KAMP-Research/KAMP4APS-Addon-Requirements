@@ -14,7 +14,7 @@ import requirements.ReqRepository;
 import requirements.RequirementsFactory;
 
 /**
- * 
+ * Hardware Architecture Version enhancing APS Architecture Version
  * @author Timo Maier
  *
  */

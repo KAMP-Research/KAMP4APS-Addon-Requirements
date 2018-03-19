@@ -69,10 +69,11 @@ import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.ISetSelectionTarget;
 
+import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.APSReqSoftwareModificationRepository;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.Modificationmarks_softwareFactory;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.Modificationmarks_softwarePackage;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.provider.Modificationmarks_softwareEditPlugin;
-
+import edu.kit.ipd.sdq.kamp4aps4req.software.APSReqSoftwareArchitectureModelFactoryFacade;
 
 import org.eclipse.core.runtime.Path;
 
@@ -205,19 +206,20 @@ public class Modificationmarks_softwareModelWizard extends Wizard implements INe
 	 * Create a new model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected EObject createInitialModel() {
-		EClass eClass = (EClass)modificationmarks_softwarePackage.getEClassifier(initialObjectCreationPage.getInitialObjectName());
-		EObject rootObject = modificationmarks_softwareFactory.create(eClass);
-		return rootObject;
+		// --Start manually modified code
+		APSReqSoftwareModificationRepository repository = APSReqSoftwareArchitectureModelFactoryFacade.createModificationRepository();
+		return repository;
+		// --End manually modified code
 	}
 
 	/**
 	 * Do the work after everything is specified.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public boolean performFinish() {
@@ -255,7 +257,9 @@ public class Modificationmarks_softwareModelWizard extends Wizard implements INe
 							// Save the contents of the resource to the file system.
 							//
 							Map<Object, Object> options = new HashMap<Object, Object>();
-							options.put(XMLResource.OPTION_ENCODING, initialObjectCreationPage.getEncoding());
+							// --Start manually modified code
+							options.put(XMLResource.OPTION_ENCODING, "UTF-8");
+							// --End manually modified code
 							resource.save(options);
 						}
 						catch (Exception exception) {
@@ -563,7 +567,7 @@ public class Modificationmarks_softwareModelWizard extends Wizard implements INe
 	 * The framework calls this to create the contents of the wizard.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 		@Override
 	public void addPages() {
@@ -608,10 +612,12 @@ public class Modificationmarks_softwareModelWizard extends Wizard implements INe
 				}
 			}
 		}
-		initialObjectCreationPage = new Modificationmarks_softwareModelWizardInitialObjectCreationPage("Whatever2");
-		initialObjectCreationPage.setTitle(Modificationmarks_softwareEditorPlugin.INSTANCE.getString("_UI_Modificationmarks_softwareModelWizard_label"));
-		initialObjectCreationPage.setDescription(Modificationmarks_softwareEditorPlugin.INSTANCE.getString("_UI_Wizard_initial_object_description"));
-		addPage(initialObjectCreationPage);
+		// --Start manually commented out code
+//		initialObjectCreationPage = new Modificationmarks_softwareModelWizardInitialObjectCreationPage("Whatever2");
+//		initialObjectCreationPage.setTitle(Modificationmarks_softwareEditorPlugin.INSTANCE.getString("_UI_Modificationmarks_softwareModelWizard_label"));
+//		initialObjectCreationPage.setDescription(Modificationmarks_softwareEditorPlugin.INSTANCE.getString("_UI_Wizard_initial_object_description"));
+//		addPage(initialObjectCreationPage);
+		// --End manually commented out code
 	}
 
 	/**

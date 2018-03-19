@@ -52,6 +52,7 @@
                    label="Step 3: Calculate APSReq change propagation"
                    menubarPath="edit">
              </action>
+             <enablement></enablement>
           </objectContribution>
-       </extension>
+     </extension>
 </plugin>
