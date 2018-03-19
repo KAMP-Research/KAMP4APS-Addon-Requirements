@@ -18,7 +18,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="APSReqIECMethodOption" eSuperTypes="../../toometa.apsoptions/model/apsoptions.ecore#//APSReqOption">
     <eStructuralFeatures xsi:type="ecore:EReference" name="iecMethods" upperBound="-1"
-        eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4iec.model.repo/model/IECRepository.ecore#//IECMethod"/>
+        eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4iec.model.repo/model/IECRepository.ecore#//IsMethod"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="APSReqGlobalVariableOption" eSuperTypes="../../toometa.apsoptions/model/apsoptions.ecore#//APSReqOption">
     <eStructuralFeatures xsi:type="ecore:EReference" name="globalVariables" upperBound="-1"
@@ -31,13 +31,5 @@
   <eClassifiers xsi:type="ecore:EClass" name="APSReqIECInterfaceOption" eSuperTypes="../../toometa.apsoptions/model/apsoptions.ecore#//APSReqOption">
     <eStructuralFeatures xsi:type="ecore:EReference" name="iecInterfaces" upperBound="-1"
         eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4iec.model.repo/model/IECRepository.ecore#//IECInterface"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="APSReqAbstractMethodOption" eSuperTypes="../../toometa.apsoptions/model/apsoptions.ecore#//APSReqOption">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="abstractMethods" upperBound="-1"
-        eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4iec.model.repo/model/IECRepository.ecore#//IECAbstractMethod"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="APSReqAbstractPropertyOption" eSuperTypes="../../toometa.apsoptions/model/apsoptions.ecore#//APSReqOption">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="abstractProperties" upperBound="-1"
-        eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4iec.model.repo/model/IECRepository.ecore#//IECAbstractProperty"/>
   </eClassifiers>
 </ecore:EPackage>

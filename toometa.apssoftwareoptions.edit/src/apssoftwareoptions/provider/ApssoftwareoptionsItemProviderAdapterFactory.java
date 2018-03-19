@@ -278,52 +278,6 @@ public class ApssoftwareoptionsItemProviderAdapterFactory extends Apssoftwareopt
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link apssoftwareoptions.APSReqAbstractMethodOption} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected APSReqAbstractMethodOptionItemProvider apsReqAbstractMethodOptionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link apssoftwareoptions.APSReqAbstractMethodOption}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createAPSReqAbstractMethodOptionAdapter() {
-		if (apsReqAbstractMethodOptionItemProvider == null) {
-			apsReqAbstractMethodOptionItemProvider = new APSReqAbstractMethodOptionItemProvider(this);
-		}
-
-		return apsReqAbstractMethodOptionItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link apssoftwareoptions.APSReqAbstractPropertyOption} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected APSReqAbstractPropertyOptionItemProvider apsReqAbstractPropertyOptionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link apssoftwareoptions.APSReqAbstractPropertyOption}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createAPSReqAbstractPropertyOptionAdapter() {
-		if (apsReqAbstractPropertyOptionItemProvider == null) {
-			apsReqAbstractPropertyOptionItemProvider = new APSReqAbstractPropertyOptionItemProvider(this);
-		}
-
-		return apsReqAbstractPropertyOptionItemProvider;
-	}
-
-	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -430,8 +384,6 @@ public class ApssoftwareoptionsItemProviderAdapterFactory extends Apssoftwareopt
 		if (apsReqGlobalVariableOptionItemProvider != null) apsReqGlobalVariableOptionItemProvider.dispose();
 		if (apsReqIECPropertyOptionItemProvider != null) apsReqIECPropertyOptionItemProvider.dispose();
 		if (apsReqIECInterfaceOptionItemProvider != null) apsReqIECInterfaceOptionItemProvider.dispose();
-		if (apsReqAbstractMethodOptionItemProvider != null) apsReqAbstractMethodOptionItemProvider.dispose();
-		if (apsReqAbstractPropertyOptionItemProvider != null) apsReqAbstractPropertyOptionItemProvider.dispose();
 	}
 
 	/**
@@ -520,16 +472,6 @@ public class ApssoftwareoptionsItemProviderAdapterFactory extends Apssoftwareopt
 					(createChildParameter
 						(DimensiontypesPackage.Literals.DIMENSION_TYPE_SCALE__SCALE_ELEMENTS,
 						 ApssoftwareoptionsFactory.eINSTANCE.createAPSReqIECInterfaceOption()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(DimensiontypesPackage.Literals.DIMENSION_TYPE_SCALE__SCALE_ELEMENTS,
-						 ApssoftwareoptionsFactory.eINSTANCE.createAPSReqAbstractMethodOption()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(DimensiontypesPackage.Literals.DIMENSION_TYPE_SCALE__SCALE_ELEMENTS,
-						 ApssoftwareoptionsFactory.eINSTANCE.createAPSReqAbstractPropertyOption()));
 
 				return null;
 			}
@@ -652,16 +594,6 @@ public class ApssoftwareoptionsItemProviderAdapterFactory extends Apssoftwareopt
 					(createChildParameter
 						(OptionsPackage.Literals.OPTION_REPOSITORY__OPTIONS,
 						 ApssoftwareoptionsFactory.eINSTANCE.createAPSReqIECInterfaceOption()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(OptionsPackage.Literals.OPTION_REPOSITORY__OPTIONS,
-						 ApssoftwareoptionsFactory.eINSTANCE.createAPSReqAbstractMethodOption()));
-
-				newChildDescriptors.add
-					(createChildParameter
-						(OptionsPackage.Literals.OPTION_REPOSITORY__OPTIONS,
-						 ApssoftwareoptionsFactory.eINSTANCE.createAPSReqAbstractPropertyOption()));
 
 				return null;
 			}

@@ -19,11 +19,9 @@
       <genTypeParameters ecoreTypeParameter="modificationmarks.ecore#//AbstractKAMP4aPS4ReqModificationRepository/T"/>
     </genClasses>
     <genClasses image="false" ecoreClass="modificationmarks.ecore#//APSReqSeedModifications">
-      <genTypeParameters ecoreTypeParameter="modificationmarks.ecore#//APSReqSeedModifications/T"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modificationmarks.ecore#//APSReqSeedModifications/requirementModifications"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modificationmarks.ecore#//APSReqSeedModifications/decisionModifications"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modificationmarks.ecore#//APSReqSeedModifications/optionModifications"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modificationmarks.ecore#//APSReqSeedModifications/apsiecSeedModifications"/>
     </genClasses>
     <genClasses image="false" ecoreClass="modificationmarks.ecore#//AbstractAPSReqChangePropagationDueToSpecificationDependencies">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference modificationmarks.ecore#//AbstractAPSReqChangePropagationDueToSpecificationDependencies/decisionModifications"/>

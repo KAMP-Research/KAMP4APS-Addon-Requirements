@@ -119,14 +119,6 @@ public class ApssoftwareoptionsAdapterFactory extends AdapterFactoryImpl {
 				return createAPSReqIECInterfaceOptionAdapter();
 			}
 			@Override
-			public Adapter caseAPSReqAbstractMethodOption(APSReqAbstractMethodOption object) {
-				return createAPSReqAbstractMethodOptionAdapter();
-			}
-			@Override
-			public Adapter caseAPSReqAbstractPropertyOption(APSReqAbstractPropertyOption object) {
-				return createAPSReqAbstractPropertyOptionAdapter();
-			}
-			@Override
 			public Adapter caseIdentifier(Identifier object) {
 				return createIdentifierAdapter();
 			}
@@ -315,34 +307,6 @@ public class ApssoftwareoptionsAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAPSReqIECInterfaceOptionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link apssoftwareoptions.APSReqAbstractMethodOption <em>APS Req Abstract Method Option</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see apssoftwareoptions.APSReqAbstractMethodOption
-	 * @generated
-	 */
-	public Adapter createAPSReqAbstractMethodOptionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link apssoftwareoptions.APSReqAbstractPropertyOption <em>APS Req Abstract Property Option</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see apssoftwareoptions.APSReqAbstractPropertyOption
-	 * @generated
-	 */
-	public Adapter createAPSReqAbstractPropertyOptionAdapter() {
 		return null;
 	}
 

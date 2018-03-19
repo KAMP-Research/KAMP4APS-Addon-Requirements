@@ -5,6 +5,8 @@ package edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.provider;
 
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.provider.AbstractAPSReqChangePropagationDueToSpecificationDependenciesItemProvider;
 
+import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.APSReqSoftwareChangePropagationDueToSpecificationDependencies;
+import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.Modificationmarks_softwareFactory;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.Modificationmarks_softwarePackage;
 import java.util.Collection;
 import java.util.List;
@@ -14,8 +16,10 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
  * This is the item provider adapter for a {@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.APSReqSoftwareChangePropagationDueToSpecificationDependencies} object.
@@ -55,7 +59,6 @@ public class APSReqSoftwareChangePropagationDueToSpecificationDependenciesItemPr
 			addIecMethodModificationsPropertyDescriptor(object);
 			addAbstractIECPropertyModificationsPropertyDescriptor(object);
 			addIecPropertyModificationsPropertyDescriptor(object);
-			addIecComponentModificationsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -281,25 +284,33 @@ public class APSReqSoftwareChangePropagationDueToSpecificationDependenciesItemPr
 	}
 
 	/**
-	 * This adds a property descriptor for the Iec Component Modifications feature.
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addIecComponentModificationsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_APSReqSoftwareChangePropagationDueToSpecificationDependencies_iecComponentModifications_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_APSReqSoftwareChangePropagationDueToSpecificationDependencies_iecComponentModifications_feature", "_UI_APSReqSoftwareChangePropagationDueToSpecificationDependencies_type"),
-				 Modificationmarks_softwarePackage.Literals.APS_REQ_SOFTWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__IEC_COMPONENT_MODIFICATIONS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(Modificationmarks_softwarePackage.Literals.APS_REQ_SOFTWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__IEC_COMPONENT_MODIFICATIONS);
+		}
+		return childrenFeatures;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
 	}
 
 	/**
@@ -335,6 +346,12 @@ public class APSReqSoftwareChangePropagationDueToSpecificationDependenciesItemPr
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(APSReqSoftwareChangePropagationDueToSpecificationDependencies.class)) {
+			case Modificationmarks_softwarePackage.APS_REQ_SOFTWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__IEC_COMPONENT_MODIFICATIONS:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 
@@ -348,6 +365,11 @@ public class APSReqSoftwareChangePropagationDueToSpecificationDependenciesItemPr
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(Modificationmarks_softwarePackage.Literals.APS_REQ_SOFTWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__IEC_COMPONENT_MODIFICATIONS,
+				 Modificationmarks_softwareFactory.eINSTANCE.createAPSReqModifyIECComponent()));
 	}
 
 	/**

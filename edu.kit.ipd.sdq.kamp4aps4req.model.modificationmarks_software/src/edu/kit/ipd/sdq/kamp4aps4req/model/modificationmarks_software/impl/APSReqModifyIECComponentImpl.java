@@ -2,7 +2,7 @@
  */
 package edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.impl;
 
-import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.APSReqModifyComponent;
+import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.APSReqModifyIECComponent;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.Modificationmarks_softwarePackage;
 
 import edu.kit.ipd.sdq.kamp4iec.model.IECModificationmarks.impl.IECModifyComponentImpl;
@@ -13,18 +13,18 @@ import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>APS Req Modify Component</b></em>'.
+ * An implementation of the model object '<em><b>APS Req Modify IEC Component</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class APSReqModifyComponentImpl extends IECModifyComponentImpl<IECComponent> implements APSReqModifyComponent {
+public class APSReqModifyIECComponentImpl extends IECModifyComponentImpl<IECComponent> implements APSReqModifyIECComponent {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected APSReqModifyComponentImpl() {
+	protected APSReqModifyIECComponentImpl() {
 		super();
 	}
 
@@ -35,7 +35,7 @@ public class APSReqModifyComponentImpl extends IECModifyComponentImpl<IECCompone
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return Modificationmarks_softwarePackage.Literals.APS_REQ_MODIFY_COMPONENT;
+		return Modificationmarks_softwarePackage.Literals.APS_REQ_MODIFY_IEC_COMPONENT;
 	}
 
-} //APSReqModifyComponentImpl
+} //APSReqModifyIECComponentImpl

@@ -64,8 +64,6 @@ public class ApssoftwareoptionsFactoryImpl extends EFactoryImpl implements Apsso
 			case ApssoftwareoptionsPackage.APS_REQ_GLOBAL_VARIABLE_OPTION: return createAPSReqGlobalVariableOption();
 			case ApssoftwareoptionsPackage.APS_REQ_IEC_PROPERTY_OPTION: return createAPSReqIECPropertyOption();
 			case ApssoftwareoptionsPackage.APS_REQ_IEC_INTERFACE_OPTION: return createAPSReqIECInterfaceOption();
-			case ApssoftwareoptionsPackage.APS_REQ_ABSTRACT_METHOD_OPTION: return createAPSReqAbstractMethodOption();
-			case ApssoftwareoptionsPackage.APS_REQ_ABSTRACT_PROPERTY_OPTION: return createAPSReqAbstractPropertyOption();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -149,26 +147,6 @@ public class ApssoftwareoptionsFactoryImpl extends EFactoryImpl implements Apsso
 	public APSReqIECInterfaceOption createAPSReqIECInterfaceOption() {
 		APSReqIECInterfaceOptionImpl apsReqIECInterfaceOption = new APSReqIECInterfaceOptionImpl();
 		return apsReqIECInterfaceOption;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public APSReqAbstractMethodOption createAPSReqAbstractMethodOption() {
-		APSReqAbstractMethodOptionImpl apsReqAbstractMethodOption = new APSReqAbstractMethodOptionImpl();
-		return apsReqAbstractMethodOption;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public APSReqAbstractPropertyOption createAPSReqAbstractPropertyOption() {
-		APSReqAbstractPropertyOptionImpl apsReqAbstractPropertyOption = new APSReqAbstractPropertyOptionImpl();
-		return apsReqAbstractPropertyOption;
 	}
 
 	/**

@@ -3,9 +3,6 @@
 package apssoftwareoptions.impl;
 
 import apsoptions.ApsoptionsPackage;
-
-import apssoftwareoptions.APSReqAbstractMethodOption;
-import apssoftwareoptions.APSReqAbstractPropertyOption;
 import apssoftwareoptions.APSReqConfigurationOption;
 import apssoftwareoptions.APSReqFunctionBlockOption;
 import apssoftwareoptions.APSReqFunctionOption;
@@ -86,20 +83,6 @@ public class ApssoftwareoptionsPackageImpl extends EPackageImpl implements Apsso
 	 * @generated
 	 */
 	private EClass apsReqIECInterfaceOptionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass apsReqAbstractMethodOptionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass apsReqAbstractPropertyOptionEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -315,42 +298,6 @@ public class ApssoftwareoptionsPackageImpl extends EPackageImpl implements Apsso
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getAPSReqAbstractMethodOption() {
-		return apsReqAbstractMethodOptionEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAPSReqAbstractMethodOption_AbstractMethods() {
-		return (EReference)apsReqAbstractMethodOptionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getAPSReqAbstractPropertyOption() {
-		return apsReqAbstractPropertyOptionEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAPSReqAbstractPropertyOption_AbstractProperties() {
-		return (EReference)apsReqAbstractPropertyOptionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public ApssoftwareoptionsFactory getApssoftwareoptionsFactory() {
 		return (ApssoftwareoptionsFactory)getEFactoryInstance();
 	}
@@ -397,12 +344,6 @@ public class ApssoftwareoptionsPackageImpl extends EPackageImpl implements Apsso
 
 		apsReqIECInterfaceOptionEClass = createEClass(APS_REQ_IEC_INTERFACE_OPTION);
 		createEReference(apsReqIECInterfaceOptionEClass, APS_REQ_IEC_INTERFACE_OPTION__IEC_INTERFACES);
-
-		apsReqAbstractMethodOptionEClass = createEClass(APS_REQ_ABSTRACT_METHOD_OPTION);
-		createEReference(apsReqAbstractMethodOptionEClass, APS_REQ_ABSTRACT_METHOD_OPTION__ABSTRACT_METHODS);
-
-		apsReqAbstractPropertyOptionEClass = createEClass(APS_REQ_ABSTRACT_PROPERTY_OPTION);
-		createEReference(apsReqAbstractPropertyOptionEClass, APS_REQ_ABSTRACT_PROPERTY_OPTION__ABSTRACT_PROPERTIES);
 	}
 
 	/**
@@ -446,8 +387,6 @@ public class ApssoftwareoptionsPackageImpl extends EPackageImpl implements Apsso
 		apsReqGlobalVariableOptionEClass.getESuperTypes().add(theApsoptionsPackage.getAPSReqOption());
 		apsReqIECPropertyOptionEClass.getESuperTypes().add(theApsoptionsPackage.getAPSReqOption());
 		apsReqIECInterfaceOptionEClass.getESuperTypes().add(theApsoptionsPackage.getAPSReqOption());
-		apsReqAbstractMethodOptionEClass.getESuperTypes().add(theApsoptionsPackage.getAPSReqOption());
-		apsReqAbstractPropertyOptionEClass.getESuperTypes().add(theApsoptionsPackage.getAPSReqOption());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(apsReqProgramOptionEClass, APSReqProgramOption.class, "APSReqProgramOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -463,7 +402,7 @@ public class ApssoftwareoptionsPackageImpl extends EPackageImpl implements Apsso
 		initEReference(getAPSReqConfigurationOption_Configuration(), theIECModelPackage.getConfiguration(), null, "configuration", null, 0, 1, APSReqConfigurationOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(apsReqIECMethodOptionEClass, APSReqIECMethodOption.class, "APSReqIECMethodOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAPSReqIECMethodOption_IecMethods(), theIECRepositoryPackage.getIECMethod(), null, "iecMethods", null, 0, -1, APSReqIECMethodOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAPSReqIECMethodOption_IecMethods(), theIECRepositoryPackage.getIsMethod(), null, "iecMethods", null, 0, -1, APSReqIECMethodOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(apsReqGlobalVariableOptionEClass, APSReqGlobalVariableOption.class, "APSReqGlobalVariableOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAPSReqGlobalVariableOption_GlobalVariables(), theIECRepositoryPackage.getGlobalVariable(), null, "globalVariables", null, 0, -1, APSReqGlobalVariableOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -473,12 +412,6 @@ public class ApssoftwareoptionsPackageImpl extends EPackageImpl implements Apsso
 
 		initEClass(apsReqIECInterfaceOptionEClass, APSReqIECInterfaceOption.class, "APSReqIECInterfaceOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAPSReqIECInterfaceOption_IecInterfaces(), theIECRepositoryPackage.getIECInterface(), null, "iecInterfaces", null, 0, -1, APSReqIECInterfaceOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(apsReqAbstractMethodOptionEClass, APSReqAbstractMethodOption.class, "APSReqAbstractMethodOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAPSReqAbstractMethodOption_AbstractMethods(), theIECRepositoryPackage.getIECAbstractMethod(), null, "abstractMethods", null, 0, -1, APSReqAbstractMethodOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(apsReqAbstractPropertyOptionEClass, APSReqAbstractPropertyOption.class, "APSReqAbstractPropertyOption", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAPSReqAbstractPropertyOption_AbstractProperties(), theIECRepositoryPackage.getIECAbstractProperty(), null, "abstractProperties", null, 0, -1, APSReqAbstractPropertyOption.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -2,7 +2,7 @@
  */
 package edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.tests;
 
-import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.APSReqModifyComponent;
+import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.APSReqModifyIECComponent;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.Modificationmarks_softwareFactory;
 
 import junit.framework.TestCase;
@@ -11,19 +11,19 @@ import junit.textui.TestRunner;
 
 /**
  * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>APS Req Modify Component</b></em>'.
+ * A test case for the model object '<em><b>APS Req Modify IEC Component</b></em>'.
  * <!-- end-user-doc -->
  * @generated
  */
-public class APSReqModifyComponentTest extends TestCase {
+public class APSReqModifyIECComponentTest extends TestCase {
 
 	/**
-	 * The fixture for this APS Req Modify Component test case.
+	 * The fixture for this APS Req Modify IEC Component test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected APSReqModifyComponent fixture = null;
+	protected APSReqModifyIECComponent fixture = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -31,36 +31,36 @@ public class APSReqModifyComponentTest extends TestCase {
 	 * @generated
 	 */
 	public static void main(String[] args) {
-		TestRunner.run(APSReqModifyComponentTest.class);
+		TestRunner.run(APSReqModifyIECComponentTest.class);
 	}
 
 	/**
-	 * Constructs a new APS Req Modify Component test case with the given name.
+	 * Constructs a new APS Req Modify IEC Component test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public APSReqModifyComponentTest(String name) {
+	public APSReqModifyIECComponentTest(String name) {
 		super(name);
 	}
 
 	/**
-	 * Sets the fixture for this APS Req Modify Component test case.
+	 * Sets the fixture for this APS Req Modify IEC Component test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void setFixture(APSReqModifyComponent fixture) {
+	protected void setFixture(APSReqModifyIECComponent fixture) {
 		this.fixture = fixture;
 	}
 
 	/**
-	 * Returns the fixture for this APS Req Modify Component test case.
+	 * Returns the fixture for this APS Req Modify IEC Component test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected APSReqModifyComponent getFixture() {
+	protected APSReqModifyIECComponent getFixture() {
 		return fixture;
 	}
 
@@ -72,7 +72,7 @@ public class APSReqModifyComponentTest extends TestCase {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(Modificationmarks_softwareFactory.eINSTANCE.createAPSReqModifyComponent());
+		setFixture(Modificationmarks_softwareFactory.eINSTANCE.createAPSReqModifyIECComponent());
 	}
 
 	/**
@@ -86,4 +86,4 @@ public class APSReqModifyComponentTest extends TestCase {
 		setFixture(null);
 	}
 
-} //APSReqModifyComponentTest
+} //APSReqModifyIECComponentTest

@@ -3,7 +3,7 @@
 package edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.impl;
 
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.ModificationmarksPackage;
-import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.APSReqModifyComponent;
+import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.APSReqModifyIECComponent;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.APSReqSoftwareChangePropagationDueToSpecificationDependencies;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.APSReqSoftwareModificationRepository;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.APSReqSoftwareSeedModifications;
@@ -51,7 +51,7 @@ public class Modificationmarks_softwarePackageImpl extends EPackageImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass apsReqModifyComponentEClass = null;
+	private EClass apsReqModifyIECComponentEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -249,8 +249,8 @@ public class Modificationmarks_softwarePackageImpl extends EPackageImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getAPSReqModifyComponent() {
-		return apsReqModifyComponentEClass;
+	public EClass getAPSReqModifyIECComponent() {
+		return apsReqModifyIECComponentEClass;
 	}
 
 	/**
@@ -298,7 +298,7 @@ public class Modificationmarks_softwarePackageImpl extends EPackageImpl implemen
 		createEReference(apsReqSoftwareChangePropagationDueToSpecificationDependenciesEClass, APS_REQ_SOFTWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__IEC_PROPERTY_MODIFICATIONS);
 		createEReference(apsReqSoftwareChangePropagationDueToSpecificationDependenciesEClass, APS_REQ_SOFTWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__IEC_COMPONENT_MODIFICATIONS);
 
-		apsReqModifyComponentEClass = createEClass(APS_REQ_MODIFY_COMPONENT);
+		apsReqModifyIECComponentEClass = createEClass(APS_REQ_MODIFY_IEC_COMPONENT);
 	}
 
 	/**
@@ -348,7 +348,7 @@ public class Modificationmarks_softwarePackageImpl extends EPackageImpl implemen
 		g1 = createEGenericType(theIECModificationmarksPackage.getIECModifyComponent());
 		g2 = createEGenericType(theIECRepositoryPackage.getIECComponent());
 		g1.getETypeArguments().add(g2);
-		apsReqModifyComponentEClass.getEGenericSuperTypes().add(g1);
+		apsReqModifyIECComponentEClass.getEGenericSuperTypes().add(g1);
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(apsReqSoftwareSeedModificationsEClass, APSReqSoftwareSeedModifications.class, "APSReqSoftwareSeedModifications", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -366,9 +366,9 @@ public class Modificationmarks_softwarePackageImpl extends EPackageImpl implemen
 		initEReference(getAPSReqSoftwareChangePropagationDueToSpecificationDependencies_IecMethodModifications(), theIECModificationmarksPackage.getIECModifyMethod(), null, "iecMethodModifications", null, 0, -1, APSReqSoftwareChangePropagationDueToSpecificationDependencies.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAPSReqSoftwareChangePropagationDueToSpecificationDependencies_AbstractIECPropertyModifications(), theIECModificationmarksPackage.getIECModifyAbstractProperty(), null, "abstractIECPropertyModifications", null, 0, -1, APSReqSoftwareChangePropagationDueToSpecificationDependencies.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAPSReqSoftwareChangePropagationDueToSpecificationDependencies_IecPropertyModifications(), theIECModificationmarksPackage.getIECModifyProperty(), null, "iecPropertyModifications", null, 0, -1, APSReqSoftwareChangePropagationDueToSpecificationDependencies.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAPSReqSoftwareChangePropagationDueToSpecificationDependencies_IecComponentModifications(), this.getAPSReqModifyComponent(), null, "iecComponentModifications", null, 0, -1, APSReqSoftwareChangePropagationDueToSpecificationDependencies.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAPSReqSoftwareChangePropagationDueToSpecificationDependencies_IecComponentModifications(), this.getAPSReqModifyIECComponent(), null, "iecComponentModifications", null, 0, -1, APSReqSoftwareChangePropagationDueToSpecificationDependencies.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(apsReqModifyComponentEClass, APSReqModifyComponent.class, "APSReqModifyComponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(apsReqModifyIECComponentEClass, APSReqModifyIECComponent.class, "APSReqModifyIECComponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

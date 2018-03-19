@@ -107,11 +107,11 @@ public class Modificationmarks_softwareSwitch<T1> extends Switch<T1> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case Modificationmarks_softwarePackage.APS_REQ_MODIFY_COMPONENT: {
-				APSReqModifyComponent apsReqModifyComponent = (APSReqModifyComponent)theEObject;
-				T1 result = caseAPSReqModifyComponent(apsReqModifyComponent);
-				if (result == null) result = caseIECModifyComponent(apsReqModifyComponent);
-				if (result == null) result = caseAbstractModification(apsReqModifyComponent);
+			case Modificationmarks_softwarePackage.APS_REQ_MODIFY_IEC_COMPONENT: {
+				APSReqModifyIECComponent apsReqModifyIECComponent = (APSReqModifyIECComponent)theEObject;
+				T1 result = caseAPSReqModifyIECComponent(apsReqModifyIECComponent);
+				if (result == null) result = caseIECModifyComponent(apsReqModifyIECComponent);
+				if (result == null) result = caseAbstractModification(apsReqModifyIECComponent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -165,17 +165,17 @@ public class Modificationmarks_softwareSwitch<T1> extends Switch<T1> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>APS Req Modify Component</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>APS Req Modify IEC Component</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>APS Req Modify Component</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>APS Req Modify IEC Component</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseAPSReqModifyComponent(APSReqModifyComponent object) {
+	public T1 caseAPSReqModifyIECComponent(APSReqModifyIECComponent object) {
 		return null;
 	}
 

@@ -59,7 +59,7 @@ public class Modificationmarks_softwareFactoryImpl extends EFactoryImpl implemen
 			case Modificationmarks_softwarePackage.APS_REQ_SOFTWARE_SEED_MODIFICATIONS: return createAPSReqSoftwareSeedModifications();
 			case Modificationmarks_softwarePackage.APS_REQ_SOFTWARE_MODIFICATION_REPOSITORY: return createAPSReqSoftwareModificationRepository();
 			case Modificationmarks_softwarePackage.APS_REQ_SOFTWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES: return createAPSReqSoftwareChangePropagationDueToSpecificationDependencies();
-			case Modificationmarks_softwarePackage.APS_REQ_MODIFY_COMPONENT: return createAPSReqModifyComponent();
+			case Modificationmarks_softwarePackage.APS_REQ_MODIFY_IEC_COMPONENT: return createAPSReqModifyIECComponent();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -100,9 +100,9 @@ public class Modificationmarks_softwareFactoryImpl extends EFactoryImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public APSReqModifyComponent createAPSReqModifyComponent() {
-		APSReqModifyComponentImpl apsReqModifyComponent = new APSReqModifyComponentImpl();
-		return apsReqModifyComponent;
+	public APSReqModifyIECComponent createAPSReqModifyIECComponent() {
+		APSReqModifyIECComponentImpl apsReqModifyIECComponent = new APSReqModifyIECComponentImpl();
+		return apsReqModifyIECComponent;
 	}
 
 	/**
