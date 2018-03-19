@@ -34,9 +34,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="iecPropertyModifications"
         upperBound="-1" eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4iec.model.modificationmarks/model/IECModificationmarks.ecore#//IECModifyProperty"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="iecComponentModifications"
-        upperBound="-1" eType="#//APSReqModifyComponent"/>
+        upperBound="-1" eType="#//APSReqModifyIECComponent" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="APSReqModifyComponent">
+  <eClassifiers xsi:type="ecore:EClass" name="APSReqModifyIECComponent">
     <eGenericSuperTypes eClassifier="ecore:EClass ../../edu.kit.ipd.sdq.kamp4iec.model.modificationmarks/model/IECModificationmarks.ecore#//IECModifyComponent">
       <eTypeArguments eClassifier="ecore:EClass ../../edu.kit.ipd.sdq.kamp4iec.model.repo/model/IECRepository.ecore#//IECComponent"/>
     </eGenericSuperTypes>

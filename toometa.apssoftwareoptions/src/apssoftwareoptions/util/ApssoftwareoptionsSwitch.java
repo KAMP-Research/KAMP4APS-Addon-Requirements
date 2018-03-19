@@ -253,48 +253,6 @@ public class ApssoftwareoptionsSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ApssoftwareoptionsPackage.APS_REQ_ABSTRACT_METHOD_OPTION: {
-				APSReqAbstractMethodOption apsReqAbstractMethodOption = (APSReqAbstractMethodOption)theEObject;
-				T result = caseAPSReqAbstractMethodOption(apsReqAbstractMethodOption);
-				if (result == null) result = caseAPSReqOption(apsReqAbstractMethodOption);
-				if (result == null) result = caseOption(apsReqAbstractMethodOption);
-				if (result == null) result = caseTraceableObject(apsReqAbstractMethodOption);
-				if (result == null) result = caseRelationObject(apsReqAbstractMethodOption);
-				if (result == null) result = caseConflictObject(apsReqAbstractMethodOption);
-				if (result == null) result = caseDuplicationObject(apsReqAbstractMethodOption);
-				if (result == null) result = caseDependencyObject(apsReqAbstractMethodOption);
-				if (result == null) result = caseParentalObject(apsReqAbstractMethodOption);
-				if (result == null) result = caseTriggerObject(apsReqAbstractMethodOption);
-				if (result == null) result = caseResolveObject(apsReqAbstractMethodOption);
-				if (result == null) result = caseAlternativeObject(apsReqAbstractMethodOption);
-				if (result == null) result = caseCouldResolveObject(apsReqAbstractMethodOption);
-				if (result == null) result = caseStakeholderObject(apsReqAbstractMethodOption);
-				if (result == null) result = caseSelectionObject(apsReqAbstractMethodOption);
-				if (result == null) result = caseIdentifier(apsReqAbstractMethodOption);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ApssoftwareoptionsPackage.APS_REQ_ABSTRACT_PROPERTY_OPTION: {
-				APSReqAbstractPropertyOption apsReqAbstractPropertyOption = (APSReqAbstractPropertyOption)theEObject;
-				T result = caseAPSReqAbstractPropertyOption(apsReqAbstractPropertyOption);
-				if (result == null) result = caseAPSReqOption(apsReqAbstractPropertyOption);
-				if (result == null) result = caseOption(apsReqAbstractPropertyOption);
-				if (result == null) result = caseTraceableObject(apsReqAbstractPropertyOption);
-				if (result == null) result = caseRelationObject(apsReqAbstractPropertyOption);
-				if (result == null) result = caseConflictObject(apsReqAbstractPropertyOption);
-				if (result == null) result = caseDuplicationObject(apsReqAbstractPropertyOption);
-				if (result == null) result = caseDependencyObject(apsReqAbstractPropertyOption);
-				if (result == null) result = caseParentalObject(apsReqAbstractPropertyOption);
-				if (result == null) result = caseTriggerObject(apsReqAbstractPropertyOption);
-				if (result == null) result = caseResolveObject(apsReqAbstractPropertyOption);
-				if (result == null) result = caseAlternativeObject(apsReqAbstractPropertyOption);
-				if (result == null) result = caseCouldResolveObject(apsReqAbstractPropertyOption);
-				if (result == null) result = caseStakeholderObject(apsReqAbstractPropertyOption);
-				if (result == null) result = caseSelectionObject(apsReqAbstractPropertyOption);
-				if (result == null) result = caseIdentifier(apsReqAbstractPropertyOption);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -416,36 +374,6 @@ public class ApssoftwareoptionsSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseAPSReqIECInterfaceOption(APSReqIECInterfaceOption object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>APS Req Abstract Method Option</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>APS Req Abstract Method Option</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseAPSReqAbstractMethodOption(APSReqAbstractMethodOption object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>APS Req Abstract Property Option</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>APS Req Abstract Property Option</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseAPSReqAbstractPropertyOption(APSReqAbstractPropertyOption object) {
 		return null;
 	}
 

@@ -94,24 +94,6 @@ public interface ApssoftwareoptionsFactory extends EFactory {
 	APSReqIECInterfaceOption createAPSReqIECInterfaceOption();
 
 	/**
-	 * Returns a new object of class '<em>APS Req Abstract Method Option</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>APS Req Abstract Method Option</em>'.
-	 * @generated
-	 */
-	APSReqAbstractMethodOption createAPSReqAbstractMethodOption();
-
-	/**
-	 * Returns a new object of class '<em>APS Req Abstract Property Option</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>APS Req Abstract Property Option</em>'.
-	 * @generated
-	 */
-	APSReqAbstractPropertyOption createAPSReqAbstractPropertyOption();
-
-	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

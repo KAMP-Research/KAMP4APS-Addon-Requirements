@@ -3,7 +3,7 @@
 package apssoftwareoptions;
 
 import apsoptions.APSReqOption;
-import edu.kit.ipd.sdq.kamp4iec.model.IECRepository.IECMethod;
+import edu.kit.ipd.sdq.kamp4iec.model.IECRepository.IsMethod;
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -25,7 +25,7 @@ import org.eclipse.emf.common.util.EList;
 public interface APSReqIECMethodOption extends APSReqOption {
 	/**
 	 * Returns the value of the '<em><b>Iec Methods</b></em>' reference list.
-	 * The list contents are of type {@link edu.kit.ipd.sdq.kamp4iec.model.IECRepository.IECMethod}.
+	 * The list contents are of type {@link edu.kit.ipd.sdq.kamp4iec.model.IECRepository.IsMethod}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Iec Methods</em>' reference list isn't clear,
@@ -37,6 +37,6 @@ public interface APSReqIECMethodOption extends APSReqOption {
 	 * @model
 	 * @generated
 	 */
-	EList<IECMethod> getIecMethods();
+	EList<IsMethod> getIecMethods();
 
 } // APSReqIECMethodOption

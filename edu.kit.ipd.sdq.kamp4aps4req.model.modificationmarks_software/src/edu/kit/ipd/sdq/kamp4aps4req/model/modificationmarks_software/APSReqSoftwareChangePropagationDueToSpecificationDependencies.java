@@ -204,18 +204,18 @@ public interface APSReqSoftwareChangePropagationDueToSpecificationDependencies e
 	EList<IECModifyProperty> getIecPropertyModifications();
 
 	/**
-	 * Returns the value of the '<em><b>Iec Component Modifications</b></em>' reference list.
-	 * The list contents are of type {@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.APSReqModifyComponent}.
+	 * Returns the value of the '<em><b>Iec Component Modifications</b></em>' containment reference list.
+	 * The list contents are of type {@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.APSReqModifyIECComponent}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Iec Component Modifications</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Iec Component Modifications</em>' reference list.
+	 * @return the value of the '<em>Iec Component Modifications</em>' containment reference list.
 	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.Modificationmarks_softwarePackage#getAPSReqSoftwareChangePropagationDueToSpecificationDependencies_IecComponentModifications()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
-	EList<APSReqModifyComponent> getIecComponentModifications();
+	EList<APSReqModifyIECComponent> getIecComponentModifications();
 } // APSReqSoftwareChangePropagationDueToSpecificationDependencies

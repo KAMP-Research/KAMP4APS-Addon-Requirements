@@ -94,8 +94,8 @@ public class Modificationmarks_softwareAdapterFactory extends AdapterFactoryImpl
 				return createAPSReqSoftwareChangePropagationDueToSpecificationDependenciesAdapter();
 			}
 			@Override
-			public Adapter caseAPSReqModifyComponent(APSReqModifyComponent object) {
-				return createAPSReqModifyComponentAdapter();
+			public Adapter caseAPSReqModifyIECComponent(APSReqModifyIECComponent object) {
+				return createAPSReqModifyIECComponentAdapter();
 			}
 			@Override
 			public Adapter caseAbstractSeedModifications(AbstractSeedModifications object) {
@@ -204,16 +204,16 @@ public class Modificationmarks_softwareAdapterFactory extends AdapterFactoryImpl
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.APSReqModifyComponent <em>APS Req Modify Component</em>}'.
+	 * Creates a new adapter for an object of class '{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.APSReqModifyIECComponent <em>APS Req Modify IEC Component</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.APSReqModifyComponent
+	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.APSReqModifyIECComponent
 	 * @generated
 	 */
-	public Adapter createAPSReqModifyComponentAdapter() {
+	public Adapter createAPSReqModifyIECComponentAdapter() {
 		return null;
 	}
 

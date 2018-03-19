@@ -10,7 +10,7 @@ import org.eclipse.emf.ecore.EObject;
 import decisions.Decision;
 import edu.kit.ipd.sdq.kamp.model.modificationmarks.AbstractModification;
 import edu.kit.ipd.sdq.kamp4aps4req.core.AbstractAPSReqChangePropagationAnalysis;
-import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.APSReqModifyComponent;
+import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.APSReqModifyIECComponent;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.APSReqSoftwareChangePropagationDueToSpecificationDependencies;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.Modificationmarks_softwareFactory;
 import edu.kit.ipd.sdq.kamp4iec.core.IECChangePropagationAnalysis;
@@ -104,11 +104,11 @@ public class APSReqSoftwareChangePropagationAnalysis extends AbstractAPSReqChang
 
 	private void calculateAndMarkOptionToArchitecturePropagation(APSReqSoftwareArchitectureVersion version,
 			Map<EObject, AbstractModification<?, EObject>> elementsMarkedInThisStep) {
-		// I Option -> IECComponent
+		// Option -> IECComponent
 		Map<IECComponent, Set<Option>> iecComponentsToBeMarked = APSReqSoftwareArchitectureModelLookup.
-				lookUpIECComponentsReferencedByOptions(version, this.getMarkedOptions());
+				lookupIECComponentsReferencedByOptions(version, this.getMarkedOptions());
 		createAndAddIECComponentModifications(iecComponentsToBeMarked, elementsMarkedInThisStep);
-				
+	}		
 				
 		/*	
 				
@@ -146,16 +146,15 @@ public class APSReqSoftwareChangePropagationAnalysis extends AbstractAPSReqChang
 		createAndAddIECPropertyModifications(iecPropertiesToBeMarked, elementsMarkedInThisStep);
 		
 		*/
-	}
 	
 	private void calculateAndMarkDecisionToArchitecturePropagation(APSReqSoftwareArchitectureVersion version,
 			Map<EObject, AbstractModification<?, EObject>> elementsMarkedInThisStep) {
 		
-		// I Decision -> IECComponent
+		// Decision -> IECComponent
 		Map<IECComponent, Set<Decision>> iecComponentsToBeMarked = APSReqSoftwareArchitectureModelLookup.
-				lookUpIECComponentsReferencedByDecisions(version, this.getMarkedDecisions());
+				lookupIECComponentsReferencedByDecisions(version, this.getMarkedDecisions());
 		createAndAddIECComponentModifications(iecComponentsToBeMarked, elementsMarkedInThisStep);
-				
+	}	
 			
 		/*
 		// I Decision -> Configuration
@@ -200,7 +199,6 @@ public class APSReqSoftwareChangePropagationAnalysis extends AbstractAPSReqChang
 		createAndAddAbstractPropertyModifications(abstractPropertiesToBeMarked, elementsMarkedInThisStep);
 		
 		*/
-	}
 	
 	private <T extends TraceableObject> void createAndAddConfigurationModifications(
 			Map<Configuration, Set<T>> configurationsToBeMarked, 
@@ -371,8 +369,8 @@ public class APSReqSoftwareChangePropagationAnalysis extends AbstractAPSReqChang
 				elementsMarkedInThisStep.get(iecComponentsToBeMarkedEntry.getKey()).
 						getCausingElements().addAll(iecComponentsToBeMarkedEntry.getValue());
 			} else {
-				APSReqModifyComponent modifyIECComponent = 
-						Modificationmarks_softwareFactory.eINSTANCE.createAPSReqModifyComponent();
+				APSReqModifyIECComponent modifyIECComponent = 
+						Modificationmarks_softwareFactory.eINSTANCE.createAPSReqModifyIECComponent();
 				modifyIECComponent.setToolderived(true);
 				modifyIECComponent.setAffectedElement(iecComponentsToBeMarkedEntry.getKey());
 				modifyIECComponent.getCausingElements().addAll(iecComponentsToBeMarkedEntry.getValue());

@@ -3,8 +3,7 @@
 package edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.impl;
 
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.impl.AbstractAPSReqChangePropagationDueToSpecificationDependenciesImpl;
-
-import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.APSReqModifyComponent;
+import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.APSReqModifyIECComponent;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.APSReqSoftwareChangePropagationDueToSpecificationDependencies;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.Modificationmarks_softwarePackage;
 
@@ -19,9 +18,13 @@ import edu.kit.ipd.sdq.kamp4iec.model.IECModificationmarks.IECModifyMethod;
 import edu.kit.ipd.sdq.kamp4iec.model.IECModificationmarks.IECModifyProgram;
 import edu.kit.ipd.sdq.kamp4iec.model.IECModificationmarks.IECModifyProperty;
 import java.util.Collection;
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -139,14 +142,14 @@ public class APSReqSoftwareChangePropagationDueToSpecificationDependenciesImpl e
 	protected EList<IECModifyProperty> iecPropertyModifications;
 
 	/**
-	 * The cached value of the '{@link #getIecComponentModifications() <em>Iec Component Modifications</em>}' reference list.
+	 * The cached value of the '{@link #getIecComponentModifications() <em>Iec Component Modifications</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getIecComponentModifications()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<APSReqModifyComponent> iecComponentModifications;
+	protected EList<APSReqModifyIECComponent> iecComponentModifications;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -292,11 +295,25 @@ public class APSReqSoftwareChangePropagationDueToSpecificationDependenciesImpl e
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<APSReqModifyComponent> getIecComponentModifications() {
+	public EList<APSReqModifyIECComponent> getIecComponentModifications() {
 		if (iecComponentModifications == null) {
-			iecComponentModifications = new EObjectResolvingEList<APSReqModifyComponent>(APSReqModifyComponent.class, this, Modificationmarks_softwarePackage.APS_REQ_SOFTWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__IEC_COMPONENT_MODIFICATIONS);
+			iecComponentModifications = new EObjectContainmentEList<APSReqModifyIECComponent>(APSReqModifyIECComponent.class, this, Modificationmarks_softwarePackage.APS_REQ_SOFTWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__IEC_COMPONENT_MODIFICATIONS);
 		}
 		return iecComponentModifications;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case Modificationmarks_softwarePackage.APS_REQ_SOFTWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__IEC_COMPONENT_MODIFICATIONS:
+				return ((InternalEList<?>)getIecComponentModifications()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -384,7 +401,7 @@ public class APSReqSoftwareChangePropagationDueToSpecificationDependenciesImpl e
 				return;
 			case Modificationmarks_softwarePackage.APS_REQ_SOFTWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__IEC_COMPONENT_MODIFICATIONS:
 				getIecComponentModifications().clear();
-				getIecComponentModifications().addAll((Collection<? extends APSReqModifyComponent>)newValue);
+				getIecComponentModifications().addAll((Collection<? extends APSReqModifyIECComponent>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

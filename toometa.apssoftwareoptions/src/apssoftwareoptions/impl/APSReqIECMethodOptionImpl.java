@@ -6,7 +6,7 @@ import apsoptions.impl.APSReqOptionImpl;
 
 import apssoftwareoptions.APSReqIECMethodOption;
 import apssoftwareoptions.ApssoftwareoptionsPackage;
-import edu.kit.ipd.sdq.kamp4iec.model.IECRepository.IECMethod;
+import edu.kit.ipd.sdq.kamp4iec.model.IECRepository.IsMethod;
 import java.util.Collection;
 
 import org.eclipse.emf.common.util.EList;
@@ -37,7 +37,7 @@ public class APSReqIECMethodOptionImpl extends APSReqOptionImpl implements APSRe
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<IECMethod> iecMethods;
+	protected EList<IsMethod> iecMethods;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -63,9 +63,9 @@ public class APSReqIECMethodOptionImpl extends APSReqOptionImpl implements APSRe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<IECMethod> getIecMethods() {
+	public EList<IsMethod> getIecMethods() {
 		if (iecMethods == null) {
-			iecMethods = new EObjectResolvingEList<IECMethod>(IECMethod.class, this, ApssoftwareoptionsPackage.APS_REQ_IEC_METHOD_OPTION__IEC_METHODS);
+			iecMethods = new EObjectResolvingEList<IsMethod>(IsMethod.class, this, ApssoftwareoptionsPackage.APS_REQ_IEC_METHOD_OPTION__IEC_METHODS);
 		}
 		return iecMethods;
 	}
@@ -95,7 +95,7 @@ public class APSReqIECMethodOptionImpl extends APSReqOptionImpl implements APSRe
 		switch (featureID) {
 			case ApssoftwareoptionsPackage.APS_REQ_IEC_METHOD_OPTION__IEC_METHODS:
 				getIecMethods().clear();
-				getIecMethods().addAll((Collection<? extends IECMethod>)newValue);
+				getIecMethods().addAll((Collection<? extends IsMethod>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

@@ -3,7 +3,7 @@
 package edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.provider;
 
 
-import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.APSReqModifyComponent;
+import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.APSReqModifyIECComponent;
 
 import edu.kit.ipd.sdq.kamp4iec.model.IECModificationmarks.provider.IECModifyComponentItemProvider;
 
@@ -18,19 +18,19 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 /**
- * This is the item provider adapter for a {@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.APSReqModifyComponent} object.
+ * This is the item provider adapter for a {@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.APSReqModifyIECComponent} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class APSReqModifyComponentItemProvider extends IECModifyComponentItemProvider {
+public class APSReqModifyIECComponentItemProvider extends IECModifyComponentItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public APSReqModifyComponentItemProvider(AdapterFactory adapterFactory) {
+	public APSReqModifyIECComponentItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -50,14 +50,14 @@ public class APSReqModifyComponentItemProvider extends IECModifyComponentItemPro
 	}
 
 	/**
-	 * This returns APSReqModifyComponent.gif.
+	 * This returns APSReqModifyIECComponent.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/APSReqModifyComponent"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/APSReqModifyIECComponent"));
 	}
 
 	/**
@@ -68,10 +68,10 @@ public class APSReqModifyComponentItemProvider extends IECModifyComponentItemPro
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((APSReqModifyComponent)object).getId();
+		String label = ((APSReqModifyIECComponent)object).getId();
 		return label == null || label.length() == 0 ?
-			getString("_UI_APSReqModifyComponent_type") :
-			getString("_UI_APSReqModifyComponent_type") + " " + label;
+			getString("_UI_APSReqModifyIECComponent_type") :
+			getString("_UI_APSReqModifyIECComponent_type") + " " + label;
 	}
 	
 

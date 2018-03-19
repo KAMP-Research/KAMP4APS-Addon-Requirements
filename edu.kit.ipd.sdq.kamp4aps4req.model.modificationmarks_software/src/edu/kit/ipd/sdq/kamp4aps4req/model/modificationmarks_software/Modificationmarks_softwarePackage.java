@@ -350,7 +350,7 @@ public interface Modificationmarks_softwarePackage extends EPackage {
 	int APS_REQ_SOFTWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__IEC_PROPERTY_MODIFICATIONS = ModificationmarksPackage.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES_FEATURE_COUNT + 9;
 
 	/**
-	 * The feature id for the '<em><b>Iec Component Modifications</b></em>' reference list.
+	 * The feature id for the '<em><b>Iec Component Modifications</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -368,14 +368,14 @@ public interface Modificationmarks_softwarePackage extends EPackage {
 	int APS_REQ_SOFTWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES_FEATURE_COUNT = ModificationmarksPackage.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES_FEATURE_COUNT + 11;
 
 	/**
-	 * The meta object id for the '{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.impl.APSReqModifyComponentImpl <em>APS Req Modify Component</em>}' class.
+	 * The meta object id for the '{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.impl.APSReqModifyIECComponentImpl <em>APS Req Modify IEC Component</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.impl.APSReqModifyComponentImpl
-	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.impl.Modificationmarks_softwarePackageImpl#getAPSReqModifyComponent()
+	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.impl.APSReqModifyIECComponentImpl
+	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.impl.Modificationmarks_softwarePackageImpl#getAPSReqModifyIECComponent()
 	 * @generated
 	 */
-	int APS_REQ_MODIFY_COMPONENT = 3;
+	int APS_REQ_MODIFY_IEC_COMPONENT = 3;
 
 	/**
 	 * The feature id for the '<em><b>Affected Element</b></em>' reference.
@@ -384,7 +384,7 @@ public interface Modificationmarks_softwarePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APS_REQ_MODIFY_COMPONENT__AFFECTED_ELEMENT = IECModificationmarksPackage.IEC_MODIFY_COMPONENT__AFFECTED_ELEMENT;
+	int APS_REQ_MODIFY_IEC_COMPONENT__AFFECTED_ELEMENT = IECModificationmarksPackage.IEC_MODIFY_COMPONENT__AFFECTED_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Causing Elements</b></em>' reference list.
@@ -393,7 +393,7 @@ public interface Modificationmarks_softwarePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APS_REQ_MODIFY_COMPONENT__CAUSING_ELEMENTS = IECModificationmarksPackage.IEC_MODIFY_COMPONENT__CAUSING_ELEMENTS;
+	int APS_REQ_MODIFY_IEC_COMPONENT__CAUSING_ELEMENTS = IECModificationmarksPackage.IEC_MODIFY_COMPONENT__CAUSING_ELEMENTS;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -402,7 +402,7 @@ public interface Modificationmarks_softwarePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APS_REQ_MODIFY_COMPONENT__ID = IECModificationmarksPackage.IEC_MODIFY_COMPONENT__ID;
+	int APS_REQ_MODIFY_IEC_COMPONENT__ID = IECModificationmarksPackage.IEC_MODIFY_COMPONENT__ID;
 
 	/**
 	 * The feature id for the '<em><b>Toolderived</b></em>' attribute.
@@ -411,7 +411,7 @@ public interface Modificationmarks_softwarePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APS_REQ_MODIFY_COMPONENT__TOOLDERIVED = IECModificationmarksPackage.IEC_MODIFY_COMPONENT__TOOLDERIVED;
+	int APS_REQ_MODIFY_IEC_COMPONENT__TOOLDERIVED = IECModificationmarksPackage.IEC_MODIFY_COMPONENT__TOOLDERIVED;
 
 	/**
 	 * The feature id for the '<em><b>User Decision</b></em>' attribute.
@@ -420,16 +420,16 @@ public interface Modificationmarks_softwarePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APS_REQ_MODIFY_COMPONENT__USER_DECISION = IECModificationmarksPackage.IEC_MODIFY_COMPONENT__USER_DECISION;
+	int APS_REQ_MODIFY_IEC_COMPONENT__USER_DECISION = IECModificationmarksPackage.IEC_MODIFY_COMPONENT__USER_DECISION;
 
 	/**
-	 * The number of structural features of the '<em>APS Req Modify Component</em>' class.
+	 * The number of structural features of the '<em>APS Req Modify IEC Component</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int APS_REQ_MODIFY_COMPONENT_FEATURE_COUNT = IECModificationmarksPackage.IEC_MODIFY_COMPONENT_FEATURE_COUNT + 0;
+	int APS_REQ_MODIFY_IEC_COMPONENT_FEATURE_COUNT = IECModificationmarksPackage.IEC_MODIFY_COMPONENT_FEATURE_COUNT + 0;
 
 	/**
 	 * Returns the meta object for class '{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.APSReqSoftwareSeedModifications <em>APS Req Software Seed Modifications</em>}'.
@@ -572,10 +572,10 @@ public interface Modificationmarks_softwarePackage extends EPackage {
 	EReference getAPSReqSoftwareChangePropagationDueToSpecificationDependencies_IecPropertyModifications();
 
 	/**
-	 * Returns the meta object for the reference list '{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.APSReqSoftwareChangePropagationDueToSpecificationDependencies#getIecComponentModifications <em>Iec Component Modifications</em>}'.
+	 * Returns the meta object for the containment reference list '{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.APSReqSoftwareChangePropagationDueToSpecificationDependencies#getIecComponentModifications <em>Iec Component Modifications</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Iec Component Modifications</em>'.
+	 * @return the meta object for the containment reference list '<em>Iec Component Modifications</em>'.
 	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.APSReqSoftwareChangePropagationDueToSpecificationDependencies#getIecComponentModifications()
 	 * @see #getAPSReqSoftwareChangePropagationDueToSpecificationDependencies()
 	 * @generated
@@ -583,14 +583,14 @@ public interface Modificationmarks_softwarePackage extends EPackage {
 	EReference getAPSReqSoftwareChangePropagationDueToSpecificationDependencies_IecComponentModifications();
 
 	/**
-	 * Returns the meta object for class '{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.APSReqModifyComponent <em>APS Req Modify Component</em>}'.
+	 * Returns the meta object for class '{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.APSReqModifyIECComponent <em>APS Req Modify IEC Component</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>APS Req Modify Component</em>'.
-	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.APSReqModifyComponent
+	 * @return the meta object for class '<em>APS Req Modify IEC Component</em>'.
+	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.APSReqModifyIECComponent
 	 * @generated
 	 */
-	EClass getAPSReqModifyComponent();
+	EClass getAPSReqModifyIECComponent();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -725,7 +725,7 @@ public interface Modificationmarks_softwarePackage extends EPackage {
 		EReference APS_REQ_SOFTWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__IEC_PROPERTY_MODIFICATIONS = eINSTANCE.getAPSReqSoftwareChangePropagationDueToSpecificationDependencies_IecPropertyModifications();
 
 		/**
-		 * The meta object literal for the '<em><b>Iec Component Modifications</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Iec Component Modifications</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -733,14 +733,14 @@ public interface Modificationmarks_softwarePackage extends EPackage {
 		EReference APS_REQ_SOFTWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__IEC_COMPONENT_MODIFICATIONS = eINSTANCE.getAPSReqSoftwareChangePropagationDueToSpecificationDependencies_IecComponentModifications();
 
 		/**
-		 * The meta object literal for the '{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.impl.APSReqModifyComponentImpl <em>APS Req Modify Component</em>}' class.
+		 * The meta object literal for the '{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.impl.APSReqModifyIECComponentImpl <em>APS Req Modify IEC Component</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.impl.APSReqModifyComponentImpl
-		 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.impl.Modificationmarks_softwarePackageImpl#getAPSReqModifyComponent()
+		 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.impl.APSReqModifyIECComponentImpl
+		 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.impl.Modificationmarks_softwarePackageImpl#getAPSReqModifyIECComponent()
 		 * @generated
 		 */
-		EClass APS_REQ_MODIFY_COMPONENT = eINSTANCE.getAPSReqModifyComponent();
+		EClass APS_REQ_MODIFY_IEC_COMPONENT = eINSTANCE.getAPSReqModifyIECComponent();
 
 	}
 

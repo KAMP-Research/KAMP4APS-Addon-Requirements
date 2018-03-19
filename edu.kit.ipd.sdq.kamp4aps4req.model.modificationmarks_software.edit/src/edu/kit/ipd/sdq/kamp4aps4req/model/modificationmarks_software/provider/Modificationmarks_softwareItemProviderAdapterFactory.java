@@ -141,26 +141,26 @@ public class Modificationmarks_softwareItemProviderAdapterFactory extends Modifi
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.APSReqModifyComponent} instances.
+	 * This keeps track of the one adapter used for all {@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.APSReqModifyIECComponent} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected APSReqModifyComponentItemProvider apsReqModifyComponentItemProvider;
+	protected APSReqModifyIECComponentItemProvider apsReqModifyIECComponentItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.APSReqModifyComponent}.
+	 * This creates an adapter for a {@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.APSReqModifyIECComponent}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createAPSReqModifyComponentAdapter() {
-		if (apsReqModifyComponentItemProvider == null) {
-			apsReqModifyComponentItemProvider = new APSReqModifyComponentItemProvider(this);
+	public Adapter createAPSReqModifyIECComponentAdapter() {
+		if (apsReqModifyIECComponentItemProvider == null) {
+			apsReqModifyIECComponentItemProvider = new APSReqModifyIECComponentItemProvider(this);
 		}
 
-		return apsReqModifyComponentItemProvider;
+		return apsReqModifyIECComponentItemProvider;
 	}
 
 	/**
@@ -265,7 +265,7 @@ public class Modificationmarks_softwareItemProviderAdapterFactory extends Modifi
 		if (apsReqSoftwareSeedModificationsItemProvider != null) apsReqSoftwareSeedModificationsItemProvider.dispose();
 		if (apsReqSoftwareModificationRepositoryItemProvider != null) apsReqSoftwareModificationRepositoryItemProvider.dispose();
 		if (apsReqSoftwareChangePropagationDueToSpecificationDependenciesItemProvider != null) apsReqSoftwareChangePropagationDueToSpecificationDependenciesItemProvider.dispose();
-		if (apsReqModifyComponentItemProvider != null) apsReqModifyComponentItemProvider.dispose();
+		if (apsReqModifyIECComponentItemProvider != null) apsReqModifyIECComponentItemProvider.dispose();
 	}
 
 }
