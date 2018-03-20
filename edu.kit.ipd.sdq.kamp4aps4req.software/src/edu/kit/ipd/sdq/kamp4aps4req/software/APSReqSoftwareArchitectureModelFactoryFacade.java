@@ -27,7 +27,7 @@ public class APSReqSoftwareArchitectureModelFactoryFacade {
 	 * @param name Name of the architecture version
 	 * @return Software architecture version
 	 */
-	public static APSReqSoftwareArchitectureVersion createEmptyHardwareModel(String name) {
+	public static APSReqSoftwareArchitectureVersion createEmptySoftwareModel(String name) {
 		Repository iecRepository = IECRepositoryFactory.eINSTANCE.createRepository();
 		Configuration configuration = IECModelFactory.eINSTANCE.createConfiguration();
 		IECFieldOfActivityAnnotationsRepository fieldOfActivityRepository = 

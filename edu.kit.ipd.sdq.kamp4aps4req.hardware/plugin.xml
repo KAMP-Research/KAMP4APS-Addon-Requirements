@@ -20,7 +20,7 @@
                menubarPath="kamp4aps4req">
          </action>
          <action
-               class="edu.kit.ipd.sdq.kamp4aps4req.hardware.ui.APSReqDeriveWorkplanAction"
+               class="edu.kit.ipd.sdq.kamp4aps4req.hardware.ui.APSReqHardwareDeriveWorkplanAction"
                icon="../edu.kit.ipd.sdq.kamp/icons/run.png"
                id="edu.kit.ipd.sdq.kamp4aps4req.hardware.ui.APSReqHardwareDeriveWorkplanActionID"
                label="Derive KAMP4aPS4Req workplan"

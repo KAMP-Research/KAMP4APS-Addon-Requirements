@@ -18,9 +18,11 @@ Require-Bundle: edu.kit.ipd.sdq.kamp,
  toometa.apssoftwareoptions,
  edu.kit.ipd.sdq.kamp4iec.model.repo,
  edu.kit.ipd.sdq.kamp4iec.model,
- edu.kit.ipd.sdq.kamp4iec.model.modificationmarks
+ edu.kit.ipd.sdq.kamp4iec.model.modificationmarks,
+ org.eclipse.emf.compare;bundle-version="3.3.1"
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-Vendor: SDQ
-Export-Package: edu.kit.ipd.sdq.kamp4aps4req.software
+Export-Package: edu.kit.ipd.sdq.kamp4aps4req.software,
+ edu.kit.ipd.sdq.kamp4aps4req.software.derivation

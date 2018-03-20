@@ -21,7 +21,7 @@ import edu.kit.ipd.sdq.kamp4aps.model.aPS.InterfaceRepository.Interface;
 import edu.kit.ipd.sdq.kamp4aps.model.aPS.ModuleRepository.Module;
 import edu.kit.ipd.sdq.kamp4aps.model.aPS.StructureRepository.Structure;
 import edu.kit.ipd.sdq.kamp4aps4req.core.APSReqActivityElementType;
-import edu.kit.ipd.sdq.kamp4aps4req.derivation.APSReqInternalModificationDerivation;
+import edu.kit.ipd.sdq.kamp4aps4req.derivation.AbstractAPSReqInternalModificationDerivation;
 import edu.kit.ipd.sdq.kamp4aps4req.hardware.APSReqHardwareArchitectureVersion;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModifyTraceableObject;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.APSReqHardwareChangePropagationDueToSpecificationDependencies;
@@ -32,7 +32,7 @@ import relations.TraceableObject;
  * @author Timo Maier
  *
  */
-public class APSReqHardwareInternalModificationDerivation extends APSReqInternalModificationDerivation {
+public class APSReqHardwareInternalModificationDerivation extends AbstractAPSReqInternalModificationDerivation {
 	
 	
 	/**
@@ -40,7 +40,7 @@ public class APSReqHardwareInternalModificationDerivation extends APSReqInternal
 	 * @param modification Modification caused by elements returned
 	 * @return List with Strings representing names of elements causing the modification
 	 */
-	public static List<String> getCausingElementsNames(AbstractModification<?,?> modification) {
+	public List<String> getCausingElementsNames(AbstractModification<?,?> modification) {
 		List<String> causingElementNames = new LinkedList<String>();
 		for (Object causingElement: modification.getCausingElements()) {
 			if (causingElement instanceof TraceableObject) {
@@ -75,7 +75,7 @@ public class APSReqHardwareInternalModificationDerivation extends APSReqInternal
 	 * @param activityElementType
 	 * @return
 	 */
-	public static Activity createModificationActivity(AbstractModification<?,?> 
+	public Activity createModificationActivity(AbstractModification<?,?> 
 	modification, List<String> causingElementNames, AbstractActivityElementType activityElementType) {
 		Activity result = APSInternalModificationDerivation.createModificationActivity(
 				modification, causingElementNames, activityElementType);
@@ -91,18 +91,6 @@ public class APSReqHardwareInternalModificationDerivation extends APSReqInternal
 		} else {
 			return null;
 		}
-	}
-	
-	/**
-	 * 
-	 * @param modification
-	 * @param activityElementType
-	 * @return
-	 */
-	public static Activity createModificationActivity(AbstractModification<?,?>  
-		modification, AbstractActivityElementType activityElementType) {
-		List<String> causingElementNames = getCausingElementsNames(modification);
-		return createModificationActivity(modification, causingElementNames, activityElementType);
 	}
 	
 
@@ -131,15 +119,6 @@ public class APSReqHardwareInternalModificationDerivation extends APSReqInternal
 		return activityList;
 	}
 	
-	private void deriveTraceableObjectModifications(Collection<? extends APSReqModifyTraceableObject<?>> modifications, 
-			List<Activity> activityList) {
-		for (APSReqModifyTraceableObject<?> modification: modifications) {
-			activityList.add(createModificationActivity(modification, 
-					APSReqActivityElementType.getActivityTypeForObject(modification.getAffectedElement())));
-		}
-	}
-
-
 	private void deriveStructureModifications(Collection<ModifyStructure<Structure>> modifications, 
 			List<Activity> activityList) {
 		for (ModifyStructure<Structure> modification: modifications) {

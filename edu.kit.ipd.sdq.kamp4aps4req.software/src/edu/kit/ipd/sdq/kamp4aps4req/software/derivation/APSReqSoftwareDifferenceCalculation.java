@@ -1,34 +1,37 @@
-package edu.kit.ipd.sdq.kamp4aps4req.hardware.derivation;
+package edu.kit.ipd.sdq.kamp4aps4req.software.derivation;
 
 import java.util.List;
+
+import edu.kit.ipd.sdq.kamp.derivation.AbstractDifferenceCalculation;
+import edu.kit.ipd.sdq.kamp.workplan.AbstractWorkplanDerivation;
+import edu.kit.ipd.sdq.kamp.workplan.Activity;
+import edu.kit.ipd.sdq.kamp.workplan.BasicActivity;
+import edu.kit.ipd.sdq.kamp4aps4req.core.APSReqActivityElementType;
+import edu.kit.ipd.sdq.kamp4aps4req.software.APSReqSoftwareArchitectureVersion;
+import edu.kit.ipd.sdq.kamp4iec.core.IECActivityType;
+import edu.kit.ipd.sdq.kamp4iec.core.derivation.IECDifferenceCalculation;
+import options.Option;
+import requirements.Requirement;
 
 import org.eclipse.emf.compare.Diff;
 import org.eclipse.emf.compare.ReferenceChange;
 import org.eclipse.emf.ecore.EObject;
 
 import decisions.Decision;
-import edu.kit.ipd.sdq.kamp.derivation.AbstractDifferenceCalculation;
-import edu.kit.ipd.sdq.kamp.workplan.AbstractWorkplanDerivation;
-import edu.kit.ipd.sdq.kamp.workplan.Activity;
-import edu.kit.ipd.sdq.kamp.workplan.BasicActivity;
-import edu.kit.ipd.sdq.kamp4aps.core.APSActivityType;
-import edu.kit.ipd.sdq.kamp4aps.core.derivation.APSDifferenceCalculation;
-import edu.kit.ipd.sdq.kamp4aps4req.core.APSReqActivityElementType;
-import edu.kit.ipd.sdq.kamp4aps4req.hardware.APSReqHardwareArchitectureVersion;
-import options.Option;
-import requirements.Requirement;
 
-public class APSReqHardwareDifferenceCalculation extends AbstractDifferenceCalculation<APSReqHardwareArchitectureVersion> {
+public class APSReqSoftwareDifferenceCalculation extends AbstractDifferenceCalculation<APSReqSoftwareArchitectureVersion> {
 
-	private final APSDifferenceCalculation apsDifferenceCalculation = new APSDifferenceCalculation();
-
-	private final APSReqHardwareInternalModificationDerivation internalModificationDerivation = 
-			new APSReqHardwareInternalModificationDerivation();
+	private final IECDifferenceCalculation iecDifferenceCalculation = new IECDifferenceCalculation();
+	
+	private final APSReqSoftwareInternalModificationDerivation internalModificationDerivation = 
+			new APSReqSoftwareInternalModificationDerivation();
+	
 	
 	@Override
-	public List<Activity> deriveWorkplan(APSReqHardwareArchitectureVersion baseVersion, 
-			APSReqHardwareArchitectureVersion targetVersion) {
-		List<Activity> activityList = this.apsDifferenceCalculation.deriveWorkplan(
+	public List<Activity> deriveWorkplan(APSReqSoftwareArchitectureVersion baseVersion, 
+			APSReqSoftwareArchitectureVersion targetVersion) {
+		
+		List<Activity> activityList = this.getIecDifferenceCalculation().deriveWorkplan(
 				baseVersion, targetVersion);
 		activityList.addAll(this.deriveAddAndRemoveActivities(AbstractWorkplanDerivation.calculateDiffModel(
 				baseVersion.getRequirementsRepository(), targetVersion.getRequirementsRepository())));
@@ -42,7 +45,7 @@ public class APSReqHardwareDifferenceCalculation extends AbstractDifferenceCalcu
 	
 	@Override
 	public void checkForDifferencesAndAddToWorkplan(Diff diffElement, List<Activity> workplan) {
-		this.getApsDifferenceCalculation().checkForDifferencesAndAddToWorkplan(diffElement, workplan);
+		this.getIecDifferenceCalculation().checkForDifferencesAndAddToWorkplan(diffElement, workplan);
 		if (detectionRuleAdded(diffElement, Requirement.class)) {
 			Requirement requirement = (Requirement)(((ReferenceChange)diffElement).getValue());
 			String elementName = "\"" + requirement.getSpecification() + "\"";
@@ -73,7 +76,7 @@ public class APSReqHardwareDifferenceCalculation extends AbstractDifferenceCalcu
 	protected static Activity createAPSReqAddActivity(EObject element, String elementName) {
 		APSReqActivityElementType activityElementType = APSReqActivityElementType.
 				getActivityTypeForObject(element);
-		return new Activity(APSActivityType.INTERNALMODIFICATIONMARK, 
+		return new Activity(IECActivityType.INTERNALMODIFICATIONMARK, 
 				activityElementType, element, elementName, null, BasicActivity.MODIFY, "Add " + 
 				element.eClass().getName() + " " + elementName + ".");
 	}
@@ -81,16 +84,19 @@ public class APSReqHardwareDifferenceCalculation extends AbstractDifferenceCalcu
 	protected static Activity createAPSReqRemoveActivity(EObject element, String elementName) {
 		APSReqActivityElementType activityElementType = APSReqActivityElementType.
 				getActivityTypeForObject(element);
-		return new Activity(APSActivityType.INTERNALMODIFICATIONMARK, 
+		return new Activity(IECActivityType.INTERNALMODIFICATIONMARK, 
 				activityElementType, element, elementName, null, BasicActivity.MODIFY, "Remove " + 
 				element.eClass().getName() + " " + elementName + ".");
 	}
-	
-	public APSDifferenceCalculation getApsDifferenceCalculation() {
-		return apsDifferenceCalculation;
+
+
+	public IECDifferenceCalculation getIecDifferenceCalculation() {
+		return iecDifferenceCalculation;
 	}
 
-	public APSReqHardwareInternalModificationDerivation getInternalModificationDerivation() {
+	public APSReqSoftwareInternalModificationDerivation getInternalModificationDerivation() {
 		return internalModificationDerivation;
 	}
+	
+	
 }
