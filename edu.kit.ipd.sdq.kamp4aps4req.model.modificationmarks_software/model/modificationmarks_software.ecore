@@ -13,26 +13,6 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="APSReqSoftwareChangePropagationDueToSpecificationDependencies"
       eSuperTypes="../../edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks/model/modificationmarks.ecore#//AbstractAPSReqChangePropagationDueToSpecificationDependencies">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="configurationModifications"
-        upperBound="-1" eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4iec.model.modificationmarks/model/IECModificationmarks.ecore#//IECModifyConfiguration"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="programModifications" upperBound="-1"
-        eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4iec.model.modificationmarks/model/IECModificationmarks.ecore#//IECModifyProgram"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="functionModifications"
-        upperBound="-1" eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4iec.model.modificationmarks/model/IECModificationmarks.ecore#//IECModifyFunction"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="functionBlockModifications"
-        upperBound="-1" eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4iec.model.modificationmarks/model/IECModificationmarks.ecore#//IECModifyFunctionBlock"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="globalVariableModifications"
-        upperBound="-1" eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4iec.model.modificationmarks/model/IECModificationmarks.ecore#//IECModifyGlobalVariable"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="iecInterfaceModifications"
-        upperBound="-1" eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4iec.model.modificationmarks/model/IECModificationmarks.ecore#//IECModifyInterface"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="abstractIECMethodModifications"
-        upperBound="-1" eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4iec.model.modificationmarks/model/IECModificationmarks.ecore#//IECModifyAbstractMethod"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="iecMethodModifications"
-        upperBound="-1" eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4iec.model.modificationmarks/model/IECModificationmarks.ecore#//IECModifyMethod"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="abstractIECPropertyModifications"
-        upperBound="-1" eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4iec.model.modificationmarks/model/IECModificationmarks.ecore#//IECModifyAbstractProperty"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="iecPropertyModifications"
-        upperBound="-1" eType="ecore:EClass ../../edu.kit.ipd.sdq.kamp4iec.model.modificationmarks/model/IECModificationmarks.ecore#//IECModifyProperty"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="iecComponentModifications"
         upperBound="-1" eType="#//APSReqModifyIECComponent" containment="true"/>
   </eClassifiers>
