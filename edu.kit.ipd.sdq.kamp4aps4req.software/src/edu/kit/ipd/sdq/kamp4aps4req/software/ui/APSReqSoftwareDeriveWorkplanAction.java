@@ -1,21 +1,18 @@
-package edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.editor;
+package edu.kit.ipd.sdq.kamp4aps4req.software.ui;
 
-import edu.kit.ipd.sdq.kamp.model.modificationmarks.editor.AbstractArchitectureBasedWorkplanDerivationAction;
+import edu.kit.ipd.sdq.kamp.ui.AbstractDeriveWorkplanAction;
 import edu.kit.ipd.sdq.kamp4aps4req.software.APSReqSoftwareArchitectureVersion;
 import edu.kit.ipd.sdq.kamp4aps4req.software.APSReqSoftwareArchitectureVersionPersistency;
 import edu.kit.ipd.sdq.kamp4aps4req.software.derivation.APSReqSoftwareDifferenceCalculation;
 import edu.kit.ipd.sdq.kamp4iec.core.derivation.IECEnrichedWorkplanDerivation;
 
-/**
- * @generated NOT
- *
- */
-public class APSReqSoftwareArchitectureBasedWorkplanDerivationAction extends AbstractArchitectureBasedWorkplanDerivationAction<APSReqSoftwareArchitectureVersion> {
+public class APSReqSoftwareDeriveWorkplanAction extends AbstractDeriveWorkplanAction<APSReqSoftwareArchitectureVersion> {
 
-	public APSReqSoftwareArchitectureBasedWorkplanDerivationAction() {
+	public APSReqSoftwareDeriveWorkplanAction() {
 		this.setWorkplanDerivation(new APSReqSoftwareDifferenceCalculation());
 		this.setEnrichedWorkplanDerivation(new IECEnrichedWorkplanDerivation());
 		this.setArchitectureVersionPersistency(new APSReqSoftwareArchitectureVersionPersistency());
+		
 	}
-
+	
 }

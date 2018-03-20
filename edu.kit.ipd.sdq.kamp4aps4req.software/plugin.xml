@@ -5,25 +5,25 @@
          point="org.eclipse.ui.popupMenus">
          <objectContribution
             adaptable="true"
-            id="edu.kit.ipd.sdq.kamp4apsreq.hardware.ui.CreateSubalternativeContribution"
+            id="edu.kit.ipd.sdq.kamp4apsreq.software.ui.CreateSubalternativeContribution"
             objectClass="org.eclipse.core.resources.IContainer">
          <menu
                icon="../edu.kit.ipd.sdq.kamp/icons/edit.png"
-               id="edu.kit.ipd.sdq.kamp4aps4req.hardware.menukamp"
+               id="edu.kit.ipd.sdq.kamp4aps4req.software.menukamp"
                label="KAMP4aPS4Req Analysis">
          </menu>
          <action
-               class="edu.kit.ipd.sdq.kamp4aps4req.hardware.ui.APSReqHardwareCreateEmptyBaseModelAction"
+               class="edu.kit.ipd.sdq.kamp4aps4req.software.ui.APSReqSoftwareCreateEmptyBaseModelAction"
                icon="../edu.kit.ipd.sdq.kamp/icons/filenew.png"
-               id="edu.kit.ipd.sdq.kamp4aps4req.hardware.ui.APSReqHardwareCreateEmptyBaseModelActionID"
-               label="Create empty KAMP4aPS4Req architecture"
+               id="edu.kit.ipd.sdq.kamp4aps4req.software.ui.APSReqSoftwareCreateEmptyBaseModelActionID"
+               label="Create empty KAMP4aPS4Req software architecture"
                menubarPath="kamp4aps4req">
          </action>
          <action
-               class="edu.kit.ipd.sdq.kamp4aps4req.hardware.ui.APSReqDeriveWorkplanAction"
+               class="edu.kit.ipd.sdq.kamp4aps4req.software.ui.APSReqSoftwareDeriveWorkplanAction"
                icon="../edu.kit.ipd.sdq.kamp/icons/run.png"
-               id="edu.kit.ipd.sdq.kamp4aps4req.hardware.ui.APSReqHardwareDeriveWorkplanActionID"
-               label="Derive KAMP4aPS4Req workplan"
+               id="edu.kit.ipd.sdq.kamp4aps4req.hardware.ui.APSReqSoftwareDeriveWorkplanActionID"
+               label="Derive KAMP4aPS4Req software workplan"
                menubarPath="kamp4aps4req">
          </action>
       </objectContribution>
