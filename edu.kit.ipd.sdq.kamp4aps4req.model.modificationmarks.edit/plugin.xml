@@ -6,37 +6,24 @@
 
 <plugin>
 
-   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
-      <!-- @generated APSReqmodificationmarks -->
-      <factory
-            uri="http://www.example.org/modificationmarks"
-            class="modificationmarks.provider.ModificationmarksItemProviderAdapterFactory"
-            supportedTypes=
-              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
-               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
-               org.eclipse.emf.edit.provider.ITreeItemContentProvider
-               org.eclipse.emf.edit.provider.IItemLabelProvider
-               org.eclipse.emf.edit.provider.IItemPropertySource"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
-      <!-- @generated modificationmarks -->
-      <factory
-            uri="http://www.example.org/modificationmarks"
-            class="edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.provider.ModificationmarksItemProviderAdapterFactory"
-            supportedTypes=
-              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
-               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
-               org.eclipse.emf.edit.provider.ITreeItemContentProvider
-               org.eclipse.emf.edit.provider.IItemLabelProvider
-               org.eclipse.emf.edit.provider.IItemPropertySource"/>
-   </extension>
-
    <extension point="org.eclipse.emf.edit.childCreationExtenders">
       <!-- @generated modificationmarks -->
       <extender
             uri="http://sdq.ipd.kit.edu/QML/dimensiontypes/1.0"
-            class="edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.provider.ModificationmarksItemProviderAdapterFactory$DimensiontypesChildCreationExtender"/>
+            class="edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.provider.APSReqModificationmarksItemProviderAdapterFactory$DimensiontypesChildCreationExtender"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <!-- @generated APSReqModificationmarks -->
+      <factory
+            uri="http://www.example.org//modificationmarks"
+            class="edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.provider.APSReqModificationmarksItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
    </extension>
 
 </plugin>

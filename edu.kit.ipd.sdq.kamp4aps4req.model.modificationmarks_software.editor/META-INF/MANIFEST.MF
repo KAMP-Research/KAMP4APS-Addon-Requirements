@@ -4,11 +4,12 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.editor;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.presentation.Modificationmarks_softwareEditorPlugin$Implementation
+Bundle-Activator: edu.kit.ipd.sdq.kamp4aps4req.software.model.modificationmarks.presentation.APSReqSoftwareModificationmarksEditorPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.presentation
+Export-Package: edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.presentation,
+ edu.kit.ipd.sdq.kamp4aps4req.software.model.modificationmarks.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
  edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.edit;visibility:=reexport,
@@ -32,7 +33,7 @@ Require-Bundle: org.eclipse.core.runtime,
  toometa.relations.edit;visibility:=reexport,
  toometa.requirements.edit;visibility:=reexport,
  de.uka.ipd.sdq.dsexplore.qml.units.edit;visibility:=reexport,
- edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software,
+ edu.kit.ipd.sdq.kamp4aps4req.software.model.modificationmarks,
  edu.kit.ipd.sdq.kamp4aps4req.software;bundle-version="1.0.0",
  edu.kit.ipd.sdq.kamp.model.modificationmarks.editor,
  edu.kit.ipd.sdq.kamp,

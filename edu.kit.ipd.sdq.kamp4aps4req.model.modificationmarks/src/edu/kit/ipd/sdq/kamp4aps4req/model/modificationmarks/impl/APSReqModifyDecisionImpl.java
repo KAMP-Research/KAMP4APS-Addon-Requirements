@@ -4,9 +4,8 @@ package edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.impl;
 
 import decisions.Decision;
 
+import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModificationmarksPackage;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModifyDecision;
-import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.ModificationmarksPackage;
-
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -33,7 +32,7 @@ public class APSReqModifyDecisionImpl extends APSReqModifyTraceableObjectImpl<De
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ModificationmarksPackage.Literals.APS_REQ_MODIFY_DECISION;
+		return APSReqModificationmarksPackage.Literals.APS_REQ_MODIFY_DECISION;
 	}
 
 } //APSReqModifyDecisionImpl

@@ -9,7 +9,7 @@ Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.tests
 Require-Bundle: org.eclipse.core.runtime,
- edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware;visibility:=reexport,
+ edu.kit.ipd.sdq.kamp4aps4req.hardware.model.modificationmarks;visibility:=reexport,
  edu.kit.ipd.sdq.kamp4aps.aps;visibility:=reexport,
  edu.kit.ipd.sdq.kamp4aps.basic;visibility:=reexport,
  toometa.decisions;visibility:=reexport,

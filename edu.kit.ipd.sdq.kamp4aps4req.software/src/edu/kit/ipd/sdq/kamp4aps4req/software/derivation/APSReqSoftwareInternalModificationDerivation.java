@@ -12,10 +12,10 @@ import edu.kit.ipd.sdq.kamp.workplan.BasicActivity;
 import edu.kit.ipd.sdq.kamp4aps4req.derivation.AbstractAPSReqInternalModificationDerivation;
 
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModifyTraceableObject;
-import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.APSReqModifyIECComponent;
-import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.APSReqSoftwareChangePropagationDueToSpecificationDependencies;
 import edu.kit.ipd.sdq.kamp4aps4req.software.APSReqSoftwareActivityElementType;
 import edu.kit.ipd.sdq.kamp4aps4req.software.APSReqSoftwareArchitectureVersion;
+import edu.kit.ipd.sdq.kamp4aps4req.software.model.modificationmarks.APSReqModifyIECComponent;
+import edu.kit.ipd.sdq.kamp4aps4req.software.model.modificationmarks.APSReqSoftwareChangePropagationDueToSpecificationDependencies;
 import edu.kit.ipd.sdq.kamp4iec.core.IECActivityType;
 import edu.kit.ipd.sdq.kamp4iec.core.derivation.IECInternalModificationDerivation;
 import edu.kit.ipd.sdq.kamp4iec.model.IECRepository.IECComponent;

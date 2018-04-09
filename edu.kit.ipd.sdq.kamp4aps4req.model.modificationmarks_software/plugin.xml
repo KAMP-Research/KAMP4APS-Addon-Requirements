@@ -6,12 +6,19 @@
 
 <plugin>
 
+
    <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated modificationmarks_software -->
+      <!-- @generated APSReqSoftwareModificationmarks -->
       <package
-            uri="http://www.example.org/modificationmarks_software"
-            class="edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.Modificationmarks_softwarePackage"
-            genModel="model/modificationmarks_software.genmodel"/>
+            uri="http://www.example.org/modificationmarks"
+            class="edu.kit.ipd.sdq.kamp4aps4req.software.model.modificationmarks.APSReqSoftwareModificationmarksPackage"
+            genModel="model/APSReqSoftwareModificationmarks.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated APSReqSoftwareModificationmarks -->
+      <parser
+            type="modificationmarks"
+            class="edu.kit.ipd.sdq.kamp4aps4req.software.model.modificationmarks.util.APSReqSoftwareModificationmarksResourceFactoryImpl"/>
+   </extension>
 </plugin>

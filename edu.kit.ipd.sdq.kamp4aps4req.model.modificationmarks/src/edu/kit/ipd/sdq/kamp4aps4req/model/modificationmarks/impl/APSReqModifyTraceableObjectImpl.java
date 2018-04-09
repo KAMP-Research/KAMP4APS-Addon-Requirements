@@ -4,9 +4,8 @@ package edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.impl;
 
 import edu.kit.ipd.sdq.kamp.model.modificationmarks.impl.AbstractModificationImpl;
 
+import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModificationmarksPackage;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModifyTraceableObject;
-import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.ModificationmarksPackage;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 
@@ -36,7 +35,7 @@ public abstract class APSReqModifyTraceableObjectImpl<T extends TraceableObject>
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ModificationmarksPackage.Literals.APS_REQ_MODIFY_TRACEABLE_OBJECT;
+		return APSReqModificationmarksPackage.Literals.APS_REQ_MODIFY_TRACEABLE_OBJECT;
 	}
 
 	/**

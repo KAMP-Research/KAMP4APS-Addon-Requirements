@@ -5,10 +5,9 @@ package edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.provider;
 
 import edu.kit.ipd.sdq.kamp.model.modificationmarks.provider.ChangePropagationStepItemProvider;
 
+import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModificationmarksFactory;
+import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModificationmarksPackage;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.AbstractAPSReqChangePropagationDueToSpecificationDependencies;
-import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.ModificationmarksFactory;
-import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.ModificationmarksPackage;
-
 import java.util.Collection;
 import java.util.List;
 
@@ -18,8 +17,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
-
-import org.eclipse.emf.edit.provider.IChildCreationExtender;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -67,9 +64,9 @@ public class AbstractAPSReqChangePropagationDueToSpecificationDependenciesItemPr
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ModificationmarksPackage.Literals.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__DECISION_MODIFICATIONS);
-			childrenFeatures.add(ModificationmarksPackage.Literals.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__REQUIREMENT_MODIFICATIONS);
-			childrenFeatures.add(ModificationmarksPackage.Literals.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__OPTION_MODIFICATIONS);
+			childrenFeatures.add(APSReqModificationmarksPackage.Literals.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__DECISION_MODIFICATIONS);
+			childrenFeatures.add(APSReqModificationmarksPackage.Literals.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__REQUIREMENT_MODIFICATIONS);
+			childrenFeatures.add(APSReqModificationmarksPackage.Literals.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__OPTION_MODIFICATIONS);
 		}
 		return childrenFeatures;
 	}
@@ -111,9 +108,9 @@ public class AbstractAPSReqChangePropagationDueToSpecificationDependenciesItemPr
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(AbstractAPSReqChangePropagationDueToSpecificationDependencies.class)) {
-			case ModificationmarksPackage.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__DECISION_MODIFICATIONS:
-			case ModificationmarksPackage.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__REQUIREMENT_MODIFICATIONS:
-			case ModificationmarksPackage.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__OPTION_MODIFICATIONS:
+			case APSReqModificationmarksPackage.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__DECISION_MODIFICATIONS:
+			case APSReqModificationmarksPackage.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__REQUIREMENT_MODIFICATIONS:
+			case APSReqModificationmarksPackage.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__OPTION_MODIFICATIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -133,18 +130,18 @@ public class AbstractAPSReqChangePropagationDueToSpecificationDependenciesItemPr
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ModificationmarksPackage.Literals.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__DECISION_MODIFICATIONS,
-				 ModificationmarksFactory.eINSTANCE.createAPSReqModifyDecision()));
+				(APSReqModificationmarksPackage.Literals.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__DECISION_MODIFICATIONS,
+				 APSReqModificationmarksFactory.eINSTANCE.createAPSReqModifyDecision()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ModificationmarksPackage.Literals.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__REQUIREMENT_MODIFICATIONS,
-				 ModificationmarksFactory.eINSTANCE.createAPSReqModifyRequirement()));
+				(APSReqModificationmarksPackage.Literals.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__REQUIREMENT_MODIFICATIONS,
+				 APSReqModificationmarksFactory.eINSTANCE.createAPSReqModifyRequirement()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ModificationmarksPackage.Literals.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__OPTION_MODIFICATIONS,
-				 ModificationmarksFactory.eINSTANCE.createAPSReqModifyOption()));
+				(APSReqModificationmarksPackage.Literals.ABSTRACT_APS_REQ_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__OPTION_MODIFICATIONS,
+				 APSReqModificationmarksFactory.eINSTANCE.createAPSReqModifyOption()));
 	}
 
 	/**
@@ -155,7 +152,7 @@ public class AbstractAPSReqChangePropagationDueToSpecificationDependenciesItemPr
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return ((IChildCreationExtender)adapterFactory).getResourceLocator();
+		return APSReqModificationmarksEditPlugin.INSTANCE;
 	}
 
 }

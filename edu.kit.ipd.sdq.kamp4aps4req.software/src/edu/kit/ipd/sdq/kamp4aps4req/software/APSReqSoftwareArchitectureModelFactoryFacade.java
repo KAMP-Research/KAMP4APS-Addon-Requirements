@@ -1,13 +1,14 @@
 package edu.kit.ipd.sdq.kamp4aps4req.software;
 
 import edu.kit.ipd.sdq.kamp4iec.model.IECFieldOfActivityAnnotations.IECFieldOfActivityAnnotationsRepository;
+import edu.kit.ipd.sdq.kamp4aps4req.software.model.modificationmarks.APSReqSoftwareModificationRepository;
+import edu.kit.ipd.sdq.kamp4aps4req.software.model.modificationmarks.APSReqSoftwareModificationmarksFactory;
 import edu.kit.ipd.sdq.kamp4iec.model.IECFieldOfActivityAnnotations.IECFieldOfActivityAnnotationsFactory;
 import edu.kit.ipd.sdq.kamp4iec.model.IECModel.Configuration;
 import edu.kit.ipd.sdq.kamp4iec.model.IECModel.IECModelFactory;
 import edu.kit.ipd.sdq.kamp4iec.model.IECRepository.Repository;
 import edu.kit.ipd.sdq.kamp4iec.model.IECRepository.IECRepositoryFactory;
-import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.Modificationmarks_softwareFactory;
-import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.APSReqSoftwareModificationRepository;
+
 import options.OptionRepository;
 import options.OptionsFactory;
 import requirements.ReqRepository;
@@ -43,6 +44,6 @@ public class APSReqSoftwareArchitectureModelFactoryFacade {
 	}
 	
 	public static APSReqSoftwareModificationRepository createModificationRepository() {
-		return Modificationmarks_softwareFactory.eINSTANCE.createAPSReqSoftwareModificationRepository();
+		return APSReqSoftwareModificationmarksFactory.eINSTANCE.createAPSReqSoftwareModificationRepository();
 	}
 }

@@ -20,7 +20,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqSeedModifications#getOptionModifications <em>Option Modifications</em>}</li>
  * </ul>
  *
- * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.ModificationmarksPackage#getAPSReqSeedModifications()
+ * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModificationmarksPackage#getAPSReqSeedModifications()
  * @model abstract="true"
  * @generated
  */
@@ -35,7 +35,7 @@ public interface APSReqSeedModifications extends AbstractSeedModifications {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Requirement Modifications</em>' containment reference list.
-	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.ModificationmarksPackage#getAPSReqSeedModifications_RequirementModifications()
+	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModificationmarksPackage#getAPSReqSeedModifications_RequirementModifications()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -51,7 +51,7 @@ public interface APSReqSeedModifications extends AbstractSeedModifications {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Decision Modifications</em>' containment reference list.
-	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.ModificationmarksPackage#getAPSReqSeedModifications_DecisionModifications()
+	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModificationmarksPackage#getAPSReqSeedModifications_DecisionModifications()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -67,7 +67,7 @@ public interface APSReqSeedModifications extends AbstractSeedModifications {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Option Modifications</em>' containment reference list.
-	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.ModificationmarksPackage#getAPSReqSeedModifications_OptionModifications()
+	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModificationmarksPackage#getAPSReqSeedModifications_OptionModifications()
 	 * @model containment="true"
 	 * @generated
 	 */

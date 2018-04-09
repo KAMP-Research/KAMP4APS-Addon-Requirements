@@ -10,7 +10,7 @@ import decisions.Decision;
  * <!-- end-user-doc -->
  *
  *
- * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.ModificationmarksPackage#getAPSReqModifyDecision()
+ * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModificationmarksPackage#getAPSReqModifyDecision()
  * @model
  * @generated
  */

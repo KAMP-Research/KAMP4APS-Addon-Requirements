@@ -2,9 +2,8 @@
  */
 package edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.tests;
 
+import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModificationmarksFactory;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModifyRequirement;
-import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.ModificationmarksFactory;
-
 import junit.textui.TestRunner;
 
 /**
@@ -53,7 +52,7 @@ public class APSReqModifyRequirementTest extends APSReqModifyTraceableObjectTest
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(ModificationmarksFactory.eINSTANCE.createAPSReqModifyRequirement());
+		setFixture(APSReqModificationmarksFactory.eINSTANCE.createAPSReqModifyRequirement());
 	}
 
 	/**

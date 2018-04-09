@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: KAMP4aPS4ReqSoftware Core
 Bundle-SymbolicName: edu.kit.ipd.sdq.kamp4aps4req.software;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: edu.kit.ipd.sdq.kamp4aps4req.activator.APSReqActivator
+Bundle-Activator: edu.kit.ipd.sdq.kamp4aps4req.software.activator.APSReqSoftwareActivator
 Require-Bundle: edu.kit.ipd.sdq.kamp,
  toometa.options,
  org.eclipse.ui;bundle-version="3.108.1",
@@ -12,7 +12,7 @@ Require-Bundle: edu.kit.ipd.sdq.kamp,
  toometa.decisions;bundle-version="1.0.0",
  edu.kit.ipd.sdq.kamp4iec;bundle-version="0.1.0",
  edu.kit.ipd.sdq.kamp.model.modificationmarks;bundle-version="1.0.0",
- edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software;bundle-version="0.1.0",
+ edu.kit.ipd.sdq.kamp4aps4req.software.model.modificationmarks;bundle-version="0.1.0",
  edu.kit.ipd.sdq.kamp4iec.model.fieldofactivityannotations,
  org.eclipse.core.resources,
  toometa.apssoftwareoptions,

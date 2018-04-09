@@ -8,7 +8,7 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import decisions.DecisionRepository;
 import edu.kit.ipd.sdq.kamp.util.FileAndFolderManagement;
 import edu.kit.ipd.sdq.kamp4aps4req.core.AbstractAPSReqArchitectureVersionPersistency;
-import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.APSReqSoftwareModificationRepository;
+import edu.kit.ipd.sdq.kamp4aps4req.software.model.modificationmarks.APSReqSoftwareModificationRepository;
 import edu.kit.ipd.sdq.kamp4iec.core.IECArchitectureVersionPersistency;
 import edu.kit.ipd.sdq.kamp4iec.model.IECModel.Configuration;
 import edu.kit.ipd.sdq.kamp4iec.model.IECRepository.Repository;
