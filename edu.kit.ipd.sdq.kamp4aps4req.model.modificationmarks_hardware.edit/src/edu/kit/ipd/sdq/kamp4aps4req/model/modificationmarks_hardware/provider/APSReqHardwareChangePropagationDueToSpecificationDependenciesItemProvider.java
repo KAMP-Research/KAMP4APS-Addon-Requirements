@@ -3,9 +3,9 @@
 package edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.provider;
 
 
-import edu.kit.ipd.sdq.kamp4aps.model.KAMP4aPSModificationmarks.KAMP4aPSModificationmarksFactory;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.provider.AbstractAPSReqChangePropagationDueToSpecificationDependenciesItemProvider;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.APSReqHardwareChangePropagationDueToSpecificationDependencies;
+import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.Modificationmarks_hardwareFactory;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.Modificationmarks_hardwarePackage;
 
 import java.util.Collection;
@@ -64,10 +64,7 @@ public class APSReqHardwareChangePropagationDueToSpecificationDependenciesItemPr
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(Modificationmarks_hardwarePackage.Literals.APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__STRUCTURE_MODIFICATIONS);
-			childrenFeatures.add(Modificationmarks_hardwarePackage.Literals.APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__MODULE_MODIFICATIONS);
-			childrenFeatures.add(Modificationmarks_hardwarePackage.Literals.APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__COMPONENT_MODIFICATIONS);
-			childrenFeatures.add(Modificationmarks_hardwarePackage.Literals.APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__INTERFACE_MODIFICATIONS);
+			childrenFeatures.add(Modificationmarks_hardwarePackage.Literals.APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__ENTITY_MODIFICATIONS);
 		}
 		return childrenFeatures;
 	}
@@ -120,10 +117,7 @@ public class APSReqHardwareChangePropagationDueToSpecificationDependenciesItemPr
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(APSReqHardwareChangePropagationDueToSpecificationDependencies.class)) {
-			case Modificationmarks_hardwarePackage.APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__STRUCTURE_MODIFICATIONS:
-			case Modificationmarks_hardwarePackage.APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__MODULE_MODIFICATIONS:
-			case Modificationmarks_hardwarePackage.APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__COMPONENT_MODIFICATIONS:
-			case Modificationmarks_hardwarePackage.APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__INTERFACE_MODIFICATIONS:
+			case Modificationmarks_hardwarePackage.APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__ENTITY_MODIFICATIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -143,68 +137,8 @@ public class APSReqHardwareChangePropagationDueToSpecificationDependenciesItemPr
 
 		newChildDescriptors.add
 			(createChildParameter
-				(Modificationmarks_hardwarePackage.Literals.APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__STRUCTURE_MODIFICATIONS,
-				 KAMP4aPSModificationmarksFactory.eINSTANCE.createModifyStructure()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(Modificationmarks_hardwarePackage.Literals.APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__MODULE_MODIFICATIONS,
-				 KAMP4aPSModificationmarksFactory.eINSTANCE.createModifyModule()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(Modificationmarks_hardwarePackage.Literals.APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__MODULE_MODIFICATIONS,
-				 KAMP4aPSModificationmarksFactory.eINSTANCE.createModifyMicroSwitchModule()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(Modificationmarks_hardwarePackage.Literals.APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__COMPONENT_MODIFICATIONS,
-				 KAMP4aPSModificationmarksFactory.eINSTANCE.createModifyComponent()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(Modificationmarks_hardwarePackage.Literals.APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__COMPONENT_MODIFICATIONS,
-				 KAMP4aPSModificationmarksFactory.eINSTANCE.createModifyBusBox()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(Modificationmarks_hardwarePackage.Literals.APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__COMPONENT_MODIFICATIONS,
-				 KAMP4aPSModificationmarksFactory.eINSTANCE.createModifyBusMaster()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(Modificationmarks_hardwarePackage.Literals.APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__COMPONENT_MODIFICATIONS,
-				 KAMP4aPSModificationmarksFactory.eINSTANCE.createModifyBusSlave()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(Modificationmarks_hardwarePackage.Literals.APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__COMPONENT_MODIFICATIONS,
-				 KAMP4aPSModificationmarksFactory.eINSTANCE.createModifyBusCable()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(Modificationmarks_hardwarePackage.Literals.APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__COMPONENT_MODIFICATIONS,
-				 KAMP4aPSModificationmarksFactory.eINSTANCE.createModifySensor()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(Modificationmarks_hardwarePackage.Literals.APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__COMPONENT_MODIFICATIONS,
-				 KAMP4aPSModificationmarksFactory.eINSTANCE.createModifyRamp()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(Modificationmarks_hardwarePackage.Literals.APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__INTERFACE_MODIFICATIONS,
-				 KAMP4aPSModificationmarksFactory.eINSTANCE.createModifyInterface()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(Modificationmarks_hardwarePackage.Literals.APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__INTERFACE_MODIFICATIONS,
-				 KAMP4aPSModificationmarksFactory.eINSTANCE.createModifySignalinterface()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(Modificationmarks_hardwarePackage.Literals.APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__INTERFACE_MODIFICATIONS,
-				 KAMP4aPSModificationmarksFactory.eINSTANCE.createModifyPhysicalConnection()));
+				(Modificationmarks_hardwarePackage.Literals.APS_REQ_HARDWARE_CHANGE_PROPAGATION_DUE_TO_SPECIFICATION_DEPENDENCIES__ENTITY_MODIFICATIONS,
+				 Modificationmarks_hardwareFactory.eINSTANCE.createAPSReqModifyEntity()));
 	}
 
 	/**

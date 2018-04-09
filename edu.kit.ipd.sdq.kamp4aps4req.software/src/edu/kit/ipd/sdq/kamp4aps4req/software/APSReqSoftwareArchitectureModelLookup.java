@@ -94,6 +94,8 @@ public class APSReqSoftwareArchitectureModelLookup extends APSReqArchitectureMod
 	
 	/**
 	 * Checks which IECComponents are referenced by Decisions.
+	 * Lookup-methods of each IECComponent are not called (like above for options) because they
+	 * return a map with options instead of decisions
 	 * @param version
 	 * @param options
 	 * @return Map containing IECComponents (key) and the Decisions they are referenced by (value)
@@ -101,88 +103,87 @@ public class APSReqSoftwareArchitectureModelLookup extends APSReqArchitectureMod
 	public static Map<IECComponent, Set<Decision>> lookupIECComponentsReferencedByDecisions(
 			APSReqSoftwareArchitectureVersion version, Collection<? extends Decision> decisions) {
 		Map<IECComponent, Set<Decision>> results = new HashMap<IECComponent, Set<Decision>>();
-		
+
 		for (Decision decisionRepository : decisions) {
 			for (SelectionObject selection : decisionRepository.getSelected())
 				if (selection instanceof APSReqConfigurationOption) {
-					// there is only one configuration, no extra map needed
 					if (isIECComponentReferencedByOption(version.getConfiguration(), (APSReqConfigurationOption)selection)) {
-					MapUtil.putOrAddToMap(results, version.getConfiguration(), decisionRepository);
-				}
-			} else if (selection instanceof APSReqProgramOption) {
-				for (Program programRepo : version.getConfiguration().getInstantiatesProgram()) {
-					if (isIECComponentReferencedByOption(programRepo, (APSReqProgramOption)selection)) {
-						MapUtil.putOrAddToMap(results, programRepo, decisionRepository);
+						MapUtil.putOrAddToMap(results, version.getConfiguration(), decisionRepository);
 					}
-				}
-			} else if (selection instanceof APSReqFunctionOption) {
-				for (Function functionRepo : version.getIECRepository().getContainsFunction()) {
-					if (isIECComponentReferencedByOption(functionRepo, (APSReqFunctionOption)selection)) {
-						MapUtil.putOrAddToMap(results, functionRepo, decisionRepository);
+				} else if (selection instanceof APSReqProgramOption) {
+					for (Program programRepo : version.getConfiguration().getInstantiatesProgram()) {
+						if (isIECComponentReferencedByOption(programRepo, (APSReqProgramOption)selection)) {
+							MapUtil.putOrAddToMap(results, programRepo, decisionRepository);
+						}
 					}
-				}
-			} else if (selection instanceof APSReqFunctionBlockOption) {
-				for (FunctionBlock functionBlockRepo : version.getIECRepository().getContainsFunctionBlock()) {
-					if (isIECComponentReferencedByOption(functionBlockRepo, (APSReqFunctionBlockOption)selection)) {
-						MapUtil.putOrAddToMap(results, functionBlockRepo, decisionRepository);
+				} else if (selection instanceof APSReqFunctionOption) {
+					for (Function functionRepo : version.getIECRepository().getContainsFunction()) {
+						if (isIECComponentReferencedByOption(functionRepo, (APSReqFunctionOption)selection)) {
+							MapUtil.putOrAddToMap(results, functionRepo, decisionRepository);
+						}
 					}
-				}
-			} else if (selection instanceof APSReqGlobalVariableOption) {
-				// check repo first
-				for (GlobalVariable globalVarRepo : version.getIECRepository().getContainsGlobalVariable()) {
-					if (isIECComponentReferencedByOption(globalVarRepo, (APSReqGlobalVariableOption)selection)) {
-						MapUtil.putOrAddToMap(results, globalVarRepo, decisionRepository);
+				} else if (selection instanceof APSReqFunctionBlockOption) {
+					for (FunctionBlock functionBlockRepo : version.getIECRepository().getContainsFunctionBlock()) {
+						if (isIECComponentReferencedByOption(functionBlockRepo, (APSReqFunctionBlockOption)selection)) {
+							MapUtil.putOrAddToMap(results, functionBlockRepo, decisionRepository);
+						}
 					}
-				}
-				// then programs
-				for (Program programRepo : version.getConfiguration().getInstantiatesProgram()) {
-					for (GlobalVariable globalVarsInProgram : programRepo.getDeclaresGlobalVariable()) {
-						if (isIECComponentReferencedByOption(globalVarsInProgram, (APSReqGlobalVariableOption)selection)) {
-							MapUtil.putOrAddToMap(results, globalVarsInProgram, decisionRepository);
+				} else if (selection instanceof APSReqGlobalVariableOption) {
+					// check repo first
+					for (GlobalVariable globalVarRepo : version.getIECRepository().getContainsGlobalVariable()) {
+						if (isIECComponentReferencedByOption(globalVarRepo, (APSReqGlobalVariableOption)selection)) {
+							MapUtil.putOrAddToMap(results, globalVarRepo, decisionRepository);
+						}
+					}
+					// then programs
+					for (Program programRepo : version.getConfiguration().getInstantiatesProgram()) {
+						for (GlobalVariable globalVarsInProgram : programRepo.getDeclaresGlobalVariable()) {
+							if (isIECComponentReferencedByOption(globalVarsInProgram, (APSReqGlobalVariableOption)selection)) {
+								MapUtil.putOrAddToMap(results, globalVarsInProgram, decisionRepository);
+							}
+						}
+					}
+				} else if (selection instanceof APSReqIECInterfaceOption) {
+					for (IECInterface iecInterfaceRepo : version.getIECRepository().getContainsInterface()) {
+						if (isIECComponentReferencedByOption(iecInterfaceRepo, (APSReqIECInterfaceOption)selection)) {
+							MapUtil.putOrAddToMap(results, iecInterfaceRepo, decisionRepository);
+						}
+					}
+				} else if (selection instanceof APSReqIECMethodOption) {
+					// check FunctionBlocks for IECMethods
+					for (FunctionBlock functionBlockRepo : version.getIECRepository().getContainsFunctionBlock()) {
+						for (IECMethod methodRepo : functionBlockRepo.getHasMethod()) {
+							if (isIECComponentReferencedByOption(methodRepo, (APSReqIECMethodOption)selection)) {
+								MapUtil.putOrAddToMap(results, methodRepo, decisionRepository);
+							}
+						}
+					}
+					// check IECInterfaces for AbstractMethods
+					for (IECInterface interfaceRepo : version.getIECRepository().getContainsInterface()) {
+						for (IECAbstractMethod methodRepo : interfaceRepo.getHasMethod()) {
+							if (isIECComponentReferencedByOption(methodRepo, (APSReqIECMethodOption)selection)) {
+								MapUtil.putOrAddToMap(results, methodRepo, decisionRepository);
+							}
+						}
+					}
+				} else if (selection instanceof APSReqIECPropertyOption) {
+					// check FunctionBlocks for IECProperties
+					for (FunctionBlock functionBlockRepo : version.getIECRepository().getContainsFunctionBlock()) {
+						for (IECProperty iecPropertyRepo : functionBlockRepo.getHasProperty()) {
+							if (isIECComponentReferencedByOption(iecPropertyRepo, (APSReqIECPropertyOption)selection)) {
+								MapUtil.putOrAddToMap(results, iecPropertyRepo, decisionRepository);
+							}
+						}
+					}
+					// check IECInterfaces for AbstractProperties
+					for (IECInterface interfaceRepo : version.getIECRepository().getContainsInterface()) {
+						for (IECAbstractProperty abstractPropertyRepo : interfaceRepo.getHasProperty()) {
+							if (isIECComponentReferencedByOption(abstractPropertyRepo, (APSReqIECPropertyOption)selection)) {
+								MapUtil.putOrAddToMap(results, abstractPropertyRepo, decisionRepository);
+							}
 						}
 					}
 				}
-			} else if (selection instanceof APSReqIECInterfaceOption) {
-				for (IECInterface iecInterfaceRepo : version.getIECRepository().getContainsInterface()) {
-					if (isIECComponentReferencedByOption(iecInterfaceRepo, (APSReqIECInterfaceOption)selection)) {
-						MapUtil.putOrAddToMap(results, iecInterfaceRepo, decisionRepository);
-					}
-				}
-			} else if (selection instanceof APSReqIECMethodOption) {
-				// check FunctionBlocks for IECMethods
-				for (FunctionBlock functionBlockRepo : version.getIECRepository().getContainsFunctionBlock()) {
-					for (IECMethod methodRepo : functionBlockRepo.getHasMethod()) {
-						if (isIECComponentReferencedByOption(methodRepo, (APSReqIECMethodOption)selection)) {
-							MapUtil.putOrAddToMap(results, methodRepo, decisionRepository);
-						}
-					}
-				}
-				// check IECInterfaces for AbstractMethods
-				for (IECInterface interfaceRepo : version.getIECRepository().getContainsInterface()) {
-					for (IECAbstractMethod methodRepo : interfaceRepo.getHasMethod()) {
-						if (isIECComponentReferencedByOption(methodRepo, (APSReqIECMethodOption)selection)) {
-							MapUtil.putOrAddToMap(results, methodRepo, decisionRepository);
-						}
-					}
-				}
-			} else if (selection instanceof APSReqIECPropertyOption) {
-				// check FunctionBlocks for IECProperties
-				for (FunctionBlock functionBlockRepo : version.getIECRepository().getContainsFunctionBlock()) {
-					for (IECProperty iecPropertyRepo : functionBlockRepo.getHasProperty()) {
-						if (isIECComponentReferencedByOption(iecPropertyRepo, (APSReqIECPropertyOption)selection)) {
-							MapUtil.putOrAddToMap(results, iecPropertyRepo, decisionRepository);
-						}
-					}
-				}
-				// check IECInterfaces for AbstractProperties
-				for (IECInterface interfaceRepo : version.getIECRepository().getContainsInterface()) {
-					for (IECAbstractProperty abstractPropertyRepo : interfaceRepo.getHasProperty()) {
-						if (isIECComponentReferencedByOption(abstractPropertyRepo, (APSReqIECPropertyOption)selection)) {
-							MapUtil.putOrAddToMap(results, abstractPropertyRepo, decisionRepository);
-						}
-					}
-				}
-			}
 		}
 		return results;
 	}
@@ -200,11 +201,6 @@ public class APSReqSoftwareArchitectureModelLookup extends APSReqArchitectureMod
 		return results;
 	}
 	
-	/*	########################################################################################################################
-	 * 	#  FUNCTIONBLOCK LOOKUP SECTION  #######################################################################################
-	 *  ########################################################################################################################              
-	 */
-	
 	private static Map<FunctionBlock, Set<Option>> lookupFunctionBlocksReferencedByOption(
 			APSReqSoftwareArchitectureVersion version, APSReqFunctionBlockOption option) {
 		Map<FunctionBlock, Set<Option>> results = new HashMap<FunctionBlock, Set<Option>>();
@@ -214,6 +210,8 @@ public class APSReqSoftwareArchitectureModelLookup extends APSReqArchitectureMod
 			}
 		}
 		return results;
+		
+		
 	}
 	
 	private static Map<Function, Set<Option>> lookupFunctionsReferencedByOption(

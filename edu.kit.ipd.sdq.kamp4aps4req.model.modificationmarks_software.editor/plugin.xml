@@ -53,4 +53,31 @@
              </action>
           </objectContribution>
        </extension>
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated APSReqSoftwareModificationmarks -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="edu.kit.ipd.sdq.kamp4aps4req.software.model.modificationmarks.presentation.APSReqSoftwareModificationmarksModelWizardID"
+            name="%_UI_APSReqSoftwareModificationmarksModelWizard_label"
+            class="edu.kit.ipd.sdq.kamp4aps4req.software.model.modificationmarks.presentation.APSReqSoftwareModificationmarksModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/APSReqSoftwareModificationmarksModelFile.gif">
+         <description>%_UI_APSReqSoftwareModificationmarksModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated APSReqSoftwareModificationmarks -->
+      <editor
+            id="edu.kit.ipd.sdq.kamp4aps4req.software.model.modificationmarks.presentation.APSReqSoftwareModificationmarksEditorID"
+            name="%_UI_APSReqSoftwareModificationmarksEditor_label"
+            icon="icons/full/obj16/APSReqSoftwareModificationmarksModelFile.gif"
+            extensions="modificationmarks"
+            class="edu.kit.ipd.sdq.kamp4aps4req.software.model.modificationmarks.presentation.APSReqSoftwareModificationmarksEditor"
+            contributorClass="edu.kit.ipd.sdq.kamp4aps4req.software.model.modificationmarks.presentation.APSReqSoftwareModificationmarksActionBarContributor">
+      </editor>
+   </extension>
 </plugin>

@@ -20,7 +20,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.AbstractAPSReqChangePropagationDueToSpecificationDependencies#getOptionModifications <em>Option Modifications</em>}</li>
  * </ul>
  *
- * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.ModificationmarksPackage#getAbstractAPSReqChangePropagationDueToSpecificationDependencies()
+ * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModificationmarksPackage#getAbstractAPSReqChangePropagationDueToSpecificationDependencies()
  * @model abstract="true"
  * @generated
  */
@@ -35,7 +35,7 @@ public interface AbstractAPSReqChangePropagationDueToSpecificationDependencies e
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Decision Modifications</em>' containment reference list.
-	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.ModificationmarksPackage#getAbstractAPSReqChangePropagationDueToSpecificationDependencies_DecisionModifications()
+	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModificationmarksPackage#getAbstractAPSReqChangePropagationDueToSpecificationDependencies_DecisionModifications()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -51,7 +51,7 @@ public interface AbstractAPSReqChangePropagationDueToSpecificationDependencies e
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Requirement Modifications</em>' containment reference list.
-	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.ModificationmarksPackage#getAbstractAPSReqChangePropagationDueToSpecificationDependencies_RequirementModifications()
+	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModificationmarksPackage#getAbstractAPSReqChangePropagationDueToSpecificationDependencies_RequirementModifications()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -67,7 +67,7 @@ public interface AbstractAPSReqChangePropagationDueToSpecificationDependencies e
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Option Modifications</em>' containment reference list.
-	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.ModificationmarksPackage#getAbstractAPSReqChangePropagationDueToSpecificationDependencies_OptionModifications()
+	 * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModificationmarksPackage#getAbstractAPSReqChangePropagationDueToSpecificationDependencies_OptionModifications()
 	 * @model containment="true"
 	 * @generated
 	 */

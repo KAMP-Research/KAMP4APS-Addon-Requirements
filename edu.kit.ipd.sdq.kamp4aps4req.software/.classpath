@@ -7,7 +7,7 @@
 	<classpathentry kind="src" path="/toometa.options"/>
 	<classpathentry kind="src" path="/toometa.requirements"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/edu.kit.ipd.sdq.kamp4iec"/>
-	<classpathentry kind="src" path="/edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software"/>
+	<classpathentry kind="src" path="/edu.kit.ipd.sdq.kamp4aps4req.software.model.modificationmarks"/>
 	<classpathentry kind="src" path="/edu.kit.ipd.sdq.kamp4iec.model.modificationmarks"/>
 	<classpathentry kind="src" path="/edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks"/>
 	<classpathentry kind="src" path="/edu.kit.ipd.sdq.kamp.model.modificationmarks"/>

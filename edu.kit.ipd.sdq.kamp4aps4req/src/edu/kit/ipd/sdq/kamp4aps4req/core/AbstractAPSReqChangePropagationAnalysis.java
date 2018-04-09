@@ -7,9 +7,10 @@ import edu.kit.ipd.sdq.kamp.propagation.AbstractChangePropagationAnalysis;
 import edu.kit.ipd.sdq.kamp.util.MapUtil;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModifyRequirement;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.AbstractAPSReqChangePropagationDueToSpecificationDependencies;
+import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModificationmarksFactory;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModifyDecision;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModifyOption;
-import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.ModificationmarksFactory;
+
 import requirements.Requirement;
 import options.Option;
 import relations.DependencyObject;
@@ -116,7 +117,7 @@ public abstract class AbstractAPSReqChangePropagationAnalysis<T extends Abstract
 				elementsMarkedInThisStep.get(requirement).getCausingElements().
 					addAll(requirementToBeMarkedEntry.getValue());
 			} else {
-				APSReqModifyRequirement modifyRequirement = ModificationmarksFactory.
+				APSReqModifyRequirement modifyRequirement = APSReqModificationmarksFactory.
 						eINSTANCE.createAPSReqModifyRequirement();
 				modifyRequirement.setToolderived(true);
 				modifyRequirement.setAffectedElement(requirement);
@@ -138,13 +139,13 @@ public abstract class AbstractAPSReqChangePropagationAnalysis<T extends Abstract
 			Decision decision = decisionToBeMarkedEntry.getKey();
 			if (elementsMarkedInThisStep.containsKey(decision)) {
 				elementsMarkedInThisStep.get(decision).getCausingElements().
-					addAll(decisionToBeMarkedEntry.getValue());
+				addAll(decisionToBeMarkedEntry.getValue());
 			} else {
-				APSReqModifyDecision modifyDecision = ModificationmarksFactory.eINSTANCE.createAPSReqModifyDecision();
+				APSReqModifyDecision modifyDecision = APSReqModificationmarksFactory.eINSTANCE.createAPSReqModifyDecision();
 				modifyDecision.setToolderived(true);
 				modifyDecision.setAffectedElement(decision);
-				modifyDecision.getCausingElements().addAll(decisionToBeMarkedEntry.getValue());
-				
+			modifyDecision.getCausingElements().addAll(decisionToBeMarkedEntry.getValue());
+			
 				elementsMarkedInThisStep.put(decision, modifyDecision);
 				this.getMarkedDecisions().add(decision);
 				this.getChangePropagationDueToSpecificationDependencies().
@@ -161,11 +162,11 @@ public abstract class AbstractAPSReqChangePropagationAnalysis<T extends Abstract
 			Option option = optionToBeMarkedEntry.getKey();
 			if (elementsMarkedInThisStep.containsKey(option)) {
 				elementsMarkedInThisStep.get(option).getCausingElements().
-					addAll(optionToBeMarkedEntry.getValue());
-			} else {
-				APSReqModifyOption modifyOption = ModificationmarksFactory.eINSTANCE.createAPSReqModifyOption();
-				modifyOption.setToolderived(true);
-				modifyOption.setAffectedElement(option);
+				addAll(optionToBeMarkedEntry.getValue());
+		} else {
+			APSReqModifyOption modifyOption = APSReqModificationmarksFactory.eINSTANCE.createAPSReqModifyOption();
+			modifyOption.setToolderived(true);
+			modifyOption.setAffectedElement(option);
 				modifyOption.getCausingElements().addAll(optionToBeMarkedEntry.getValue());
 				
 				elementsMarkedInThisStep.put(option, modifyOption);

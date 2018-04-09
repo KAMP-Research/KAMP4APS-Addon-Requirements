@@ -4,11 +4,12 @@ package edu.kit.ipd.sdq.kamp4aps4req.software;
 import decisions.DecisionRepository;
 import decisions.DecisionsFactory;
 import edu.kit.ipd.sdq.kamp4aps4req.core.APSReqArchitectureVersion;
+import edu.kit.ipd.sdq.kamp4aps4req.software.model.modificationmarks.APSReqSoftwareModificationRepository;
 import edu.kit.ipd.sdq.kamp4iec.core.IECArchitectureVersion;
 import edu.kit.ipd.sdq.kamp4iec.model.IECFieldOfActivityAnnotations.IECFieldOfActivityAnnotationsRepository;
 import edu.kit.ipd.sdq.kamp4iec.model.IECModel.Configuration;
 import edu.kit.ipd.sdq.kamp4iec.model.IECRepository.Repository;
-import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.APSReqSoftwareModificationRepository;
+
 import options.OptionRepository;
 import options.OptionsFactory;
 import requirements.ReqRepository;

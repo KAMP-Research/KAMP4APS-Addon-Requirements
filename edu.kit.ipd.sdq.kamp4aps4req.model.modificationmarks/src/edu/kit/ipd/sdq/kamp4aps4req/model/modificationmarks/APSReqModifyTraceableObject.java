@@ -14,7 +14,7 @@ import relations.TraceableObject;
  * <!-- end-user-doc -->
  *
  *
- * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.ModificationmarksPackage#getAPSReqModifyTraceableObject()
+ * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModificationmarksPackage#getAPSReqModifyTraceableObject()
  * @model abstract="true"
  * @generated
  */

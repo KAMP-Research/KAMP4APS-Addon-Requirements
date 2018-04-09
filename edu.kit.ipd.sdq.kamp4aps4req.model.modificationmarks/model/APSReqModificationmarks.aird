@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description" xmi:id="_PgzNYAUCEeiuSIIKrgKz_A" selectedViews="_Pj16UAUCEeiuSIIKrgKz_A" version="12.0.0.201704271200">
+  <semanticResources>platform:/resource/toometa.requirements/model/requirements.ecore</semanticResources>
+  <semanticResources>platform:/resource/de.uka.ipd.sdq.identifier/model/identifier.ecore</semanticResources>
+  <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
+  <semanticResources>platform:/resource/toometa.relations/model/relations.ecore</semanticResources>
+  <semanticResources>platform:/resource/toometa.glossary/model/glossary.ecore</semanticResources>
+  <semanticResources>platform:/resource/toometa.qualities/model/qualities.ecore</semanticResources>
+  <semanticResources>http://www.eclipse.org/emf/2003/XMLType</semanticResources>
+  <semanticResources>platform:/resource/de.uka.ipd.sdq.dsexplore.qml.dimensions/model/dimensions.ecore</semanticResources>
+  <semanticResources>platform:/resource/de.uka.ipd.sdq.namedelement/model/namedelement.ecore</semanticResources>
+  <semanticResources>platform:/resource/de.uka.ipd.sdq.dsexplore.qml.dimensiontypes/model/dimensiontypes.ecore</semanticResources>
+  <semanticResources>platform:/resource/de.uka.ipd.sdq.dsexplore.qml.units/model/units.ecore</semanticResources>
+  <semanticResources>platform:/resource/toometa.decisions/model/decisions.ecore</semanticResources>
+  <semanticResources>platform:/resource/toometa.options/model/options.ecore</semanticResources>
+  <semanticResources>platform:/resource/toometa.effects/model/effects.ecore</semanticResources>
+  <semanticResources>platform:/resource/edu.kit.ipd.sdq.kamp.model.modificationmarks/model/Modificationmarks.ecore</semanticResources>
+  <semanticResources>modificationmarks.ecore</semanticResources>
+  <semanticResources>APSReqModificationmarks.genmodel</semanticResources>
+  <semanticResources>platform:/resource/toometa.decisions/model/decisions.genmodel</semanticResources>
+  <semanticResources>platform:/resource/de.uka.ipd.sdq.dsexplore.qml.dimensions/model/dimensions.genmodel</semanticResources>
+  <semanticResources>platform:/resource/de.uka.ipd.sdq.dsexplore.qml.dimensiontypes/model/dimensiontypes.genmodel</semanticResources>
+  <semanticResources>platform:/resource/toometa.effects/model/effects.genmodel</semanticResources>
+  <semanticResources>platform:/resource/toometa.glossary/model/glossary.genmodel</semanticResources>
+  <semanticResources>platform:/resource/de.uka.ipd.sdq.identifier/model/identifier.genmodel</semanticResources>
+  <semanticResources>platform:/resource/edu.kit.ipd.sdq.kamp.model.modificationmarks/model/Modificationmarks.genmodel</semanticResources>
+  <semanticResources>platform:/resource/de.uka.ipd.sdq.namedelement/model/namedelement.genmodel</semanticResources>
+  <semanticResources>platform:/resource/toometa.options/model/options.genmodel</semanticResources>
+  <semanticResources>platform:/resource/toometa.qualities/model/qualities.genmodel</semanticResources>
+  <semanticResources>platform:/resource/toometa.relations/model/relations.genmodel</semanticResources>
+  <semanticResources>platform:/resource/toometa.requirements/model/requirements.genmodel</semanticResources>
+  <semanticResources>platform:/resource/de.uka.ipd.sdq.dsexplore.qml.units/model/units.genmodel</semanticResources>
+  <semanticResources>APSReqModificationmarks.ecore</semanticResources>
+  <ownedViews xmi:type="viewpoint:DView" xmi:id="_Pj16UAUCEeiuSIIKrgKz_A">
+    <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
+  </ownedViews>
+</viewpoint:DAnalysis>

@@ -12,8 +12,6 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
-
-import org.eclipse.emf.edit.provider.IChildCreationExtender;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 /**
@@ -93,7 +91,7 @@ public class AbstractKAMP4aPS4ReqModificationRepositoryItemProvider extends Abst
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return ((IChildCreationExtender)adapterFactory).getResourceLocator();
+		return APSReqModificationmarksEditPlugin.INSTANCE;
 	}
 
 }

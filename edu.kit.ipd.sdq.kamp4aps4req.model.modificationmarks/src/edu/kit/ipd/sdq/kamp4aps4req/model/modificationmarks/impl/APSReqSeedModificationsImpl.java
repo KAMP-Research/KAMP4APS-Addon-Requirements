@@ -4,12 +4,11 @@ package edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.impl;
 
 import edu.kit.ipd.sdq.kamp.model.modificationmarks.impl.AbstractSeedModificationsImpl;
 
+import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModificationmarksPackage;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModifyDecision;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModifyOption;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModifyRequirement;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqSeedModifications;
-import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.ModificationmarksPackage;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -84,7 +83,7 @@ public abstract class APSReqSeedModificationsImpl extends AbstractSeedModificati
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ModificationmarksPackage.Literals.APS_REQ_SEED_MODIFICATIONS;
+		return APSReqModificationmarksPackage.Literals.APS_REQ_SEED_MODIFICATIONS;
 	}
 
 	/**
@@ -94,7 +93,7 @@ public abstract class APSReqSeedModificationsImpl extends AbstractSeedModificati
 	 */
 	public EList<APSReqModifyRequirement> getRequirementModifications() {
 		if (requirementModifications == null) {
-			requirementModifications = new EObjectContainmentEList<APSReqModifyRequirement>(APSReqModifyRequirement.class, this, ModificationmarksPackage.APS_REQ_SEED_MODIFICATIONS__REQUIREMENT_MODIFICATIONS);
+			requirementModifications = new EObjectContainmentEList<APSReqModifyRequirement>(APSReqModifyRequirement.class, this, APSReqModificationmarksPackage.APS_REQ_SEED_MODIFICATIONS__REQUIREMENT_MODIFICATIONS);
 		}
 		return requirementModifications;
 	}
@@ -106,7 +105,7 @@ public abstract class APSReqSeedModificationsImpl extends AbstractSeedModificati
 	 */
 	public EList<APSReqModifyDecision> getDecisionModifications() {
 		if (decisionModifications == null) {
-			decisionModifications = new EObjectContainmentEList<APSReqModifyDecision>(APSReqModifyDecision.class, this, ModificationmarksPackage.APS_REQ_SEED_MODIFICATIONS__DECISION_MODIFICATIONS);
+			decisionModifications = new EObjectContainmentEList<APSReqModifyDecision>(APSReqModifyDecision.class, this, APSReqModificationmarksPackage.APS_REQ_SEED_MODIFICATIONS__DECISION_MODIFICATIONS);
 		}
 		return decisionModifications;
 	}
@@ -118,7 +117,7 @@ public abstract class APSReqSeedModificationsImpl extends AbstractSeedModificati
 	 */
 	public EList<APSReqModifyOption> getOptionModifications() {
 		if (optionModifications == null) {
-			optionModifications = new EObjectContainmentEList<APSReqModifyOption>(APSReqModifyOption.class, this, ModificationmarksPackage.APS_REQ_SEED_MODIFICATIONS__OPTION_MODIFICATIONS);
+			optionModifications = new EObjectContainmentEList<APSReqModifyOption>(APSReqModifyOption.class, this, APSReqModificationmarksPackage.APS_REQ_SEED_MODIFICATIONS__OPTION_MODIFICATIONS);
 		}
 		return optionModifications;
 	}
@@ -131,11 +130,11 @@ public abstract class APSReqSeedModificationsImpl extends AbstractSeedModificati
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ModificationmarksPackage.APS_REQ_SEED_MODIFICATIONS__REQUIREMENT_MODIFICATIONS:
+			case APSReqModificationmarksPackage.APS_REQ_SEED_MODIFICATIONS__REQUIREMENT_MODIFICATIONS:
 				return ((InternalEList<?>)getRequirementModifications()).basicRemove(otherEnd, msgs);
-			case ModificationmarksPackage.APS_REQ_SEED_MODIFICATIONS__DECISION_MODIFICATIONS:
+			case APSReqModificationmarksPackage.APS_REQ_SEED_MODIFICATIONS__DECISION_MODIFICATIONS:
 				return ((InternalEList<?>)getDecisionModifications()).basicRemove(otherEnd, msgs);
-			case ModificationmarksPackage.APS_REQ_SEED_MODIFICATIONS__OPTION_MODIFICATIONS:
+			case APSReqModificationmarksPackage.APS_REQ_SEED_MODIFICATIONS__OPTION_MODIFICATIONS:
 				return ((InternalEList<?>)getOptionModifications()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -149,11 +148,11 @@ public abstract class APSReqSeedModificationsImpl extends AbstractSeedModificati
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ModificationmarksPackage.APS_REQ_SEED_MODIFICATIONS__REQUIREMENT_MODIFICATIONS:
+			case APSReqModificationmarksPackage.APS_REQ_SEED_MODIFICATIONS__REQUIREMENT_MODIFICATIONS:
 				return getRequirementModifications();
-			case ModificationmarksPackage.APS_REQ_SEED_MODIFICATIONS__DECISION_MODIFICATIONS:
+			case APSReqModificationmarksPackage.APS_REQ_SEED_MODIFICATIONS__DECISION_MODIFICATIONS:
 				return getDecisionModifications();
-			case ModificationmarksPackage.APS_REQ_SEED_MODIFICATIONS__OPTION_MODIFICATIONS:
+			case APSReqModificationmarksPackage.APS_REQ_SEED_MODIFICATIONS__OPTION_MODIFICATIONS:
 				return getOptionModifications();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -168,15 +167,15 @@ public abstract class APSReqSeedModificationsImpl extends AbstractSeedModificati
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ModificationmarksPackage.APS_REQ_SEED_MODIFICATIONS__REQUIREMENT_MODIFICATIONS:
+			case APSReqModificationmarksPackage.APS_REQ_SEED_MODIFICATIONS__REQUIREMENT_MODIFICATIONS:
 				getRequirementModifications().clear();
 				getRequirementModifications().addAll((Collection<? extends APSReqModifyRequirement>)newValue);
 				return;
-			case ModificationmarksPackage.APS_REQ_SEED_MODIFICATIONS__DECISION_MODIFICATIONS:
+			case APSReqModificationmarksPackage.APS_REQ_SEED_MODIFICATIONS__DECISION_MODIFICATIONS:
 				getDecisionModifications().clear();
 				getDecisionModifications().addAll((Collection<? extends APSReqModifyDecision>)newValue);
 				return;
-			case ModificationmarksPackage.APS_REQ_SEED_MODIFICATIONS__OPTION_MODIFICATIONS:
+			case APSReqModificationmarksPackage.APS_REQ_SEED_MODIFICATIONS__OPTION_MODIFICATIONS:
 				getOptionModifications().clear();
 				getOptionModifications().addAll((Collection<? extends APSReqModifyOption>)newValue);
 				return;
@@ -192,13 +191,13 @@ public abstract class APSReqSeedModificationsImpl extends AbstractSeedModificati
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ModificationmarksPackage.APS_REQ_SEED_MODIFICATIONS__REQUIREMENT_MODIFICATIONS:
+			case APSReqModificationmarksPackage.APS_REQ_SEED_MODIFICATIONS__REQUIREMENT_MODIFICATIONS:
 				getRequirementModifications().clear();
 				return;
-			case ModificationmarksPackage.APS_REQ_SEED_MODIFICATIONS__DECISION_MODIFICATIONS:
+			case APSReqModificationmarksPackage.APS_REQ_SEED_MODIFICATIONS__DECISION_MODIFICATIONS:
 				getDecisionModifications().clear();
 				return;
-			case ModificationmarksPackage.APS_REQ_SEED_MODIFICATIONS__OPTION_MODIFICATIONS:
+			case APSReqModificationmarksPackage.APS_REQ_SEED_MODIFICATIONS__OPTION_MODIFICATIONS:
 				getOptionModifications().clear();
 				return;
 		}
@@ -213,11 +212,11 @@ public abstract class APSReqSeedModificationsImpl extends AbstractSeedModificati
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ModificationmarksPackage.APS_REQ_SEED_MODIFICATIONS__REQUIREMENT_MODIFICATIONS:
+			case APSReqModificationmarksPackage.APS_REQ_SEED_MODIFICATIONS__REQUIREMENT_MODIFICATIONS:
 				return requirementModifications != null && !requirementModifications.isEmpty();
-			case ModificationmarksPackage.APS_REQ_SEED_MODIFICATIONS__DECISION_MODIFICATIONS:
+			case APSReqModificationmarksPackage.APS_REQ_SEED_MODIFICATIONS__DECISION_MODIFICATIONS:
 				return decisionModifications != null && !decisionModifications.isEmpty();
-			case ModificationmarksPackage.APS_REQ_SEED_MODIFICATIONS__OPTION_MODIFICATIONS:
+			case APSReqModificationmarksPackage.APS_REQ_SEED_MODIFICATIONS__OPTION_MODIFICATIONS:
 				return optionModifications != null && !optionModifications.isEmpty();
 		}
 		return super.eIsSet(featureID);

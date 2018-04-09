@@ -6,19 +6,19 @@
 
 <plugin>
 
+
    <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated modificationmarks_hardware -->
+      <!-- @generated APSReqHardwareModificationmarks -->
       <package
-            uri="http://www.example.org/modificationmarks_hardware"
-            class="edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.Modificationmarks_hardwarePackage"
-            genModel="model/modificationmarks_hardware.genmodel"/>
+            uri="http://www.example.org/modificationmarks"
+            class="edu.kit.ipd.sdq.kamp4aps4req.hardware.model.modificationmarks.APSReqHardwareModificationmarksPackage"
+            genModel="model/APSReqHardwareModificationmarks.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.extension_parser">
-      <!-- @generated modificationmarks_hardware -->
+      <!-- @generated APSReqHardwareModificationmarks -->
       <parser
-            type="modificationmarks_hardware"
-            class="edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.util.Modificationmarks_hardwareResourceFactoryImpl"/>
+            type="modificationmarks"
+            class="edu.kit.ipd.sdq.kamp4aps4req.hardware.model.modificationmarks.util.APSReqHardwareModificationmarksResourceFactoryImpl"/>
    </extension>
-
 </plugin>

@@ -9,22 +9,17 @@ import edu.kit.ipd.sdq.kamp.model.modificationmarks.ChangePropagationStep;
 import edu.kit.ipd.sdq.kamp.workplan.AbstractActivityElementType;
 import edu.kit.ipd.sdq.kamp.workplan.Activity;
 import edu.kit.ipd.sdq.kamp.workplan.BasicActivity;
-import edu.kit.ipd.sdq.kamp4aps.core.APSActivityElementType;
 import edu.kit.ipd.sdq.kamp4aps.core.APSActivityType;
 import edu.kit.ipd.sdq.kamp4aps.core.derivation.APSInternalModificationDerivation;
-import edu.kit.ipd.sdq.kamp4aps.model.KAMP4aPSModificationmarks.ModifyComponent;
-import edu.kit.ipd.sdq.kamp4aps.model.KAMP4aPSModificationmarks.ModifyInterface;
-import edu.kit.ipd.sdq.kamp4aps.model.KAMP4aPSModificationmarks.ModifyModule;
-import edu.kit.ipd.sdq.kamp4aps.model.KAMP4aPSModificationmarks.ModifyStructure;
-import edu.kit.ipd.sdq.kamp4aps.model.aPS.ComponentRepository.Component;
-import edu.kit.ipd.sdq.kamp4aps.model.aPS.InterfaceRepository.Interface;
-import edu.kit.ipd.sdq.kamp4aps.model.aPS.ModuleRepository.Module;
-import edu.kit.ipd.sdq.kamp4aps.model.aPS.StructureRepository.Structure;
-import edu.kit.ipd.sdq.kamp4aps4req.core.APSReqActivityElementType;
+
+import edu.kit.ipd.sdq.kamp4aps.model.basic.Entity;
 import edu.kit.ipd.sdq.kamp4aps4req.derivation.AbstractAPSReqInternalModificationDerivation;
+import edu.kit.ipd.sdq.kamp4aps4req.hardware.APSReqHardwareActivityElementType;
 import edu.kit.ipd.sdq.kamp4aps4req.hardware.APSReqHardwareArchitectureVersion;
+import edu.kit.ipd.sdq.kamp4aps4req.hardware.model.modificationmarks.APSReqHardwareChangePropagationDueToSpecificationDependencies;
+import edu.kit.ipd.sdq.kamp4aps4req.hardware.model.modificationmarks.APSReqModifyEntity;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModifyTraceableObject;
-import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.APSReqHardwareChangePropagationDueToSpecificationDependencies;
+
 import relations.TraceableObject;
 
 /**
@@ -47,22 +42,10 @@ public class APSReqHardwareInternalModificationDerivation extends AbstractAPSReq
 				TraceableObject causingTraceableObject = (TraceableObject) causingElement;
 				causingElementNames.add(causingTraceableObject.eClass().getName() + " \"" + 
 						getElementNameForTraceableObject(causingTraceableObject) + "\"");
-			} else if (causingElement instanceof Structure) {
-				Structure causingStructure = (Structure) causingElement;
-				causingElementNames.add(causingStructure.eClass().
-						getName() + " \"" + causingStructure.getName() + "\"");
-			} else if (causingElement instanceof Module) {
-				Module causingModule = (Module) causingElement;
-				causingElementNames.add(causingModule.eClass().
-						getName() + " \"" + causingModule.getName() + "\"");
-			} else if (causingElement instanceof Component) {
-				Component causingComponent = (Component) causingElement;
-				causingElementNames.add(causingComponent.eClass().
-						getName() + " \"" + causingComponent.getName() + "\"");
-			} else if (causingElement instanceof Interface) {
-				Interface causingInterface = (Interface) causingElement;
-				causingElementNames.add(causingInterface.eClass().
-						getName() + " \"" + causingInterface.getName() + "\"");
+			} else if (causingElement instanceof Entity) {
+				Entity causingEntity = (Entity) causingElement;
+				causingElementNames.add(causingEntity.eClass().
+						getName() + " \"" + causingEntity.getName() + "\"");
 			}
 		}
 		return causingElementNames;
@@ -88,6 +71,11 @@ public class APSReqHardwareInternalModificationDerivation extends AbstractAPSReq
 			return new Activity(APSActivityType.INTERNALMODIFICATIONMARK, activityElementType, 
 					traceableObject, elementName, causingElementNames, BasicActivity.MODIFY, 
 					"Modify " + traceableObject.eClass().getName() + " " + elementName + ".");
+		} else if (modification instanceof APSReqModifyEntity) {
+			Entity entity = ((APSReqModifyEntity)modification).getAffectedElement();
+			return new Activity(APSActivityType.INTERNALMODIFICATIONMARK, activityElementType, 
+					entity, entity.getName(), causingElementNames, BasicActivity.MODIFY, 
+					"Modify " + entity.eClass().getName() + " " + entity.getName() + ".");
 		} else {
 			return null;
 		}
@@ -110,47 +98,19 @@ public class APSReqHardwareInternalModificationDerivation extends AbstractAPSReq
 				this.deriveTraceableObjectModifications(cp.getRequirementModifications(), activityList);
 				this.deriveTraceableObjectModifications(cp.getDecisionModifications(), activityList);
 				this.deriveTraceableObjectModifications(cp.getOptionModifications(), activityList);
-				this.deriveStructureModifications(cp.getStructureModifications(), activityList);
-				this.deriveComponentModifications(cp.getComponentModifications(), activityList);
-				this.deriveModuleModifications(cp.getModuleModifications(), activityList);
-				this.deriveInterfaceModifications(cp.getInterfaceModifications(), activityList);
+				this.deriveEntityModifications(cp.getEntityModifications(), activityList);
 			}
 		}
 		return activityList;
 	}
 	
-	private void deriveStructureModifications(Collection<ModifyStructure<Structure>> modifications, 
+	private void deriveEntityModifications(Collection<APSReqModifyEntity> modifications, 
 			List<Activity> activityList) {
-		for (ModifyStructure<Structure> modification: modifications) {
+		for (APSReqModifyEntity modification: modifications) {
 			activityList.add(createModificationActivity(modification, 
-					APSActivityElementType.STRUCTURE));
+					APSReqHardwareActivityElementType.ENTITY));
 		}
 	}
-	
-	private void deriveModuleModifications(Collection<ModifyModule<Module>> modifications, 
-			List<Activity> activityList) {
-		for (ModifyModule<Module> modification: modifications) {
-			activityList.add(createModificationActivity(modification, 
-					APSActivityElementType.MODULE));
-		}
-	}
-	
-	private void deriveComponentModifications(Collection<ModifyComponent<Component>> modifications, 
-			List<Activity> activityList) {
-		for (ModifyComponent<Component> modification: modifications) {
-			activityList.add(createModificationActivity(modification, 
-					APSActivityElementType.COMPONENT));
-		}
-	}
-	
-	private void deriveInterfaceModifications(Collection<ModifyInterface<Interface>> modifications, 
-			List<Activity> activityList) {
-		for (ModifyInterface<Interface> modification: modifications) {
-			activityList.add(createModificationActivity(modification, 
-					APSActivityElementType.INTERFACE));
-		}
-	}
-
 
 	
 }

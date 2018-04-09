@@ -12,9 +12,11 @@ import apshardwareoptions.APSReqComponentOption;
 import apshardwareoptions.APSReqInterfaceOption;
 import apshardwareoptions.APSReqModuleOption;
 import apshardwareoptions.APSReqStructureOption;
+
 import decisions.Decision;
 import edu.kit.ipd.sdq.kamp.util.MapUtil;
 import edu.kit.ipd.sdq.kamp4aps.model.aPS.StructureRepository.Structure;
+import edu.kit.ipd.sdq.kamp4aps.model.basic.Entity;
 import edu.kit.ipd.sdq.kamp4aps.model.aPS.ModuleRepository.Module;
 import edu.kit.ipd.sdq.kamp4aps.model.aPS.InterfaceRepository.Interface;
 import edu.kit.ipd.sdq.kamp4aps.model.aPS.ComponentRepository.Component;
@@ -22,6 +24,115 @@ import edu.kit.ipd.sdq.kamp4aps.model.aPS.ComponentRepository.Component;
 
 public class APSReqHardwareArchitectureModelLookup extends APSReqArchitectureModelLookup {
 
+	
+	
+	
+	public static Map<Entity, Set<Option>> lookUpEntitiesReferencedByOptions(
+			APSReqHardwareArchitectureVersion version, Collection<? extends Option> options) {
+		Map<Entity, Set<Option>> results = new HashMap<Entity, Set<Option>>();
+		for (Option option: options) {
+			if (option instanceof APSReqStructureOption) {
+				for (Structure structureRepository : version.getAPSPlant().getStructures()) {
+					if (isEntityReferencedByOption(structureRepository,  (APSReqStructureOption) option)) {
+						MapUtil.putOrAddToMap(results, structureRepository, option);
+					}
+				}
+			} else if (option instanceof APSReqModuleOption) {
+				for (Module moduleRepository : version.getAPSPlant().getModuleRepository().getAllModulesInPlant()) {
+					if (isEntityReferencedByOption(moduleRepository,  (APSReqModuleOption) option)) {
+						MapUtil.putOrAddToMap(results, moduleRepository, option);
+					}
+				}
+			} else if (option instanceof APSReqComponentOption) {
+				for (Component componentRepository : version.getAPSPlant().getComponentRepository()
+						.getAllComponentsInPlant()) {
+					if (isEntityReferencedByOption(componentRepository,  (APSReqComponentOption) option)) {
+						MapUtil.putOrAddToMap(results, componentRepository, option);
+					}
+				}
+			} else if (option instanceof APSReqInterfaceOption) {
+				for (Interface interfaceRepository : version.getAPSPlant().getInterfaceRepository().
+						getAllInterfacesInPlant()) {
+					if (isEntityReferencedByOption(interfaceRepository,  (APSReqInterfaceOption) option)) {
+						MapUtil.putOrAddToMap(results, interfaceRepository, option);
+					}
+				}
+			}
+		}
+		return results;
+	}
+	
+	public static Map<Entity, Set<Decision>> lookUpEntitiesReferencedByDecisions(
+			APSReqHardwareArchitectureVersion version, Collection<? extends Decision> decisions) {
+		Map<Entity, Set<Decision>> results = new HashMap<Entity, Set<Decision>>();
+		
+		for (Decision decisionRepository : decisions) {
+			for (SelectionObject selection : decisionRepository.getSelected()) {
+				if (selection instanceof APSReqStructureOption) {
+					for (Structure structureRepository : version.getAPSPlant().getStructures()) {
+						if (isEntityReferencedByOption(structureRepository,  (APSReqStructureOption) selection)) {
+							MapUtil.putOrAddToMap(results, structureRepository, decisionRepository);
+						}
+					}
+				} else if (selection instanceof APSReqModuleOption) {
+					for (Module moduleRepository : version.getAPSPlant().getModuleRepository().getAllModulesInPlant()) {
+						if (isEntityReferencedByOption(moduleRepository,  (APSReqModuleOption) selection)) {
+							MapUtil.putOrAddToMap(results, moduleRepository, decisionRepository);
+						}
+					}
+				} else if (selection instanceof APSReqComponentOption) {
+					for (Component componentRepository : version.getAPSPlant().getComponentRepository()
+							.getAllComponentsInPlant()) {
+						if (isEntityReferencedByOption(componentRepository,  (APSReqComponentOption) selection)) {
+							MapUtil.putOrAddToMap(results, componentRepository, decisionRepository);
+						}
+					}
+				} else if (selection instanceof APSReqInterfaceOption) {
+					for (Interface interfaceRepository : version.getAPSPlant().getInterfaceRepository().
+							getAllInterfacesInPlant()) {
+						if (isEntityReferencedByOption(interfaceRepository,  (APSReqInterfaceOption) selection)) {
+							MapUtil.putOrAddToMap(results, interfaceRepository, decisionRepository);
+						}
+					}
+				}
+			}
+		}
+		return results;
+	}
+	
+	private static boolean isEntityReferencedByOption(Entity entity, Option option) {
+		if (option instanceof APSReqStructureOption) {
+			for (Structure structureRepo : ((APSReqStructureOption)option).getStructures()) {
+				if (entity.equals(structureRepo)) {
+					return true;
+				}
+			}
+		} else if (option instanceof APSReqModuleOption) {
+			for (Module moduleRepo : ((APSReqModuleOption)option).getModules()) {
+				if (entity.equals(moduleRepo)) {
+					return true;
+				}
+			}
+		} else if (option instanceof APSReqComponentOption) {
+			for (Component componentRepo : ((APSReqComponentOption)option).getComponents()) {
+				if (entity.equals(componentRepo)) {
+					return true;
+				}
+			}
+		} else if (option instanceof APSReqInterfaceOption) {
+			for (Interface interfaceRepo : ((APSReqInterfaceOption)option).getInterfaces()) {
+				if (entity.equals(interfaceRepo)) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+
+/*	########################################################################################################################
+	OLD METHODS
+	########################################################################################################################
+*/	
 	
 	/*	########################################################################################################################
 	 * 	#  STRUCTURE LOOKUP SECTION  ###########################################################################################

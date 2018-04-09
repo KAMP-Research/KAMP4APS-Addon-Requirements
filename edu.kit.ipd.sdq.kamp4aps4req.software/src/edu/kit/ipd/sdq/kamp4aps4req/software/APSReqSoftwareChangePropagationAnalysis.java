@@ -10,32 +10,13 @@ import org.eclipse.emf.ecore.EObject;
 import decisions.Decision;
 import edu.kit.ipd.sdq.kamp.model.modificationmarks.AbstractModification;
 import edu.kit.ipd.sdq.kamp4aps4req.core.AbstractAPSReqChangePropagationAnalysis;
-import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.APSReqModifyIECComponent;
-import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.APSReqSoftwareChangePropagationDueToSpecificationDependencies;
-import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.Modificationmarks_softwareFactory;
+import edu.kit.ipd.sdq.kamp4aps4req.software.model.modificationmarks.APSReqModifyIECComponent;
+import edu.kit.ipd.sdq.kamp4aps4req.software.model.modificationmarks.APSReqSoftwareChangePropagationDueToSpecificationDependencies;
+import edu.kit.ipd.sdq.kamp4aps4req.software.model.modificationmarks.APSReqSoftwareModificationmarksFactory;
 import edu.kit.ipd.sdq.kamp4iec.core.IECChangePropagationAnalysis;
-import edu.kit.ipd.sdq.kamp4iec.model.IECModel.Configuration;
-import edu.kit.ipd.sdq.kamp4iec.model.IECModel.Program;
-import edu.kit.ipd.sdq.kamp4iec.model.IECModificationmarks.IECModificationmarksFactory;
-import edu.kit.ipd.sdq.kamp4iec.model.IECModificationmarks.IECModifyComponent;
-import edu.kit.ipd.sdq.kamp4iec.model.IECModificationmarks.IECModifyConfiguration;
-import edu.kit.ipd.sdq.kamp4iec.model.IECModificationmarks.IECModifyFunction;
-import edu.kit.ipd.sdq.kamp4iec.model.IECModificationmarks.IECModifyFunctionBlock;
-import edu.kit.ipd.sdq.kamp4iec.model.IECModificationmarks.IECModifyGlobalVariable;
-import edu.kit.ipd.sdq.kamp4iec.model.IECModificationmarks.IECModifyInterface;
-import edu.kit.ipd.sdq.kamp4iec.model.IECModificationmarks.IECModifyMethod;
-import edu.kit.ipd.sdq.kamp4iec.model.IECModificationmarks.IECModifyProgram;
-import edu.kit.ipd.sdq.kamp4iec.model.IECRepository.GlobalVariable;
-import edu.kit.ipd.sdq.kamp4iec.model.IECRepository.IECAbstractMethod;
-import edu.kit.ipd.sdq.kamp4iec.model.IECRepository.IECAbstractProperty;
+
 import edu.kit.ipd.sdq.kamp4iec.model.IECRepository.IECComponent;
-import edu.kit.ipd.sdq.kamp4iec.model.IECRepository.IECInterface;
-import edu.kit.ipd.sdq.kamp4iec.model.IECRepository.IECMethod;
-import edu.kit.ipd.sdq.kamp4iec.model.IECRepository.IECProperty;
-import edu.kit.ipd.sdq.kamp4iec.model.IECRepository.IsMethod;
-import edu.kit.ipd.sdq.kamp4iec.model.IECRepository.IsProperty;
-import edu.kit.ipd.sdq.kamp4iec.model.IECRepository.Function;
-import edu.kit.ipd.sdq.kamp4iec.model.IECRepository.FunctionBlock;
+
 import options.Option;
 import relations.TraceableObject;
 
@@ -75,7 +56,7 @@ public class APSReqSoftwareChangePropagationAnalysis extends AbstractAPSReqChang
 		this.setIecChangePropagationAnalysis(new IECChangePropagationAnalysis());
 		// set the software subclass to take care of IECComponent modifications
 		this.setChangePropagationDueToSpecificationDependencies(
-				Modificationmarks_softwareFactory.eINSTANCE.createAPSReqSoftwareChangePropagationDueToSpecificationDependencies());
+				APSReqSoftwareModificationmarksFactory.eINSTANCE.createAPSReqSoftwareChangePropagationDueToSpecificationDependencies());
 		version.getModificationMarkRepository().getChangePropagationSteps().add(this.getChangePropagationDueToSpecificationDependencies());
 		super.prepareAnalysis(version);
 	}
@@ -198,7 +179,7 @@ public class APSReqSoftwareChangePropagationAnalysis extends AbstractAPSReqChang
 			lookUpAbstractPropertiesReferencedByDecisions(version, this.getMarkedDecisions());
 		createAndAddAbstractPropertyModifications(abstractPropertiesToBeMarked, elementsMarkedInThisStep);
 		
-		*/
+		
 	
 	private <T extends TraceableObject> void createAndAddConfigurationModifications(
 			Map<Configuration, Set<T>> configurationsToBeMarked, 
@@ -361,6 +342,8 @@ public class APSReqSoftwareChangePropagationAnalysis extends AbstractAPSReqChang
 		}
 	}
 	
+	*/
+	
 	private <T extends TraceableObject> void createAndAddIECComponentModifications(
 			Map<IECComponent, Set<T>> iecComponentsToBeMarked, 
 			Map<EObject, AbstractModification<?, EObject>> elementsMarkedInThisStep) {
@@ -370,11 +353,11 @@ public class APSReqSoftwareChangePropagationAnalysis extends AbstractAPSReqChang
 						getCausingElements().addAll(iecComponentsToBeMarkedEntry.getValue());
 			} else {
 				APSReqModifyIECComponent modifyIECComponent = 
-						Modificationmarks_softwareFactory.eINSTANCE.createAPSReqModifyIECComponent();
+						APSReqSoftwareModificationmarksFactory.eINSTANCE.createAPSReqModifyIECComponent();
 				modifyIECComponent.setToolderived(true);
 				modifyIECComponent.setAffectedElement(iecComponentsToBeMarkedEntry.getKey());
 				modifyIECComponent.getCausingElements().addAll(iecComponentsToBeMarkedEntry.getValue());
-			
+				
 				elementsMarkedInThisStep.put(iecComponentsToBeMarkedEntry.getKey(), modifyIECComponent);
 				APSReqSoftwareChangePropagationDueToSpecificationDependencies softwareChanges = 
 						(APSReqSoftwareChangePropagationDueToSpecificationDependencies) 
@@ -383,7 +366,6 @@ public class APSReqSoftwareChangePropagationAnalysis extends AbstractAPSReqChang
 			}
 		}
 	}
-	
 	
 	
 	

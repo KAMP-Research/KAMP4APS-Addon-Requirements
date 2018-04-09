@@ -9,7 +9,7 @@ import edu.kit.ipd.sdq.kamp4aps.model.DeploymentContext.DeploymentContextReposit
 import edu.kit.ipd.sdq.kamp4aps.model.aPS.Plant;
 import edu.kit.ipd.sdq.kamp4aps.model.fieldofactivityannotations.FieldOfActivityAnnotationRepository;
 import edu.kit.ipd.sdq.kamp4aps4req.core.APSReqArchitectureVersion;
-import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.APSReqHardwareModificationRepository;
+import edu.kit.ipd.sdq.kamp4aps4req.hardware.model.modificationmarks.APSReqHardwareModificationRepository;
 import requirements.ReqRepository;
 import requirements.RequirementsFactory;
 

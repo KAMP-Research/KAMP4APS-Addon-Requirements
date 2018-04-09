@@ -5,8 +5,8 @@ import edu.kit.ipd.sdq.kamp4aps.model.DeploymentContext.DeploymentContextReposit
 import edu.kit.ipd.sdq.kamp4aps.model.aPS.Plant;
 import edu.kit.ipd.sdq.kamp4aps.model.aPS.apsFactory;
 import edu.kit.ipd.sdq.kamp4aps.model.fieldofactivityannotations.FieldOfActivityAnnotationRepository;
-import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.Modificationmarks_hardwareFactory;
-import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_hardware.APSReqHardwareModificationRepository;
+import edu.kit.ipd.sdq.kamp4aps4req.hardware.model.modificationmarks.APSReqHardwareModificationRepository;
+import edu.kit.ipd.sdq.kamp4aps4req.hardware.model.modificationmarks.APSReqHardwareModificationmarksFactory;
 import options.OptionRepository;
 import options.OptionsFactory;
 import requirements.ReqRepository;
@@ -39,6 +39,6 @@ public class APSReqHardwareArchitectureModelFactoryFacade {
 	}
 	
 	public static APSReqHardwareModificationRepository createModificationRepository() {
-		return Modificationmarks_hardwareFactory.eINSTANCE.createAPSReqHardwareModificationRepository();
+		return APSReqHardwareModificationmarksFactory.eINSTANCE.createAPSReqHardwareModificationRepository();
 	}
 }

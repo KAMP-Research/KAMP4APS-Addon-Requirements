@@ -10,7 +10,7 @@ import options.Option;
  * <!-- end-user-doc -->
  *
  *
- * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.ModificationmarksPackage#getAPSReqModifyOption()
+ * @see edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModificationmarksPackage#getAPSReqModifyOption()
  * @model
  * @generated
  */
