@@ -13,6 +13,11 @@ import edu.kit.ipd.sdq.kamp4aps.model.fieldofactivityannotations.FieldOfActivity
 
 import edu.kit.ipd.sdq.kamp4aps4req.core.AbstractAPSReqArchitectureVersionPersistency;
 import edu.kit.ipd.sdq.kamp4aps4req.hardware.model.modificationmarks.APSReqHardwareModificationRepository;
+import edu.kit.ipd.sdq.kamp4iec.core.AbstractKAMP4IECArchitectureVersionPersistency;
+import edu.kit.ipd.sdq.kamp4iec.model.IECFieldOfActivityAnnotations.IECFieldOfActivityAnnotationsRepository;
+import edu.kit.ipd.sdq.kamp4iec.model.IECModel.Configuration;
+import edu.kit.ipd.sdq.kamp4iec.model.IECModificationmarks.IECModificationRepository;
+import edu.kit.ipd.sdq.kamp4iec.model.IECRepository.Repository;
 import requirements.ReqRepository;
 import decisions.DecisionRepository;
 import options.OptionRepository;
@@ -35,6 +40,11 @@ public class APSReqHardwareArchitectureVersionPersistency extends AbstractAPSReq
 		String decisionsFilePath = filename + "." + AbstractAPSReqArchitectureVersionPersistency.FILEEXTENSION_DECISIONS;
 		String optionsFilePath = filename + "." + AbstractAPSReqArchitectureVersionPersistency.FILEEXTENSION_OPTIONS;
 		String modificationMarksFilePath = filename + "." + FILEEXTENSION_MODIFICATIONMARK;
+		
+		String internalIECFieldOfActivityFilePath = filename + "." + AbstractKAMP4IECArchitectureVersionPersistency.FILEEXTENSION_FIELDOFACTIVITYANNOTATIONS;
+		String internalIecRepositoryFilePath = filename + "." + AbstractKAMP4IECArchitectureVersionPersistency.FILEEXTENSION_REPOSITORY;
+		String internalConfigurationFilePath = filename + "." + AbstractKAMP4IECArchitectureVersionPersistency.FILEEXTENSION_CONFIGURATION;
+		String internalIECModFilePath = filename + "." + AbstractKAMP4IECArchitectureVersionPersistency.FILEEXTENSION_MODIFICATIONMARK;
 
 		// load the APS-related models
 		FieldOfActivityAnnotationRepository fieldOfActivityRepository = 
@@ -48,9 +58,15 @@ public class APSReqHardwareArchitectureVersionPersistency extends AbstractAPSReq
 		OptionRepository optionRepository = (OptionRepository)loadEmfModelFromResource(folderpath, optionsFilePath, loadResourceSet);
 		APSReqHardwareModificationRepository modificationMarkRepository = (APSReqHardwareModificationRepository)loadEmfModelFromResource(folderpath, 
 				modificationMarksFilePath, loadResourceSet);
-				
-		return new APSReqHardwareArchitectureVersion(versionname, fieldOfActivityRepository, modificationMarkRepository, 
-				deploymentContextRepository, aPSPlant, requirementRepository, decisionRepository, optionRepository);
+		
+		IECFieldOfActivityAnnotationsRepository iecFieldOfActivityRepository = (IECFieldOfActivityAnnotationsRepository)loadEmfModelFromResource(folderpath, internalIECFieldOfActivityFilePath, loadResourceSet);
+		Repository iecRepository = (Repository)loadEmfModelFromResource(folderpath, internalIecRepositoryFilePath, loadResourceSet);
+		Configuration configuration = (Configuration)loadEmfModelFromResource(folderpath, internalConfigurationFilePath, loadResourceSet);
+		IECModificationRepository iecModificationMarkRepository = (IECModificationRepository)loadEmfModelFromResource(folderpath, internalIECModFilePath, loadResourceSet);
+		
+		return new APSReqHardwareArchitectureVersion(versionname, fieldOfActivityRepository, aPSPlant, 
+				deploymentContextRepository, iecRepository, configuration,
+				iecFieldOfActivityRepository, iecModificationMarkRepository, requirementRepository, decisionRepository, optionRepository, modificationMarkRepository);
 		
 	}
 	
@@ -66,6 +82,11 @@ public class APSReqHardwareArchitectureVersionPersistency extends AbstractAPSReq
 		IFile apsOptionsFile = FileAndFolderManagement.retrieveFileWithExtension(folder, AbstractAPSReqArchitectureVersionPersistency.FILEEXTENSION_OPTIONS);
 		IFile modificationMarksFile = FileAndFolderManagement.retrieveFileWithExtension(folder, FILEEXTENSION_MODIFICATIONMARK);
 		
+		IFile internalIECFieldOfActivityFile = FileAndFolderManagement.retrieveFileWithExtension(folder, AbstractKAMP4IECArchitectureVersionPersistency.FILEEXTENSION_FIELDOFACTIVITYANNOTATIONS);
+		IFile internalIECRepositoryFile = FileAndFolderManagement.retrieveFileWithExtension(folder, AbstractKAMP4IECArchitectureVersionPersistency.FILEEXTENSION_REPOSITORY);
+		IFile internalConfigurationFile = FileAndFolderManagement.retrieveFileWithExtension(folder, AbstractKAMP4IECArchitectureVersionPersistency.FILEEXTENSION_CONFIGURATION);
+		IFile internalIECModFile = FileAndFolderManagement.retrieveFileWithExtension(folder, AbstractKAMP4IECArchitectureVersionPersistency.FILEEXTENSION_MODIFICATIONMARK);
+		
 		FieldOfActivityAnnotationRepository fieldOfActivityRepository = null;
 		Plant apsPlant = null;
 		DeploymentContextRepository deploymentContextRepository = null;
@@ -74,6 +95,11 @@ public class APSReqHardwareArchitectureVersionPersistency extends AbstractAPSReq
 		DecisionRepository decisionRepository = null;
 		OptionRepository optionRepository = null;
 		APSReqHardwareModificationRepository modificationMarksRepository = null;
+		
+		IECFieldOfActivityAnnotationsRepository iecFieldOfActivityRepository = null;
+		Repository iecRepository = null;
+		Configuration configuration = null;
+		IECModificationRepository iecModificationMarkRepository = null;
 		
 		if (fieldOfActivityRepositoryFile != null && fieldOfActivityRepositoryFile.exists()) {
 			fieldOfActivityRepository = (FieldOfActivityAnnotationRepository)loadEmfModelFromResource(
@@ -102,8 +128,19 @@ public class APSReqHardwareArchitectureVersionPersistency extends AbstractAPSReq
 					loadEmfModelFromResource(modificationMarksFile.getFullPath().toString(), null, loadResourceSet);
 		}
 		
-		return new APSReqHardwareArchitectureVersion(versionname, fieldOfActivityRepository, modificationMarksRepository, 
-				deploymentContextRepository, apsPlant, reqRepository, decisionRepository, optionRepository);
+		if (internalIECFieldOfActivityFile != null && internalIECFieldOfActivityFile.exists())
+			iecFieldOfActivityRepository = (IECFieldOfActivityAnnotationsRepository) loadEmfModelFromResource(internalIECFieldOfActivityFile.getFullPath().toString(), null, loadResourceSet);
+		if (internalIECRepositoryFile != null && internalIECRepositoryFile.exists())
+			iecRepository = (Repository)loadEmfModelFromResource(internalIECRepositoryFile.getFullPath().toString(), null, loadResourceSet);
+		if (internalConfigurationFile != null && internalConfigurationFile.exists())
+			configuration = (Configuration)loadEmfModelFromResource(internalConfigurationFile.getFullPath().toString(), null, loadResourceSet);
+		if (internalIECModFile != null && internalIECModFile.exists())
+			iecModificationMarkRepository = (IECModificationRepository) loadEmfModelFromResource(internalIECModFile.getFullPath().toString(), null, loadResourceSet);
+
+		
+		return new APSReqHardwareArchitectureVersion(versionname, fieldOfActivityRepository, apsPlant, 
+				deploymentContextRepository, iecRepository, configuration,
+				iecFieldOfActivityRepository, iecModificationMarkRepository, reqRepository, decisionRepository, optionRepository, modificationMarksRepository);
 	}
 	
 	@Override

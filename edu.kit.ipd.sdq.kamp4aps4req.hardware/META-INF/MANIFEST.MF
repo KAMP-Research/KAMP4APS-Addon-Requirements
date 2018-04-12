@@ -23,7 +23,8 @@ Require-Bundle: edu.kit.ipd.sdq.kamp,
  edu.kit.ipd.sdq.kamp4aps.aps,
  org.eclipse.core.resources;bundle-version="3.11.1",
  edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks;bundle-version="0.1.0",
- edu.kit.ipd.sdq.kamp4aps4req.hardware.model.modificationmarks;bundle-version="0.1.0"
+ edu.kit.ipd.sdq.kamp4aps4req.hardware.model.modificationmarks;bundle-version="0.1.0",
+ edu.kit.ipd.sdq.kamp4iec
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8

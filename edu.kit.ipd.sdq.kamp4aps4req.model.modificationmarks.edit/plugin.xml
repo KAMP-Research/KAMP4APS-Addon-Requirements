@@ -16,7 +16,7 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated APSReqModificationmarks -->
       <factory
-            uri="http://www.example.org//modificationmarks"
+            uri="http://sdq.ipd.kit.edu/KAMP4aPS4ReqModificationmarks/1.0"
             class="edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.provider.APSReqModificationmarksItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider

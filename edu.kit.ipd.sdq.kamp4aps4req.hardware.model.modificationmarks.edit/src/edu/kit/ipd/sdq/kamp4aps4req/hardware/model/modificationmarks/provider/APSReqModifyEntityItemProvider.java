@@ -4,8 +4,8 @@ package edu.kit.ipd.sdq.kamp4aps4req.hardware.model.modificationmarks.provider;
 
 
 import edu.kit.ipd.sdq.kamp4aps.model.KAMP4aPSModificationmarks.provider.ModifyEntityItemProvider;
-import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModifyRequirement;
-import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.provider.APSReqLabelCustomizing;
+
+import edu.kit.ipd.sdq.kamp4aps4req.hardware.model.modificationmarks.APSReqModifyEntity;
 
 import java.util.Collection;
 import java.util.List;
@@ -64,13 +64,11 @@ public class APSReqModifyEntityItemProvider extends ModifyEntityItemProvider {
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		// --Start manually modified code
-		String label = APSReqLabelCustomizing.customize((APSReqModifyRequirement)object);
-		// --End manually modified code
+		String label = ((APSReqModifyEntity)object).getId();
 		return label == null || label.length() == 0 ?
 			getString("_UI_APSReqModifyEntity_type") :
 			getString("_UI_APSReqModifyEntity_type") + " " + label;

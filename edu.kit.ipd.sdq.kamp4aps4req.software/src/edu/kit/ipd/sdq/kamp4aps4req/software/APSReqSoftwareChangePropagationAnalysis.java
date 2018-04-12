@@ -1,7 +1,9 @@
 package edu.kit.ipd.sdq.kamp4aps4req.software;
 
 
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -14,9 +16,19 @@ import edu.kit.ipd.sdq.kamp4aps4req.software.model.modificationmarks.APSReqModif
 import edu.kit.ipd.sdq.kamp4aps4req.software.model.modificationmarks.APSReqSoftwareChangePropagationDueToSpecificationDependencies;
 import edu.kit.ipd.sdq.kamp4aps4req.software.model.modificationmarks.APSReqSoftwareModificationmarksFactory;
 import edu.kit.ipd.sdq.kamp4iec.core.IECChangePropagationAnalysis;
-
+import edu.kit.ipd.sdq.kamp4iec.core.IECModificationFactory;
+import edu.kit.ipd.sdq.kamp4iec.model.IECModel.Configuration;
+import edu.kit.ipd.sdq.kamp4iec.model.IECModel.Program;
+import edu.kit.ipd.sdq.kamp4iec.model.IECModificationmarks.IECSeedModifications;
+import edu.kit.ipd.sdq.kamp4iec.model.IECRepository.Function;
+import edu.kit.ipd.sdq.kamp4iec.model.IECRepository.FunctionBlock;
+import edu.kit.ipd.sdq.kamp4iec.model.IECRepository.GlobalVariable;
+import edu.kit.ipd.sdq.kamp4iec.model.IECRepository.IECAbstractMethod;
+import edu.kit.ipd.sdq.kamp4iec.model.IECRepository.IECAbstractProperty;
 import edu.kit.ipd.sdq.kamp4iec.model.IECRepository.IECComponent;
-
+import edu.kit.ipd.sdq.kamp4iec.model.IECRepository.IECInterface;
+import edu.kit.ipd.sdq.kamp4iec.model.IECRepository.IECMethod;
+import edu.kit.ipd.sdq.kamp4iec.model.IECRepository.IECProperty;
 import options.Option;
 import relations.TraceableObject;
 
@@ -47,6 +59,9 @@ public class APSReqSoftwareChangePropagationAnalysis extends AbstractAPSReqChang
 		
 		// Calculate Req to architecture propagation
 		this.calculateRequirementsToArchitecturePropagation(version, elementsMarkedInThisStep);
+		
+		// add new seed modifications resulting from previous step
+		this.addIECSeedModifications(version);
 		
 		// Run IEC-Specific Change Propagation Analysis
 		this.getIecChangePropagationAnalysis().runChangePropagationAnalysis(version);
@@ -367,6 +382,76 @@ public class APSReqSoftwareChangePropagationAnalysis extends AbstractAPSReqChang
 		}
 	}
 	
+	/**
+	 * Creates IEC Modifications and adds them to seed modficiations
+	 * @param version
+	 */
+	/*
+	private void addIECSeedModifications(APSReqSoftwareArchitectureVersion version) {
+		IECSeedModifications seedModifications = version.getModificationMarkRepository().getSeedModifications();
+		
+		Set<IECComponent> emptySet = new HashSet<IECComponent>();
+		
+		APSReqSoftwareChangePropagationDueToSpecificationDependencies softwareChanges = 
+				(APSReqSoftwareChangePropagationDueToSpecificationDependencies) 
+				this.getChangePropagationDueToSpecificationDependencies();
+		for (APSReqModifyIECComponent iecComponent : softwareChanges.getIecComponentModifications()) {
+			
+			IECComponent affected = iecComponent.getAffectedElement();
+			if (affected instanceof Program) {
+				seedModifications.getProgramModifications().add(
+						IECModificationFactory.createIECModification(((Program)affected), emptySet, 
+								true));
+			} else if (affected instanceof FunctionBlock) {
+				seedModifications.getFunctionBlockModifications().add(
+						IECModificationFactory.createIECModification(((FunctionBlock)affected), 
+								emptySet, true));
+			} else if (affected instanceof Function) {
+				seedModifications.getFunctionModifications().add(
+						IECModificationFactory.createIECModification(((Function)affected), 
+								emptySet, true));
+			} else if (affected instanceof GlobalVariable) {
+				seedModifications.getGlobalVariableModifications().add(
+						IECModificationFactory.createIECModification(((GlobalVariable)affected), 
+								emptySet, true));
+			} else if (affected instanceof IECMethod) {
+				seedModifications.getMethodModifications().add(
+						IECModificationFactory.createIECModification(((IECMethod)affected), 
+								emptySet, true));
+			} else if (affected instanceof IECAbstractMethod) {
+				seedModifications.getAbstractMethodModifications().add(
+						IECModificationFactory.createIECModification(((IECAbstractMethod)affected), 
+								emptySet, true));
+			} else if (affected instanceof IECProperty) {
+				seedModifications.getPropertyModifications().add(
+						IECModificationFactory.createIECModification(((IECProperty)affected), 
+								emptySet, true));
+			} else if (affected instanceof IECAbstractProperty) {
+				seedModifications.getAbstractPropertyModifications().add(
+						IECModificationFactory.createIECModification(((IECAbstractProperty)affected), 
+								emptySet, true));
+			} else if (affected instanceof IECInterface) {
+				seedModifications.getInterfaceModifications().add(
+						IECModificationFactory.createIECModification(((IECInterface)affected), 
+								emptySet, true));
+			}
+		}
+		
+	}
+	*/
+	private void addIECSeedModifications(APSReqSoftwareArchitectureVersion version) {
+		Collection<IECComponent> seedModifications = iecChangePropagationAnalysis.getSeedModifications();
+	
+		
+		APSReqSoftwareChangePropagationDueToSpecificationDependencies softwareChanges = 
+				(APSReqSoftwareChangePropagationDueToSpecificationDependencies) 
+				this.getChangePropagationDueToSpecificationDependencies();
+		for (APSReqModifyIECComponent iecComponent : softwareChanges.getIecComponentModifications()) {
+			if (iecComponent.getAffectedElement() != null) {
+				seedModifications.add(iecComponent.getAffectedElement());
+			}
+		}
+	}
 	
 	
 

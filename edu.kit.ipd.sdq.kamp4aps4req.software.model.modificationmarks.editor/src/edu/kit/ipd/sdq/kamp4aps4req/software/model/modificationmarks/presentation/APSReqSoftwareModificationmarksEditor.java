@@ -1018,8 +1018,8 @@ public class APSReqSoftwareModificationmarksEditor
 		// Try to load some resources that can be referenced from the modificationsmarks 
 		String folderPath = resourceURI.trimSegments(1).toPlatformString(false);
 		IResource containerResource = ResourcesPlugin.getWorkspace().getRoot().findMember(folderPath);
-		Collection<String> fileExtensionsToLoad = Arrays.asList("repository", "requirements",
-				"decisions", "options");
+		Collection<String> fileExtensionsToLoad = Arrays.asList("iecmodel", "requirements",
+				"decisions", "options", "iecrepository", "iecfieldofactivityannotations");
 
 		if (containerResource instanceof IContainer) {
 			try {
