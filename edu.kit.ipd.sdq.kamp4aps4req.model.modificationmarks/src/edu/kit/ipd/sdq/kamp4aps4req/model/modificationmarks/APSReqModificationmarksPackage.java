@@ -38,7 +38,7 @@ public interface APSReqModificationmarksPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.example.org//modificationmarks";
+	String eNS_URI = "http://sdq.ipd.kit.edu/KAMP4aPS4ReqModificationmarks/1.0";
 
 	/**
 	 * The package namespace name.

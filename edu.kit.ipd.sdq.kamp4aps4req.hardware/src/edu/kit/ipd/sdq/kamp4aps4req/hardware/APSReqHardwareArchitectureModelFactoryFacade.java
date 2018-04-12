@@ -7,6 +7,14 @@ import edu.kit.ipd.sdq.kamp4aps.model.aPS.apsFactory;
 import edu.kit.ipd.sdq.kamp4aps.model.fieldofactivityannotations.FieldOfActivityAnnotationRepository;
 import edu.kit.ipd.sdq.kamp4aps4req.hardware.model.modificationmarks.APSReqHardwareModificationRepository;
 import edu.kit.ipd.sdq.kamp4aps4req.hardware.model.modificationmarks.APSReqHardwareModificationmarksFactory;
+import edu.kit.ipd.sdq.kamp4iec.model.IECFieldOfActivityAnnotations.IECFieldOfActivityAnnotationsFactory;
+import edu.kit.ipd.sdq.kamp4iec.model.IECFieldOfActivityAnnotations.IECFieldOfActivityAnnotationsRepository;
+import edu.kit.ipd.sdq.kamp4iec.model.IECModel.Configuration;
+import edu.kit.ipd.sdq.kamp4iec.model.IECModel.IECModelFactory;
+import edu.kit.ipd.sdq.kamp4iec.model.IECModificationmarks.IECModificationRepository;
+import edu.kit.ipd.sdq.kamp4iec.model.IECModificationmarks.IECModificationmarksFactory;
+import edu.kit.ipd.sdq.kamp4iec.model.IECRepository.IECRepositoryFactory;
+import edu.kit.ipd.sdq.kamp4iec.model.IECRepository.Repository;
 import options.OptionRepository;
 import options.OptionsFactory;
 import requirements.ReqRepository;
@@ -34,8 +42,17 @@ public class APSReqHardwareArchitectureModelFactoryFacade {
 		DecisionRepository decisionRepository = DecisionsFactory.eINSTANCE.createDecisionRepository();
 		OptionRepository optionRepository = OptionsFactory.eINSTANCE.createOptionRepository();
 		APSReqHardwareModificationRepository modificationMarksRepository = APSReqHardwareArchitectureModelFactoryFacade.createModificationRepository();
-		return new APSReqHardwareArchitectureVersion(name, fieldOfActivityRepository, modificationMarksRepository, 
-				deploymentContextRepository, apsPlant, reqRepository, decisionRepository, optionRepository);
+		
+		Repository iecRepository = IECRepositoryFactory.eINSTANCE.createRepository();
+		Configuration configuration = IECModelFactory.eINSTANCE.createConfiguration();
+		IECFieldOfActivityAnnotationsRepository iecFieldOfActivityRepository = 
+				IECFieldOfActivityAnnotationsFactory.eINSTANCE.createIECFieldOfActivityAnnotationsRepository();
+		IECModificationRepository iecModificationRepository = IECModificationmarksFactory.eINSTANCE.createIECModificationRepository();
+		
+		return new APSReqHardwareArchitectureVersion(name, fieldOfActivityRepository, apsPlant, 
+				deploymentContextRepository, iecRepository, 
+				configuration, iecFieldOfActivityRepository,
+				iecModificationRepository, reqRepository, decisionRepository, optionRepository, modificationMarksRepository);
 	}
 	
 	public static APSReqHardwareModificationRepository createModificationRepository() {

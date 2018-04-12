@@ -23,17 +23,11 @@
     <genClasses ecoreClass="apssoftwareoptions.ecore#//APSReqIECMethodOption">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference apssoftwareoptions.ecore#//APSReqIECMethodOption/iecMethods"/>
     </genClasses>
-    <genClasses ecoreClass="apssoftwareoptions.ecore#//APSReqIECAbstractMethodOption">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference apssoftwareoptions.ecore#//APSReqIECAbstractMethodOption/iecAbstractMethods"/>
-    </genClasses>
     <genClasses ecoreClass="apssoftwareoptions.ecore#//APSReqGlobalVariableOption">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference apssoftwareoptions.ecore#//APSReqGlobalVariableOption/globalVariables"/>
     </genClasses>
     <genClasses ecoreClass="apssoftwareoptions.ecore#//APSReqIECPropertyOption">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference apssoftwareoptions.ecore#//APSReqIECPropertyOption/iecProperties"/>
-    </genClasses>
-    <genClasses ecoreClass="apssoftwareoptions.ecore#//APSReqIECAbstractPropertyOption">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference apssoftwareoptions.ecore#//APSReqIECAbstractPropertyOption/iecAbstractProperties"/>
     </genClasses>
     <genClasses ecoreClass="apssoftwareoptions.ecore#//APSReqIECInterfaceOption">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference apssoftwareoptions.ecore#//APSReqIECInterfaceOption/iecInterfaces"/>

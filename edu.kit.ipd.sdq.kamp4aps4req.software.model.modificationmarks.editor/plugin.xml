@@ -36,8 +36,8 @@
    <extension point="org.eclipse.ui.popupMenus">
           <objectContribution
                 adaptable="false"
-                id="edu.kit.ipd.sdq.kamp4aps4req.hardware.model.modificationmarks.APSReqHardwareModificationRepositoryID"
-                objectClass="edu.kit.ipd.sdq.kamp4aps4req.hardware.model.modificationmarks.APSReqHardwareModificationRepository">
+                id="edu.kit.ipd.sdq.kamp4aps4req.software.model.modificationmarks.APSReqSoftwareModificationRepositoryID"
+                objectClass="edu.kit.ipd.sdq.kamp4aps4req.software.model.modificationmarks.APSReqSoftwareModificationRepository">
              <action
                    class="edu.kit.ipd.sdq.kamp4aps4req.software.model.modificationmarks.editor.APSReqSoftwareArchitectureBasedWorkplanDerivationAction"
                    icon="../edu.kit.ipd.sdq.kamp/icons/run.png"
@@ -52,7 +52,6 @@
                    label="Step 3: Calculate APSReq change propagation"
                    menubarPath="edit">
              </action>
-             <enablement></enablement>
           </objectContribution>
      </extension>
 
