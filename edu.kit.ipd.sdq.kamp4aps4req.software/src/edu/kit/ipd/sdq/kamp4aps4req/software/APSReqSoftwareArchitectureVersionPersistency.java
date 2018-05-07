@@ -10,6 +10,7 @@ import edu.kit.ipd.sdq.kamp.util.FileAndFolderManagement;
 import edu.kit.ipd.sdq.kamp4aps4req.core.AbstractAPSReqArchitectureVersionPersistency;
 import edu.kit.ipd.sdq.kamp4aps4req.software.model.modificationmarks.APSReqSoftwareModificationRepository;
 import edu.kit.ipd.sdq.kamp4iec.core.IECArchitectureVersionPersistency;
+import edu.kit.ipd.sdq.kamp4aps4req.software.APSReqSoftwareArchitectureVersion.APSReqSoftwareArchitectureVersionParams;
 import edu.kit.ipd.sdq.kamp4iec.model.IECModel.Configuration;
 import edu.kit.ipd.sdq.kamp4iec.model.IECRepository.Repository;
 import edu.kit.ipd.sdq.kamp4iec.model.IECFieldOfActivityAnnotations.IECFieldOfActivityAnnotationsRepository;
@@ -23,6 +24,8 @@ import requirements.ReqRepository;
  */
 public class APSReqSoftwareArchitectureVersionPersistency extends AbstractAPSReqArchitectureVersionPersistency<APSReqSoftwareArchitectureVersion> {
 
+	private APSReqSoftwareArchitectureVersionParams archParams = new APSReqSoftwareArchitectureVersionParams();
+	
 	@Override
 	public APSReqSoftwareArchitectureVersion load(String folderpath, String filename, String versionname) {
 		ResourceSet loadResourceSet = new ResourceSetImpl();
@@ -36,6 +39,7 @@ public class APSReqSoftwareArchitectureVersionPersistency extends AbstractAPSReq
 		String modificationMarksFilePath = filename + "." + FILEEXTENSION_MODIFICATIONMARK;
 		
 		// load IEC specific models
+		/*
 		Repository iecRepository = (Repository)loadEmfModelFromResource(folderpath, iecRepoFilePath, loadResourceSet);
 		Configuration configuration = (Configuration)loadEmfModelFromResource(folderpath, configurationFilePath, loadResourceSet);
 		IECFieldOfActivityAnnotationsRepository fieldOfActivityAnnotation = 
@@ -47,9 +51,21 @@ public class APSReqSoftwareArchitectureVersionPersistency extends AbstractAPSReq
 		OptionRepository optionRepository = (OptionRepository)loadEmfModelFromResource(folderpath, optionsFilePath, loadResourceSet);
 		APSReqSoftwareModificationRepository modificationRepository = 
 				(APSReqSoftwareModificationRepository)loadEmfModelFromResource(folderpath, modificationMarksFilePath, loadResourceSet);
+		*/
+		archParams.iecRepository = (Repository)loadEmfModelFromResource(folderpath, iecRepoFilePath, loadResourceSet);
+		archParams.configuration = (Configuration)loadEmfModelFromResource(folderpath, configurationFilePath, loadResourceSet);
+		archParams.fieldOfActivityRepository = 
+				(IECFieldOfActivityAnnotationsRepository)loadEmfModelFromResource(folderpath, fieldOfActivityFilePath, loadResourceSet);
 		
-		return new APSReqSoftwareArchitectureVersion(versionname, iecRepository, configuration, fieldOfActivityAnnotation, 
-				requirementRepository, decisionRepository, optionRepository, modificationRepository);
+		archParams.reqRepository = (ReqRepository)loadEmfModelFromResource(folderpath, requirementsFilePath, loadResourceSet);
+		archParams.decisionRepository = 
+				(DecisionRepository)loadEmfModelFromResource(folderpath, decisionsFilePath, loadResourceSet);
+		archParams.optionRepository = (OptionRepository)loadEmfModelFromResource(folderpath, optionsFilePath, loadResourceSet);
+		archParams.modificationMarkRepository = 
+				(APSReqSoftwareModificationRepository)loadEmfModelFromResource(folderpath, modificationMarksFilePath, loadResourceSet);
+		
+		
+		return new APSReqSoftwareArchitectureVersion(archParams);
 	}
 	
 	@Override
@@ -71,6 +87,7 @@ public class APSReqSoftwareArchitectureVersionPersistency extends AbstractAPSReq
 				folder, AbstractAPSReqArchitectureVersionPersistency.FILEEXTENSION_OPTIONS);
 		IFile modificationMarkFile = FileAndFolderManagement.retrieveFileWithExtension(folder, FILEEXTENSION_MODIFICATIONMARK);
 		
+		/*
 		Repository iecRepository = null;
 		Configuration configuration = null;
 		IECFieldOfActivityAnnotationsRepository fieldOfActivityAnnotations = null;
@@ -78,40 +95,40 @@ public class APSReqSoftwareArchitectureVersionPersistency extends AbstractAPSReq
 		DecisionRepository decisionRepository = null;
 		OptionRepository optionRepository = null;
 		APSReqSoftwareModificationRepository modificationMarksRepository = null;
+		*/
 		
 		if (iecRepoFile != null && iecRepoFile.exists()) {
-			iecRepository = (Repository)loadEmfModelFromResource(
+			archParams.iecRepository = (Repository)loadEmfModelFromResource(
 					iecRepoFile.getFullPath().toString(), null, loadResourceSet);
 		}
 		if (configurationFile != null && configurationFile.exists()) {
-			configuration = (Configuration)loadEmfModelFromResource(
+			archParams.configuration = (Configuration)loadEmfModelFromResource(
 					configurationFile.getFullPath().toString(), null, loadResourceSet);
 		}
 		if (fieldOfActitivyAnnotationFile != null && fieldOfActitivyAnnotationFile.exists()) {
-			fieldOfActivityAnnotations = (IECFieldOfActivityAnnotationsRepository)loadEmfModelFromResource(
+			archParams.fieldOfActivityRepository = (IECFieldOfActivityAnnotationsRepository)loadEmfModelFromResource(
 					fieldOfActitivyAnnotationFile.getFullPath().toString(), null, loadResourceSet);
 		}
 		
 		
 		if (requirementsFile != null && requirementsFile.exists()) {
-			reqRepository = (ReqRepository)loadEmfModelFromResource(
+			archParams.reqRepository = (ReqRepository)loadEmfModelFromResource(
 					requirementsFile.getFullPath().toString(), null, loadResourceSet);
 		}
 		if (decisionsFile != null && decisionsFile.exists()) {
-			decisionRepository = (DecisionRepository)loadEmfModelFromResource(
+			archParams.decisionRepository = (DecisionRepository)loadEmfModelFromResource(
 					decisionsFile.getFullPath().toString(), null, loadResourceSet);
 		}
 		if (optionsFile != null && optionsFile.exists()) {
-			optionRepository = (OptionRepository)loadEmfModelFromResource(
+			archParams.optionRepository = (OptionRepository)loadEmfModelFromResource(
 					optionsFile.getFullPath().toString(), null, loadResourceSet);
 		}
 		if (modificationMarkFile != null && modificationMarkFile.exists()) {
-			modificationMarksRepository = (APSReqSoftwareModificationRepository)
+			archParams.modificationMarkRepository = (APSReqSoftwareModificationRepository)
 					loadEmfModelFromResource(modificationMarkFile.getFullPath().toString(), null, loadResourceSet);
 		}
 		
-		return new APSReqSoftwareArchitectureVersion(versionname, iecRepository, configuration, fieldOfActivityAnnotations, 
-				reqRepository, decisionRepository, optionRepository, modificationMarksRepository);
+		return new APSReqSoftwareArchitectureVersion(archParams);
 		
 	}
 	
