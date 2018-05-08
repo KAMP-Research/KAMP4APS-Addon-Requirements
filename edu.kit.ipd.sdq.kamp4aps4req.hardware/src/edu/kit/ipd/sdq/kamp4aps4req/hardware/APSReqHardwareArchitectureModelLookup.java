@@ -38,23 +38,29 @@ public class APSReqHardwareArchitectureModelLookup extends APSReqArchitectureMod
 					}
 				}
 			} else if (option instanceof APSReqModuleOption) {
-				for (Module moduleRepository : version.getAPSPlant().getModuleRepository().getAllModulesInPlant()) {
-					if (isEntityReferencedByOption(moduleRepository,  (APSReqModuleOption) option)) {
-						MapUtil.putOrAddToMap(results, moduleRepository, option);
+				if (version.getAPSPlant().getModuleRepository() != null) {
+					for (Module moduleRepository : version.getAPSPlant().getModuleRepository().getAllModulesInPlant()) {
+						if (isEntityReferencedByOption(moduleRepository,  (APSReqModuleOption) option)) {
+							MapUtil.putOrAddToMap(results, moduleRepository, option);
+						}
 					}
 				}
 			} else if (option instanceof APSReqComponentOption) {
-				for (Component componentRepository : version.getAPSPlant().getComponentRepository()
-						.getAllComponentsInPlant()) {
-					if (isEntityReferencedByOption(componentRepository,  (APSReqComponentOption) option)) {
-						MapUtil.putOrAddToMap(results, componentRepository, option);
+				if (version.getAPSPlant().getComponentRepository() != null) {
+					for (Component componentRepository : version.getAPSPlant().getComponentRepository()
+							.getAllComponentsInPlant()) {
+						if (isEntityReferencedByOption(componentRepository,  (APSReqComponentOption) option)) {
+							MapUtil.putOrAddToMap(results, componentRepository, option);
+						}
 					}
 				}
 			} else if (option instanceof APSReqInterfaceOption) {
-				for (Interface interfaceRepository : version.getAPSPlant().getInterfaceRepository().
-						getAllInterfacesInPlant()) {
-					if (isEntityReferencedByOption(interfaceRepository,  (APSReqInterfaceOption) option)) {
-						MapUtil.putOrAddToMap(results, interfaceRepository, option);
+				if (version.getAPSPlant().getInterfaceRepository() != null) {
+					for (Interface interfaceRepository : version.getAPSPlant().getInterfaceRepository().
+							getAllInterfacesInPlant()) {
+						if (isEntityReferencedByOption(interfaceRepository,  (APSReqInterfaceOption) option)) {
+							MapUtil.putOrAddToMap(results, interfaceRepository, option);
+						}
 					}
 				}
 			}
@@ -75,23 +81,29 @@ public class APSReqHardwareArchitectureModelLookup extends APSReqArchitectureMod
 						}
 					}
 				} else if (selection instanceof APSReqModuleOption) {
-					for (Module moduleRepository : version.getAPSPlant().getModuleRepository().getAllModulesInPlant()) {
-						if (isEntityReferencedByOption(moduleRepository,  (APSReqModuleOption) selection)) {
-							MapUtil.putOrAddToMap(results, moduleRepository, decisionRepository);
+					if (version.getAPSPlant().getModuleRepository() != null) {
+						for (Module moduleRepository : version.getAPSPlant().getModuleRepository().getAllModulesInPlant()) {
+							if (isEntityReferencedByOption(moduleRepository,  (APSReqModuleOption) selection)) {
+								MapUtil.putOrAddToMap(results, moduleRepository, decisionRepository);
+							}
 						}
 					}
 				} else if (selection instanceof APSReqComponentOption) {
-					for (Component componentRepository : version.getAPSPlant().getComponentRepository()
-							.getAllComponentsInPlant()) {
-						if (isEntityReferencedByOption(componentRepository,  (APSReqComponentOption) selection)) {
-							MapUtil.putOrAddToMap(results, componentRepository, decisionRepository);
+					if (version.getAPSPlant().getComponentRepository() != null) {
+						for (Component componentRepository : version.getAPSPlant().getComponentRepository()
+								.getAllComponentsInPlant()) {
+							if (isEntityReferencedByOption(componentRepository,  (APSReqComponentOption) selection)) {
+								MapUtil.putOrAddToMap(results, componentRepository, decisionRepository);
+							}
 						}
 					}
 				} else if (selection instanceof APSReqInterfaceOption) {
-					for (Interface interfaceRepository : version.getAPSPlant().getInterfaceRepository().
-							getAllInterfacesInPlant()) {
-						if (isEntityReferencedByOption(interfaceRepository,  (APSReqInterfaceOption) selection)) {
-							MapUtil.putOrAddToMap(results, interfaceRepository, decisionRepository);
+					if (version.getAPSPlant().getInterfaceRepository() != null) {
+						for (Interface interfaceRepository : version.getAPSPlant().getInterfaceRepository().
+								getAllInterfacesInPlant()) {
+							if (isEntityReferencedByOption(interfaceRepository,  (APSReqInterfaceOption) selection)) {
+								MapUtil.putOrAddToMap(results, interfaceRepository, decisionRepository);
+							}
 						}
 					}
 				}
@@ -116,6 +128,7 @@ public class APSReqHardwareArchitectureModelLookup extends APSReqArchitectureMod
 		} else if (option instanceof APSReqComponentOption) {
 			for (Component componentRepo : ((APSReqComponentOption)option).getComponents()) {
 				if (entity.equals(componentRepo)) {
+					System.out.println(option.getId() + "Component");
 					return true;
 				}
 			}

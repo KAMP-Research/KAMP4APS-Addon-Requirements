@@ -69,11 +69,11 @@ public class APSReqSoftwareInternalModificationDerivation extends AbstractAPSReq
 			return new Activity(IECActivityType.INTERNALMODIFICATIONMARK, activityElementType, 
 					traceableObject, elementName, causingElementNames, BasicActivity.MODIFY, 
 					"Modify " + traceableObject.eClass().getName() + " " + elementName + ".");
-		} else if (modification instanceof APSReqModifyIECComponent){
-			IECComponent iecComponent = ((APSReqModifyIECComponent)modification).getAffectedElement();
-			return new Activity(IECActivityType.INTERNALMODIFICATIONMARK, activityElementType, 
-					iecComponent, iecComponent.getName(), causingElementNames, BasicActivity.MODIFY, 
-					"Modify " + iecComponent.eClass().getName() + " " + iecComponent.getName() + ".");
+//		} else if (modification instanceof APSReqModifyIECComponent){
+//			IECComponent iecComponent = ((APSReqModifyIECComponent)modification).getAffectedElement();
+//			return new Activity(IECActivityType.INTERNALMODIFICATIONMARK, activityElementType, 
+//					iecComponent, iecComponent.getName(), causingElementNames, BasicActivity.MODIFY, 
+//					"Modify " + iecComponent.eClass().getName() + " " + iecComponent.getName() + ".");
 		} else {
 			return null;
 		}
@@ -95,12 +95,12 @@ public class APSReqSoftwareInternalModificationDerivation extends AbstractAPSReq
 				this.deriveTraceableObjectModifications(cp.getRequirementModifications(), activityList);
 				this.deriveTraceableObjectModifications(cp.getDecisionModifications(), activityList);
 				this.deriveTraceableObjectModifications(cp.getOptionModifications(), activityList);
-				this.deriveIECComponentModifications(cp.getIecComponentModifications(), activityList);
+				//this.deriveIECComponentModifications(cp.getIecComponentModifications(), activityList);
 			}
 		}
 		return activityList;
 	}
-	
+	/*
 	private void deriveIECComponentModifications(Collection<APSReqModifyIECComponent> modifications, 
 			List<Activity> activityList) {
 		for (APSReqModifyIECComponent modification: modifications) {
@@ -108,4 +108,5 @@ public class APSReqSoftwareInternalModificationDerivation extends AbstractAPSReq
 					APSReqSoftwareActivityElementType.IECCOMPONENT));
 		}
 	}
+	*/
 }

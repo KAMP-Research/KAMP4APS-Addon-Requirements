@@ -45,29 +45,36 @@ public class APSReqSoftwareDifferenceCalculation extends AbstractDifferenceCalcu
 	
 	@Override
 	public void checkForDifferencesAndAddToWorkplan(Diff diffElement, List<Activity> workplan) {
-		this.getIecDifferenceCalculation().checkForDifferencesAndAddToWorkplan(diffElement, workplan);
+		//this.getIecDifferenceCalculation().checkForDifferencesAndAddToWorkplan(diffElement, workplan);
+		System.out.println(diffElement.toString());
 		if (detectionRuleAdded(diffElement, Requirement.class)) {
 			Requirement requirement = (Requirement)(((ReferenceChange)diffElement).getValue());
+			System.out.println(requirement.getId());
 			String elementName = "\"" + requirement.getSpecification() + "\"";
 			workplan.add(createAPSReqAddActivity(requirement, elementName));
 		} else if (detectionRuleDeleted(diffElement, Requirement.class)) {
 			Requirement requirement = (Requirement)(((ReferenceChange)diffElement).getValue());
+			System.out.println(requirement.getId());
 			String elementName = "\"" + requirement.getSpecification() + "\"";
 			workplan.add(createAPSReqRemoveActivity(requirement, elementName));
 		} else if (detectionRuleAdded(diffElement, Decision.class)) {
 			Decision decision = (Decision)(((ReferenceChange)diffElement).getValue());
+			System.out.println(decision.getId());
 			String elementName = "\"" + decision.getDescription() + "\"";
 			workplan.add(createAPSReqAddActivity(decision, elementName));
 		} else if (detectionRuleDeleted(diffElement, Decision.class)) {
 			Decision decision = (Decision)(((ReferenceChange)diffElement).getValue());
+			System.out.println(decision.getId());
 			String elementName = "\"" + decision.getDescription() + "\"";
 			workplan.add(createAPSReqRemoveActivity(decision, elementName));
 		} else if (detectionRuleAdded(diffElement, Option.class)) {
 			Option option = (Option)(((ReferenceChange)diffElement).getValue());
+			System.out.println(option.getId());
 			String elementName = "\"" + option.getDescription() + "\"";
 			workplan.add(createAPSReqAddActivity(option, elementName));
 		} else if (detectionRuleDeleted(diffElement, Option.class)) {
 			Option option = (Option)(((ReferenceChange)diffElement).getValue());
+			System.out.println(option.getId());
 			String elementName = "\"" + option.getDescription() + "\"";
 			workplan.add(createAPSReqRemoveActivity(option, elementName));
 		}
