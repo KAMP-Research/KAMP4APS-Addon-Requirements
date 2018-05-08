@@ -8,13 +8,12 @@ import edu.kit.ipd.sdq.kamp4iec.model.IECModel.Configuration;
 import edu.kit.ipd.sdq.kamp4iec.model.IECModel.IECModelFactory;
 import edu.kit.ipd.sdq.kamp4iec.model.IECRepository.Repository;
 import edu.kit.ipd.sdq.kamp4iec.model.IECRepository.IECRepositoryFactory;
-import edu.kit.ipd.sdq.kamp4aps4req.software.APSReqSoftwareArchitectureVersion.APSReqSoftwareArchitectureVersionParams;
 
-
+import options.OptionRepository;
 import options.OptionsFactory;
-
+import requirements.ReqRepository;
 import requirements.RequirementsFactory;
-
+import decisions.DecisionRepository;
 import decisions.DecisionsFactory;
 
 /**
@@ -24,26 +23,24 @@ import decisions.DecisionsFactory;
  */
 public class APSReqSoftwareArchitectureModelFactoryFacade {
 
-	private static APSReqSoftwareArchitectureVersionParams archParams = new APSReqSoftwareArchitectureVersionParams();
-	
 	/**
 	 * Creates necessary repositories and creates an architecture version
 	 * @param name Name of the architecture version
 	 * @return Software architecture version
 	 */
 	public static APSReqSoftwareArchitectureVersion createEmptySoftwareModel(String name) {
-		archParams.iecRepository = IECRepositoryFactory.eINSTANCE.createRepository();
-		archParams.configuration = IECModelFactory.eINSTANCE.createConfiguration();
-		archParams.fieldOfActivityRepository = 
+		Repository iecRepository = IECRepositoryFactory.eINSTANCE.createRepository();
+		Configuration configuration = IECModelFactory.eINSTANCE.createConfiguration();
+		IECFieldOfActivityAnnotationsRepository fieldOfActivityRepository = 
 				IECFieldOfActivityAnnotationsFactory.eINSTANCE.createIECFieldOfActivityAnnotationsRepository();
 
-		archParams.reqRepository = RequirementsFactory.eINSTANCE.createReqRepository();
-		archParams.decisionRepository = DecisionsFactory.eINSTANCE.createDecisionRepository();
-		archParams.optionRepository = OptionsFactory.eINSTANCE.createOptionRepository();
-		archParams.modificationMarkRepository = 
+		ReqRepository reqRepository = RequirementsFactory.eINSTANCE.createReqRepository();
+		DecisionRepository decisionRepository = DecisionsFactory.eINSTANCE.createDecisionRepository();
+		OptionRepository optionRepository = OptionsFactory.eINSTANCE.createOptionRepository();
+		APSReqSoftwareModificationRepository modificationRepository = 
 				APSReqSoftwareArchitectureModelFactoryFacade.createModificationRepository();
-		
-		return new APSReqSoftwareArchitectureVersion(archParams);
+		return new APSReqSoftwareArchitectureVersion(name, iecRepository, configuration, fieldOfActivityRepository, 
+				reqRepository, decisionRepository, optionRepository, modificationRepository);
 	}
 	
 	public static APSReqSoftwareModificationRepository createModificationRepository() {
