@@ -71,14 +71,17 @@ public class APSReqHardwareInternalModificationDerivation extends AbstractAPSReq
 			return new Activity(APSActivityType.INTERNALMODIFICATIONMARK, activityElementType, 
 					traceableObject, elementName, causingElementNames, BasicActivity.MODIFY, 
 					"Modify " + traceableObject.eClass().getName() + " " + elementName + ".");
-		} else if (modification instanceof APSReqModifyEntity) {
-			Entity entity = ((APSReqModifyEntity)modification).getAffectedElement();
-			return new Activity(APSActivityType.INTERNALMODIFICATIONMARK, activityElementType, 
-					entity, entity.getName(), causingElementNames, BasicActivity.MODIFY, 
-					"Modify " + entity.eClass().getName() + " " + entity.getName() + ".");
 		} else {
 			return null;
 		}
+//		} else if (modification instanceof APSReqModifyEntity) {
+//			Entity entity = ((APSReqModifyEntity)modification).getAffectedElement();
+//			return new Activity(APSActivityType.INTERNALMODIFICATIONMARK, activityElementType, 
+//					entity, entity.getName(), causingElementNames, BasicActivity.MODIFY, 
+//					"Modify " + entity.eClass().getName() + " " + entity.getName() + ".");
+//		} else {
+//			return null;
+//		}
 	}
 	
 
@@ -98,12 +101,12 @@ public class APSReqHardwareInternalModificationDerivation extends AbstractAPSReq
 				this.deriveTraceableObjectModifications(cp.getRequirementModifications(), activityList);
 				this.deriveTraceableObjectModifications(cp.getDecisionModifications(), activityList);
 				this.deriveTraceableObjectModifications(cp.getOptionModifications(), activityList);
-				this.deriveEntityModifications(cp.getEntityModifications(), activityList);
+				//this.deriveEntityModifications(cp.getEntityModifications(), activityList);
 			}
 		}
 		return activityList;
 	}
-	
+	/*
 	private void deriveEntityModifications(Collection<APSReqModifyEntity> modifications, 
 			List<Activity> activityList) {
 		for (APSReqModifyEntity modification: modifications) {
@@ -111,6 +114,7 @@ public class APSReqHardwareInternalModificationDerivation extends AbstractAPSReq
 					APSReqHardwareActivityElementType.ENTITY));
 		}
 	}
+	*/
 
 	
 }

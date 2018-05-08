@@ -30,19 +30,21 @@ public class APSReqHardwareDifferenceCalculation extends AbstractDifferenceCalcu
 			APSReqHardwareArchitectureVersion targetVersion) {
 		List<Activity> activityList = this.apsDifferenceCalculation.deriveWorkplan(
 				baseVersion, targetVersion);
+		
 		activityList.addAll(this.deriveAddAndRemoveActivities(AbstractWorkplanDerivation.calculateDiffModel(
 				baseVersion.getRequirementsRepository(), targetVersion.getRequirementsRepository())));
 		activityList.addAll(this.deriveAddAndRemoveActivities(AbstractWorkplanDerivation.calculateDiffModel(
 				baseVersion.getDecisionRepository(), targetVersion.getDecisionRepository())));
 		activityList.addAll(this.deriveAddAndRemoveActivities(AbstractWorkplanDerivation.calculateDiffModel(
 				baseVersion.getOptionRepository(), targetVersion.getOptionRepository())));
-		activityList.addAll(this.getInternalModificationDerivation().deriveInternalModifications(targetVersion));
+		//activityList.addAll(this.getInternalModificationDerivation().deriveInternalModifications(targetVersion));
+		
 		return activityList;
 	}
 	
 	@Override
 	public void checkForDifferencesAndAddToWorkplan(Diff diffElement, List<Activity> workplan) {
-		this.getApsDifferenceCalculation().checkForDifferencesAndAddToWorkplan(diffElement, workplan);
+		//this.getApsDifferenceCalculation().checkForDifferencesAndAddToWorkplan(diffElement, workplan);
 		if (detectionRuleAdded(diffElement, Requirement.class)) {
 			Requirement requirement = (Requirement)(((ReferenceChange)diffElement).getValue());
 			String elementName = "\"" + requirement.getSpecification() + "\"";

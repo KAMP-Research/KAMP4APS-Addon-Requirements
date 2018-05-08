@@ -19,6 +19,9 @@ import edu.kit.ipd.sdq.kamp4iec.core.IECChangePropagationAnalysis;
 import edu.kit.ipd.sdq.kamp4iec.core.IECModificationFactory;
 import edu.kit.ipd.sdq.kamp4iec.model.IECModel.Configuration;
 import edu.kit.ipd.sdq.kamp4iec.model.IECModel.Program;
+import edu.kit.ipd.sdq.kamp4iec.model.IECModificationmarks.IECModificationmarksFactory;
+import edu.kit.ipd.sdq.kamp4iec.model.IECModificationmarks.IECModifyComponent;
+import edu.kit.ipd.sdq.kamp4iec.model.IECModificationmarks.IECModifyConfiguration;
 import edu.kit.ipd.sdq.kamp4iec.model.IECModificationmarks.IECSeedModifications;
 import edu.kit.ipd.sdq.kamp4iec.model.IECRepository.Function;
 import edu.kit.ipd.sdq.kamp4iec.model.IECRepository.FunctionBlock;
@@ -359,6 +362,7 @@ public class APSReqSoftwareChangePropagationAnalysis extends AbstractAPSReqChang
 	
 	*/
 	
+	
 	private <T extends TraceableObject> void createAndAddIECComponentModifications(
 			Map<IECComponent, Set<T>> iecComponentsToBeMarked, 
 			Map<EObject, AbstractModification<?, EObject>> elementsMarkedInThisStep) {
@@ -382,63 +386,60 @@ public class APSReqSoftwareChangePropagationAnalysis extends AbstractAPSReqChang
 		}
 	}
 	
-	/**
-	 * Creates IEC Modifications and adds them to seed modficiations
-	 * @param version
-	 */
 	/*
-	private void addIECSeedModifications(APSReqSoftwareArchitectureVersion version) {
-		IECSeedModifications seedModifications = version.getModificationMarkRepository().getSeedModifications();
-		
-		Set<IECComponent> emptySet = new HashSet<IECComponent>();
-		
-		APSReqSoftwareChangePropagationDueToSpecificationDependencies softwareChanges = 
-				(APSReqSoftwareChangePropagationDueToSpecificationDependencies) 
-				this.getChangePropagationDueToSpecificationDependencies();
-		for (APSReqModifyIECComponent iecComponent : softwareChanges.getIecComponentModifications()) {
-			
-			IECComponent affected = iecComponent.getAffectedElement();
-			if (affected instanceof Program) {
-				seedModifications.getProgramModifications().add(
-						IECModificationFactory.createIECModification(((Program)affected), emptySet, 
-								true));
-			} else if (affected instanceof FunctionBlock) {
-				seedModifications.getFunctionBlockModifications().add(
-						IECModificationFactory.createIECModification(((FunctionBlock)affected), 
-								emptySet, true));
-			} else if (affected instanceof Function) {
-				seedModifications.getFunctionModifications().add(
-						IECModificationFactory.createIECModification(((Function)affected), 
-								emptySet, true));
-			} else if (affected instanceof GlobalVariable) {
-				seedModifications.getGlobalVariableModifications().add(
-						IECModificationFactory.createIECModification(((GlobalVariable)affected), 
-								emptySet, true));
-			} else if (affected instanceof IECMethod) {
-				seedModifications.getMethodModifications().add(
-						IECModificationFactory.createIECModification(((IECMethod)affected), 
-								emptySet, true));
-			} else if (affected instanceof IECAbstractMethod) {
-				seedModifications.getAbstractMethodModifications().add(
-						IECModificationFactory.createIECModification(((IECAbstractMethod)affected), 
-								emptySet, true));
-			} else if (affected instanceof IECProperty) {
-				seedModifications.getPropertyModifications().add(
-						IECModificationFactory.createIECModification(((IECProperty)affected), 
-								emptySet, true));
-			} else if (affected instanceof IECAbstractProperty) {
-				seedModifications.getAbstractPropertyModifications().add(
-						IECModificationFactory.createIECModification(((IECAbstractProperty)affected), 
-								emptySet, true));
-			} else if (affected instanceof IECInterface) {
-				seedModifications.getInterfaceModifications().add(
-						IECModificationFactory.createIECModification(((IECInterface)affected), 
-								emptySet, true));
+	private <T extends TraceableObject> void createAndAddIECComponentModifications(
+			Map<IECComponent, Set<T>> iecComponentsToBeMarked, 
+			Map<EObject, AbstractModification<?, EObject>> elementsMarkedInThisStep) {
+		for (Map.Entry<IECComponent, Set<T>> iecComponentsToBeMarkedEntry: iecComponentsToBeMarked.entrySet()) {
+			if (elementsMarkedInThisStep.containsKey(iecComponentsToBeMarkedEntry.getKey())) {
+				elementsMarkedInThisStep.get(iecComponentsToBeMarkedEntry.getKey()).
+						getCausingElements().addAll(iecComponentsToBeMarkedEntry.getValue());
+			} else {
+				IECModifyComponent<?> modifyIECComponent;
+				if (iecComponentsToBeMarkedEntry instanceof Configuration) {
+					modifyIECComponent = IECModificationmarksFactory.eINSTANCE.createIECModifyConfiguration();
+				} else if (iecComponentsToBeMarkedEntry instanceof Program) {
+					modifyIECComponent = IECModificationmarksFactory.eINSTANCE.createIECModifyProgram();
+				} else if (iecComponentsToBeMarkedEntry instanceof GlobalVariable) {
+					modifyIECComponent = IECModificationmarksFactory.eINSTANCE.createIECModifyGlobalVariable();
+				} else if (iecComponentsToBeMarkedEntry instanceof FunctionBlock) {
+					modifyIECComponent = IECModificationmarksFactory.eINSTANCE.createIECModifyFunctionBlock();
+				} else if (iecComponentsToBeMarkedEntry instanceof Function) {
+					modifyIECComponent = IECModificationmarksFactory.eINSTANCE.createIECModifyFunction();
+				} else if (iecComponentsToBeMarkedEntry instanceof IECInterface) {
+					modifyIECComponent = IECModificationmarksFactory.eINSTANCE.createIECModifyInterface();
+				} else if (iecComponentsToBeMarkedEntry instanceof IECMethod) {
+					modifyIECComponent = IECModificationmarksFactory.eINSTANCE.createIECModifyMethod();
+				} else if (iecComponentsToBeMarkedEntry instanceof IECAbstractMethod) {
+					modifyIECComponent = IECModificationmarksFactory.eINSTANCE.createIECModifyAbstractMethod();
+				} else if (iecComponentsToBeMarkedEntry instanceof IECProperty) {
+					modifyIECComponent = IECModificationmarksFactory.eINSTANCE.createIECModifyProperty();
+				} else if (iecComponentsToBeMarkedEntry instanceof IECAbstractProperty) {
+					modifyIECComponent = IECModificationmarksFactory.eINSTANCE.createIECModifyAbstractProperty();
+				}
+				
+				
+				APSReqModifyIECComponent modifyIECComponent = 
+						APSReqSoftwareModificationmarksFactory.eINSTANCE.createAPSReqModifyIECComponent();
+				modifyIECComponent.setToolderived(true);
+				modifyIECComponent.setAffectedElement(iecComponentsToBeMarkedEntry.getKey());
+				modifyIECComponent.getCausingElements().addAll(iecComponentsToBeMarkedEntry.getValue());
+				
+				elementsMarkedInThisStep.put(iecComponentsToBeMarkedEntry.getKey(), modifyIECComponent);
+				APSReqSoftwareChangePropagationDueToSpecificationDependencies softwareChanges = 
+						(APSReqSoftwareChangePropagationDueToSpecificationDependencies) 
+						this.getChangePropagationDueToSpecificationDependencies();
+				softwareChanges.getIecComponentModifications().add(modifyIECComponent);
 			}
 		}
-		
 	}
 	*/
+	
+	/**
+	 * Creates an IEC Modification for each "Modify IECComponent" and adds them to seed modficiations
+	 * of KAMP4IEC
+	 * @param version
+	 */	
 	private void addIECSeedModifications(APSReqSoftwareArchitectureVersion version) {
 		Collection<IECComponent> seedModifications = iecChangePropagationAnalysis.getSeedModifications();
 	
@@ -448,10 +449,13 @@ public class APSReqSoftwareChangePropagationAnalysis extends AbstractAPSReqChang
 				this.getChangePropagationDueToSpecificationDependencies();
 		for (APSReqModifyIECComponent iecComponent : softwareChanges.getIecComponentModifications()) {
 			if (iecComponent.getAffectedElement() != null) {
-				seedModifications.add(iecComponent.getAffectedElement());
+				if (!seedModifications.contains(iecComponent.getAffectedElement())) {
+					seedModifications.add(iecComponent.getAffectedElement());
+				}
 			}
 		}
 	}
+	
 	
 	
 

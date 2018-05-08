@@ -1041,7 +1041,8 @@ public class APSReqHardwareModificationmarksEditor
 		String folderPath = resourceURI.trimSegments(1).toPlatformString(false);
 		IResource containerResource = ResourcesPlugin.getWorkspace().getRoot().findMember(folderPath);
 		Collection<String> fileExtensionsToLoad = Arrays.asList("aps", "requirements",
-				"decisions", "options", "deploymentcontext", "fieldofactivityannotations");
+				"decisions", "options", "deploymentcontext", "fieldofactivityannotations", "iecfieldofactivityannotations",
+				"iecmodel", "iecrepository");
 		
 		if (containerResource instanceof IContainer) {
 			try {
