@@ -21,7 +21,6 @@ import requirements.ReqRepository;
 import requirements.RequirementsFactory;
 import decisions.DecisionRepository;
 import decisions.DecisionsFactory;
-import edu.kit.ipd.sdq.kamp4aps4req.hardware.APSReqHardwareArchitectureVersion.APSReqHardwareArchitectureVersionParams;
 
 /**
  * Class loading the hardware model, including the APS-Architecture version
@@ -30,14 +29,11 @@ import edu.kit.ipd.sdq.kamp4aps4req.hardware.APSReqHardwareArchitectureVersion.A
  */
 public class APSReqHardwareArchitectureModelFactoryFacade {
 
-	private static APSReqHardwareArchitectureVersionParams archParams = new APSReqHardwareArchitectureVersionParams();
-	
 	/**
 	 * Creates necessary repositories and creates an architecture version
 	 * @param name Name of the architecture version
 	 * @return Hardware architecture version
 	 */
-	/*
 	public static APSReqHardwareArchitectureVersion createEmptyHardwareModel(String name) {
 		FieldOfActivityAnnotationRepository fieldOfActivityRepository = APSArchitectureModelFactoryFacade.createFieldOfActivityAnnotationsRepository();
 		DeploymentContextRepository deploymentContextRepository = APSArchitectureModelFactoryFacade.createDeploymentContextRepository();
@@ -57,25 +53,6 @@ public class APSReqHardwareArchitectureModelFactoryFacade {
 				deploymentContextRepository, iecRepository, 
 				configuration, iecFieldOfActivityRepository,
 				iecModificationRepository, reqRepository, decisionRepository, optionRepository, modificationMarksRepository);
-	}
-	*/
-	
-	public static APSReqHardwareArchitectureVersion createEmptyHardwareModel(String name) {
-		archParams.fieldOfActivityRepository = APSArchitectureModelFactoryFacade.createFieldOfActivityAnnotationsRepository();
-		archParams.deploymentContextRepository = APSArchitectureModelFactoryFacade.createDeploymentContextRepository();
-		archParams.aPSPlant = apsFactory.eINSTANCE.createPlant();
-		archParams.reqRepository = RequirementsFactory.eINSTANCE.createReqRepository();
-		archParams.decisionRepository = DecisionsFactory.eINSTANCE.createDecisionRepository();
-		archParams.optionRepository = OptionsFactory.eINSTANCE.createOptionRepository();
-		archParams.modificationMarkRepository = APSReqHardwareArchitectureModelFactoryFacade.createModificationRepository();
-		
-		archParams.iecRepository = IECRepositoryFactory.eINSTANCE.createRepository();
-		archParams.configuration = IECModelFactory.eINSTANCE.createConfiguration();
-		archParams.iecFieldOfActivityRepository = 
-				IECFieldOfActivityAnnotationsFactory.eINSTANCE.createIECFieldOfActivityAnnotationsRepository();
-		archParams.iecModificationMarkRepository = IECModificationmarksFactory.eINSTANCE.createIECModificationRepository();
-		
-		return new APSReqHardwareArchitectureVersion(archParams);
 	}
 	
 	public static APSReqHardwareModificationRepository createModificationRepository() {
