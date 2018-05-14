@@ -33,7 +33,7 @@ import options.Option;
 import relations.SelectionObject;
 
 /**
- * 
+ * Lookup methods for option/decision to architecture propagation
  * @author Timo Maier
  *
  */

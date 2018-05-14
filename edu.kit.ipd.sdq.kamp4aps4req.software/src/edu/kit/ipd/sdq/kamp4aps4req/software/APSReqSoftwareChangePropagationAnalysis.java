@@ -3,7 +3,6 @@ package edu.kit.ipd.sdq.kamp4aps4req.software;
 
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -16,22 +15,7 @@ import edu.kit.ipd.sdq.kamp4aps4req.software.model.modificationmarks.APSReqModif
 import edu.kit.ipd.sdq.kamp4aps4req.software.model.modificationmarks.APSReqSoftwareChangePropagationDueToSpecificationDependencies;
 import edu.kit.ipd.sdq.kamp4aps4req.software.model.modificationmarks.APSReqSoftwareModificationmarksFactory;
 import edu.kit.ipd.sdq.kamp4iec.core.IECChangePropagationAnalysis;
-import edu.kit.ipd.sdq.kamp4iec.core.IECModificationFactory;
-import edu.kit.ipd.sdq.kamp4iec.model.IECModel.Configuration;
-import edu.kit.ipd.sdq.kamp4iec.model.IECModel.Program;
-import edu.kit.ipd.sdq.kamp4iec.model.IECModificationmarks.IECModificationmarksFactory;
-import edu.kit.ipd.sdq.kamp4iec.model.IECModificationmarks.IECModifyComponent;
-import edu.kit.ipd.sdq.kamp4iec.model.IECModificationmarks.IECModifyConfiguration;
-import edu.kit.ipd.sdq.kamp4iec.model.IECModificationmarks.IECSeedModifications;
-import edu.kit.ipd.sdq.kamp4iec.model.IECRepository.Function;
-import edu.kit.ipd.sdq.kamp4iec.model.IECRepository.FunctionBlock;
-import edu.kit.ipd.sdq.kamp4iec.model.IECRepository.GlobalVariable;
-import edu.kit.ipd.sdq.kamp4iec.model.IECRepository.IECAbstractMethod;
-import edu.kit.ipd.sdq.kamp4iec.model.IECRepository.IECAbstractProperty;
 import edu.kit.ipd.sdq.kamp4iec.model.IECRepository.IECComponent;
-import edu.kit.ipd.sdq.kamp4iec.model.IECRepository.IECInterface;
-import edu.kit.ipd.sdq.kamp4iec.model.IECRepository.IECMethod;
-import edu.kit.ipd.sdq.kamp4iec.model.IECRepository.IECProperty;
 import options.Option;
 import relations.TraceableObject;
 
@@ -108,261 +92,17 @@ public class APSReqSoftwareChangePropagationAnalysis extends AbstractAPSReqChang
 				lookupIECComponentsReferencedByOptions(version, this.getMarkedOptions());
 		createAndAddIECComponentModifications(iecComponentsToBeMarked, elementsMarkedInThisStep);
 	}		
-				
-		/*	
-				
-		// I Option -> Configuration
-		Map<Configuration, Set<Option>> configurationToBeMarked = APSReqSoftwareArchitectureModelLookup.
-				lookUpConfigurationReferencedByOptions(version, this.getMarkedOptions());
-		createAndAddConfigurationModifications(configurationToBeMarked, elementsMarkedInThisStep);
-		// II Option -> Program
-		Map<Program, Set<Option>> programToBeMarked = APSReqSoftwareArchitectureModelLookup.
-				lookUpProgramReferencedByOptions(version, this.getMarkedOptions());
-		createAndAddProgramModifications(programToBeMarked, elementsMarkedInThisStep);
-		// III Option -> FunctionBlock
-		Map<FunctionBlock, Set<Option>> functionBlocksToBeMarked = APSReqSoftwareArchitectureModelLookup.
-				lookUpFunctionBlocksReferencedByOptions(version, this.getMarkedOptions());
-		createAndAddFunctionBlockModifications(functionBlocksToBeMarked, elementsMarkedInThisStep);
-		// IV Option -> Function
-		Map<Function, Set<Option>> functionsToBeMarked = APSReqSoftwareArchitectureModelLookup.
-				lookUpFunctionsReferencedByOptions(version, this.getMarkedOptions());
-		createAndAddFunctionModifications(functionsToBeMarked, elementsMarkedInThisStep);
-		// V Option -> GlobalVariable
-		Map<GlobalVariable, Set<Option>> globalVariablesToBeMarked = APSReqSoftwareArchitectureModelLookup.
-				lookUpGlobalVariablesReferencedByOptions(version, this.getMarkedOptions());
-		createAndAddGlobalVariableModifications(globalVariablesToBeMarked, elementsMarkedInThisStep);
-		// VI Option -> IECInterface
-		Map<IECInterface, Set<Option>> iecInterfacesToBeMarked = APSReqSoftwareArchitectureModelLookup.
-				lookUpIECInterfacesReferencedByOptions(version, this.getMarkedOptions());
-		createAndAddInterfaceModifications(iecInterfacesToBeMarked, elementsMarkedInThisStep);
-		// VII Option -> IECMethod
-		Map<IsMethod, Set<Option>> iecMethodsToBeMarked = APSReqSoftwareArchitectureModelLookup.
-				lookUpIECMethodsReferencedByOptions(version, this.getMarkedOptions());
-		createAndAddIECMethodModifications(iecMethodsToBeMarked, elementsMarkedInThisStep);
-		// VIII Option -> IECProperty
-		Map<IsProperty, Set<Option>> iecPropertiesToBeMarked = APSReqSoftwareArchitectureModelLookup.
-			lookUpIECPropertiesReferencedByOptions(version, this.getMarkedOptions());
-		createAndAddIECPropertyModifications(iecPropertiesToBeMarked, elementsMarkedInThisStep);
-		
-		*/
+
 	
 	private void calculateAndMarkDecisionToArchitecturePropagation(APSReqSoftwareArchitectureVersion version,
 			Map<EObject, AbstractModification<?, EObject>> elementsMarkedInThisStep) {
-		
 		// Decision -> IECComponent
 		Map<IECComponent, Set<Decision>> iecComponentsToBeMarked = APSReqSoftwareArchitectureModelLookup.
 				lookupIECComponentsReferencedByDecisions(version, this.getMarkedDecisions());
 		createAndAddIECComponentModifications(iecComponentsToBeMarked, elementsMarkedInThisStep);
 	}	
-			
-		/*
-		// I Decision -> Configuration
-		Map<Configuration, Set<Decision>> configurationToBeMarked = APSReqSoftwareArchitectureModelLookup.
-				lookUpConfigurationReferencedByDecisions(version, this.getMarkedDecisions());
-		createAndAddConfigurationModifications(configurationToBeMarked, elementsMarkedInThisStep);
-		// II Decision -> Program
-		Map<Program, Set<Decision>> programToBeMarked = APSReqSoftwareArchitectureModelLookup.
-				lookUpProgramReferencedByDecisions(version, this.getMarkedDecisions());
-		createAndAddProgramModifications(programToBeMarked, elementsMarkedInThisStep);
-		// III Decision -> FunctionBlock
-		Map<FunctionBlock, Set<Decision>> functionBlocksToBeMarked = APSReqSoftwareArchitectureModelLookup.
-				lookUpFunctionBlocksReferencedByDecisions(version, this.getMarkedDecisions());
-		createAndAddFunctionBlockModifications(functionBlocksToBeMarked, elementsMarkedInThisStep);
-		// IV Decision -> Function
-		Map<Function, Set<Decision>> functionsToBeMarked = APSReqSoftwareArchitectureModelLookup.
-				lookUpFunctionsReferencedByDecisions(version, this.getMarkedDecisions());
-		createAndAddFunctionModifications(functionsToBeMarked, elementsMarkedInThisStep);
-		// V Decision -> GlobalVariable
-		Map<GlobalVariable, Set<Decision>> globalVariablesToBeMarked = APSReqSoftwareArchitectureModelLookup.
-				lookUpGlobalVariablesReferencedByDecisions(version, this.getMarkedDecisions());
-		createAndAddGlobalVariableModifications(globalVariablesToBeMarked, elementsMarkedInThisStep);
-		// VI Decision -> IECInterface
-		Map<IECInterface, Set<Decision>> iecInterfacesToBeMarked = APSReqSoftwareArchitectureModelLookup.
-				lookUpIECInterfacesReferencedByDecisions(version, this.getMarkedDecisions());
-		createAndAddInterfaceModifications(iecInterfacesToBeMarked, elementsMarkedInThisStep);
-		// VII Decision -> IECMethod
-		Map<IECMethod, Set<Decision>> iecMethodsToBeMarked = APSReqSoftwareArchitectureModelLookup.
-				lookUpIECMethodsReferencedByDecisions(version, this.getMarkedDecisions());
-		createAndAddIECMethodModifications(iecMethodsToBeMarked, elementsMarkedInThisStep);
-		// VIII Decision -> AbstractMethod
-		Map<IECAbstractMethod, Set<Decision>> abstractMethodsToBeMarked = APSReqSoftwareArchitectureModelLookup.
-			lookUpAbstractMethodsReferencedByDecisions(version, this.getMarkedDecisions());
-		createAndAddAbstractMethodModifications(abstractMethodsToBeMarked, elementsMarkedInThisStep);
-		// IX Decision -> IECProperty
-		Map<IECProperty, Set<Decision>> iecPropertiesToBeMarked = APSReqSoftwareArchitectureModelLookup.
-			lookUpIECPropertiesReferencedByDecisions(version, this.getMarkedDecisions());
-		createAndAddIECPropertyModifications(iecPropertiesToBeMarked, elementsMarkedInThisStep);
-		// X Decision -> AbstractProperty
-		Map<IECAbstractProperty, Set<Decision>> abstractPropertiesToBeMarked = APSReqSoftwareArchitectureModelLookup.
-			lookUpAbstractPropertiesReferencedByDecisions(version, this.getMarkedDecisions());
-		createAndAddAbstractPropertyModifications(abstractPropertiesToBeMarked, elementsMarkedInThisStep);
-		
-		
-	
-	private <T extends TraceableObject> void createAndAddConfigurationModifications(
-			Map<Configuration, Set<T>> configurationsToBeMarked, 
-			Map<EObject, AbstractModification<?, EObject>> elementsMarkedInThisStep) {
-		for (Map.Entry<Configuration, Set<T>> configurationsToBeMarkedEntry : configurationsToBeMarked.entrySet()) {
-			if (elementsMarkedInThisStep.containsKey(configurationsToBeMarkedEntry.getKey())) {
-				elementsMarkedInThisStep.get(configurationsToBeMarkedEntry.getKey()).
-						getCausingElements().addAll(configurationsToBeMarkedEntry.getValue());
-			} else {
-				IECModifyConfiguration modifyConfiguration = 
-						IECModificationmarksFactory.eINSTANCE.createIECModifyConfiguration();
-				modifyConfiguration.setToolderived(true);
-				modifyConfiguration.setAffectedElement(configurationsToBeMarkedEntry.getKey());
-				modifyConfiguration.getCausingElements().addAll(configurationsToBeMarkedEntry.getValue());
-			
-				elementsMarkedInThisStep.put(configurationsToBeMarkedEntry.getKey(), modifyConfiguration);
-				APSReqSoftwareChangePropagationDueToSpecificationDependencies softwareChanges = 
-						(APSReqSoftwareChangePropagationDueToSpecificationDependencies) 
-						this.getChangePropagationDueToSpecificationDependencies();
-				softwareChanges.getConfigurationModifications().add(modifyConfiguration);
-			}
-		}
-	}
-	
-	private <T extends TraceableObject> void createAndAddProgramModifications(
-			Map<Program, Set<T>> programsToBeMarked, 
-			Map<EObject, AbstractModification<?, EObject>> elementsMarkedInThisStep) {
-		for (Map.Entry<Program, Set<T>> programsToBeMarkedEntry: programsToBeMarked.entrySet()) {
-			if (elementsMarkedInThisStep.containsKey(programsToBeMarkedEntry.getKey())) {
-				elementsMarkedInThisStep.get(programsToBeMarkedEntry.getKey()).
-						getCausingElements().addAll(programsToBeMarkedEntry.getValue());
-			} else {
-				IECModifyProgram modifyProgram = 
-						IECModificationmarksFactory.eINSTANCE.createIECModifyProgram();
-				modifyProgram.setToolderived(true);
-				modifyProgram.setAffectedElement(programsToBeMarkedEntry.getKey());
-				modifyProgram.getCausingElements().addAll(programsToBeMarkedEntry.getValue());
-			
-				elementsMarkedInThisStep.put(programsToBeMarkedEntry.getKey(), modifyProgram);
-				APSReqSoftwareChangePropagationDueToSpecificationDependencies softwareChanges = 
-						(APSReqSoftwareChangePropagationDueToSpecificationDependencies) 
-						this.getChangePropagationDueToSpecificationDependencies();
-				softwareChanges.getProgramModifications().add(modifyProgram);
-			}
-		}
-	}
-	
-	private <T extends TraceableObject> void createAndAddFunctionBlockModifications(
-			Map<FunctionBlock, Set<T>> functionBlocksToBeMarked, 
-			Map<EObject, AbstractModification<?, EObject>> elementsMarkedInThisStep) {
-		for (Map.Entry<FunctionBlock, Set<T>> functionBlocksToBeMarkedEntry: functionBlocksToBeMarked.entrySet()) {
-			if (elementsMarkedInThisStep.containsKey(functionBlocksToBeMarkedEntry.getKey())) {
-				elementsMarkedInThisStep.get(functionBlocksToBeMarkedEntry.getKey()).
-						getCausingElements().addAll(functionBlocksToBeMarkedEntry.getValue());
-			} else {
-				IECModifyFunctionBlock modifyFunctionBlock = 
-						IECModificationmarksFactory.eINSTANCE.createIECModifyFunctionBlock();
-				modifyFunctionBlock.setToolderived(true);
-				modifyFunctionBlock.setAffectedElement(functionBlocksToBeMarkedEntry.getKey());
-				modifyFunctionBlock.getCausingElements().addAll(functionBlocksToBeMarkedEntry.getValue());
-			
-				elementsMarkedInThisStep.put(functionBlocksToBeMarkedEntry.getKey(), modifyFunctionBlock);
-				APSReqSoftwareChangePropagationDueToSpecificationDependencies softwareChanges = 
-						(APSReqSoftwareChangePropagationDueToSpecificationDependencies) 
-						this.getChangePropagationDueToSpecificationDependencies();
-				softwareChanges.getFunctionBlockModifications().add(modifyFunctionBlock);
-			}
-		}
-	}
-	
-	private <T extends TraceableObject> void createAndAddFunctionModifications(
-			Map<Function, Set<T>> functionsToBeMarked, 
-			Map<EObject, AbstractModification<?, EObject>> elementsMarkedInThisStep) {
-		for (Map.Entry<Function, Set<T>> functionsToBeMarkedEntry: functionsToBeMarked.entrySet()) {
-			if (elementsMarkedInThisStep.containsKey(functionsToBeMarkedEntry.getKey())) {
-				elementsMarkedInThisStep.get(functionsToBeMarkedEntry.getKey()).
-						getCausingElements().addAll(functionsToBeMarkedEntry.getValue());
-			} else {
-				IECModifyFunction modifyFunctionBlock = 
-						IECModificationmarksFactory.eINSTANCE.createIECModifyFunction();
-				modifyFunctionBlock.setToolderived(true);
-				modifyFunctionBlock.setAffectedElement(functionsToBeMarkedEntry.getKey());
-				modifyFunctionBlock.getCausingElements().addAll(functionsToBeMarkedEntry.getValue());
-			
-				elementsMarkedInThisStep.put(functionsToBeMarkedEntry.getKey(), modifyFunctionBlock);
-				APSReqSoftwareChangePropagationDueToSpecificationDependencies softwareChanges = 
-						(APSReqSoftwareChangePropagationDueToSpecificationDependencies) 
-						this.getChangePropagationDueToSpecificationDependencies();
-				softwareChanges.getFunctionModifications().add(modifyFunctionBlock);
-			}
-		}
-	}
-	
-	private <T extends TraceableObject> void createAndAddGlobalVariableModifications(
-			Map<GlobalVariable, Set<T>> globalVariablesToBeMarked, 
-			Map<EObject, AbstractModification<?, EObject>> elementsMarkedInThisStep) {
-		for (Map.Entry<GlobalVariable, Set<T>> globalVariablesToBeMarkedEntry : globalVariablesToBeMarked.entrySet()) {
-			if (elementsMarkedInThisStep.containsKey(globalVariablesToBeMarkedEntry.getKey())) {
-				elementsMarkedInThisStep.get(globalVariablesToBeMarkedEntry.getKey()).
-						getCausingElements().addAll(globalVariablesToBeMarkedEntry.getValue());
-			} else {
-				IECModifyGlobalVariable modifyGlobalVariable = 
-						IECModificationmarksFactory.eINSTANCE.createIECModifyGlobalVariable();
-				modifyGlobalVariable.setToolderived(true);
-				modifyGlobalVariable.setAffectedElement(globalVariablesToBeMarkedEntry.getKey());
-				modifyGlobalVariable.getCausingElements().addAll(globalVariablesToBeMarkedEntry.getValue());
-			
-				elementsMarkedInThisStep.put(globalVariablesToBeMarkedEntry.getKey(), modifyGlobalVariable);
-				APSReqSoftwareChangePropagationDueToSpecificationDependencies softwareChanges = 
-						(APSReqSoftwareChangePropagationDueToSpecificationDependencies) 
-						this.getChangePropagationDueToSpecificationDependencies();
-				softwareChanges.getGlobalVariableModifications().add(modifyGlobalVariable);
-			}
-		}
-	}
-	
-	private <T extends TraceableObject> void createAndAddInterfaceModifications(
-			Map<IECInterface, Set<T>> iecInterfacesToBeMarked, 
-			Map<EObject, AbstractModification<?, EObject>> elementsMarkedInThisStep) {
-		for (Map.Entry<IECInterface, Set<T>> iecInterfacesToBeMarkedEntry: iecInterfacesToBeMarked.entrySet()) {
-			if (elementsMarkedInThisStep.containsKey(iecInterfacesToBeMarkedEntry.getKey())) {
-				elementsMarkedInThisStep.get(iecInterfacesToBeMarkedEntry.getKey()).
-						getCausingElements().addAll(iecInterfacesToBeMarkedEntry.getValue());
-			} else {
-				IECModifyInterface modifyIECInterface = 
-						IECModificationmarksFactory.eINSTANCE.createIECModifyInterface();
-				modifyIECInterface.setToolderived(true);
-				modifyIECInterface.setAffectedElement(iecInterfacesToBeMarkedEntry.getKey());
-				modifyIECInterface.getCausingElements().addAll(iecInterfacesToBeMarkedEntry.getValue());
-			
-				elementsMarkedInThisStep.put(iecInterfacesToBeMarkedEntry.getKey(), modifyIECInterface);
-				APSReqSoftwareChangePropagationDueToSpecificationDependencies softwareChanges = 
-						(APSReqSoftwareChangePropagationDueToSpecificationDependencies) 
-						this.getChangePropagationDueToSpecificationDependencies();
-				softwareChanges.getIecInterfaceModifications().add(modifyIECInterface);
-			}
-		}
-	}
-	
-	private <T extends TraceableObject> void createAndAddIECMethodModifications(
-			Map<IECMethod, Set<T>> iecMethodsToBeMarked, 
-			Map<EObject, AbstractModification<?, EObject>> elementsMarkedInThisStep) {
-		for (Map.Entry<IECMethod, Set<T>> iecMethodsToBeMarkedEntry: iecMethodsToBeMarked.entrySet()) {
-			if (elementsMarkedInThisStep.containsKey(iecMethodsToBeMarkedEntry.getKey())) {
-				elementsMarkedInThisStep.get(iecMethodsToBeMarkedEntry.getKey()).
-						getCausingElements().addAll(iecMethodsToBeMarkedEntry.getValue());
-			} else {
-				IECModifyMethod modifyIECMethod = 
-						IECModificationmarksFactory.eINSTANCE.createIECModifyMethod();
-				modifyIECMethod.setToolderived(true);
-				modifyIECMethod.setAffectedElement(iecMethodsToBeMarkedEntry.getKey());
-				modifyIECMethod.getCausingElements().addAll(iecMethodsToBeMarkedEntry.getValue());
-			
-				elementsMarkedInThisStep.put(iecMethodsToBeMarkedEntry.getKey(), modifyIECMethod);
-				APSReqSoftwareChangePropagationDueToSpecificationDependencies softwareChanges = 
-						(APSReqSoftwareChangePropagationDueToSpecificationDependencies) 
-						this.getChangePropagationDueToSpecificationDependencies();
-				softwareChanges.getIecMethodModifications().add(modifyIECMethod);
-			}
-		}
-	}
-	
-	*/
-	
-	
+
+
 	private <T extends TraceableObject> void createAndAddIECComponentModifications(
 			Map<IECComponent, Set<T>> iecComponentsToBeMarked, 
 			Map<EObject, AbstractModification<?, EObject>> elementsMarkedInThisStep) {
@@ -385,59 +125,10 @@ public class APSReqSoftwareChangePropagationAnalysis extends AbstractAPSReqChang
 			}
 		}
 	}
-	
-	/*
-	private <T extends TraceableObject> void createAndAddIECComponentModifications(
-			Map<IECComponent, Set<T>> iecComponentsToBeMarked, 
-			Map<EObject, AbstractModification<?, EObject>> elementsMarkedInThisStep) {
-		for (Map.Entry<IECComponent, Set<T>> iecComponentsToBeMarkedEntry: iecComponentsToBeMarked.entrySet()) {
-			if (elementsMarkedInThisStep.containsKey(iecComponentsToBeMarkedEntry.getKey())) {
-				elementsMarkedInThisStep.get(iecComponentsToBeMarkedEntry.getKey()).
-						getCausingElements().addAll(iecComponentsToBeMarkedEntry.getValue());
-			} else {
-				IECModifyComponent<?> modifyIECComponent;
-				if (iecComponentsToBeMarkedEntry instanceof Configuration) {
-					modifyIECComponent = IECModificationmarksFactory.eINSTANCE.createIECModifyConfiguration();
-				} else if (iecComponentsToBeMarkedEntry instanceof Program) {
-					modifyIECComponent = IECModificationmarksFactory.eINSTANCE.createIECModifyProgram();
-				} else if (iecComponentsToBeMarkedEntry instanceof GlobalVariable) {
-					modifyIECComponent = IECModificationmarksFactory.eINSTANCE.createIECModifyGlobalVariable();
-				} else if (iecComponentsToBeMarkedEntry instanceof FunctionBlock) {
-					modifyIECComponent = IECModificationmarksFactory.eINSTANCE.createIECModifyFunctionBlock();
-				} else if (iecComponentsToBeMarkedEntry instanceof Function) {
-					modifyIECComponent = IECModificationmarksFactory.eINSTANCE.createIECModifyFunction();
-				} else if (iecComponentsToBeMarkedEntry instanceof IECInterface) {
-					modifyIECComponent = IECModificationmarksFactory.eINSTANCE.createIECModifyInterface();
-				} else if (iecComponentsToBeMarkedEntry instanceof IECMethod) {
-					modifyIECComponent = IECModificationmarksFactory.eINSTANCE.createIECModifyMethod();
-				} else if (iecComponentsToBeMarkedEntry instanceof IECAbstractMethod) {
-					modifyIECComponent = IECModificationmarksFactory.eINSTANCE.createIECModifyAbstractMethod();
-				} else if (iecComponentsToBeMarkedEntry instanceof IECProperty) {
-					modifyIECComponent = IECModificationmarksFactory.eINSTANCE.createIECModifyProperty();
-				} else if (iecComponentsToBeMarkedEntry instanceof IECAbstractProperty) {
-					modifyIECComponent = IECModificationmarksFactory.eINSTANCE.createIECModifyAbstractProperty();
-				}
-				
-				
-				APSReqModifyIECComponent modifyIECComponent = 
-						APSReqSoftwareModificationmarksFactory.eINSTANCE.createAPSReqModifyIECComponent();
-				modifyIECComponent.setToolderived(true);
-				modifyIECComponent.setAffectedElement(iecComponentsToBeMarkedEntry.getKey());
-				modifyIECComponent.getCausingElements().addAll(iecComponentsToBeMarkedEntry.getValue());
-				
-				elementsMarkedInThisStep.put(iecComponentsToBeMarkedEntry.getKey(), modifyIECComponent);
-				APSReqSoftwareChangePropagationDueToSpecificationDependencies softwareChanges = 
-						(APSReqSoftwareChangePropagationDueToSpecificationDependencies) 
-						this.getChangePropagationDueToSpecificationDependencies();
-				softwareChanges.getIecComponentModifications().add(modifyIECComponent);
-			}
-		}
-	}
-	*/
 	
 	/**
-	 * Creates an IEC Modification for each "Modify IECComponent" and adds them to seed modficiations
-	 * of KAMP4IEC
+	 * Adds the affected element of each "Modify IECComponent" to the seed modifications to be used in the 
+	 * IEC change propagation analysis
 	 * @param version
 	 */	
 	private void addIECSeedModifications(APSReqSoftwareArchitectureVersion version) {
@@ -455,9 +146,6 @@ public class APSReqSoftwareChangePropagationAnalysis extends AbstractAPSReqChang
 			}
 		}
 	}
-	
-	
-	
 
 	public IECChangePropagationAnalysis getIecChangePropagationAnalysis() {
 		return iecChangePropagationAnalysis;

@@ -57,7 +57,7 @@ public class APSReqHardwareArchitectureVersion extends APSArchitectureVersion im
 			ReqRepository requirementsRepository, DecisionRepository decisionRepository,
 			OptionRepository optionRepository, 
 			APSReqHardwareModificationRepository modificationMarksRepository) {
-		super(name, fieldOfActivityRepository, modificationMarksRepository, deploymentContextRepository, aPSPlant, iecRepository,
+		super(name, fieldOfActivityRepository, modificationMarksRepository, aPSPlant, deploymentContextRepository, iecRepository,
 				configuration, iecFieldOfActivityRepository, iecModificationMarkRepository);
 				if (requirementsRepository == null) {
 					requirementsRepository = RequirementsFactory.eINSTANCE.createReqRepository();

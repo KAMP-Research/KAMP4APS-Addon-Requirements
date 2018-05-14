@@ -33,6 +33,11 @@ public abstract class AbstractAPSReqInternalModificationDerivation {
 		}
 	}
 	
+	/**
+	 * Derives modifications for TraceableObject
+	 * @param modifications
+	 * @param activityList
+	 */
 	protected void deriveTraceableObjectModifications(Collection<? extends APSReqModifyTraceableObject<?>> modifications, 
 			List<Activity> activityList) {
 		for (APSReqModifyTraceableObject<?> modification: modifications) {
@@ -42,7 +47,7 @@ public abstract class AbstractAPSReqInternalModificationDerivation {
 	}
 	
 	/**
-	 * 
+	 * Creates Avtivities for Modifications
 	 * @param modification
 	 * @param activityElementType
 	 * @return
@@ -53,9 +58,21 @@ public abstract class AbstractAPSReqInternalModificationDerivation {
 		return createModificationActivity(modification, causingElementNames, activityElementType);
 	}
 	
+	/**
+	 * Abstract template method. Implemented by subclasses
+	 * @param modification
+	 * @param causingElementNames
+	 * @param activityElementType
+	 * @return
+	 */
 	protected abstract Activity createModificationActivity(AbstractModification<?,?> modification, 
 			List<String> causingElementNames, AbstractActivityElementType activityElementType);
 	
+	/**
+	 * Abstract template Method. Implemented by subclasses
+	 * @param modification
+	 * @return
+	 */
 	protected abstract List<String> getCausingElementsNames(AbstractModification<?,?> modification);
 	
 }

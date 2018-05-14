@@ -1,6 +1,6 @@
 package edu.kit.ipd.sdq.kamp4aps4req.software.derivation;
 
-import java.util.Collection;
+
 import java.util.LinkedList;
 import java.util.List;
 
@@ -12,9 +12,7 @@ import edu.kit.ipd.sdq.kamp.workplan.BasicActivity;
 import edu.kit.ipd.sdq.kamp4aps4req.derivation.AbstractAPSReqInternalModificationDerivation;
 
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModifyTraceableObject;
-import edu.kit.ipd.sdq.kamp4aps4req.software.APSReqSoftwareActivityElementType;
 import edu.kit.ipd.sdq.kamp4aps4req.software.APSReqSoftwareArchitectureVersion;
-import edu.kit.ipd.sdq.kamp4aps4req.software.model.modificationmarks.APSReqModifyIECComponent;
 import edu.kit.ipd.sdq.kamp4aps4req.software.model.modificationmarks.APSReqSoftwareChangePropagationDueToSpecificationDependencies;
 import edu.kit.ipd.sdq.kamp4iec.core.IECActivityType;
 import edu.kit.ipd.sdq.kamp4iec.core.derivation.IECInternalModificationDerivation;
@@ -50,7 +48,7 @@ public class APSReqSoftwareInternalModificationDerivation extends AbstractAPSReq
 	}
 	
 	/**
-	 * 
+	 * Creates activities for modifications
 	 * @param modification
 	 * @param causingElementNames
 	 * @param activityElementType
@@ -69,11 +67,6 @@ public class APSReqSoftwareInternalModificationDerivation extends AbstractAPSReq
 			return new Activity(IECActivityType.INTERNALMODIFICATIONMARK, activityElementType, 
 					traceableObject, elementName, causingElementNames, BasicActivity.MODIFY, 
 					"Modify " + traceableObject.eClass().getName() + " " + elementName + ".");
-//		} else if (modification instanceof APSReqModifyIECComponent){
-//			IECComponent iecComponent = ((APSReqModifyIECComponent)modification).getAffectedElement();
-//			return new Activity(IECActivityType.INTERNALMODIFICATIONMARK, activityElementType, 
-//					iecComponent, iecComponent.getName(), causingElementNames, BasicActivity.MODIFY, 
-//					"Modify " + iecComponent.eClass().getName() + " " + iecComponent.getName() + ".");
 		} else {
 			return null;
 		}
@@ -81,7 +74,7 @@ public class APSReqSoftwareInternalModificationDerivation extends AbstractAPSReq
 	
 	
 	/**
-	 * 
+	 * Derives internal modifications
 	 * @param targetVersion
 	 * @return
 	 */
@@ -95,18 +88,8 @@ public class APSReqSoftwareInternalModificationDerivation extends AbstractAPSReq
 				this.deriveTraceableObjectModifications(cp.getRequirementModifications(), activityList);
 				this.deriveTraceableObjectModifications(cp.getDecisionModifications(), activityList);
 				this.deriveTraceableObjectModifications(cp.getOptionModifications(), activityList);
-				//this.deriveIECComponentModifications(cp.getIecComponentModifications(), activityList);
 			}
 		}
 		return activityList;
 	}
-	/*
-	private void deriveIECComponentModifications(Collection<APSReqModifyIECComponent> modifications, 
-			List<Activity> activityList) {
-		for (APSReqModifyIECComponent modification: modifications) {
-			activityList.add(createModificationActivity(modification, 
-					APSReqSoftwareActivityElementType.IECCOMPONENT));
-		}
-	}
-	*/
 }
