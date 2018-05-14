@@ -16,6 +16,12 @@ import relations.ResolveObject;
 import relations.TriggerObject;
 import requirements.Requirement;
 
+/**
+ * Lookup methods for change propagation on the requirement level
+ * (independent of architecture)
+ * @author Timo Maier
+ *
+ */
 public class APSReqArchitectureModelLookup extends ArchitectureModelLookup {
 
 	

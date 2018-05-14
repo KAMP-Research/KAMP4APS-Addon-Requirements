@@ -18,6 +18,11 @@ import edu.kit.ipd.sdq.kamp4aps4req.hardware.APSReqHardwareArchitectureVersion;
 import options.Option;
 import requirements.Requirement;
 
+/**
+ * Difference Calculation between base and target models for hardware module
+ * @author Timo Maier
+ *
+ */
 public class APSReqHardwareDifferenceCalculation extends AbstractDifferenceCalculation<APSReqHardwareArchitectureVersion> {
 
 	private final APSDifferenceCalculation apsDifferenceCalculation = new APSDifferenceCalculation();
@@ -37,14 +42,13 @@ public class APSReqHardwareDifferenceCalculation extends AbstractDifferenceCalcu
 				baseVersion.getDecisionRepository(), targetVersion.getDecisionRepository())));
 		activityList.addAll(this.deriveAddAndRemoveActivities(AbstractWorkplanDerivation.calculateDiffModel(
 				baseVersion.getOptionRepository(), targetVersion.getOptionRepository())));
-		//activityList.addAll(this.getInternalModificationDerivation().deriveInternalModifications(targetVersion));
+		activityList.addAll(this.getInternalModificationDerivation().deriveInternalModifications(targetVersion));
 		
 		return activityList;
 	}
 	
 	@Override
 	public void checkForDifferencesAndAddToWorkplan(Diff diffElement, List<Activity> workplan) {
-		//this.getApsDifferenceCalculation().checkForDifferencesAndAddToWorkplan(diffElement, workplan);
 		if (detectionRuleAdded(diffElement, Requirement.class)) {
 			Requirement requirement = (Requirement)(((ReferenceChange)diffElement).getValue());
 			String elementName = "\"" + requirement.getSpecification() + "\"";

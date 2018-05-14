@@ -26,14 +26,6 @@ import decisions.Decision;
  * The super class of the change Propagation for KAMP4aPS4Req.
  * Refined by hardware and software subclasses.
  * 
- * 1. determines a seed population of affected components (resp. provided roles)
- * 2. calculates in iterations:
- *    a) inter-component propagation
- *    b) intra-component propagation
- * 3. generates internal modification marks for affected elements
- * 
- * - elements which were already part of a seed population are not further investigated
- * 
  * @author Timo Maier
  *
  */
@@ -144,7 +136,7 @@ public abstract class AbstractAPSReqChangePropagationAnalysis<T extends Abstract
 				APSReqModifyDecision modifyDecision = APSReqModificationmarksFactory.eINSTANCE.createAPSReqModifyDecision();
 				modifyDecision.setToolderived(true);
 				modifyDecision.setAffectedElement(decision);
-			modifyDecision.getCausingElements().addAll(decisionToBeMarkedEntry.getValue());
+				modifyDecision.getCausingElements().addAll(decisionToBeMarkedEntry.getValue());
 			
 				elementsMarkedInThisStep.put(decision, modifyDecision);
 				this.getMarkedDecisions().add(decision);
