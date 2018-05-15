@@ -9,7 +9,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated APSReqModificationmarks -->
       <package
-            uri="http://sdq.ipd.kit.edu/KAMP4APS4ReqModificationmarks/1.0"
+            uri="http://sdq.ipd.kit.edu/KAMP4aPS4ReqModificationmarks/1.0"
             class="edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModificationmarksPackage"
             genModel="model/APSReqModificationmarks.genmodel"/>
    </extension>
@@ -17,8 +17,7 @@
    <extension point="org.eclipse.emf.ecore.extension_parser">
       <!-- @generated APSReqModificationmarks -->
       <parser
-            type="apsreqmodificationmarks"
+            type="modificationmarks"
             class="edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.util.APSReqModificationmarksResourceFactoryImpl"/>
    </extension>
-
 </plugin>

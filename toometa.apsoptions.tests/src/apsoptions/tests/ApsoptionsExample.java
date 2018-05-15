@@ -2,12 +2,9 @@
  */
 package apsoptions.tests;
 
-import apsoptions.ApsoptionsFactory;
 import apsoptions.ApsoptionsPackage;
-import apsoptions.xPPU_IntroduceNewComponent;
 
 import java.io.File;
-import java.io.IOException;
 
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.URI;
@@ -57,16 +54,7 @@ public class ApsoptionsExample {
 		// If there are no arguments, emit an appropriate usage message.
 		//
 		if (args.length == 0) {
-			System.out.println("Enter a list of file paths or URIs that have content like this:");
-			try {
-				Resource resource = resourceSet.createResource(URI.createURI("http:///My.apsoptions"));
-				xPPU_IntroduceNewComponent root = ApsoptionsFactory.eINSTANCE.createxPPU_IntroduceNewComponent();
-				resource.getContents().add((EObject)root);
-				resource.save(System.out, null);
-			}
-			catch (IOException exception) {
-				exception.printStackTrace();
-			}
+			System.out.println("Enter a list of file paths or URIs");
 		}
 		else {
 			// Iterate over all the arguments.

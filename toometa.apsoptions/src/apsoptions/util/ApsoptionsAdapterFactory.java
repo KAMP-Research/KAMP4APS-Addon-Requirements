@@ -4,8 +4,6 @@ package apsoptions.util;
 
 import apsoptions.*;
 
-import archoptions.ArchOption;
-
 import de.uka.ipd.sdq.identifier.Identifier;
 
 import options.Option;
@@ -87,56 +85,8 @@ public class ApsoptionsAdapterFactory extends AdapterFactoryImpl {
 	protected ApsoptionsSwitch<Adapter> modelSwitch =
 		new ApsoptionsSwitch<Adapter>() {
 			@Override
-			public Adapter casexPPU_Option(xPPU_Option object) {
-				return createxPPU_OptionAdapter();
-			}
-			@Override
-			public Adapter casexPPU_IntroduceNewComponent(xPPU_IntroduceNewComponent object) {
-				return createxPPU_IntroduceNewComponentAdapter();
-			}
-			@Override
-			public Adapter casexPPU_ChangeComponent(xPPU_ChangeComponent object) {
-				return createxPPU_ChangeComponentAdapter();
-			}
-			@Override
-			public Adapter casexPPU_RemoveComponent(xPPU_RemoveComponent object) {
-				return createxPPU_RemoveComponentAdapter();
-			}
-			@Override
-			public Adapter casexPPU_IntroduceNewModule(xPPU_IntroduceNewModule object) {
-				return createxPPU_IntroduceNewModuleAdapter();
-			}
-			@Override
-			public Adapter casexPPU_ChangeModule(xPPU_ChangeModule object) {
-				return createxPPU_ChangeModuleAdapter();
-			}
-			@Override
-			public Adapter casexPPU_RemoveModule(xPPU_RemoveModule object) {
-				return createxPPU_RemoveModuleAdapter();
-			}
-			@Override
-			public Adapter casexPPU_IntroduceNewStructure(xPPU_IntroduceNewStructure object) {
-				return createxPPU_IntroduceNewStructureAdapter();
-			}
-			@Override
-			public Adapter casexPPU_ChangeStructure(xPPU_ChangeStructure object) {
-				return createxPPU_ChangeStructureAdapter();
-			}
-			@Override
-			public Adapter casexPPU_RemoveStructure(xPPU_RemoveStructure object) {
-				return createxPPU_RemoveStructureAdapter();
-			}
-			@Override
-			public Adapter casexPPU_IntroduceNewInterface(xPPU_IntroduceNewInterface object) {
-				return createxPPU_IntroduceNewInterfaceAdapter();
-			}
-			@Override
-			public Adapter casexPPU_ChangeInterface(xPPU_ChangeInterface object) {
-				return createxPPU_ChangeInterfaceAdapter();
-			}
-			@Override
-			public Adapter casexPPU_RemoveInterface(xPPU_RemoveInterface object) {
-				return createxPPU_RemoveInterfaceAdapter();
+			public Adapter caseAPSReqOption(APSReqOption object) {
+				return createAPSReqOptionAdapter();
 			}
 			@Override
 			public Adapter caseIdentifier(Identifier object) {
@@ -195,10 +145,6 @@ public class ApsoptionsAdapterFactory extends AdapterFactoryImpl {
 				return createOptionAdapter();
 			}
 			@Override
-			public Adapter caseArchOption(ArchOption object) {
-				return createArchOptionAdapter();
-			}
-			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -219,184 +165,16 @@ public class ApsoptionsAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link apsoptions.xPPU_Option <em>xPPU Option</em>}'.
+	 * Creates a new adapter for an object of class '{@link apsoptions.APSReqOption <em>APS Req Option</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see apsoptions.xPPU_Option
+	 * @see apsoptions.APSReqOption
 	 * @generated
 	 */
-	public Adapter createxPPU_OptionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link apsoptions.xPPU_IntroduceNewComponent <em>xPPU Introduce New Component</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see apsoptions.xPPU_IntroduceNewComponent
-	 * @generated
-	 */
-	public Adapter createxPPU_IntroduceNewComponentAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link apsoptions.xPPU_ChangeComponent <em>xPPU Change Component</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see apsoptions.xPPU_ChangeComponent
-	 * @generated
-	 */
-	public Adapter createxPPU_ChangeComponentAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link apsoptions.xPPU_RemoveComponent <em>xPPU Remove Component</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see apsoptions.xPPU_RemoveComponent
-	 * @generated
-	 */
-	public Adapter createxPPU_RemoveComponentAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link apsoptions.xPPU_IntroduceNewModule <em>xPPU Introduce New Module</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see apsoptions.xPPU_IntroduceNewModule
-	 * @generated
-	 */
-	public Adapter createxPPU_IntroduceNewModuleAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link apsoptions.xPPU_ChangeModule <em>xPPU Change Module</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see apsoptions.xPPU_ChangeModule
-	 * @generated
-	 */
-	public Adapter createxPPU_ChangeModuleAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link apsoptions.xPPU_RemoveModule <em>xPPU Remove Module</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see apsoptions.xPPU_RemoveModule
-	 * @generated
-	 */
-	public Adapter createxPPU_RemoveModuleAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link apsoptions.xPPU_IntroduceNewStructure <em>xPPU Introduce New Structure</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see apsoptions.xPPU_IntroduceNewStructure
-	 * @generated
-	 */
-	public Adapter createxPPU_IntroduceNewStructureAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link apsoptions.xPPU_ChangeStructure <em>xPPU Change Structure</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see apsoptions.xPPU_ChangeStructure
-	 * @generated
-	 */
-	public Adapter createxPPU_ChangeStructureAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link apsoptions.xPPU_RemoveStructure <em>xPPU Remove Structure</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see apsoptions.xPPU_RemoveStructure
-	 * @generated
-	 */
-	public Adapter createxPPU_RemoveStructureAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link apsoptions.xPPU_IntroduceNewInterface <em>xPPU Introduce New Interface</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see apsoptions.xPPU_IntroduceNewInterface
-	 * @generated
-	 */
-	public Adapter createxPPU_IntroduceNewInterfaceAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link apsoptions.xPPU_ChangeInterface <em>xPPU Change Interface</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see apsoptions.xPPU_ChangeInterface
-	 * @generated
-	 */
-	public Adapter createxPPU_ChangeInterfaceAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link apsoptions.xPPU_RemoveInterface <em>xPPU Remove Interface</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see apsoptions.xPPU_RemoveInterface
-	 * @generated
-	 */
-	public Adapter createxPPU_RemoveInterfaceAdapter() {
+	public Adapter createAPSReqOptionAdapter() {
 		return null;
 	}
 
@@ -593,20 +371,6 @@ public class ApsoptionsAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createOptionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link archoptions.ArchOption <em>Arch Option</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see archoptions.ArchOption
-	 * @generated
-	 */
-	public Adapter createArchOptionAdapter() {
 		return null;
 	}
 

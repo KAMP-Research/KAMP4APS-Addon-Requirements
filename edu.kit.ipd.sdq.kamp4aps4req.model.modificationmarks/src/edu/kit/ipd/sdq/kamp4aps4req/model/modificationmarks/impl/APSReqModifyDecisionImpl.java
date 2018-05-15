@@ -6,20 +6,19 @@ import decisions.Decision;
 
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModificationmarksPackage;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModifyDecision;
-
 import org.eclipse.emf.ecore.EClass;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '<em><b>APS Req
- * Modify Decision</b></em>'. <!-- end-user-doc -->
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>APS Req Modify Decision</b></em>'.
+ * <!-- end-user-doc -->
  *
  * @generated
  */
-public class APSReqModifyDecisionImpl extends APSReqModifyTraceableObjectImpl<Decision>
-		implements APSReqModifyDecision {
+public class APSReqModifyDecisionImpl extends APSReqModifyTraceableObjectImpl<Decision> implements APSReqModifyDecision {
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected APSReqModifyDecisionImpl() {
@@ -27,8 +26,8 @@ public class APSReqModifyDecisionImpl extends APSReqModifyTraceableObjectImpl<De
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -36,4 +35,4 @@ public class APSReqModifyDecisionImpl extends APSReqModifyTraceableObjectImpl<De
 		return APSReqModificationmarksPackage.Literals.APS_REQ_MODIFY_DECISION;
 	}
 
-} // APSReqModifyDecisionImpl
+} //APSReqModifyDecisionImpl

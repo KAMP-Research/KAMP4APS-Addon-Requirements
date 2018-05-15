@@ -6,32 +6,4 @@
 
 <plugin>
 
-   <extension point="org.eclipse.ui.newWizards">
-      <!-- @generated apsoptions -->
-      <category
-            id="org.eclipse.emf.ecore.Wizard.category.ID"
-            name="%_UI_Wizard_category"/>
-      <wizard
-            id="apsoptions.presentation.ApsoptionsModelWizardID"
-            name="%_UI_ApsoptionsModelWizard_label"
-            class="apsoptions.presentation.ApsoptionsModelWizard"
-            category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/ApsoptionsModelFile.gif">
-         <description>%_UI_ApsoptionsModelWizard_description</description>
-         <selection class="org.eclipse.core.resources.IResource"/>
-      </wizard>
-   </extension>
-
-   <extension point="org.eclipse.ui.editors">
-      <!-- @generated apsoptions -->
-      <editor
-            id="apsoptions.presentation.ApsoptionsEditorID"
-            name="%_UI_ApsoptionsEditor_label"
-            icon="icons/full/obj16/ApsoptionsModelFile.gif"
-            extensions="apsoptions"
-            class="apsoptions.presentation.ApsoptionsEditor"
-            contributorClass="apsoptions.presentation.ApsoptionsActionBarContributor">
-      </editor>
-   </extension>
-
 </plugin>

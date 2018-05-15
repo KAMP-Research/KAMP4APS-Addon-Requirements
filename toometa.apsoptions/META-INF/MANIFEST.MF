@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: toometa.apsoptions;singleton:=true
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 0.1.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
@@ -12,7 +12,6 @@ Export-Package: apsoptions,
  apsoptions.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
- org.eclipse.emf.cdo;visibility:=reexport,
  toometa.archoptions;visibility:=reexport,
  de.uka.ipd.sdq.dsexplore.qml.dimensions;visibility:=reexport,
  de.uka.ipd.sdq.dsexplore.qml.dimensiontypes;visibility:=reexport,
@@ -23,6 +22,5 @@ Require-Bundle: org.eclipse.core.runtime,
  toometa.options;visibility:=reexport,
  toometa.qualities;visibility:=reexport,
  toometa.relations;visibility:=reexport,
- de.uka.ipd.sdq.dsexplore.qml.units;visibility:=reexport,
- xPPU;visibility:=reexport
+ de.uka.ipd.sdq.dsexplore.qml.units;visibility:=reexport
 Bundle-ActivationPolicy: lazy

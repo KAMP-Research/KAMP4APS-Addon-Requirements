@@ -2,6 +2,7 @@
  */
 package edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.presentation;
 
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -12,156 +13,176 @@ import java.util.Map;
 import java.util.MissingResourceException;
 import java.util.StringTokenizer;
 
+import org.eclipse.emf.common.CommonPlugin;
+
+import org.eclipse.emf.common.util.URI;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EClassifier;
+
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+
+import org.eclipse.emf.ecore.EObject;
+
+import org.eclipse.emf.ecore.xmi.XMLResource;
+
+import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
+
 import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.ResourcesPlugin;
+
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.core.runtime.Path;
-import org.eclipse.emf.common.CommonPlugin;
-import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EClassifier;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.xmi.XMLResource;
-import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
+
 import org.eclipse.jface.dialogs.MessageDialog;
-import org.eclipse.jface.viewers.ISelection;
+
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.jface.viewers.StructuredSelection;
+
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.jface.wizard.WizardPage;
+
 import org.eclipse.swt.SWT;
+
 import org.eclipse.swt.events.ModifyListener;
+import org.eclipse.swt.events.ModifyEvent;
+
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
+
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
+
 import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
-import org.eclipse.ui.IWorkbenchPage;
-import org.eclipse.ui.IWorkbenchPart;
-import org.eclipse.ui.IWorkbenchWindow;
-import org.eclipse.ui.PartInitException;
+
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
+
 import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
+
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.ISetSelectionTarget;
 
-import edu.kit.ipd.sdq.kamp4aps4req.core.APSReqArchitectureModelFactoryFacade;
-import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModificationRepository;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModificationmarksFactory;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModificationmarksPackage;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.provider.APSReqModificationmarksEditPlugin;
 
+
+import org.eclipse.core.runtime.Path;
+
+import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.viewers.StructuredSelection;
+
+import org.eclipse.ui.IWorkbenchPage;
+import org.eclipse.ui.IWorkbenchPart;
+import org.eclipse.ui.IWorkbenchWindow;
+import org.eclipse.ui.PartInitException;
+
+
 /**
- * This is a simple wizard for creating a new model file. <!-- begin-user-doc
- * --> <!-- end-user-doc -->
- *
+ * This is a simple wizard for creating a new model file.
+ * <!-- begin-user-doc -->
+ * <!-- end-user-doc -->
  * @generated
  */
 public class APSReqModificationmarksModelWizard extends Wizard implements INewWizard {
 	/**
-	 * The supported extensions for created files. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 *
-	 * @generated
-	 */
-	public static final List<String> FILE_EXTENSIONS = Collections
-			.unmodifiableList(Arrays.asList(APSReqModificationmarksEditorPlugin.INSTANCE
-					.getString("_UI_APSReqModificationmarksEditorFilenameExtensions").split("\\s*,\\s*")));
-
-	/**
-	 * A formatted list of supported file extensions, suitable for display. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	public static final String FORMATTED_FILE_EXTENSIONS = APSReqModificationmarksEditorPlugin.INSTANCE
-			.getString("_UI_APSReqModificationmarksEditorFilenameExtensions").replaceAll("\\s*,\\s*", ", ");
-
-	/**
-	 * This caches an instance of the model package. <!-- begin-user-doc -->
+	 * The supported extensions for created files.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
+	 * @generated
+	 */
+	public static final List<String> FILE_EXTENSIONS =
+		Collections.unmodifiableList(Arrays.asList(APSReqModificationmarksEditorPlugin.INSTANCE.getString("_UI_APSReqModificationmarksEditorFilenameExtensions").split("\\s*,\\s*")));
+
+	/**
+	 * A formatted list of supported file extensions, suitable for display.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final String FORMATTED_FILE_EXTENSIONS =
+		APSReqModificationmarksEditorPlugin.INSTANCE.getString("_UI_APSReqModificationmarksEditorFilenameExtensions").replaceAll("\\s*,\\s*", ", ");
+
+	/**
+	 * This caches an instance of the model package.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected APSReqModificationmarksPackage apsReqModificationmarksPackage = APSReqModificationmarksPackage.eINSTANCE;
 
 	/**
-	 * This caches an instance of the model factory. <!-- begin-user-doc -->
+	 * This caches an instance of the model factory.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
-	protected APSReqModificationmarksFactory apsReqModificationmarksFactory = apsReqModificationmarksPackage
-			.getAPSReqModificationmarksFactory();
+	protected APSReqModificationmarksFactory apsReqModificationmarksFactory = apsReqModificationmarksPackage.getAPSReqModificationmarksFactory();
 
 	/**
-	 * This is the file creation page. <!-- begin-user-doc --> <!-- end-user-doc
-	 * -->
-	 *
+	 * This is the file creation page.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected APSReqModificationmarksModelWizardNewFileCreationPage newFileCreationPage;
 
 	/**
-	 * This is the initial object creation page. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 *
+	 * This is the initial object creation page.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected APSReqModificationmarksModelWizardInitialObjectCreationPage initialObjectCreationPage;
 
 	/**
-	 * Remember the selection during initialization for populating the default
-	 * container. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Remember the selection during initialization for populating the default container.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected IStructuredSelection selection;
 
 	/**
-	 * Remember the workbench during initialization. <!-- begin-user-doc -->
+	 * Remember the workbench during initialization.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected IWorkbench workbench;
 
 	/**
 	 * Caches the names of the types that can be created as the root object.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected List<String> initialObjectNames;
 
 	/**
-	 * This just records the information. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 *
+	 * This just records the information.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		this.workbench = workbench;
 		this.selection = selection;
 		setWindowTitle(APSReqModificationmarksEditorPlugin.INSTANCE.getString("_UI_Wizard_label"));
-		setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(
-				APSReqModificationmarksEditorPlugin.INSTANCE.getImage("full/wizban/NewAPSReqModificationmarks")));
+		setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(APSReqModificationmarksEditorPlugin.INSTANCE.getImage("full/wizban/NewAPSReqModificationmarks")));
 	}
 
 	/**
 	 * Returns the names of the types that can be created as the root object.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected Collection<String> getInitialObjectNames() {
@@ -169,7 +190,7 @@ public class APSReqModificationmarksModelWizard extends Wizard implements INewWi
 			initialObjectNames = new ArrayList<String>();
 			for (EClassifier eClassifier : apsReqModificationmarksPackage.getEClassifiers()) {
 				if (eClassifier instanceof EClass) {
-					EClass eClass = (EClass) eClassifier;
+					EClass eClass = (EClass)eClassifier;
 					if (!eClass.isAbstract()) {
 						initialObjectNames.add(eClass.getName());
 					}
@@ -181,23 +202,22 @@ public class APSReqModificationmarksModelWizard extends Wizard implements INewWi
 	}
 
 	/**
-	 * Create a new model. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated NOT
+	 * Create a new model.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
 	 */
 	protected EObject createInitialModel() {
-		// --Start manually modified code
-		APSReqModificationRepository repository = APSReqArchitectureModelFactoryFacade
-				.createAPSReqModificationmarksRepository();
-		return repository;
-		// --End manually modified code
+		EClass eClass = (EClass)apsReqModificationmarksPackage.getEClassifier(initialObjectCreationPage.getInitialObjectName());
+		EObject rootObject = apsReqModificationmarksFactory.create(eClass);
+		return rootObject;
 	}
 
 	/**
-	 * Do the work after everything is specified. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 *
-	 * @generated NOT
+	 * Do the work after everything is specified.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
 	 */
 	@Override
 	public boolean performFinish() {
@@ -208,45 +228,44 @@ public class APSReqModificationmarksModelWizard extends Wizard implements INewWi
 
 			// Do the work within an operation.
 			//
-			WorkspaceModifyOperation operation = new WorkspaceModifyOperation() {
-				@Override
-				protected void execute(IProgressMonitor progressMonitor) {
-					try {
-						// Create a resource set
-						//
-						ResourceSet resourceSet = new ResourceSetImpl();
+			WorkspaceModifyOperation operation =
+				new WorkspaceModifyOperation() {
+					@Override
+					protected void execute(IProgressMonitor progressMonitor) {
+						try {
+							// Create a resource set
+							//
+							ResourceSet resourceSet = new ResourceSetImpl();
 
-						// Get the URI of the model file.
-						//
-						URI fileURI = URI.createPlatformResourceURI(modelFile.getFullPath().toString(), true);
+							// Get the URI of the model file.
+							//
+							URI fileURI = URI.createPlatformResourceURI(modelFile.getFullPath().toString(), true);
 
-						// Create a resource for this file.
-						//
-						Resource resource = resourceSet.createResource(fileURI);
+							// Create a resource for this file.
+							//
+							Resource resource = resourceSet.createResource(fileURI);
 
-						// Add the initial model object to the contents.
-						//
-						EObject rootObject = createInitialModel();
-						if (rootObject != null) {
-							resource.getContents().add(rootObject);
+							// Add the initial model object to the contents.
+							//
+							EObject rootObject = createInitialModel();
+							if (rootObject != null) {
+								resource.getContents().add(rootObject);
+							}
+
+							// Save the contents of the resource to the file system.
+							//
+							Map<Object, Object> options = new HashMap<Object, Object>();
+							options.put(XMLResource.OPTION_ENCODING, initialObjectCreationPage.getEncoding());
+							resource.save(options);
 						}
-
-						// Save the contents of the resource to the file system.
-						//
-						Map<Object, Object> options = new HashMap<Object, Object>();
-						// --Start manually modified code
-						options.put(XMLResource.OPTION_ENCODING, "UTF-8");
-						// --End manually modified code
-						resource.save(options);
+						catch (Exception exception) {
+							APSReqModificationmarksEditorPlugin.INSTANCE.log(exception);
+						}
+						finally {
+							progressMonitor.done();
+						}
 					}
-					catch (Exception exception) {
-						APSReqModificationmarksEditorPlugin.INSTANCE.log(exception);
-					}
-					finally {
-						progressMonitor.done();
-					}
-				}
-			};
+				};
 
 			getContainer().run(false, false, operation);
 
@@ -257,20 +276,23 @@ public class APSReqModificationmarksModelWizard extends Wizard implements INewWi
 			final IWorkbenchPart activePart = page.getActivePart();
 			if (activePart instanceof ISetSelectionTarget) {
 				final ISelection targetSelection = new StructuredSelection(modelFile);
-				getShell().getDisplay()
-						.asyncExec(() -> ((ISetSelectionTarget) activePart).selectReveal(targetSelection));
+				getShell().getDisplay().asyncExec
+					(new Runnable() {
+						 public void run() {
+							 ((ISetSelectionTarget)activePart).selectReveal(targetSelection);
+						 }
+					 });
 			}
 
 			// Open an editor on the new file.
 			//
 			try {
-				page.openEditor(new FileEditorInput(modelFile),
-						workbench.getEditorRegistry().getDefaultEditor(modelFile.getFullPath().toString()).getId());
+				page.openEditor
+					(new FileEditorInput(modelFile),
+					 workbench.getEditorRegistry().getDefaultEditor(modelFile.getFullPath().toString()).getId());					 	 
 			}
 			catch (PartInitException exception) {
-				MessageDialog.openError(workbenchWindow.getShell(),
-						APSReqModificationmarksEditorPlugin.INSTANCE.getString("_UI_OpenEditorError_label"),
-						exception.getMessage());
+				MessageDialog.openError(workbenchWindow.getShell(), APSReqModificationmarksEditorPlugin.INSTANCE.getString("_UI_OpenEditorError_label"), exception.getMessage());
 				return false;
 			}
 
@@ -283,15 +305,16 @@ public class APSReqModificationmarksModelWizard extends Wizard implements INewWi
 	}
 
 	/**
-	 * This is the one page of the wizard. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 *
+	 * This is the one page of the wizard.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public class APSReqModificationmarksModelWizardNewFileCreationPage extends WizardNewFileCreationPage {
 		/**
-		 * Pass in the selection. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 *
+		 * Pass in the selection.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		public APSReqModificationmarksModelWizardNewFileCreationPage(String pageId, IStructuredSelection selection) {
@@ -299,9 +322,9 @@ public class APSReqModificationmarksModelWizard extends Wizard implements INewWi
 		}
 
 		/**
-		 * The framework calls this to see if the file is correct. <!--
-		 * begin-user-doc --> <!-- end-user-doc -->
-		 *
+		 * The framework calls this to see if the file is correct.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		@Override
@@ -310,8 +333,7 @@ public class APSReqModificationmarksModelWizard extends Wizard implements INewWi
 				String extension = new Path(getFileName()).getFileExtension();
 				if (extension == null || !FILE_EXTENSIONS.contains(extension)) {
 					String key = FILE_EXTENSIONS.size() > 1 ? "_WARN_FilenameExtensions" : "_WARN_FilenameExtension";
-					setErrorMessage(APSReqModificationmarksEditorPlugin.INSTANCE.getString(key,
-							new Object[] { FORMATTED_FILE_EXTENSIONS }));
+					setErrorMessage(APSReqModificationmarksEditorPlugin.INSTANCE.getString(key, new Object [] { FORMATTED_FILE_EXTENSIONS }));
 					return false;
 				}
 				return true;
@@ -320,8 +342,8 @@ public class APSReqModificationmarksModelWizard extends Wizard implements INewWi
 		}
 
 		/**
-		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 *
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		public IFile getModelFile() {
@@ -330,34 +352,37 @@ public class APSReqModificationmarksModelWizard extends Wizard implements INewWi
 	}
 
 	/**
-	 * This is the page where the type of object to create is selected. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * This is the page where the type of object to create is selected.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public class APSReqModificationmarksModelWizardInitialObjectCreationPage extends WizardPage {
 		/**
-		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 *
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		protected Combo initialObjectField;
 
 		/**
-		 * @generated <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * @generated
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 */
 		protected List<String> encodings;
 
 		/**
-		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 *
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		protected Combo encodingField;
 
 		/**
-		 * Pass in the selection. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 *
+		 * Pass in the selection.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		public APSReqModificationmarksModelWizardInitialObjectCreationPage(String pageId) {
@@ -365,14 +390,12 @@ public class APSReqModificationmarksModelWizard extends Wizard implements INewWi
 		}
 
 		/**
-		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 *
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		@Override
 		public void createControl(Composite parent) {
-			Composite composite = new Composite(parent, SWT.NONE);
-			{
+			Composite composite = new Composite(parent, SWT.NONE); {
 				GridLayout layout = new GridLayout();
 				layout.numColumns = 1;
 				layout.verticalSpacing = 12;
@@ -439,15 +462,20 @@ public class APSReqModificationmarksModelWizard extends Wizard implements INewWi
 		}
 
 		/**
-		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 *
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		protected ModifyListener validator = e -> setPageComplete(validatePage());
+		protected ModifyListener validator =
+			new ModifyListener() {
+				public void modifyText(ModifyEvent e) {
+					setPageComplete(validatePage());
+				}
+			};
 
 		/**
-		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 *
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		protected boolean validatePage() {
@@ -455,8 +483,8 @@ public class APSReqModificationmarksModelWizard extends Wizard implements INewWi
 		}
 
 		/**
-		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 *
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		@Override
@@ -475,8 +503,8 @@ public class APSReqModificationmarksModelWizard extends Wizard implements INewWi
 		}
 
 		/**
-		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 *
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		public String getInitialObjectName() {
@@ -491,8 +519,8 @@ public class APSReqModificationmarksModelWizard extends Wizard implements INewWi
 		}
 
 		/**
-		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 *
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		public String getEncoding() {
@@ -500,31 +528,30 @@ public class APSReqModificationmarksModelWizard extends Wizard implements INewWi
 		}
 
 		/**
-		 * Returns the label for the specified type name. <!-- begin-user-doc
-		 * --> <!-- end-user-doc -->
-		 *
+		 * Returns the label for the specified type name.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		protected String getLabel(String typeName) {
 			try {
 				return APSReqModificationmarksEditPlugin.INSTANCE.getString("_UI_" + typeName + "_type");
 			}
-			catch (MissingResourceException mre) {
+			catch(MissingResourceException mre) {
 				APSReqModificationmarksEditorPlugin.INSTANCE.log(mre);
 			}
 			return typeName;
 		}
 
 		/**
-		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 *
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		protected Collection<String> getEncodings() {
 			if (encodings == null) {
 				encodings = new ArrayList<String>();
-				for (StringTokenizer stringTokenizer = new StringTokenizer(APSReqModificationmarksEditorPlugin.INSTANCE
-						.getString("_UI_XMLEncodingChoices")); stringTokenizer.hasMoreTokens();) {
+				for (StringTokenizer stringTokenizer = new StringTokenizer(APSReqModificationmarksEditorPlugin.INSTANCE.getString("_UI_XMLEncodingChoices")); stringTokenizer.hasMoreTokens(); ) {
 					encodings.add(stringTokenizer.nextToken());
 				}
 			}
@@ -536,24 +563,19 @@ public class APSReqModificationmarksModelWizard extends Wizard implements INewWi
 	 * The framework calls this to create the contents of the wizard.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @generated NOT
+	 * @generated
 	 */
-	@Override
+		@Override
 	public void addPages() {
 		// Create a page, set the title, and the initial model file name.
 		//
 		newFileCreationPage = new APSReqModificationmarksModelWizardNewFileCreationPage("Whatever", selection);
-		newFileCreationPage.setTitle(
-				APSReqModificationmarksEditorPlugin.INSTANCE.getString("_UI_APSReqModificationmarksModelWizard_label"));
-		newFileCreationPage.setDescription(APSReqModificationmarksEditorPlugin.INSTANCE
-				.getString("_UI_APSReqModificationmarksModelWizard_description"));
-		newFileCreationPage.setFileName(APSReqModificationmarksEditorPlugin.INSTANCE
-				.getString("_UI_APSReqModificationmarksEditorFilenameDefaultBase") + "." + FILE_EXTENSIONS.get(0));
+		newFileCreationPage.setTitle(APSReqModificationmarksEditorPlugin.INSTANCE.getString("_UI_APSReqModificationmarksModelWizard_label"));
+		newFileCreationPage.setDescription(APSReqModificationmarksEditorPlugin.INSTANCE.getString("_UI_APSReqModificationmarksModelWizard_description"));
+		newFileCreationPage.setFileName(APSReqModificationmarksEditorPlugin.INSTANCE.getString("_UI_APSReqModificationmarksEditorFilenameDefaultBase") + "." + FILE_EXTENSIONS.get(0));
 		addPage(newFileCreationPage);
 
-		// Try and get the resource selection to determine a current directory
-		// for the file dialog.
+		// Try and get the resource selection to determine a current directory for the file dialog.
 		//
 		if (selection != null && !selection.isEmpty()) {
 			// Get the resource...
@@ -562,7 +584,7 @@ public class APSReqModificationmarksModelWizard extends Wizard implements INewWi
 			if (selectedElement instanceof IResource) {
 				// Get the resource parent, if its a file.
 				//
-				IResource selectedResource = (IResource) selectedElement;
+				IResource selectedResource = (IResource)selectedElement;
 				if (selectedResource.getType() == IResource.FILE) {
 					selectedResource = selectedResource.getParent();
 				}
@@ -576,31 +598,26 @@ public class APSReqModificationmarksModelWizard extends Wizard implements INewWi
 
 					// Make up a unique new name here.
 					//
-					String defaultModelBaseFilename = APSReqModificationmarksEditorPlugin.INSTANCE
-							.getString("_UI_APSReqModificationmarksEditorFilenameDefaultBase");
+					String defaultModelBaseFilename = APSReqModificationmarksEditorPlugin.INSTANCE.getString("_UI_APSReqModificationmarksEditorFilenameDefaultBase");
 					String defaultModelFilenameExtension = FILE_EXTENSIONS.get(0);
 					String modelFilename = defaultModelBaseFilename + "." + defaultModelFilenameExtension;
-					for (int i = 1; ((IContainer) selectedResource).findMember(modelFilename) != null; ++i) {
+					for (int i = 1; ((IContainer)selectedResource).findMember(modelFilename) != null; ++i) {
 						modelFilename = defaultModelBaseFilename + i + "." + defaultModelFilenameExtension;
 					}
 					newFileCreationPage.setFileName(modelFilename);
 				}
 			}
 		}
-		// --Start manually commented out code
-		// initialObjectCreationPage = new
-		// APSReqModificationmarksModelWizardInitialObjectCreationPage("Whatever2");
-		// initialObjectCreationPage.setTitle(
-		// APSReqModificationmarksEditorPlugin.INSTANCE.getString("_UI_APSReqModificationmarksModelWizard_label"));
-		// initialObjectCreationPage.setDescription(
-		// APSReqModificationmarksEditorPlugin.INSTANCE.getString("_UI_Wizard_initial_object_description"));
-		// addPage(initialObjectCreationPage);
-		// --End manually commented out code
+		initialObjectCreationPage = new APSReqModificationmarksModelWizardInitialObjectCreationPage("Whatever2");
+		initialObjectCreationPage.setTitle(APSReqModificationmarksEditorPlugin.INSTANCE.getString("_UI_APSReqModificationmarksModelWizard_label"));
+		initialObjectCreationPage.setDescription(APSReqModificationmarksEditorPlugin.INSTANCE.getString("_UI_Wizard_initial_object_description"));
+		addPage(initialObjectCreationPage);
 	}
 
 	/**
-	 * Get the file from the page. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * Get the file from the page.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public IFile getModelFile() {

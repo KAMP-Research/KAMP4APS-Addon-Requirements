@@ -2,27 +2,28 @@
  */
 package edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.provider;
 
+
+import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModifyRequirement;
+
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
-import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModifyRequirement;
-
 /**
- * This is the item provider adapter for a
- * {@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModifyRequirement}
- * object. <!-- begin-user-doc --> <!-- end-user-doc -->
- *
+ * This is the item provider adapter for a {@link edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModifyRequirement} object.
+ * <!-- begin-user-doc -->
+ * <!-- end-user-doc -->
  * @generated
  */
 public class APSReqModifyRequirementItemProvider extends APSReqModifyTraceableObjectItemProvider {
 	/**
-	 * This constructs an instance from a factory and a notifier. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * This constructs an instance from a factory and a notifier.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public APSReqModifyRequirementItemProvider(AdapterFactory adapterFactory) {
@@ -30,9 +31,9 @@ public class APSReqModifyRequirementItemProvider extends APSReqModifyTraceableOb
 	}
 
 	/**
-	 * This returns the property descriptors for the adapted class. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * This returns the property descriptors for the adapted class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -45,9 +46,9 @@ public class APSReqModifyRequirementItemProvider extends APSReqModifyTraceableOb
 	}
 
 	/**
-	 * This returns APSReqModifyRequirement.gif. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 *
+	 * This returns APSReqModifyRequirement.gif.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -56,26 +57,27 @@ public class APSReqModifyRequirementItemProvider extends APSReqModifyTraceableOb
 	}
 
 	/**
-	 * This returns the label text for the adapted class. <!-- begin-user-doc
-	 * --> <!-- end-user-doc -->
-	 *
-	 * @generated
+	 * This returns the label text for the adapted class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
 		// --Start manually modified code
-		String label = APSReqLabelCustomizing.customize((APSReqModifyRequirement) object);
+		String label = APSReqLabelCustomizing.customize((APSReqModifyRequirement)object);
 		// --End manually modified code
-		return label == null || label.length() == 0 ? getString("_UI_APSReqModifyRequirement_type")
-				: getString("_UI_APSReqModifyRequirement_type") + " " + label;
+		return label == null || label.length() == 0 ?
+			getString("_UI_APSReqModifyRequirement_type") :
+			getString("_UI_APSReqModifyRequirement_type") + " " + label;
 	}
+	
 
 	/**
-	 * This handles model notifications by calling {@link #updateChildren} to
-	 * update any cached children and by creating a viewer notification, which
-	 * it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 *
+	 * This handles model notifications by calling {@link #updateChildren} to update any cached
+	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -85,10 +87,10 @@ public class APSReqModifyRequirementItemProvider extends APSReqModifyTraceableOb
 	}
 
 	/**
-	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s
-	 * describing the children that can be created under this object. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
+	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
+	 * that can be created under this object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override

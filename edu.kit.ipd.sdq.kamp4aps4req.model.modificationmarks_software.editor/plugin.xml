@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated modificationmarks_software -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.presentation.Modificationmarks_softwareModelWizardID"
+            name="%_UI_Modificationmarks_softwareModelWizard_label"
+            class="edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.presentation.Modificationmarks_softwareModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/Modificationmarks_softwareModelFile.gif">
+         <description>%_UI_Modificationmarks_softwareModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated modificationmarks_software -->
+      <editor
+            id="edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.presentation.Modificationmarks_softwareEditorID"
+            name="%_UI_Modificationmarks_softwareEditor_label"
+            icon="icons/full/obj16/Modificationmarks_softwareModelFile.gif"
+            extensions="modificationmarks_software"
+            class="edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.presentation.Modificationmarks_softwareEditor"
+            contributorClass="edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.presentation.Modificationmarks_softwareActionBarContributor">
+      </editor>
+   </extension>
+   <extension point="org.eclipse.ui.popupMenus">
+          <objectContribution
+                adaptable="false"
+                id="edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.APSReqSoftwareModificationRepositoryID"
+                objectClass="edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.APSReqSoftwareModificationRepository">
+             <action
+                   class="edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.editor.APSReqSoftwareArchitectureBasedWorkplanDerivationAction"
+                   icon="../edu.kit.ipd.sdq.kamp/icons/run.png"
+                   id="edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.editor.APSReqSoftwareArchitectureBasedWorkplanDerivationActionID"
+                   label="Step 5: Calculate activities"
+                   menubarPath="edit">
+             </action>
+             <action
+                   class="edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.editor.APSReqSoftwareChangePropagationAction"
+                   icon="../edu.kit.ipd.sdq.kamp/icons/run.png"
+                   id="edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks_software.editor.APSReqSoftwareChangePropagationActionID"
+                   label="Step 3: Calculate APSReqSW change propagation"
+                   menubarPath="edit">
+             </action>
+          </objectContribution>
+       </extension>
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated APSReqSoftwareModificationmarks -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="edu.kit.ipd.sdq.kamp4aps4req.software.model.modificationmarks.presentation.APSReqSoftwareModificationmarksModelWizardID"
+            name="%_UI_APSReqSoftwareModificationmarksModelWizard_label"
+            class="edu.kit.ipd.sdq.kamp4aps4req.software.model.modificationmarks.presentation.APSReqSoftwareModificationmarksModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/APSReqSoftwareModificationmarksModelFile.gif">
+         <description>%_UI_APSReqSoftwareModificationmarksModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated APSReqSoftwareModificationmarks -->
+      <editor
+            id="edu.kit.ipd.sdq.kamp4aps4req.software.model.modificationmarks.presentation.APSReqSoftwareModificationmarksEditorID"
+            name="%_UI_APSReqSoftwareModificationmarksEditor_label"
+            icon="icons/full/obj16/APSReqSoftwareModificationmarksModelFile.gif"
+            extensions="modificationmarks"
+            class="edu.kit.ipd.sdq.kamp4aps4req.software.model.modificationmarks.presentation.APSReqSoftwareModificationmarksEditor"
+            contributorClass="edu.kit.ipd.sdq.kamp4aps4req.software.model.modificationmarks.presentation.APSReqSoftwareModificationmarksActionBarContributor">
+      </editor>
+   </extension>
+</plugin>

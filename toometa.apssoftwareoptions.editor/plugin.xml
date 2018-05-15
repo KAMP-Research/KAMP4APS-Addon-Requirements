@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated apssoftwareoptions -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="apssoftwareoptions.presentation.ApssoftwareoptionsModelWizardID"
+            name="%_UI_ApssoftwareoptionsModelWizard_label"
+            class="apssoftwareoptions.presentation.ApssoftwareoptionsModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ApssoftwareoptionsModelFile.gif">
+         <description>%_UI_ApssoftwareoptionsModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated apssoftwareoptions -->
+      <editor
+            id="apssoftwareoptions.presentation.ApssoftwareoptionsEditorID"
+            name="%_UI_ApssoftwareoptionsEditor_label"
+            icon="icons/full/obj16/ApssoftwareoptionsModelFile.gif"
+            extensions="apssoftwareoptions"
+            class="apssoftwareoptions.presentation.ApssoftwareoptionsEditor"
+            contributorClass="apssoftwareoptions.presentation.ApssoftwareoptionsActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

@@ -7,16 +7,16 @@ import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModifyRequirem
 import junit.textui.TestRunner;
 
 /**
- * <!-- begin-user-doc --> A test case for the model object '<em><b>APS Req
- * Modify Requirement</b></em>'. <!-- end-user-doc -->
- * 
+ * <!-- begin-user-doc -->
+ * A test case for the model object '<em><b>APS Req Modify Requirement</b></em>'.
+ * <!-- end-user-doc -->
  * @generated
  */
 public class APSReqModifyRequirementTest extends APSReqModifyTraceableObjectTest {
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -24,9 +24,9 @@ public class APSReqModifyRequirementTest extends APSReqModifyTraceableObjectTest
 	}
 
 	/**
-	 * Constructs a new APS Req Modify Requirement test case with the given
-	 * name. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Constructs a new APS Req Modify Requirement test case with the given name.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public APSReqModifyRequirementTest(String name) {
@@ -34,19 +34,19 @@ public class APSReqModifyRequirementTest extends APSReqModifyTraceableObjectTest
 	}
 
 	/**
-	 * Returns the fixture for this APS Req Modify Requirement test case. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the fixture for this APS Req Modify Requirement test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	protected APSReqModifyRequirement getFixture() {
-		return (APSReqModifyRequirement) fixture;
+		return (APSReqModifyRequirement)fixture;
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
@@ -56,8 +56,8 @@ public class APSReqModifyRequirementTest extends APSReqModifyTraceableObjectTest
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */
@@ -66,4 +66,4 @@ public class APSReqModifyRequirementTest extends APSReqModifyTraceableObjectTest
 		setFixture(null);
 	}
 
-} // APSReqModifyRequirementTest
+} //APSReqModifyRequirementTest

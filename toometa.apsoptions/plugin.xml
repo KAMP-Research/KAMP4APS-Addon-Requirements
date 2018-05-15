@@ -9,7 +9,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated apsoptions -->
       <package
-            uri="http://toometa.de/apsoptions/0.1"
+            uri="http://www.example.org/apsoptions"
             class="apsoptions.ApsoptionsPackage"
             genModel="model/apsoptions.genmodel"/>
    </extension>

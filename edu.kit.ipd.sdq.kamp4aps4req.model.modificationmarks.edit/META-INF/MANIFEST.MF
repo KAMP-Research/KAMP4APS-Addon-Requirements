@@ -7,7 +7,7 @@ Bundle-ClassPath: .
 Bundle-Activator: edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.provider.APSReqModificationmarksEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.provider
 Require-Bundle: org.eclipse.core.runtime,
  edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks;visibility:=reexport,
@@ -24,8 +24,6 @@ Require-Bundle: org.eclipse.core.runtime,
  toometa.glossary.edit;visibility:=reexport,
  de.uka.ipd.sdq.identifier;visibility:=reexport,
  de.uka.ipd.sdq.identifier.edit;visibility:=reexport,
- edu.kit.ipd.sdq.kamp4aps.model.modificationmarks;visibility:=reexport,
- edu.kit.ipd.sdq.kamp4aps.model.modificationmarks.edit;visibility:=reexport,
  edu.kit.ipd.sdq.kamp.model.modificationmarks;visibility:=reexport,
  edu.kit.ipd.sdq.kamp.model.modificationmarks.edit;visibility:=reexport,
  de.uka.ipd.sdq.namedelement;visibility:=reexport,
@@ -40,6 +38,6 @@ Require-Bundle: org.eclipse.core.runtime,
  toometa.requirements.edit;visibility:=reexport,
  de.uka.ipd.sdq.dsexplore.qml.units;visibility:=reexport,
  de.uka.ipd.sdq.dsexplore.qml.units.edit;visibility:=reexport,
- xPPU;visibility:=reexport,
- xPPU.edit;visibility:=reexport
+ org.palladiosimulator.pcm
 Bundle-ActivationPolicy: lazy
+Import-Package: org.palladiosimulator.pcm.repository.provider

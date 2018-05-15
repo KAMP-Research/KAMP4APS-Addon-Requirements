@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="src" path="/toometa.decisions"/>
+	<classpathentry kind="src" path="/toometa.options"/>
+	<classpathentry kind="src" path="/toometa.requirements"/>
+	<classpathentry kind="src" path="/edu.kit.ipd.sdq.kamp4aps4req"/>
+	<classpathentry kind="src" path="/edu.kit.ipd.sdq.kamp4aps"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/edu.kit.ipd.sdq.kamp"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/edu.kit.ipd.sdq.kamp.model.modificationmarks"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/edu.kit.ipd.sdq.kamp4aps.model.modificationmarks"/>
+	<classpathentry kind="lib" path="/Applications/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.emf.ecore_2.12.0.v20160420-0247.jar" sourcepath="/Applications/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.emf.ecore.source_2.12.0.v20160420-0247.jar">
+		<accessrules>
+			<accessrule kind="accessible" pattern="org/eclipse/emf/ecore/*"/>
+			<accessrule kind="accessible" pattern="org/eclipse/emf/ecore/impl/*"/>
+			<accessrule kind="accessible" pattern="org/eclipse/emf/ecore/plugin/*"/>
+			<accessrule kind="accessible" pattern="org/eclipse/emf/ecore/resource/*"/>
+			<accessrule kind="accessible" pattern="org/eclipse/emf/ecore/resource/impl/*"/>
+			<accessrule kind="accessible" pattern="org/eclipse/emf/ecore/util/*"/>
+			<accessrule kind="accessible" pattern="org/eclipse/emf/ecore/xml/namespace/*"/>
+			<accessrule kind="accessible" pattern="org/eclipse/emf/ecore/xml/namespace/impl/*"/>
+			<accessrule kind="accessible" pattern="org/eclipse/emf/ecore/xml/namespace/util/*"/>
+			<accessrule kind="accessible" pattern="org/eclipse/emf/ecore/xml/type/*"/>
+			<accessrule kind="accessible" pattern="org/eclipse/emf/ecore/xml/type/impl/*"/>
+			<accessrule kind="accessible" pattern="org/eclipse/emf/ecore/xml/type/internal/*"/>
+			<accessrule kind="accessible" pattern="org/eclipse/emf/ecore/xml/type/util/*"/>
+			<accessrule ignoreifbetter="true" kind="nonaccessible" pattern="**/*"/>
+		</accessrules>
+	</classpathentry>
+	<classpathentry kind="src" path="/edu.kit.ipd.sdq.kamp4aps.basic"/>
+	<classpathentry kind="src" path="/toometa.apsoptions"/>
+	<classpathentry kind="src" path="/toometa.apshardwareoptions"/>
+	<classpathentry kind="src" path="/edu.kit.ipd.sdq.kamp4aps.aps"/>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry kind="lib" path="/Applications/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.core.resources_3.11.1.v20161107-2032.jar" sourcepath="/Applications/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.core.resources.source_3.11.1.v20161107-2032.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/Applications/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.platform.doc.isv_4.6.2.v20170221-1001.jar!/reference/api"/>
+		</attributes>
+		<accessrules>
+			<accessrule kind="discouraged" pattern="org/eclipse/core/internal/dtree/*"/>
+			<accessrule kind="discouraged" pattern="org/eclipse/core/internal/events/*"/>
+			<accessrule kind="discouraged" pattern="org/eclipse/core/internal/localstore/*"/>
+			<accessrule kind="discouraged" pattern="org/eclipse/core/internal/properties/*"/>
+			<accessrule kind="discouraged" pattern="org/eclipse/core/internal/propertytester/*"/>
+			<accessrule kind="discouraged" pattern="org/eclipse/core/internal/refresh/*"/>
+			<accessrule kind="discouraged" pattern="org/eclipse/core/internal/resources/*"/>
+			<accessrule kind="discouraged" pattern="org/eclipse/core/internal/resources/mapping/*"/>
+			<accessrule kind="discouraged" pattern="org/eclipse/core/internal/resources/projectvariables/*"/>
+			<accessrule kind="discouraged" pattern="org/eclipse/core/internal/resources/refresh/win32/*"/>
+			<accessrule kind="discouraged" pattern="org/eclipse/core/internal/utils/*"/>
+			<accessrule kind="discouraged" pattern="org/eclipse/core/internal/watson/*"/>
+			<accessrule kind="accessible" pattern="org/eclipse/core/resources/*"/>
+			<accessrule kind="accessible" pattern="org/eclipse/core/resources/filtermatchers/*"/>
+			<accessrule kind="accessible" pattern="org/eclipse/core/resources/mapping/*"/>
+			<accessrule kind="accessible" pattern="org/eclipse/core/resources/refresh/*"/>
+			<accessrule kind="accessible" pattern="org/eclipse/core/resources/team/*"/>
+			<accessrule kind="accessible" pattern="org/eclipse/core/resources/variableresolvers/*"/>
+			<accessrule ignoreifbetter="true" kind="nonaccessible" pattern="**/*"/>
+		</accessrules>
+	</classpathentry>
+	<classpathentry combineaccessrules="false" kind="src" path="/edu.kit.ipd.sdq.kamp4aps4req.hardware.model.modificationmarks"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

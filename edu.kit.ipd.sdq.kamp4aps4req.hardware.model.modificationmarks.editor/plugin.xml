@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated APSReqHardwareModificationmarks -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="edu.kit.ipd.sdq.kamp4aps4req.hardware.model.modificationmarks.presentation.APSReqHardwareModificationmarksModelWizardID"
+            name="%_UI_APSReqHardwareModificationmarksModelWizard_label"
+            class="edu.kit.ipd.sdq.kamp4aps4req.hardware.model.modificationmarks.presentation.APSReqHardwareModificationmarksModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/APSReqHardwareModificationmarksModelFile.gif">
+         <description>%_UI_APSReqHardwareModificationmarksModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated APSReqHardwareModificationmarks -->
+      <editor
+            id="edu.kit.ipd.sdq.kamp4aps4req.hardware.model.modificationmarks.presentation.APSReqHardwareModificationmarksEditorID"
+            name="%_UI_APSReqHardwareModificationmarksEditor_label"
+            icon="icons/full/obj16/APSReqHardwareModificationmarksModelFile.gif"
+            extensions="modificationmarks"
+            class="edu.kit.ipd.sdq.kamp4aps4req.hardware.model.modificationmarks.presentation.APSReqHardwareModificationmarksEditor"
+            contributorClass="edu.kit.ipd.sdq.kamp4aps4req.hardware.model.modificationmarks.presentation.APSReqHardwareModificationmarksActionBarContributor">
+      </editor>
+   </extension>
+   <extension point="org.eclipse.ui.popupMenus">
+          <objectContribution
+                adaptable="false"
+                id="edu.kit.ipd.sdq.kamp4aps4req.hardware.model.modificationmarks.APSReqHardwareModificationRepositoryID"
+                objectClass="edu.kit.ipd.sdq.kamp4aps4req.hardware.model.modificationmarks.APSReqHardwareModificationRepository">
+             <action
+                   class="edu.kit.ipd.sdq.kamp4aps4req.hardware.model.modificationmarks.editor.APSReqHardwareArchitectureBasedWorkplanDerivationAction"
+                   icon="../edu.kit.ipd.sdq.kamp/icons/run.png"
+                   id="edu.kit.ipd.sdq.kamp4aps4req.hardware.model.modificationmarks.editor.APSReqHardwareArchitectureBasedWorkplanDerivationActionID"
+                   label="Step 5: Calculate activities"
+                   menubarPath="edit">
+             </action>
+             <action
+                   class="edu.kit.ipd.sdq.kamp4aps4req.hardware.model.modificationmarks.editor.APSReqHardwareChangePropagationAction"
+                   icon="../edu.kit.ipd.sdq.kamp/icons/run.png"
+                   id="edu.kit.ipd.sdq.kamp4aps4req.hardware.model.modificationmarks.editor.APSReqHardwareChangePropagationActionID"
+                   label="Step 3: Calculate APSReq change propagation"
+                   menubarPath="edit">
+             </action>
+          </objectContribution>
+     </extension>
+
+</plugin>

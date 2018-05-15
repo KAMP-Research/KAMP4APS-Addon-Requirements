@@ -7,16 +7,16 @@ import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModifyDecision
 import junit.textui.TestRunner;
 
 /**
- * <!-- begin-user-doc --> A test case for the model object '<em><b>APS Req
- * Modify Decision</b></em>'. <!-- end-user-doc -->
- * 
+ * <!-- begin-user-doc -->
+ * A test case for the model object '<em><b>APS Req Modify Decision</b></em>'.
+ * <!-- end-user-doc -->
  * @generated
  */
 public class APSReqModifyDecisionTest extends APSReqModifyTraceableObjectTest {
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -25,8 +25,8 @@ public class APSReqModifyDecisionTest extends APSReqModifyTraceableObjectTest {
 
 	/**
 	 * Constructs a new APS Req Modify Decision test case with the given name.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public APSReqModifyDecisionTest(String name) {
@@ -34,19 +34,19 @@ public class APSReqModifyDecisionTest extends APSReqModifyTraceableObjectTest {
 	}
 
 	/**
-	 * Returns the fixture for this APS Req Modify Decision test case. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Returns the fixture for this APS Req Modify Decision test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	protected APSReqModifyDecision getFixture() {
-		return (APSReqModifyDecision) fixture;
+		return (APSReqModifyDecision)fixture;
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
@@ -56,8 +56,8 @@ public class APSReqModifyDecisionTest extends APSReqModifyTraceableObjectTest {
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */
@@ -66,4 +66,4 @@ public class APSReqModifyDecisionTest extends APSReqModifyTraceableObjectTest {
 		setFixture(null);
 	}
 
-} // APSReqModifyDecisionTest
+} //APSReqModifyDecisionTest

@@ -6,7 +6,7 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.tests
 Require-Bundle: org.eclipse.core.runtime,
  edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks;visibility:=reexport,
@@ -16,7 +16,6 @@ Require-Bundle: org.eclipse.core.runtime,
  toometa.effects;visibility:=reexport,
  toometa.glossary;visibility:=reexport,
  de.uka.ipd.sdq.identifier;visibility:=reexport,
- edu.kit.ipd.sdq.kamp4aps.model.modificationmarks;visibility:=reexport,
  edu.kit.ipd.sdq.kamp.model.modificationmarks;visibility:=reexport,
  de.uka.ipd.sdq.namedelement;visibility:=reexport,
  toometa.options;visibility:=reexport,
@@ -24,7 +23,6 @@ Require-Bundle: org.eclipse.core.runtime,
  toometa.relations;visibility:=reexport,
  toometa.requirements;visibility:=reexport,
  de.uka.ipd.sdq.dsexplore.qml.units;visibility:=reexport,
- xPPU;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.junit;visibility:=reexport
 Bundle-ActivationPolicy: lazy

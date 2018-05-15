@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated APSReqSoftwareModificationmarks -->
+      <package
+            uri="http://sdq.ipd.kit.edu/KAMP4aPS4ReqSoftwareModificationmarks/1.0"
+            class="edu.kit.ipd.sdq.kamp4aps4req.software.model.modificationmarks.APSReqSoftwareModificationmarksPackage"
+            genModel="model/APSReqSoftwareModificationmarks.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated APSReqSoftwareModificationmarks -->
+      <parser
+            type="modificationmarks"
+            class="edu.kit.ipd.sdq.kamp4aps4req.software.model.modificationmarks.util.APSReqSoftwareModificationmarksResourceFactoryImpl"/>
+   </extension>
+</plugin>

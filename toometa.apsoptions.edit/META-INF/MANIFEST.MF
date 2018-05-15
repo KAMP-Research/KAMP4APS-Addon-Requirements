@@ -33,7 +33,5 @@ Require-Bundle: org.eclipse.core.runtime,
  toometa.relations;visibility:=reexport,
  toometa.relations.edit;visibility:=reexport,
  de.uka.ipd.sdq.dsexplore.qml.units;visibility:=reexport,
- de.uka.ipd.sdq.dsexplore.qml.units.edit;visibility:=reexport,
- xPPU;visibility:=reexport,
- xPPU.edit;visibility:=reexport
+ de.uka.ipd.sdq.dsexplore.qml.units.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy

@@ -4,22 +4,21 @@ package edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.impl;
 
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModificationmarksPackage;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModifyRequirement;
-
 import org.eclipse.emf.ecore.EClass;
 
 import requirements.Requirement;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '<em><b>APS Req
- * Modify Requirement</b></em>'. <!-- end-user-doc -->
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>APS Req Modify Requirement</b></em>'.
+ * <!-- end-user-doc -->
  *
  * @generated
  */
-public class APSReqModifyRequirementImpl extends APSReqModifyTraceableObjectImpl<Requirement>
-		implements APSReqModifyRequirement {
+public class APSReqModifyRequirementImpl extends APSReqModifyTraceableObjectImpl<Requirement> implements APSReqModifyRequirement {
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected APSReqModifyRequirementImpl() {
@@ -27,8 +26,8 @@ public class APSReqModifyRequirementImpl extends APSReqModifyTraceableObjectImpl
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -36,4 +35,4 @@ public class APSReqModifyRequirementImpl extends APSReqModifyTraceableObjectImpl
 		return APSReqModificationmarksPackage.Literals.APS_REQ_MODIFY_REQUIREMENT;
 	}
 
-} // APSReqModifyRequirementImpl
+} //APSReqModifyRequirementImpl

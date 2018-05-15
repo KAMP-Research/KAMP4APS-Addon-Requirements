@@ -6,23 +6,22 @@ import edu.kit.ipd.sdq.kamp.model.modificationmarks.impl.AbstractModificationImp
 
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModificationmarksPackage;
 import edu.kit.ipd.sdq.kamp4aps4req.model.modificationmarks.APSReqModifyTraceableObject;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 
 import relations.TraceableObject;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '<em><b>APS Req
- * Modify Traceable Object</b></em>'. <!-- end-user-doc -->
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>APS Req Modify Traceable Object</b></em>'.
+ * <!-- end-user-doc -->
  *
  * @generated
  */
-public abstract class APSReqModifyTraceableObjectImpl<T extends TraceableObject>
-		extends AbstractModificationImpl<T, EObject> implements APSReqModifyTraceableObject<T> {
+public abstract class APSReqModifyTraceableObjectImpl<T extends TraceableObject> extends AbstractModificationImpl<T, EObject> implements APSReqModifyTraceableObject<T> {
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected APSReqModifyTraceableObjectImpl() {
@@ -30,8 +29,8 @@ public abstract class APSReqModifyTraceableObjectImpl<T extends TraceableObject>
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -40,9 +39,9 @@ public abstract class APSReqModifyTraceableObjectImpl<T extends TraceableObject>
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc --> This is specialized for the
-	 * more specific type known in this context.
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * This is specialized for the more specific type known in this context.
 	 * @generated
 	 */
 	@Override
@@ -50,4 +49,4 @@ public abstract class APSReqModifyTraceableObjectImpl<T extends TraceableObject>
 		super.setAffectedElement(newAffectedElement);
 	}
 
-} // APSReqModifyTraceableObjectImpl
+} //APSReqModifyTraceableObjectImpl
